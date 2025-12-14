@@ -1,0 +1,3 @@
+<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
+
+This project monitors Philippine Stock Exchange (PSE) stocks, fetches daily data, analyzes trends, and suggests the best stock to buy each day for a 12-month investment strategy. Prioritize code for data fetching, analysis, and recommendation logic.
