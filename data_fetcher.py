@@ -15,10 +15,7 @@ class DataFetcher:
         """No-op for compatibility"""
         pass
 
-    def fetch_daily_data(self, symbol: str, start: str, end: str) -> pd.DataFrame:
-        """Deprecated: Use fetch_investagrams instead."""
-        print(f"WARNING: fetch_daily_data is deprecated. Unused arguments: {start}, {end}")
-        return self.fetch_investagrams(symbol)
+
 
 
     # ... (skipping existing methods to focus on the new one) ...
