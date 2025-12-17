@@ -1,1393 +1,1720 @@
 {
-    "RRHI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.99,
-        "company_name": "Robinsons Retail Holdings, Inc."
-    },
-    "PHR": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "PH Resorts Group Holdings, Inc."
-    },
-    "PHES": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Phil. Estates Corporation"
-    },
-    "FILRT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 8.13,
-        "company_name": "Filinvest REIT Corp."
-    },
-    "WPI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Waterfront Philippines, Inc."
-    },
-    "MAC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.46,
-        "company_name": "Macroasia Corporation"
-    },
-    "SHLPH": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Shell Pilipinas Corporation"
-    },
-    "ALCO": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.93,
-        "company_name": "Arthaland Corporation"
-    },
-    "RLC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.67,
-        "company_name": "Robinson Land Corporation"
-    },
-    "EVER": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Everquote Inc"
-    },
-    "SHNG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 8.1,
-        "company_name": "Shang Properties, Inc."
-    },
-    "STI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.93,
-        "company_name": "STI Education Systems Holdings, Inc."
-    },
-    "AC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.96,
-        "company_name": "Ayala Corporation"
-    },
-    "UPM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "United Paragon Mining Corporation"
-    },
-    "SEVN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.78,
-        "company_name": "Philippine Seven Corporation"
-    },
-    "RCBC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "River City Bank"
-    },
-    "CHP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Concreat Holdings Philippines, Inc."
-    },
-    "KPH": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Keppel Philippines Holdings, Inc. A"
-    },
-    "FEU": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.0,
-        "company_name": "Far Eastern University, Incorporated"
-    },
-    "MVC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.95,
-        "company_name": "Mabuhay Vinyl Corporation"
-    },
-    "HOME": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "AllHome Corp."
-    },
-    "CNVRG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.8,
-        "company_name": "Converge Information and Communications Technology Solutions, Inc."
-    },
-    "FPH": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.01,
-        "company_name": "First Philippine Holdings Corporation"
-    },
-    "BKR": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.61,
-        "company_name": "Bright Kindle Res. and Investments, Inc."
-    },
-    "LR": {
-        "error": "No Data"
-    },
-    "JGS": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.79,
-        "company_name": "JG Summit Holdings, Inc."
-    },
-    "BPI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.63,
-        "company_name": "Bank of the Philippine Islands"
-    },
-    "MB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Manila Bulletin Publishing Corporation"
-    },
-    "SUN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Suntrust Home Developers, Inc."
-    },
-    "NOW": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Now Corporation"
-    },
-    "WPP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Wpp Plc."
-    },
-    "C": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Chelsea Logistics Holdings Corp."
-    },
-    "PTC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Philippine Trust Company"
-    },
-    "CIP": {
-        "error": "No Data"
-    },
-    "EEI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "EEI Corporation"
-    },
-    "RFM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 8.3,
-        "company_name": "RFM Corporation"
-    },
-    "LTG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 8.7,
-        "company_name": "LT Group, Inc."
-    },
-    "JFC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.84,
-        "company_name": "Jollibee Foods Corporation"
-    },
-    "MA": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Manila Mining Corporation &quot;A&quot;"
-    },
-    "PRF": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.4,
-        "company_name": "Invesco Ftse Rafi Us 1000 Etf"
-    },
-    "STR": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Starmalls, Inc."
-    },
-    "IPM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "IPM Holdings, Inc."
-    },
-    "DIZ": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Dizon Copper-Silver Mines, Inc."
-    },
-    "BMM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Bogo Medellin Milling Company"
-    },
-    "FRUIT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.56,
-        "company_name": "Fruitas Holdings Inc."
-    },
-    "ANS": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.36,
-        "company_name": "A. Soriano Corporation"
-    },
-    "BSC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Basic Energy Corporation"
-    },
-    "SPL": {
-        "error": "No Data"
-    },
-    "TOP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.33,
-        "company_name": "Top Line Business Development Corp."
-    },
-    "SGI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 7.75,
-        "company_name": "Solid Group, Inc."
-    },
-    "VUL": {
-        "error": "No Data"
-    },
-    "ABG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Asiabest Group International, Inc."
-    },
-    "ROCK": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 7.09,
-        "company_name": "Rockwell Land Corporation"
-    },
-    "BC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Benguet Corporation"
-    },
-    "ALHI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.03,
-        "company_name": "Anchor Land Holdings, Inc."
-    },
-    "ORE": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Oriental Peninsula Resources Group, Inc."
-    },
-    "CLI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 7.63,
-        "company_name": "Cebu Landmasters, Inc."
-    },
-    "PHN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.66,
-        "company_name": "Phinma Corporation"
-    },
-    "MHC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Mabuhay Holdings Corporation"
-    },
-    "BHI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Boulevard Holdings, Inc."
-    },
-    "SLI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.27,
-        "company_name": "Sta. Lucia Land, Inc."
-    },
-    "TFHI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Top Frontier Investment Holdings, Inc."
-    },
-    "MRC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "MRC Allied, Inc."
-    },
-    "TFC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.54,
-        "company_name": "PTFC Redevelopment Corporation"
-    },
-    "ATNB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "ATN Holdings, Inc. 'B'"
-    },
-    "SMPH": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.08,
-        "company_name": "SM Prime Holdings, Inc."
-    },
-    "EW": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.93,
-        "company_name": "East West Banking Corporation"
-    },
-    "POPI": {
-        "error": "No Data"
-    },
-    "MAXS": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.75,
-        "company_name": "Max's Group, Inc."
-    },
-    "S": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Sonic"
-    },
-    "EC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.58,
-        "company_name": "Ecopetrol Sa"
-    },
-    "LMG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "LMG Chemicals Corporation"
-    },
-    "SPNEC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "SP New Energy Corporation"
-    },
-    "OPM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.55,
-        "company_name": "Oriental Petroleum and Minerals Corporation"
-    },
-    "MWIDE": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Megawide Construction Corporation"
-    },
-    "LSC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Lorenzo Shipping Corporation"
-    },
-    "ION": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 10.0,
-        "company_name": "Ionics, Inc."
-    },
-    "EMP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.9,
-        "company_name": "Entergy Mississippi Inc"
-    },
-    "LAND": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.77,
-        "company_name": "City and Land Developers, Inc."
-    },
-    "VMC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.99,
-        "company_name": "Victorias Milling Company, Inc."
-    },
-    "AREIT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.54,
-        "company_name": "AREIT Inc."
-    },
-    "MJIC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "MJC Investments Corporation"
-    },
-    "BLOOM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.21,
-        "company_name": "Bloomberry Resorts Corporation"
-    },
-    "VITA": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Vitarich Corporation"
-    },
-    "AT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Atlas Consolidated Mining and Development Cor"
-    },
-    "SRA": {
-        "error": "No Data"
-    },
-    "NIKL": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.0,
-        "company_name": "Nickel Asia Corporation"
-    },
-    "DDMPR": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 9.02,
-        "company_name": "DDMP REIT, Inc."
-    },
-    "MV": {
-        "error": "No Data"
-    },
-    "MER": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.2,
-        "company_name": "Manila Electric Company"
-    },
-    "MARC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Marcventures Holdings, Inc."
-    },
-    "CEB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Cebu Air, Inc."
-    },
-    "AXLM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.34,
-        "company_name": "Axelum Resources Corp."
-    },
-    "MFIN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.49,
-        "company_name": "Makati Finance Corporation"
-    },
-    "SPC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 11.03,
-        "company_name": "SPC Power Corporation"
-    },
-    "PNB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.42,
-        "company_name": "Philippine National Bank"
-    },
-    "SMC2I": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 6.29,
-        "company_name": "SMC2I"
-    },
-    "ROX": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Roxas Holdings, Inc."
-    },
-    "PMPC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 6.95,
-        "company_name": "Panasonic Manufacturing Philippines Corporati"
-    },
-    "DMC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 10.57,
-        "company_name": "DMCI Holdings, Inc."
-    },
-    "KEP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Keppel Philippines Properties, Inc."
-    },
-    "CLX": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.44,
-        "company_name": "Clorox Co."
-    },
-    "PAX": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Paxys Inc."
-    },
-    "RCR": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.23,
-        "company_name": "RL Commercial REIT, Inc."
-    },
-    "PPR": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Voya Prime Rate Trust"
-    },
-    "PA": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Pacifica, Inc."
-    },
-    "PRIM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Prime Media Holdings, Inc."
-    },
-    "HI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.09,
-        "company_name": "House of Investments, Inc."
-    },
-    "CNPF": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.81,
-        "company_name": "Century Pacific Food, Inc."
-    },
-    "IDC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Italpinas Development Corporation"
-    },
-    "IRC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Inland Real Estate Corp."
-    },
-    "ALI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.57,
-        "company_name": "Ayala Land, Inc."
-    },
-    "MWC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.49,
-        "company_name": "Manila Water Company, Inc."
-    },
-    "ACE": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Acesite"
-    },
-    "HLCM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Holcim Philippines, Inc."
-    },
-    "TPC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Tutor Perini Corp"
-    },
-    "SFI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Swift Foods, Inc."
-    },
-    "SCC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 11.61,
-        "company_name": "Semirara Mining and Power Corporation"
-    },
-    "HVN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Golden MV Holdings, Inc."
-    },
-    "ATN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "ATN Holdings, Inc. 'A'"
-    },
-    "PCOR": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.22,
-        "company_name": "Petron Corporation"
-    },
-    "RHI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.12,
-        "company_name": "Robert Half International Inc."
-    },
-    "SMC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.67,
-        "company_name": "San Miguel Corporation"
-    },
-    "SSI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.98,
-        "company_name": "SSI Group, Inc."
-    },
-    "MEG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.65,
-        "company_name": "Megaworld Corporation"
-    },
-    "DNL": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.8,
-        "company_name": "D and L Industries, Inc."
-    },
-    "GERI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.68,
-        "company_name": "Global-Estate Resorts, Inc."
-    },
-    "MAH": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Metro Alliance Hold'gs and Eqts. &quot;A&quot;"
-    },
-    "MPI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Metro Pacific Investments Corporation"
-    },
-    "CROWN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.99,
-        "company_name": "Crown Asia Chemicals Corporation"
-    },
-    "FLI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 6.67,
-        "company_name": "Filinvest Land, Inc."
-    },
-    "IMI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Integrated Micro-Electronics, Inc."
-    },
-    "PSB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.45,
-        "company_name": "Philippine Savings Bank"
-    },
-    "STN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Steniel Manufacturing Corporation"
-    },
-    "BDO": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.28,
-        "company_name": "BDO Unibank, Inc."
-    },
-    "IS": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Island Information and Technology, Inc"
-    },
-    "TECH": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Cirtek Holdings Philippines Corporation"
-    },
-    "AB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Atok-Big Wedge Company, Inc."
-    },
-    "BRN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.5,
-        "company_name": "A Brown Company, Inc."
-    },
-    "AUB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.13,
-        "company_name": "Asia United Bank Corporation"
-    },
-    "JOH": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Jolliville Holdings Corporation"
-    },
-    "PIZZA": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.03,
-        "company_name": "Shakey's Pizza Asia Ventures, Inc."
-    },
-    "MRSGI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 10.34,
-        "company_name": "Metro Retail Stores Group, Inc."
-    },
-    "RCI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Roxas and Company, Inc."
-    },
-    "SSP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "SFA Semicon Philippines Corporation"
-    },
-    "CPM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Century Peak Holdings Corporation"
-    },
-    "CEI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Crown Equities, Inc."
-    },
-    "COL": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.07,
-        "company_name": "COL Financial Group, Inc."
-    },
-    "APX": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.17,
-        "company_name": "Apex Mining Company, Inc."
-    },
-    "APL": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Apollo Global Capital, Inc."
-    },
     "SM": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 10.03,
+        "eps": 70.2891,
         "market_cap": 14.0,
         "div_yield": 1.84,
         "company_name": "SM Investments Corporation"
     },
-    "FB": {
-        "pe_ratio": 30.0,
+    "JGS": {
+        "pe_ratio": 7.96,
+        "eps": 2.9523,
         "market_cap": 14.0,
-        "div_yield": 5.65,
-        "company_name": "San Miguel Food and Beverage, Inc."
+        "div_yield": 1.79,
+        "company_name": "JG Summit Holdings, Inc."
     },
-    "ANI": {
-        "pe_ratio": 30.0,
+    "RHI": {
+        "pe_ratio": 14.1,
+        "eps": 1.9823,
         "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "AgriNurture, Inc"
-    },
-    "HOUSE": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "8990 Holdings, Inc."
-    },
-    "FNI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Global Ferronickel Holdings, Inc."
-    },
-    "WLCON": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.14,
-        "company_name": "Wilcon Depot, Inc."
-    },
-    "EURO": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 7.0,
-        "company_name": "Euro-Med Laboratories Phil., Inc."
-    },
-    "OV": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "The Philodrill Corporation"
-    },
-    "PTT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "PT&amp;T Corp."
-    },
-    "CHIB": {
-        "error": "No Data"
-    },
-    "CREIT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.66,
-        "company_name": "Citicore Energy REIT Corp."
-    },
-    "KPS": {
-        "error": "No Data"
-    },
-    "ELI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Empire East Land Holdings, Inc."
-    },
-    "PHA": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Premiere Horizon Alliance Corporation"
-    },
-    "GEO": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "GEOGRACE Resources Philippines, Inc."
-    },
-    "CPG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 7.86,
-        "company_name": "Century Properties Group, Inc."
-    },
-    "WIN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Wellex Industries, Inc."
-    },
-    "OM": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Omico Corporation"
-    },
-    "GTCAP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.39,
-        "company_name": "GT Capital Holdings, Inc."
-    },
-    "PPC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.0,
-        "company_name": "Pryce Corporation"
-    },
-    "ARA": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Araneta Properties, Inc."
-    },
-    "CAB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Concrete Aggregates Corporation B"
-    },
-    "LC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Lepanto Consolidated Mining Co. A"
-    },
-    "JG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Aurora Mobile Ltd"
-    },
-    "LODE": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Lodestar Investment Holdings Corporation"
-    },
-    "PX": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.2,
-        "company_name": "Philex Mining Corporation"
-    },
-    "FDC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.96,
-        "company_name": "Filinvest Development Corporation"
-    },
-    "MBT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 7.33,
-        "company_name": "Metropolitan Bank and Trust Company"
-    },
-    "VVT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 3.12,
-        "company_name": "Vivant Corporation"
-    },
-    "ABA": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.44,
-        "company_name": "AbaCore Capital Holdings, Inc."
-    },
-    "TBGI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Transpacific Broadband Group Inc."
-    },
-    "ACEN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 1.73,
-        "company_name": "ACEN Corporation"
-    },
-    "ZHI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Zeus Holdings, Inc."
-    },
-    "PLDF": {
-        "error": "No Data"
-    },
-    "SECB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.49,
-        "company_name": "Security Bank Corporation"
-    },
-    "MACAY": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Macay Holdings, Inc."
-    },
-    "FOOD": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Alliance Select Foods International, Inc."
-    },
-    "MAB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Manila Mining Corporation &quot;B&quot;"
-    },
-    "ENEX": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "ENEX Energy Corp."
-    },
-    "DFNN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "DFNN, Inc."
-    },
-    "GMA7": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 9.52,
-        "company_name": "GMA Network, Inc."
-    },
-    "LBC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "LBC Express Holdings, Inc."
-    },
-    "MG": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Millenium Global Holdings, Inc."
-    },
-    "CAT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Central Azucarera De Tarlac"
-    },
-    "ICT": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 2.45,
-        "company_name": "Int'l Container Terminal Services, Inc."
-    },
-    "GLO": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 6.4,
-        "company_name": "Globe Telecom, Inc."
-    },
-    "AEV": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.86,
-        "company_name": "Aboitiz Equity Ventures, Inc."
-    },
-    "PHC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Philcomsat Holdings Corporation"
-    },
-    "NRCP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "National Reinsurance Corporation of the Phils"
-    },
-    "COAL": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Coal Asia Holdings, Inc."
-    },
-    "CDC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 6.47,
-        "company_name": "Cityland Development Corporation"
-    },
-    "WEB": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Philweb Corporation"
-    },
-    "GOLD": {
-        "pe_ratio": 30.0,
-        "div_yield": 0.0,
-        "company_name": "Gold"
+        "div_yield": 2.12,
+        "company_name": "Robert Half International Inc."
     },
     "LPZ": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 1.86,
+        "eps": 1.9946,
         "market_cap": 14.0,
         "div_yield": 2.7,
         "company_name": "Lopez Holdings Corporation"
     },
-    "UBP": {
-        "pe_ratio": 30.0,
+    "CPG": {
+        "pe_ratio": 2.83,
+        "eps": 0.2367,
         "market_cap": 14.0,
-        "div_yield": 3.79,
-        "company_name": "Union Bank of the Philippines, Inc."
+        "div_yield": 7.86,
+        "company_name": "Century Properties Group, Inc."
     },
-    "BALAI": {
-        "pe_ratio": 30.0,
+    "EW": {
+        "pe_ratio": 3.07,
+        "eps": 3.7329,
         "market_cap": 14.0,
-        "div_yield": 1.37,
-        "company_name": "Balai Ni Fruitas Inc."
+        "div_yield": 5.93,
+        "company_name": "East West Banking Corporation"
     },
-    "NI": {
-        "pe_ratio": 30.0,
+    "PLDF": {
+        "error": "No Data"
+    },
+    "STN": {
+        "pe_ratio": 44.72,
+        "eps": 0.0461,
         "market_cap": 14.0,
         "div_yield": 0.0,
-        "company_name": "NiHAO Minerals Resources Int'l, Inc."
+        "company_name": "Steniel Manufacturing Corporation"
     },
-    "CYBR": {
-        "pe_ratio": 30.0,
+    "SPNEC": {
+        "pe_ratio": 0.6,
+        "eps": 1.8667,
         "market_cap": 14.0,
         "div_yield": 0.0,
-        "company_name": "Cyber Bay Corporation"
+        "company_name": "SP New Energy Corporation"
     },
-    "DITO": {
-        "pe_ratio": 30.0,
+    "MBT": {
+        "pe_ratio": 6.18,
+        "eps": 11.0437,
+        "market_cap": 14.0,
+        "div_yield": 7.33,
+        "company_name": "Metropolitan Bank and Trust Company"
+    },
+    "PAX": {
+        "pe_ratio": 21.51,
+        "eps": 0.1223,
         "market_cap": 14.0,
         "div_yield": 0.0,
-        "company_name": "DITO CME Holdings Corp."
+        "company_name": "Paxys Inc."
     },
-    "APC": {
-        "pe_ratio": 30.0,
+    "TFHI": {
+        "pe_ratio": 2.28,
+        "eps": 26.7544,
         "market_cap": 14.0,
         "div_yield": 0.0,
-        "company_name": "APC Group, Inc."
+        "company_name": "Top Frontier Investment Holdings, Inc."
     },
-    "LOTO": {
-        "pe_ratio": 30.0,
+    "NOW": {
+        "pe_ratio": 0.57,
+        "eps": 1.2105,
         "market_cap": 14.0,
         "div_yield": 0.0,
-        "company_name": "Pacific Online Systems Corporation"
+        "company_name": "Now Corporation"
     },
-    "LFM": {
-        "pe_ratio": 30.0,
+    "GLO": {
+        "pe_ratio": 10.42,
+        "eps": 150.0,
         "market_cap": 14.0,
-        "div_yield": 19.85,
-        "company_name": "Liberty Flour Mills, Inc."
+        "div_yield": 6.4,
+        "company_name": "Globe Telecom, Inc."
     },
-    "PXP": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Philex Petroleum Corporation"
-    },
-    "SLF": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.25,
-        "company_name": "Sun Life Financial Inc."
-    },
-    "GREEN": {
-        "pe_ratio": 30.0,
+    "GEO": {
+        "pe_ratio": 0.0,
+        "eps": -7500.0,
         "market_cap": 14.0,
         "div_yield": 0.0,
-        "company_name": "Greenergy Holdings, Inc."
+        "company_name": "GEOGRACE Resources Philippines, Inc."
     },
-    "PGOLD": {
-        "pe_ratio": 30.0,
+    "DIZ": {
+        "pe_ratio": 13.6,
+        "eps": 0.35,
         "market_cap": 14.0,
-        "div_yield": 4.52,
-        "company_name": "Puregold Price Club, Inc."
+        "div_yield": 0.0,
+        "company_name": "Dizon Copper-Silver Mines, Inc."
+    },
+    "HLCM": {
+        "pe_ratio": 17.18,
+        "eps": 0.2253,
+        "market_cap": 14.0,
+        "div_yield": 0.0,
+        "company_name": "Holcim Philippines, Inc."
+    },
+    "LR": {
+        "error": "No Data"
+    },
+    "CLX": {
+        "pe_ratio": 30.91,
+        "eps": 3.2734,
+        "market_cap": 14.0,
+        "div_yield": 2.44,
+        "company_name": "Clorox Co."
+    },
+    "MARC": {
+        "pe_ratio": 4.56,
+        "eps": 0.1491,
+        "market_cap": 14.0,
+        "div_yield": 0.0,
+        "company_name": "Marcventures Holdings, Inc."
+    },
+    "BDO": {
+        "pe_ratio": 8.22,
+        "eps": 15.9367,
+        "market_cap": 14.0,
+        "div_yield": 3.28,
+        "company_name": "BDO Unibank, Inc."
+    },
+    "CDC": {
+        "pe_ratio": 4.09,
+        "eps": 0.1418,
+        "market_cap": 14.0,
+        "div_yield": 6.47,
+        "company_name": "Cityland Development Corporation"
+    },
+    "EMP": {
+        "pe_ratio": 4.22,
+        "eps": 5.0095,
+        "market_cap": 14.0,
+        "div_yield": 2.9,
+        "company_name": "Entergy Mississippi Inc"
+    },
+    "ATN": {
+        "company_name": "ATN",
+        "div_yield": 0.0,
+        "pe_ratio": 321.22,
+        "market_cap": 14.0,
+        "eps": 0.0015
+    },
+    "PHC": {
+        "company_name": "PHC: 1.87 (",
+        "div_yield": 0.0,
+        "pe_ratio": 201.6,
+        "market_cap": 14.0,
+        "eps": 0.0093
+    },
+    "MJIC": {
+        "company_name": "MJIC",
+        "div_yield": 0.0,
+        "pe_ratio": 3.47,
+        "market_cap": 14.0,
+        "eps": 0.2882
+    },
+    "UPM": {
+        "company_name": "UPM",
+        "div_yield": 0.0,
+        "pe_ratio": 31.48,
+        "market_cap": 14.0,
+        "eps": 0.0002
+    },
+    "HOUSE": {
+        "company_name": "HOUSE",
+        "div_yield": 0.0,
+        "pe_ratio": 10.04,
+        "market_cap": 14.0,
+        "eps": 1.0378
     },
     "APO": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
+        "company_name": "APO",
         "div_yield": 0.0,
-        "company_name": "Anglo Philippine Holdings Corporation"
-    },
-    "ALLHC": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 0.25,
         "market_cap": 14.0,
+        "eps": 2.6
+    },
+    "CEB": {
+        "company_name": "CEB: 31.95 (",
         "div_yield": 0.0,
-        "company_name": "AyalaLand Logistics Holdings Corp."
-    },
-    "PNX": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 1.72,
         "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Phoenix Petroleum Philippines, Inc."
+        "eps": 18.5756
     },
-    "COSCO": {
-        "pe_ratio": 30.0,
+    "OPM": {
+        "company_name": "OPM",
+        "div_yield": 4.55,
+        "pe_ratio": 1100.0,
         "market_cap": 14.0,
-        "div_yield": 5.67,
-        "company_name": "Cosco Capital, Inc."
+        "eps": 0.0,
+        "div_amount": 0.0005
     },
-    "DWC": {
-        "pe_ratio": 30.0,
+    "ANS": {
+        "company_name": "ANS",
+        "div_yield": 5.36,
+        "pe_ratio": 12.03,
         "market_cap": 14.0,
-        "div_yield": 0.0,
-        "company_name": "Discovery World Corporation"
-    },
-    "GSMI": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 5.52,
-        "company_name": "Ginebra San Miguel, Inc."
-    },
-    "URC": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 6.49,
-        "company_name": "Universal Robina Corporation"
-    },
-    "FGEN": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.44,
-        "company_name": "First Gen Corporation"
+        "eps": 1.1621,
+        "div_amount": 0.7493
     },
     "PRMX": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
+        "company_name": "PRMX",
         "div_yield": 0.0,
-        "company_name": "Primex Corporation"
-    },
-    "TEL": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 1.26,
         "market_cap": 14.0,
-        "div_yield": 7.47,
-        "company_name": "PLDT, Inc."
+        "eps": 0.873
     },
-    "BEL": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
-        "div_yield": 4.48,
-        "company_name": "Belle Corporation"
-    },
-    "DD": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
+    "PPR": {
+        "company_name": "PPR",
         "div_yield": 0.0,
-        "company_name": "DoubleDragon Corporation"
-    },
-    "AGI": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 0.0,
         "market_cap": 14.0,
-        "div_yield": 1.38,
-        "company_name": "Alliance Global Group, Inc."
+        "eps": 0.0
     },
-    "MONDE": {
-        "pe_ratio": 30.0,
+    "PXP": {
+        "company_name": "PXP: 2.39 (",
+        "div_yield": 0.0,
+        "pe_ratio": 2.23,
         "market_cap": 14.0,
-        "div_yield": 5.28,
-        "company_name": "Monde Nissin Corporation"
+        "eps": 1.0717
+    },
+    "GMA7": {
+        "company_name": "GMA7: 5.25 (",
+        "div_yield": 9.52,
+        "pe_ratio": 6.49,
+        "market_cap": 14.0,
+        "eps": 0.8089,
+        "div_amount": 0.4998
+    },
+    "CHP": {
+        "company_name": "CHP",
+        "div_yield": 0.0,
+        "pe_ratio": 1.01,
+        "market_cap": 14.0,
+        "eps": 1.0792
+    },
+    "MFIN": {
+        "company_name": "MFIN",
+        "div_yield": 0.49,
+        "pe_ratio": 21.9,
+        "market_cap": 14.0,
+        "eps": 0.0735,
+        "div_amount": 0.0079
+    },
+    "SLI": {
+        "company_name": "SLI",
+        "div_yield": 3.27,
+        "pe_ratio": 6.8,
+        "market_cap": 14.0,
+        "eps": 0.3603,
+        "div_amount": 0.0801
     },
     "BCOR": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
+        "company_name": "BCOR",
         "div_yield": 0.0,
-        "company_name": "Berjaya Philippines, Inc."
-    },
-    "MED": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 2807.02,
         "market_cap": 14.0,
+        "eps": 0.0028
+    },
+    "MER": {
+        "company_name": "MER",
+        "div_yield": 4.2,
+        "pe_ratio": 13.75,
+        "market_cap": 14.0,
+        "eps": 43.4182,
+        "div_amount": 25.074
+    },
+    "HI": {
+        "company_name": "HI",
+        "div_yield": 4.09,
+        "pe_ratio": 2.81,
+        "market_cap": 14.0,
+        "eps": 1.5658,
+        "div_amount": 0.18
+    },
+    "PHA": {
+        "company_name": "PHA",
         "div_yield": 0.0,
-        "company_name": "MEDCO Holdings, Inc."
-    },
-    "VLL": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 7114.29,
         "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "OM": {
+        "company_name": "OM",
         "div_yield": 0.0,
-        "company_name": "Vista Land &amp; Lifescapes, Inc."
-    },
-    "AP": {
-        "pe_ratio": 30.0,
+        "pe_ratio": 70.66,
         "market_cap": 14.0,
-        "div_yield": 5.38,
-        "company_name": "Aboitiz Power Corporation"
+        "eps": 0.0015
     },
-    "V": {
-        "pe_ratio": 30.0,
+    "ACE": {
+        "company_name": "ACE",
+        "div_yield": 0.0,
+        "pe_ratio": 0.25,
         "market_cap": 14.0,
-        "div_yield": 33.65,
-        "company_name": "Vantage Equities, Inc."
+        "eps": 4.8
+    },
+    "BC": {
+        "company_name": "BC: 4.40 (",
+        "div_yield": 0.0,
+        "pe_ratio": 4.02,
+        "market_cap": 14.0,
+        "eps": 1.0945
+    },
+    "KPH": {
+        "company_name": "KPH",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "SECB": {
+        "company_name": "SECB: 66.85 (",
+        "div_yield": 4.49,
+        "pe_ratio": 4.25,
+        "market_cap": 14.0,
+        "eps": 15.7294,
+        "div_amount": 3.0016
+    },
+    "LAND": {
+        "company_name": "LAND",
+        "div_yield": 5.77,
+        "pe_ratio": 5.65,
+        "market_cap": 14.0,
+        "eps": 0.092,
+        "div_amount": 0.03
+    },
+    "BMM": {
+        "company_name": "BMM",
+        "div_yield": 0.0,
+        "pe_ratio": 1.75,
+        "market_cap": 14.0,
+        "eps": 29.7143
+    },
+    "SSI": {
+        "company_name": "SSI: 2.56 (",
+        "div_yield": 5.98,
+        "pe_ratio": 4.46,
+        "market_cap": 14.0,
+        "eps": 0.574,
+        "div_amount": 0.1531
+    },
+    "COSCO": {
+        "company_name": "COSCO",
+        "div_yield": 5.67,
+        "pe_ratio": 5.06,
+        "market_cap": 14.0,
+        "eps": 1.3814,
+        "div_amount": 0.3963
+    },
+    "PA": {
+        "company_name": "PA",
+        "div_yield": 0.0,
+        "pe_ratio": 0.69,
+        "market_cap": 14.0,
+        "eps": 1.4493
+    },
+    "WEB": {
+        "company_name": "WEB: 5.81 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.27,
+        "market_cap": 14.0,
+        "eps": 21.5185
+    },
+    "CAT": {
+        "company_name": "CAT",
+        "div_yield": 0.0,
+        "pe_ratio": 5.31,
+        "market_cap": 14.0,
+        "eps": 2.0075
+    },
+    "IRC": {
+        "company_name": "IRC",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "FRUIT": {
+        "company_name": "FRUIT",
+        "div_yield": 1.56,
+        "pe_ratio": 14.1,
+        "market_cap": 14.0,
+        "eps": 0.0454,
+        "div_amount": 0.01
+    },
+    "GOLD": {
+        "company_name": "GOLD",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "eps": 0.0
+    },
+    "IPM": {
+        "company_name": "IPM: 1.39 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.72,
+        "market_cap": 14.0,
+        "eps": 1.9306
+    },
+    "TOP": {
+        "company_name": "TOP: 1.61 (",
+        "div_yield": 0.33,
+        "pe_ratio": 161.0,
+        "market_cap": 14.0,
+        "eps": 0.01,
+        "div_amount": 0.0053
+    },
+    "LSC": {
+        "company_name": "LSC",
+        "div_yield": 0.0,
+        "pe_ratio": 8.0,
+        "market_cap": 14.0,
+        "eps": 0.08
+    },
+    "FOOD": {
+        "company_name": "FOOD",
+        "div_yield": 0.0,
+        "pe_ratio": 0.64,
+        "market_cap": 14.0,
+        "eps": 0.5781
+    },
+    "BALAI": {
+        "company_name": "BALAI",
+        "div_yield": 1.37,
+        "pe_ratio": 7.88,
+        "market_cap": 14.0,
+        "eps": 0.0463,
+        "div_amount": 0.005
+    },
+    "PSB": {
+        "company_name": "PSB: 55.00 (",
+        "div_yield": 5.45,
+        "pe_ratio": 5.79,
+        "market_cap": 14.0,
+        "eps": 9.4991,
+        "div_amount": 2.9975
+    },
+    "PPC": {
+        "company_name": "PPC",
+        "div_yield": 4.0,
+        "pe_ratio": 6.84,
+        "market_cap": 14.0,
+        "eps": 1.9006,
+        "div_amount": 0.52
+    },
+    "AC": {
+        "company_name": "AC",
+        "div_yield": 1.96,
+        "pe_ratio": 5.38,
+        "market_cap": 14.0,
+        "eps": 87.1747,
+        "div_amount": 9.1924
+    },
+    "ZHI": {
+        "company_name": "ZHI",
+        "div_yield": 0.0,
+        "pe_ratio": 1.42,
+        "market_cap": 14.0,
+        "eps": 0.0444
+    },
+    "SCC": {
+        "company_name": "SCC: 28.00 (",
+        "div_yield": 11.61,
+        "pe_ratio": 8.61,
+        "market_cap": 14.0,
+        "eps": 3.252,
+        "div_amount": 3.2508
+    },
+    "TBGI": {
+        "company_name": "TBGI",
+        "div_yield": 0.0,
+        "pe_ratio": 276.47,
+        "market_cap": 14.0,
+        "eps": 0.0005
+    },
+    "MPI": {
+        "company_name": "MPI",
+        "div_yield": 0.0,
+        "pe_ratio": 13.3,
+        "market_cap": 14.0,
+        "eps": 0.3895
+    },
+    "RCBC": {
+        "company_name": "RCBC: 145.00 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "NRCP": {
+        "company_name": "NRCP",
+        "div_yield": 0.0,
+        "pe_ratio": 2.07,
+        "market_cap": 14.0,
+        "eps": 0.3575
+    },
+    "TPC": {
+        "company_name": "TPC: 67.52 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": -49.97
+    },
+    "MWC": {
+        "company_name": "MWC",
+        "div_yield": 4.49,
+        "pe_ratio": 8.16,
+        "market_cap": 14.0,
+        "eps": 5.0245,
+        "div_amount": 1.8409
+    },
+    "BRN": {
+        "company_name": "BRN",
+        "div_yield": 2.5,
+        "pe_ratio": 1.29,
+        "market_cap": 14.0,
+        "eps": 0.7752,
+        "div_amount": 0.025
+    },
+    "RLC": {
+        "company_name": "RLC: 16.06 (",
+        "div_yield": 4.67,
+        "pe_ratio": 5.78,
+        "market_cap": 14.0,
+        "eps": 2.7785,
+        "div_amount": 0.75
+    },
+    "FLI": {
+        "company_name": "FLI",
+        "div_yield": 6.67,
+        "pe_ratio": 3.97,
+        "market_cap": 14.0,
+        "eps": 0.1889,
+        "div_amount": 0.05
+    },
+    "SUN": {
+        "company_name": "SUN",
+        "div_yield": 0.0,
+        "pe_ratio": 9.21,
+        "market_cap": 14.0,
+        "eps": 0.0684
+    },
+    "WIN": {
+        "company_name": "WIN",
+        "div_yield": 0.0,
+        "pe_ratio": 5.22,
+        "market_cap": 14.0,
+        "eps": 0.0594
+    },
+    "FILRT": {
+        "company_name": "FILRT",
+        "div_yield": 8.13,
+        "pe_ratio": 9.23,
+        "market_cap": 14.0,
+        "eps": 0.3239,
+        "div_amount": 0.2431
+    },
+    "AEV": {
+        "company_name": "AEV: 26.30 (",
+        "div_yield": 5.86,
+        "pe_ratio": 8.75,
+        "market_cap": 14.0,
+        "eps": 3.0057,
+        "div_amount": 1.5412
+    },
+    "AUB": {
+        "company_name": "AUB",
+        "div_yield": 5.13,
+        "pe_ratio": 2.7,
+        "market_cap": 14.0,
+        "eps": 14.4259,
+        "div_amount": 1.9981
+    },
+    "CNVRG": {
+        "company_name": "CNVRG",
+        "div_yield": 2.8,
+        "pe_ratio": 9.7,
+        "market_cap": 14.0,
+        "eps": 1.5835,
+        "div_amount": 0.4301
+    },
+    "POPI": {
+        "company_name": "POPI"
+    },
+    "WLCON": {
+        "company_name": "WLCON",
+        "div_yield": 5.14,
+        "pe_ratio": 12.61,
+        "market_cap": 14.0,
+        "eps": 0.5551,
+        "div_amount": 0.3598
+    },
+    "LOTO": {
+        "company_name": "LOTO: 1.72 (",
+        "div_yield": 0.0,
+        "pe_ratio": 46.76,
+        "market_cap": 14.0,
+        "eps": 0.0368
+    },
+    "FNI": {
+        "company_name": "FNI: 1.15 (",
+        "div_yield": 0.0,
+        "pe_ratio": 3.39,
+        "market_cap": 14.0,
+        "eps": 0.3392
+    },
+    "MVC": {
+        "company_name": "MVC",
+        "div_yield": 1.95,
+        "pe_ratio": 25.58,
+        "market_cap": 14.0,
+        "eps": 0.2009,
+        "div_amount": 0.1002
+    },
+    "BPI": {
+        "company_name": "BPI: 120.00 (",
+        "div_yield": 3.63,
+        "pe_ratio": 9.81,
+        "market_cap": 14.0,
+        "eps": 12.2324,
+        "div_amount": 4.356
+    },
+    "JOH": {
+        "company_name": "JOH: 4.39 (",
+        "div_yield": 0.0,
+        "pe_ratio": 8.64,
+        "market_cap": 14.0,
+        "eps": 0.5081
+    },
+    "MAH": {
+        "company_name": "MAH",
+        "div_yield": 0.0,
+        "pe_ratio": 11.25,
+        "market_cap": 14.0,
+        "eps": 0.04
+    },
+    "AXLM": {
+        "company_name": "AXLM",
+        "div_yield": 2.34,
+        "pe_ratio": 8.47,
+        "market_cap": 14.0,
+        "eps": 0.2597,
+        "div_amount": 0.0515
+    },
+    "PTT": {
+        "company_name": "PTT",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "ALLHC": {
+        "company_name": "ALLHC",
+        "div_yield": 0.0,
+        "pe_ratio": 54.59,
+        "market_cap": 14.0,
+        "eps": 0.0244
+    },
+    "ALCO": {
+        "company_name": "ALCO: 0.4100 (",
+        "div_yield": 2.93,
+        "pe_ratio": 7.17,
+        "market_cap": 14.0,
+        "eps": 0.0572,
+        "div_amount": 0.012
+    },
+    "ENEX": {
+        "company_name": "ENEX",
+        "div_yield": 0.0,
+        "pe_ratio": 14.21,
+        "market_cap": 14.0,
+        "eps": 0.24
+    },
+    "PHES": {
+        "company_name": "PHES",
+        "div_yield": 0.0,
+        "pe_ratio": 2.84,
+        "market_cap": 14.0,
+        "eps": 0.1127
+    },
+    "GREEN": {
+        "company_name": "GREEN",
+        "div_yield": 0.0,
+        "pe_ratio": 0.33,
+        "market_cap": 14.0,
+        "eps": 0.5788
+    },
+    "ROCK": {
+        "company_name": "ROCK",
+        "div_yield": 7.09,
+        "pe_ratio": 2.71,
+        "market_cap": 14.0,
+        "eps": 0.631,
+        "div_amount": 0.1212
+    },
+    "HVN": {
+        "company_name": "HVN",
+        "div_yield": 0.0,
+        "pe_ratio": 358.0,
+        "market_cap": 14.0,
+        "eps": 2.7821
+    },
+    "TEL": {
+        "company_name": "TEL: 1,272.00 (",
+        "div_yield": 7.47,
+        "pe_ratio": 9.38,
+        "market_cap": 14.0,
+        "eps": 135.6077,
+        "div_amount": 95.0184
+    },
+    "DMC": {
+        "company_name": "DMC: 10.22 (",
+        "div_yield": 10.57,
+        "pe_ratio": 8.68,
+        "market_cap": 14.0,
+        "eps": 1.1774,
+        "div_amount": 1.0803
+    },
+    "AGI": {
+        "company_name": "AGI",
+        "div_yield": 1.38,
+        "pe_ratio": 2.95,
+        "market_cap": 14.0,
+        "eps": 2.461,
+        "div_amount": 0.1002
+    },
+    "CEI": {
+        "company_name": "CEI",
+        "div_yield": 0.0,
+        "pe_ratio": 45.48,
+        "market_cap": 14.0,
+        "eps": 0.0017
+    },
+    "SHNG": {
+        "company_name": "SHNG: 3.39 (",
+        "div_yield": 8.1,
+        "pe_ratio": 0.31,
+        "market_cap": 14.0,
+        "eps": 10.9355,
+        "div_amount": 0.2746
+    },
+    "MRSGI": {
+        "company_name": "MRSGI",
+        "div_yield": 10.34,
+        "pe_ratio": 6.08,
+        "market_cap": 14.0,
+        "eps": 0.1908,
+        "div_amount": 0.1199
+    },
+    "DNL": {
+        "company_name": "DNL: 3.67 (",
+        "div_yield": 5.8,
+        "pe_ratio": 10.56,
+        "market_cap": 14.0,
+        "eps": 0.3475,
+        "div_amount": 0.2129
     },
     "JAS": {
-        "pe_ratio": 30.0,
-        "market_cap": 14.0,
+        "company_name": "JAS",
         "div_yield": 0.0,
-        "company_name": "Jackstones, Inc."
+        "pe_ratio": 5.17,
+        "market_cap": 14.0,
+        "eps": 0.2998
+    },
+    "MB": {
+        "company_name": "MB",
+        "div_yield": 0.0,
+        "pe_ratio": 90.55,
+        "market_cap": 14.0,
+        "eps": 0.002
+    },
+    "SHLPH": {
+        "company_name": "SHLPH: 6.00 (",
+        "div_yield": 0.0,
+        "pe_ratio": 6.15,
+        "market_cap": 14.0,
+        "eps": 0.9756
+    },
+    "EURO": {
+        "company_name": "EURO",
+        "div_yield": 7.0,
+        "pe_ratio": 10.99,
+        "market_cap": 14.0,
+        "eps": 0.091,
+        "div_amount": 0.07
+    },
+    "VUL": {
+        "company_name": "VUL"
+    },
+    "AREIT": {
+        "company_name": "AREIT: 42.75 (",
+        "div_yield": 5.54,
+        "pe_ratio": 15.47,
+        "market_cap": 14.0,
+        "eps": 2.7634,
+        "div_amount": 2.3683
+    },
+    "DITO": {
+        "company_name": "DITO",
+        "div_yield": 0.0,
+        "pe_ratio": 0.06,
+        "market_cap": 14.0,
+        "eps": 11.3333
+    },
+    "IS": {
+        "company_name": "IS: 0.1270 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.01,
+        "market_cap": 14.0,
+        "eps": 12.7
+    },
+    "TFC": {
+        "company_name": "TFC",
+        "div_yield": 5.54,
+        "pe_ratio": 12.93,
+        "market_cap": 14.0,
+        "eps": 3.488,
+        "div_amount": 2.4985
+    },
+    "MA": {
+        "company_name": "MA: 0.0070 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.7,
+        "market_cap": 14.0,
+        "eps": 0.01
+    },
+    "OV": {
+        "company_name": "OV",
+        "div_yield": 0.0,
+        "pe_ratio": 0.89,
+        "market_cap": 14.0,
+        "eps": 0.01
+    },
+    "ALI": {
+        "company_name": "ALI: 22.65 (",
+        "div_yield": 2.57,
+        "pe_ratio": 11.62,
+        "market_cap": 14.0,
+        "eps": 1.9492,
+        "div_amount": 0.5821
+    },
+    "CLI": {
+        "company_name": "CLI",
+        "div_yield": 7.63,
+        "pe_ratio": 2.84,
+        "market_cap": 14.0,
+        "eps": 0.831,
+        "div_amount": 0.1801
+    },
+    "PHR": {
+        "company_name": "PHR",
+        "div_yield": 0.0,
+        "pe_ratio": 0.01,
+        "market_cap": 14.0,
+        "eps": 15.3
+    },
+    "SSP": {
+        "company_name": "SSP",
+        "div_yield": 0.0,
+        "pe_ratio": 0.01,
+        "market_cap": 14.0,
+        "eps": 157.0
+    },
+    "RCR": {
+        "company_name": "RCR: 7.96 (",
+        "div_yield": 5.23,
+        "pe_ratio": 18.14,
+        "market_cap": 14.0,
+        "eps": 0.4388,
+        "div_amount": 0.4163
+    },
+    "MV": {
+        "company_name": "MV"
+    },
+    "DFNN": {
+        "company_name": "DFNN",
+        "div_yield": 0.0,
+        "pe_ratio": 0.43,
+        "market_cap": 14.0,
+        "eps": 1.9302
+    },
+    "SPL": {
+        "company_name": "SPL"
+    },
+    "AP": {
+        "company_name": "AP: 43.70 (",
+        "div_yield": 5.38,
+        "pe_ratio": 10.52,
+        "market_cap": 14.0,
+        "eps": 4.154,
+        "div_amount": 2.3511
+    },
+    "MONDE": {
+        "company_name": "MONDE: 5.87 (",
+        "div_yield": 5.28,
+        "pe_ratio": 101.98,
+        "market_cap": 14.0,
+        "eps": 0.0576,
+        "div_amount": 0.3099
+    },
+    "MED": {
+        "company_name": "MED",
+        "div_yield": 0.0,
+        "pe_ratio": 10.4,
+        "market_cap": 14.0,
+        "eps": 0.01
+    },
+    "COL": {
+        "company_name": "COL: 1.35 (",
+        "div_yield": 4.07,
+        "pe_ratio": 16.11,
+        "market_cap": 14.0,
+        "eps": 0.0838,
+        "div_amount": 0.0549
+    },
+    "LTG": {
+        "company_name": "LTG",
+        "div_yield": 8.7,
+        "pe_ratio": 4.91,
+        "market_cap": 14.0,
+        "eps": 2.9246,
+        "div_amount": 1.2493
+    },
+    "JFC": {
+        "company_name": "JFC: 187.30 (",
+        "div_yield": 1.84,
+        "pe_ratio": 19.98,
+        "market_cap": 14.0,
+        "eps": 9.3744,
+        "div_amount": 3.4463
+    },
+    "CROWN": {
+        "company_name": "CROWN",
+        "div_yield": 5.99,
+        "pe_ratio": 7.14,
+        "market_cap": 14.0,
+        "eps": 0.2339,
+        "div_amount": 0.1
+    },
+    "ICT": {
+        "company_name": "ICT",
+        "div_yield": 2.45,
+        "pe_ratio": 20.68,
+        "market_cap": 14.0,
+        "eps": 27.9014,
+        "div_amount": 14.1365
+    },
+    "RCI": {
+        "company_name": "RCI",
+        "div_yield": 0.0,
+        "pe_ratio": 0.57,
+        "market_cap": 14.0,
+        "eps": 4.9649
+    },
+    "APL": {
+        "company_name": "APL: 0.0060 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.6,
+        "market_cap": 14.0,
+        "eps": 0.01
+    },
+    "FEU": {
+        "company_name": "FEU",
+        "div_yield": 4.0,
+        "pe_ratio": 9.24,
+        "market_cap": 14.0,
+        "eps": 86.5801,
+        "div_amount": 32.0
+    },
+    "PCOR": {
+        "company_name": "PCOR",
+        "div_yield": 4.22,
+        "pe_ratio": 2.01,
+        "market_cap": 14.0,
+        "eps": 1.1791,
+        "div_amount": 0.1
+    },
+    "SMC2I": {
+        "company_name": "SMC2I",
+        "div_yield": 6.29,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0,
+        "div_amount": 4.7552
+    },
+    "BLOOM": {
+        "company_name": "BLOOM: 2.64 (",
+        "div_yield": 3.21,
+        "pe_ratio": 0.45,
+        "market_cap": 14.0,
+        "eps": 5.8667,
+        "div_amount": 0.0847
+    },
+    "MHC": {
+        "company_name": "MHC: 0.1060 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.29,
+        "market_cap": 14.0,
+        "eps": 0.3655
+    },
+    "RFM": {
+        "company_name": "RFM",
+        "div_yield": 8.3,
+        "pe_ratio": 10.06,
+        "market_cap": 14.0,
+        "eps": 0.4622,
+        "div_amount": 0.386
+    },
+    "ARA": {
+        "company_name": "ARA: 0.4250 (",
+        "div_yield": 0.0,
+        "pe_ratio": 7.37,
+        "market_cap": 14.0,
+        "eps": 0.0577
+    },
+    "LMG": {
+        "company_name": "LMG",
+        "div_yield": 0.0,
+        "pe_ratio": 482.63,
+        "market_cap": 14.0,
+        "eps": 0.0005
+    },
+    "BSC": {
+        "company_name": "BSC: 0.1160 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.23,
+        "market_cap": 14.0,
+        "eps": 0.5043
+    },
+    "ATNB": {
+        "company_name": "ATNB",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "CNPF": {
+        "company_name": "CNPF",
+        "div_yield": 2.81,
+        "pe_ratio": 20.23,
+        "market_cap": 14.0,
+        "eps": 1.9328,
+        "div_amount": 1.0987
+    },
+    "PRIM": {
+        "company_name": "PRIM: 1.10 (",
+        "div_yield": 0.0,
+        "pe_ratio": 2.24,
+        "market_cap": 14.0,
+        "eps": 0.4911
+    },
+    "STI": {
+        "company_name": "STI: 1.40 (",
+        "div_yield": 3.93,
+        "pe_ratio": 5.46,
+        "market_cap": 14.0,
+        "eps": 0.2564,
+        "div_amount": 0.055
+    },
+    "ROX": {
+        "company_name": "ROX",
+        "div_yield": 0.0,
+        "pe_ratio": 1.0,
+        "market_cap": 14.0,
+        "eps": 1.45
+    },
+    "TECH": {
+        "company_name": "TECH",
+        "div_yield": 0.0,
+        "pe_ratio": 9.43,
+        "market_cap": 14.0,
+        "eps": 0.0668
+    },
+    "WPP": {
+        "company_name": "WPP",
+        "div_yield": 0.0,
+        "pe_ratio": 8.83,
+        "market_cap": 14.0,
+        "eps": 2.5595
+    },
+    "GTCAP": {
+        "company_name": "GTCAP: 575.00 (",
+        "div_yield": 1.39,
+        "pe_ratio": 3.74,
+        "market_cap": 14.0,
+        "eps": 153.7433,
+        "div_amount": 7.9925
+    },
+    "VVT": {
+        "company_name": "VVT",
+        "div_yield": 3.12,
+        "pe_ratio": 6.56,
+        "market_cap": 14.0,
+        "eps": 2.811,
+        "div_amount": 0.5753
+    },
+    "PMPC": {
+        "company_name": "PMPC",
+        "div_yield": 6.95,
+        "pe_ratio": 3.45,
+        "market_cap": 14.0,
+        "eps": 3.0841,
+        "div_amount": 0.7395
+    },
+    "AT": {
+        "company_name": "AT: 5.60 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.43,
+        "market_cap": 14.0,
+        "eps": 13.0233
+    },
+    "IMI": {
+        "company_name": "IMI",
+        "div_yield": 0.0,
+        "pe_ratio": 0.5,
+        "market_cap": 14.0,
+        "eps": 6.94
+    },
+    "KEP": {
+        "company_name": "KEP",
+        "div_yield": 0.0,
+        "pe_ratio": 1.47,
+        "market_cap": 14.0,
+        "eps": 1.6803
+    },
+    "ORE": {
+        "company_name": "ORE",
+        "div_yield": 0.0,
+        "pe_ratio": 0.16,
+        "market_cap": 14.0,
+        "eps": 2.4375
     },
     "MREIT": {
+        "company_name": "MREIT: 13.88 (",
+        "div_yield": 7.22,
+        "pe_ratio": 11.06,
+        "market_cap": 14.0,
+        "eps": 1.255,
+        "div_amount": 1.0021
+    },
+    "PIZZA": {
+        "company_name": "PIZZA: 6.60 (",
+        "div_yield": 3.03,
+        "pe_ratio": 10.17,
+        "market_cap": 14.0,
+        "eps": 0.649,
+        "div_amount": 0.2
+    },
+    "LC": {
+        "company_name": "LC",
+        "div_yield": 0.0,
+        "pe_ratio": 7.07,
+        "market_cap": 14.0,
+        "eps": 0.0252
+    },
+    "COAL": {
+        "company_name": "COAL",
+        "div_yield": 0.0,
+        "pe_ratio": 0.5,
+        "market_cap": 14.0,
+        "eps": 0.06
+    },
+    "SMPH": {
+        "company_name": "SMPH: 23.10 (",
+        "div_yield": 2.08,
+        "pe_ratio": 13.61,
+        "market_cap": 14.0,
+        "eps": 1.6973,
+        "div_amount": 0.4805
+    },
+    "PX": {
+        "company_name": "PX: 9.90 (",
+        "div_yield": 0.2,
+        "pe_ratio": 87.27,
+        "market_cap": 14.0,
+        "eps": 0.1134,
+        "div_amount": 0.0198
+    },
+    "FPH": {
+        "company_name": "FPH",
+        "div_yield": 3.01,
+        "pe_ratio": 2.09,
+        "market_cap": 14.0,
+        "eps": 34.9282,
+        "div_amount": 2.1973
+    },
+    "SEVN": {
+        "company_name": "SEVN",
+        "div_yield": 2.78,
+        "pe_ratio": 15.08,
+        "market_cap": 14.0,
+        "eps": 2.3873,
+        "div_amount": 1.0008
+    },
+    "PNX": {
+        "company_name": "PNX: 4.17 (",
+        "div_yield": 0.0,
+        "pe_ratio": 2.12,
+        "market_cap": 14.0,
+        "eps": 1.967
+    },
+    "SPC": {
+        "company_name": "SPC",
+        "div_yield": 11.03,
+        "pe_ratio": 7.25,
+        "market_cap": 14.0,
+        "eps": 1.5007,
+        "div_amount": 1.2001
+    },
+    "PHN": {
+        "company_name": "PHN",
+        "div_yield": 3.66,
+        "pe_ratio": 48.13,
+        "market_cap": 14.0,
+        "eps": 0.3407,
+        "div_amount": 0.6002
+    },
+    "GSMI": {
+        "company_name": "GSMI: 290.00 (",
+        "div_yield": 5.52,
+        "pe_ratio": 10.27,
+        "market_cap": 14.0,
+        "eps": 28.2376,
+        "div_amount": 16.008
+    },
+    "PGOLD": {
+        "company_name": "PGOLD",
+        "div_yield": 4.52,
+        "pe_ratio": 10.66,
+        "market_cap": 14.0,
+        "eps": 3.7523,
+        "div_amount": 1.808
+    },
+    "MEG": {
+        "company_name": "MEG",
+        "div_yield": 4.65,
+        "pe_ratio": 3.14,
+        "market_cap": 14.0,
+        "eps": 0.6433,
+        "div_amount": 0.0939
+    },
+    "DWC": {
+        "company_name": "DWC",
+        "div_yield": 0.0,
+        "pe_ratio": 0.18,
+        "market_cap": 14.0,
+        "eps": 5.9444
+    },
+    "JG": {
+        "company_name": "JG: 6.74 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": -5.67
+    },
+    "FDC": {
+        "company_name": "FDC: 4.74 (",
+        "div_yield": 2.96,
+        "pe_ratio": 2.89,
+        "market_cap": 14.0,
+        "eps": 1.6401,
+        "div_amount": 0.1403
+    },
+    "SMC": {
+        "company_name": "SMC",
+        "div_yield": 1.67,
+        "pe_ratio": 7.47,
+        "market_cap": 14.0,
+        "eps": 11.245,
+        "div_amount": 1.4028
+    },
+    "BHI": {
+        "company_name": "BHI",
+        "div_yield": 0.0,
+        "pe_ratio": 0.26,
+        "market_cap": 14.0,
+        "eps": 0.15
+    },
+    "C": {
+        "company_name": "C: 0.95 (",
+        "div_yield": 0.0,
+        "pe_ratio": 2.79,
+        "market_cap": 14.0,
+        "eps": 0.3405
+    },
+    "SLF": {
+        "company_name": "SLF",
+        "div_yield": 4.25,
+        "pe_ratio": 10.79,
+        "market_cap": 14.0,
+        "eps": 315.1066,
+        "div_amount": 144.5
+    },
+    "SFI": {
+        "company_name": "SFI",
+        "div_yield": 0.0,
+        "pe_ratio": 1.97,
+        "market_cap": 14.0,
+        "eps": 0.0284
+    },
+    "SRA": {
+        "company_name": "SRA"
+    },
+    "VITA": {
+        "company_name": "VITA",
+        "div_yield": 0.0,
+        "pe_ratio": 29.82,
+        "market_cap": 14.0,
+        "eps": 0.0184
+    },
+    "MAC": {
+        "company_name": "MAC: 4.48 (",
+        "div_yield": 2.46,
+        "pe_ratio": 7.25,
+        "market_cap": 14.0,
+        "eps": 0.6179,
+        "div_amount": 0.1102
+    },
+    "LFM": {
+        "company_name": "LFM: 34.25 (",
+        "div_yield": 19.85,
+        "pe_ratio": 12.04,
+        "market_cap": 14.0,
+        "eps": 2.8447,
+        "div_amount": 6.7986
+    },
+    "CREIT": {
+        "company_name": "CREIT: 3.57 (",
+        "div_yield": 5.66,
+        "pe_ratio": 16.41,
+        "market_cap": 14.0,
+        "eps": 0.2176,
+        "div_amount": 0.2021
+    },
+    "STR": {
+        "company_name": "STR: 1.12 (",
+        "div_yield": 0.0,
+        "pe_ratio": 1.28,
+        "market_cap": 14.0,
+        "eps": 0.875
+    },
+    "BEL": {
+        "company_name": "BEL: 1.34 (",
+        "div_yield": 4.48,
+        "pe_ratio": 5.86,
+        "market_cap": 14.0,
+        "eps": 0.2287,
+        "div_amount": 0.06
+    },
+    "DD": {
+        "company_name": "DD: 9.14 (",
+        "div_yield": 0.0,
+        "pe_ratio": 5.39,
+        "market_cap": 14.0,
+        "eps": 1.6957
+    },
+    "EC": {
+        "company_name": "EC",
+        "div_yield": 5.58,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0,
+        "div_amount": 0.5234
+    },
+    "PRF": {
+        "company_name": "PRF: 46.81 (",
+        "div_yield": 0.4,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0,
+        "div_amount": 0.1872
+    },
+    "ALHI": {
+        "company_name": "ALHI",
+        "div_yield": 1.03,
+        "pe_ratio": 7.29,
+        "market_cap": 14.0,
+        "eps": 0.5309,
+        "div_amount": 0.0399
+    },
+    "FB": {
+        "company_name": "FB: 54.00 (",
+        "div_yield": 5.65,
+        "pe_ratio": 11.18,
+        "market_cap": 14.0,
+        "eps": 4.8301,
+        "div_amount": 3.051
+    },
+    "S": {
+        "company_name": "S: 0.0792 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "ABG": {
+        "company_name": "ABG",
+        "div_yield": 0.0,
         "pe_ratio": 30.0,
         "market_cap": 14.0,
-        "div_yield": 7.22,
-        "company_name": "MREIT, Inc."
+        "eps": 0.82
+    },
+    "VLL": {
+        "company_name": "VLL",
+        "div_yield": 0.0,
+        "pe_ratio": 1.43,
+        "market_cap": 14.0,
+        "eps": 0.6434
+    },
+    "RRHI": {
+        "company_name": "RRHI",
+        "div_yield": 5.99,
+        "pe_ratio": 7.56,
+        "market_cap": 14.0,
+        "eps": 4.418,
+        "div_amount": 2.0007
+    },
+    "V": {
+        "company_name": "V",
+        "div_yield": 33.65,
+        "pe_ratio": 19.9,
+        "market_cap": 14.0,
+        "eps": 0.0523,
+        "div_amount": 0.35
+    },
+    "KPS": {
+        "company_name": "KPS"
+    },
+    "EEI": {
+        "company_name": "EEI",
+        "div_yield": 0.0,
+        "pe_ratio": 0.98,
+        "market_cap": 14.0,
+        "eps": 2.7245
+    },
+    "EVER": {
+        "company_name": "EVER: 26.84 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": -38.91
+    },
+    "DDMPR": {
+        "company_name": "DDMPR",
+        "div_yield": 9.02,
+        "pe_ratio": 5.91,
+        "market_cap": 14.0,
+        "eps": 0.1743,
+        "div_amount": 0.0929
+    },
+    "AB": {
+        "company_name": "AB",
+        "div_yield": 0.0,
+        "pe_ratio": 4695.26,
+        "market_cap": 14.0,
+        "eps": 0.0004
+    },
+    "HOME": {
+        "company_name": "HOME",
+        "div_yield": 0.0,
+        "pe_ratio": 43.76,
+        "market_cap": 14.0,
+        "eps": 0.0059
+    },
+    "FGEN": {
+        "company_name": "FGEN",
+        "div_yield": 4.44,
+        "pe_ratio": 4.26,
+        "market_cap": 14.0,
+        "eps": 4.2254,
+        "div_amount": 0.7992
+    },
+    "MG": {
+        "company_name": "MG: 0.0610 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.22,
+        "market_cap": 14.0,
+        "eps": 0.2773
+    },
+    "NIKL": {
+        "company_name": "NIKL",
+        "div_yield": 5.0,
+        "pe_ratio": 12.05,
+        "market_cap": 14.0,
+        "eps": 0.2988,
+        "div_amount": 0.18
+    },
+    "MAB": {
+        "company_name": "MAB",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "ION": {
+        "company_name": "ION: 1.00 (",
+        "div_yield": 10.0,
+        "pe_ratio": 4.79,
+        "market_cap": 14.0,
+        "eps": 0.2088,
+        "div_amount": 0.1
+    },
+    "ABA": {
+        "company_name": "ABA",
+        "div_yield": 2.44,
+        "pe_ratio": 0.7,
+        "market_cap": 14.0,
+        "eps": 0.5857,
+        "div_amount": 0.01
+    },
+    "CAB": {
+        "company_name": "CAB: 49.00 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.0,
+        "market_cap": 14.0,
+        "eps": 0.0
+    },
+    "CPM": {
+        "company_name": "CPM: 2.30 (",
+        "div_yield": 0.0,
+        "pe_ratio": 2.67,
+        "market_cap": 14.0,
+        "eps": 0.8614
+    },
+    "NI": {
+        "company_name": "NI",
+        "div_yield": 0.0,
+        "pe_ratio": 1.46,
+        "market_cap": 14.0,
+        "eps": 0.2603
+    },
+    "GERI": {
+        "company_name": "GERI",
+        "div_yield": 1.68,
+        "pe_ratio": 4.31,
+        "market_cap": 14.0,
+        "eps": 0.1508,
+        "div_amount": 0.0109
+    },
+    "URC": {
+        "company_name": "URC",
+        "div_yield": 6.49,
+        "pe_ratio": 11.44,
+        "market_cap": 14.0,
+        "eps": 5.6556,
+        "div_amount": 4.199
+    },
+    "APC": {
+        "company_name": "APC",
+        "div_yield": 0.0,
+        "pe_ratio": 5.5,
+        "market_cap": 14.0,
+        "eps": 0.02
+    },
+    "WPI": {
+        "company_name": "WPI",
+        "div_yield": 0.0,
+        "pe_ratio": 1.16,
+        "market_cap": 14.0,
+        "eps": 0.3793
+    },
+    "MAXS": {
+        "company_name": "MAXS",
+        "div_yield": 5.75,
+        "pe_ratio": 6.07,
+        "market_cap": 14.0,
+        "eps": 0.4036,
+        "div_amount": 0.1409
+    },
+    "PTC": {
+        "company_name": "PTC",
+        "div_yield": 0.0,
+        "pe_ratio": 145.24,
+        "market_cap": 14.0,
+        "eps": 0.6816
+    },
+    "MWIDE": {
+        "company_name": "MWIDE: 3.00 (",
+        "div_yield": 0.0,
+        "pe_ratio": 13.28,
+        "market_cap": 14.0,
+        "eps": 0.2259
+    },
+    "UBP": {
+        "company_name": "UBP: 26.40 (",
+        "div_yield": 3.79,
+        "pe_ratio": 8.86,
+        "market_cap": 14.0,
+        "eps": 2.9797,
+        "div_amount": 1.0006
+    },
+    "CYBR": {
+        "company_name": "CYBR: 0.3300 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.33,
+        "market_cap": 14.0,
+        "eps": 1.0
+    },
+    "LODE": {
+        "company_name": "LODE: 0.3600 (",
+        "div_yield": 0.0,
+        "pe_ratio": 4.5,
+        "market_cap": 14.0,
+        "eps": 0.08
+    },
+    "LBC": {
+        "company_name": "LBC",
+        "div_yield": 0.0,
+        "pe_ratio": 18.74,
+        "market_cap": 14.0,
+        "eps": 0.4739
+    },
+    "BKR": {
+        "company_name": "BKR",
+        "div_yield": 0.61,
+        "pe_ratio": 6.18,
+        "market_cap": 14.0,
+        "eps": 0.1068,
+        "div_amount": 0.004
+    },
+    "ELI": {
+        "company_name": "ELI",
+        "div_yield": 0.0,
+        "pe_ratio": 2.41,
+        "market_cap": 14.0,
+        "eps": 0.044
+    },
+    "MACAY": {
+        "company_name": "MACAY: 6.40 (",
+        "div_yield": 0.0,
+        "pe_ratio": 10.41,
+        "market_cap": 14.0,
+        "eps": 0.6148
+    },
+    "PNB": {
+        "company_name": "PNB",
+        "div_yield": 5.42,
+        "pe_ratio": 3.17,
+        "market_cap": 14.0,
+        "eps": 16.0568,
+        "div_amount": 2.7588
+    },
+    "ANI": {
+        "company_name": "ANI: 0.57 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.18,
+        "market_cap": 14.0,
+        "eps": 3.1667
+    },
+    "CHIB": {
+        "company_name": "CHIB"
+    },
+    "VMC": {
+        "company_name": "VMC",
+        "div_yield": 2.99,
+        "pe_ratio": 8.13,
+        "market_cap": 14.0,
+        "eps": 0.2472,
+        "div_amount": 0.0601
+    },
+    "MRC": {
+        "company_name": "MRC: 0.91 (",
+        "div_yield": 0.0,
+        "pe_ratio": 0.72,
+        "market_cap": 14.0,
+        "eps": 1.2639
+    },
+    "SGI": {
+        "company_name": "SGI",
+        "div_yield": 7.75,
+        "pe_ratio": 3.18,
+        "market_cap": 14.0,
+        "eps": 0.4057,
+        "div_amount": 0.1
+    },
+    "ACEN": {
+        "company_name": "ACEN",
+        "div_yield": 1.73,
+        "pe_ratio": 38.16,
+        "market_cap": 14.0,
+        "eps": 0.0757,
+        "div_amount": 0.05
+    },
+    "APX": {
+        "company_name": "APX",
+        "div_yield": 1.17,
+        "pe_ratio": 11.5,
+        "market_cap": 14.0,
+        "eps": 1.0365,
+        "div_amount": 0.1395
+    },
+    "IDC": {
+        "company_name": "IDC",
+        "div_yield": 0.0,
+        "pe_ratio": 1.83,
+        "market_cap": 14.0,
+        "eps": 0.5027
+    },
+    "CIP": {
+        "company_name": "CIP"
     }
 }

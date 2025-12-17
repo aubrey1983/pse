@@ -72,6 +72,24 @@ class Analyzer:
                 trend_status = "Downtrend"
                 if pd.notna(sma_200) and last_close < sma_200:
                     trend_status = "Strong Downtrend"
+        
+        # New: Advanced Technicals
+        # 1. Sparkline Data (Last 30 closes, normalized for simple arrays)
+        sparkline_data = df['Close'].tail(30).tolist()
+        
+        # 2. Golden Cross (SMA 50 crosses above SMA 200)
+        # Check if currently above, and was below 20 days ago? Or just current state?
+        # A "Golden Cross" is the event. Being above is just "Bullish Alignment".
+        # Let's flag if alignment is bullish.
+        golden_cross = (pd.notna(sma_50) and pd.notna(sma_200) and sma_50 > sma_200)
+        
+        # 3. Volume Spike (Volume > 2x 20-day Average)
+        vol_sma_20 = df['Volume'].rolling(window=20).mean().iloc[-1]
+        current_vol = last_row['Volume']
+        volume_spike = False
+        if pd.notna(vol_sma_20) and vol_sma_20 > 0:
+            if current_vol > (2.0 * vol_sma_20):
+                volume_spike = True
             
         result = {
             'last_close': last_close,
@@ -81,6 +99,10 @@ class Analyzer:
             'trend': trend_status,
             'support': support,
             'resistance': resistance,
-            'std_close': std_close if pd.notna(std_close) else 0.0
+            'std_close': std_close if pd.notna(std_close) else 0.0,
+            'sparkline': sparkline_data,
+            'golden_cross': golden_cross,
+            'volume_spike': volume_spike,
+            'volume_avg': vol_sma_20 if pd.notna(vol_sma_20) else 0.0
         }
         return result

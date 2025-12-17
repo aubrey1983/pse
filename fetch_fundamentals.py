@@ -53,136 +53,171 @@ def update_progress(processed, total):
     with open(METADATA_FILE, 'w') as f:
         json.dump(meta, f, indent=4)
 
-def init_driver():
+import time
+import json
+import os
+import re
+import random
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from stock_data import STOCK_CATEGORIES
+from report_generator import ReportGenerator
+
+# File to store data
+DATA_FILE = "data/fundamental_data.json"
+
+def get_chrome_driver():
+    """Create a new headless driver instance."""
     options = Options()
-    options.add_argument("--headless=new") # Run headless for background processing
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
+    options.add_argument("--headless")
     options.add_argument("--log-level=3")
     options.add_argument("--window-size=1920,1080")
-    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+    options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+def fetch_single_stock(symbol):
+    """Worker function to scrape a single stock."""
+    print(f"Starting fetch for {symbol}...")
+    driver = None
+    data = {}
     
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-    return driver
-
-import re
-
-def scrape_fundamentals(driver, symbol):
-    url = f"https://www.investagrams.com/Stock/{symbol}"
     try:
+        driver = get_chrome_driver()
+        url = f"https://www.investagrams.com/Stock/{symbol}"
         driver.get(url)
-        time.sleep(5) # Give it 5 seconds to fully render
+        
+        # Trigger lazy load
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(5 + random.random() * 3) # Random sleep 5-8s
         
         source = driver.page_source
         
-        data = {}
+        # 1. Company Name/Header
+        # e.g. "Title: JFC: 187.30..."
+        page_title = driver.title
+        data['company_name'] = page_title.split('-')[0].strip() if '-' in page_title else symbol
+
+        # Price extraction
+        price_match = re.search(r':\s*([\d\.,]+)', page_title)
+        if not price_match:
+             price_match = re.search(r'-\s*([\d\.,]+)', page_title)
         
-        # Dividend Yield (Confirmed structure based on debug: <div class="fw-700 fs-20 ng-binding">2.96%</div>)
+        stock_price = float(price_match.group(1).replace(',', '')) if price_match else None
+        
+        # 2. Dividend Yield
         div = re.search(r'Dividend Yield.*?class="fw-700[^"]*">([\d\.]+)%', source, re.DOTALL)
-        
-        # P/E Ratio (Header: P/E Ratio </th> ... value in td?)
-        # Broader search for number after label using HTML tags as separators
-        pe = re.search(r'P/E Ratio.*?class="[^"]*text-right"[^>]*>\s*([\d\.]+)', source, re.DOTALL)
-        pe = re.search(r'P/E Ratio.*?class="[^"]*text-right"[^>]*>\s*([\d\.]+)', source, re.DOTALL)
-        # Note: Do NOT use a broad fallback here, it matches "30.00" labels in footers/ads.
-
-             
-        # EPS
-        eps = re.search(r'EPS[^<]*<.*?([\d\.-]+)', source, re.DOTALL)
-        
-        # Market Cap
-        mc = re.search(r'Market Cap.*?([\d\.,]+)\s*([BM]?)', source, re.IGNORECASE | re.DOTALL)
-
-        if pe: 
-            try: data["pe_ratio"] = float(pe.group(1))
-            except: pass
-        if eps: 
-            try: data["eps"] = float(eps.group(1))
-            except: pass
-            
-        if mc:
-            try:
-                val_str = mc.group(1).replace(',', '')
-                suffix = mc.group(2).upper()
-                val = float(val_str)
-                if suffix == 'B': val *= 1_000_000_000
-                elif suffix == 'M': val *= 1_000_000
-                data["market_cap"] = val
-            except: pass
-            
-        if div: 
+        if div:
             try: data["div_yield"] = float(div.group(1))
             except: pass
+
+        # 3. P/E Ratio
+        pe = re.search(r'P/E Ratio(?:.|\n)*?class="[^"]*fs-20[^"]*ng-binding[^"]*">\s*([\d\.,]+)', source, re.IGNORECASE)
+        pe_val = None
+        if pe:
+            try:
+                pe_val = float(pe.group(1).replace(',', ''))
+                data["pe_ratio"] = pe_val
+            except: pass
             
-        # Company Name
-        # Context 1: ng-bind="StockInfo.CompanyName">Jollibee Foods Corporation</h1>
-        name_match = re.search(r'StockInfo\.CompanyName">([^<]+)<', source)
-        if name_match:
-            data["company_name"] = name_match.group(1).strip()
+        # 4. Market Cap
+        mc = re.search(r'Market Cap.*?([\d\.,]+)\s*([BM]?)', source, re.IGNORECASE | re.DOTALL)
+        if mc:
+            try:
+                val = mc.group(1).replace(',', '')
+                suffix = mc.group(2).upper()
+                mult = 1_000_000_000 if suffix == 'B' else 1_000_000 if suffix == 'M' else 1
+                data["market_cap"] = float(val) * mult
+            except: pass
+            
+        # 5. EPS & Dividend Amount Calculation
+        if stock_price and pe_val and pe_val > 0:
+            data["eps"] = round(stock_price / pe_val, 4)
         else:
-            # Fallback 1: Meta Description "Company Name (SYMBOL)"
-            # <meta name="description" content="Jollibee Foods Corporation (JFC) - Look at ...
-            meta_match = re.search(r'<meta name="description" content="([^"\(]+)\s*\(', source, re.IGNORECASE)
-            if meta_match:
-                data["company_name"] = meta_match.group(1).strip()
-            else:
-                 # Fallback 2: Title Tag "Stock - Company Name - Investagrams" or "Company Name Stock Price..."
-                 title_match = re.search(r'<title>([^<\-]+)-', source, re.IGNORECASE)
-                 if title_match:
-                      data["company_name"] = title_match.group(1).strip()
+             # Fallback regex for EPS
+             eps = re.search(r'(?:EPS|Earnings Per Share)(?:.|\n)*?class="[^"]*fs-20[^"]*ng-binding[^"]*">\s*([\d\.,\-]+)', source, re.IGNORECASE)
+             if eps:
+                 try: data["eps"] = float(eps.group(1).replace(',', ''))
+                 except: pass
+
+        yield_val = data.get("div_yield")
+        if yield_val and stock_price:
+             data["div_amount"] = round(stock_price * (yield_val / 100.0), 4)
+
+        # Debug print
+        d_str = f"PE={data.get('pe_ratio','?')} Div={data.get('div_yield','?')}%"
+        print(f"Done {symbol}: {d_str}")
         
-        print(f"DEBUG {symbol}: PE={pe.group(1) if pe else 'None'} Div={div.group(1) if div else 'None'} Name={data.get('company_name', 'None')}")
-        
-        if data:
-            return data
-            
-        return None
-        
+        return symbol, data
+
     except Exception as e:
-        print(f"Error scraping {symbol}: {e}")
-        return None
+        print(f"Failed {symbol}: {e}")
+        return symbol, None
+    finally:
+        if driver:
+            driver.quit()
 
 def main():
-    print("Initializing Selenium Driver for Fundamentals...")
-    driver = init_driver()
-    report_gen = ReportGenerator()
+    print("Initializing Parallel Scraper...")
     
-    all_symbols = get_all_symbols()
-    data = load_data()
+    # Load existing data
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, 'r') as f:
+            existing_data = json.load(f)
+    else:
+        existing_data = {}
+
+    all_symbols = []
+    for cat, symbols in STOCK_CATEGORIES.items():
+        all_symbols.extend(symbols)
     
-    stocks_to_fetch = [s for s in all_symbols if s not in data]
-    print(f"Found {len(stocks_to_fetch)} stocks missing fundamentals.")
+    # Filter only missing
+    stocks_to_fetch = [s for s in all_symbols if s not in existing_data]
     
-    total = len(all_symbols)
-    processed = len(data)
+    # Shuffle to mix heavy/light pages potentially
+    random.shuffle(stocks_to_fetch)
     
-    try:
-        for i, symbol in enumerate(stocks_to_fetch):
-            print(f"[{processed + 1}/{total}] Fetching Fundamentals for {symbol}...")
+    print(f"Found {len(stocks_to_fetch)} stocks to fetch.")
+    
+    # Use 8 workers to push performance without crashing memory/getting blocked
+    # 50 workers would consume too much RAM and likely trigger WAF blocks.
+    MAX_WORKERS = 8
+    
+    with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_to_symbol = {executor.submit(fetch_single_stock, s): s for s in stocks_to_fetch}
+        
+        count = 0
+        total = len(stocks_to_fetch)
+        
+        for future in as_completed(future_to_symbol):
+            symbol = future_to_symbol[future]
+            try:
+                sym, result = future.result()
+                if result:
+                    existing_data[sym] = result
+                    
+                    # Periodic save (every 5 items) to prevent total loss
+                    if len(existing_data) % 5 == 0:
+                        with open(DATA_FILE, 'w') as f:
+                            json.dump(existing_data, f, indent=4)
+                        # Skipped intermediate dashboard gen to prevent corruption/race conditions
+                        print(f"Saved {len(existing_data)} stocks.")
+                        
+            except Exception as exc:
+                print(f'{symbol} generated an exception: {exc}')
             
-            # Scrape
-            fund_data = scrape_fundamentals(driver, symbol)
-            
-            # Even if None, we mark it as processed to handle "No Data" cases
-            data[symbol] = fund_data if fund_data else {"error": "No Data"}
-            
-            # Save every stock to facilitate live updates
-            save_data(data)
-            processed += 1
-            update_progress(processed, total)
-            
-            # Regenerate Dashboard to reflect new data
-            # This ensures the static HTML is updated with new progress % and data
-            print(f"Updating Dashboard... ({int((processed/total)*100)}%)")
-            report_gen.generate_dashboard()
-            
-            # Sleep to be polite
-            time.sleep(2)
-            
-    except KeyboardInterrupt:
-        print("Stopping scraper...")
-    finally:
-        driver.quit()
+            count += 1
+            print(f"Progress: {count}/{total} completed.")
+
+    # Final Save
+    with open(DATA_FILE, 'w') as f:
+        json.dump(existing_data, f, indent=4)
+        
+    print("Scraping Completed.")
+    gen = ReportGenerator()
+    gen.generate_dashboard()
 
 if __name__ == "__main__":
     main()
