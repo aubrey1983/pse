@@ -1,0 +1,2162 @@
+{
+    "KPH": {
+        "last_close": 25.85,
+        "rsi": 50.37593984962407,
+        "sma_50": 22.6708,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 14.22,
+        "resistance": 27.4,
+        "std_close": 1.6999438845227555
+    },
+    "JOH": {
+        "last_close": 4.39,
+        "rsi": 2.617801047120423,
+        "sma_50": 5.8748000000000005,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 4.28,
+        "resistance": 7.58,
+        "std_close": 0.7815766790681246
+    },
+    "DIZ": {
+        "last_close": 4.76,
+        "rsi": 67.08542713567839,
+        "sma_50": 4.0162,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 3.12,
+        "resistance": 5.8,
+        "std_close": 0.5453620236522757
+    },
+    "SMC2I": {
+        "last_close": 75.6,
+        "rsi": 65.62500000000006,
+        "sma_50": 74.281,
+        "sma_200": 72.97925000000001,
+        "trend": "Strong Uptrend",
+        "support": 73.25,
+        "resistance": 75.8,
+        "std_close": 0.5054635704505623
+    },
+    "CHP": {
+        "last_close": 1.09,
+        "rsi": 55.0,
+        "sma_50": 1.0968,
+        "sma_200": 1.21545,
+        "trend": "Strong Downtrend",
+        "support": 1.0,
+        "resistance": 1.24,
+        "std_close": 0.01986136159004531
+    },
+    "OM": {
+        "last_close": 0.105,
+        "rsi": 48.275862068965516,
+        "sma_50": 0.11023999999999999,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.103,
+        "resistance": 0.13,
+        "std_close": 0.0034984959174208757
+    },
+    "LC": {
+        "last_close": 0.178,
+        "rsi": 55.10204081632654,
+        "sma_50": 0.18619999999999998,
+        "sma_200": 0.13318,
+        "trend": "Downtrend",
+        "support": 0.162,
+        "resistance": 0.27,
+        "std_close": 0.004541040919390497
+    },
+    "PHR": {
+        "last_close": 0.153,
+        "rsi": 51.66666666666667,
+        "sma_50": 0.16183999999999998,
+        "sma_200": 0.19055,
+        "trend": "Strong Downtrend",
+        "support": 0.137,
+        "resistance": 0.199,
+        "std_close": 0.004153628724253935
+    },
+    "IMI": {
+        "last_close": 3.47,
+        "rsi": 53.16455696202534,
+        "sma_50": 2.6971999999999996,
+        "sma_200": 2.16595,
+        "trend": "Strong Uptrend",
+        "support": 1.68,
+        "resistance": 3.85,
+        "std_close": 0.2575307850785181
+    },
+    "ANI": {
+        "last_close": 0.57,
+        "rsi": 80.64516129032256,
+        "sma_50": 0.46199999999999997,
+        "sma_200": 0.47472499999999995,
+        "trend": "Strong Uptrend",
+        "support": 0.395,
+        "resistance": 0.59,
+        "std_close": 0.046892935165342896
+    },
+    "PNB": {
+        "last_close": 50.9,
+        "rsi": 33.502538071065985,
+        "sma_50": 52.008,
+        "sma_200": 51.58,
+        "trend": "Strong Downtrend",
+        "support": 50.0,
+        "resistance": 55.4,
+        "std_close": 1.5343672620128601
+    },
+    "SSP": {
+        "last_close": 1.57,
+        "rsi": 5.714285714285808,
+        "sma_50": 2.1010000000000004,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 1.5,
+        "resistance": 2.2,
+        "std_close": 0.2147066542248308
+    },
+    "JFC": {
+        "last_close": 187.3,
+        "rsi": 42.59740259740261,
+        "sma_50": 200.22800000000004,
+        "sma_200": 222.68099999999998,
+        "trend": "Strong Downtrend",
+        "support": 172.7,
+        "resistance": 224.4,
+        "std_close": 7.03460618730902
+    },
+    "HOUSE": {
+        "last_close": 10.42,
+        "rsi": 50.0,
+        "sma_50": 10.2172,
+        "sma_200": 9.03415,
+        "trend": "Strong Uptrend",
+        "support": 7.3,
+        "resistance": 10.52,
+        "std_close": 0.680602674105825
+    },
+    "ANS": {
+        "last_close": 13.98,
+        "rsi": 52.75590551181104,
+        "sma_50": 14.073999999999998,
+        "sma_200": 14.1783,
+        "trend": "Strong Downtrend",
+        "support": 12.02,
+        "resistance": 15.1,
+        "std_close": 0.4120028104145329
+    },
+    "SPNEC": {
+        "last_close": 1.12,
+        "rsi": 0.0,
+        "sma_50": 1.1834,
+        "sma_200": 1.2667,
+        "trend": "Strong Downtrend",
+        "support": 1.11,
+        "resistance": 1.36,
+        "std_close": 0.030135658193191018
+    },
+    "MB": {
+        "last_close": 0.182,
+        "rsi": 58.8235294117647,
+        "sma_50": 0.18689999999999998,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.16,
+        "resistance": 0.21,
+        "std_close": 0.009179353262392151
+    },
+    "ATN": {
+        "last_close": 0.495,
+        "rsi": 50.0,
+        "sma_50": 0.5036999999999999,
+        "sma_200": 0.521225,
+        "trend": "Strong Downtrend",
+        "support": 0.47,
+        "resistance": 0.54,
+        "std_close": 0.0029357147430620015
+    },
+    "MAH": {
+        "last_close": 0.45,
+        "rsi": 47.5,
+        "sma_50": 0.46620000000000006,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.35,
+        "resistance": 0.74,
+        "std_close": 0.09034254986322598
+    },
+    "SM": {
+        "last_close": 705.0,
+        "rsi": 47.80219780219781,
+        "sma_50": 718.6,
+        "sma_200": 793.51,
+        "trend": "Strong Downtrend",
+        "support": 674.0,
+        "resistance": 761.0,
+        "std_close": 12.461414129434232
+    },
+    "SCC": {
+        "last_close": 28.0,
+        "rsi": 32.30769230769229,
+        "sma_50": 30.653999999999996,
+        "sma_200": 33.15375,
+        "trend": "Strong Downtrend",
+        "support": 27.0,
+        "resistance": 35.95,
+        "std_close": 0.4838102607645407
+    },
+    "FILRT": {
+        "last_close": 2.99,
+        "rsi": 64.28571428571433,
+        "sma_50": 3.0336000000000003,
+        "sma_200": 3.23085,
+        "trend": "Strong Downtrend",
+        "support": 2.78,
+        "resistance": 3.56,
+        "std_close": 0.03885194569401291
+    },
+    "DMC": {
+        "last_close": 10.22,
+        "rsi": 36.956521739130366,
+        "sma_50": 10.626600000000002,
+        "sma_200": 10.78545,
+        "trend": "Strong Downtrend",
+        "support": 9.86,
+        "resistance": 11.62,
+        "std_close": 0.1464635754970102
+    },
+    "MER": {
+        "last_close": 597.0,
+        "rsi": 49.122807017543856,
+        "sma_50": 576.83,
+        "sma_200": 548.6615,
+        "trend": "Strong Uptrend",
+        "support": 515.5,
+        "resistance": 618.0,
+        "std_close": 6.744344609413603
+    },
+    "FEU": {
+        "last_close": 800.0,
+        "rsi": 40.74074074074074,
+        "sma_50": 807.29,
+        "sma_200": 784.3725,
+        "trend": "Downtrend",
+        "support": 800.0,
+        "resistance": 835.0,
+        "std_close": 6.4977728978149845
+    },
+    "PHC": {
+        "last_close": 1.87,
+        "rsi": 51.769911504424776,
+        "sma_50": 0.0,
+        "sma_200": 0.0,
+        "trend": "Neutral",
+        "support": 1.4,
+        "resistance": 4.49,
+        "std_close": 0.1959934209422132
+    },
+    "DDMPR": {
+        "last_close": 1.03,
+        "rsi": 42.857142857142854,
+        "sma_50": 1.0426,
+        "sma_200": 1.0549000000000002,
+        "trend": "Strong Downtrend",
+        "support": 1.01,
+        "resistance": 1.07,
+        "std_close": 0.006708203932499376
+    },
+    "MACAY": {
+        "last_close": 6.4,
+        "rsi": 54.104734006003405,
+        "sma_50": 6.23404,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 5.1,
+        "resistance": 6.9783,
+        "std_close": 0.5369167635921939
+    },
+    "SGI": {
+        "last_close": 1.29,
+        "rsi": 42.857142857142854,
+        "sma_50": 1.2806,
+        "sma_200": 1.24415,
+        "trend": "Strong Uptrend",
+        "support": 1.16,
+        "resistance": 1.35,
+        "std_close": 0.030157481397002108
+    },
+    "NI": {
+        "last_close": 0.38,
+        "rsi": 32.35294117647058,
+        "sma_50": 0.41369999999999996,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.275,
+        "resistance": 0.7,
+        "std_close": 0.05449770637375485
+    },
+    "PX": {
+        "last_close": 9.9,
+        "rsi": 67.27828746177371,
+        "sma_50": 8.964599999999999,
+        "sma_200": 7.124599999999999,
+        "trend": "Strong Uptrend",
+        "support": 7.31,
+        "resistance": 11.1,
+        "std_close": 0.7758748881780252
+    },
+    "EC": {
+        "last_close": 9.33,
+        "rsi": 41.520467836257325,
+        "sma_50": 9.569600000000001,
+        "sma_200": 9.1882,
+        "trend": "Downtrend",
+        "support": 8.57,
+        "resistance": 10.65,
+        "std_close": 0.2864501426261231
+    },
+    "PXP": {
+        "last_close": 2.39,
+        "rsi": 42.66666666666668,
+        "sma_50": 2.5456,
+        "sma_200": 2.3438000000000003,
+        "trend": "Downtrend",
+        "support": 1.99,
+        "resistance": 3.65,
+        "std_close": 0.06786208925382962
+    },
+    "HVN": {
+        "last_close": 996.0,
+        "rsi": 16.45133505598622,
+        "sma_50": 1810.07,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 386.8,
+        "resistance": 2450,
+        "std_close": 393.45439112397366
+    },
+    "IPM": {
+        "last_close": 1.39,
+        "rsi": 44.48818897637795,
+        "sma_50": 2.0674,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 1.24,
+        "resistance": 3.1,
+        "std_close": 0.2092914110441279
+    },
+    "GEO": {
+        "last_close": 0.09,
+        "rsi": 57.14285714285713,
+        "sma_50": 0.10872,
+        "sma_200": 0.09778500000000001,
+        "trend": "Strong Downtrend",
+        "support": 0.079,
+        "resistance": 0.152,
+        "std_close": 0.005772894922781264
+    },
+    "EEI": {
+        "last_close": 2.67,
+        "rsi": 51.56250000000001,
+        "sma_50": 2.858,
+        "sma_200": 3.02925,
+        "trend": "Strong Downtrend",
+        "support": 2.6,
+        "resistance": 3.4,
+        "std_close": 0.0838089933624134
+    },
+    "FRUIT": {
+        "last_close": 0.64,
+        "rsi": 57.142857142857146,
+        "sma_50": 0.6304000000000001,
+        "sma_200": 0.62995,
+        "trend": "Strong Uptrend",
+        "support": 0.59,
+        "resistance": 0.71,
+        "std_close": 0.0060480531882929995
+    },
+    "ACEN": {
+        "last_close": 2.89,
+        "rsi": 75.90361445783135,
+        "sma_50": 2.4288000000000003,
+        "sma_200": 2.55135,
+        "trend": "Strong Uptrend",
+        "support": 2.18,
+        "resistance": 2.93,
+        "std_close": 0.15329623883874408
+    },
+    "PCOR": {
+        "last_close": 2.37,
+        "rsi": 58.139534883720934,
+        "sma_50": 2.3346,
+        "sma_200": 2.4016,
+        "trend": "Uptrend",
+        "support": 2.29,
+        "resistance": 2.49,
+        "std_close": 0.05009464726106506
+    },
+    "AEV": {
+        "last_close": 26.3,
+        "rsi": 52.38095238095237,
+        "sma_50": 27.236,
+        "sma_200": 31.225,
+        "trend": "Strong Downtrend",
+        "support": 23.9,
+        "resistance": 31.6,
+        "std_close": 0.6016424887011607
+    },
+    "CLX": {
+        "last_close": 99.82,
+        "rsi": 27.03583061889246,
+        "sma_50": 109.37899999999999,
+        "sma_200": 125.52770000000001,
+        "trend": "Strong Downtrend",
+        "support": 98.2,
+        "resistance": 124.755,
+        "std_close": 2.841631295761755
+    },
+    "NOW": {
+        "last_close": 0.69,
+        "rsi": 42.857142857142854,
+        "sma_50": 0.7294000000000002,
+        "sma_200": 0.56835,
+        "trend": "Downtrend",
+        "support": 0.59,
+        "resistance": 0.9,
+        "std_close": 0.02601113122046831
+    },
+    "SECB": {
+        "last_close": 66.85,
+        "rsi": 24.096385542168463,
+        "sma_50": 69.236,
+        "sma_200": 70.20025,
+        "trend": "Strong Downtrend",
+        "support": 66.15,
+        "resistance": 77.4,
+        "std_close": 0.723164646026863
+    },
+    "TBGI": {
+        "last_close": 0.141,
+        "rsi": 66.66666666666661,
+        "sma_50": 0.14200000000000002,
+        "sma_200": 0.14323,
+        "trend": "Strong Downtrend",
+        "support": 0.128,
+        "resistance": 0.198,
+        "std_close": 0.004290442254225323
+    },
+    "FB": {
+        "last_close": 54.0,
+        "rsi": 73.43749999999997,
+        "sma_50": 52.53900000000001,
+        "sma_200": 52.545,
+        "trend": "Strong Uptrend",
+        "support": 50.25,
+        "resistance": 54.9,
+        "std_close": 1.2494498789467312
+    },
+    "CLI": {
+        "last_close": 2.36,
+        "rsi": 61.111111111111114,
+        "sma_50": 2.2983999999999996,
+        "sma_200": 2.4536000000000002,
+        "trend": "Uptrend",
+        "support": 2.15,
+        "resistance": 2.42,
+        "std_close": 0.031355348742070216
+    },
+    "STN": {
+        "last_close": 2.06,
+        "rsi": 52.94117647058823,
+        "sma_50": 2.2422,
+        "sma_200": 2.1136500000000003,
+        "trend": "Strong Downtrend",
+        "support": 2.0,
+        "resistance": 2.46,
+        "std_close": 0.03391552974515861
+    },
+    "ARA": {
+        "last_close": 0.425,
+        "rsi": 51.85185185185185,
+        "sma_50": 0.4582,
+        "sma_200": 0.518675,
+        "trend": "Strong Downtrend",
+        "support": 0.38,
+        "resistance": 0.58,
+        "std_close": 0.015800982647657683
+    },
+    "PAX": {
+        "last_close": 2.63,
+        "rsi": 35.21126760563381,
+        "sma_50": 2.9048,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 2.2,
+        "resistance": 3.38,
+        "std_close": 0.1656756501500193
+    },
+    "ALLHC": {
+        "last_close": 1.33,
+        "rsi": 47.99999999999999,
+        "sma_50": 1.3292,
+        "sma_200": 1.43285,
+        "trend": "Uptrend",
+        "support": 1.25,
+        "resistance": 1.45,
+        "std_close": 0.020235456115702634
+    },
+    "C": {
+        "last_close": 0.95,
+        "rsi": 55.999999999999986,
+        "sma_50": 0.976,
+        "sma_200": 1.0911,
+        "trend": "Strong Downtrend",
+        "support": 0.9,
+        "resistance": 1.05,
+        "std_close": 0.022594829403858582
+    },
+    "RFM": {
+        "last_close": 4.65,
+        "rsi": 60.784313725490215,
+        "sma_50": 4.466,
+        "sma_200": 4.2736,
+        "trend": "Strong Uptrend",
+        "support": 4.2,
+        "resistance": 4.7,
+        "std_close": 0.04236122854935312
+    },
+    "AXLM": {
+        "last_close": 2.2,
+        "rsi": 93.10344827586206,
+        "sma_50": 1.8666,
+        "sma_200": 1.9454000000000002,
+        "trend": "Strong Uptrend",
+        "support": 1.65,
+        "resistance": 2.21,
+        "std_close": 0.09281560667315207
+    },
+    "WIN": {
+        "last_close": 0.31,
+        "rsi": 62.06896551724138,
+        "sma_50": 0.26578,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 0.222,
+        "resistance": 0.34,
+        "std_close": 0.01838191330743634
+    },
+    "CREIT": {
+        "last_close": 3.57,
+        "rsi": 46.875000000000014,
+        "sma_50": 3.549,
+        "sma_200": 3.4691500000000004,
+        "trend": "Strong Uptrend",
+        "support": 3.31,
+        "resistance": 3.74,
+        "std_close": 0.05314082581613741
+    },
+    "OPM": {
+        "last_close": 0.011,
+        "rsi": 50.0,
+        "sma_50": 0.011219999999999999,
+        "sma_200": 0.009460999999999999,
+        "trend": "Downtrend",
+        "support": 0.011,
+        "resistance": 0.012,
+        "std_close": 0.00044426165831931973
+    },
+    "PRMX": {
+        "last_close": 1.1,
+        "rsi": 42.37288135593221,
+        "sma_50": 1.2354,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 1.0,
+        "resistance": 1.59,
+        "std_close": 0.09514531821875087
+    },
+    "AUB": {
+        "last_close": 38.95,
+        "rsi": 77.7777777777779,
+        "sma_50": 38.8,
+        "sma_200": 39.173249999999996,
+        "trend": "Uptrend",
+        "support": 36.15,
+        "resistance": 42.55,
+        "std_close": 0.3709873029462973
+    },
+    "RCI": {
+        "last_close": 2.83,
+        "rsi": 69.93865030674846,
+        "sma_50": 2.5862,
+        "sma_200": 3.01935,
+        "trend": "Uptrend",
+        "support": 2.04,
+        "resistance": 3.89,
+        "std_close": 0.36848052151618826
+    },
+    "AB": {
+        "last_close": 2.08,
+        "rsi": 35.91549295774648,
+        "sma_50": 3.1067999999999993,
+        "sma_200": 4.4636000000000005,
+        "trend": "Strong Downtrend",
+        "support": 1.98,
+        "resistance": 4.47,
+        "std_close": 0.1646839077556888
+    },
+    "S": {
+        "last_close": 0.081,
+        "rsi": 19.59798994974875,
+        "sma_50": 0.11645799999999999,
+        "sma_200": 0.2542555,
+        "trend": "Strong Downtrend",
+        "support": 0.0797,
+        "resistance": 0.1946,
+        "std_close": 0.008250703319303021
+    },
+    "AP": {
+        "last_close": 43.7,
+        "rsi": 55.35714285714288,
+        "sma_50": 41.611,
+        "sma_200": 40.585499999999996,
+        "trend": "Strong Uptrend",
+        "support": 38.85,
+        "resistance": 45.45,
+        "std_close": 0.6640188646654389
+    },
+    "BALAI": {
+        "last_close": 0.365,
+        "rsi": 69.56521739130433,
+        "sma_50": 0.3246,
+        "sma_200": 0.34725,
+        "trend": "Strong Uptrend",
+        "support": 0.295,
+        "resistance": 0.38,
+        "std_close": 0.020254953909963274
+    },
+    "CPM": {
+        "last_close": 2.3,
+        "rsi": 48.0,
+        "sma_50": 2.4098,
+        "sma_200": 2.54005,
+        "trend": "Strong Downtrend",
+        "support": 2.2,
+        "resistance": 2.48,
+        "std_close": 0.04929769931644627
+    },
+    "AC": {
+        "last_close": 469.0,
+        "rsi": 59.55734406438633,
+        "sma_50": 456.036,
+        "sma_200": 540.3475,
+        "trend": "Uptrend",
+        "support": 401.0,
+        "resistance": 520.0,
+        "std_close": 15.514597540448971
+    },
+    "SLF": {
+        "last_close": 3400.0,
+        "rsi": 38.63636363636364,
+        "sma_50": 3424.0,
+        "sma_200": 3331.9,
+        "trend": "Downtrend",
+        "support": 3192,
+        "resistance": 3550,
+        "std_close": 60.825462119948284
+    },
+    "JGS": {
+        "last_close": 23.5,
+        "rsi": 69.64285714285714,
+        "sma_50": 22.747000000000003,
+        "sma_200": 20.83565,
+        "trend": "Strong Uptrend",
+        "support": 20.05,
+        "resistance": 25.35,
+        "std_close": 0.6851046789014301
+    },
+    "WPI": {
+        "last_close": 0.44,
+        "rsi": 50.0,
+        "sma_50": 0.42619999999999997,
+        "sma_200": 0.40235,
+        "trend": "Strong Uptrend",
+        "support": 0.4,
+        "resistance": 0.47,
+        "std_close": 0.016212000103886664
+    },
+    "MBT": {
+        "last_close": 68.25,
+        "rsi": 48.53556485355651,
+        "sma_50": 67.41,
+        "sma_200": 71.21974999999999,
+        "trend": "Uptrend",
+        "support": 61.95,
+        "resistance": 70.9,
+        "std_close": 1.366459119884597
+    },
+    "SHNG": {
+        "last_close": 3.39,
+        "rsi": 15.909090909090963,
+        "sma_50": 3.7422000000000004,
+        "sma_200": 3.97105,
+        "trend": "Strong Downtrend",
+        "support": 3.39,
+        "resistance": 4.0,
+        "std_close": 0.1331836879533004
+    },
+    "MONDE": {
+        "last_close": 5.87,
+        "rsi": 40.65934065934064,
+        "sma_50": 6.3664,
+        "sma_200": 7.031650000000001,
+        "trend": "Strong Downtrend",
+        "support": 5.61,
+        "resistance": 7.5,
+        "std_close": 0.10363270160574434
+    },
+    "NRCP": {
+        "last_close": 0.74,
+        "rsi": 59.09090909090909,
+        "sma_50": 0.6779999999999999,
+        "sma_200": 0.6587000000000001,
+        "trend": "Strong Uptrend",
+        "support": 0.61,
+        "resistance": 0.77,
+        "std_close": 0.020487480130686252
+    },
+    "VITA": {
+        "last_close": 0.55,
+        "rsi": 50.0,
+        "sma_50": 0.5451,
+        "sma_200": 0.593925,
+        "trend": "Uptrend",
+        "support": 0.48,
+        "resistance": 0.57,
+        "std_close": 0.010000000000000009
+    },
+    "BKR": {
+        "last_close": 0.66,
+        "rsi": 59.09090909090909,
+        "sma_50": 0.6658,
+        "sma_200": 0.8804000000000001,
+        "trend": "Strong Downtrend",
+        "support": 0.53,
+        "resistance": 0.81,
+        "std_close": 0.027236778540480122
+    },
+    "SPC": {
+        "last_close": 10.88,
+        "rsi": 93.91634980988593,
+        "sma_50": 8.343,
+        "sma_200": 8.472900000000001,
+        "trend": "Strong Uptrend",
+        "support": 7.4,
+        "resistance": 10.9,
+        "std_close": 0.8127153965500309
+    },
+    "DD": {
+        "last_close": 9.14,
+        "rsi": 29.870129870130043,
+        "sma_50": 9.4198,
+        "sma_200": 10.0336,
+        "trend": "Strong Downtrend",
+        "support": 8.83,
+        "resistance": 10.56,
+        "std_close": 0.18943892224977904
+    },
+    "JG": {
+        "last_close": 6.75,
+        "rsi": 53.379783693843585,
+        "sma_50": 7.236938,
+        "sma_200": 9.191346,
+        "trend": "Strong Downtrend",
+        "support": 5.85,
+        "resistance": 9.485,
+        "std_close": 0.15088016018298142
+    },
+    "ROCK": {
+        "last_close": 1.71,
+        "rsi": 43.75,
+        "sma_50": 1.7594,
+        "sma_200": 1.8457,
+        "trend": "Strong Downtrend",
+        "support": 1.66,
+        "resistance": 1.99,
+        "std_close": 0.01571958215595743
+    },
+    "IDC": {
+        "last_close": 0.92,
+        "rsi": 10.344827586206904,
+        "sma_50": 0.9838,
+        "sma_200": 1.05425,
+        "trend": "Strong Downtrend",
+        "support": 0.81,
+        "resistance": 1.2,
+        "std_close": 0.057225316443906736
+    },
+    "GOLD": {
+        "last_close": 4319.9551,
+        "rsi": 70.81881978338276,
+        "sma_50": 4123.6478784,
+        "sma_200": 3641.3784674,
+        "trend": "Strong Uptrend",
+        "support": 3886.72,
+        "resistance": 4469.39,
+        "std_close": 54.342769021688106
+    },
+    "DWC": {
+        "last_close": 1.07,
+        "rsi": 36.8421052631579,
+        "sma_50": 1.0942,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 1.0,
+        "resistance": 1.15,
+        "std_close": 0.022774639635487447
+    },
+    "BEL": {
+        "last_close": 1.34,
+        "rsi": 57.14285714285715,
+        "sma_50": 1.3581999999999999,
+        "sma_200": 1.47905,
+        "trend": "Strong Downtrend",
+        "support": 1.2,
+        "resistance": 1.87,
+        "std_close": 0.03596416344962825
+    },
+    "LMG": {
+        "last_close": 0.25,
+        "rsi": 27.65957446808511,
+        "sma_50": 0.2849,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.155,
+        "resistance": 0.4,
+        "std_close": 0.04399162599739564
+    },
+    "MA": {
+        "last_close": 0.007,
+        "rsi": 54.54545454545455,
+        "sma_50": 0.007355999999999999,
+        "sma_200": 0.006245,
+        "trend": "Downtrend",
+        "support": 0.0062,
+        "resistance": 0.0098,
+        "std_close": 0.000304138126514911
+    },
+    "BDO": {
+        "last_close": 131.0,
+        "rsi": 49.16943521594684,
+        "sma_50": 130.80800000000002,
+        "sma_200": 146.0965,
+        "trend": "Uptrend",
+        "support": 118.6,
+        "resistance": 145.8,
+        "std_close": 4.08584205068648
+    },
+    "APL": {
+        "last_close": 0.006,
+        "rsi": 30.30303030303031,
+        "sma_50": 0.007594000000000001,
+        "sma_200": 0.006238999999999999,
+        "trend": "Strong Downtrend",
+        "support": 0.006,
+        "resistance": 0.0095,
+        "std_close": 0.0005274317117185083
+    },
+    "APC": {
+        "last_close": 0.11,
+        "rsi": 41.30434782608696,
+        "sma_50": 0.12858,
+        "sma_200": 0.149645,
+        "trend": "Strong Downtrend",
+        "support": 0.101,
+        "resistance": 0.171,
+        "std_close": 0.003432047110460612
+    },
+    "SMPH": {
+        "last_close": 23.1,
+        "rsi": 55.75221238938055,
+        "sma_50": 22.1894,
+        "sma_200": 23.0671,
+        "trend": "Strong Uptrend",
+        "support": 18.84,
+        "resistance": 23.95,
+        "std_close": 0.5974672420000599
+    },
+    "BPI": {
+        "last_close": 120.0,
+        "rsi": 55.0,
+        "sma_50": 109.322,
+        "sma_200": 122.43350000000001,
+        "trend": "Uptrend",
+        "support": 99.0,
+        "resistance": 121.2,
+        "std_close": 3.025157673141752
+    },
+    "LODE": {
+        "last_close": 0.36,
+        "rsi": 36.666666666666664,
+        "sma_50": 0.4765,
+        "sma_200": 0.400075,
+        "trend": "Strong Downtrend",
+        "support": 0.33,
+        "resistance": 0.74,
+        "std_close": 0.016662280124501837
+    },
+    "MARC": {
+        "last_close": 0.68,
+        "rsi": 44.444444444444464,
+        "sma_50": 0.6886,
+        "sma_200": 0.594525,
+        "trend": "Downtrend",
+        "support": 0.56,
+        "resistance": 0.74,
+        "std_close": 0.012258187382102465
+    },
+    "APO": {
+        "last_close": 0.65,
+        "rsi": 66.6666666666667,
+        "sma_50": 0.5712,
+        "sma_200": 0.49405,
+        "trend": "Strong Uptrend",
+        "support": 0.385,
+        "resistance": 0.7,
+        "std_close": 0.02789076436460831
+    },
+    "PGOLD": {
+        "last_close": 40.0,
+        "rsi": 46.875,
+        "sma_50": 39.515,
+        "sma_200": 36.12375,
+        "trend": "Strong Uptrend",
+        "support": 35.1,
+        "resistance": 45.55,
+        "std_close": 1.0024017211309622
+    },
+    "MAB": {
+        "last_close": 0.0071,
+        "rsi": 50.64935064935066,
+        "sma_50": 0.007252000000000001,
+        "sma_200": 0.005600999999999999,
+        "trend": "Downtrend",
+        "support": 0.0051,
+        "resistance": 0.0096,
+        "std_close": 0.0008001809005994898
+    },
+    "URC": {
+        "last_close": 64.7,
+        "rsi": 53.07017543859651,
+        "sma_50": 69.0,
+        "sma_200": 78.2375,
+        "trend": "Strong Downtrend",
+        "support": 61.3,
+        "resistance": 78.75,
+        "std_close": 1.6717545148420379
+    },
+    "MEG": {
+        "last_close": 2.02,
+        "rsi": 52.631578947368475,
+        "sma_50": 1.9880000000000002,
+        "sma_200": 1.92725,
+        "trend": "Strong Uptrend",
+        "support": 1.9,
+        "resistance": 2.08,
+        "std_close": 0.029289840164161102
+    },
+    "PMPC": {
+        "last_close": 10.64,
+        "rsi": 72.01492537313429,
+        "sma_50": 9.136999999999999,
+        "sma_200": 7.415849999999999,
+        "trend": "Strong Uptrend",
+        "support": 7.9,
+        "resistance": 10.76,
+        "std_close": 0.4938620625661638
+    },
+    "V": {
+        "last_close": 1.04,
+        "rsi": 69.23076923076923,
+        "sma_50": 0.9561999999999999,
+        "sma_200": 0.9139999999999999,
+        "trend": "Strong Uptrend",
+        "support": 0.85,
+        "resistance": 1.06,
+        "std_close": 0.052475558220244946
+    },
+    "WEB": {
+        "last_close": 5.81,
+        "rsi": 47.16981132075472,
+        "sma_50": 4.9182,
+        "sma_200": 3.37285,
+        "trend": "Strong Uptrend",
+        "support": 3.51,
+        "resistance": 7.04,
+        "std_close": 0.6616454767034271
+    },
+    "KEP": {
+        "last_close": 2.47,
+        "rsi": 65.51724137931035,
+        "sma_50": 2.4168000000000003,
+        "sma_200": 2.7344,
+        "trend": "Uptrend",
+        "support": 1.82,
+        "resistance": 2.77,
+        "std_close": 0.19391465838569844
+    },
+    "BLOOM": {
+        "last_close": 2.64,
+        "rsi": 32.35294117647061,
+        "sma_50": 3.113,
+        "sma_200": 3.7084500000000005,
+        "trend": "Strong Downtrend",
+        "support": 2.57,
+        "resistance": 4.34,
+        "std_close": 0.09104510160528015
+    },
+    "SEVN": {
+        "last_close": 36.0,
+        "rsi": 21.768707482993207,
+        "sma_50": 40.501999999999995,
+        "sma_200": 47.5075,
+        "trend": "Strong Downtrend",
+        "support": 35.5,
+        "resistance": 46.95,
+        "std_close": 1.5086483144994745
+    },
+    "FOOD": {
+        "last_close": 0.37,
+        "rsi": 37.5,
+        "sma_50": 0.4058,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.35,
+        "resistance": 0.48,
+        "std_close": 0.017805602311750376
+    },
+    "LPZ": {
+        "last_close": 3.71,
+        "rsi": 42.99999999999999,
+        "sma_50": 3.762,
+        "sma_200": 3.46995,
+        "trend": "Downtrend",
+        "support": 3.6,
+        "resistance": 4.15,
+        "std_close": 0.07816817228191239
+    },
+    "SFI": {
+        "last_close": 0.056,
+        "rsi": 55.17241379310345,
+        "sma_50": 0.05296,
+        "sma_200": 0.05289,
+        "trend": "Strong Uptrend",
+        "support": 0.048,
+        "resistance": 0.058,
+        "std_close": 0.0018324559303956266
+    },
+    "COL": {
+        "last_close": 1.35,
+        "rsi": 36.11111111111114,
+        "sma_50": 1.4461999999999997,
+        "sma_200": 1.5217500000000002,
+        "trend": "Strong Downtrend",
+        "support": 1.2,
+        "resistance": 1.52,
+        "std_close": 0.028172401575412693
+    },
+    "HOME": {
+        "last_close": 0.26,
+        "rsi": 39.39393939393939,
+        "sma_50": 0.2905,
+        "sma_200": 0.44737499999999997,
+        "trend": "Strong Downtrend",
+        "support": 0.248,
+        "resistance": 0.375,
+        "std_close": 0.015172256536885087
+    },
+    "MHC": {
+        "last_close": 0.106,
+        "rsi": 40.0,
+        "sma_50": 0.0,
+        "sma_200": 0.0,
+        "trend": "Neutral",
+        "support": 0.106,
+        "resistance": 0.215,
+        "std_close": 0.015816713345465663
+    },
+    "COSCO": {
+        "last_close": 6.99,
+        "rsi": 45.454545454545524,
+        "sma_50": 7.1074,
+        "sma_200": 6.6278,
+        "trend": "Downtrend",
+        "support": 6.75,
+        "resistance": 7.9,
+        "std_close": 0.03328900561351801
+    },
+    "PPC": {
+        "last_close": 13.0,
+        "rsi": 61.53846153846143,
+        "sma_50": 12.8148,
+        "sma_200": 11.8309,
+        "trend": "Strong Uptrend",
+        "support": 12.2,
+        "resistance": 13.02,
+        "std_close": 0.0824621125123533
+    },
+    "WPP": {
+        "last_close": 22.08,
+        "rsi": 72.0292504570383,
+        "sma_50": 21.078599999999998,
+        "sma_200": 30.1281,
+        "trend": "Uptrend",
+        "support": 17.47,
+        "resistance": 25.4,
+        "std_close": 1.1291099195943308
+    },
+    "ELI": {
+        "last_close": 0.106,
+        "rsi": 62.50000000000001,
+        "sma_50": 0.10645999999999999,
+        "sma_200": 0.11095000000000001,
+        "trend": "Strong Downtrend",
+        "support": 0.103,
+        "resistance": 0.112,
+        "std_close": 0.0007163503994113797
+    },
+    "PSB": {
+        "last_close": 55.0,
+        "rsi": 51.960784313725526,
+        "sma_50": 55.815,
+        "sma_200": 57.4575,
+        "trend": "Strong Downtrend",
+        "support": 52.55,
+        "resistance": 57.75,
+        "std_close": 0.4105836667092602
+    },
+    "RRHI": {
+        "last_close": 33.4,
+        "rsi": 57.99999999999994,
+        "sma_50": 33.675,
+        "sma_200": 36.71675,
+        "trend": "Strong Downtrend",
+        "support": 31.5,
+        "resistance": 35.95,
+        "std_close": 0.2939186246135771
+    },
+    "CNPF": {
+        "last_close": 39.1,
+        "rsi": 46.36363636363638,
+        "sma_50": 38.076,
+        "sma_200": 38.10975,
+        "trend": "Strong Uptrend",
+        "support": 33.5,
+        "resistance": 41.15,
+        "std_close": 0.4489388072238565
+    },
+    "ALCO": {
+        "last_close": 0.41,
+        "rsi": 50.0,
+        "sma_50": 0.42119999999999996,
+        "sma_200": 0.391025,
+        "trend": "Downtrend",
+        "support": 0.41,
+        "resistance": 0.445,
+        "std_close": 0.006934847169416064
+    },
+    "BCOR": {
+        "last_close": 8.0,
+        "rsi": 51.89189189189189,
+        "sma_50": 7.258800000000001,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 4.8,
+        "resistance": 8.0,
+        "std_close": 0.46151096240615197
+    },
+    "RCR": {
+        "last_close": 7.96,
+        "rsi": 69.33333333333336,
+        "sma_50": 7.5394,
+        "sma_200": 7.219200000000001,
+        "trend": "Strong Uptrend",
+        "support": 6.99,
+        "resistance": 8.12,
+        "std_close": 0.17790890631828524
+    },
+    "EMP": {
+        "last_close": 21.15,
+        "rsi": 52.43902439024385,
+        "sma_50": 21.391306,
+        "sma_200": 21.0946925,
+        "trend": "Downtrend",
+        "support": 20.86,
+        "resistance": 22.4995,
+        "std_close": 0.09061776286892358
+    },
+    "ION": {
+        "last_close": 1.0,
+        "rsi": 33.33333333333333,
+        "sma_50": 0.9972,
+        "sma_200": 0.9100499999999999,
+        "trend": "Strong Uptrend",
+        "support": 0.88,
+        "resistance": 1.08,
+        "std_close": 0.022028689427533762
+    },
+    "GLO": {
+        "last_close": 1563.0,
+        "rsi": 40.449438202247194,
+        "sma_50": 1532.86,
+        "sma_200": 1745.7,
+        "trend": "Uptrend",
+        "support": 1401.0,
+        "resistance": 1655.0,
+        "std_close": 22.750997664648512
+    },
+    "CEB": {
+        "last_close": 31.95,
+        "rsi": 56.28742514970061,
+        "sma_50": 30.836,
+        "sma_200": 33.649249999999995,
+        "trend": "Uptrend",
+        "support": 28.8,
+        "resistance": 35.15,
+        "std_close": 0.9015009414129413
+    },
+    "FDC": {
+        "last_close": 4.74,
+        "rsi": 56.98924731182796,
+        "sma_50": 4.697399999999999,
+        "sma_200": 4.8387,
+        "trend": "Uptrend",
+        "support": 4.2,
+        "resistance": 4.95,
+        "std_close": 0.184507880305251
+    },
+    "ABG": {
+        "last_close": 24.6,
+        "rsi": 59.615384615384585,
+        "sma_50": 25.225,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 20.0,
+        "resistance": 27.0,
+        "std_close": 0.3624750445130493
+    },
+    "SHLPH": {
+        "last_close": 6.0,
+        "rsi": 52.941176470588196,
+        "sma_50": 6.0422,
+        "sma_200": 5.5412,
+        "trend": "Downtrend",
+        "support": 5.56,
+        "resistance": 6.65,
+        "std_close": 0.033182113127089054
+    },
+    "RLC": {
+        "last_close": 16.06,
+        "rsi": 52.43902439024385,
+        "sma_50": 15.276800000000001,
+        "sma_200": 13.9265,
+        "trend": "Strong Uptrend",
+        "support": 14.18,
+        "resistance": 16.38,
+        "std_close": 0.24412895643167984
+    },
+    "MWC": {
+        "last_close": 41.0,
+        "rsi": 72.38805970149258,
+        "sma_50": 36.492000000000004,
+        "sma_200": 35.94875,
+        "trend": "Strong Uptrend",
+        "support": 32.15,
+        "resistance": 41.5,
+        "std_close": 1.2882336948828732
+    },
+    "VLL": {
+        "last_close": 0.92,
+        "rsi": 35.71428571428572,
+        "sma_50": 0.9832,
+        "sma_200": 1.3686,
+        "trend": "Strong Downtrend",
+        "support": 0.83,
+        "resistance": 1.2,
+        "std_close": 0.05711484275700928
+    },
+    "CAT": {
+        "last_close": 10.66,
+        "rsi": 62.3134328358209,
+        "sma_50": 10.2898,
+        "sma_200": 11.38845,
+        "trend": "Uptrend",
+        "support": 9.6,
+        "resistance": 10.86,
+        "std_close": 0.2796478048132009
+    },
+    "BC": {
+        "last_close": 4.4,
+        "rsi": 46.52777777777779,
+        "sma_50": 4.904,
+        "sma_200": 4.43925,
+        "trend": "Strong Downtrend",
+        "support": 4.2,
+        "resistance": 5.9,
+        "std_close": 0.13081123402586048
+    },
+    "CPG": {
+        "last_close": 0.67,
+        "rsi": 60.00000000000003,
+        "sma_50": 0.649,
+        "sma_200": 0.6498500000000001,
+        "trend": "Strong Uptrend",
+        "support": 0.6,
+        "resistance": 0.72,
+        "std_close": 0.02546411303445652
+    },
+    "PHA": {
+        "last_close": 0.249,
+        "rsi": 43.03797468354429,
+        "sma_50": 0.26322,
+        "sma_200": 0.205795,
+        "trend": "Downtrend",
+        "support": 0.209,
+        "resistance": 0.375,
+        "std_close": 0.012524817468992476
+    },
+    "MAXS": {
+        "last_close": 2.45,
+        "rsi": 57.53424657534248,
+        "sma_50": 2.3228,
+        "sma_200": 2.40475,
+        "trend": "Strong Uptrend",
+        "support": 2.0,
+        "resistance": 2.5,
+        "std_close": 0.07205809060093554
+    },
+    "FGEN": {
+        "last_close": 18.0,
+        "rsi": 66.5289256198347,
+        "sma_50": 16.0568,
+        "sma_200": 16.6494,
+        "trend": "Strong Uptrend",
+        "support": 15.04,
+        "resistance": 19.22,
+        "std_close": 1.0948011114737737
+    },
+    "EURO": {
+        "last_close": 1.0,
+        "rsi": 44.68085106382978,
+        "sma_50": 1.0026,
+        "sma_200": 0.9097000000000002,
+        "trend": "Downtrend",
+        "support": 0.86,
+        "resistance": 1.1,
+        "std_close": 0.0339155297451586
+    },
+    "PA": {
+        "last_close": 1.0,
+        "rsi": 60.34482758620689,
+        "sma_50": 1.0354,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.84,
+        "resistance": 1.65,
+        "std_close": 0.08236631912569474
+    },
+    "ATNB": {
+        "last_close": 0.495,
+        "rsi": 54.54545454545455,
+        "sma_50": 0.5072,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.47,
+        "resistance": 0.6,
+        "std_close": 0.004559547530644961
+    },
+    "DNL": {
+        "last_close": 3.67,
+        "rsi": 53.92156862745099,
+        "sma_50": 4.1282,
+        "sma_200": 4.99815,
+        "trend": "Strong Downtrend",
+        "support": 3.25,
+        "resistance": 5.15,
+        "std_close": 0.1666670175434903
+    },
+    "SLI": {
+        "last_close": 2.45,
+        "rsi": 56.75675675675678,
+        "sma_50": 2.3708,
+        "sma_200": 2.60085,
+        "trend": "Uptrend",
+        "support": 2.0,
+        "resistance": 2.56,
+        "std_close": 0.07437281619969553
+    },
+    "MRSGI": {
+        "last_close": 1.16,
+        "rsi": 60.00000000000006,
+        "sma_50": 1.1425999999999998,
+        "sma_200": 1.19325,
+        "trend": "Uptrend",
+        "support": 1.1,
+        "resistance": 1.2,
+        "std_close": 0.010894228312566012
+    },
+    "RHI": {
+        "last_close": 27.77,
+        "rsi": 57.63888888888889,
+        "sma_50": 28.252200000000002,
+        "sma_200": 39.2862,
+        "trend": "Strong Downtrend",
+        "support": 25.22,
+        "resistance": 35.24,
+        "std_close": 0.5691292980463548
+    },
+    "COAL": {
+        "last_close": 0.03,
+        "rsi": 73.91304347826086,
+        "sma_50": 0.022039999999999997,
+        "sma_200": 0.016633,
+        "trend": "Strong Uptrend",
+        "support": 0.017,
+        "resistance": 0.034,
+        "std_close": 0.004323741070196649
+    },
+    "UBP": {
+        "last_close": 26.4,
+        "rsi": 19.230769230769212,
+        "sma_50": 27.869,
+        "sma_200": 31.197000000000003,
+        "trend": "Strong Downtrend",
+        "support": 26.1,
+        "resistance": 30.9,
+        "std_close": 0.2966812040593493
+    },
+    "CNVRG": {
+        "last_close": 15.36,
+        "rsi": 54.12186379928313,
+        "sma_50": 13.5724,
+        "sma_200": 16.41375,
+        "trend": "Uptrend",
+        "support": 11.88,
+        "resistance": 16.0,
+        "std_close": 0.6210483496730177
+    },
+    "JAS": {
+        "last_close": 1.55,
+        "rsi": 44.1860465116279,
+        "sma_50": 1.7810000000000001,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 1.11,
+        "resistance": 2.18,
+        "std_close": 0.2158678933246467
+    },
+    "PTC": {
+        "last_close": 99.0,
+        "rsi": 58.4634603372892,
+        "sma_50": 0.0,
+        "sma_200": 0.0,
+        "trend": "Neutral",
+        "support": 85.4,
+        "resistance": 140.0,
+        "std_close": 9.915223210588326
+    },
+    "PIZZA": {
+        "last_close": 6.6,
+        "rsi": 14.285714285714192,
+        "sma_50": 7.115,
+        "sma_200": 7.443300000000001,
+        "trend": "Strong Downtrend",
+        "support": 6.6,
+        "resistance": 7.5,
+        "std_close": 0.2045637206091874
+    },
+    "AGI": {
+        "last_close": 7.26,
+        "rsi": 53.846153846153854,
+        "sma_50": 7.061999999999999,
+        "sma_200": 7.3065,
+        "trend": "Uptrend",
+        "support": 6.2,
+        "resistance": 7.7,
+        "std_close": 0.24513369069915583
+    },
+    "CAB": {
+        "last_close": 49.0,
+        "rsi": 2.857142857142833,
+        "sma_50": 0.0,
+        "sma_200": 0.0,
+        "trend": "Neutral",
+        "support": 41.15,
+        "resistance": 58.0,
+        "std_close": 4.159140219855669
+    },
+    "BSC": {
+        "last_close": 0.116,
+        "rsi": 37.5,
+        "sma_50": 0.12364000000000001,
+        "sma_200": 0.1226,
+        "trend": "Strong Downtrend",
+        "support": 0.107,
+        "resistance": 0.164,
+        "std_close": 0.0034377930497095895
+    },
+    "STR": {
+        "last_close": 1.12,
+        "rsi": 56.603773584905674,
+        "sma_50": 1.1752,
+        "sma_200": 1.5041,
+        "trend": "Strong Downtrend",
+        "support": 1.0,
+        "resistance": 1.48,
+        "std_close": 0.051155078978173375
+    },
+    "AT": {
+        "last_close": 5.6,
+        "rsi": 65.7142857142857,
+        "sma_50": 5.2904,
+        "sma_200": 4.4665,
+        "trend": "Strong Uptrend",
+        "support": 4.0,
+        "resistance": 5.9,
+        "std_close": 0.22366033928352383
+    },
+    "PHES": {
+        "last_close": 0.32,
+        "rsi": 50.0,
+        "sma_50": 0.3292,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.27,
+        "resistance": 0.4,
+        "std_close": 0.01828862171434815
+    },
+    "TECH": {
+        "last_close": 0.63,
+        "rsi": 38.09523809523808,
+        "sma_50": 0.6065999999999999,
+        "sma_200": 0.73045,
+        "trend": "Uptrend",
+        "support": 0.51,
+        "resistance": 0.74,
+        "std_close": 0.0431978313295812
+    },
+    "MREIT": {
+        "last_close": 13.88,
+        "rsi": 32.432432432432364,
+        "sma_50": 13.882,
+        "sma_200": 13.920700000000002,
+        "trend": "Strong Downtrend",
+        "support": 13.34,
+        "resistance": 14.2,
+        "std_close": 0.08127277008872484
+    },
+    "TEL": {
+        "last_close": 1272.0,
+        "rsi": 40.136054421768705,
+        "sma_50": 1196.88,
+        "sma_200": 1237.535,
+        "trend": "Strong Uptrend",
+        "support": 1067.0,
+        "resistance": 1330.0,
+        "std_close": 12.222068047937759
+    },
+    "ACE": {
+        "last_close": 1.2,
+        "rsi": 41.1111111111111,
+        "sma_50": 1.3866,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 1.2,
+        "resistance": 1.75,
+        "std_close": 0.10228443314189062
+    },
+    "VMC": {
+        "last_close": 2.01,
+        "rsi": 50.94339622641509,
+        "sma_50": 2.033,
+        "sma_200": 1.9699250000000001,
+        "trend": "Downtrend",
+        "support": 1.7,
+        "resistance": 2.21,
+        "std_close": 0.08344396165596465
+    },
+    "ABA": {
+        "last_close": 0.41,
+        "rsi": 69.56521739130433,
+        "sma_50": 0.39549999999999996,
+        "sma_200": 0.510375,
+        "trend": "Uptrend",
+        "support": 0.35,
+        "resistance": 0.53,
+        "std_close": 0.010894228312566057
+    },
+    "CDC": {
+        "last_close": 0.58,
+        "rsi": 58.82352941176468,
+        "sma_50": 0.5711999999999999,
+        "sma_200": 0.6037,
+        "trend": "Uptrend",
+        "support": 0.5,
+        "resistance": 0.6,
+        "std_close": 0.014832396974191316
+    },
+    "PRIM": {
+        "last_close": 1.1,
+        "rsi": 38.63636363636363,
+        "sma_50": 1.2380000000000002,
+        "sma_200": 1.5075999999999998,
+        "trend": "Strong Downtrend",
+        "support": 1.07,
+        "resistance": 1.49,
+        "std_close": 0.06524447950028534
+    },
+    "HI": {
+        "last_close": 4.4,
+        "rsi": 75.64102564102569,
+        "sma_50": 3.9012000000000002,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 3.5,
+        "resistance": 4.4,
+        "std_close": 0.2147035900467139
+    },
+    "IS": {
+        "last_close": 0.127,
+        "rsi": 63.529411764705884,
+        "sma_50": 0.10533999999999999,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 0.073,
+        "resistance": 0.146,
+        "std_close": 0.01295904479910704
+    },
+    "MRC": {
+        "last_close": 0.91,
+        "rsi": 48.275862068965516,
+        "sma_50": 0.9605999999999999,
+        "sma_200": 0.8483999999999999,
+        "trend": "Downtrend",
+        "support": 0.81,
+        "resistance": 1.21,
+        "std_close": 0.040584544634107884
+    },
+    "MVC": {
+        "last_close": 5.14,
+        "rsi": 47.05882352941174,
+        "sma_50": 5.065799999999999,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 4.6,
+        "resistance": 5.48,
+        "std_close": 0.1252985907426945
+    },
+    "LFM": {
+        "last_close": 34.25,
+        "rsi": 84.61538461538473,
+        "sma_50": 32.49,
+        "sma_200": 24.3172,
+        "trend": "Strong Uptrend",
+        "support": 24.5,
+        "resistance": 39.5,
+        "std_close": 0.4729248299009497
+    },
+    "ALHI": {
+        "last_close": 3.87,
+        "rsi": 50.929368029739784,
+        "sma_50": 4.9344,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 3.68,
+        "resistance": 7.0,
+        "std_close": 0.33681597349294473
+    },
+    "GMA7": {
+        "last_close": 5.25,
+        "rsi": 55.813953488372064,
+        "sma_50": 5.3268,
+        "sma_200": 5.51375,
+        "trend": "Strong Downtrend",
+        "support": 5.1,
+        "resistance": 5.65,
+        "std_close": 0.039256243217849415
+    },
+    "ICT": {
+        "last_close": 577.0,
+        "rsi": 55.89887640449438,
+        "sma_50": 549.24,
+        "sma_200": 453.05899999999997,
+        "trend": "Strong Uptrend",
+        "support": 471.2,
+        "resistance": 614.5,
+        "std_close": 23.334678845917406
+    },
+    "OV": {
+        "last_close": 0.0089,
+        "rsi": 23.076923076923094,
+        "sma_50": 0.009234,
+        "sma_200": 0.008252,
+        "trend": "Downtrend",
+        "support": 0.0076,
+        "resistance": 0.011,
+        "std_close": 0.00024121403467940194
+    },
+    "GERI": {
+        "last_close": 0.65,
+        "rsi": 80.0,
+        "sma_50": 0.634,
+        "sma_200": 0.5997,
+        "trend": "Strong Uptrend",
+        "support": 0.61,
+        "resistance": 0.68,
+        "std_close": 0.015593520921743188
+    },
+    "CROWN": {
+        "last_close": 1.67,
+        "rsi": 63.15789473684206,
+        "sma_50": 1.6542,
+        "sma_200": 1.6764999999999999,
+        "trend": "Uptrend",
+        "support": 1.6,
+        "resistance": 1.7,
+        "std_close": 0.026036411750510153
+    },
+    "MED": {
+        "last_close": 0.104,
+        "rsi": 62.295081967213115,
+        "sma_50": 0.10400000000000001,
+        "sma_200": 0.11283000000000001,
+        "trend": "Strong Downtrend",
+        "support": 0.089,
+        "resistance": 0.119,
+        "std_close": 0.007167910948694959
+    },
+    "CEI": {
+        "last_close": 0.078,
+        "rsi": 51.85185185185185,
+        "sma_50": 0.07254,
+        "sma_200": 0.063845,
+        "trend": "Strong Uptrend",
+        "support": 0.067,
+        "resistance": 0.079,
+        "std_close": 0.0022266330494363266
+    },
+    "BRN": {
+        "last_close": 1.0,
+        "rsi": 64.70588235294119,
+        "sma_50": 0.7574,
+        "sma_200": 0.6415000000000001,
+        "trend": "Strong Uptrend",
+        "support": 0.5,
+        "resistance": 1.01,
+        "std_close": 0.02603641175051018
+    },
+    "FPH": {
+        "last_close": 73.0,
+        "rsi": 53.24675324675324,
+        "sma_50": 72.09100000000001,
+        "sma_200": 69.559,
+        "trend": "Strong Uptrend",
+        "support": 70.1,
+        "resistance": 76.0,
+        "std_close": 0.7827876972381274
+    },
+    "SSI": {
+        "last_close": 2.56,
+        "rsi": 55.555555555555564,
+        "sma_50": 2.5084,
+        "sma_200": 2.85505,
+        "trend": "Uptrend",
+        "support": 2.22,
+        "resistance": 2.74,
+        "std_close": 0.0532397753959436
+    },
+    "ENEX": {
+        "last_close": 3.41,
+        "rsi": 51.8987341772152,
+        "sma_50": 3.6574,
+        "sma_200": 4.0678,
+        "trend": "Strong Downtrend",
+        "support": 3.2,
+        "resistance": 5.18,
+        "std_close": 0.1433398611324627
+    },
+    "TFC": {
+        "last_close": 45.1,
+        "rsi": 43.117977528089895,
+        "sma_50": 49.489,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 35.0,
+        "resistance": 70.0,
+        "std_close": 6.351297008029977
+    },
+    "MG": {
+        "last_close": 0.061,
+        "rsi": 52.38095238095238,
+        "sma_50": 0.06324,
+        "sma_200": 0.07409500000000001,
+        "trend": "Strong Downtrend",
+        "support": 0.056,
+        "resistance": 0.08,
+        "std_close": 0.0020589982234597796
+    },
+    "ORE": {
+        "last_close": 0.39,
+        "rsi": 48.38709677419355,
+        "sma_50": 0.3924,
+        "sma_200": 0.4018,
+        "trend": "Strong Downtrend",
+        "support": 0.325,
+        "resistance": 0.445,
+        "std_close": 0.01398071980678353
+    },
+    "BHI": {
+        "last_close": 0.039,
+        "rsi": 59.999999999999986,
+        "sma_50": 0.037759999999999995,
+        "sma_200": 0.045285,
+        "trend": "Uptrend",
+        "support": 0.034,
+        "resistance": 0.046,
+        "std_close": 0.002960707596789019
+    },
+    "FNI": {
+        "last_close": 1.15,
+        "rsi": 42.30769230769231,
+        "sma_50": 1.2234,
+        "sma_200": 1.22655,
+        "trend": "Strong Downtrend",
+        "support": 1.1,
+        "resistance": 1.48,
+        "std_close": 0.03528455752875473
+    },
+    "SMC": {
+        "last_close": 84.0,
+        "rsi": 73.6263736263736,
+        "sma_50": 69.065,
+        "sma_200": 72.582,
+        "trend": "Strong Uptrend",
+        "support": 56.5,
+        "resistance": 84.5,
+        "std_close": 3.3168786849274903
+    },
+    "LAND": {
+        "last_close": 0.52,
+        "rsi": 44.444444444444436,
+        "sma_50": 0.5252,
+        "sma_200": 0.59,
+        "trend": "Strong Downtrend",
+        "support": 0.5,
+        "resistance": 0.58,
+        "std_close": 0.010990426455975706
+    },
+    "MWIDE": {
+        "last_close": 3.0,
+        "rsi": 54.54545454545455,
+        "sma_50": 3.0604,
+        "sma_200": 2.4056,
+        "trend": "Downtrend",
+        "support": 2.69,
+        "resistance": 3.69,
+        "std_close": 0.0938307546933083
+    },
+    "PRF": {
+        "last_close": 46.91,
+        "rsi": 60.509554140127285,
+        "sma_50": 45.886799999999994,
+        "sma_200": 42.792125,
+        "trend": "Strong Uptrend",
+        "support": 44.11,
+        "resistance": 47.67,
+        "std_close": 0.8817721390830838
+    },
+    "ALI": {
+        "last_close": 22.65,
+        "rsi": 67.0807453416149,
+        "sma_50": 21.092599999999997,
+        "sma_200": 24.005399999999998,
+        "trend": "Uptrend",
+        "support": 18.64,
+        "resistance": 26.65,
+        "std_close": 0.9167901671191262
+    },
+    "LOTO": {
+        "last_close": 1.72,
+        "rsi": 39.53488372093022,
+        "sma_50": 1.8676,
+        "sma_200": 3.0132,
+        "trend": "Strong Downtrend",
+        "support": 1.6,
+        "resistance": 2.49,
+        "std_close": 0.04443801123031119
+    },
+    "GREEN": {
+        "last_close": 0.191,
+        "rsi": 83.52941176470587,
+        "sma_50": 0.13777999999999999,
+        "sma_200": 0.14564,
+        "trend": "Strong Uptrend",
+        "support": 0.124,
+        "resistance": 0.192,
+        "std_close": 0.02353049533108718
+    },
+    "PHN": {
+        "last_close": 16.4,
+        "rsi": 50.0,
+        "sma_50": 16.6812,
+        "sma_200": 18.114319,
+        "trend": "Strong Downtrend",
+        "support": 15.0,
+        "resistance": 17.88,
+        "std_close": 0.12267200598600951
+    },
+    "UPM": {
+        "last_close": 0.0051,
+        "rsi": 50.909090909090914,
+        "sma_50": 0.004584,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 0.0028,
+        "resistance": 0.0067,
+        "std_close": 0.00047848444950808234
+    },
+    "ZHI": {
+        "last_close": 0.063,
+        "rsi": 31.578947368421026,
+        "sma_50": 0.07098,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 0.063,
+        "resistance": 0.086,
+        "std_close": 0.004717269504591333
+    },
+    "LSC": {
+        "last_close": 0.64,
+        "rsi": 67.85714285714286,
+        "sma_50": 0.6126,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 0.465,
+        "resistance": 0.92,
+        "std_close": 0.0756980671379465
+    },
+    "VVT": {
+        "last_close": 18.44,
+        "rsi": 46.52406417112302,
+        "sma_50": 19.5184,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 18.0,
+        "resistance": 25.0,
+        "std_close": 0.41576688812741946
+    },
+    "NIKL": {
+        "last_close": 3.6,
+        "rsi": 42.85714285714286,
+        "sma_50": 3.6872000000000003,
+        "sma_200": 2.86695,
+        "trend": "Downtrend",
+        "support": 3.14,
+        "resistance": 4.05,
+        "std_close": 0.062481576231886604
+    },
+    "APX": {
+        "last_close": 11.92,
+        "rsi": 67.88617886178864,
+        "sma_50": 10.2208,
+        "sma_200": 7.44915,
+        "trend": "Strong Uptrend",
+        "support": 8.63,
+        "resistance": 11.96,
+        "std_close": 0.8596356327262333
+    },
+    "AREIT": {
+        "last_close": 42.75,
+        "rsi": 60.00000000000004,
+        "sma_50": 42.825,
+        "sma_200": 41.51075,
+        "trend": "Downtrend",
+        "support": 40.55,
+        "resistance": 45.2,
+        "std_close": 0.5808059282719045
+    },
+    "DITO": {
+        "last_close": 0.68,
+        "rsi": 34.48275862068965,
+        "sma_50": 0.7862,
+        "sma_200": 1.0812,
+        "trend": "Strong Downtrend",
+        "support": 0.59,
+        "resistance": 1.02,
+        "std_close": 0.06098101516477335
+    },
+    "TPC": {
+        "last_close": 69.46,
+        "rsi": 61.62162162162164,
+        "sma_50": 65.2586,
+        "sma_200": 47.796949999999995,
+        "trend": "Strong Uptrend",
+        "support": 57.9,
+        "resistance": 77.0,
+        "std_close": 3.316972739998737
+    },
+    "LBC": {
+        "last_close": 8.88,
+        "rsi": 89.91935483870968,
+        "sma_50": 7.4588,
+        "sma_200": 8.8862,
+        "trend": "Uptrend",
+        "support": 6.73,
+        "resistance": 9.04,
+        "std_close": 0.622707162738888
+    },
+    "EVER": {
+        "last_close": 27.24,
+        "rsi": 63.18785578747626,
+        "sma_50": 23.858799999999995,
+        "sma_200": 24.182125,
+        "trend": "Strong Uptrend",
+        "support": 19.15,
+        "resistance": 28.7299,
+        "std_close": 1.4574007143216527
+    },
+    "STI": {
+        "last_close": 1.4,
+        "rsi": 50.0,
+        "sma_50": 1.4016,
+        "sma_200": 1.4217,
+        "trend": "Strong Downtrend",
+        "support": 1.33,
+        "resistance": 1.5,
+        "std_close": 0.023973669767168818
+    },
+    "DFNN": {
+        "last_close": 0.83,
+        "rsi": 54.838709677419345,
+        "sma_50": 0.7824,
+        "sma_200": 1.6572,
+        "trend": "Uptrend",
+        "support": 0.65,
+        "resistance": 1.05,
+        "std_close": 0.03307089672999985
+    },
+    "GTCAP": {
+        "last_close": 575.0,
+        "rsi": 55.72519083969466,
+        "sma_50": 554.23,
+        "sma_200": 575.589,
+        "trend": "Uptrend",
+        "support": 504.0,
+        "resistance": 653.0,
+        "std_close": 12.691143824689222
+    },
+    "GSMI": {
+        "last_close": 290.0,
+        "rsi": 48.031496062992126,
+        "sma_50": 283.768,
+        "sma_200": 288.872,
+        "trend": "Strong Uptrend",
+        "support": 276.8,
+        "resistance": 300.0,
+        "std_close": 4.757918607299228
+    },
+    "EW": {
+        "last_close": 11.46,
+        "rsi": 46.66666666666674,
+        "sma_50": 11.470799999999999,
+        "sma_200": 11.229800000000001,
+        "trend": "Downtrend",
+        "support": 11.26,
+        "resistance": 12.3,
+        "std_close": 0.09724629610048481
+    },
+    "TOP": {
+        "last_close": 1.61,
+        "rsi": 40.57971014492754,
+        "sma_50": 1.4916,
+        "sma_200": 0.0,
+        "trend": "Uptrend",
+        "support": 1.21,
+        "resistance": 2.01,
+        "std_close": 0.12130865374607121
+    },
+    "MAC": {
+        "last_close": 4.48,
+        "rsi": 46.15384615384617,
+        "sma_50": 4.4558,
+        "sma_200": 4.18625,
+        "trend": "Strong Uptrend",
+        "support": 4.12,
+        "resistance": 4.87,
+        "std_close": 0.06706438383335354
+    },
+    "LTG": {
+        "last_close": 14.36,
+        "rsi": 36.956521739130444,
+        "sma_50": 14.6068,
+        "sma_200": 13.3498,
+        "trend": "Downtrend",
+        "support": 13.8,
+        "resistance": 15.56,
+        "std_close": 0.2766167784232605
+    },
+    "TFHI": {
+        "last_close": 61.0,
+        "rsi": 47.40932642487047,
+        "sma_50": 60.56,
+        "sma_200": 58.838499999999996,
+        "trend": "Strong Uptrend",
+        "support": 55.0,
+        "resistance": 65.0,
+        "std_close": 1.4494350078928215
+    },
+    "MFIN": {
+        "last_close": 1.61,
+        "rsi": 50.413223140495866,
+        "sma_50": 1.8127099999999998,
+        "sma_200": 0.0,
+        "trend": "Downtrend",
+        "support": 1.3853,
+        "resistance": 2.3846,
+        "std_close": 0.1341434817060095
+    },
+    "SUN": {
+        "last_close": 0.63,
+        "rsi": 50.0,
+        "sma_50": 0.6242,
+        "sma_200": 0.6819,
+        "trend": "Uptrend",
+        "support": 0.58,
+        "resistance": 0.78,
+        "std_close": 0.004442616583193197
+    },
+    "WLCON": {
+        "last_close": 7.0,
+        "rsi": 58.823529411764724,
+        "sma_50": 7.5564,
+        "sma_200": 7.97475,
+        "trend": "Strong Downtrend",
+        "support": 6.4,
+        "resistance": 9.72,
+        "std_close": 0.1020577751750655
+    },
+    "FLI": {
+        "last_close": 0.75,
+        "rsi": 46.15384615384615,
+        "sma_50": 0.7592,
+        "sma_200": 0.77535,
+        "trend": "Strong Downtrend",
+        "support": 0.73,
+        "resistance": 0.83,
+        "std_close": 0.008335087534664914
+    }
+}
