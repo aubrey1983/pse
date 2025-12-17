@@ -17,7 +17,7 @@ class ReportGenerator:
                 return {}
         return {}
 
-    def generate_dashboard(self, output_file: str = "stock_analysis_report.html"):
+    def generate_dashboard(self, output_file: str = "report.html"):
         """Generate a modern HTML dashboard merging Technical and Fundamental data."""
         
         # Load Data
