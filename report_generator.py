@@ -43,9 +43,8 @@ class ReportGenerator:
         
         official = official_meta
         # Fallback to category/sector in item if official mapping fails, but usually official has it.
-        # If not, we don't easy access to category loop variable here if we are out of loop.
-        # But 'item' does not store category... wait.
-        # Actually 'official_meta' is the whole dict? No, passing just the specific meta.
+        official = official_meta
+        # Fallback to category/sector in item if official mapping fails
         
         o_sector = official.get('sector', 'Unknown')
         o_subsector = official.get('subsector', '-')
@@ -266,10 +265,7 @@ class ReportGenerator:
                                 except:
                                     continue
                             
-                            # Deduplicate and sort months roughly by calendar? No, just list them.
-                            # Or reverse distinct?
-                            # Let's keep them in order of occurrence if possible, or sorted.
-                            # div_history is usually newest first.
+                            # Deduplicate pay_months
                             pay_months = list(set(pay_months)) # Dedupe: "Mar, Mar" -> "Mar"
                             # Sort by calendar month
                             month_map = {m: i for i, m in enumerate(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"])}
@@ -321,7 +317,6 @@ class ReportGenerator:
                     # Volume Spike Boost
                     if t.get('volume_spike', False): score += 1
                     
-                    item['score'] = score
                     item['score'] = score
                     if sector in grouped_data:
                         grouped_data[sector].append(item)
@@ -510,9 +505,6 @@ class ReportGenerator:
 
         # ... (skipping to HTML Assembly) ...
 
-        # Update the Table Headers for Dividend Gems in the HTML string below
-        # We need to inject the updated table headers. Since the HTML is a large string, 
-        # I will replace the relevant section in the main HTML construction.
 
 
         # --- FINAL HTML ASSEMBLY ---

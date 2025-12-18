@@ -141,7 +141,7 @@ def scrape_stock_details(symbol, ids, tech_price):
                     if td_stat:
                         data['status'] = td_stat.text.strip()
         except Exception as e:
-            pass # print(f"[{symbol}] PE Error: {e}")
+            pass
 
     # 2. EPS (financial_reports_view.do)
     try:
@@ -160,7 +160,7 @@ def scrape_stock_details(symbol, ids, tech_price):
                 if td:
                     data['eps'] = clean_value(td.text)
     except Exception as e:
-        pass # print(f"[{symbol}] EPS Error: {e}")
+        pass
 
     # 3. Dividend History (Ajax POST)
     DIVIDENDS_AJAX_URL = "https://edge.pse.com.ph/companyPage/dividends_and_rights_list.ax?DividendsOrRights=Dividends"
@@ -190,19 +190,6 @@ def scrape_stock_details(symbol, ids, tech_price):
                     # Filter: Must be "Common" or contain the Symbol (e.g. "GTCAP" but not "GTPPB" if possible, usually checking "Common" is safest)
                     # GTCAP example: "GTPPB" vs "Common"
                     # If it's a preferred share, it usually won't say "Common"
-                    if "COMMON" not in security_name and symbol not in security_name:
-                         # Extra safety: if symbol is GTCAP and security_name is GTPPB, we should skip
-                         # But if security_name is just "GTCAP", we keep.
-                         # If security_name is "GTPPB", symbol "GTCAP" is NOT in it (False) -> Wait, GTCAP is not in GTPPB? 
-                         # Actually GTCAP is not a substring of GTPPB.
-                         # Let's stick to: if "COMMON" is in it, take it. If record says "GTPPB", "PREF", etc, skip.
-                         # Most PSE records say "Common" or "Preferred".
-                         if "PREF" in security_name or "GTPPB" in security_name or "PCOR" not in security_name and symbol == "PCOR":
-                             # specialized checks might be messy.
-                             pass
-                    
-                    # Better Logic:
-                    # If "PREFERRED" or "PF" or specific known preferreds in name -> SKIP
                     if "PREFERRED" in security_name or "PF" in security_name or "GTPPB" in security_name:
                         continue
                         
@@ -237,7 +224,7 @@ def scrape_stock_details(symbol, ids, tech_price):
                         })
                         
     except Exception as e:
-        pass # print(f"[{symbol}] Div Error: {e}")
+        pass
 
 
 
@@ -268,15 +255,8 @@ def main():
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_to_symbol = {}
         
-        # Test specific list only
-        # test_items = [(s, stock_ids[s]) for s in ['ALI', 'JFC', 'BDO', 'TEL', 'SMPH'] if s in stock_ids]
-        
-        # FULL RUN (Uncomment below)
-        # test_items = [(s, stock_ids[s]) for s in ['ALI', 'JFC', 'BDO', 'TEL', 'SMPH'] if s in stock_ids]
-        
-        # FULL RUN (Uncomment below)
+        # FULL RUN
         test_items = stock_ids.items()
-        # test_items = [(s, stock_ids[s]) for s in ['ALI'] if s in stock_ids]
         
         for symbol, ids in test_items:
             tech = technical_data.get(symbol, {})

@@ -20,8 +20,6 @@ from analyzer import Analyzer
 from recommender import Recommender
 from report_generator import ReportGenerator
 import datetime
-import time
-import json
 from stock_data import STOCK_CATEGORIES, get_all_symbols
 
 # Configuration
@@ -51,10 +49,7 @@ def main():
         """Worker function to fetch and analyze a single stock."""
         try:
             # 1. Fetch Data
-            # Note: We create a fresh fetcher/analyzer or reuse? 
-            # Since helper methods are stateless, we can reuse or just use local instances.
-            # Referencing outer scope 'fetcher' and 'analyzer' is fine for reading if they are stateless.
-            # DataFetcher uses requests locally, Analyzer is pure logic.
+            # 1. Fetch Data
             
             data = fetcher.fetch_investagrams(symbol, days=365)
             
