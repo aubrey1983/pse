@@ -1,10 +1,141 @@
 {
+    "ABSP": {
+        "symbol": "ABSP",
+        "pe_ratio": null,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:56",
+        "status": "Open"
+    },
+    "ACE": {
+        "symbol": "ACE",
+        "pe_ratio": -5.45,
+        "eps": -0.22,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:56",
+        "status": "Open"
+    },
+    "ABG": {
+        "symbol": "ABG",
+        "pe_ratio": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:56",
+        "status": "Open"
+    },
+    "AAA": {
+        "symbol": "AAA",
+        "pe_ratio": null,
+        "eps": -0.0017,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:56",
+        "status": "Suspended"
+    },
+    "ACEN": {
+        "symbol": "ACEN",
+        "pe_ratio": 15.21,
+        "eps": 0.19,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "Nov 19, 2025",
+                "pay_date": "Dec 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "Nov 19, 2025",
+                "pay_date": "Dec 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "Aug 18, 2025",
+                "pay_date": "Sep 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "Aug 18, 2025",
+                "pay_date": "Sep 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.05,
+                "ex_date": "Jun 19, 2025",
+                "pay_date": "Jul 3, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "May 16, 2025",
+                "pay_date": "Jun 2, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "May 16, 2025",
+                "pay_date": "Jun 2, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "Feb 14, 2025",
+                "pay_date": "Mar 3, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "Feb 14, 2025",
+                "pay_date": "Mar 3, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:56",
+        "status": "Open"
+    },
     "ABS": {
         "symbol": "ABS",
         "pe_ratio": -0.7,
         "eps": -4.86,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
+        "last_updated": "2025-12-18 12:52:56",
+        "status": "Open"
+    },
+    "ABA": {
+        "symbol": "ABA",
+        "pe_ratio": 0.68,
+        "eps": 0.6,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.01,
+                "ex_date": "Jun 23, 2022",
+                "pay_date": "Oct 24, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": null,
+                "ex_date": "",
+                "pay_date": "N/A"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:56",
+        "status": "Open"
+    },
+    "ACR": {
+        "symbol": "ACR",
+        "pe_ratio": 4.23,
+        "eps": 0.11,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.02,
+                "ex_date": "Jun 27, 2025",
+                "pay_date": "Jul 16, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:56",
         "status": "Open"
     },
     "AC": {
@@ -97,138 +228,7 @@
                 "pay_date": "Jan 11, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ABA": {
-        "symbol": "ABA",
-        "pe_ratio": 0.68,
-        "eps": 0.6,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.01,
-                "ex_date": "Jun 23, 2022",
-                "pay_date": "Oct 24, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": null,
-                "ex_date": "",
-                "pay_date": "N/A"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ABG": {
-        "symbol": "ABG",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ABSP": {
-        "symbol": "ABSP",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "AAA": {
-        "symbol": "AAA",
-        "pe_ratio": null,
-        "eps": -0.0017,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Suspended"
-    },
-    "ACE": {
-        "symbol": "ACE",
-        "pe_ratio": -5.45,
-        "eps": -0.22,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ACEN": {
-        "symbol": "ACEN",
-        "pe_ratio": 15.21,
-        "eps": 0.19,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "Nov 19, 2025",
-                "pay_date": "Dec 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "Nov 19, 2025",
-                "pay_date": "Dec 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "Aug 18, 2025",
-                "pay_date": "Sep 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "Aug 18, 2025",
-                "pay_date": "Sep 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.05,
-                "ex_date": "Jun 19, 2025",
-                "pay_date": "Jul 3, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "May 16, 2025",
-                "pay_date": "Jun 2, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "May 16, 2025",
-                "pay_date": "Jun 2, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "Feb 14, 2025",
-                "pay_date": "Mar 3, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "Feb 14, 2025",
-                "pay_date": "Mar 3, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ACR": {
-        "symbol": "ACR",
-        "pe_ratio": 4.23,
-        "eps": 0.11,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.02,
-                "ex_date": "Jun 27, 2025",
-                "pay_date": "Jul 16, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:55",
+        "last_updated": "2025-12-18 12:52:56",
         "status": "Open"
     },
     "AB": {
@@ -236,66 +236,7 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "AEV": {
-        "symbol": "AEV",
-        "pe_ratio": 8.09,
-        "eps": 3.25,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 1.54,
-                "ex_date": "Mar 20, 2025",
-                "pay_date": "Mar 28, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ALHI": {
-        "symbol": "ALHI",
-        "pe_ratio": 6.45,
-        "eps": 0.6,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.04,
-                "ex_date": "Jun 05, 2025",
-                "pay_date": "Jul 3, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ALI": {
-        "symbol": "ALI",
-        "pe_ratio": 11.92,
-        "eps": 1.9,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.2928,
-                "ex_date": "Nov 11, 2025",
-                "pay_date": "Nov 26, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.2888,
-                "ex_date": "Mar 04, 2025",
-                "pay_date": "Mar 21, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ALLHC": {
-        "symbol": "ALLHC",
-        "pe_ratio": 12.09,
-        "eps": 0.11,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
+        "last_updated": "2025-12-18 12:52:56",
         "status": "Open"
     },
     "AGI": {
@@ -316,28 +257,58 @@
                 "pay_date": "Jan 24, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:55",
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
-    "ALTER": {
-        "symbol": "ALTER",
-        "pe_ratio": 27.67,
-        "eps": 0.03,
+    "ALI": {
+        "symbol": "ALI",
+        "pe_ratio": 11.92,
+        "eps": 1.9,
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 0.55,
-                "ex_date": "Dec 16, 2025",
-                "pay_date": "Dec 18, 2025"
+                "amount": 0.2928,
+                "ex_date": "Nov 11, 2025",
+                "pay_date": "Nov 26, 2025"
             },
             {
                 "type": "Cash",
-                "amount": 0.01,
-                "ex_date": "Aug 13, 2025",
-                "pay_date": "Sep 11, 2025"
+                "amount": 0.2888,
+                "ex_date": "Mar 04, 2025",
+                "pay_date": "Mar 21, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:55",
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "AEV": {
+        "symbol": "AEV",
+        "pe_ratio": 8.09,
+        "eps": 3.25,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 1.54,
+                "ex_date": "Mar 20, 2025",
+                "pay_date": "Mar 28, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "ALHI": {
+        "symbol": "ALHI",
+        "pe_ratio": 6.45,
+        "eps": 0.6,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.04,
+                "ex_date": "Jun 05, 2025",
+                "pay_date": "Jul 3, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
     "ALLDY": {
@@ -345,7 +316,23 @@
         "pe_ratio": 3.2,
         "eps": 0.01,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "ALLHC": {
+        "symbol": "ALLHC",
+        "pe_ratio": 12.09,
+        "eps": 0.11,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "ANI": {
+        "symbol": "ANI",
+        "pe_ratio": -2.28,
+        "eps": -0.25,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
     "ALCO": {
@@ -361,21 +348,9 @@
             },
             {
                 "type": "Cash",
-                "amount": 9.1575,
-                "ex_date": "Oct 20, 2025",
-                "pay_date": "Nov 14, 2025"
-            },
-            {
-                "type": "Cash",
                 "amount": 7.5,
                 "ex_date": "Aug 19, 2025",
                 "pay_date": "Sep 3, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 9.1575,
-                "ex_date": "Jul 18, 2025",
-                "pay_date": "Aug 14, 2025"
             },
             {
                 "type": "Cash",
@@ -391,32 +366,12 @@
             },
             {
                 "type": "Cash",
-                "amount": 9.1575,
-                "ex_date": "Apr 14, 2025",
-                "pay_date": "May 14, 2025"
-            },
-            {
-                "type": "Cash",
                 "amount": 7.5,
                 "ex_date": "Feb 06, 2025",
                 "pay_date": "Mar 3, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 9.1575,
-                "ex_date": "Jan 20, 2025",
-                "pay_date": "Feb 14, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:55",
-        "status": "Open"
-    },
-    "ANI": {
-        "symbol": "ANI",
-        "pe_ratio": -2.28,
-        "eps": -0.25,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:55",
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
     "ANS": {
@@ -437,7 +392,36 @@
                 "pay_date": "Apr 11, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:55",
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "ALTER": {
+        "symbol": "ALTER",
+        "pe_ratio": 27.67,
+        "eps": 0.03,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.55,
+                "ex_date": "Dec 16, 2025",
+                "pay_date": "Dec 18, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.01,
+                "ex_date": "Aug 13, 2025",
+                "pay_date": "Sep 11, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "APC": {
+        "symbol": "APC",
+        "pe_ratio": null,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
     "AP": {
@@ -452,36 +436,47 @@
                 "pay_date": "Mar 28, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:56",
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
-    "APC": {
-        "symbol": "APC",
+    "APL": {
+        "symbol": "APL",
+        "pe_ratio": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "APO": {
+        "symbol": "APO",
+        "pe_ratio": -65.0,
+        "eps": -0.01,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "APVI": {
+        "symbol": "APVI",
+        "pe_ratio": 5.5,
+        "eps": 1.53,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Open"
+    },
+    "AR": {
+        "symbol": "AR",
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:56",
-        "status": "Open"
+        "last_updated": "2025-12-18 12:52:57",
+        "status": "Suspended"
     },
-    "APX": {
-        "symbol": "APX",
-        "pe_ratio": 15.68,
-        "eps": 0.76,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.06944,
-                "ex_date": "Apr 03, 2025",
-                "pay_date": "Apr 25, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.06944,
-                "ex_date": "Apr 03, 2025",
-                "pay_date": "Apr 25, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:56",
+    "ARA": {
+        "symbol": "ARA",
+        "pe_ratio": 2.02,
+        "eps": 0.21,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
     "AREIT": {
@@ -514,23 +509,28 @@
                 "pay_date": "Mar 21, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:56",
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
-    "APVI": {
-        "symbol": "APVI",
-        "pe_ratio": 5.5,
-        "eps": 1.53,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:56",
-        "status": "Open"
-    },
-    "APO": {
-        "symbol": "APO",
-        "pe_ratio": -65.0,
-        "eps": -0.01,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:56",
+    "APX": {
+        "symbol": "APX",
+        "pe_ratio": 15.68,
+        "eps": 0.76,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.06944,
+                "ex_date": "Apr 03, 2025",
+                "pay_date": "Apr 25, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.06944,
+                "ex_date": "Apr 03, 2025",
+                "pay_date": "Apr 25, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:57",
         "status": "Open"
     },
     "ASLAG": {
@@ -557,31 +557,15 @@
                 "pay_date": "Dec 12, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:56",
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Open"
     },
-    "AR": {
-        "symbol": "AR",
-        "pe_ratio": null,
-        "eps": 0.0,
+    "AT": {
+        "symbol": "AT",
+        "pe_ratio": -93.33,
+        "eps": -0.06,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:56",
-        "status": "Suspended"
-    },
-    "APL": {
-        "symbol": "APL",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:56",
-        "status": "Open"
-    },
-    "ARA": {
-        "symbol": "ARA",
-        "pe_ratio": 2.02,
-        "eps": 0.21,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:56",
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Open"
     },
     "ATI": {
@@ -602,24 +586,8 @@
                 "pay_date": "Jun 17, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:57",
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Suspended"
-    },
-    "AT": {
-        "symbol": "AT",
-        "pe_ratio": -93.33,
-        "eps": -0.06,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:57",
-        "status": "Open"
-    },
-    "ATN": {
-        "symbol": "ATN",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:57",
-        "status": "Open"
     },
     "AUB": {
         "symbol": "AUB",
@@ -639,15 +607,15 @@
                 "pay_date": "Aug 22, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:57",
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Open"
     },
-    "BCOR": {
-        "symbol": "BCOR",
+    "ATN": {
+        "symbol": "ATN",
         "pe_ratio": null,
-        "eps": -0.0,
+        "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:57",
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Open"
     },
     "BALAI": {
@@ -662,22 +630,7 @@
                 "pay_date": "Jul 10, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:57",
-        "status": "Open"
-    },
-    "AXLM": {
-        "symbol": "AXLM",
-        "pe_ratio": 12.22,
-        "eps": 0.18,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.0515,
-                "ex_date": "May 07, 2025",
-                "pay_date": "May 21, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:57",
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Open"
     },
     "BDO": {
@@ -716,7 +669,22 @@
                 "pay_date": "Dec 27, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:35:57",
+        "last_updated": "2025-12-18 12:52:58",
+        "status": "Open"
+    },
+    "AXLM": {
+        "symbol": "AXLM",
+        "pe_ratio": 12.22,
+        "eps": 0.18,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.0515,
+                "ex_date": "May 07, 2025",
+                "pay_date": "May 21, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Open"
     },
     "BC": {
@@ -724,7 +692,15 @@
         "pe_ratio": 7.21,
         "eps": 0.61,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:57",
+        "last_updated": "2025-12-18 12:52:58",
+        "status": "Open"
+    },
+    "BCOR": {
+        "symbol": "BCOR",
+        "pe_ratio": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Open"
     },
     "BEL": {
@@ -739,15 +715,7 @@
                 "pay_date": "Mar 21, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:57",
-        "status": "Open"
-    },
-    "BHI": {
-        "symbol": "BHI",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:52:58",
         "status": "Open"
     },
     "BH": {
@@ -755,30 +723,7 @@
         "pe_ratio": 2125.0,
         "eps": 0.32,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:58",
-        "status": "Open"
-    },
-    "BMM": {
-        "symbol": "BMM",
-        "pe_ratio": null,
-        "eps": -5.66,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:58",
-        "status": "Suspended"
-    },
-    "BKR": {
-        "symbol": "BKR",
-        "pe_ratio": 66.0,
-        "eps": 0.01,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.004,
-                "ex_date": "Dec 23, 2025",
-                "pay_date": "Jan 26, 2026"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:52:59",
         "status": "Open"
     },
     "BLOOM": {
@@ -793,29 +738,39 @@
                 "pay_date": "Apr 3, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:52:59",
         "status": "Open"
     },
-    "BNCOM": {
-        "symbol": "BNCOM",
-        "pe_ratio": 4.55,
-        "eps": 1.98,
+    "BKR": {
+        "symbol": "BKR",
+        "pe_ratio": 66.0,
+        "eps": 0.01,
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 0.2,
-                "ex_date": "Jun 18, 2025",
-                "pay_date": "Jul 15, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.25,
-                "ex_date": "Jun 18, 2025",
-                "pay_date": "Jul 15, 2025"
+                "amount": 0.004,
+                "ex_date": "Dec 23, 2025",
+                "pay_date": "Jan 26, 2026"
             }
         ],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:52:59",
         "status": "Open"
+    },
+    "BHI": {
+        "symbol": "BHI",
+        "pe_ratio": null,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:59",
+        "status": "Open"
+    },
+    "BMM": {
+        "symbol": "BMM",
+        "pe_ratio": null,
+        "eps": -5.66,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:59",
+        "status": "Suspended"
     },
     "BPI": {
         "symbol": "BPI",
@@ -841,15 +796,7 @@
                 "pay_date": "Dec 20, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:35:58",
-        "status": "Open"
-    },
-    "BSC": {
-        "symbol": "BSC",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:52:59",
         "status": "Open"
     },
     "BRN": {
@@ -948,7 +895,28 @@
                 "pay_date": "Feb 24, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:52:59",
+        "status": "Open"
+    },
+    "BNCOM": {
+        "symbol": "BNCOM",
+        "pe_ratio": 4.55,
+        "eps": 1.98,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.2,
+                "ex_date": "Jun 18, 2025",
+                "pay_date": "Jul 15, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.25,
+                "ex_date": "Jun 18, 2025",
+                "pay_date": "Jul 15, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:52:59",
         "status": "Open"
     },
     "C": {
@@ -956,7 +924,30 @@
         "pe_ratio": 11.88,
         "eps": 0.08,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:52:59",
+        "status": "Open"
+    },
+    "BSC": {
+        "symbol": "BSC",
+        "pe_ratio": null,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:52:59",
+        "status": "Open"
+    },
+    "CA": {
+        "symbol": "CA",
+        "pe_ratio": 29.27,
+        "eps": 1.64,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 1.6385,
+                "ex_date": "Apr 10, 2025",
+                "pay_date": "Apr 25, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CBC": {
@@ -977,22 +968,7 @@
                 "pay_date": "May 22, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:58",
-        "status": "Open"
-    },
-    "CA": {
-        "symbol": "CA",
-        "pe_ratio": 29.27,
-        "eps": 1.64,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 1.6385,
-                "ex_date": "Apr 10, 2025",
-                "pay_date": "Apr 25, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CAT": {
@@ -1000,22 +976,7 @@
         "pe_ratio": 5.05,
         "eps": 2.11,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:58",
-        "status": "Open"
-    },
-    "CDC": {
-        "symbol": "CDC",
-        "pe_ratio": 3.62,
-        "eps": 0.16,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.0375,
-                "ex_date": "May 23, 2025",
-                "pay_date": "Jun 11, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CEB": {
@@ -1030,7 +991,7 @@
                 "pay_date": "Oct 1, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:58",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CEI": {
@@ -1038,30 +999,22 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
-    "CIC": {
-        "symbol": "CIC",
-        "pe_ratio": 7.07,
-        "eps": 1.95,
+    "CDC": {
+        "symbol": "CDC",
+        "pe_ratio": 3.62,
+        "eps": 0.16,
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 1.0,
-                "ex_date": "Apr 10, 2025",
-                "pay_date": "Apr 24, 2025"
+                "amount": 0.0375,
+                "ex_date": "May 23, 2025",
+                "pay_date": "Jun 11, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:59",
-        "status": "Open"
-    },
-    "CHP": {
-        "symbol": "CHP",
-        "pe_ratio": null,
-        "eps": null,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CEU": {
@@ -1076,7 +1029,15 @@
                 "pay_date": "Aug 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
+        "status": "Open"
+    },
+    "CHP": {
+        "symbol": "CHP",
+        "pe_ratio": null,
+        "eps": null,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CLI": {
@@ -1193,7 +1154,22 @@
                 "pay_date": "Jan 12, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
+        "status": "Open"
+    },
+    "CIC": {
+        "symbol": "CIC",
+        "pe_ratio": 7.07,
+        "eps": 1.95,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 1.0,
+                "ex_date": "Apr 10, 2025",
+                "pay_date": "Apr 24, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CNPF": {
@@ -1203,18 +1179,18 @@
         "div_history": [
             {
                 "type": "Cash",
-                "amount": null,
+                "amount": 0.55,
                 "ex_date": "Jul 29, 2025",
                 "pay_date": "Aug 15, 2025"
             },
             {
                 "type": "Cash",
-                "amount": null,
+                "amount": 0.55,
                 "ex_date": "Feb 28, 2025",
                 "pay_date": "Mar 26, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "COAL": {
@@ -1222,7 +1198,7 @@
         "pe_ratio": -0.01,
         "eps": -4.11,
         "div_history": [],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CNVRG": {
@@ -1237,28 +1213,7 @@
                 "pay_date": "Apr 16, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:59",
-        "status": "Open"
-    },
-    "COL": {
-        "symbol": "COL",
-        "pe_ratio": 16.88,
-        "eps": 0.08,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.0393,
-                "ex_date": "May 15, 2025",
-                "pay_date": "Jun 4, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.0157,
-                "ex_date": "May 15, 2025",
-                "pay_date": "Jun 4, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "COSCO": {
@@ -1279,77 +1234,28 @@
                 "pay_date": "Jun 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
-    "CREIT": {
-        "symbol": "CREIT",
-        "pe_ratio": 16.23,
-        "eps": 0.22,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.049,
-                "ex_date": "Dec 10, 2025",
-                "pay_date": "Jan 12, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.049,
-                "ex_date": "Sep 11, 2025",
-                "pay_date": "Oct 8, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.049,
-                "ex_date": "Jun 05, 2025",
-                "pay_date": "Jul 4, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.055,
-                "ex_date": "Apr 23, 2025",
-                "pay_date": "May 21, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.049,
-                "ex_date": "Dec 11, 2024",
-                "pay_date": "Jan 13, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:35:59",
-        "status": "Open"
-    },
-    "CPM": {
-        "symbol": "CPM",
-        "pe_ratio": 76.67,
-        "eps": 0.03,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:59",
-        "status": "Open"
-    },
-    "CREC": {
-        "symbol": "CREC",
-        "pe_ratio": 53.12,
+    "COL": {
+        "symbol": "COL",
+        "pe_ratio": 16.88,
         "eps": 0.08,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:35:59",
-        "status": "Open"
-    },
-    "CROWN": {
-        "symbol": "CROWN",
-        "pe_ratio": 5.39,
-        "eps": 0.31,
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 0.1,
-                "ex_date": "Mar 21, 2025",
-                "pay_date": "Apr 16, 2025"
+                "amount": 0.0393,
+                "ex_date": "May 15, 2025",
+                "pay_date": "Jun 4, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.0157,
+                "ex_date": "May 15, 2025",
+                "pay_date": "Jun 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:00",
+        "last_updated": "2025-12-18 12:53:00",
         "status": "Open"
     },
     "CPG": {
@@ -1394,7 +1300,77 @@
                 "pay_date": "Feb 24, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:35:59",
+        "last_updated": "2025-12-18 12:53:00",
+        "status": "Open"
+    },
+    "CPM": {
+        "symbol": "CPM",
+        "pe_ratio": 76.67,
+        "eps": 0.03,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:00",
+        "status": "Open"
+    },
+    "CREC": {
+        "symbol": "CREC",
+        "pe_ratio": 53.12,
+        "eps": 0.08,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:01",
+        "status": "Open"
+    },
+    "CROWN": {
+        "symbol": "CROWN",
+        "pe_ratio": 5.39,
+        "eps": 0.31,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1,
+                "ex_date": "Mar 21, 2025",
+                "pay_date": "Apr 16, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:01",
+        "status": "Open"
+    },
+    "CREIT": {
+        "symbol": "CREIT",
+        "pe_ratio": 16.23,
+        "eps": 0.22,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.049,
+                "ex_date": "Dec 10, 2025",
+                "pay_date": "Jan 12, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.049,
+                "ex_date": "Sep 11, 2025",
+                "pay_date": "Oct 8, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.049,
+                "ex_date": "Jun 05, 2025",
+                "pay_date": "Jul 4, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.055,
+                "ex_date": "Apr 23, 2025",
+                "pay_date": "May 21, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.049,
+                "ex_date": "Dec 11, 2024",
+                "pay_date": "Jan 13, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:01",
         "status": "Open"
     },
     "CSB": {
@@ -1402,36 +1378,7 @@
         "pe_ratio": 1698.0,
         "eps": 0.01,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:00",
-        "status": "Open"
-    },
-    "CYBR": {
-        "symbol": "CYBR",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:00",
-        "status": "Suspended"
-    },
-    "CTS": {
-        "symbol": "CTS",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.002491,
-                "ex_date": "May 27, 2025",
-                "pay_date": "Jun 18, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.001877,
-                "ex_date": "May 27, 2025",
-                "pay_date": "Jun 18, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:00",
+        "last_updated": "2025-12-18 12:53:01",
         "status": "Open"
     },
     "DD": {
@@ -1470,24 +1417,16 @@
                 "pay_date": "Jan 14, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:00",
+        "last_updated": "2025-12-18 12:53:01",
         "status": "Open"
     },
-    "DELM": {
-        "symbol": "DELM",
-        "pe_ratio": 2.09,
-        "eps": 2.51,
+    "CYBR": {
+        "symbol": "CYBR",
+        "pe_ratio": null,
+        "eps": -0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:00",
-        "status": "Open"
-    },
-    "DFNN": {
-        "symbol": "DFNN",
-        "pe_ratio": -0.49,
-        "eps": -1.71,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:00",
-        "status": "Open"
+        "last_updated": "2025-12-18 12:53:01",
+        "status": "Suspended"
     },
     "DDMPR": {
         "symbol": "DDMPR",
@@ -1519,15 +1458,44 @@
                 "pay_date": "Feb 14, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:00",
+        "last_updated": "2025-12-18 12:53:01",
         "status": "Open"
     },
-    "DIZ": {
-        "symbol": "DIZ",
-        "pe_ratio": -158.67,
-        "eps": -0.03,
+    "CTS": {
+        "symbol": "CTS",
+        "pe_ratio": null,
+        "eps": 0.0,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.002491,
+                "ex_date": "May 27, 2025",
+                "pay_date": "Jun 18, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.001877,
+                "ex_date": "May 27, 2025",
+                "pay_date": "Jun 18, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:01",
+        "status": "Open"
+    },
+    "DELM": {
+        "symbol": "DELM",
+        "pe_ratio": 2.09,
+        "eps": 2.51,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:00",
+        "last_updated": "2025-12-18 12:53:01",
+        "status": "Open"
+    },
+    "DFNN": {
+        "symbol": "DFNN",
+        "pe_ratio": -0.49,
+        "eps": -1.71,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:01",
         "status": "Open"
     },
     "DHI": {
@@ -1535,7 +1503,7 @@
         "pe_ratio": 13.0,
         "eps": 0.09,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:00",
+        "last_updated": "2025-12-18 12:53:01",
         "status": "Open"
     },
     "DITO": {
@@ -1543,16 +1511,16 @@
         "pe_ratio": -0.92,
         "eps": -0.74,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:00",
+        "last_updated": "2025-12-18 12:53:01",
         "status": "Open"
     },
-    "DNA": {
-        "symbol": "DNA",
-        "pe_ratio": null,
-        "eps": -0.1,
+    "DIZ": {
+        "symbol": "DIZ",
+        "pe_ratio": -158.67,
+        "eps": -0.03,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:01",
-        "status": "Active"
+        "last_updated": "2025-12-18 12:53:01",
+        "status": "Open"
     },
     "DMC": {
         "symbol": "DMC",
@@ -1578,7 +1546,7 @@
                 "pay_date": "Apr 24, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:01",
+        "last_updated": "2025-12-18 12:53:02",
         "status": "Open"
     },
     "DMW": {
@@ -1593,31 +1561,7 @@
                 "pay_date": "Apr 29, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:01",
-        "status": "Open"
-    },
-    "ECVC": {
-        "symbol": "ECVC",
-        "pe_ratio": -26.0,
-        "eps": -0.01,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:01",
-        "status": "Open"
-    },
-    "ECP": {
-        "symbol": "ECP",
-        "pe_ratio": 45.71,
-        "eps": 0.07,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:01",
-        "status": "Open"
-    },
-    "DWC": {
-        "symbol": "DWC",
-        "pe_ratio": -3.24,
-        "eps": -0.33,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:01",
+        "last_updated": "2025-12-18 12:53:02",
         "status": "Open"
     },
     "DNL": {
@@ -1638,8 +1582,16 @@
                 "pay_date": "Jul 2, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:01",
+        "last_updated": "2025-12-18 12:53:02",
         "status": "Open"
+    },
+    "DNA": {
+        "symbol": "DNA",
+        "pe_ratio": null,
+        "eps": -0.1,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:02",
+        "status": "Active"
     },
     "EEI": {
         "symbol": "EEI",
@@ -1713,7 +1665,31 @@
                 "pay_date": "N/A"
             }
         ],
-        "last_updated": "2025-12-18 11:36:01",
+        "last_updated": "2025-12-18 12:53:02",
+        "status": "Open"
+    },
+    "DWC": {
+        "symbol": "DWC",
+        "pe_ratio": -3.24,
+        "eps": -0.33,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:02",
+        "status": "Open"
+    },
+    "ECP": {
+        "symbol": "ECP",
+        "pe_ratio": 45.71,
+        "eps": 0.07,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:02",
+        "status": "Open"
+    },
+    "ECVC": {
+        "symbol": "ECVC",
+        "pe_ratio": -26.0,
+        "eps": -0.01,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:02",
         "status": "Open"
     },
     "EG": {
@@ -1721,7 +1697,7 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:01",
+        "last_updated": "2025-12-18 12:53:02",
         "status": "Suspended"
     },
     "EGRN": {
@@ -1729,53 +1705,15 @@
         "pe_ratio": 2.86,
         "eps": 0.07,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:01",
+        "last_updated": "2025-12-18 12:53:02",
         "status": "Suspended"
-    },
-    "EMI": {
-        "symbol": "EMI",
-        "pe_ratio": 38.05,
-        "eps": 0.4,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.19,
-                "ex_date": "Jan 30, 2025",
-                "pay_date": "Feb 18, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:02",
-        "status": "Open"
     },
     "ELI": {
         "symbol": "ELI",
         "pe_ratio": 2.65,
         "eps": 0.04,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:02",
-        "status": "Open"
-    },
-    "ENEX": {
-        "symbol": "ENEX",
-        "pe_ratio": -26.23,
-        "eps": -0.13,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:02",
-        "status": "Open"
-    },
-    "EW": {
-        "symbol": "EW",
-        "pe_ratio": 3.39,
-        "eps": 3.38,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.68,
-                "ex_date": "May 09, 2025",
-                "pay_date": "May 31, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:02",
+        "last_updated": "2025-12-18 12:53:03",
         "status": "Open"
     },
     "EURO": {
@@ -1790,34 +1728,15 @@
                 "pay_date": "Dec 1, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:02",
+        "last_updated": "2025-12-18 12:53:03",
         "status": "Open"
     },
-    "FDC": {
-        "symbol": "FDC",
-        "pe_ratio": 3.39,
-        "eps": 1.4,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 17.772,
-                "ex_date": "Oct 22, 2025",
-                "pay_date": "Nov 10, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 16.563,
-                "ex_date": "Oct 22, 2025",
-                "pay_date": "Nov 10, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.14027,
-                "ex_date": "May 16, 2025",
-                "pay_date": "Jun 10, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:02",
+    "ENEX": {
+        "symbol": "ENEX",
+        "pe_ratio": -26.23,
+        "eps": -0.13,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:03",
         "status": "Open"
     },
     "FAF": {
@@ -1825,7 +1744,37 @@
         "pe_ratio": -3.73,
         "eps": -0.15,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:02",
+        "last_updated": "2025-12-18 12:53:03",
+        "status": "Open"
+    },
+    "EMI": {
+        "symbol": "EMI",
+        "pe_ratio": 38.05,
+        "eps": 0.4,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.19,
+                "ex_date": "Jan 30, 2025",
+                "pay_date": "Feb 18, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:03",
+        "status": "Open"
+    },
+    "EW": {
+        "symbol": "EW",
+        "pe_ratio": 3.39,
+        "eps": 3.38,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.68,
+                "ex_date": "May 09, 2025",
+                "pay_date": "May 31, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:03",
         "status": "Open"
     },
     "FB": {
@@ -1870,15 +1819,7 @@
                 "pay_date": "Mar 6, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:02",
-        "status": "Open"
-    },
-    "FERRO": {
-        "symbol": "FERRO",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:02",
+        "last_updated": "2025-12-18 12:53:03",
         "status": "Open"
     },
     "FCG": {
@@ -1893,7 +1834,42 @@
                 "pay_date": "Dec 3, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:02",
+        "last_updated": "2025-12-18 12:53:03",
+        "status": "Open"
+    },
+    "FDC": {
+        "symbol": "FDC",
+        "pe_ratio": 3.39,
+        "eps": 1.4,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 17.772,
+                "ex_date": "Oct 22, 2025",
+                "pay_date": "Nov 10, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 16.563,
+                "ex_date": "Oct 22, 2025",
+                "pay_date": "Nov 10, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.14027,
+                "ex_date": "May 16, 2025",
+                "pay_date": "Jun 10, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:03",
+        "status": "Open"
+    },
+    "FERRO": {
+        "symbol": "FERRO",
+        "pe_ratio": null,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:03",
         "status": "Open"
     },
     "FEU": {
@@ -1914,7 +1890,7 @@
                 "pay_date": "Mar 18, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:03",
+        "last_updated": "2025-12-18 12:53:03",
         "status": "Open"
     },
     "FFI": {
@@ -1922,7 +1898,45 @@
         "pe_ratio": 18.75,
         "eps": 0.4,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:03",
+        "last_updated": "2025-12-18 12:53:04",
+        "status": "Open"
+    },
+    "FJP": {
+        "symbol": "FJP",
+        "pe_ratio": 8.84,
+        "eps": 0.25,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.2,
+                "ex_date": "Sep 19, 2025",
+                "pay_date": "Oct 8, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:04",
+        "status": "Open"
+    },
+    "FLI": {
+        "symbol": "FLI",
+        "pe_ratio": 4.41,
+        "eps": 0.17,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.05,
+                "ex_date": "May 13, 2025",
+                "pay_date": "May 23, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:04",
+        "status": "Open"
+    },
+    "FMETF": {
+        "symbol": "FMETF",
+        "pe_ratio": 18.09,
+        "eps": 5.51,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "FILRT": {
@@ -1955,7 +1969,7 @@
                 "pay_date": "Mar 25, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:03",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "FGEN": {
@@ -1982,53 +1996,7 @@
                 "pay_date": "Dec 23, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:36:03",
-        "status": "Open"
-    },
-    "FJP": {
-        "symbol": "FJP",
-        "pe_ratio": 8.84,
-        "eps": 0.25,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.2,
-                "ex_date": "Sep 19, 2025",
-                "pay_date": "Oct 8, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:03",
-        "status": "Open"
-    },
-    "FMETF": {
-        "symbol": "FMETF",
-        "pe_ratio": 18.09,
-        "eps": 5.51,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:03",
-        "status": "Open"
-    },
-    "FLI": {
-        "symbol": "FLI",
-        "pe_ratio": 4.41,
-        "eps": 0.17,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.05,
-                "ex_date": "May 13, 2025",
-                "pay_date": "May 23, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:03",
-        "status": "Open"
-    },
-    "FOOD": {
-        "symbol": "FOOD",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:03",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "FNI": {
@@ -2036,7 +2004,7 @@
         "pe_ratio": 7.67,
         "eps": 0.15,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:03",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "FPH": {
@@ -2057,15 +2025,15 @@
                 "pay_date": "Jun 18, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:03",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
-    "FPI": {
-        "symbol": "FPI",
+    "FOOD": {
+        "symbol": "FOOD",
         "pe_ratio": null,
-        "eps": null,
+        "eps": -0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:03",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "FRUIT": {
@@ -2080,23 +2048,15 @@
                 "pay_date": "Nov 28, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:03",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
-    "FYN": {
-        "symbol": "FYN",
-        "pe_ratio": 22.31,
-        "eps": 0.13,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:04",
-        "status": "Open"
-    },
-    "GEO": {
-        "symbol": "GEO",
+    "FPI": {
+        "symbol": "FPI",
         "pe_ratio": null,
-        "eps": -0.0,
+        "eps": null,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "GERI": {
@@ -2111,7 +2071,23 @@
                 "pay_date": "Aug 13, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:04",
+        "status": "Open"
+    },
+    "FYN": {
+        "symbol": "FYN",
+        "pe_ratio": 22.31,
+        "eps": 0.13,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:04",
+        "status": "Open"
+    },
+    "GEO": {
+        "symbol": "GEO",
+        "pe_ratio": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "GMA7": {
@@ -2126,7 +2102,7 @@
                 "pay_date": "May 20, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "GLO": {
@@ -2165,15 +2141,7 @@
                 "pay_date": "Mar 7, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:04",
-        "status": "Open"
-    },
-    "GREEN": {
-        "symbol": "GREEN",
-        "pe_ratio": -9.55,
-        "eps": -0.02,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:04",
         "status": "Open"
     },
     "GMAP": {
@@ -2181,7 +2149,7 @@
         "pe_ratio": 0.02,
         "eps": 223.52,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:05",
         "status": "Open"
     },
     "GPH": {
@@ -2189,7 +2157,15 @@
         "pe_ratio": 5.13,
         "eps": 1.13,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:05",
+        "status": "Open"
+    },
+    "GREEN": {
+        "symbol": "GREEN",
+        "pe_ratio": -9.55,
+        "eps": -0.02,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:05",
         "status": "Open"
     },
     "GSMI": {
@@ -2246,7 +2222,7 @@
                 "pay_date": "Apr 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:05",
         "status": "Open"
     },
     "GTCAP": {
@@ -2256,51 +2232,9 @@
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 12.73725,
-                "ex_date": "Oct 02, 2026",
-                "pay_date": "Oct 27, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 12.73725,
-                "ex_date": "Jul 03, 2026",
-                "pay_date": "Jul 27, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 12.73725,
-                "ex_date": "Apr 01, 2026",
-                "pay_date": "Apr 27, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 12.73725,
-                "ex_date": "Jan 02, 2026",
-                "pay_date": "Jan 27, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 12.73725,
-                "ex_date": "Oct 03, 2025",
-                "pay_date": "Oct 27, 2025"
-            },
-            {
-                "type": "Cash",
                 "amount": 3.0,
                 "ex_date": "Aug 26, 2025",
                 "pay_date": "Sep 5, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 12.73725,
-                "ex_date": "Jul 04, 2025",
-                "pay_date": "Jul 28, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 12.73725,
-                "ex_date": "Apr 04, 2025",
-                "pay_date": "Apr 28, 2025"
             },
             {
                 "type": "Cash",
@@ -2313,15 +2247,25 @@
                 "amount": 3.0,
                 "ex_date": "Mar 31, 2025",
                 "pay_date": "Apr 16, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 12.73725,
-                "ex_date": "Jan 03, 2025",
-                "pay_date": "Jan 27, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:05",
+        "status": "Open"
+    },
+    "HOUSE": {
+        "symbol": "HOUSE",
+        "pe_ratio": 10.22,
+        "eps": 1.02,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:05",
+        "status": "Active"
+    },
+    "HOME": {
+        "symbol": "HOME",
+        "pe_ratio": 2.36,
+        "eps": 0.11,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:05",
         "status": "Open"
     },
     "HI": {
@@ -2336,7 +2280,15 @@
                 "pay_date": "Sep 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:05",
+        "status": "Open"
+    },
+    "HVN": {
+        "symbol": "HVN",
+        "pe_ratio": 450.68,
+        "eps": 2.21,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:05",
         "status": "Open"
     },
     "HTI": {
@@ -2351,32 +2303,16 @@
                 "pay_date": "Dec 10, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:04",
+        "last_updated": "2025-12-18 12:53:05",
         "status": "Open"
     },
-    "HVN": {
-        "symbol": "HVN",
-        "pe_ratio": 450.68,
-        "eps": 2.21,
+    "I": {
+        "symbol": "I",
+        "pe_ratio": -0.34,
+        "eps": -0.59,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:04",
-        "status": "Open"
-    },
-    "HOUSE": {
-        "symbol": "HOUSE",
-        "pe_ratio": 10.22,
-        "eps": 1.02,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:04",
-        "status": "Active"
-    },
-    "HOME": {
-        "symbol": "HOME",
-        "pe_ratio": 2.36,
-        "eps": 0.11,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:04",
-        "status": "Open"
+        "last_updated": "2025-12-18 12:53:05",
+        "status": "Suspended"
     },
     "ICT": {
         "symbol": "ICT",
@@ -2390,23 +2326,15 @@
                 "pay_date": "Mar 28, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
-    },
-    "I": {
-        "symbol": "I",
-        "pe_ratio": -0.34,
-        "eps": -0.59,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:05",
-        "status": "Suspended"
     },
     "IDC": {
         "symbol": "IDC",
         "pe_ratio": 1.7,
         "eps": 0.54,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
     },
     "IMI": {
@@ -2414,7 +2342,7 @@
         "pe_ratio": -173.5,
         "eps": -0.02,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
     },
     "IMP": {
@@ -2422,23 +2350,15 @@
         "pe_ratio": 5.83,
         "eps": 0.12,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
     },
-    "INFRA": {
-        "symbol": "INFRA",
-        "pe_ratio": -5.5,
-        "eps": -0.07,
+    "IS": {
+        "symbol": "IS",
+        "pe_ratio": null,
+        "eps": -0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:05",
-        "status": "Open"
-    },
-    "JAS": {
-        "symbol": "JAS",
-        "pe_ratio": -77.5,
-        "eps": -0.02,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
     },
     "IPM": {
@@ -2446,7 +2366,7 @@
         "pe_ratio": -23.17,
         "eps": -0.06,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
     },
     "ION": {
@@ -2461,7 +2381,38 @@
                 "pay_date": "Apr 25, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
+        "status": "Open"
+    },
+    "INFRA": {
+        "symbol": "INFRA",
+        "pe_ratio": -5.5,
+        "eps": -0.07,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:06",
+        "status": "Open"
+    },
+    "IPO": {
+        "symbol": "IPO",
+        "pe_ratio": 7.72,
+        "eps": 0.8,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.24825,
+                "ex_date": "May 07, 2025",
+                "pay_date": "May 30, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:06",
+        "status": "Open"
+    },
+    "JAS": {
+        "symbol": "JAS",
+        "pe_ratio": -77.5,
+        "eps": -0.02,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
     },
     "JFC": {
@@ -2512,15 +2463,7 @@
                 "pay_date": "Jan 15, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:05",
-        "status": "Open"
-    },
-    "IS": {
-        "symbol": "IS",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
     },
     "JGS": {
@@ -2535,22 +2478,7 @@
                 "pay_date": "Jun 11, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:06",
-        "status": "Open"
-    },
-    "IPO": {
-        "symbol": "IPO",
-        "pe_ratio": 7.72,
-        "eps": 0.8,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.24825,
-                "ex_date": "May 07, 2025",
-                "pay_date": "May 30, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:05",
+        "last_updated": "2025-12-18 12:53:06",
         "status": "Open"
     },
     "JOH": {
@@ -2558,7 +2486,7 @@
         "pe_ratio": 5.42,
         "eps": 0.81,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:06",
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Open"
     },
     "KEEPR": {
@@ -2573,7 +2501,7 @@
                 "pay_date": "May 30, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:06",
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Open"
     },
     "KEP": {
@@ -2581,7 +2509,7 @@
         "pe_ratio": 3.63,
         "eps": 0.68,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:06",
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Open"
     },
     "KPH": {
@@ -2589,15 +2517,23 @@
         "pe_ratio": 2.51,
         "eps": 10.3,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:06",
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Active"
+    },
+    "LBC": {
+        "symbol": "LBC",
+        "pe_ratio": -80.73,
+        "eps": -0.11,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:07",
+        "status": "Open"
     },
     "KPPI": {
         "symbol": "KPPI",
         "pe_ratio": 29.5,
         "eps": 0.04,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:06",
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Open"
     },
     "LAND": {
@@ -2612,15 +2548,23 @@
                 "pay_date": "Jun 18, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:06",
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Open"
     },
-    "LBC": {
-        "symbol": "LBC",
-        "pe_ratio": -80.73,
-        "eps": -0.11,
+    "LC": {
+        "symbol": "LC",
+        "pe_ratio": null,
+        "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:06",
+        "last_updated": "2025-12-18 12:53:07",
+        "status": "Open"
+    },
+    "LMG": {
+        "symbol": "LMG",
+        "pe_ratio": 25.0,
+        "eps": 0.01,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Open"
     },
     "LFM": {
@@ -2628,6 +2572,12 @@
         "pe_ratio": 48.24,
         "eps": 0.71,
         "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.6,
+                "ex_date": "Jan 14, 2026",
+                "pay_date": "Feb 10, 2026"
+            },
             {
                 "type": "Cash",
                 "amount": 2.8,
@@ -2647,23 +2597,7 @@
                 "pay_date": "Feb 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:06",
-        "status": "Open"
-    },
-    "LC": {
-        "symbol": "LC",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:06",
-        "status": "Open"
-    },
-    "LMG": {
-        "symbol": "LMG",
-        "pe_ratio": 25.0,
-        "eps": 0.01,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:06",
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Open"
     },
     "LODE": {
@@ -2671,7 +2605,7 @@
         "pe_ratio": null,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:07",
         "status": "Open"
     },
     "LOTO": {
@@ -2679,7 +2613,7 @@
         "pe_ratio": 86.0,
         "eps": 0.02,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "LPC": {
@@ -2687,22 +2621,7 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:07",
-        "status": "Open"
-    },
-    "LPZ": {
-        "symbol": "LPZ",
-        "pe_ratio": 2.23,
-        "eps": 1.66,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1,
-                "ex_date": "Jul 03, 2025",
-                "pay_date": "Jul 18, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "LSC": {
@@ -2710,7 +2629,7 @@
         "pe_ratio": -0.97,
         "eps": -0.66,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "LTG": {
@@ -2749,7 +2668,22 @@
                 "pay_date": "Apr 11, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
+        "status": "Open"
+    },
+    "LPZ": {
+        "symbol": "LPZ",
+        "pe_ratio": 2.23,
+        "eps": 1.66,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1,
+                "ex_date": "Jul 03, 2025",
+                "pay_date": "Jul 18, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MA": {
@@ -2757,7 +2691,7 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MAC": {
@@ -2778,7 +2712,7 @@
                 "pay_date": "N/A"
             }
         ],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MACAY": {
@@ -2786,7 +2720,7 @@
         "pe_ratio": 13.62,
         "eps": 0.47,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MAH": {
@@ -2794,7 +2728,7 @@
         "pe_ratio": 45.0,
         "eps": 0.01,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MARC": {
@@ -2802,7 +2736,7 @@
         "pe_ratio": 17.0,
         "eps": 0.04,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:07",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MAXS": {
@@ -2817,7 +2751,7 @@
                 "pay_date": "May 9, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:08",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MB": {
@@ -2825,30 +2759,7 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:08",
-        "status": "Open"
-    },
-    "MED": {
-        "symbol": "MED",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:08",
-        "status": "Open"
-    },
-    "MBC": {
-        "symbol": "MBC",
-        "pe_ratio": 27.5,
-        "eps": 0.2,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1,
-                "ex_date": "Dec 26, 2024",
-                "pay_date": "Jan 15, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:08",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MBT": {
@@ -2875,22 +2786,7 @@
                 "pay_date": "Mar 28, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:08",
-        "status": "Open"
-    },
-    "MEG": {
-        "symbol": "MEG",
-        "pe_ratio": 3.42,
-        "eps": 0.59,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.09395845,
-                "ex_date": "Aug 26, 2025",
-                "pay_date": "Sep 8, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:08",
+        "last_updated": "2025-12-18 12:53:08",
         "status": "Open"
     },
     "MEDIC": {
@@ -2905,7 +2801,66 @@
                 "pay_date": "Jul 24, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:08",
+        "last_updated": "2025-12-18 12:53:08",
+        "status": "Open"
+    },
+    "MBC": {
+        "symbol": "MBC",
+        "pe_ratio": 27.5,
+        "eps": 0.2,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1,
+                "ex_date": "Dec 26, 2024",
+                "pay_date": "Jan 15, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:08",
+        "status": "Open"
+    },
+    "MED": {
+        "symbol": "MED",
+        "pe_ratio": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:08",
+        "status": "Open"
+    },
+    "MEG": {
+        "symbol": "MEG",
+        "pe_ratio": 3.42,
+        "eps": 0.59,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.09395845,
+                "ex_date": "Aug 26, 2025",
+                "pay_date": "Sep 8, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:09",
+        "status": "Open"
+    },
+    "MER": {
+        "symbol": "MER",
+        "pe_ratio": 14.67,
+        "eps": 40.69,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 11.328,
+                "ex_date": "Aug 26, 2025",
+                "pay_date": "Sep 22, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 13.736,
+                "ex_date": "Mar 11, 2025",
+                "pay_date": "Apr 4, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:09",
         "status": "Open"
     },
     "MFC": {
@@ -2944,28 +2899,7 @@
                 "pay_date": "Dec 19, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:36:08",
-        "status": "Open"
-    },
-    "MER": {
-        "symbol": "MER",
-        "pe_ratio": 14.67,
-        "eps": 40.69,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 11.328,
-                "ex_date": "Aug 26, 2025",
-                "pay_date": "Sep 22, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 13.736,
-                "ex_date": "Mar 11, 2025",
-                "pay_date": "Apr 4, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:08",
+        "last_updated": "2025-12-18 12:53:09",
         "status": "Open"
     },
     "MFIN": {
@@ -2980,7 +2914,7 @@
                 "pay_date": "Sep 17, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:08",
+        "last_updated": "2025-12-18 12:53:09",
         "status": "Open"
     },
     "MG": {
@@ -2988,23 +2922,15 @@
         "pe_ratio": null,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:08",
+        "last_updated": "2025-12-18 12:53:09",
         "status": "Open"
-    },
-    "MJC": {
-        "symbol": "MJC",
-        "pe_ratio": null,
-        "eps": -0.14,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:09",
-        "status": "Suspended"
     },
     "MGH": {
         "symbol": "MGH",
         "pe_ratio": null,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:09",
+        "last_updated": "2025-12-18 12:53:09",
         "status": "Suspended"
     },
     "MHC": {
@@ -3012,24 +2938,32 @@
         "pe_ratio": -2.65,
         "eps": -0.04,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:09",
+        "last_updated": "2025-12-18 12:53:09",
         "status": "Open"
-    },
-    "MJIC": {
-        "symbol": "MJIC",
-        "pe_ratio": null,
-        "eps": -0.29,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:09",
-        "status": "Suspended"
     },
     "MM": {
         "symbol": "MM",
         "pe_ratio": 41.0,
         "eps": 0.01,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:09",
+        "last_updated": "2025-12-18 12:53:09",
         "status": "Open"
+    },
+    "MJC": {
+        "symbol": "MJC",
+        "pe_ratio": null,
+        "eps": -0.14,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:09",
+        "status": "Suspended"
+    },
+    "MJIC": {
+        "symbol": "MJIC",
+        "pe_ratio": null,
+        "eps": -0.29,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:09",
+        "status": "Suspended"
     },
     "MONDE": {
         "symbol": "MONDE",
@@ -3055,7 +2989,7 @@
                 "pay_date": "Dec 27, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:36:09",
+        "last_updated": "2025-12-18 12:53:09",
         "status": "Open"
     },
     "MRC": {
@@ -3063,7 +2997,7 @@
         "pe_ratio": null,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:09",
+        "last_updated": "2025-12-18 12:53:10",
         "status": "Open"
     },
     "MREIT": {
@@ -3096,7 +3030,7 @@
                 "pay_date": "Apr 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:09",
+        "last_updated": "2025-12-18 12:53:10",
         "status": "Open"
     },
     "MRSGI": {
@@ -3111,7 +3045,7 @@
                 "pay_date": "May 21, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:09",
+        "last_updated": "2025-12-18 12:53:10",
         "status": "Open"
     },
     "MVC": {
@@ -3126,52 +3060,7 @@
                 "pay_date": "Jun 16, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:09",
-        "status": "Open"
-    },
-    "NI": {
-        "symbol": "NI",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
-        "status": "Open"
-    },
-    "NOW": {
-        "symbol": "NOW",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
-        "status": "Open"
-    },
-    "MYNLD": {
-        "symbol": "MYNLD",
-        "pe_ratio": null,
-        "eps": null,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
-        "status": "Open"
-    },
-    "MWC": {
-        "symbol": "MWC",
-        "pe_ratio": 11.48,
-        "eps": 3.57,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.167,
-                "ex_date": "Mar 07, 2025",
-                "pay_date": "Mar 28, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 1.674,
-                "ex_date": "Mar 07, 2025",
-                "pay_date": "Mar 28, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:10",
         "status": "Open"
     },
     "MWIDE": {
@@ -3300,7 +3189,23 @@
                 "pay_date": "Jan 17, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:10",
+        "status": "Open"
+    },
+    "MYNLD": {
+        "symbol": "MYNLD",
+        "pe_ratio": null,
+        "eps": null,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:10",
+        "status": "Open"
+    },
+    "NI": {
+        "symbol": "NI",
+        "pe_ratio": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:10",
         "status": "Open"
     },
     "NIKL": {
@@ -3327,7 +3232,36 @@
                 "pay_date": "Mar 26, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:10",
+        "status": "Open"
+    },
+    "MWC": {
+        "symbol": "MWC",
+        "pe_ratio": 11.48,
+        "eps": 3.57,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.167,
+                "ex_date": "Mar 07, 2025",
+                "pay_date": "Mar 28, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 1.674,
+                "ex_date": "Mar 07, 2025",
+                "pay_date": "Mar 28, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:10",
+        "status": "Open"
+    },
+    "NOW": {
+        "symbol": "NOW",
+        "pe_ratio": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:10",
         "status": "Open"
     },
     "NRCP": {
@@ -3335,7 +3269,7 @@
         "pe_ratio": 2.85,
         "eps": 0.26,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:10",
         "status": "Open"
     },
     "NXGEN": {
@@ -3343,7 +3277,7 @@
         "pe_ratio": null,
         "eps": -0.02,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:10",
         "status": "Suspended"
     },
     "OGP": {
@@ -3376,7 +3310,7 @@
                 "pay_date": "Apr 1, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "OM": {
@@ -3384,7 +3318,23 @@
         "pe_ratio": null,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:11",
+        "status": "Open"
+    },
+    "OV": {
+        "symbol": "OV",
+        "pe_ratio": null,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:11",
+        "status": "Open"
+    },
+    "PAL": {
+        "symbol": "PAL",
+        "pe_ratio": 12.1,
+        "eps": 0.31,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "OPM": {
@@ -3399,7 +3349,7 @@
                 "pay_date": "Jul 29, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "ORE": {
@@ -3407,31 +3357,7 @@
         "pe_ratio": -19.5,
         "eps": -0.02,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
-        "status": "Open"
-    },
-    "PAL": {
-        "symbol": "PAL",
-        "pe_ratio": 12.1,
-        "eps": 0.31,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
-        "status": "Open"
-    },
-    "OV": {
-        "symbol": "OV",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
-        "status": "Open"
-    },
-    "PAX": {
-        "symbol": "PAX",
-        "pe_ratio": 16.44,
-        "eps": 0.16,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "PA": {
@@ -3439,7 +3365,15 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:10",
+        "last_updated": "2025-12-18 12:53:11",
+        "status": "Open"
+    },
+    "PAX": {
+        "symbol": "PAX",
+        "pe_ratio": 16.44,
+        "eps": 0.16,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "PBB": {
@@ -3454,7 +3388,7 @@
                 "pay_date": "Jul 23, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "PBC": {
@@ -3469,7 +3403,7 @@
                 "pay_date": "Jul 31, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "PCOR": {
@@ -3670,7 +3604,7 @@
                 "pay_date": "Dec 23, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "PERC": {
@@ -3685,7 +3619,7 @@
                 "pay_date": "Dec 23, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "PGOLD": {
@@ -3706,7 +3640,7 @@
                 "pay_date": "May 27, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "PHA": {
@@ -3721,15 +3655,7 @@
                 "pay_date": "TBA"
             }
         ],
-        "last_updated": "2025-12-18 11:36:11",
-        "status": "Open"
-    },
-    "PHC": {
-        "symbol": "PHC",
-        "pe_ratio": 187.0,
-        "eps": 0.01,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:11",
         "status": "Open"
     },
     "PHES": {
@@ -3737,7 +3663,15 @@
         "pe_ratio": 16.0,
         "eps": 0.02,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:12",
+        "status": "Open"
+    },
+    "PHC": {
+        "symbol": "PHC",
+        "pe_ratio": 187.0,
+        "eps": 0.01,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Open"
     },
     "PHN": {
@@ -3752,7 +3686,7 @@
                 "pay_date": "May 26, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Open"
     },
     "PHR": {
@@ -3760,7 +3694,22 @@
         "pe_ratio": -0.64,
         "eps": -0.24,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:12",
+        "status": "Open"
+    },
+    "PIZZA": {
+        "symbol": "PIZZA",
+        "pe_ratio": 9.3,
+        "eps": 0.71,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.2,
+                "ex_date": "Aug 01, 2025",
+                "pay_date": "Aug 19, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Open"
     },
     "PLUS": {
@@ -3775,22 +3724,7 @@
                 "pay_date": "Apr 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:11",
-        "status": "Open"
-    },
-    "PIZZA": {
-        "symbol": "PIZZA",
-        "pe_ratio": 9.3,
-        "eps": 0.71,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": null,
-                "ex_date": "Aug 01, 2025",
-                "pay_date": "Aug 19, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:11",
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Open"
     },
     "PMPC": {
@@ -3805,7 +3739,28 @@
                 "pay_date": "Jun 25, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:12",
+        "last_updated": "2025-12-18 12:53:12",
+        "status": "Open"
+    },
+    "PNB": {
+        "symbol": "PNB",
+        "pe_ratio": 3.69,
+        "eps": 13.8,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 1.38,
+                "ex_date": "Sep 12, 2025",
+                "pay_date": "Oct 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 1.38,
+                "ex_date": "Mar 13, 2025",
+                "pay_date": "Apr 2, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Open"
     },
     "PNC": {
@@ -3813,15 +3768,22 @@
         "pe_ratio": null,
         "eps": null,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:12",
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Suspended"
     },
-    "PORT": {
-        "symbol": "PORT",
+    "PNX": {
+        "symbol": "PNX",
         "pe_ratio": null,
-        "eps": -0.01,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:12",
+        "eps": -2.69,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": null,
+                "ex_date": "",
+                "pay_date": "TBA"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Suspended"
     },
     "PPC": {
@@ -3848,22 +3810,15 @@
                 "pay_date": "Jan 2, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:12",
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Open"
     },
-    "PNX": {
-        "symbol": "PNX",
+    "PORT": {
+        "symbol": "PORT",
         "pe_ratio": null,
-        "eps": -2.69,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": null,
-                "ex_date": "",
-                "pay_date": "TBA"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:12",
+        "eps": -0.01,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Suspended"
     },
     "PRC": {
@@ -3878,144 +3833,7 @@
                 "pay_date": "Nov 21, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:12",
-        "status": "Open"
-    },
-    "PRMX": {
-        "symbol": "PRMX",
-        "pe_ratio": 27.5,
-        "eps": 0.04,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:12",
-        "status": "Open"
-    },
-    "PSB": {
-        "symbol": "PSB",
-        "pe_ratio": 4.51,
-        "eps": 12.2,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.75,
-                "ex_date": "Nov 07, 2025",
-                "pay_date": "Nov 24, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.75,
-                "ex_date": "Aug 07, 2025",
-                "pay_date": "Aug 26, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.75,
-                "ex_date": "May 09, 2025",
-                "pay_date": "May 26, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.75,
-                "ex_date": "Jan 31, 2025",
-                "pay_date": "Feb 17, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:13",
-        "status": "Open"
-    },
-    "PSE": {
-        "symbol": "PSE",
-        "pe_ratio": 13.72,
-        "eps": 14.75,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 5.64,
-                "ex_date": "May 13, 2025",
-                "pay_date": "May 27, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 4.36,
-                "ex_date": "May 13, 2025",
-                "pay_date": "May 27, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:13",
-        "status": "Open"
-    },
-    "PNB": {
-        "symbol": "PNB",
-        "pe_ratio": 3.69,
-        "eps": 13.8,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 1.38,
-                "ex_date": "Sep 12, 2025",
-                "pay_date": "Oct 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 1.38,
-                "ex_date": "Mar 13, 2025",
-                "pay_date": "Apr 2, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:12",
-        "status": "Open"
-    },
-    "PTC": {
-        "symbol": "PTC",
-        "pe_ratio": 162.3,
-        "eps": 0.61,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:13",
-        "status": "Open"
-    },
-    "PTT": {
-        "symbol": "PTT",
-        "pe_ratio": null,
-        "eps": 0.01,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:13",
-        "status": "Suspended"
-    },
-    "PX": {
-        "symbol": "PX",
-        "pe_ratio": 70.71,
-        "eps": 0.14,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.02,
-                "ex_date": "Mar 11, 2025",
-                "pay_date": "Mar 24, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:13",
-        "status": "Open"
-    },
-    "PXP": {
-        "symbol": "PXP",
-        "pe_ratio": -239.0,
-        "eps": -0.01,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:13",
-        "status": "Open"
-    },
-    "RCB": {
-        "symbol": "RCB",
-        "pe_ratio": 7.36,
-        "eps": 3.48,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.7,
-                "ex_date": "Apr 15, 2025",
-                "pay_date": "May 5, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:13",
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Open"
     },
     "PREIT": {
@@ -4054,7 +3872,7 @@
                 "pay_date": "Dec 27, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:36:12",
+        "last_updated": "2025-12-18 12:53:12",
         "status": "Open"
     },
     "PRIM": {
@@ -4062,7 +3880,164 @@
         "pe_ratio": -36.67,
         "eps": -0.03,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:12",
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "PRMX": {
+        "symbol": "PRMX",
+        "pe_ratio": 27.5,
+        "eps": 0.04,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "PSB": {
+        "symbol": "PSB",
+        "pe_ratio": 4.51,
+        "eps": 12.2,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.75,
+                "ex_date": "Nov 07, 2025",
+                "pay_date": "Nov 24, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.75,
+                "ex_date": "Aug 07, 2025",
+                "pay_date": "Aug 26, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.75,
+                "ex_date": "May 09, 2025",
+                "pay_date": "May 26, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.75,
+                "ex_date": "Jan 31, 2025",
+                "pay_date": "Feb 17, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "PSE": {
+        "symbol": "PSE",
+        "pe_ratio": 13.72,
+        "eps": 14.75,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 5.64,
+                "ex_date": "May 13, 2025",
+                "pay_date": "May 27, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 4.36,
+                "ex_date": "May 13, 2025",
+                "pay_date": "May 27, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "PTC": {
+        "symbol": "PTC",
+        "pe_ratio": 162.3,
+        "eps": 0.61,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "PTT": {
+        "symbol": "PTT",
+        "pe_ratio": null,
+        "eps": 0.01,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Suspended"
+    },
+    "PX": {
+        "symbol": "PX",
+        "pe_ratio": 70.71,
+        "eps": 0.14,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.02,
+                "ex_date": "Mar 11, 2025",
+                "pay_date": "Mar 24, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "PXP": {
+        "symbol": "PXP",
+        "pe_ratio": -239.0,
+        "eps": -0.01,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "RCB": {
+        "symbol": "RCB",
+        "pe_ratio": 7.36,
+        "eps": 3.48,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.7,
+                "ex_date": "Apr 15, 2025",
+                "pay_date": "May 5, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "RCI": {
+        "symbol": "RCI",
+        "pe_ratio": 0.53,
+        "eps": 5.36,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:13",
+        "status": "Open"
+    },
+    "RCR": {
+        "symbol": "RCR",
+        "pe_ratio": 15.61,
+        "eps": 0.51,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.106,
+                "ex_date": "Nov 20, 2025",
+                "pay_date": "Dec 2, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.1049,
+                "ex_date": "Aug 22, 2025",
+                "pay_date": "Sep 2, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.1047,
+                "ex_date": "May 19, 2025",
+                "pay_date": "May 30, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.101,
+                "ex_date": "Feb 19, 2025",
+                "pay_date": "Feb 28, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:13",
         "status": "Open"
     },
     "REDC": {
@@ -4077,7 +4052,22 @@
                 "pay_date": "Jan 12, 2026"
             }
         ],
-        "last_updated": "2025-12-18 11:36:13",
+        "last_updated": "2025-12-18 12:53:14",
+        "status": "Open"
+    },
+    "REG": {
+        "symbol": "REG",
+        "pe_ratio": 18.71,
+        "eps": 0.17,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.04,
+                "ex_date": "Nov 13, 2025",
+                "pay_date": "Nov 28, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
     "RFM": {
@@ -4116,22 +4106,15 @@
                 "pay_date": "Feb 18, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:14",
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
-    "REG": {
-        "symbol": "REG",
-        "pe_ratio": 18.71,
-        "eps": 0.17,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.04,
-                "ex_date": "Nov 13, 2025",
-                "pay_date": "Nov 28, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:14",
+    "RLT": {
+        "symbol": "RLT",
+        "pe_ratio": -10.7,
+        "eps": -0.01,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
     "RLC": {
@@ -4146,7 +4129,22 @@
                 "pay_date": "Jun 30, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:14",
+        "last_updated": "2025-12-18 12:53:14",
+        "status": "Open"
+    },
+    "ROCK": {
+        "symbol": "ROCK",
+        "pe_ratio": 2.8,
+        "eps": 0.61,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1212,
+                "ex_date": "Aug 06, 2025",
+                "pay_date": "Sep 2, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
     "ROX": {
@@ -4154,15 +4152,22 @@
         "pe_ratio": null,
         "eps": -1.46,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:14",
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Suspended"
     },
-    "RLT": {
-        "symbol": "RLT",
-        "pe_ratio": -10.7,
-        "eps": -0.01,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:14",
+    "RRHI": {
+        "symbol": "RRHI",
+        "pe_ratio": 4.7,
+        "eps": 7.11,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 2.0,
+                "ex_date": "May 23, 2025",
+                "pay_date": "Jun 9, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
     "SBS": {
@@ -4183,7 +4188,7 @@
                 "pay_date": "Mar 25, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:14",
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
     "SCC": {
@@ -4210,7 +4215,7 @@
                 "pay_date": "Apr 23, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:14",
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
     "SECB": {
@@ -4231,63 +4236,7 @@
                 "pay_date": "Apr 28, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:14",
-        "status": "Open"
-    },
-    "RCR": {
-        "symbol": "RCR",
-        "pe_ratio": 15.61,
-        "eps": 0.51,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.106,
-                "ex_date": "Nov 20, 2025",
-                "pay_date": "Dec 2, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.1049,
-                "ex_date": "Aug 22, 2025",
-                "pay_date": "Sep 2, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.1047,
-                "ex_date": "May 19, 2025",
-                "pay_date": "May 30, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.101,
-                "ex_date": "Feb 19, 2025",
-                "pay_date": "Feb 28, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:13",
-        "status": "Open"
-    },
-    "RCI": {
-        "symbol": "RCI",
-        "pe_ratio": 0.53,
-        "eps": 5.36,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:13",
-        "status": "Open"
-    },
-    "RRHI": {
-        "symbol": "RRHI",
-        "pe_ratio": 4.7,
-        "eps": 7.11,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 2.0,
-                "ex_date": "May 23, 2025",
-                "pay_date": "Jun 9, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:14",
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
     "SEVN": {
@@ -4302,7 +4251,7 @@
                 "pay_date": "Aug 15, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:15",
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
     "SFI": {
@@ -4310,22 +4259,15 @@
         "pe_ratio": 2.8,
         "eps": 0.02,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:15",
+        "last_updated": "2025-12-18 12:53:14",
         "status": "Open"
     },
-    "SGI": {
-        "symbol": "SGI",
-        "pe_ratio": 4.3,
-        "eps": 0.3,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1,
-                "ex_date": "Jul 14, 2025",
-                "pay_date": "Aug 7, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:15",
+    "SHLPH": {
+        "symbol": "SHLPH",
+        "pe_ratio": 7.79,
+        "eps": 0.77,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SGP": {
@@ -4346,7 +4288,22 @@
                 "pay_date": "Sep 25, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:15",
+        "last_updated": "2025-12-18 12:53:15",
+        "status": "Open"
+    },
+    "SGI": {
+        "symbol": "SGI",
+        "pe_ratio": 4.3,
+        "eps": 0.3,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1,
+                "ex_date": "Jul 14, 2025",
+                "pay_date": "Aug 7, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SHNG": {
@@ -4367,15 +4324,7 @@
                 "pay_date": "Apr 11, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:15",
-        "status": "Open"
-    },
-    "SHLPH": {
-        "symbol": "SHLPH",
-        "pe_ratio": 7.79,
-        "eps": 0.77,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:15",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SLF": {
@@ -4414,7 +4363,7 @@
                 "pay_date": "Dec 31, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:36:15",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SLI": {
@@ -4435,7 +4384,7 @@
                 "pay_date": "Dec 20, 2024"
             }
         ],
-        "last_updated": "2025-12-18 11:36:15",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SM": {
@@ -4456,7 +4405,15 @@
                 "pay_date": "May 29, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:15",
+        "last_updated": "2025-12-18 12:53:15",
+        "status": "Open"
+    },
+    "SOC": {
+        "symbol": "SOC",
+        "pe_ratio": 3.68,
+        "eps": 0.05,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SMC": {
@@ -4765,15 +4722,7 @@
                 "pay_date": "Jan 3, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:15",
-        "status": "Open"
-    },
-    "SOC": {
-        "symbol": "SOC",
-        "pe_ratio": 3.68,
-        "eps": 0.05,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SMPH": {
@@ -4788,7 +4737,7 @@
                 "pay_date": "May 28, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SPC": {
@@ -4809,7 +4758,7 @@
                 "pay_date": "Jul 10, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SPM": {
@@ -4817,7 +4766,7 @@
         "pe_ratio": -94.0,
         "eps": -0.02,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SPNEC": {
@@ -4825,7 +4774,7 @@
         "pe_ratio": -37.33,
         "eps": -0.03,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SRDC": {
@@ -4833,15 +4782,7 @@
         "pe_ratio": null,
         "eps": 0.08,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:16",
-        "status": "Open"
-    },
-    "STN": {
-        "symbol": "STN",
-        "pe_ratio": 29.43,
-        "eps": 0.07,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:15",
         "status": "Open"
     },
     "SSI": {
@@ -4856,7 +4797,7 @@
                 "pay_date": "May 30, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Open"
     },
     "STI": {
@@ -4877,15 +4818,7 @@
                 "pay_date": "Jan 31, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:16",
-        "status": "Open"
-    },
-    "STR": {
-        "symbol": "STR",
-        "pe_ratio": 1.37,
-        "eps": 0.82,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Open"
     },
     "SUN": {
@@ -4893,7 +4826,23 @@
         "pe_ratio": -4.2,
         "eps": -0.15,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:16",
+        "last_updated": "2025-12-18 12:53:16",
+        "status": "Open"
+    },
+    "STN": {
+        "symbol": "STN",
+        "pe_ratio": 29.43,
+        "eps": 0.07,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:16",
+        "status": "Open"
+    },
+    "STR": {
+        "symbol": "STR",
+        "pe_ratio": 1.37,
+        "eps": 0.82,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Open"
     },
     "T": {
@@ -4901,7 +4850,7 @@
         "pe_ratio": -31.5,
         "eps": -0.01,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:17",
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Suspended"
     },
     "TBGI": {
@@ -4909,28 +4858,28 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:17",
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Open"
     },
-    "TEL": {
-        "symbol": "TEL",
-        "pe_ratio": 8.52,
-        "eps": 149.26,
+    "TFC": {
+        "symbol": "TFC",
+        "pe_ratio": 12.81,
+        "eps": 3.52,
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 48.0,
-                "ex_date": "Aug 27, 2025",
-                "pay_date": "Sep 10, 2025"
+                "amount": 2.5,
+                "ex_date": "Jan 08, 2026",
+                "pay_date": "Feb 4, 2026"
             },
             {
                 "type": "Cash",
-                "amount": 47.0,
-                "ex_date": "Mar 12, 2025",
-                "pay_date": "Apr 3, 2025"
+                "amount": 2.0,
+                "ex_date": "Jan 06, 2025",
+                "pay_date": "Feb 3, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:17",
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Open"
     },
     "TECH": {
@@ -5035,51 +4984,28 @@
                 "pay_date": "TBA"
             }
         ],
-        "last_updated": "2025-12-18 11:36:17",
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Open"
     },
-    "TFC": {
-        "symbol": "TFC",
-        "pe_ratio": 12.81,
-        "eps": 3.52,
+    "TEL": {
+        "symbol": "TEL",
+        "pe_ratio": 8.52,
+        "eps": 149.26,
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 2.5,
-                "ex_date": "Jan 08, 2026",
-                "pay_date": "Feb 4, 2026"
+                "amount": 48.0,
+                "ex_date": "Aug 27, 2025",
+                "pay_date": "Sep 10, 2025"
             },
             {
                 "type": "Cash",
-                "amount": 2.0,
-                "ex_date": "Jan 06, 2025",
-                "pay_date": "Feb 3, 2025"
+                "amount": 47.0,
+                "ex_date": "Mar 12, 2025",
+                "pay_date": "Apr 3, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:17",
-        "status": "Open"
-    },
-    "TFHI": {
-        "symbol": "TFHI",
-        "pe_ratio": -1.7,
-        "eps": -35.97,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:17",
-        "status": "Open"
-    },
-    "ROCK": {
-        "symbol": "ROCK",
-        "pe_ratio": 2.8,
-        "eps": 0.61,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1212,
-                "ex_date": "Aug 06, 2025",
-                "pay_date": "Sep 2, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:14",
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Open"
     },
     "TOP": {
@@ -5100,7 +5026,15 @@
                 "pay_date": "Jun 18, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:17",
+        "last_updated": "2025-12-18 12:53:16",
+        "status": "Open"
+    },
+    "TFHI": {
+        "symbol": "TFHI",
+        "pe_ratio": -1.7,
+        "eps": -35.97,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:16",
         "status": "Open"
     },
     "TUGS": {
@@ -5108,7 +5042,7 @@
         "pe_ratio": 4.0,
         "eps": 0.13,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:17",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "UBP": {
@@ -5123,7 +5057,7 @@
                 "pay_date": "Feb 24, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:17",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "UNH": {
@@ -5131,7 +5065,15 @@
         "pe_ratio": -12.17,
         "eps": -11.91,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:17",
+        "last_updated": "2025-12-18 12:53:17",
+        "status": "Open"
+    },
+    "UPM": {
+        "symbol": "UPM",
+        "pe_ratio": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "UPSON": {
@@ -5146,15 +5088,7 @@
                 "pay_date": "Jun 25, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:18",
-        "status": "Open"
-    },
-    "UPM": {
-        "symbol": "UPM",
-        "pe_ratio": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "URC": {
@@ -5175,7 +5109,7 @@
                 "pay_date": "May 9, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "V": {
@@ -5196,7 +5130,7 @@
                 "pay_date": "Apr 25, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "VITA": {
@@ -5204,7 +5138,7 @@
         "pe_ratio": 7.86,
         "eps": 0.07,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "VLL": {
@@ -5309,7 +5243,28 @@
                 "pay_date": "Jan 4, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
+        "status": "Open"
+    },
+    "VMC": {
+        "symbol": "VMC",
+        "pe_ratio": 8.04,
+        "eps": 0.25,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.01,
+                "ex_date": "Feb 18, 2025",
+                "pay_date": "Mar 12, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.05,
+                "ex_date": "Feb 18, 2025",
+                "pay_date": "Mar 12, 2025"
+            }
+        ],
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "VREIT": {
@@ -5348,28 +5303,7 @@
                 "pay_date": "Jan 10, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:18",
-        "status": "Open"
-    },
-    "VMC": {
-        "symbol": "VMC",
-        "pe_ratio": 8.04,
-        "eps": 0.25,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.01,
-                "ex_date": "Feb 18, 2025",
-                "pay_date": "Mar 12, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.05,
-                "ex_date": "Feb 18, 2025",
-                "pay_date": "Mar 12, 2025"
-            }
-        ],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "VVT": {
@@ -5384,7 +5318,7 @@
                 "pay_date": "Jun 20, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "WEB": {
@@ -5392,7 +5326,7 @@
         "pe_ratio": -12.63,
         "eps": -0.46,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "WIN": {
@@ -5400,7 +5334,7 @@
         "pe_ratio": 5.17,
         "eps": 0.06,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:17",
         "status": "Open"
     },
     "WLCON": {
@@ -5421,7 +5355,7 @@
                 "pay_date": "May 8, 2025"
             }
         ],
-        "last_updated": "2025-12-18 11:36:18",
+        "last_updated": "2025-12-18 12:53:18",
         "status": "Open"
     },
     "WPI": {
@@ -5429,7 +5363,7 @@
         "pe_ratio": 1.29,
         "eps": 0.34,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:19",
+        "last_updated": "2025-12-18 12:53:18",
         "status": "Open"
     },
     "X": {
@@ -5437,15 +5371,7 @@
         "pe_ratio": -5.1,
         "eps": -0.05,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:19",
-        "status": "Open"
-    },
-    "ZHI": {
-        "symbol": "ZHI",
-        "pe_ratio": null,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2025-12-18 11:36:19",
+        "last_updated": "2025-12-18 12:53:18",
         "status": "Open"
     },
     "XG": {
@@ -5453,7 +5379,15 @@
         "pe_ratio": null,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2025-12-18 11:36:19",
+        "last_updated": "2025-12-18 12:53:18",
+        "status": "Open"
+    },
+    "ZHI": {
+        "symbol": "ZHI",
+        "pe_ratio": null,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2025-12-18 12:53:18",
         "status": "Open"
     }
 }

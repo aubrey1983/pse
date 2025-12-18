@@ -92,24 +92,40 @@ class ReportGenerator:
                             total_div = 0.0
                             cutoff_date = datetime.datetime.now() - datetime.timedelta(days=365)
                             
+                            pay_months = []
+                            
                             for d in of['div_history']:
                                 try:
                                     # Parse date "Sep 05, 2025" or similar
                                     # Using raw string match might be safer or try/except
                                     d_date = None
-                                    date_str = d.get('ex_date', '')
+                                    date_str = d.get('ex_date', '') # Use Ex-Date for consistency
                                     if date_str:
                                         # Try multiple formats if needed, usually "Mon DD, YYYY"
                                         d_date = datetime.datetime.strptime(date_str, "%b %d, %Y")
                                     
                                     if d_date and d_date > cutoff_date:
                                         amt = d.get('amount')
-                                        if amt: total_div += float(amt)
+                                        if amt: 
+                                            total_div += float(amt)
+                                            pay_months.append(d_date.strftime("%b"))
                                 except:
                                     continue
                             
+                            # Deduplicate and sort months roughly by calendar? No, just list them.
+                            # Or reverse distinct?
+                            # Let's keep them in order of occurrence if possible, or sorted.
+                            # div_history is usually newest first.
+                            pay_months = list(set(pay_months)) # Dedupe: "Mar, Mar" -> "Mar"
+                            # Sort by calendar month
+                            month_map = {m: i for i, m in enumerate(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"])}
+                            pay_months.sort(key=lambda x: month_map.get(x, 99))
+                            
                             if total_div > 0:
                                 f['div_amount'] = total_div
+                                f['div_freq'] = len(pay_months) # Estimate frequency by unique months paid
+                                f['div_sched'] = ", ".join(pay_months)
+                                
                                 # Recalculate Yield based on Technical Last Close
                                 if t.get('last_close') and t['last_close'] > 0:
                                     f['div_yield'] = (total_div / t['last_close']) * 100.0
@@ -371,6 +387,11 @@ class ReportGenerator:
             pe_display = f"{pe_val:.2f}" if pe_val else "-"
             div_amt_display = f"₱{div_amt:.2f}" if div_amt else "-"
             
+            freq = f.get('div_freq', '-')
+            sched = f.get('div_sched', '-')
+            eps_val = f.get('eps', 0)
+            eps_display = f"₱{eps_val:.2f}" if eps_val else "-"
+            
             div_picks_html += f"""
                 <tr>
                     <td>
@@ -380,7 +401,10 @@ class ReportGenerator:
                     <td class="mono">₱{t['last_close']:.2f}</td>
                     <td class="text-green mono" style="font-weight:700;">{yield_val:.2f}%</td>
                     <td class="mono">{div_amt_display}</td>
+                    <td class="mono" style="font-weight:bold;">{eps_display}</td>
                     <td class="mono {payout_cls}">{payout:.1f}%</td>
+                    <td class="mono" style="text-align:center;">{freq}</td>
+                    <td class="mono" style="font-size:0.8rem;">{sched}</td>
                     <td class="mono">{pe_display}</td>
                     <td>{trend_display}</td>
                     <td class="mono">{item['div_score']}</td>
@@ -753,12 +777,15 @@ class ReportGenerator:
                                     <tr>
                                         <th onclick="sortTable('table_dividends', 0)" title="Stock Symbol">Symbol ⬍</th>
                                         <th onclick="sortTable('table_dividends', 1, 'num')" title="Last Closing Price">Price ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 2, 'num')" title="Annual Dividend Yield: Percentage of stock price returned as dividends. Higher is better, but >10% can be a warning sign.">Yield ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 3, 'num')" title="Estimated Annual Dividend Amount in Peso based on Yield">Est. Div (₱) ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 4, 'num')" title="Payout Ratio: % of Earnings paid as Dividends. <60% is Safe/Growing. >100% is Dangerous (Unsustainable).">Payout ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 5, 'num')" title="Price-to-Earnings Ratio: Valuation metric. <15 is generally considered 'Cheap'.">P/E ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 6)" title="Current Market Trend Direction">Trend ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 7, 'num')" title="Composite Safety Score (0-100) combining Yield, Payout Safety, and Trend.">Safety Score ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 2, 'num')" title="Annual Dividend Yield: Return on investment from dividends.&#10;Formula: (Annual Div / Price) * 100&#10;&#10;Guide:&#10;• < 2%: Low (Typical for Growth Stocks)&#10;• 2% - 5%: Good (Beats Banks/Inflation)&#10;• > 6%: Great (High Income)&#10;• > 10%: Caution (Risk of 'Value Trap')">Yield ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 3, 'num')" title="Total Annual Dividend">Est. Div (₱) ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 4, 'num')" title="Earnings Per Share (Basis for Payout)">EPS ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 5, 'num')" title="Payout Ratio">Payout ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 6, 'num')" title="Payments per year">Freq ⬍</th>
+                                        <th title="Payment Months">Schedule</th>
+                                        <th onclick="sortTable('table_dividends', 8, 'num')" title="Price-to-Earnings Ratio">P/E ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 9)" title="Trend Direction">Trend ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 10, 'num')" title="Safety Score">Score ⬍</th>
                                     </tr>
                                 </thead>
                                 <tbody>

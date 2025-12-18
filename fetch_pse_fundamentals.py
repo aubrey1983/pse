@@ -29,6 +29,30 @@ def load_json(filepath):
             return {}
     return {}
 
+def word_to_num(text):
+    """Simple helper to convert text numbers to float. Covers 0-99 and common variations."""
+    text = text.lower().replace('-', ' ')
+    units = {
+        "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, 
+        "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10,
+        "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+        "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+        "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, 
+        "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90
+    }
+    
+    total = 0
+    current = 0
+    words = text.split()
+    
+    found = False
+    for w in words:
+        if w in units:
+            current += units[w]
+            found = True
+    
+    return float(current) if found else None
+
 def clean_value(text):
     if not text:
         return None
@@ -36,6 +60,13 @@ def clean_value(text):
     if '(' in text and ')' in text:
         text = text.replace('(', '-').replace(')', '')
     text = text.replace(',', '').strip()
+    
+    # Handle "Fifty-five Centavos" Case
+    if "centavo" in text.lower():
+        num = word_to_num(text)
+        if num is not None:
+            return num / 100.0
+            
     try:
         return float(text)
     except:
@@ -126,6 +157,26 @@ def scrape_stock_details(symbol, ids, tech_price):
                     # Safety check on column count
                     if len(cols) < 6: continue
                     
+                    security_name = cols[0].text.strip().upper()
+                    # Filter: Must be "Common" or contain the Symbol (e.g. "GTCAP" but not "GTPPB" if possible, usually checking "Common" is safest)
+                    # GTCAP example: "GTPPB" vs "Common"
+                    # If it's a preferred share, it usually won't say "Common"
+                    if "COMMON" not in security_name and symbol not in security_name:
+                         # Extra safety: if symbol is GTCAP and security_name is GTPPB, we should skip
+                         # But if security_name is just "GTCAP", we keep.
+                         # If security_name is "GTPPB", symbol "GTCAP" is NOT in it (False) -> Wait, GTCAP is not in GTPPB? 
+                         # Actually GTCAP is not a substring of GTPPB.
+                         # Let's stick to: if "COMMON" is in it, take it. If record says "GTPPB", "PREF", etc, skip.
+                         # Most PSE records say "Common" or "Preferred".
+                         if "PREF" in security_name or "GTPPB" in security_name or "PCOR" not in security_name and symbol == "PCOR":
+                             # specialized checks might be messy.
+                             pass
+                    
+                    # Better Logic:
+                    # If "PREFERRED" or "PF" or specific known preferreds in name -> SKIP
+                    if "PREFERRED" in security_name or "PF" in security_name or "GTPPB" in security_name:
+                        continue
+                        
                     div_type = cols[1].text.strip() # "Cash" is in 2nd col usually
                     if "Cash" in div_type:
                         amount_text = cols[2].text.strip() # "PhP 1.00"
@@ -134,9 +185,20 @@ def scrape_stock_details(symbol, ids, tech_price):
                         
                         # Clean amount "PhP 1.00" -> 1.00
                         # Handle "Php1.10 per share", "PHP 1.00", "₱1.00"
-                        # Robust extraction of the number (e.g., "P0.42 per common..." -> 0.42)
-                        match = re.search(r'(\d+(?:\.\d+)?)', amount_text.replace(',', ''))
-                        amount = float(match.group(1)) if match else None
+                        # Robust extraction
+                        # 1. Try standard regex for digits "P0.42"
+                        clean_text = amount_text.replace(',', '')
+                        # print(f"[{symbol}] Raw Amount: {amount_text}") # DEBUG
+                        match = re.search(r'(\d+(?:\.\d+)?)', clean_text)
+                        
+                        amount = None
+                        if match:
+                            try:
+                                amount = float(match.group(1))
+                            except: pass
+                        else:
+                            # 2. Fallback to Text Parsing
+                            amount = clean_value(amount_text)
                         
                         data['div_history'].append({
                             "type": div_type,
@@ -182,7 +244,7 @@ def main():
         
         # FULL RUN (Uncomment below)
         test_items = stock_ids.items()
-        # test_items = [(s, stock_ids[s]) for s in ['JGS'] if s in stock_ids]
+        # test_items = [(s, stock_ids[s]) for s in ['CNPF'] if s in stock_ids]
         
         for symbol, ids in test_items:
             tech = technical_data.get(symbol, {})
