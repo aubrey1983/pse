@@ -67,8 +67,25 @@ def clean_value(text):
         if num is not None:
             return num / 100.0
             
+    # Handle Suffixes (T, B, M, K)
+    multiplier = 1.0
+    text_upper = text.upper()
+    
+    if text_upper.endswith('T'):
+        multiplier = 1e12
+        text = text[:-1]
+    elif text_upper.endswith('B'):
+        multiplier = 1e9
+        text = text[:-1]
+    elif text_upper.endswith('M'):
+        multiplier = 1e6
+        text = text[:-1]
+    elif text_upper.endswith('K'):
+        multiplier = 1e3
+        text = text[:-1]
+
     try:
-        return float(text)
+        return float(text) * multiplier
     except:
         return None
 
@@ -79,6 +96,10 @@ def scrape_stock_details(symbol, ids, tech_price):
     data = {
         "symbol": symbol,
         "pe_ratio": None,
+        "market_cap": None,
+        "outstanding_shares": None,
+        "high_52": None,
+        "low_52": None,
         "eps": None,
         "div_history": [],
         "last_updated": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
@@ -91,19 +112,27 @@ def scrape_stock_details(symbol, ids, tech_price):
     if not cmpy_id:
         return data
 
-    # 1. PE Ratio (stockData.do)
+    # 1. PE Ratio & Other Stats (stockData.do)
     if security_id:
         try:
             resp = session.get(STOCK_DATA_URL.format(cmpy_id, security_id), timeout=10)
             if resp.status_code == 200:
                 soup = BeautifulSoup(resp.text, 'html.parser')
-                # Find TH with "P/E Ratio"
-                th = soup.find('th', string=re.compile(r'P/E Ratio', re.I))
-                if th:
-                    # Value is in the following TD
-                    td = th.find_next_sibling('td')
-                    if td:
-                        data['pe_ratio'] = clean_value(td.text)
+                
+                # Helper to extract value by Header Text
+                def get_val(label):
+                    th = soup.find('th', string=re.compile(label, re.I))
+                    if th:
+                        td = th.find_next_sibling('td')
+                        if td:
+                            return clean_value(td.text)
+                    return None
+
+                data['pe_ratio'] = get_val(r'P/E Ratio')
+                data['market_cap'] = get_val(r'Market Capitalization')
+                data['outstanding_shares'] = get_val(r'Outstanding Shares')
+                data['high_52'] = get_val(r'52-Week High')
+                data['low_52'] = get_val(r'52-Week Low')
                 
                 # Status
                 th_stat = soup.find('th', string=re.compile(r'Status', re.I))
@@ -243,8 +272,11 @@ def main():
         # test_items = [(s, stock_ids[s]) for s in ['ALI', 'JFC', 'BDO', 'TEL', 'SMPH'] if s in stock_ids]
         
         # FULL RUN (Uncomment below)
+        # test_items = [(s, stock_ids[s]) for s in ['ALI', 'JFC', 'BDO', 'TEL', 'SMPH'] if s in stock_ids]
+        
+        # FULL RUN (Uncomment below)
         test_items = stock_ids.items()
-        # test_items = [(s, stock_ids[s]) for s in ['CNPF'] if s in stock_ids]
+        # test_items = [(s, stock_ids[s]) for s in ['ALI'] if s in stock_ids]
         
         for symbol, ids in test_items:
             tech = technical_data.get(symbol, {})

@@ -36,6 +36,127 @@ class ReportGenerator:
         polyline = f'<polyline points="{" ".join(points)}" fill="none" stroke="{color}" stroke-width="1.5" />'
         return f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}">{polyline}</svg>'
 
+    def _generate_onclick(self, item, official_meta):
+        """Generate the onclick attribute for showing stock details."""
+        t = item['tech']
+        f = item['fund']
+        
+        official = official_meta
+        # Fallback to category/sector in item if official mapping fails, but usually official has it.
+        # If not, we don't easy access to category loop variable here if we are out of loop.
+        # But 'item' does not store category... wait.
+        # Actually 'official_meta' is the whole dict? No, passing just the specific meta.
+        
+        o_sector = official.get('sector', 'Unknown')
+        o_subsector = official.get('subsector', '-')
+        o_date = official.get('listingDate', '-')
+        
+        mk_cap = f.get('market_cap', 0)
+        high_52 = f.get('high_52', 0)
+        low_52 = f.get('low_52', 0)
+        
+        history_json = json.dumps(t.get('history', []))
+        history_json_safe = history_json.replace('"', r'\"').replace("'", "&#39;")
+        
+        div_hist_json = json.dumps(f.get('div_history', []))
+        div_hist_safe = div_hist_json.replace('"', r'\"').replace("'", "&#39;")
+        
+        def escape_val(v):
+            return str(v).replace('"', r'\"').replace("'", "&#39;")
+        
+        clean_name = escape_val(item["company_name"])
+        clean_sector = escape_val(o_sector)
+        clean_sub = escape_val(o_subsector)
+        clean_date = escape_val(o_date)
+        
+        # Args: symbol, companyName, sector, subsector, listingDate, historyJson, marketCap, pe, eps, yield, high52, low52, divHistJson
+        call = f'showStockDetails("{item["symbol"]}", "{clean_name}", "{clean_sector}", "{clean_sub}", "{clean_date}", "{history_json_safe}", "{mk_cap}", "{f.get("pe_ratio", 0)}", "{f.get("eps", 0)}", "{f.get("div_yield", 0)}", "{high_52}", "{low_52}", "{div_hist_safe}")'
+        return f'onclick=\'{call}\' style="cursor:pointer;"'
+
+    def _generate_card_html(self, item, stock_meta):
+        """Generate consistent HTML for a stock card."""
+        t = item['tech']
+        f = item['fund']
+        
+        trend = t.get('trend', 'Neutral')
+        trend_cls = "green" if "Uptrend" in trend else "red" if "Downtrend" in trend else "gray"
+        
+        pe_display = f"{f.get('pe_ratio'):.2f}" if f and f.get('pe_ratio') else '-'
+        yield_display = f"{f.get('div_yield'):.2f}%" if f and f.get('div_yield') else "-"
+        
+        # Sparkline
+        spark_svg = self._generate_sparkline_svg(t.get('sparkline', []), width=80, height=20, color="#10b981" if "Uptrend" in trend else "#ef4444")
+        
+        # Status Badge
+        status_val = f.get('status', 'Active')
+        status_badge = ""
+        is_suspended = status_val in ['Suspended', 'Halted']
+        
+        if is_suspended:
+             status_badge = f'<span class="trend-badge" style="background:rgba(245, 158, 11, 0.15); color:#f59e0b;">{status_val.upper()}</span> '
+        
+        # Trend Badge
+        trend_badge = f'<span class="trend-badge {trend_cls}">{trend}</span>'
+        if is_suspended and trend in ['Suspended', 'Unknown', 'Neutral']:
+            trend_badge = ""
+
+        # Badges
+        badges = status_badge + trend_badge
+        if t.get('golden_cross', False):
+            badges += ' <span class="trend-badge gold">GOLDEN CROSS</span>'
+        if t.get('volume_spike', False):
+            badges += ' <span class="trend-badge" style="background:rgba(59, 130, 246, 0.2); color:#60a5fa;">VOL SPIKE</span>'
+
+        # Official Metadata Lookup (Use passed stock_meta dict to find this stock)
+        official = stock_meta.get(item['symbol'], {})
+        o_sector = official.get('sector', 'Unknown')
+        
+        data_attrs = f'data-name="{item["company_name"]}" data-sector="{o_sector}" '
+        data_attrs += f'data-rsi="{t.get("rsi", 50)}" data-pe="{f.get("pe_ratio", 999)}" '
+        data_attrs += f'data-golden="{str(t.get("golden_cross", False)).lower()}" data-trend="{trend}" '
+
+        # Prepare extended data for Modal
+        onclick_attr = self._generate_onclick(item, official)
+
+        return f"""
+            <div class="card" {onclick_attr} {data_attrs}>
+                <div class="card-header">
+                    <div>
+                        <div class="symbol mono" style="color:var(--accent);">{item['symbol']}</div>
+                        <div style="font-size:0.75rem; color:var(--text-tertiary); margin-top:4px;">{item['company_name'][:30]}</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="price mono">₱{t['last_close']:.2f}</div>
+                        {spark_svg}
+                    </div>
+                </div>
+                
+                <div style="margin-bottom:8px;">
+                     {badges}
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="metric-label" title="RSI">RSI</span>
+                        <span class="metric-val mono { 'text-red' if t.get('rsi',50) < 30 else 'text-green' if t.get('rsi',50) > 70 else '' }">{t.get('rsi',0):.1f}</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Supp/Res</span>
+                        <span class="metric-val mono">{t.get('support',0):.2f} / {t.get('resistance',0):.2f}</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">P/E Ratio</span>
+                        <span class="metric-val mono">{pe_display}</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Yield</span>
+                        <span class="metric-val mono text-green">{yield_display}</span>
+                    </div>
+                </div>
+                { f'<div style="border-top:1px solid #334155; margin-top:8px; padding-top:4px; display:flex; justify-content:space-between; align-items:center;"><span style="font-size:0.75rem; color:#94a3b8;">Est. Div Amt</span><span class="mono" style="font-size:0.8rem; color:#fff;">₱{f.get("div_amount", 0):.2f}</span></div>' if f.get('div_amount') and f.get('div_amount') > 0 else '' }
+            </div>
+        """
+
     def generate_dashboard(self, output_file: str = "report.html"):
         """Generate a modern HTML dashboard merging Technical and Fundamental data."""
         
@@ -50,43 +171,76 @@ class ReportGenerator:
         official_fund = self.load_json("data/pse_fundamentals.json")
         
         # Merge Data per Industry
-        grouped_data = {cat: [] for cat in STOCK_CATEGORIES}
+        # Dynamic Sector Generation
+        all_sectors = set()
+        for s_data in stock_meta.values():
+            sec = s_data.get('sector')
+            if sec:
+                # Normalize: Mining & Oil -> Mining and Oil
+                sec = sec.replace(' & ', ' and ')
+                sec = sec.replace('Small, Medium and Emerging Board', 'SME Board')
+                all_sectors.add(sec)
+        
+        # Sort and ensure "SME / Others" is last if it exists, or just sort alphabetically
+        sorted_sectors = sorted(list(all_sectors))
+        if "SME Board" in sorted_sectors:
+             sorted_sectors.remove("SME Board")
+             sorted_sectors.append("SME Board")
+            
+        grouped_data = {cat: [] for cat in sorted_sectors}
+        # Add a catch-all if needed, but let's try to stick to official
+        if "Uncategorized" not in grouped_data:
+            grouped_data["Uncategorized"] = []
+            
         top_picks = []
         div_picks = []
         
-        for cat, symbols in STOCK_CATEGORIES.items():
-            for symbol in symbols:
-                # Get Official Name from Metadata (Early lookup)
-                meta = stock_meta.get(symbol, {})
-                
-                # Retrieve Data or Default
-                t = tech_data.get(symbol)
-                f = fund_data.get(symbol, {})
-                official_fund_data = official_fund.get(symbol, {})
-                status_val = official_fund_data.get('status', 'Active')
+        # Iterate over ALL available symbols (union of tech and meta)
+        all_symbols = set(tech_data.keys()) | set(stock_meta.keys())
+        
+        for symbol in all_symbols:
+            # Get Official Name/Sector from Metadata
+            meta = stock_meta.get(symbol, {})
+            sector = meta.get('sector', 'Uncategorized')
+            # Normalize Sector Name
+            sector = sector.replace(' & ', ' and ')
+            sector = sector.replace('Small, Medium and Emerging Board', 'SME Board')
+            
+            if sector not in grouped_data:
+                sector = 'Uncategorized' # Fallback
+            
+            # Retrieve Data or Default
+            t = tech_data.get(symbol)
+            f = fund_data.get(symbol, {})
+            official_fund_data = official_fund.get(symbol, {})
+            status_val = official_fund_data.get('status', 'Active')
 
-                # If no Tech Data, check if Suspended/Active. 
-                # If Suspended, we want to show it. If Active but no data, likely new listing or error.
-                if not t:
-                    # Create dummy tech data for display
-                    t = {
-                        "last_close": 0.0,
-                        "trend": "Unknown",
-                        "rsi": 0,
-                        "sparkline": [],
-                        "history": []
-                    }
-                    if status_val == 'Suspended':
-                        t['trend'] = 'Suspended'
-                
-                # Check if we should process
-                if t:
+            # If no Tech Data, but we have metadata
+            if not t:
+                # Create dummy tech data for display if it's active or suspended
+                t = {
+                    "last_close": 0.0,
+                    "trend": "Unknown",
+                    "rsi": 0,
+                    "sparkline": [],
+                    "history": []
+                }
+                if status_val == 'Suspended':
+                    t['trend'] = 'Suspended'
+            
+            # Check if we should process
+            if t:
                     # Sync Official Fundamentals
                     of = official_fund_data
                     if of:
                         if of.get('pe_ratio'): f['pe_ratio'] = of['pe_ratio']
                         if of.get('eps'): f['eps'] = of['eps']
                         if of.get('status'): f['status'] = of['status'] # Sync Status
+                        if of.get('market_cap'): f['market_cap'] = of['market_cap']
+                        if of.get('outstanding_shares'): f['outstanding_shares'] = of['outstanding_shares']
+                        if of.get('high_52'): f['high_52'] = of['high_52']
+                        if of.get('low_52'): f['low_52'] = of['low_52']
+                        if of.get('div_history'): f['div_history'] = of['div_history']
                         # Calculate Dividend Amount from History (TTM)
                         if of.get('div_history'):
                             total_div = 0.0
@@ -168,7 +322,9 @@ class ReportGenerator:
                     if t.get('volume_spike', False): score += 1
                     
                     item['score'] = score
-                    grouped_data[cat].append(item)
+                    item['score'] = score
+                    if sector in grouped_data:
+                        grouped_data[sector].append(item)
                     
                     if score >= 3:
                         top_picks.append(item)
@@ -205,120 +361,57 @@ class ReportGenerator:
                         except: pass
 
         # Sort Picks
+        # Top Picks: Sort by Score Descending first to find the best, then sort A-Z for display
         top_picks.sort(key=lambda x: x['score'], reverse=True)
-        div_picks.sort(key=lambda x: x['symbol']) # Sort by Symbol as requested
         top_picks = top_picks[:20]
+        top_picks.sort(key=lambda x: x['symbol']) # Display A-Z
         
-        div_picks.sort(key=lambda x: x['div_score'], reverse=True)
+        # Dividend Picks: Filtered by Score >= 40 already
+        div_picks.sort(key=lambda x: x['symbol']) # Display A-Z
+
+        # Sort Industry Lists by Symbol
+        for cat in grouped_data:
+            grouped_data[cat].sort(key=lambda x: x['symbol'])
 
         # --- HTML COMPONENT GENERATION ---
         
         # 1. Industry Nav
         industry_nav = ""
-        for cat in STOCK_CATEGORIES:
-            cat_id = cat.replace(" ", "_").replace("&", "")
-            industry_nav += f'<div class="nav-item" onclick="showSection(\'{cat_id}\')">{cat}</div>'
+        for cat in sorted_sectors:
+            if cat not in grouped_data or not grouped_data[cat]: continue
+            count = len(grouped_data[cat])
+            cat_id = cat.replace(" ", "_").replace("&", "").replace(",", "")
+            industry_nav += f'<div class="nav-item" onclick="showSection(\'{cat_id}\')">{cat} <span class="nav-badge">{count}</span></div>'
             
-        # 2. All Cards (Overview) & Industry Sections
+        # 2. All Cards (Overview) - Flat A-Z List
         all_cards_html = ""
+        
+        # Flatten all grouped data to get unique items for Overview
+        all_overview_items = []
+        for cat, items in grouped_data.items():
+            all_overview_items.extend(items)
+            
+        # Sort All Overview Items by Symbol
+        all_overview_items.sort(key=lambda x: x['symbol'])
+        
+        for item in all_overview_items:
+             card_html = self._generate_card_html(item, stock_meta)
+             all_cards_html += card_html
+
+        # 3. Industry Sections
         industry_sections = ""
         
-        for cat, items in grouped_data.items():
-            cat_id = cat.replace(" ", "_").replace("&", "")
+        for cat in sorted_sectors:
+            items = grouped_data.get(cat, [])
+            if not items: continue
+            
+            cat_id = cat.replace(" ", "_").replace("&", "").replace(",", "")
             
             section_html = f'<div id="{cat_id}" class="section"><h2 style="margin-bottom:1.5rem;">{cat} <span class="nav-badge" style="font-size:1rem;">{len(items)}</span></h2><div class="dashboard-grid">'
             
             for item in items:
-                t = item['tech']
-                f = item['fund']
-                
-                trend = t.get('trend', 'Neutral')
-                trend_cls = "green" if "Uptrend" in trend else "red" if "Downtrend" in trend else "gray"
-                
-                pe_display = f"{f.get('pe_ratio'):.2f}" if f and f.get('pe_ratio') else '-'
-                yield_display = f"{f.get('div_yield'):.2f}%" if f and f.get('div_yield') else "-"
-                
-                # Sparkline
-                spark_svg = self._generate_sparkline_svg(t.get('sparkline', []), width=80, height=20, color="#10b981" if "Uptrend" in trend else "#ef4444")
-                
-                # Status Badge
-                status_val = f.get('status', 'Active') # Default to Active
-                status_badge = ""
-                is_suspended = status_val in ['Suspended', 'Halted']
-                
-                if is_suspended:
-                     # Orange/Red badge for status (Matching theme: low opacity bg, high contrast text)
-                     status_badge = f'<span class="trend-badge" style="background:rgba(245, 158, 11, 0.15); color:#f59e0b;">{status_val.upper()}</span> '
-                
-                # Trend Badge (Hide if Suspended and Trend is also Suspended/Unknown to avoid dupes)
-                trend_badge = f'<span class="trend-badge {trend_cls}">{trend}</span>'
-                if is_suspended and trend in ['Suspended', 'Unknown', 'Neutral']:
-                    trend_badge = ""
-
-                # Badges
-                badges = status_badge + trend_badge
-                if t.get('golden_cross', False):
-                    badges += ' <span class="trend-badge gold">GOLDEN CROSS</span>'
-                if t.get('volume_spike', False):
-                    badges += ' <span class="trend-badge" style="background:rgba(59, 130, 246, 0.2); color:#60a5fa;">VOL SPIKE</span>'
-
-                # Data Attributes for JS Filtering
-                history_json = json.dumps(t.get('history', []))
-                # Escape quotes for HTML attribute
-                history_json_safe = history_json.replace('"', '&quot;')
-                
-                # Official Metadata Lookup
-                official = stock_meta.get(item['symbol'], {})
-                o_sector = official.get('sector', cat)
-                o_subsector = official.get('subsector', '-')
-                o_date = official.get('listingDate', '-')
-                
-                data_attrs = f'data-name="{item["company_name"]}" data-sector="{o_sector}" '
-                data_attrs += f'data-rsi="{t.get("rsi", 50)}" data-pe="{f.get("pe_ratio", 999)}" '
-                data_attrs += f'data-golden="{str(t.get("golden_cross", False)).lower()}" data-trend="{trend}" '
-                data_attrs += f'data-div-amt="{f.get("div_amount", 0)}"'
-
-                card_html = f"""
-                    <div class="card" onclick='showChart("{item['symbol']}", "{item['company_name'].replace("'", "")}", "{o_sector}", "{o_subsector}", "{o_date}", "{history_json_safe}")' style="cursor:pointer;" {data_attrs}>
-                        <div class="card-header">
-                            <div>
-                                <div class="symbol mono" style="color:var(--accent);">{item['symbol']}</div>
-                                <div style="font-size:0.75rem; color:var(--text-tertiary); margin-top:4px;">{item['company_name'][:30]}</div>
-                            </div>
-                            <div style="text-align:right;">
-                                <div class="price mono">₱{t['last_close']:.2f}</div>
-                                {spark_svg}
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom:8px;">
-                             {badges}
-                        </div>
-                        
-                        <div class="metrics">
-                            <div class="metric">
-                                <span class="metric-label" title="RSI">RSI</span>
-                                <span class="metric-val mono { 'text-red' if t.get('rsi',50) < 30 else 'text-green' if t.get('rsi',50) > 70 else '' }">{t.get('rsi',0):.1f}</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">Supp/Res</span>
-                                <span class="metric-val mono">{t.get('support',0):.2f} / {t.get('resistance',0):.2f}</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">P/E Ratio</span>
-                                <span class="metric-val mono">{pe_display}</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-label">Yield</span>
-                                <span class="metric-val mono text-green">{yield_display}</span>
-                            </div>
-                        </div>
-                        { f'<div style="border-top:1px solid #334155; margin-top:8px; padding-top:4px; display:flex; justify-content:space-between; align-items:center;"><span style="font-size:0.75rem; color:#94a3b8;">Est. Div Amt</span><span class="mono" style="font-size:0.8rem; color:#fff;">₱{f.get("div_amount", 0):.2f}</span></div>' if f.get('div_amount') and f.get('div_amount') > 0 else '' }
-                    </div>
-                """
-                
-                all_cards_html += card_html
-                section_html += card_html # Add to specific section too
+                 card_html = self._generate_card_html(item, stock_meta)
+                 section_html += card_html
                 
             section_html += "</div></div>"
             industry_sections += section_html
@@ -334,9 +427,11 @@ class ReportGenerator:
             
             # Name display (Use Official Name)
             name = item.get('company_name', item['symbol'])
+            official = stock_meta.get(item['symbol'], {})
+            onclick_attr = self._generate_onclick(item, official)
             
             top_picks_html += f"""
-                <tr>
+                <tr {onclick_attr}>
                     <td>
                         <div class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']}</div>
                         <div style="font-size:0.75rem; color:#64748b;">{name[:20]}</div>
@@ -364,6 +459,8 @@ class ReportGenerator:
             
             # Name display (Use Official Name)
             name = item.get('company_name', item['symbol'])
+            official = stock_meta.get(item['symbol'], {})
+            onclick_attr = self._generate_onclick(item, official)
             
             # Logic for Value Trap / Safety
             is_uptrend = "Uptrend" in trend
@@ -393,7 +490,7 @@ class ReportGenerator:
             eps_display = f"₱{eps_val:.2f}" if eps_val else "-"
             
             div_picks_html += f"""
-                <tr>
+                <tr {onclick_attr}>
                     <td>
                         <div class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']}</div>
                         <div style="font-size:0.75rem; color:#64748b;">{name[:20]}</div>
@@ -625,19 +722,29 @@ class ReportGenerator:
                     background: var(--bg-panel);
                     border-radius: 12px;
                     border: 1px solid var(--border);
-                    overflow: hidden;
+                    overflow-x: auto;
+                    max-height: 80vh; /* Allow scrolling within the table */
+                    overflow-y: auto;
                 }}
                 
                 .data-table {{ width: 100%; border-collapse: collapse; text-align: left; }}
                 .data-table th {{
                     padding: 1rem;
-                    background: var(--bg-app);
+                    background: var(--bg-panel); 
                     color: var(--text-secondary);
                     font-size: 0.75rem;
                     text-transform: uppercase;
                     cursor: pointer;
+                    position: sticky; /* Sticky Header */
+                    top: 0;
+                    z-index: 10;
+                    border-bottom: 2px solid var(--border); 
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
                 }}
                 .data-table td {{ padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-primary); }}
+                
+                /* Zebra Striping & Hover */
+                .data-table tr:nth-child(even) {{ background: rgba(255, 255, 255, 0.02); }}
                 .data-table tr:hover {{ background: var(--bg-panel-hover); }}
                 
                 /* Utility */
@@ -693,7 +800,7 @@ class ReportGenerator:
             <nav>
                 <div class="brand">PSE<span>PRO</span> v2.0</div>
                 <div class="nav-item active" onclick="showSection('overview')">
-                    Overview <span class="nav-badge">All</span>
+                    Market Overview <span class="nav-badge">All</span>
                 </div>
                 <div class="nav-item" onclick="showSection('top_picks')">
                     Top Picks <span class="nav-badge" style="color:var(--accent); font-weight:bold;">★</span>
@@ -712,21 +819,6 @@ class ReportGenerator:
                 <header>
                     <div style="display:flex; align-items:center;">
                          <div class="header-title">Market Dashboard</div>
-                         <div class="filter-bar">
-                             <input type="text" id="searchInput" class="search-bar" placeholder="Search by Symbol or Name..." onkeyup="filterStocks()">
-                             
-                             <select id="sectorFilter" class="filter-select" onchange="filterStocks()">
-                                 <option value="All">All Sectors</option>
-                                 """ + "".join([f'<option value="{c}">{c}</option>' for c in STOCK_CATEGORIES]) + f"""
-                             </select>
-                             
-                             <select id="metricFilter" class="filter-select" onchange="filterStocks()">
-                                 <option value="None">Filter Risk...</option>
-                                 <option value="oversold">RSI < 30 (Oversold)</option>
-                                 <option value="cheap">P/E < 15 (Cheap)</option>
-                                 <option value="uptrend">Golden Cross / Uptrend</option>
-                             </select>
-                         </div>
                     </div>
                     <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: {timestamp}</div>
                 </header>
@@ -735,10 +827,29 @@ class ReportGenerator:
                     <!-- OVERVIEW (All Stocks Grid) -->
                     <div id="overview" class="section active">
                         <h2 style="margin-bottom:1.5rem;">Market Overview</h2>
+                        
+                        <!-- Search Controls -->
+                        <div style="margin-bottom: 2rem; display: flex; gap: 15px; align-items: center; background: var(--bg-panel); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+                             <input type="text" id="searchInput" class="search-bar" style="width: 400px; padding: 12px;" placeholder="Search by Symbol or Name..." onkeyup="filterStocks()">
+                             
+                             <select id="sectorFilter" class="filter-select" style="padding: 12px;" onchange="filterStocks()">
+                                 <option value="All">All Sectors</option>
+                                 """ + "".join([f'<option value="{c}">{c}</option>' for c in sorted_sectors]) + f"""
+                             </select>
+                             
+                             <select id="metricFilter" class="filter-select" style="padding: 12px;" onchange="filterStocks()">
+                                 <option value="None">Filter Risk...</option>
+                                 <option value="oversold">RSI < 30 (Oversold)</option>
+                                 <option value="cheap">P/E < 15 (Cheap)</option>
+                                 <option value="uptrend">Golden Cross / Uptrend</option>
+                             </select>
+                        </div>
+
                         <div id="all_stocks_grid" class="dashboard-grid">
                             {all_cards_html}
                         </div>
                     </div>
+
 
                     <!-- SEARCH RESULTS -->
                     <div id="search_results" class="section">
@@ -770,7 +881,7 @@ class ReportGenerator:
                     
                     <!-- DIVIDENDS -->
                     <div id="dividends" class="section">
-                        <h2 style="margin-bottom:1.5rem;">Dividend Gems</h2>
+                        <h2 style="margin-bottom:1.5rem;">Dividend Gems <span class="nav-badge" style="font-size:1rem;">{len(div_picks)}</span></h2>
                          <div class="table-container">
                             <table class="data-table" id="table_dividends">
                                 <thead>
@@ -806,7 +917,7 @@ class ReportGenerator:
                     console.log("Switching to section:", id);
                     if (!document.getElementById(id)) return;
                     
-                    if (id !== 'search_results') {{
+                    if (id !== 'search_results' && id !== 'search_tab') {{
                         document.getElementById('searchInput').value = "";
                         previousSectionId = id;
                         // Reset filters
@@ -828,11 +939,6 @@ class ReportGenerator:
                     
                     let grid = document.getElementById('all_stocks_grid');
                     let cards = grid.getElementsByClassName('card');
-                    
-                    let activeSection = document.querySelector('.section.active').id;
-                    if (activeSection !== 'overview' && (text.length > 0 || sector !== 'All' || metric !== 'None')) {{
-                        showSection('overview');
-                    }}
                     
                     for (let i = 0; i < cards.length; i++) {{
                         let card = cards[i];
@@ -919,14 +1025,22 @@ class ReportGenerator:
             <script>
                 let chart; 
                 
-                function showChart(symbol, companyName, sector, subsector, listingDate, historyJson) {{
+                function formatCurrency(val) {{
+                    if (!val) return "-";
+                    if (val >= 1e12) return "₱" + (val / 1e12).toFixed(2) + "T";
+                    if (val >= 1e9) return "₱" + (val / 1e9).toFixed(2) + "B";
+                    if (val >= 1e6) return "₱" + (val / 1e6).toFixed(2) + "M";
+                    return "₱" + val.toLocaleString();
+                }}
+
+                function showStockDetails(symbol, companyName, sector, subsector, listingDate, historyJson, marketCap, pe, eps, divYield, high52, low52, divHistJson) {{
                     document.getElementById('chartModal').style.display = 'flex';
                     
-                    // Enhanced Modal Header
+                    // 1. HEADER
                     const headerHtml = `
-                        <div style="display:flex; justify-content:space-between; align-items:end;">
+                        <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:15px;">
                             <div>
-                                <h2 style="margin:0; color:var(--text-primary); font-family:'JetBrains Mono';">${{symbol}}</h2>
+                                <h2 style="margin:0; color:var(--text-primary); font-family:'JetBrains Mono'; font-size:1.8rem;">${{symbol}}</h2>
                                 <div style="color:var(--text-secondary); font-size:0.9rem;">${{companyName}}</div>
                             </div>
                             <div style="text-align:right; font-size:0.8rem; color:var(--text-tertiary);">
@@ -937,20 +1051,75 @@ class ReportGenerator:
                     `;
                     document.getElementById('modalTitle').innerHTML = headerHtml;
                     
-                    const container = document.getElementById('chart-container');
-                    container.innerHTML = ''; // Clear previous
                     
+                    // 2. FUNDAMENTAL STATS GRID
+                    let caps = formatCurrency(parseFloat(marketCap));
+                    let yieldVal = parseFloat(divYield) > 0 ? parseFloat(divYield).toFixed(2) + "%" : "-";
+                    let peVal = parseFloat(pe) > 0 ? parseFloat(pe).toFixed(2) : "-";
+                    let epsVal = parseFloat(eps) != 0 ? parseFloat(eps).toFixed(2) : "-";
+                    
+                    const statsHtml = `
+                        <div style="display:grid; grid-template-columns: repeat(6, 1fr); gap:10px; margin-bottom:20px; background:var(--bg-panel); padding:15px; border-radius:8px; border:1px solid var(--border);">
+                            <div class="metric"><span class="metric-label" title="Market Capitalization: Total value of all shares.\nFormula: Price x Outstanding Shares.\nDenomination: B = Billions, T = Trillions">Market Cap ⓘ</span><span class="metric-val mono" style="color:#fff;">${{caps}}</span></div>
+                            <div class="metric"><span class="metric-label">P/E Ratio</span><span class="metric-val mono">${{peVal}}</span></div>
+                            <div class="metric"><span class="metric-label">EPS</span><span class="metric-val mono">${{epsVal}}</span></div>
+                            <div class="metric"><span class="metric-label">Div Yield</span><span class="metric-val mono text-green">${{yieldVal}}</span></div>
+                            <div class="metric"><span class="metric-label">52-Wk High</span><span class="metric-val mono text-green">${{high52}}</span></div>
+                            <div class="metric"><span class="metric-label">52-Wk Low</span><span class="metric-val mono text-red">${{low52}}</span></div>
+                        </div>
+                    `;
+                    
+                    // 3. CHART CONTAINER
+                    // We need to recreate the container div because we are injecting stats above it
+                    // But effectively we can just set the grid in a 'details-container'
+                    
+                    const container = document.getElementById('chart-container');
+                    container.innerHTML = statsHtml + '<div id="main-chart" style="width:100%; height:400px; border:1px solid var(--border); border-radius:8px; overflow:hidden;"></div>';
+                    
+                    // 4. DIVIDEND HISTORY (Bottom)
+                    let divs = JSON.parse(divHistJson);
+                    if (divs && divs.length > 0) {{
+                        let rows = "";
+                        divs.slice(0, 5).forEach(d => {{
+                             rows += `<tr>
+                                <td style="padding:8px; border-bottom:1px solid #334155; font-size:0.8rem;">${{d.ex_date}}</td>
+                                <td style="padding:8px; border-bottom:1px solid #334155; font-size:0.8rem;">${{d.pay_date}}</td>
+                                <td style="padding:8px; border-bottom:1px solid #334155; font-size:0.8rem;">${{d.type}}</td>
+                                <td style="padding:8px; border-bottom:1px solid #334155; font-size:0.8rem; font-family:'JetBrains Mono'; text-align:right;">₱${{parseFloat(d.amount).toFixed(4)}}</td>
+                             </tr>`;
+                        }});
+                        
+                        container.innerHTML += `
+                            <div style="margin-top:20px;">
+                                <h3 style="font-size:1rem; margin-bottom:10px; color:var(--text-secondary);">Recent Dividends</h3>
+                                <table style="width:100%; border-collapse:collapse;">
+                                    <thead>
+                                        <tr style="text-align:left; color:var(--text-tertiary); font-size:0.75rem; text-transform:uppercase;">
+                                            <th style="padding:8px;">Ex-Date</th>
+                                            <th style="padding:8px;">Pay-Date</th>
+                                            <th style="padding:8px;">Type</th>
+                                            <th style="padding:8px; text-align:right;">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>${{rows}}</tbody>
+                                </table>
+                            </div>
+                        `;
+                    }}
+
+                    // RENDER CHART
                     // Parse data
                     const data = JSON.parse(historyJson);
+                    const chartDiv = document.getElementById('main-chart');
+                    
                     if(!data || data.length === 0) {{
-                        container.innerHTML = '<div style="display:flex; height:100%; justify-content:center; align-items:center; color:var(--text-tertiary);">No Price History Available</div>';
+                        chartDiv.innerHTML = '<div style="display:flex; height:100%; justify-content:center; align-items:center; color:var(--text-tertiary);">No Price History Available</div>';
                         return;
                     }}
 
-                    // Create Chart
-                    chart = LightweightCharts.createChart(container, {{
-                        width: container.clientWidth,
-                        height: container.clientHeight,
+                    chart = LightweightCharts.createChart(chartDiv, {{
+                        width: chartDiv.clientWidth,
+                        height: chartDiv.clientHeight,
                         layout: {{
                             background: {{ type: 'solid', color: '#1e293b' }},
                             textColor: '#94a3b8',
@@ -976,8 +1145,14 @@ class ReportGenerator:
                     }});
 
                     candlestickSeries.setData(data);
-                    
                     chart.timeScale().fitContent();
+                    
+                    // ResizeObserver to handle modal resize
+                    new ResizeObserver(entries => {{
+                        if (entries.length === 0 || entries[0].target !== chartDiv) {{ return; }}
+                        const newRect = entries[0].contentRect;
+                        chart.applyOptions({{ width: newRect.width, height: newRect.height }});
+                    }}).observe(chartDiv);
                 }}
 
                 function closeModal() {{
