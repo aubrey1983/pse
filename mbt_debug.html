@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Dividends and Rights</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script src="/js/lib/jquery-1.10.2.min.js"></script>
+<script src="/js/lib/jquery-ui-1.10.3.min.js"></script>
+<script src="/js/lib/jquery.blockUI.js"></script>
+<!-- <script src="/js/lib/jquery.selectbox-0.2.js"></script> -->
+<script src="/js/lib/jquery.ezmark.js"></script>
+<script src="/js/lib/jquery.cycle.js"></script>
+<script src="/js/common/epCommon.js?version=20220325"></script>
+<script src="/js/common/epPopup.js"></script>
+<!--script src="http://steema.us/files/jscript/src/teechart.js" type="text/javascript"></script -->
+<script src="/js/teechart/teechart.js"></script>
+<script src="/js/teechart/teechart-table.js"></script>  
+<script src="/js/teechart/teechart-extras.js"></script>
+<script src="/js/teechart/teechart-data.js"></script>
+<script src="/js/teechart/date.format.js"></script>
+<link href="/js/lib/themes/base/jquery-ui.css" rel="stylesheet" />
+<!-- <link href="/js/lib/themes/jquery.selectbox.css" rel="stylesheet" /> -->
+<link href="/js/lib/themes/jquery.ezmark.css" rel="stylesheet" />
+<link href="/css/common.css" type="text/css" rel="stylesheet" />
+<link href="/css/contents.css?version=20220601" type="text/css" rel="stylesheet" />
+</head>
+<body><a href="https://edge.pse.com.ph/cdn-cgi/content?id=nv8WqRsp6Mt4FUltuOTI.tFs5uGvDqi7xme4mkHaF6Y-1766023491-1.1.1.1-g1tPnpTvcnH9H2xR.DxhMwtjKWkQNAAUbnM_wQAjAaU" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<script type="text/javascript">
+$(function() {
+  $("#searchKeyTop").autocomplete({
+    minLength: 1,
+    source: "/autoComplete/searchCompanyNameSymbol.ax",
+    focus: function(event, ui) {
+      //$("#searchKeyTop").val(ui.item.cmpyNm);
+      return false;
+    },
+    select: function(event, ui) {
+      location.href = "/companyInformation/form.do?cmpy_id=" + ui.item.cmpyId;
+      return false;
+    }
+  })
+  .data("ui-autocomplete")._renderItem = function(ul, item) {
+    return $("<li>").append("<a><div class='nm'>" + item.cmpyNm + "</div><span class='sym'>" + item.symbol + "</span></a>").appendTo(ul);
+  };
+});
+</script>
+<div id="header">
+  <div id="top">
+  <h1><a href="/"><img src="/images/common/top_logo.png" alt="PSE Edge"/></a></h1>
+  <fieldset class="totalSearch">
+    <form id="frmTop" onsubmit="return false;">
+    <input type="text" class="topSearch" id="searchKeyTop" value="" title="Type in company name or security code" />
+    <p><a href="/keyword/form.do"><img src="/images/main/advanced_search.png" alt="Advanced Search" /></a></p>
+    </form>
+  </fieldset>
+</div><ul id="topNav">
+    <li><a href="/companyDirectory/form.do"><img src="/images/common/top_company.png" alt="Company List" /></a></li>
+    <li><a href="/disclosureData/listing_applicants_list.do"><img src="/images/common/top_listing.png" alt="Listing Applicants" /></a></li>
+    <li><a href="/disclosureData/watchlist_view.do"><img src="/images/common/top_watch.png" alt="Watch List" /></a></li>
+    <li><a href="/psei/form.do"><img src="/images/common/top_psei.png" alt="PSEi" /></a></li>
+    <li><a href="/disclosureData/etf_form.do"><img src="/images/common/top_etf.png" alt="ETF" /></a></li>
+    <li class="about"><a href="/page/aboutPseEdge.do"><img src="/images/common/top_about.png" alt="About PSE EDGE" /></a></li>
+  </ul>
+</div>
+<div id="wrapper">
+  <div id="side">
+    <ul>
+    <li class="menu01"><a href="#" onclick="return false;">Company Disclosures</a></li>
+    <li class="sub1">
+      <ul class="sub">
+      <li class="sub101"><a href="/announcements/form.do">Company Announcements</a></li>
+      <li class="sub102"><a href="/financialReports/form.do">Financial Reports</a></li>
+      <li class="sub103"><a href="/otherReports/form.do">Other Reports</a></li>
+      </ul>
+    </li>
+    <li class="menu02"><a href="/index/form.do">Index Summary</a></li>
+    <li class="menu03"><a href="/disclosureData/dividends_and_rights_info_form.do">Dividends and Rights</a></li>
+    <li class="menu04"><a href="/disclosureData/halts_and_suspensions_list.do">Halts and Suspensions</a></li>
+    <li class="menu05"><a href="#" onclick="return false;">Exchange Notices</a></li>
+    <li class="sub5">
+      <ul class="sub">
+      <li class="sub501"><a href="/disclosureNotices/form.do">Disclosure Notices</a></li>
+      <li class="sub502"><a href="/listingNotices/form.do">Listing Notices</a></li>
+      </ul>
+    </li>
+    <li class="menu06"><a href="/companyPage/marketCalendar.do">Market Calendar</a></li>
+    </ul>
+  </div>
+
+  <div id="contents">
+  <h2>Dividends and Rights</h2>
+  <p class="location">Home > Company List > Dividends and Rights</p>
+  <script type="text/javascript">
+$(document).ready(function() {
+	$.blockUI();
+	$.post("/companyPage/dividends_and_rights_list.ax?DividendsOrRights=Dividends", $("#searchForm").serialize(), function(data, textStatus){
+		$("#dataList").html(data);
+	})
+	.fail(function(jqXHR, textStatus, errorThrown){
+		ajaxFail(jqXHR, textStatus, errorThrown);
+	})
+	.always(function(){
+		$.unblockUI();
+	});
+});
+</script>
+<!-- div class="conTentsConTainer" -->
+	<!-- div class="boardListSTop" -->
+		<form id="searchForm" name="searchForm" onsubmit="return false;">
+		    <input type="hidden" id="cmpy_id" name="cmpy_id" value="128" />
+			<!-- button id="btnDividends" title="Search">Dividends</button>
+			<button id="btnRights" title="Search">Rights</button-->
+		</form>
+	<!-- /div -->
+	<!-- div id="dataList" style="width:700px;min-height:500px;overflow:auto;"-->
+	<div id="dataList">
+	</div>
+<!-- /div --></div>
+</div>
+
+<div id="footer">
+<div class="bottom">
+  <ul class="util">
+  <li><a href="/page/disclaimer.do">Disclaimer</a></li>
+  <li><a href="/page/privacyPolicy.do">Privacy Policy</a></li>
+  <li><a href="/page/linkPolicy.do">Link Policy</a></li>
+  <li><a href="/page/siteMap.do">Site Map</a></li>
+  <li><a href="/page/contactUs.do">Contact Us</a></li>
+  <li><a href="/page/faqs.do">FAQs</a></li>
+  </ul>
+  <ul class="social">
+  <li><a href="#rss" onclick="rssPage();return false;"><img src="/images/common/icon_rss.gif" alt="rss" /></a></li>
+  </ul>
+  <ul class="copyright">
+  <li><img src="/images/common/pse_logo.gif" alt="PSE" /></li>
+  <li class="text">
+All materials on this website are protected by copyright and intellectual property laws and are the property of The Philippine Stock Exchange, Inc.<br/>
+Unless stated otherwise, you may access and download the materials located on the website only for personal, non-commercial use. <br/>
+&copy; 2012 The Philippine Stock Exchange, Inc. All Rights Reserved.
+  </li>
+  <li class="qrcode">
+    <a href="http://itunes.apple.com/ph/app/pse-edge/id813302884" target="_new" title="iOS App">
+      <img src="/images/common/icon_ios.png" alt="iOS App" /></a>
+    <a href="http://play.google.com/store/apps/details?id=com.pse.edge" target="_new" title="Android App">
+      <img src="/images/common/icon_android.png" alt="Android App" /></a>
+  </li>
+  </ul>
+</div>
+</div>
+<div id="policy" style="display:none; width:100%; position:fixed; bottom:0px; background-color:#074d90;">
+    <div style="width:89%; color:white; padding:1.4em 0.7em; float:left; font-family: tahoma; font-size: 14px;">
+      The Philippine Stock Exchange Inc. ("PSE") respects and protects your personal data privacy. 
+	    To learn how the PSE processes and protects the confidentiality of any personal 
+	    and sensitive personal information that you may provide, please read carefully, 
+	    and click the “I AGREE” button if you agree to the terms stated in 
+	    <a href="/page/privacyPolicy" style="text-decoration:underline; color:yellow">PSE's Privacy Policy</a>.
+    
+    </div>
+    <div id="agree_button" style="text-align:center; border-radius:10px; background-color:#82ccdd; border-color:transparent; margin:1.4em 0; padding:0.7em; float:left; font-weight:700; font-size:16px">
+        <a href="" style="color:white; padding:7px 7px">I Agree</a>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	if(getCookie('access')=='approve') {
+		$('#policy').css('display', 'none');
+	} else {
+		$('#policy').css('display', 'block');
+	}
+	
+});
+
+$('#agree_button').on('click', function(){
+    setCookie('access', 'approve', '-1');
+    $('#policy').hide();
+});
+
+function setCookie(cookie_name, value, days) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + days);
+    // 설정 일수만큼 현재시간에 만료값으로 지정
+
+    var cookie_value = escape(value) + ((days == null) ? '' : ';    expires=' + exdate.toUTCString()) + ';    path=/';
+    document.cookie = cookie_name + '=' + cookie_value;
+}
+
+function getCookie(cookie_name) {
+    var x, y;
+    var val = document.cookie.split(';');
+
+    for (var i = 0; i < val.length; i++) {
+        x = val[i].substr(0, val[i].indexOf('='));
+        y = val[i].substr(val[i].indexOf('=') + 1);
+        x = x.replace(/^\s+|\s+$/g, ''); // 앞과 뒤의 공백 제거하기
+        if (x == cookie_name) {
+            return unescape(y); // unescape로 디코딩 후 값 리턴
+        }
+    }
+}
+
+
+</script>
+<script type="text/javascript">
+  var left = 'no';
+  var topNav = 'no';
+
+  $('#topNav a:eq('+topNav+')').addClass("select");
+  $('.'+left).find('a:first').addClass("select");
+
+  if (left.indexOf("sub1") == 0){
+    $('.sub1').css("display", "inline");
+  } else if (left.indexOf("sub5") == 0){
+    $('.sub5').css("display", "inline");
+  }
+
+  $(".menu01").click(function(){
+    if ($(".sub1").css("display") == "none") {
+      $(".sub1").css("display", "inline");
+    } else {
+      $(".sub1").css("display", "none");
+    }
+  });
+  $(".menu05").click(function(){
+    if ($(".sub5").css("display") == "none") {
+      $(".sub5").css("display", "inline");
+    } else {
+      $(".sub5").css("display", "none");
+    }
+  });
+</script>
+</body>
+</html>

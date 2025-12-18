@@ -97,8 +97,53 @@ def fetch_single_stock(symbol):
         
         # 1. Company Name/Header
         # e.g. "Title: JFC: 187.30..."
+        # 1. Company Name/Header
         page_title = driver.title
-        data['company_name'] = page_title.split('-')[0].strip() if '-' in page_title else symbol
+        
+        # Check for Login/block
+        if "Login" in page_title or "Access Denied" in page_title:
+             print(f"Blocked/Login required for {symbol}")
+             return symbol, None
+
+        # Clean " | Investagrams" suffix if present
+        cleaned_title = page_title.replace("| Investagrams", "").strip()
+        
+        # Strategy 1: Title split (e.g. "Jollibee Foods Corp - JFC")
+        # If it has a hyphen, the left side is usually the name
+        if " - " in cleaned_title:
+             candidate_name = cleaned_title.split(' - ')[0].strip()
+        else:
+             candidate_name = cleaned_title
+             
+        # Validation: If name looks like "PHC: 1.87 (0.5%)", it's just price data, not a name.
+        # Validation: If name looks like "PHC: 1.87 (0.5%)" or "BPI: 120.00 (", it's price data.
+        # Regex: Any colon followed by whitespace and digits
+        if re.search(r":\s*\d", candidate_name):
+             candidate_name = None
+        
+        # Strategy 2: H1 element (often contains full name)
+        if not candidate_name or candidate_name == symbol:
+             try:
+                 h1 = driver.find_element(By.TAG_NAME, "h1")
+                 h1_text = h1.text.strip()
+                 # Verify H1 is not just the price or symbol
+                 if len(h1_text) > 3 and not re.match(r"^[\d\.,%]+$", h1_text):
+                     candidate_name = h1_text
+             except: pass
+        
+        # Strategy 3: Meta Description (often "Stock analysis for [CompanyName]...")
+        if not candidate_name or candidate_name == symbol:
+             try:
+                 meta = driver.find_element(By.XPATH, "//meta[@name='description']")
+                 content = meta.get_attribute("content")
+                 # Extract "Stock analysis for X (SYM)"
+                 # Example: "Stock Quote and analysis for Petron Corporation (PCOR)..."
+                 match = re.search(r"analysis for\s+(.*?)\s+\(", content, re.IGNORECASE)
+                 if match:
+                     candidate_name = match.group(1).strip()
+             except: pass
+             
+        data['company_name'] = candidate_name if candidate_name else symbol
 
         # Price extraction
         price_match = re.search(r':\s*([\d\.,]+)', page_title)

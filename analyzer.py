@@ -75,7 +75,23 @@ class Analyzer:
         
         # New: Advanced Technicals
         # 1. Sparkline Data (Last 30 closes, normalized for simple arrays)
+        # 1. Sparkline Data (Last 30 closes)
         sparkline_data = df['Close'].tail(30).tolist()
+        
+        # 2. Key: Full History (Last ~252 trading days = 1 year)
+        # Format: List of {time, value} or just simple dicts for JSON
+        history_df = df.tail(252)
+        history_data = []
+        for idx, row in history_df.iterrows():
+            # Index is typically datetime
+            date_str = idx.strftime('%Y-%m-%d') if isinstance(idx, pd.Timestamp) else str(idx)
+            history_data.append({
+                'time': date_str,
+                'open': row.get('Open', row['Close']),
+                'high': row.get('High', row['Close']),
+                'low': row.get('Low', row['Close']),
+                'close': row['Close']
+            })
         
         # 2. Golden Cross (SMA 50 crosses above SMA 200)
         # Check if currently above, and was below 20 days ago? Or just current state?
@@ -101,6 +117,7 @@ class Analyzer:
             'resistance': resistance,
             'std_close': std_close if pd.notna(std_close) else 0.0,
             'sparkline': sparkline_data,
+            'history': history_data,
             'golden_cross': golden_cross,
             'volume_spike': volume_spike,
             'volume_avg': vol_sma_20 if pd.notna(vol_sma_20) else 0.0

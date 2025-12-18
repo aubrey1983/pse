@@ -42,8 +42,12 @@ class ReportGenerator:
         # Load Data
         tech_data = self.load_json("data/technical_data.json")
         fund_data = self.load_json("data/fundamental_data.json")
-        metadata = self.load_json("data/metadata.json")
+        # metadata.json is for progress, stock_metadata.json is official info
+        stock_meta = self.load_json("data/stock_metadata.json") 
         timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+        # Load Official Fundamentals (Deep Scrape)
+        official_fund = self.load_json("data/pse_fundamentals.json")
         
         # Merge Data per Industry
         grouped_data = {cat: [] for cat in STOCK_CATEGORIES}
@@ -52,13 +56,72 @@ class ReportGenerator:
         
         for cat, symbols in STOCK_CATEGORIES.items():
             for symbol in symbols:
-                if symbol in tech_data:
-                    t = tech_data[symbol]
-                    f = fund_data.get(symbol, {})
+                # Get Official Name from Metadata (Early lookup)
+                meta = stock_meta.get(symbol, {})
+                
+                # Retrieve Data or Default
+                t = tech_data.get(symbol)
+                f = fund_data.get(symbol, {})
+                official_fund_data = official_fund.get(symbol, {})
+                status_val = official_fund_data.get('status', 'Active')
+
+                # If no Tech Data, check if Suspended/Active. 
+                # If Suspended, we want to show it. If Active but no data, likely new listing or error.
+                if not t:
+                    # Create dummy tech data for display
+                    t = {
+                        "last_close": 0.0,
+                        "trend": "Unknown",
+                        "rsi": 0,
+                        "sparkline": [],
+                        "history": []
+                    }
+                    if status_val == 'Suspended':
+                        t['trend'] = 'Suspended'
+                
+                # Check if we should process
+                if t:
+                    # Sync Official Fundamentals
+                    of = official_fund_data
+                    if of:
+                        if of.get('pe_ratio'): f['pe_ratio'] = of['pe_ratio']
+                        if of.get('eps'): f['eps'] = of['eps']
+                        if of.get('status'): f['status'] = of['status'] # Sync Status
+                        # Calculate Dividend Amount from History (TTM)
+                        if of.get('div_history'):
+                            total_div = 0.0
+                            cutoff_date = datetime.datetime.now() - datetime.timedelta(days=365)
+                            
+                            for d in of['div_history']:
+                                try:
+                                    # Parse date "Sep 05, 2025" or similar
+                                    # Using raw string match might be safer or try/except
+                                    d_date = None
+                                    date_str = d.get('ex_date', '')
+                                    if date_str:
+                                        # Try multiple formats if needed, usually "Mon DD, YYYY"
+                                        d_date = datetime.datetime.strptime(date_str, "%b %d, %Y")
+                                    
+                                    if d_date and d_date > cutoff_date:
+                                        amt = d.get('amount')
+                                        if amt: total_div += float(amt)
+                                except:
+                                    continue
+                            
+                            if total_div > 0:
+                                f['div_amount'] = total_div
+                                # Recalculate Yield based on Technical Last Close
+                                if t.get('last_close') and t['last_close'] > 0:
+                                    f['div_yield'] = (total_div / t['last_close']) * 100.0
+                    
+                    # Get Official Name from Metadata
+                    meta = stock_meta.get(symbol, {})
+                    official_name = meta.get('name', f.get('company_name', symbol))
                     
                     # Create combined object
                     item = {
                         "symbol": symbol,
+                        "company_name": official_name,
                         "tech": t,
                         "fund": f,
                         "score": 0, # Top Pick Score
@@ -127,6 +190,7 @@ class ReportGenerator:
 
         # Sort Picks
         top_picks.sort(key=lambda x: x['score'], reverse=True)
+        div_picks.sort(key=lambda x: x['symbol']) # Sort by Symbol as requested
         top_picks = top_picks[:20]
         
         div_picks.sort(key=lambda x: x['div_score'], reverse=True)
@@ -161,25 +225,49 @@ class ReportGenerator:
                 # Sparkline
                 spark_svg = self._generate_sparkline_svg(t.get('sparkline', []), width=80, height=20, color="#10b981" if "Uptrend" in trend else "#ef4444")
                 
+                # Status Badge
+                status_val = f.get('status', 'Active') # Default to Active
+                status_badge = ""
+                is_suspended = status_val in ['Suspended', 'Halted']
+                
+                if is_suspended:
+                     # Orange/Red badge for status (Matching theme: low opacity bg, high contrast text)
+                     status_badge = f'<span class="trend-badge" style="background:rgba(245, 158, 11, 0.15); color:#f59e0b;">{status_val.upper()}</span> '
+                
+                # Trend Badge (Hide if Suspended and Trend is also Suspended/Unknown to avoid dupes)
+                trend_badge = f'<span class="trend-badge {trend_cls}">{trend}</span>'
+                if is_suspended and trend in ['Suspended', 'Unknown', 'Neutral']:
+                    trend_badge = ""
+
                 # Badges
-                badges = f'<span class="trend-badge {trend_cls}">{trend}</span>'
+                badges = status_badge + trend_badge
                 if t.get('golden_cross', False):
                     badges += ' <span class="trend-badge gold">GOLDEN CROSS</span>'
                 if t.get('volume_spike', False):
                     badges += ' <span class="trend-badge" style="background:rgba(59, 130, 246, 0.2); color:#60a5fa;">VOL SPIKE</span>'
 
                 # Data Attributes for JS Filtering
-                data_attrs = f'data-name="{f.get("company_name", "")}" data-sector="{cat}" '
+                history_json = json.dumps(t.get('history', []))
+                # Escape quotes for HTML attribute
+                history_json_safe = history_json.replace('"', '&quot;')
+                
+                # Official Metadata Lookup
+                official = stock_meta.get(item['symbol'], {})
+                o_sector = official.get('sector', cat)
+                o_subsector = official.get('subsector', '-')
+                o_date = official.get('listingDate', '-')
+                
+                data_attrs = f'data-name="{item["company_name"]}" data-sector="{o_sector}" '
                 data_attrs += f'data-rsi="{t.get("rsi", 50)}" data-pe="{f.get("pe_ratio", 999)}" '
                 data_attrs += f'data-golden="{str(t.get("golden_cross", False)).lower()}" data-trend="{trend}" '
                 data_attrs += f'data-div-amt="{f.get("div_amount", 0)}"'
 
                 card_html = f"""
-                    <div class="card" {data_attrs}>
+                    <div class="card" onclick='showChart("{item['symbol']}", "{item['company_name'].replace("'", "")}", "{o_sector}", "{o_subsector}", "{o_date}", "{history_json_safe}")' style="cursor:pointer;" {data_attrs}>
                         <div class="card-header">
                             <div>
                                 <div class="symbol mono" style="color:var(--accent);">{item['symbol']}</div>
-                                <div style="font-size:0.75rem; color:var(--text-tertiary); margin-top:4px;">{f.get('company_name', '')[:25]}</div>
+                                <div style="font-size:0.75rem; color:var(--text-tertiary); margin-top:4px;">{item['company_name'][:30]}</div>
                             </div>
                             <div style="text-align:right;">
                                 <div class="price mono">₱{t['last_close']:.2f}</div>
@@ -228,9 +316,15 @@ class ReportGenerator:
             pe = f"{f.get('pe_ratio'):.2f}" if f and f.get('pe_ratio') else "-"
             trend_cls = "text-green" if "Uptrend" in trend else "text-red" if "Downtrend" in trend else "text-muted"
             
+            # Name display (Use Official Name)
+            name = item.get('company_name', item['symbol'])
+            
             top_picks_html += f"""
                 <tr>
-                    <td class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']}</td>
+                    <td>
+                        <div class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']}</div>
+                        <div style="font-size:0.75rem; color:#64748b;">{name[:20]}</div>
+                    </td>
                     <td class="mono">₱{t['last_close']:.2f}</td>
                     <td><span class="{trend_cls}">{trend}</span></td>
                     <td class="mono">{t.get('rsi', 0):.1f}</td>
@@ -245,19 +339,60 @@ class ReportGenerator:
             t = item['tech']
             f = item['fund']
             trend = t.get('trend', 'Neutral')
+            
+            # Data preparation
             payout = item.get('payout_ratio', 0)
-            payout_cls = "text-green" if payout < 60 else "text-muted" if payout < 90 else "text-red"
+            yield_val = f.get('div_yield', 0)
+            div_amt = f.get('div_amount', 0)
+            pe_val = f.get('pe_ratio', 0)
+            
+            # Name display (Use Official Name)
+            name = item.get('company_name', item['symbol'])
+            
+            # Logic for Value Trap / Safety
+            is_uptrend = "Uptrend" in trend
+            is_downtrend = "Downtrend" in trend
+            
+            # Payout Logic
+            payout_cls = "text-green"
+            if payout > 60: payout_cls = "text-muted"
+            if payout > 90: payout_cls = "text-red"
+            
+            # Value Trap Detection
+            # High Yield (>8%) + (Bad Payout OR Downtrend)
+            is_value_trap = False
+            if yield_val > 8.0 and (payout > 100 or is_downtrend):
+                is_value_trap = True
+            
+            trend_display = trend
+            if is_value_trap:
+                trend_display += ' <span style="background:rgba(239, 68, 68, 0.2); color:#ef4444; padding:2px 6px; border-radius:4px; font-size:0.7em;">TRAP?</span>'
+            
+            pe_display = f"{pe_val:.2f}" if pe_val else "-"
+            div_amt_display = f"₱{div_amt:.2f}" if div_amt else "-"
             
             div_picks_html += f"""
                 <tr>
-                    <td class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']}</td>
+                    <td>
+                        <div class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']}</div>
+                        <div style="font-size:0.75rem; color:#64748b;">{name[:20]}</div>
+                    </td>
                     <td class="mono">₱{t['last_close']:.2f}</td>
-                    <td class="text-green mono" style="font-weight:700;">{f.get('div_yield', 0):.2f}%</td>
+                    <td class="text-green mono" style="font-weight:700;">{yield_val:.2f}%</td>
+                    <td class="mono">{div_amt_display}</td>
                     <td class="mono {payout_cls}">{payout:.1f}%</td>
-                    <td>{trend}</td>
+                    <td class="mono">{pe_display}</td>
+                    <td>{trend_display}</td>
                     <td class="mono">{item['div_score']}</td>
                 </tr>
             """
+
+        # ... (skipping to HTML Assembly) ...
+
+        # Update the Table Headers for Dividend Gems in the HTML string below
+        # We need to inject the updated table headers. Since the HTML is a large string, 
+        # I will replace the relevant section in the main HTML construction.
+
 
         # --- FINAL HTML ASSEMBLY ---
         html_content = f"""
@@ -492,7 +627,43 @@ class ReportGenerator:
                 .section.active {{ display: block; opacity: 1; }}
                 
                 .sparkline {{ margin-left: 10px; vertical-align: middle; }}
+                
+                /* Modal */
+                .modal-overlay {{
+                    display: none;
+                    position: fixed;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    z-index: 1000;
+                    justify-content: center;
+                    align-items: center;
+                }}
+                .modal-content {{
+                    background: var(--bg-secondary);
+                    width: 90%;
+                    max-width: 1000px;
+                    height: 600px;
+                    border-radius: 12px;
+                    padding: 20px;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                }}
+                .close-btn {{
+                    position: absolute;
+                    top: 15px; right: 20px;
+                    font-size: 24px;
+                    cursor: pointer;
+                    color: var(--text-secondary);
+                }}
+                #chart-container {{
+                    flex-grow: 1;
+                    width: 100%;
+                    margin-top: 20px;
+                }}
             </style>
+            <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
         </head>
         <body>
             <nav>
@@ -582,10 +753,12 @@ class ReportGenerator:
                                     <tr>
                                         <th onclick="sortTable('table_dividends', 0)" title="Stock Symbol">Symbol ⬍</th>
                                         <th onclick="sortTable('table_dividends', 1, 'num')" title="Last Closing Price">Price ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 2, 'num')" title="Annual Dividend Yield">Yield ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 3, 'num')" title="% of Earnings paid as Dividends (<90% is safer)">Payout ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 4)" title="Trend Direction">Trend ⬍</th>
-                                        <th onclick="sortTable('table_dividends', 5, 'num')" title="Composite Safety Score (0-100)">Safety Score ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 2, 'num')" title="Annual Dividend Yield: Percentage of stock price returned as dividends. Higher is better, but >10% can be a warning sign.">Yield ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 3, 'num')" title="Estimated Annual Dividend Amount in Peso based on Yield">Est. Div (₱) ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 4, 'num')" title="Payout Ratio: % of Earnings paid as Dividends. <60% is Safe/Growing. >100% is Dangerous (Unsustainable).">Payout ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 5, 'num')" title="Price-to-Earnings Ratio: Valuation metric. <15 is generally considered 'Cheap'.">P/E ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 6)" title="Current Market Trend Direction">Trend ⬍</th>
+                                        <th onclick="sortTable('table_dividends', 7, 'num')" title="Composite Safety Score (0-100) combining Yield, Payout Safety, and Trend.">Safety Score ⬍</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -703,6 +876,96 @@ class ReportGenerator:
                                 switching = true;
                             }}
                         }}
+                    }}
+                }}
+            </script>
+
+            <!-- Modal -->
+            <div id="chartModal" class="modal-overlay">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <h2 id="modalTitle" style="margin:0;">Stock Chart</h2>
+                    <div id="chart-container"></div>
+                </div>
+            </div>
+
+            <script>
+                let chart; 
+                
+                function showChart(symbol, companyName, sector, subsector, listingDate, historyJson) {{
+                    document.getElementById('chartModal').style.display = 'flex';
+                    
+                    // Enhanced Modal Header
+                    const headerHtml = `
+                        <div style="display:flex; justify-content:space-between; align-items:end;">
+                            <div>
+                                <h2 style="margin:0; color:var(--text-primary); font-family:'JetBrains Mono';">${{symbol}}</h2>
+                                <div style="color:var(--text-secondary); font-size:0.9rem;">${{companyName}}</div>
+                            </div>
+                            <div style="text-align:right; font-size:0.8rem; color:var(--text-tertiary);">
+                                <div><span style="color:var(--accent);">${{sector}}</span> <span style="margin:0 4px;">•</span> ${{subsector}}</div>
+                                <div>Listed: ${{listingDate}}</div>
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById('modalTitle').innerHTML = headerHtml;
+                    
+                    const container = document.getElementById('chart-container');
+                    container.innerHTML = ''; // Clear previous
+                    
+                    // Parse data
+                    const data = JSON.parse(historyJson);
+                    if(!data || data.length === 0) {{
+                        container.innerHTML = '<div style="display:flex; height:100%; justify-content:center; align-items:center; color:var(--text-tertiary);">No Price History Available</div>';
+                        return;
+                    }}
+
+                    // Create Chart
+                    chart = LightweightCharts.createChart(container, {{
+                        width: container.clientWidth,
+                        height: container.clientHeight,
+                        layout: {{
+                            background: {{ type: 'solid', color: '#1e293b' }},
+                            textColor: '#94a3b8',
+                        }},
+                        grid: {{
+                            vertLines: {{ color: '#334155' }},
+                            horzLines: {{ color: '#334155' }},
+                        }},
+                         rightPriceScale: {{
+                            borderColor: '#485c7b',
+                        }},
+                        timeScale: {{
+                            borderColor: '#485c7b',
+                        }},
+                    }});
+
+                    const candlestickSeries = chart.addCandlestickSeries({{
+                        upColor: '#10b981',
+                        downColor: '#ef4444', 
+                        borderVisible: false, 
+                        wickUpColor: '#10b981',
+                        wickDownColor: '#ef4444',
+                    }});
+
+                    candlestickSeries.setData(data);
+                    
+                    chart.timeScale().fitContent();
+                }}
+
+                function closeModal() {{
+                    document.getElementById('chartModal').style.display = 'none';
+                    if (chart) {{
+                        chart.remove();
+                        chart = null;
+                    }}
+                }}
+                
+                // Close on click outside
+                window.onclick = function(event) {{
+                    const modal = document.getElementById('chartModal');
+                    if (event.target == modal) {{
+                        closeModal();
                     }}
                 }}
             </script>
