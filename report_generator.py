@@ -6,8 +6,12 @@ import os
 import json
 from typing import Dict
 from stock_data import STOCK_CATEGORIES
+from analyzer import Analyzer
 
 class ReportGenerator:
+    def __init__(self):
+        self.analyzer = Analyzer()
+
     def load_json(self, filepath):
         if os.path.exists(filepath):
             try:
@@ -113,6 +117,8 @@ class ReportGenerator:
         data_attrs = f'data-name="{item["company_name"]}" data-sector="{o_sector}" '
         data_attrs += f'data-rsi="{t.get("rsi", 50)}" data-pe="{f.get("pe_ratio", 999)}" '
         data_attrs += f'data-golden="{str(t.get("golden_cross", False)).lower()}" data-trend="{trend}" '
+        data_attrs += f'data-yield="{f.get("div_yield", 0)}" data-price="{t.get("last_close", 0)}" '
+        data_attrs += f'data-winrate="{t.get("win_rate", 0)}" '
 
         # Prepare extended data for Modal
         onclick_attr = self._generate_onclick(item, official)
@@ -272,7 +278,16 @@ class ReportGenerator:
                             
                             if total_div > 0:
                                 f['div_amount'] = total_div
-                                f['div_freq'] = len(pay_months) # Estimate frequency by unique months paid
+                                
+                                # Frequency Detection
+                                unique_months = len(pay_months)
+                                if unique_months >= 4:
+                                    f['div_freq'] = "Quarterly"
+                                elif unique_months >= 2:
+                                    f['div_freq'] = "Semi-Annual"
+                                else:
+                                    f['div_freq'] = "Annual"
+                                    
                                 f['div_sched'] = ", ".join(pay_months)
                                 
                                 # Recalculate Yield based on Technical Last Close
@@ -297,43 +312,13 @@ class ReportGenerator:
                     # --- TOP PICK SCORING ---
                     score = 0
                     trend = t.get('trend', '')
-                    # --- TOP PICK SCORING ---
-                    score = 0
-                    score_reasons = [] # Track reasons
+                    # --- TOP PICK SCORING (Enhanced) ---
+                    # --- TOP PICK SCORING (Enhanced) ---
+                    # Logic moved to analyzer.py for reusability (report + backtest)
+                    score, score_reasons = self.analyzer.calculate_score(t, f)
                     
-                    trend = t.get('trend', '')
-                    if "Strong Uptrend" in trend: 
-                        score += 3
-                        score_reasons.append("Strong Uptrend (+3)")
-                    elif "Uptrend" in trend: 
-                        score += 1
-                        score_reasons.append("Uptrend (+1)")
-                    
-                    rsi = t.get('rsi', 50)
-                    if rsi < 30: 
-                        score += 2 # Oversold opportunity
-                        score_reasons.append(f"Oversold - RSI {rsi:.0f} (+2)")
-                    if rsi > 70 and "Strong Uptrend" in trend: 
-                        score += 1 # Momentum
-                        score_reasons.append("Momentum Breakout (+1)")
-                    
-                    pe = f.get('pe_ratio')
-                    try: pe = float(pe)
-                    except: pe = None
-                    
-                    if pe and 0 < pe < 15: 
-                        score += 2
-                        score_reasons.append(f"Undervalued P/E {pe:.1f} (+2)")
-                    
-                    # Golden Cross Boost
-                    if t.get('golden_cross', False): 
-                        score += 2
-                        score_reasons.append("Golden Cross (+2)")
-                    
-                    # Volume Spike Boost
-                    if t.get('volume_spike', False): 
-                        score += 1
-                        score_reasons.append("Volume Spike (+1)")
+                    item['score'] = score
+                    item['score_reasons'] = score_reasons
                     
                     item['score'] = score
                     item['score_reasons'] = score_reasons
@@ -341,7 +326,8 @@ class ReportGenerator:
                     if sector in grouped_data:
                         grouped_data[sector].append(item)
                     
-                    if score >= 3:
+                    # Threshold for "Top Pick" (Optimized via Backtest)
+                    if score >= 7:
                         top_picks.append(item)
 
                     # --- DIVIDEND GEM SCORING ---
@@ -376,10 +362,15 @@ class ReportGenerator:
                         except: pass
 
         # Sort Picks
-        # Top Picks: Sort by Score Descending first to find the best, then sort A-Z for display
-        top_picks.sort(key=lambda x: x['score'], reverse=True)
+        # Top Picks: Sort by Score Descending, then Yield Descending (Tie-breaker)
+        top_picks.sort(key=lambda x: (x['score'], x['fund'].get('div_yield', 0)), reverse=True)
         top_picks = top_picks[:20]
-        top_picks.sort(key=lambda x: x['symbol']) # Display A-Z
+        
+        # Assign Ranks
+        for i, item in enumerate(top_picks):
+            item['rank'] = i + 1
+            
+        # Dividend Picks: Filtered by Score >= 40 already
         
         # Dividend Picks: Filtered by Score >= 40 already
         div_picks.sort(key=lambda x: x['symbol']) # Display A-Z
@@ -445,32 +436,53 @@ class ReportGenerator:
             official = stock_meta.get(item['symbol'], {})
             onclick_attr = self._generate_onclick(item, official)
             
+            # Badge
+            rank = item.get('rank', 99)
+            badge_html = ""
+            if rank == 1: badge_html = '<span class="rank-badge rank-1">#1</span>'
+            elif rank == 2: badge_html = '<span class="rank-badge rank-2">#2</span>'
+            elif rank == 3: badge_html = '<span class="rank-badge rank-3">#3</span>'
+            elif rank <= 10: badge_html = f'<span class="rank-badge rank-other">#{rank}</span>'
+            
             # Format Score Tooltip
             reasons = item.get('score_reasons', [])
             score_tooltip_text = "&#10;".join(reasons)
             score_val = item.get('score', 0)
             
             score_cls = "text-muted"
-            if score_val >= 8: score_cls = "green" # High Confidence
-            elif score_val >= 5: score_cls = "accent" # Medium Confidence
+            if score_val >= 9: score_cls = "green" # High Confidence
+            elif score_val >= 7: score_cls = "accent" # Medium Confidence
             else: score_cls = "gray"
             
+            # New Columns
+            win_rate = t.get('win_rate', 0)
+            avg_ret = t.get('avg_monthly_return', 0)
+            consistency_display = f"{win_rate:.0f}% <span style='font-size:0.75rem; color:#64748b;'>({avg_ret:+.1f}%)</span>"
+            
+            freq = f.get('div_freq', '-')
+            
+            yld = f.get('div_yield', 0)
+            yield_display = f"{yld:.2f}%" if yld > 0 else "-"
+            yield_cls = "text-green" if yld > 4 else ""
+
             top_picks_html += f"""
                 <tr {onclick_attr}>
                     <td>
-                        <div class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']}</div>
+                        <div class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']} {badge_html}</div>
                         <div style="font-size:0.75rem; color:#64748b;">{name[:20]}</div>
                     </td>
                     <td class="mono">₱{t['last_close']:.2f}</td>
                     <td><span class="{trend_cls}">{trend}</span></td>
-                    <td class="mono">{t.get('rsi', 0):.1f}</td>
+                    <td class="mono">{consistency_display}</td>
+                    <td class="mono" style="font-size:0.8rem;">{freq}</td>
+                    <td class="mono {yield_cls}">{yield_display}</td>
                     <td class="mono">{pe}</td>
-                    <td style="font-weight:600; color:#cbd5e1;">{t.get('strategy', 'Hold')}</td>
                     <td class="mono" title="{score_tooltip_text}">
                         <span class="{score_cls}" style="font-weight:bold; padding:2px 8px; border-radius:4px;">{item['score']}</span>
                     </td>
                 </tr>
             """
+
             
         # 4. Dividends Rows
         div_picks_html = ""
@@ -536,9 +548,8 @@ class ReportGenerator:
                 </tr>
             """
 
-        # ... (skipping to HTML Assembly) ...
-
-
+        # Generate sector options for the filter dropdown
+        sector_options = "".join([f'<option value="{c}">{c}</option>' for c in sorted_sectors])
 
         # --- FINAL HTML ASSEMBLY ---
         html_content = f"""
@@ -729,6 +740,23 @@ class ReportGenerator:
                 .gray {{ background: var(--bg-panel-hover); color: var(--text-tertiary); }}
                 .gold {{ background: rgba(234, 179, 8, 0.15); color: var(--gold); }}
                 
+                .rank-badge {{
+                    font-size: 0.7rem;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    margin-left: 8px;
+                    font-weight: 800;
+                    display: inline-block;
+                    vertical-align: middle;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    color: #0f172a; /* Dark text for contrast */
+                    text-shadow: none;
+                }}
+                .rank-1 {{ background: linear-gradient(135deg, #FFD700 0%, #FDB931 100%); border: 1px solid #E6C200; }}
+                .rank-2 {{ background: linear-gradient(135deg, #E0E0E0 0%, #B0B0B0 100%); border: 1px solid #A0A0A0; }}
+                .rank-3 {{ background: linear-gradient(135deg, #CD7F32 0%, #A0522D 100%); border: 1px solid #8B4513; color: #fff; }}
+                .rank-other {{ background: var(--bg-panel-hover); color: var(--text-secondary); border: 1px solid var(--border); }}
+                
                 .metrics {{
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -855,19 +883,43 @@ class ReportGenerator:
                         
                         <!-- Search Controls -->
                         <div style="margin-bottom: 2rem; display: flex; gap: 15px; align-items: center; background: var(--bg-panel); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
-                             <input type="text" id="searchInput" class="search-bar" style="width: 400px; padding: 12px;" placeholder="Search by Symbol or Name..." onkeyup="filterStocks()">
-                             
-                             <select id="sectorFilter" class="filter-select" style="padding: 12px;" onchange="filterStocks()">
-                                 <option value="All">All Sectors</option>
-                                 """ + "".join([f'<option value="{c}">{c}</option>' for c in sorted_sectors]) + f"""
-                             </select>
-                             
-                             <select id="metricFilter" class="filter-select" style="padding: 12px;" onchange="filterStocks()">
-                                 <option value="None">Filter Risk...</option>
-                                 <option value="oversold">RSI < 30 (Oversold)</option>
-                                 <option value="cheap">P/E < 15 (Cheap)</option>
-                                 <option value="uptrend">Golden Cross / Uptrend</option>
-                             </select>
+                    <div class="search-container" style="display:flex; gap:12px; align-items:center;">
+                         <!-- Search Input -->
+                        <div class="search-input-wrapper" style="position:relative; flex-grow:1;">
+                             <span style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:#64748b;">
+                                <svg width="16" height="16" fill="none" class="feather feather-search" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            </span>
+                            <input type="text" id="search_input" onkeyup="filterStocks()" placeholder="Search symbol or company..." style="width:100%; padding:10px 10px 10px 36px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none;">
+                        </div>
+
+                        <!-- Filter: Sector -->
+                        <select id="filter_sector" onchange="filterStocks()" style="padding:10px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none; cursor:pointer;">
+                            <option value="All">All Sectors</option>
+                            {sector_options}
+                        </select>
+                        
+                         <!-- Filter: Trend -->
+                        <select id="filter_trend" onchange="filterStocks()" style="padding:10px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none; cursor:pointer;">
+                            <option value="all">Trend: All</option>
+                            <option value="uptrend">Uptrend</option>
+                            <option value="strong">Strong Uptrend</option>
+                            <option value="golden">Golden Cross</option>
+                        </select>
+                        
+                        <!-- Filter: Value -->
+                        <select id="filter_val" onchange="filterStocks()" style="padding:10px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none; cursor:pointer;">
+                            <option value="all">Value: All</option>
+                            <option value="cheap">Cheap (P/E < 15)</option>
+                            <option value="fair">Fair (P/E < 25)</option>
+                        </select>
+                        
+                        <!-- Filter: Yield -->
+                        <select id="filter_yield" onchange="filterStocks()" style="padding:10px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none; cursor:pointer;">
+                            <option value="all">Yield: All</option>
+                            <option value="3">Yield > 3%</option>
+                            <option value="6">Yield > 6%</option>
+                        </select>
+                    </div>
                         </div>
 
                         <div id="all_stocks_grid" class="dashboard-grid">
@@ -892,10 +944,11 @@ class ReportGenerator:
                                         <th onclick="sortTable('table_top_picks', 0)" title="Stock Symbol">Symbol ⬍</th>
                                         <th onclick="sortTable('table_top_picks', 1, 'num')" title="Last Closing Price">Close ⬍</th>
                                         <th onclick="sortTable('table_top_picks', 2)" title="Trend Direction (MA50/100)">Trend ⬍</th>
-                                        <th onclick="sortTable('table_top_picks', 3, 'num')" title="Relative Strength Index (Momentum)">RSI ⬍</th>
-                                        <th onclick="sortTable('table_top_picks', 4, 'num')" title="Price-to-Earnings Ratio (Valuation)">P/E ⬍</th>
-                                        <th onclick="sortTable('table_top_picks', 5)" title="Technical Strategy Recommendation">Strategy ⬍</th>
-                                        <th onclick="sortTable('table_top_picks', 6, 'num')" title="Confidence Score (Max 10).&#10;Hover heavily to see breakdown.">Score ⬍</th>
+                                        <th onclick="sortTable('table_top_picks', 3, 'num')" title="Monthly Win Rate & Avg Return">Consistency ⬍</th>
+                                        <th onclick="sortTable('table_top_picks', 4)" title="Dividend Frequency">Freq ⬍</th>
+                                        <th onclick="sortTable('table_top_picks', 5, 'num')" title="Dividend Yield">Yield ⬍</th>
+                                        <th onclick="sortTable('table_top_picks', 6, 'num')" title="Price-to-Earnings Ratio">P/E ⬍</th>
+                                        <th onclick="sortTable('table_top_picks', 7, 'num')" title="Confidence Score">Score ⬍</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -941,14 +994,17 @@ class ReportGenerator:
                 
                 function showSection(id) {{
                     console.log("Switching to section:", id);
+                    // Update Active State
                     if (!document.getElementById(id)) return;
                     
                     if (id !== 'search_results' && id !== 'search_tab') {{
-                        document.getElementById('searchInput').value = "";
+                        document.getElementById('search_input').value = "";
                         previousSectionId = id;
                         // Reset filters
-                        document.getElementById('sectorFilter').value = "All";
-                        document.getElementById('metricFilter').value = "None";
+                        document.getElementById('filter_sector').value = "All";
+                        document.getElementById('filter_trend').value = "all";
+                        document.getElementById('filter_val').value = "all";
+                        document.getElementById('filter_yield').value = "all";
                         filterStocks(); 
                     }}
                     
@@ -956,45 +1012,80 @@ class ReportGenerator:
                     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
                     
                     document.getElementById(id).classList.add('active');
+                    
+                     // Highlight nav
+                     let navLink = document.querySelector(`.nav-item[onclick*="'${{id}}'"]`);
+                     if (navLink) navLink.classList.add('active');
                 }}
                 
                 function filterStocks() {{
-                    let text = document.getElementById('searchInput').value.toUpperCase();
-                    let sector = document.getElementById('sectorFilter').value;
-                    let metric = document.getElementById('metricFilter').value;
+                    let input = document.getElementById('search_input');
+                    let filter = input.value.toUpperCase();
+                    
+                    let sectorVal = document.getElementById('filter_sector').value;
+                    let trendVal = document.getElementById('filter_trend').value;
+                    let valVal = document.getElementById('filter_val').value;
+                    let yieldVal = document.getElementById('filter_yield').value;
                     
                     let grid = document.getElementById('all_stocks_grid');
                     let cards = grid.getElementsByClassName('card');
+                    let visibleCount = 0;
                     
                     for (let i = 0; i < cards.length; i++) {{
                         let card = cards[i];
-                        let name = card.getAttribute('data-name') || "";
-                        let sym = card.querySelector('.symbol').innerText;
-                        let cardSector = card.getAttribute('data-sector') || "";
+                        let txtValue = card.getAttribute('data-name');
+                        let symValue = card.querySelector('.symbol').innerText;
+                        let secValue = card.getAttribute('data-sector');
                         
-                        let rsi = parseFloat(card.getAttribute('data-rsi') || "50");
-                        let pe = parseFloat(card.getAttribute('data-pe') || "999");
-                        let isGolden = card.getAttribute('data-golden') === "true";
-                        let trend = card.getAttribute('data-trend') || "";
+                        let trendAttr = card.getAttribute('data-trend') || "";
+                        let peAttr = parseFloat(card.getAttribute('data-pe') || "999");
+                        let yieldAttr = parseFloat(card.getAttribute('data-yield') || "0");
+                        let goldenAttr = card.getAttribute('data-golden') === "true";
                         
                         let show = true;
                         
-                        if (text.length > 0) {{
-                            if (name.toUpperCase().indexOf(text) === -1 && sym.toUpperCase().indexOf(text) === -1) {{
+                        // 1. Text Search
+                        if (filter) {{
+                            if (txtValue.toUpperCase().indexOf(filter) === -1 && symValue.toUpperCase().indexOf(filter) === -1) {{
                                 show = false;
                             }}
                         }}
                         
-                        if (sector !== 'All' && cardSector !== sector) {{
+                        // 2. Sector Filter
+                        if (sectorVal !== 'All' && secValue !== sectorVal) {{
                             show = false;
                         }}
                         
-                        if (metric === 'oversold' && rsi >= 30) show = false;
-                        if (metric === 'cheap' && (pe > 15 || isNaN(pe))) show = false;
-                        if (metric === 'uptrend' && !isGolden && trend.indexOf('Uptrend') === -1) show = false;
+                        // 3. Trend Filter
+                        if (trendVal !== 'all') {{
+                            if (trendVal === 'uptrend' && trendAttr.indexOf('Uptrend') === -1) show = false;
+                            if (trendVal === 'strong' && trendAttr.indexOf('Strong Uptrend') === -1) show = false;
+                            if (trendVal === 'golden' && !goldenAttr) show = false;
+                        }}
                         
-                        card.style.display = show ? "" : "none";
+                        // 4. Value Filter
+                        if (valVal !== 'all') {{
+                            if (valVal === 'cheap' && (peAttr > 15 || isNaN(peAttr))) show = false;
+                            if (valVal === 'fair' && (peAttr > 25 || isNaN(peAttr))) show = false;
+                        }}
+                        
+                        // 5. Yield Filter
+                        if (yieldVal !== 'all') {{
+                            let minYield = parseFloat(yieldVal);
+                            if (yieldAttr < minYield) show = false;
+                        }}
+                        
+                        if (show) {{
+                            card.style.display = "";
+                            visibleCount++;
+                        }} else {{
+                            card.style.display = "none";
+                        }}
                     }}
+                    
+                    // Update Count
+                    let countEl = document.getElementById('overview_count');
+                    if(countEl) countEl.innerText = visibleCount;
                 }}
                 
                 function sortTable(tableId, n, type) {{
@@ -1020,9 +1111,15 @@ class ReportGenerator:
                             }}
                             
                             if (dir == "asc") {{
-                                if (xVal > yVal) {{ shouldSwitch = true; break; }}
+                                if (xVal > yVal) {{
+                                    shouldSwitch = true;
+                                    break;
+                                }}
                             }} else if (dir == "desc") {{
-                                if (xVal < yVal) {{ shouldSwitch = true; break; }}
+                                if (xVal < yVal) {{
+                                    shouldSwitch = true;
+                                    break;
+                                }}
                             }}
                         }}
                         if (shouldSwitch) {{
