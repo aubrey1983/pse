@@ -51,11 +51,7 @@ class Analyzer:
         # New: Support & Resistance
         support, resistance = self._calculate_support_resistance(df)
         
-        # Volatility (Standard Deviation of returns * sqrt(252) for annualized, 
-        # but here simply std of price for simple "instability" measure or ATR could be better.
-        # Sticking to price std for now as requested by previous codebase style, but let's improve it slightly.)
-        # Let's use ATR (Average True Range) for a better "Volatility" measure if possible, 
-        # but to keep it simple and consistent with previous "std_close", we'll just check std of close over 20 days.
+        # Volatility (Standard Deviation of returns)
         std_close = df['Close'].tail(20).std()
         
         # Determine Trend (Price vs SMA50 vs SMA200)
@@ -78,8 +74,7 @@ class Analyzer:
         # 1. Sparkline Data (Last 30 closes)
         sparkline_data = df['Close'].tail(30).tolist()
         
-        # 2. Key: Full History (Last ~252 trading days = 1 year)
-        # Format: List of {time, value} or just simple dicts for JSON
+        # 2. Key: Full History
         history_df = df.tail(252)
         history_data = []
         for idx, row in history_df.iterrows():
@@ -94,9 +89,6 @@ class Analyzer:
             })
         
         # 2. Golden Cross (SMA 50 crosses above SMA 200)
-        # Check if currently above, and was below 20 days ago? Or just current state?
-        # A "Golden Cross" is the event. Being above is just "Bullish Alignment".
-        # Let's flag if alignment is bullish.
         golden_cross = (pd.notna(sma_50) and pd.notna(sma_200) and sma_50 > sma_200)
         
         # 3. Volume Spike (Volume > 2x 20-day Average)

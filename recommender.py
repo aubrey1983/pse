@@ -6,11 +6,6 @@ class Recommender:
     def recommend_by_category(self, analysis_results: Dict[str, dict], categories: Dict[str, list]) -> Dict[str, dict]:
         """
         Recommend the best stock for each category based on Technicals & Risk/Reward.
-        
-        Logic:
-        1. RSI Filter: 30-70 preferred (avoid extremes unless mean reversion).
-        2. Trend: Strong Uptrend > Uptrend > Neutral.
-        3. Risk/Reward: Upside to Resistance vs Downside to Support.
         """
         recommendations = {}
         

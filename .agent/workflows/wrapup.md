@@ -15,8 +15,8 @@ description: Comprehensive Wrap-up (Review, Fix, Clean, Test, Push)
 
 3. **Cleanup**: 
    - Remove unused imports.
-   - Remove temporary debug `print()` statements.
    - Remove temporary files like `debug_source_*.html`, `*.csv`, or other debug dumps.
+   - Remove "AI slop" (verbose mental notes, monologue comments, unused legacy logic).
    - Ensure comment clarity (remove mental notes if they are no longer relevant).
 
 4. **Retest**: 
