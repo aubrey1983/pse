@@ -39,14 +39,8 @@ def scrape_metadata():
         try:
             WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "table#companyListTable")))
             
-            # The table headers are typically: Company Name | Stock Symbol | Sector | Subsector | Listing Date
-            # Let's verify columns by assuming standard layout or checking headers?
             # Standard PSE Edge Directory layout:
-            # 1: Company Name
-            # 2: Stock Symbol
-            # 3: Sector
-            # 4: Subsector
-            # 5: Listing Date
+            # 1: Company Name | 2: Stock Symbol | 3: Sector | 4: Subsector | 5: Listing Date
             
             rows = driver.find_elements(By.CSS_SELECTOR, "table#companyListTable tbody tr")
             print(f"  Found {len(rows)} rows.")

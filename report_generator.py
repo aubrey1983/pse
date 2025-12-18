@@ -161,7 +161,6 @@ class ReportGenerator:
         
         # Load Data
         tech_data = self.load_json("data/technical_data.json")
-        fund_data = self.load_json("data/fundamental_data.json")
         # metadata.json is for progress, stock_metadata.json is official info
         stock_meta = self.load_json("data/stock_metadata.json") 
         timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -210,7 +209,7 @@ class ReportGenerator:
             
             # Retrieve Data or Default
             t = tech_data.get(symbol)
-            f = fund_data.get(symbol, {})
+            f = {}
             official_fund_data = official_fund.get(symbol, {})
             status_val = official_fund_data.get('status', 'Active')
 
@@ -298,26 +297,47 @@ class ReportGenerator:
                     # --- TOP PICK SCORING ---
                     score = 0
                     trend = t.get('trend', '')
-                    if "Strong Uptrend" in trend: score += 3
-                    elif "Uptrend" in trend: score += 1
+                    # --- TOP PICK SCORING ---
+                    score = 0
+                    score_reasons = [] # Track reasons
+                    
+                    trend = t.get('trend', '')
+                    if "Strong Uptrend" in trend: 
+                        score += 3
+                        score_reasons.append("Strong Uptrend (+3)")
+                    elif "Uptrend" in trend: 
+                        score += 1
+                        score_reasons.append("Uptrend (+1)")
                     
                     rsi = t.get('rsi', 50)
-                    if rsi < 30: score += 2 # Oversold opportunity
-                    if rsi > 70 and "Strong Uptrend" in trend: score += 1 # Momentum
+                    if rsi < 30: 
+                        score += 2 # Oversold opportunity
+                        score_reasons.append(f"Oversold - RSI {rsi:.0f} (+2)")
+                    if rsi > 70 and "Strong Uptrend" in trend: 
+                        score += 1 # Momentum
+                        score_reasons.append("Momentum Breakout (+1)")
                     
                     pe = f.get('pe_ratio')
                     try: pe = float(pe)
                     except: pe = None
                     
-                    if pe and 0 < pe < 15: score += 2
+                    if pe and 0 < pe < 15: 
+                        score += 2
+                        score_reasons.append(f"Undervalued P/E {pe:.1f} (+2)")
                     
                     # Golden Cross Boost
-                    if t.get('golden_cross', False): score += 2
+                    if t.get('golden_cross', False): 
+                        score += 2
+                        score_reasons.append("Golden Cross (+2)")
                     
                     # Volume Spike Boost
-                    if t.get('volume_spike', False): score += 1
+                    if t.get('volume_spike', False): 
+                        score += 1
+                        score_reasons.append("Volume Spike (+1)")
                     
                     item['score'] = score
+                    item['score_reasons'] = score_reasons
+                    
                     if sector in grouped_data:
                         grouped_data[sector].append(item)
                     
@@ -425,6 +445,16 @@ class ReportGenerator:
             official = stock_meta.get(item['symbol'], {})
             onclick_attr = self._generate_onclick(item, official)
             
+            # Format Score Tooltip
+            reasons = item.get('score_reasons', [])
+            score_tooltip_text = "&#10;".join(reasons)
+            score_val = item.get('score', 0)
+            
+            score_cls = "text-muted"
+            if score_val >= 8: score_cls = "green" # High Confidence
+            elif score_val >= 5: score_cls = "accent" # Medium Confidence
+            else: score_cls = "gray"
+            
             top_picks_html += f"""
                 <tr {onclick_attr}>
                     <td>
@@ -436,6 +466,9 @@ class ReportGenerator:
                     <td class="mono">{t.get('rsi', 0):.1f}</td>
                     <td class="mono">{pe}</td>
                     <td style="font-weight:600; color:#cbd5e1;">{t.get('strategy', 'Hold')}</td>
+                    <td class="mono" title="{score_tooltip_text}">
+                        <span class="{score_cls}" style="font-weight:bold; padding:2px 8px; border-radius:4px;">{item['score']}</span>
+                    </td>
                 </tr>
             """
             
@@ -862,6 +895,7 @@ class ReportGenerator:
                                         <th onclick="sortTable('table_top_picks', 3, 'num')" title="Relative Strength Index (Momentum)">RSI ⬍</th>
                                         <th onclick="sortTable('table_top_picks', 4, 'num')" title="Price-to-Earnings Ratio (Valuation)">P/E ⬍</th>
                                         <th onclick="sortTable('table_top_picks', 5)" title="Technical Strategy Recommendation">Strategy ⬍</th>
+                                        <th onclick="sortTable('table_top_picks', 6, 'num')" title="Confidence Score (Max 10).&#10;Hover heavily to see breakdown.">Score ⬍</th>
                                     </tr>
                                 </thead>
                                 <tbody>

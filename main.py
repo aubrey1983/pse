@@ -49,25 +49,23 @@ def main():
         """Worker function to fetch and analyze a single stock."""
         try:
             # 1. Fetch Data
-            # 1. Fetch Data
-            
             data = fetcher.fetch_investagrams(symbol, days=365)
             
             if data is not None and not data.empty:
                 analysis = analyzer.analyze_trend(data)
                 
                 with print_lock:
-                    print(f"  ✓ [{symbol}] {analysis['last_close']:.2f} | {analysis.get('trend')} | RSI: {analysis.get('rsi', 0):.1f}")
+                    print(f"  [OK] [{symbol}] {analysis['last_close']:.2f} | {analysis.get('trend')} | RSI: {analysis.get('rsi', 0):.1f}")
                 
                 return symbol, analysis
             else:
                 with print_lock:
-                    print(f"  ✗ [{symbol}] No data")
+                    print(f"  [X] [{symbol}] No data")
                 return symbol, None
                 
         except Exception as e:
             with print_lock:
-                print(f"  ⚠ [{symbol}] Error: {e}")
+                print(f"  [!] [{symbol}] Error: {e}")
             return symbol, None
 
     # Run in parallel
@@ -82,39 +80,24 @@ def main():
             completed_count += 1
             if result:
                 analysis_results[symbol] = result
-            
-            # Optional: Periodic status update
-            # if completed_count % 10 == 0:
-            #     print(f"Progress: {completed_count}/{total_count}")
 
-    # Explicit close not strictly needed for fetcher anymore but kept for hygiene
     # Save Technical Data
     with open("data/technical_data.json", "w") as f:
         json.dump(analysis_results, f, indent=4, cls=CustomEncoder)
-        
-    # Update Progress
-    with open("data/metadata.json", "w") as f:
-        json.dump({
-            "technical_progress": {
-                "processed": len(analysis_results),
-                "total": len(all_symbols),
-                "percentage": 100
-            }
-        }, f, indent=4)
 
     fetcher.close()
     
     print(f"\nAnalysis Complete! {len(analysis_results)} stocks processed.")
     
     # Generate Dashboard
-    print(f"\n📊 Generating Dashboard...")
+    print(f"\n[i] Generating Dashboard...")
     report_file = report_gen.generate_dashboard()
-    print(f"✓ Dashboard saved to: {report_file}")
+    print(f"[OK] Dashboard saved to: {report_file}")
     
-    print(f"\n🌐 Opening dashboard in browser...")
+    print(f"\n[->] Opening dashboard in browser...")
     report_gen.open_in_browser(report_file)
     
-    print(f"\n[NOTE] Run 'python fetch_fundamentals.py' in a separate terminal to populate fundamental data.")
+    print(f"\n[NOTE] Run 'python fetch_pse_fundamentals.py' in a separate terminal to populate fundamental data.")
 
 
 if __name__ == "__main__":

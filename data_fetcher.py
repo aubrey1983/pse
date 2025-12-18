@@ -18,10 +18,6 @@ class DataFetcher:
 
 
 
-    # ... (skipping existing methods to focus on the new one) ...
-
-
-
     def fetch_investagrams(self, symbol: str, days: int = 365) -> pd.DataFrame:
         """
         Fetch historical data from Investagrams Internal API.
