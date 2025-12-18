@@ -1,5 +1,3 @@
-# requirements.txt for PSE Stock Monitoring Project
 pandas
 requests
-
-investpy
+beautifulsoup4
