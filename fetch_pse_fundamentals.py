@@ -134,11 +134,13 @@ def scrape_stock_details(symbol, ids, tech_price):
                         
                         # Clean amount "PhP 1.00" -> 1.00
                         # Handle "Php1.10 per share", "PHP 1.00", "₱1.00"
-                        amount_text = re.sub(r'(?i)php|per share|₱', '', amount_text)
+                        # Robust extraction of the number (e.g., "P0.42 per common..." -> 0.42)
+                        match = re.search(r'(\d+(?:\.\d+)?)', amount_text.replace(',', ''))
+                        amount = float(match.group(1)) if match else None
                         
                         data['div_history'].append({
                             "type": div_type,
-                            "amount": clean_value(amount_text),
+                            "amount": amount,
                             "ex_date": ex_date,
                             "pay_date": pay_date
                         })
@@ -180,6 +182,7 @@ def main():
         
         # FULL RUN (Uncomment below)
         test_items = stock_ids.items()
+        # test_items = [(s, stock_ids[s]) for s in ['JGS'] if s in stock_ids]
         
         for symbol, ids in test_items:
             tech = technical_data.get(symbol, {})
