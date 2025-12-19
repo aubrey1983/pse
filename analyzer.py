@@ -150,6 +150,15 @@ class Analyzer:
             if current_vol > (2.0 * vol_sma_20):
                 volume_spike = True
             
+        # Risk Management Metrics
+        stop_loss = 0.0
+        risk_pct = 0.0
+        
+        if support > 0:
+            # Recommended Stop: 3% below support (prevents noise stop-out)
+            stop_loss = support * 0.97
+            risk_pct = ((last_close - stop_loss) / last_close) * 100.0
+
         result = {
             'last_close': last_close,
             'rsi': last_row['RSI'] if pd.notna(last_row['RSI']) else 50.0,
@@ -162,6 +171,8 @@ class Analyzer:
             'trend': trend_status,
             'support': support,
             'resistance': resistance,
+            'stop_loss': stop_loss,
+            'risk_pct': risk_pct,
             'win_rate': consistency['win_rate'],
             'avg_monthly_return': consistency['avg_monthly_return_pct'],
             'monthly_volatility': consistency['monthly_volatility'],
@@ -184,40 +195,58 @@ class Analyzer:
         if not tech_data:
             return 0, []
 
-        # 1. Trend (Technical)
+        # 1. Trend & Reversals (Technical)
         trend = tech_data.get('trend', '')
         last_close = tech_data.get('last_close', 0)
+        support = tech_data.get('support', 0)
         
-        # Penalize Downtrends (Don't catch falling knives)
-        if "Downtrend" in trend:
+        # A. Bounce Potential (Buying near Support)
+        if support > 0 and 1.0 <= (last_close / support) <= 1.05:
+            score += 2
+            score_reasons.append(f"Near Support (+2)")
+        
+        # B. Trend Following
+        if "Strong Uptrend" in trend: 
+            # Only reward strong uptrend if NOT overextended
+            if tech_data.get('rsi', 50) < 70:
+                score += 1
+                score_reasons.append("Strong Uptrend (+1)")
+        elif "Uptrend" in trend: 
+            score += 1
+            score_reasons.append("Uptrend (+1)")
+            
+        # Penalize Downtrends (unless it's a bounce play)
+        if "Downtrend" in trend and not (support > 0 and last_close <= support * 1.05):
             score -= 5
             score_reasons.append("Downtrend (-5)")
-        else:
-            if "Strong Uptrend" in trend: 
-                score += 1 # Reduced to +1 to avoid buying extended tops
-                score_reasons.append("Strong Uptrend (+1)")
-            elif "Uptrend" in trend: 
-                score += 1
-                score_reasons.append("Uptrend (+1)")
-            
-            # EMA Confirmation
-            ema_50 = tech_data.get('ema_50', 0)
-            if ema_50 and last_close > ema_50:
-                score += 1
-                score_reasons.append("Above EMA 50 (+1)")
-                
-            # Golden Cross (Start of Trend)
-            if tech_data.get('golden_cross'):
-                score += 3
-                score_reasons.append("Golden Cross (+3)")
 
-        # 2. Momentum (Technical)
-
-        # 2. Momentum (Technical)
-        rsi = tech_data.get('rsi', 50)
-        if 40 < rsi < 70 and "Uptrend" in trend:
+        # EMA Confirmation
+        ema_50 = tech_data.get('ema_50', 0)
+        if ema_50 and last_close > ema_50:
             score += 1
-            score_reasons.append("Healthy Momentum (+1)")
+            score_reasons.append("Above EMA 50 (+1)")
+                
+        # Golden Cross (Start of Trend)
+        if tech_data.get('golden_cross'):
+            score += 3
+            score_reasons.append("Golden Cross (+3)")
+
+        # 2. Momentum & Volume
+        rsi = tech_data.get('rsi', 50)
+        
+        if rsi > 75:
+            score -= 2
+            score_reasons.append("Overbought RSI > 75 (-2)")
+        elif 40 < rsi < 70:
+            # Reward healthy momentum
+            if "Uptrend" in trend or "Neutral" in trend:
+                score += 1
+                score_reasons.append("Healthy Momentum (+1)")
+        
+        # Volume Confirmation
+        if tech_data.get('volume_spike'):
+            score += 1
+            score_reasons.append("High Volume Interest (+1)")
         
         macd_val = tech_data.get('macd', 0)
         macd_sig = tech_data.get('macd_signal', 0)

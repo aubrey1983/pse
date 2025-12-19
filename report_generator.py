@@ -4,6 +4,7 @@ import datetime
 import webbrowser
 import os
 import json
+import base64
 from typing import Dict
 from stock_data import STOCK_CATEGORIES
 from analyzer import Analyzer
@@ -58,23 +59,41 @@ class ReportGenerator:
         high_52 = f.get('high_52', 0)
         low_52 = f.get('low_52', 0)
         
-        history_json = json.dumps(t.get('history', []))
-        history_json_safe = history_json.replace('"', r'\"').replace("'", "&#39;")
+        # News
+        news_items = self.news_data.get(item['symbol'], [])
         
-        div_hist_json = json.dumps(f.get('div_history', []))
-        div_hist_safe = div_hist_json.replace('"', r'\"').replace("'", "&#39;")
+        data_dict = {
+            "symbol": item['symbol'],
+            "name": item.get('company_name', item['symbol']),
+            "price": t.get('last_close', 0),
+            "high_52": f.get('high_52', 0),
+            "low_52": f.get('low_52', 0),
+            "eps": f.get('eps', 0),
+            "pe": f.get('pe_ratio', 0),
+            "mkt_cap": f.get('market_cap', 0),
+            "shares": f.get('outstanding_shares', 0),
+            "sector": official.get('sector', 'Unknown'),
+            "subsector": official.get('subsector', '-'),
+            "listing_date": official.get('listingDate', '-'),
+            "divYield": f.get('div_yield'),
+            "div_history": f.get('div_history', []),
+            "news": news_items,
+            "stop_loss": t.get('stop_loss', 0),
+            "risk_pct": t.get('risk_pct', 0),
+            "support": t.get('support', 0),
+            "resistance": t.get('resistance', 0),
+            "history": t.get('history', []) # Add history for chart
+        }
         
-        def escape_val(v):
-            return str(v).replace('"', r'\"').replace("'", "&#39;")
+        # Create JSON and Base64 Encode
+        # data_json = json.dumps(data_dict)
+        # data_b64 = base64.b64encode(data_json.encode('utf-8')).decode('utf-8')
         
-        clean_name = escape_val(item["company_name"])
-        clean_sector = escape_val(o_sector)
-        clean_sub = escape_val(o_subsector)
-        clean_date = escape_val(o_date)
+        # Store in Global Dict
+        self.all_stock_data[item['symbol']] = data_dict
         
-        # Args: symbol, companyName, sector, subsector, listingDate, historyJson, marketCap, pe, eps, yield, high52, low52, divHistJson
-        call = f'showStockDetails("{item["symbol"]}", "{clean_name}", "{clean_sector}", "{clean_sub}", "{clean_date}", "{history_json_safe}", "{mk_cap}", "{f.get("pe_ratio", 0)}", "{f.get("eps", 0)}", "{f.get("div_yield", 0)}", "{high_52}", "{low_52}", "{div_hist_safe}")'
-        return f'onclick=\'{call}\' style="cursor:pointer;"'
+        call = f"showStockDetails('{item['symbol']}')"
+        return f'onclick="{call}" style="cursor:pointer;"'
 
     def _generate_card_html(self, item, stock_meta):
         """Generate consistent HTML for a stock card."""
@@ -174,6 +193,9 @@ class ReportGenerator:
         # Load Official Fundamentals (Deep Scrape)
         official_fund = self.load_json("data/pse_fundamentals.json")
         
+        # Load News Data
+        self.news_data = self.load_json("data/news_data.json")
+        
         # Merge Data per Industry
         # Dynamic Sector Generation
         all_sectors = set()
@@ -201,7 +223,10 @@ class ReportGenerator:
         
         # Iterate over ALL available symbols (union of tech and meta)
         all_symbols = set(tech_data.keys()) | set(stock_meta.keys())
-        
+    
+        # Global Data Store for Client Side
+        self.all_stock_data = {}
+    
         for symbol in all_symbols:
             # Get Official Name/Sector from Metadata
             meta = stock_meta.get(symbol, {})
@@ -313,12 +338,8 @@ class ReportGenerator:
                     score = 0
                     trend = t.get('trend', '')
                     # --- TOP PICK SCORING (Enhanced) ---
-                    # --- TOP PICK SCORING (Enhanced) ---
                     # Logic moved to analyzer.py for reusability (report + backtest)
                     score, score_reasons = self.analyzer.calculate_score(t, f)
-                    
-                    item['score'] = score
-                    item['score_reasons'] = score_reasons
                     
                     item['score'] = score
                     item['score_reasons'] = score_reasons
@@ -824,15 +845,17 @@ class ReportGenerator:
                     align-items: center;
                 }}
                 .modal-content {{
-                    background: var(--bg-secondary);
+                    background: var(--bg-panel);
                     width: 90%;
                     max-width: 1000px;
-                    height: 600px;
+                    height: 80vh; /* Fixed height relative to viewport */
+                    max-height: 800px;
                     border-radius: 12px;
                     padding: 20px;
                     position: relative;
                     display: flex;
                     flex-direction: column;
+                    overflow: hidden; /* Contain children */
                 }}
                 .close-btn {{
                     position: absolute;
@@ -840,12 +863,27 @@ class ReportGenerator:
                     font-size: 24px;
                     cursor: pointer;
                     color: var(--text-secondary);
+                    z-index: 10; /* Ensure visible above scroll */
                 }}
                 #chart-container {{
                     flex-grow: 1;
                     width: 100%;
-                    margin-top: 20px;
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: auto; /* Enable Scrolling */
+                    min-height: 0; /* Required for flex scrolling */
+                    padding-right: 5px; /* Space for scrollbar */
                 }}
+                .metric-row {{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 4px 0;
+                    border-bottom: 1px dashed var(--border);
+                }}
+                .metric-row:last-child {{ border-bottom: none; }}
+                .metric-row .label {{ color: var(--text-tertiary); font-size: 0.85rem; }}
+                .metric-row .val {{ color: var(--text-primary); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }}
             </style>
             <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
         </head>
@@ -1156,19 +1194,30 @@ class ReportGenerator:
                     return "₱" + val.toLocaleString();
                 }}
 
-                function showStockDetails(symbol, companyName, sector, subsector, listingDate, historyJson, marketCap, pe, eps, divYield, high52, low52, divHistJson) {{
+                function formatNumber(val) {{
+                    if (!val) return "-";
+                    if (val >= 1e12) return (val / 1e12).toFixed(2) + "T";
+                    if (val >= 1e9) return (val / 1e9).toFixed(2) + "B";
+                    if (val >= 1e6) return (val / 1e6).toFixed(2) + "M";
+                    return val.toLocaleString();
+                }}
+
+                function showStockDetails(symbol) {{
+                    const data = STOCK_DATA[symbol];
+                    if(!data) return;
+                    
                     document.getElementById('chartModal').style.display = 'flex';
                     
                     // 1. HEADER
                     const headerHtml = `
                         <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:15px;">
                             <div>
-                                <h2 style="margin:0; color:var(--text-primary); font-family:'JetBrains Mono'; font-size:1.8rem;">${{symbol}}</h2>
-                                <div style="color:var(--text-secondary); font-size:0.9rem;">${{companyName}}</div>
+                                <h2 style="margin:0; color:var(--text-primary); font-family:'JetBrains Mono'; font-size:1.8rem;">${{data.symbol}}</h2>
+                                <div style="color:var(--text-secondary); font-size:0.9rem;">${{data.name}}</div>
                             </div>
                             <div style="text-align:right; font-size:0.8rem; color:var(--text-tertiary);">
-                                <div><span style="color:var(--accent);">${{sector}}</span> <span style="margin:0 4px;">•</span> ${{subsector}}</div>
-                                <div>Listed: ${{listingDate}}</div>
+                                <div><span style="color:var(--accent);">${{data.sector}}</span> <span style="margin:0 4px;">•</span> ${{data.subsector}}</div>
+                                <div>Listed: ${{data.listing_date}}</div>
                             </div>
                         </div>
                     `;
@@ -1176,31 +1225,47 @@ class ReportGenerator:
                     
                     
                     // 2. FUNDAMENTAL STATS GRID
-                    let caps = formatCurrency(parseFloat(marketCap));
-                    let yieldVal = parseFloat(divYield) > 0 ? parseFloat(divYield).toFixed(2) + "%" : "-";
-                    let peVal = parseFloat(pe) > 0 ? parseFloat(pe).toFixed(2) : "-";
-                    let epsVal = parseFloat(eps) != 0 ? parseFloat(eps).toFixed(2) : "-";
+                    let caps = formatCurrency(parseFloat(data.mkt_cap));
+                    let yieldVal = parseFloat(data.divYield) > 0 ? parseFloat(data.divYield).toFixed(2) + "%" : "-";
+                    let peVal = parseFloat(data.pe) > 0 ? parseFloat(data.pe).toFixed(2) : "-";
+                    let epsVal = parseFloat(data.eps) != 0 ? parseFloat(data.eps).toFixed(2) : "-";
                     
                     const statsHtml = `
-                        <div style="display:grid; grid-template-columns: repeat(6, 1fr); gap:10px; margin-bottom:20px; background:var(--bg-panel); padding:15px; border-radius:8px; border:1px solid var(--border);">
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-bottom:20px; background:var(--bg-panel); padding:15px; border-radius:8px; border:1px solid var(--border);">
                             <div class="metric"><span class="metric-label" title="Market Capitalization: Total value of all shares.\nFormula: Price x Outstanding Shares.\nDenomination: B = Billions, T = Trillions">Market Cap ⓘ</span><span class="metric-val mono" style="color:#fff;">${{caps}}</span></div>
                             <div class="metric"><span class="metric-label">P/E Ratio</span><span class="metric-val mono">${{peVal}}</span></div>
                             <div class="metric"><span class="metric-label">EPS</span><span class="metric-val mono">${{epsVal}}</span></div>
                             <div class="metric"><span class="metric-label">Div Yield</span><span class="metric-val mono text-green">${{yieldVal}}</span></div>
-                            <div class="metric"><span class="metric-label">52-Wk High</span><span class="metric-val mono text-green">${{high52}}</span></div>
-                            <div class="metric"><span class="metric-label">52-Wk Low</span><span class="metric-val mono text-red">${{low52}}</span></div>
+                            <div class="metric"><span class="metric-label">52-Wk High</span><span class="metric-val mono text-green">${{data.high_52.toFixed(2)}}</span></div>
+                            <div class="metric"><span class="metric-label">52-Wk Low</span><span class="metric-val mono text-red">${{data.low_52.toFixed(2)}}</span></div>
+                        </div>
+
+                        <div style="margin-bottom:20px; background:rgba(59, 130, 246, 0.05); padding:15px; border-radius:8px; border:1px solid rgba(59, 130, 246, 0.2);">
+                            <h3 style="font-size:0.9rem; margin-bottom:10px; color:var(--accent); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Trading Plan</h3>
+                            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap:15px;">
+                                <div class="metric">
+                                    <span class="metric-label">Support Level</span>
+                                    <span class="metric-val mono">₱${{parseFloat(data.support).toFixed(2)}}</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label" style="color:var(--red);">Suggested Stop Loss</span>
+                                    <span class="metric-val mono text-red" style="font-weight:700; font-size:1.1rem;">₱${{parseFloat(data.stop_loss).toFixed(2)}}</span>
+                                    <span style="font-size:0.75rem; color:var(--text-tertiary);">Risk: -${{parseFloat(data.risk_pct).toFixed(1)}}%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label" style="color:var(--green);">Target (Resistance)</span>
+                                    <span class="metric-val mono text-green">₱${{parseFloat(data.resistance).toFixed(2)}}</span>
+                                </div>
+                            </div>
                         </div>
                     `;
                     
                     // 3. CHART CONTAINER
-                    // We need to recreate the container div because we are injecting stats above it
-                    // But effectively we can just set the grid in a 'details-container'
-                    
                     const container = document.getElementById('chart-container');
-                    container.innerHTML = statsHtml + '<div id="main-chart" style="width:100%; height:400px; border:1px solid var(--border); border-radius:8px; overflow:hidden;"></div>';
+                    container.innerHTML = statsHtml + '<div id="main-chart" style="width:100%; height:400px; flex-shrink: 0; border:1px solid var(--border); border-radius:8px; overflow:hidden;"></div>';
                     
                     // 4. DIVIDEND HISTORY (Bottom)
-                    let divs = JSON.parse(divHistJson);
+                    let divs = data.div_history;
                     if (divs && divs.length > 0) {{
                         let rows = "";
                         divs.slice(0, 5).forEach(d => {{
@@ -1229,13 +1294,35 @@ class ReportGenerator:
                             </div>
                         `;
                     }}
+                    
+                    // 5. RECENT NEWS
+                    if (data.news && data.news.length > 0) {{
+                        let newsHtml = '<div style="margin-top:20px; border-top:1px solid #334155; padding-top:15px;">';
+                        newsHtml += '<h3 style="font-size:1rem; margin-bottom:10px; color:var(--text-secondary);">Recent News</h3>';
+                        newsHtml += '<div style="display:flex; flex-direction:column; gap:10px;">';
+                        
+                        data.news.forEach(item => {{
+                            newsHtml += `
+                            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border);">
+                                <a href="${{item.link}}" target="_blank" style="display:block; color:var(--text-primary); text-decoration:none; font-weight:600; margin-bottom:4px; font-size:0.95rem;">${{item.title}}</a>
+                                <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-tertiary);">
+                                    <span>${{item.source}}</span>
+                                    <span>${{new Date(item.date).toLocaleDateString()}}</span>
+                                </div>
+                            </div>
+                            `;
+                        }});
+                        
+                        newsHtml += '</div></div>';
+                        container.innerHTML += newsHtml;
+                    }}
 
                     // RENDER CHART
                     // Parse data
-                    const data = JSON.parse(historyJson);
+                    const historyData = data.history || [];
                     const chartDiv = document.getElementById('main-chart');
                     
-                    if(!data || data.length === 0) {{
+                    if(!historyData || historyData.length === 0) {{
                         chartDiv.innerHTML = '<div style="display:flex; height:100%; justify-content:center; align-items:center; color:var(--text-tertiary);">No Price History Available</div>';
                         return;
                     }}
@@ -1267,7 +1354,7 @@ class ReportGenerator:
                         wickDownColor: '#ef4444',
                     }});
 
-                    candlestickSeries.setData(data);
+                    candlestickSeries.setData(historyData);
                     chart.timeScale().fitContent();
                     
                     // ResizeObserver to handle modal resize
@@ -1293,6 +1380,10 @@ class ReportGenerator:
                         closeModal();
                     }}
                 }}
+            </script>
+            <!-- Inject Global Data -->
+            <script>
+                const STOCK_DATA = {json.dumps(self.all_stock_data)};
             </script>
         </body>
         </html>

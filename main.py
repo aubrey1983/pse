@@ -89,13 +89,32 @@ def main():
     
     print(f"\nAnalysis Complete! {len(analysis_results)} stocks processed.")
     
+    # News Integration
+    import fetch_news
+    print(f"\n[i] Fetching News...")
+    try:
+        # We can pass specific targets if we really want to filter, 
+        # but the logic in fetch_news handles filtering (score >= 6).
+        # Or we can pass 'analysis_results.keys()' if we want news for ALL processed stocks (might be too many).
+        # Let's stick to fetch_news default logic (score >= 6) for now to save bandwidth, 
+        # or we can pass the high scoring ones from our analysis.
+        
+        # Let's refine: Pass high scoring stocks from analysis_results to fetch_news?
+        # main.py knows the exact analysis. fetch_news re-calculates. 
+        # Optimization: Pass list of symbols with score >= 6 from analysis_results.
+        
+        # Actually, let's just let fetch_news do its thing to minimize main.py complexity for now.
+        fetch_news.run_news_fetch() 
+    except Exception as e:
+        print(f"[!] News Fetch Error: {e}")
+    
     # Generate Dashboard
     print(f"\n[i] Generating Dashboard...")
-    report_file = report_gen.generate_dashboard()
-    print(f"[OK] Dashboard saved to: {report_file}")
+    report_gen.generate_dashboard() # Output file arg is default
+    print(f"[OK] Dashboard saved.")
     
     print(f"\n[->] Opening dashboard in browser...")
-    report_gen.open_in_browser(report_file)
+    report_gen.open_in_browser("report.html")
     
     print(f"\n[NOTE] Run 'python fetch_pse_fundamentals.py' in a separate terminal to populate fundamental data.")
 
