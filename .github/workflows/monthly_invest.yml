@@ -1,0 +1,42 @@
+name: Monthly Investment Simulation
+
+on:
+  schedule:
+    # Run at 00:00 on the 1st of every month
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  invest:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas numpy requests beautifulsoup4 ta
+        
+    - name: Run Auto-Invest Simulator
+      run: |
+        python suggest_portfolio.py --amount 10000 --stocks 5 --simulate
+        
+    - name: Regenerate Dashboard Report
+      run: |
+        python -c "from report_generator import ReportGenerator; ReportGenerator().generate_dashboard()"
+
+    - name: Commit and push changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "sim: monthly 10k investment [skip ci]"
+        file_pattern: 'data/portfolio.json report.html'

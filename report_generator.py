@@ -7,11 +7,14 @@ import json
 import base64
 from typing import Dict
 from stock_data import STOCK_CATEGORIES
+from stock_data import STOCK_CATEGORIES
 from analyzer import Analyzer
+from portfolio_manager import PortfolioManager
 
 class ReportGenerator:
     def __init__(self):
         self.analyzer = Analyzer()
+        self.portfolio_mgr = PortfolioManager()
 
     def load_json(self, filepath):
         if os.path.exists(filepath):
@@ -146,7 +149,10 @@ class ReportGenerator:
             <div class="card" {onclick_attr} {data_attrs}>
                 <div class="card-header">
                     <div>
-                        <div class="symbol mono" style="color:var(--accent);">{item['symbol']}</div>
+                        <div class="symbol mono" style="color:var(--accent); display:flex; align-items:center;">
+                            {item['symbol']} 
+                            <span class="watchlist-btn" onclick="event.stopPropagation(); openAddModal('{item['symbol']}', {t['last_close']})" title="Add to Portfolio">☆</span>
+                        </div>
                         <div style="font-size:0.75rem; color:var(--text-tertiary); margin-top:4px;">{item['company_name'][:30]}</div>
                     </div>
                     <div style="text-align:right;">
@@ -183,6 +189,9 @@ class ReportGenerator:
 
     def generate_dashboard(self, output_file: str = "report.html"):
         """Generate a modern HTML dashboard merging Technical and Fundamental data."""
+        
+        # RELOAD PORTFOLIO DATA (Crucial for interactive updates)
+        self.portfolio_mgr.portfolio = self.portfolio_mgr.load_portfolio()
         
         # Load Data
         tech_data = self.load_json("data/technical_data.json")
@@ -400,6 +409,12 @@ class ReportGenerator:
         for cat in grouped_data:
             grouped_data[cat].sort(key=lambda x: x['symbol'])
 
+        # --- PORTFOLIO DATA ---
+        # Create a simplified price map for the portfolio manager
+        current_prices = {s: tech_data.get(s, {}).get('last_close', 0) for s in tech_data}
+        # Fallback to metadata price if tech data missing? Usually tech data is source of truth.
+        portfolio_summary = self.portfolio_mgr.get_portfolio_summary(current_prices)
+
         # --- HTML COMPONENT GENERATION ---
         
         # 1. Industry Nav
@@ -408,7 +423,7 @@ class ReportGenerator:
             if cat not in grouped_data or not grouped_data[cat]: continue
             count = len(grouped_data[cat])
             cat_id = cat.replace(" ", "_").replace("&", "").replace(",", "")
-            industry_nav += f'<div class="nav-item" onclick="showSection(\'{cat_id}\')">{cat} <span class="nav-badge">{count}</span></div>'
+            industry_nav += f'<div class="nav-item" data-section="{cat_id}" onclick="showSection(\'{cat_id}\')">{cat} <span class="nav-badge">{count}</span></div>'
             
         # 2. All Cards (Overview) - Flat A-Z List
         all_cards_html = ""
@@ -489,7 +504,10 @@ class ReportGenerator:
             top_picks_html += f"""
                 <tr {onclick_attr}>
                     <td>
-                        <div class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']} {badge_html}</div>
+                        <div class="mono" style="font-weight:700; color:var(--accent); display:flex; align-items:center;">
+                            {item['symbol']} {badge_html}
+                            <span class="watchlist-btn" onclick="event.stopPropagation(); openAddModal('{item['symbol']}', {t['last_close']})" title="Add to Portfolio">☆</span>
+                        </div>
                         <div style="font-size:0.75rem; color:#64748b;">{name[:20]}</div>
                     </td>
                     <td class="mono">₱{t['last_close']:.2f}</td>
@@ -553,7 +571,10 @@ class ReportGenerator:
             div_picks_html += f"""
                 <tr {onclick_attr}>
                     <td>
-                        <div class="mono" style="font-weight:700; color:var(--accent);">{item['symbol']}</div>
+                        <div class="mono" style="font-weight:700; color:var(--accent); display:flex; align-items:center;">
+                            {item['symbol']}
+                            <span class="watchlist-btn" onclick="event.stopPropagation(); openAddModal('{item['symbol']}', {t['last_close']})" title="Add to Portfolio">☆</span>
+                        </div>
                         <div style="font-size:0.75rem; color:#64748b;">{name[:20]}</div>
                     </td>
                     <td class="mono">₱{t['last_close']:.2f}</td>
@@ -571,6 +592,190 @@ class ReportGenerator:
 
         # Generate sector options for the filter dropdown
         sector_options = "".join([f'<option value="{c}">{c}</option>' for c in sorted_sectors])
+
+        # --- PORTFOLIO HTML ---
+        portfolio_html = ""
+        portfolio_rows = ""
+        
+        # Summary Cards
+        total_eq = portfolio_summary['total_equity']
+        total_cost = portfolio_summary['total_cost']
+        total_gl = portfolio_summary['total_gain_loss']
+        total_gl_pct = portfolio_summary['total_gain_loss_pct']
+        
+        gl_cls = "text-green" if total_gl >= 0 else "text-red"
+        
+        # Table Rows
+        for p in portfolio_summary['positions']:
+            sym = p['symbol']
+            shares = p['shares']
+            avg = p['avg_price']
+            curr = p['current_price']
+            gl = p['gain_loss']
+            gl_pct = p['gain_loss_pct']
+            
+            p_gl_cls = "text-green" if gl >= 0 else "text-red"
+            
+            # Context for onclick
+            official = stock_meta.get(sym, {})
+            # We need to construct a basic 'item' if it's not in our main list, but usually it is.
+            # Use data from tech_data/stock_meta
+            
+            # Basic item reconstruction for onclick
+            p_item = {
+                'symbol': sym,
+                'company_name': official.get('name', sym),
+                'tech': tech_data.get(sym, {'last_close': curr}),
+                'fund': official_fund.get(sym, {})
+            }
+            onclick = self._generate_onclick(p_item, official)
+            
+            portfolio_rows += f"""
+                <tr {onclick}>
+                    <td class="mono" style="font-weight:700; color:var(--accent);">{sym}</td>
+                    <td class="mono">{shares:,.0f}</td>
+                    <td class="mono">₱{avg:,.2f}</td>
+                    <td class="mono">₱{curr:,.2f}</td>
+                    <td class="mono">₱{p['market_value']:,.2f}</td>
+                    <td class="mono {p_gl_cls}">₱{gl:,.2f}</td>
+                    <td class="mono {p_gl_cls}">{gl_pct:+.2f}%</td>
+                    <td>
+                        <button onclick="event.stopPropagation(); removePosition('{sym}')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
+                            🗑️
+                        </button>
+                    </td>
+                </tr>
+            """
+            
+        portfolio_html = f"""
+        <div id="portfolio_section" class="section">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2 style="margin-bottom:1.5rem;">My Portfolio</h2>
+                <button onclick="openAddModal()" style="background:var(--bg-panel-hover); border:1px solid var(--border); color:var(--text-primary); padding:8px 16px; border-radius:6px; cursor:pointer; font-size:0.9rem;">
+                    + Add Position
+                </button>
+            </div>
+            
+
+
+            <h3 style="margin-bottom:1.5rem; color:var(--text-secondary);">PERMANENT SIMULATION PROJECT (₱10k/mo)</h3>
+            
+            <div style="display:grid; grid-template-columns: 300px 1fr; gap:20px; margin-bottom:30px;">
+                <!-- Left: Metrics -->
+                <div style="display:flex; flex-direction:column; gap:15px;">
+                     <div class="card" style="padding:20px;">
+                        <div style="color:var(--text-secondary); font-size:0.9rem;">Total Equity</div>
+                        <div class="mono" style="font-size:1.5rem; font-weight:700; color:#fff;">₱{total_eq:,.2f}</div>
+                    </div>
+                    <div class="card" style="padding:20px;">
+                        <div style="color:var(--text-secondary); font-size:0.9rem;">Total Cost</div>
+                        <div class="mono" style="font-size:1.5rem; font-weight:700; color:#fff;">₱{total_cost:,.2f}</div>
+                    </div>
+                    <div class="card" style="padding:20px;">
+                        <div style="color:var(--text-secondary); font-size:0.9rem;">Total Gain/Loss</div>
+                        <div class="mono {gl_cls}" style="font-size:1.5rem; font-weight:700;">₱{total_gl:,.2f} <span style="font-size:1rem;">({total_gl_pct:+.2f}%)</span></div>
+                    </div>
+                </div>
+                
+                <!-- Right: Charts -->
+                <div class="card" style="padding:20px; display:grid; grid-template-columns: 1fr 1fr; gap:20px; align-items:center;">
+                    <div style="height:250px; position:relative;">
+                        <canvas id="chartAllocation"></canvas>
+                    </div>
+                    <div style="height:250px; position:relative;">
+                        <canvas id="chartSector"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {{
+                    // Portfolio Data from Python
+                    const positions = {json.dumps(portfolio_summary['positions'])};
+                    
+                    // 1. Asset Allocation Data
+                    const labels = positions.map(p => p.symbol);
+                    const values = positions.map(p => p.market_value);
+                    const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#6366f1', '#14b8a6'];
+                    
+                    new Chart(document.getElementById('chartAllocation'), {{
+                        type: 'doughnut',
+                        data: {{
+                            labels: labels,
+                            datasets: [{{
+                                data: values,
+                                backgroundColor: colors,
+                                borderColor: '#1e293b',
+                                borderWidth: 2
+                            }}]
+                        }},
+                        options: {{
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {{
+                                legend: {{ position: 'right', labels: {{ color: '#94a3b8', font: {{ size: 10 }} }} }},
+                                title: {{ display: true, text: 'Holdings Allocation', color: '#f1f5f9' }}
+                            }}
+                        }}
+                    }});
+                    
+                    // 2. Sector Allocation Data
+                    const sectorMap = {{}};
+                    // Need to fetch sector from the big STOCK_DATA object if available, 
+                    // or pass it in. Since STOCK_DATA is global, we can use it!
+                    
+                    positions.forEach(p => {{
+                        let data = STOCK_DATA[p.symbol];
+                        let sec = data ? data.sector : 'Unknown';
+                        if(!sectorMap[sec]) sectorMap[sec] = 0;
+                        sectorMap[sec] += p.market_value;
+                    }});
+                    
+                    new Chart(document.getElementById('chartSector'), {{
+                        type: 'pie',
+                        data: {{
+                            labels: Object.keys(sectorMap),
+                            datasets: [{{
+                                data: Object.values(sectorMap),
+                                backgroundColor: ['#8b5cf6', '#ec4899', '#f59e0b', '#3b82f6', '#10b981'],
+                                borderColor: '#1e293b',
+                                borderWidth: 2
+                            }}]
+                        }},
+                        options: {{
+                            responsive: true,
+                            maintainAspectRatio: false,
+                             plugins: {{
+                                legend: {{ position: 'right', labels: {{ color: '#94a3b8', font: {{ size: 10 }} }} }},
+                                title: {{ display: true, text: 'Sector Exposure', color: '#f1f5f9' }}
+                            }}
+                        }}
+                    }});
+                }});
+            </script>
+            
+            <div class="card" style="overflow-x:auto;">
+                <table style="width:100%; border-collapse:collapse;">
+                    <thead>
+                        <tr style="text-align:left; border-bottom:1px solid var(--border);">
+                            <th style="padding:12px; color:var(--text-secondary);">Symbol</th>
+                            <th style="padding:12px; color:var(--text-secondary);">Shares</th>
+                            <th style="padding:12px; color:var(--text-secondary);">Avg Price</th>
+                            <th style="padding:12px; color:var(--text-secondary);">Current</th>
+                            <th style="padding:12px; color:var(--text-secondary);">Market Value</th>
+                            <th style="padding:12px; color:var(--text-secondary);">Gain/Loss</th>
+                            <th style="padding:12px; color:var(--text-secondary);">%</th>
+                            <th style="padding:12px; color:var(--text-secondary);">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {portfolio_rows}
+                    </tbody>
+                </table>
+                { '<div style="padding:20px; text-align:center; color:var(--text-tertiary);">No positions yet. Use <code>python portfolio.py add</code> to track stocks.</div>' if not portfolio_rows else '' }
+            </div>
+        </div>
+        """
 
         # --- FINAL HTML ASSEMBLY ---
         html_content = f"""
@@ -886,18 +1091,25 @@ class ReportGenerator:
                 .metric-row .val {{ color: var(--text-primary); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }}
             </style>
             <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         </head>
         <body>
             <nav>
                 <div class="brand">PSE<span>PRO</span> v2.0</div>
-                <div class="nav-item active" onclick="showSection('overview')">
+                <div class="nav-item active" data-section="overview" onclick="showSection('overview')">
                     Market Overview <span class="nav-badge">All</span>
                 </div>
-                <div class="nav-item" onclick="showSection('top_picks')">
-                    Top Picks <span class="nav-badge" style="color:var(--accent); font-weight:bold;">★</span>
+                
+                <div class="nav-item" data-section="portfolio_section" onclick="showSection('portfolio_section')">
+                    My Portfolio
                 </div>
-                <div class="nav-item" onclick="showSection('dividends')">
-                    Dividend Gems <span class="nav-badge" style="color:var(--green);">$</span>
+
+                <div class="nav-item" data-section="top_picks" onclick="showSection('top_picks')">
+                    Top Picks <span class="nav-badge" style="background:var(--accent); color:#fff;">{len(top_picks)}</span>
+                </div>
+
+                <div class="nav-item" data-section="dividends" onclick="showSection('dividends')">
+                    Dividend Gems <span class="nav-badge" style="background:#10b981; color:#fff;">{len(div_picks)}</span>
                 </div>
                 
                 <div style="margin: 1.5rem 1.5rem 0.5rem; font-size:0.7rem; color:var(--text-tertiary); text-transform:uppercase;">Industries</div>
@@ -915,6 +1127,8 @@ class ReportGenerator:
                 </header>
                 
                 <main>
+                    {portfolio_html}
+
                     <!-- OVERVIEW (All Stocks Grid) -->
                     <div id="overview" class="section active">
                         <h2 style="margin-bottom:1.5rem;">Market Overview</h2>
@@ -1031,9 +1245,11 @@ class ReportGenerator:
                 let previousSectionId = 'overview';
                 
                 function showSection(id) {{
-                    console.log("Switching to section:", id);
                     // Update Active State
                     if (!document.getElementById(id)) return;
+                    
+                    localStorage.setItem('pse_active_section', id);
+                    // ... rest of function ...
                     
                     if (id !== 'search_results' && id !== 'search_tab') {{
                         document.getElementById('search_input').value = "";
@@ -1049,12 +1265,36 @@ class ReportGenerator:
                     document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
                     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
                     
+                    
                     document.getElementById(id).classList.add('active');
                     
                      // Highlight nav
-                     let navLink = document.querySelector(`.nav-item[onclick*="'${{id}}'"]`);
+                     let navLink = document.querySelector(`.nav-item[data-section="${{id}}"]`);
                      if (navLink) navLink.classList.add('active');
                 }}
+
+                // ... functions ...
+
+                // Initialize from LocalStorage
+                document.addEventListener('DOMContentLoaded', () => {{
+                    const savedSection = localStorage.getItem('pse_active_section');
+                    
+                    if (savedSection && document.getElementById(savedSection)) {{
+                        showSection(savedSection);
+                    }}
+                    
+                    // Add Event Listeners
+                    const searchInput = document.getElementById('search_input');
+                    if (searchInput) {{
+                        searchInput.addEventListener('keyup', filterStocks);
+                        searchInput.addEventListener('search', filterStocks);
+                    }}
+                    
+                    ['filter_sector', 'filter_trend', 'filter_val', 'filter_yield'].forEach(id => {{
+                        const el = document.getElementById(id);
+                        if (el) el.addEventListener('change', filterStocks);
+                    }});
+                }});
                 
                 function filterStocks() {{
                     let input = document.getElementById('search_input');
@@ -1172,6 +1412,7 @@ class ReportGenerator:
                         }}
                     }}
                 }}
+
             </script>
 
             <!-- Modal -->
@@ -1381,10 +1622,141 @@ class ReportGenerator:
                     }}
                 }}
             </script>
+            <!-- Client-Side Portfolio Logic -->
+            <script>
+
+                
+                // Toast Notification
+                function showToast(msg) {{
+                    let toast = document.createElement('div');
+                    toast.className = 'toast';
+                    toast.innerText = msg;
+                    document.body.appendChild(toast);
+                    setTimeout(() => {{ toast.remove(); }}, 3000);
+                }}
+                
+                // --- API INTEGRATION ---
+                async function apiCall(endpoint, data) {{
+                    try {{
+                        const response = await fetch(endpoint, {{
+                            method: 'POST',
+                            headers: {{ 'Content-Type': 'application/json' }},
+                            body: JSON.stringify(data)
+                        }});
+                        const res = await response.json();
+                        if (res.success) {{
+                            window.location.reload();
+                        }} else {{
+                            alert('Error: ' + (res.error || 'Unknown error'));
+                        }}
+                    }} catch (e) {{
+                         alert('Server not running? Make sure to run "python app.py" to use this feature.');
+                    }}
+                }}
+
+                let positionToRemove = null;
+                function removePosition(symbol) {{
+                    positionToRemove = symbol;
+                    document.getElementById('remove_symbol_display').innerText = symbol;
+                    document.getElementById('removeModal').style.display = 'flex';
+                }}
+                
+                function confirmRemove() {{
+                    if(positionToRemove) {{
+                        apiCall('/api/remove', {{ symbol: positionToRemove }});
+                    }}
+                }}
+
+                function openAddModal(symbol, price) {{
+                    document.getElementById('addModal').style.display = 'flex';
+                    if(symbol) document.getElementById('add_symbol').value = symbol;
+                    if(price) document.getElementById('add_price').value = price;
+                    document.getElementById('add_shares').value = "";
+                }}
+                
+                function submitAddPosition() {{
+                    const sym = document.getElementById('add_symbol').value.toUpperCase();
+                    const shares = document.getElementById('add_shares').value;
+                    const price = document.getElementById('add_price').value;
+                    
+                    if(!sym || !shares || !price) {{
+                        alert("Please fill all fields");
+                        return;
+                    }}
+                    
+                    apiCall('/api/add', {{
+                        symbol: sym,
+                        shares: parseFloat(shares),
+                        price: parseFloat(price)
+                    }});
+                }}
+
+                // Initialize
+            </script>
+            <style>
+                .watchlist-btn {{
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                    color: var(--text-tertiary);
+                    margin-left: 8px;
+                    transition: color 0.2s;
+                    user-select: none;
+                }}
+                .watchlist-btn:hover {{ color: var(--accent); }}
+                
+                .toast {{
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: var(--bg-panel);
+                    color: #fff;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    border: 1px solid var(--accent);
+                    z-index: 9999;
+                    animation: fadeIn 0.3s;
+                }}
+                @keyframes fadeIn {{ from {{ opacity: 0; transform: translateY(10px); }} to {{ opacity: 1; transform: translateY(0); }} }}
+            </style>
             <!-- Inject Global Data -->
             <script>
                 const STOCK_DATA = {json.dumps(self.all_stock_data)};
             </script>
+            <!-- Add Position Modal -->
+            <div id="addModal" class="modal-overlay">
+                <div class="modal-content" style="height:auto; max-width:400px; overflow:visible;">
+                    <span class="close-btn" onclick="document.getElementById('addModal').style.display='none'">&times;</span>
+                    <h2 style="margin-top:0;">Add Position</h2>
+                    <div style="display:flex; flex-direction:column; gap:15px; margin-top:15px;">
+                        <div>
+                            <label style="color:var(--text-tertiary); font-size:0.8rem;">Symbol</label>
+                            <input type="text" id="add_symbol" class="search-bar" style="width:100%;" placeholder="e.g. BDO">
+                        </div>
+                        <div>
+                            <label style="color:var(--text-tertiary); font-size:0.8rem;">Shares</label>
+                            <input type="number" id="add_shares" class="search-bar" style="width:100%;" placeholder="0">
+                        </div>
+                        <div>
+                            <label style="color:var(--text-tertiary); font-size:0.8rem;">Avg Price</label>
+                            <input type="number" id="add_price" class="search-bar" style="width:100%;" step="0.01" placeholder="0.00">
+                        </div>
+                        <button onclick="submitAddPosition()" style="background:var(--accent); color:white; border:none; padding:12px; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:10px;">ADD TO PORTFOLIO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remove Confirmation Modal -->
+            <div id="removeModal" class="modal-overlay">
+                <div class="modal-content" style="height:auto; max-width:400px;">
+                     <h3 style="margin-top:0;">Confirm Removal</h3>
+                     <p style="color:var(--text-secondary); margin:20px 0;">Are you sure you want to remove <strong id="remove_symbol_display" style="color:var(--text-primary);"></strong> from your portfolio?</p>
+                     
+                     <div style="display:flex; gap:10px; justify-content:flex-end;">
+                          <button onclick="document.getElementById('removeModal').style.display='none'" style="background:transparent; border:1px solid var(--border); color:var(--text-secondary); padding:8px 16px; border-radius:6px; cursor:pointer;">Cancel</button>
+                          <button onclick="confirmRemove()" style="background:var(--red); border:none; color:white; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:bold;">Remove Position</button>
+                     </div>
+                </div>
+            </div>
         </body>
         </html>
         """
