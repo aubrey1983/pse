@@ -33,10 +33,12 @@ jobs:
       run: python fetch_pse_fundamentals.py
 
     - name: Generate Dashboard Report
-      run: python regenerate_report.py
+      run: |
+        python regenerate_report.py
+        cp report.html index.html
 
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "chore: daily data refresh [skip ci]"
-        file_pattern: 'data/*.json report.html'
+        file_pattern: 'data/*.json report.html index.html'
