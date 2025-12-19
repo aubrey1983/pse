@@ -1,4 +1,6 @@
 # PSE Pro Dashboard
+![Daily Stock Scrape](https://github.com/aubrey1983/pse/actions/workflows/daily_scrape.yml/badge.svg)
+
 A professional-grade stock analysis and monitoring tool for the Philippine Stock Exchange (PSE).
 
 ## Features
