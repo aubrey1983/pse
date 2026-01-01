@@ -12,15 +12,38 @@
         "last_updated": "2025-12-19 13:42:27"
     },
     "RFM": {
-        "shares": 434.0,
-        "avg_price": 4.6,
-        "date_added": "2025-12-19 13:42:27",
-        "last_updated": "2025-12-19 13:42:27"
+        "shares": 855.0,
+        "avg_price": 4.673859649122806,
+        "last_updated": "2026-01-01 02:07:00"
     },
     "WPI": {
         "shares": 4597.0,
         "avg_price": 0.435,
         "date_added": "2025-12-19 13:42:27",
         "last_updated": "2025-12-19 13:42:27"
+    },
+    "LTG": {
+        "shares": 135.0,
+        "avg_price": 14.78,
+        "date_added": "2026-01-01 02:07:00",
+        "last_updated": "2026-01-01 02:07:00"
+    },
+    "PSE": {
+        "shares": 9.0,
+        "avg_price": 205.4,
+        "date_added": "2026-01-01 02:07:00",
+        "last_updated": "2026-01-01 02:07:00"
+    },
+    "ALCO": {
+        "shares": 4761.0,
+        "avg_price": 0.42,
+        "date_added": "2026-01-01 02:07:00",
+        "last_updated": "2026-01-01 02:07:00"
+    },
+    "BNCOM": {
+        "shares": 217.0,
+        "avg_price": 9.2,
+        "date_added": "2026-01-01 02:07:00",
+        "last_updated": "2026-01-01 02:07:00"
     }
 }
