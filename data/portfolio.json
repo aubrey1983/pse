@@ -23,10 +23,9 @@
         "last_updated": "2025-12-19 13:42:27"
     },
     "LTG": {
-        "shares": 135.0,
-        "avg_price": 14.78,
-        "date_added": "2026-01-01 02:07:00",
-        "last_updated": "2026-01-01 02:07:00"
+        "shares": 260.0,
+        "avg_price": 15.347307692307693,
+        "last_updated": "2026-02-01 02:42:55"
     },
     "PSE": {
         "shares": 9.0,
@@ -35,15 +34,25 @@
         "last_updated": "2026-01-01 02:07:00"
     },
     "ALCO": {
-        "shares": 4761.0,
+        "shares": 9522.0,
         "avg_price": 0.42,
-        "date_added": "2026-01-01 02:07:00",
-        "last_updated": "2026-01-01 02:07:00"
+        "last_updated": "2026-02-01 02:42:55"
     },
     "BNCOM": {
-        "shares": 217.0,
-        "avg_price": 9.2,
-        "date_added": "2026-01-01 02:07:00",
-        "last_updated": "2026-01-01 02:07:00"
+        "shares": 437.0,
+        "avg_price": 9.139588100686499,
+        "last_updated": "2026-02-01 02:42:55"
+    },
+    "SGP": {
+        "shares": 104.0,
+        "avg_price": 19.2,
+        "date_added": "2026-02-01 02:42:55",
+        "last_updated": "2026-02-01 02:42:55"
+    },
+    "AUB": {
+        "shares": 47.0,
+        "avg_price": 42.2,
+        "date_added": "2026-02-01 02:42:55",
+        "last_updated": "2026-02-01 02:42:55"
     }
 }
