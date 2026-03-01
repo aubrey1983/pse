@@ -1,9 +1,8 @@
 {
     "MEG": {
-        "shares": 980.0,
-        "avg_price": 2.04,
-        "date_added": "2025-12-19 13:42:27",
-        "last_updated": "2025-12-19 13:42:27"
+        "shares": 1864.0,
+        "avg_price": 2.144334763948498,
+        "last_updated": "2026-03-01 02:38:42"
     },
     "PPC": {
         "shares": 153.0,
@@ -39,9 +38,9 @@
         "last_updated": "2026-02-01 02:42:55"
     },
     "BNCOM": {
-        "shares": 437.0,
-        "avg_price": 9.139588100686499,
-        "last_updated": "2026-02-01 02:42:55"
+        "shares": 653.0,
+        "avg_price": 9.172802450229709,
+        "last_updated": "2026-03-01 02:38:42"
     },
     "SGP": {
         "shares": 104.0,
@@ -54,5 +53,23 @@
         "avg_price": 42.2,
         "date_added": "2026-02-01 02:42:55",
         "last_updated": "2026-02-01 02:42:55"
+    },
+    "MWC": {
+        "shares": 49.0,
+        "avg_price": 40.3,
+        "date_added": "2026-03-01 02:38:42",
+        "last_updated": "2026-03-01 02:38:42"
+    },
+    "PNB": {
+        "shares": 31.0,
+        "avg_price": 64.2,
+        "date_added": "2026-03-01 02:38:42",
+        "last_updated": "2026-03-01 02:38:42"
+    },
+    "GTCAP": {
+        "shares": 2.0,
+        "avg_price": 670.0,
+        "date_added": "2026-03-01 02:38:42",
+        "last_updated": "2026-03-01 02:38:42"
     }
 }
