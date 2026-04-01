@@ -43,10 +43,9 @@
         "last_updated": "2026-03-01 02:38:42"
     },
     "SGP": {
-        "shares": 104.0,
-        "avg_price": 19.2,
-        "date_added": "2026-02-01 02:42:55",
-        "last_updated": "2026-02-01 02:42:55"
+        "shares": 194.0,
+        "avg_price": 20.545360824742268,
+        "last_updated": "2026-04-01 02:53:09"
     },
     "AUB": {
         "shares": 47.0,
@@ -55,10 +54,9 @@
         "last_updated": "2026-02-01 02:42:55"
     },
     "MWC": {
-        "shares": 49.0,
-        "avg_price": 40.3,
-        "date_added": "2026-03-01 02:38:42",
-        "last_updated": "2026-03-01 02:38:42"
+        "shares": 96.0,
+        "avg_price": 41.30364583333333,
+        "last_updated": "2026-04-01 02:53:09"
     },
     "PNB": {
         "shares": 31.0,
@@ -71,5 +69,23 @@
         "avg_price": 670.0,
         "date_added": "2026-03-01 02:38:42",
         "last_updated": "2026-03-01 02:38:42"
+    },
+    "APX": {
+        "shares": 134.0,
+        "avg_price": 14.88,
+        "date_added": "2026-04-01 02:53:09",
+        "last_updated": "2026-04-01 02:53:09"
+    },
+    "NRCP": {
+        "shares": 2777.0,
+        "avg_price": 0.72,
+        "date_added": "2026-04-01 02:53:09",
+        "last_updated": "2026-04-01 02:53:09"
+    },
+    "AGI": {
+        "shares": 222.0,
+        "avg_price": 8.98,
+        "date_added": "2026-04-01 02:53:09",
+        "last_updated": "2026-04-01 02:53:09"
     }
 }
