@@ -22,9 +22,9 @@
         "last_updated": "2025-12-19 13:42:27"
     },
     "LTG": {
-        "shares": 260.0,
-        "avg_price": 15.347307692307693,
-        "last_updated": "2026-02-01 02:42:55"
+        "shares": 393.0,
+        "avg_price": 15.229770992366413,
+        "last_updated": "2026-05-01 03:40:58"
     },
     "PSE": {
         "shares": 9.0,
@@ -48,15 +48,14 @@
         "last_updated": "2026-04-01 02:53:09"
     },
     "AUB": {
-        "shares": 47.0,
-        "avg_price": 42.2,
-        "date_added": "2026-02-01 02:42:55",
-        "last_updated": "2026-02-01 02:42:55"
+        "shares": 94.0,
+        "avg_price": 42.275000000000006,
+        "last_updated": "2026-05-01 03:40:58"
     },
     "MWC": {
-        "shares": 96.0,
-        "avg_price": 41.30364583333333,
-        "last_updated": "2026-04-01 02:53:09"
+        "shares": 141.0,
+        "avg_price": 42.16418439716312,
+        "last_updated": "2026-05-01 03:40:58"
     },
     "PNB": {
         "shares": 31.0,
@@ -87,5 +86,17 @@
         "avg_price": 8.98,
         "date_added": "2026-04-01 02:53:09",
         "last_updated": "2026-04-01 02:53:09"
+    },
+    "BC": {
+        "shares": 303.0,
+        "avg_price": 6.6,
+        "date_added": "2026-05-01 03:40:58",
+        "last_updated": "2026-05-01 03:40:58"
+    },
+    "LFM": {
+        "shares": 60.0,
+        "avg_price": 33.0,
+        "date_added": "2026-05-01 03:40:58",
+        "last_updated": "2026-05-01 03:40:58"
     }
 }
