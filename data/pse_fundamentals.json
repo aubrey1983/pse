@@ -1,172 +1,8 @@
 {
-    "ABSP": {
-        "symbol": "ABSP",
-        "pe_ratio": null,
-        "market_cap": 213172967.7,
-        "outstanding_shares": 92282670.0,
-        "high_52": 5.0,
-        "low_52": 2.3,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:53",
-        "status": "Open"
-    },
-    "ACEN": {
-        "symbol": "ACEN",
-        "pe_ratio": 63.0,
-        "market_cap": 125847020451.6,
-        "outstanding_shares": 39951435064.0,
-        "high_52": 3.53,
-        "low_52": 2.13,
-        "eps": 0.05,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.05,
-                "ex_date": "May 27, 2026",
-                "pay_date": "Jun 18, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "May 15, 2026",
-                "pay_date": "Jun 1, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "May 15, 2026",
-                "pay_date": "Jun 1, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "Feb 13, 2026",
-                "pay_date": "Mar 2, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "Feb 13, 2026",
-                "pay_date": "Mar 2, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "Nov 19, 2025",
-                "pay_date": "Dec 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "Nov 19, 2025",
-                "pay_date": "Dec 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "Aug 18, 2025",
-                "pay_date": "Sep 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "Aug 18, 2025",
-                "pay_date": "Sep 1, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.05,
-                "ex_date": "Jun 19, 2025",
-                "pay_date": "Jul 3, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 20.0,
-                "ex_date": "May 16, 2025",
-                "pay_date": "Jun 2, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 17.8325,
-                "ex_date": "May 16, 2025",
-                "pay_date": "Jun 2, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:51:53",
-        "status": "Open"
-    },
-    "ACR": {
-        "symbol": "ACR",
-        "pe_ratio": 6.0,
-        "market_cap": 4970285000.0,
-        "outstanding_shares": 6291500000.0,
-        "high_52": 0.95,
-        "low_52": 0.4,
-        "eps": 0.13,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.02,
-                "ex_date": "Jun 27, 2025",
-                "pay_date": "Jul 16, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:51:53",
-        "status": "Open"
-    },
-    "AAA": {
-        "symbol": "AAA",
-        "pe_ratio": null,
-        "market_cap": 1303999969.03,
-        "outstanding_shares": 799999981.0,
-        "high_52": 1.63,
-        "low_52": 1.61,
-        "eps": -0.0017,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:53",
-        "status": "Suspended"
-    },
-    "ACE": {
-        "symbol": "ACE",
-        "pe_ratio": -5.68,
-        "market_cap": 430934400.0,
-        "outstanding_shares": 344747520.0,
-        "high_52": 1.6,
-        "low_52": 1.16,
-        "eps": -0.22,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:53",
-        "status": "Open"
-    },
-    "ABS": {
-        "symbol": "ABS",
-        "pe_ratio": -0.54,
-        "market_cap": 2402594456.37,
-        "outstanding_shares": 899848111.0,
-        "high_52": 4.92,
-        "low_52": 2.5,
-        "eps": -4.88,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:53",
-        "status": "Open"
-    },
-    "ABG": {
-        "symbol": "ABG",
-        "pe_ratio": null,
-        "market_cap": 6150000000.0,
-        "outstanding_shares": 300000000.0,
-        "high_52": 39.3,
-        "low_52": 14.0,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:53",
-        "status": "Open"
-    },
     "AC": {
         "symbol": "AC",
-        "pe_ratio": 4.52,
-        "market_cap": 276705347342.0,
+        "pe_ratio": 4.42,
+        "market_cap": 266158282533.0,
         "outstanding_shares": 620415577.0,
         "high_52": 618.0,
         "low_52": 401.0,
@@ -257,25 +93,25 @@
                 "pay_date": "May 29, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:51:53",
+        "last_updated": "2026-05-19 12:45:31",
         "status": "Open"
     },
-    "AB": {
-        "symbol": "AB",
-        "pe_ratio": 200.0,
-        "market_cap": 5090000000.0,
-        "outstanding_shares": 2545000000.0,
-        "high_52": 4.6,
-        "low_52": 1.81,
-        "eps": 0.01,
+    "ACE": {
+        "symbol": "ACE",
+        "pe_ratio": -5.68,
+        "market_cap": 430934400.0,
+        "outstanding_shares": 344747520.0,
+        "high_52": 1.5,
+        "low_52": 1.16,
+        "eps": -0.22,
         "div_history": [],
-        "last_updated": "2026-05-18 13:51:53",
+        "last_updated": "2026-05-19 12:45:31",
         "status": "Open"
     },
     "ABA": {
         "symbol": "ABA",
         "pe_ratio": 1.35,
-        "market_cap": 1486494048.6,
+        "market_cap": 1463971411.5,
         "outstanding_shares": 4504527420.0,
         "high_52": 0.82,
         "low_52": 0.26,
@@ -294,12 +130,176 @@
                 "pay_date": "N/A"
             }
         ],
-        "last_updated": "2026-05-18 13:51:53",
+        "last_updated": "2026-05-19 12:45:31",
+        "status": "Open"
+    },
+    "ACEN": {
+        "symbol": "ACEN",
+        "pe_ratio": 65.0,
+        "market_cap": 125847020451.6,
+        "outstanding_shares": 39951435064.0,
+        "high_52": 3.53,
+        "low_52": 2.13,
+        "eps": 0.05,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.05,
+                "ex_date": "May 27, 2026",
+                "pay_date": "Jun 18, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "May 15, 2026",
+                "pay_date": "Jun 1, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "May 15, 2026",
+                "pay_date": "Jun 1, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "Feb 13, 2026",
+                "pay_date": "Mar 2, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "Feb 13, 2026",
+                "pay_date": "Mar 2, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "Nov 19, 2025",
+                "pay_date": "Dec 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "Nov 19, 2025",
+                "pay_date": "Dec 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "Aug 18, 2025",
+                "pay_date": "Sep 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "Aug 18, 2025",
+                "pay_date": "Sep 1, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.05,
+                "ex_date": "Jun 19, 2025",
+                "pay_date": "Jul 3, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 20.0,
+                "ex_date": "May 16, 2025",
+                "pay_date": "Jun 2, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 17.8325,
+                "ex_date": "May 16, 2025",
+                "pay_date": "Jun 2, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:31",
+        "status": "Open"
+    },
+    "ABG": {
+        "symbol": "ABG",
+        "pe_ratio": null,
+        "market_cap": 6300000000.0,
+        "outstanding_shares": 300000000.0,
+        "high_52": 39.3,
+        "low_52": 14.0,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:31",
+        "status": "Open"
+    },
+    "AB": {
+        "symbol": "AB",
+        "pe_ratio": 206.0,
+        "market_cap": 5090000000.0,
+        "outstanding_shares": 2545000000.0,
+        "high_52": 4.6,
+        "low_52": 1.81,
+        "eps": 0.01,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:31",
+        "status": "Open"
+    },
+    "ABS": {
+        "symbol": "ABS",
+        "pe_ratio": -0.53,
+        "market_cap": 2375599013.04,
+        "outstanding_shares": 899848111.0,
+        "high_52": 4.85,
+        "low_52": 2.5,
+        "eps": -4.88,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:31",
+        "status": "Open"
+    },
+    "ACR": {
+        "symbol": "ACR",
+        "pe_ratio": 6.08,
+        "market_cap": 4907370000.0,
+        "outstanding_shares": 6291500000.0,
+        "high_52": 0.95,
+        "low_52": 0.4,
+        "eps": 0.13,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.02,
+                "ex_date": "Jun 27, 2025",
+                "pay_date": "Jul 16, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:31",
+        "status": "Open"
+    },
+    "AAA": {
+        "symbol": "AAA",
+        "pe_ratio": null,
+        "market_cap": 1303999969.03,
+        "outstanding_shares": 799999981.0,
+        "high_52": 1.63,
+        "low_52": 1.61,
+        "eps": -0.0017,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:31",
+        "status": "Suspended"
+    },
+    "ABSP": {
+        "symbol": "ABSP",
+        "pe_ratio": null,
+        "market_cap": 213172967.7,
+        "outstanding_shares": 92282670.0,
+        "high_52": 4.84,
+        "low_52": 2.3,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:31",
         "status": "Open"
     },
     "AEV": {
         "symbol": "AEV",
-        "pe_ratio": 9.09,
+        "pe_ratio": 9.17,
         "market_cap": 166584151710.0,
         "outstanding_shares": 5552805057.0,
         "high_52": 37.0,
@@ -319,7 +319,7 @@
                 "pay_date": "Mar 27, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:51:56",
+        "last_updated": "2026-05-19 12:45:33",
         "status": "Open"
     },
     "ALCO": {
@@ -368,13 +368,50 @@
                 "pay_date": "Jun 3, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:51:56",
+        "last_updated": "2026-05-19 12:45:33",
+        "status": "Open"
+    },
+    "ALLDY": {
+        "symbol": "ALLDY",
+        "pe_ratio": 3.2,
+        "market_cap": 731428640.0,
+        "outstanding_shares": 22857145000.0,
+        "high_52": 0.105,
+        "low_52": 0.03,
+        "eps": 0.01,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:33",
+        "status": "Open"
+    },
+    "ALHI": {
+        "symbol": "ALHI",
+        "pe_ratio": 16.07,
+        "market_cap": 4680004500.0,
+        "outstanding_shares": 1040001000.0,
+        "high_52": 4.91,
+        "low_52": 3.01,
+        "eps": 0.28,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.04,
+                "ex_date": "Jun 04, 2026",
+                "pay_date": "Jul 1, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.04,
+                "ex_date": "Jun 05, 2025",
+                "pay_date": "Jul 3, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:33",
         "status": "Open"
     },
     "AGI": {
         "symbol": "AGI",
-        "pe_ratio": 3.7,
-        "market_cap": 76194839691.25,
+        "pe_ratio": 3.61,
+        "market_cap": 77326877309.52,
         "outstanding_shares": 8707981679.0,
         "high_52": 10.32,
         "low_52": 6.2,
@@ -387,25 +424,38 @@
                 "pay_date": "Jan 16, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:51:56",
+        "last_updated": "2026-05-19 12:45:33",
         "status": "Open"
     },
-    "ALLHC": {
-        "symbol": "ALLHC",
-        "pe_ratio": 37.67,
-        "market_cap": 7183814865.18,
-        "outstanding_shares": 6301591987.0,
-        "high_52": 1.57,
-        "low_52": 1.09,
+    "ALTER": {
+        "symbol": "ALTER",
+        "pe_ratio": 27.67,
+        "market_cap": 3265087598.4,
+        "outstanding_shares": 3933840480.0,
+        "high_52": 1.15,
+        "low_52": 0.71,
         "eps": 0.03,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:56",
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.55,
+                "ex_date": "Dec 16, 2025",
+                "pay_date": "Dec 18, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.01,
+                "ex_date": "Aug 13, 2025",
+                "pay_date": "Sep 11, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:34",
         "status": "Open"
     },
     "ALI": {
         "symbol": "ALI",
-        "pe_ratio": 5.64,
-        "market_cap": 220061731961.22,
+        "pe_ratio": 5.46,
+        "market_cap": 217772403150.18,
         "outstanding_shares": 14308305069.0,
         "high_52": 30.05,
         "low_52": 15.02,
@@ -430,15 +480,39 @@
                 "pay_date": "Nov 26, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:51:56",
+        "last_updated": "2026-05-19 12:45:33",
+        "status": "Open"
+    },
+    "ALLHC": {
+        "symbol": "ALLHC",
+        "pe_ratio": 38.0,
+        "market_cap": 7120798945.31,
+        "outstanding_shares": 6301591987.0,
+        "high_52": 1.57,
+        "low_52": 1.09,
+        "eps": 0.03,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:34",
+        "status": "Open"
+    },
+    "ANI": {
+        "symbol": "ANI",
+        "pe_ratio": -2.08,
+        "market_cap": 532712381.76,
+        "outstanding_shares": 1024446888.0,
+        "high_52": 0.59,
+        "low_52": 0.395,
+        "eps": -0.25,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:34",
         "status": "Open"
     },
     "ANS": {
         "symbol": "ANS",
-        "pe_ratio": 3.61,
-        "market_cap": 39150000000.0,
+        "pe_ratio": 3.6,
+        "market_cap": 40050000000.0,
         "outstanding_shares": 2500000000.0,
-        "high_52": 16.0,
+        "high_52": 16.02,
         "low_52": 12.02,
         "eps": 4.44,
         "div_history": [
@@ -455,75 +529,7 @@
                 "pay_date": "Oct 15, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:51:56",
-        "status": "Open"
-    },
-    "ALTER": {
-        "symbol": "ALTER",
-        "pe_ratio": 27.67,
-        "market_cap": 3383102812.8,
-        "outstanding_shares": 3933840480.0,
-        "high_52": 1.15,
-        "low_52": 0.71,
-        "eps": 0.03,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.55,
-                "ex_date": "Dec 16, 2025",
-                "pay_date": "Dec 18, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.01,
-                "ex_date": "Aug 13, 2025",
-                "pay_date": "Sep 11, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:51:56",
-        "status": "Open"
-    },
-    "ALLDY": {
-        "symbol": "ALLDY",
-        "pe_ratio": 3.2,
-        "market_cap": 754285785.0,
-        "outstanding_shares": 22857145000.0,
-        "high_52": 0.107,
-        "low_52": 0.03,
-        "eps": 0.01,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:56",
-        "status": "Open"
-    },
-    "ALHI": {
-        "symbol": "ALHI",
-        "pe_ratio": 16.07,
-        "market_cap": 4680004500.0,
-        "outstanding_shares": 1040001000.0,
-        "high_52": 4.91,
-        "low_52": 3.01,
-        "eps": 0.28,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.04,
-                "ex_date": "Jun 05, 2025",
-                "pay_date": "Jul 3, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:51:56",
-        "status": "Open"
-    },
-    "ANI": {
-        "symbol": "ANI",
-        "pe_ratio": -2.08,
-        "market_cap": 542956850.64,
-        "outstanding_shares": 1024446888.0,
-        "high_52": 0.59,
-        "low_52": 0.395,
-        "eps": -0.25,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:56",
+        "last_updated": "2026-05-19 12:45:34",
         "status": "Open"
     },
     "APC": {
@@ -535,7 +541,112 @@
         "low_52": 0.09,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:51:58",
+        "last_updated": "2026-05-19 12:45:36",
+        "status": "Open"
+    },
+    "APO": {
+        "symbol": "APO",
+        "pe_ratio": -23.5,
+        "market_cap": 3093401614.14,
+        "outstanding_shares": 3003302538.0,
+        "high_52": 1.15,
+        "low_52": 0.36,
+        "eps": -0.04,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:36",
+        "status": "Open"
+    },
+    "AP": {
+        "symbol": "AP",
+        "pe_ratio": 16.22,
+        "market_cap": 315616418646.6,
+        "outstanding_shares": 7205854307.0,
+        "high_52": 48.0,
+        "low_52": 35.0,
+        "eps": 2.7,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.93,
+                "ex_date": "Mar 18, 2026",
+                "pay_date": "Mar 27, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 1.35,
+                "ex_date": "Mar 18, 2026",
+                "pay_date": "Mar 27, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:36",
+        "status": "Open"
+    },
+    "APVI": {
+        "symbol": "APVI",
+        "pe_ratio": 7.05,
+        "market_cap": 1100000000.0,
+        "outstanding_shares": 100000000.0,
+        "high_52": 12.0,
+        "low_52": 8.26,
+        "eps": 1.56,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 1.3,
+                "ex_date": "May 25, 2026",
+                "pay_date": "Jun 8, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:36",
+        "status": "Open"
+    },
+    "ARA": {
+        "symbol": "ARA",
+        "pe_ratio": 5.5,
+        "market_cap": 536631581.75,
+        "outstanding_shares": 1951387570.0,
+        "high_52": 0.58,
+        "low_52": 0.275,
+        "eps": 0.05,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:36",
+        "status": "Open"
+    },
+    "AR": {
+        "symbol": "AR",
+        "pe_ratio": null,
+        "market_cap": 916755087.32,
+        "outstanding_shares": 199294584200.0,
+        "high_52": 0.0,
+        "low_52": 0.0,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:36",
+        "status": "Suspended"
+    },
+    "APX": {
+        "symbol": "APX",
+        "pe_ratio": 12.06,
+        "market_cap": 100891777354.2,
+        "outstanding_shares": 6227887491.0,
+        "high_52": 18.46,
+        "low_52": 5.69,
+        "eps": 1.35,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.36918,
+                "ex_date": "Apr 14, 2026",
+                "pay_date": "Apr 27, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.24612,
+                "ex_date": "Apr 14, 2026",
+                "pay_date": "Apr 27, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:36",
         "status": "Open"
     },
     "APL": {
@@ -547,12 +658,55 @@
         "low_52": 0.0045,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:51:58",
+        "last_updated": "2026-05-19 12:45:36",
+        "status": "Open"
+    },
+    "AREIT": {
+        "symbol": "AREIT",
+        "pe_ratio": 14.27,
+        "market_cap": 146772368399.0,
+        "outstanding_shares": 3715756162.0,
+        "high_52": 45.5,
+        "low_52": 37.6,
+        "eps": 2.75,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.62,
+                "ex_date": "May 26, 2026",
+                "pay_date": "Jun 11, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.62,
+                "ex_date": "Mar 04, 2026",
+                "pay_date": "Mar 19, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.62,
+                "ex_date": "Nov 25, 2025",
+                "pay_date": "Dec 12, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.59,
+                "ex_date": "Aug 28, 2025",
+                "pay_date": "Sep 12, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.58,
+                "ex_date": "May 26, 2025",
+                "pay_date": "Jun 11, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:36",
         "status": "Open"
     },
     "ASLAG": {
         "symbol": "ASLAG",
-        "pe_ratio": 3.27,
+        "pe_ratio": 3.18,
         "market_cap": 1620000000.0,
         "outstanding_shares": 1500000000.0,
         "high_52": 1.29,
@@ -596,204 +750,19 @@
                 "pay_date": "Dec 12, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:51:58",
+        "last_updated": "2026-05-19 12:45:36",
         "status": "Open"
     },
-    "AP": {
-        "symbol": "AP",
-        "pe_ratio": 16.22,
-        "market_cap": 317057589508.0,
-        "outstanding_shares": 7205854307.0,
-        "high_52": 48.0,
-        "low_52": 35.0,
-        "eps": 2.7,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.93,
-                "ex_date": "Mar 18, 2026",
-                "pay_date": "Mar 27, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 1.35,
-                "ex_date": "Mar 18, 2026",
-                "pay_date": "Mar 27, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:51:58",
-        "status": "Open"
-    },
-    "APO": {
-        "symbol": "APO",
-        "pe_ratio": -25.75,
-        "market_cap": 3153467664.9,
-        "outstanding_shares": 3003302538.0,
-        "high_52": 1.15,
-        "low_52": 0.36,
-        "eps": -0.04,
+    "AT": {
+        "symbol": "AT",
+        "pe_ratio": -152.83,
+        "market_cap": 32747701520.8,
+        "outstanding_shares": 3559532774.0,
+        "high_52": 10.4,
+        "low_52": 3.49,
+        "eps": -0.06,
         "div_history": [],
-        "last_updated": "2026-05-18 13:51:58",
-        "status": "Open"
-    },
-    "APVI": {
-        "symbol": "APVI",
-        "pe_ratio": 7.05,
-        "market_cap": 1098000000.0,
-        "outstanding_shares": 100000000.0,
-        "high_52": 12.0,
-        "low_52": 8.26,
-        "eps": 1.56,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 1.3,
-                "ex_date": "May 25, 2026",
-                "pay_date": "Jun 8, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:51:58",
-        "status": "Open"
-    },
-    "AREIT": {
-        "symbol": "AREIT",
-        "pe_ratio": 14.36,
-        "market_cap": 142499248812.7,
-        "outstanding_shares": 3715756162.0,
-        "high_52": 45.5,
-        "low_52": 37.6,
-        "eps": 2.75,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.62,
-                "ex_date": "May 26, 2026",
-                "pay_date": "Jun 11, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.62,
-                "ex_date": "Mar 04, 2026",
-                "pay_date": "Mar 19, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.62,
-                "ex_date": "Nov 25, 2025",
-                "pay_date": "Dec 12, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.59,
-                "ex_date": "Aug 28, 2025",
-                "pay_date": "Sep 12, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.58,
-                "ex_date": "May 26, 2025",
-                "pay_date": "Jun 11, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:51:58",
-        "status": "Open"
-    },
-    "APX": {
-        "symbol": "APX",
-        "pe_ratio": 12.0,
-        "market_cap": 104628509848.8,
-        "outstanding_shares": 6227887491.0,
-        "high_52": 18.46,
-        "low_52": 5.69,
-        "eps": 1.35,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.36918,
-                "ex_date": "Apr 14, 2026",
-                "pay_date": "Apr 27, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.24612,
-                "ex_date": "Apr 14, 2026",
-                "pay_date": "Apr 27, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:51:58",
-        "status": "Open"
-    },
-    "ARA": {
-        "symbol": "ARA",
-        "pe_ratio": 5.5,
-        "market_cap": 556145457.45,
-        "outstanding_shares": 1951387570.0,
-        "high_52": 0.58,
-        "low_52": 0.28,
-        "eps": 0.05,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:58",
-        "status": "Open"
-    },
-    "AR": {
-        "symbol": "AR",
-        "pe_ratio": null,
-        "market_cap": 916755087.32,
-        "outstanding_shares": 199294584200.0,
-        "high_52": 0.0,
-        "low_52": 0.0,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:51:58",
-        "status": "Suspended"
-    },
-    "ATI": {
-        "symbol": "ATI",
-        "pe_ratio": 12.83,
-        "market_cap": null,
-        "outstanding_shares": null,
-        "high_52": null,
-        "low_52": null,
-        "eps": 2.26,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:01",
-        "status": ""
-    },
-    "ATN": {
-        "symbol": "ATN",
-        "pe_ratio": null,
-        "market_cap": 1670398003.04,
-        "outstanding_shares": 4025055429.0,
-        "high_52": 0.54,
-        "low_52": 0.4,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:01",
-        "status": "Open"
-    },
-    "AXLM": {
-        "symbol": "AXLM",
-        "pe_ratio": 12.5,
-        "market_cap": 10749487565.0,
-        "outstanding_shares": 3798405500.0,
-        "high_52": 2.84,
-        "low_52": 1.65,
-        "eps": 0.22,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.063775,
-                "ex_date": "May 07, 2026",
-                "pay_date": "May 21, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.0515,
-                "ex_date": "May 07, 2025",
-                "pay_date": "May 21, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:01",
+        "last_updated": "2026-05-19 12:45:38",
         "status": "Open"
     },
     "BALAI": {
@@ -812,25 +781,49 @@
                 "pay_date": "Jul 10, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:02",
+        "last_updated": "2026-05-19 12:45:38",
         "status": "Open"
     },
-    "AT": {
-        "symbol": "AT",
-        "pe_ratio": -153.33,
-        "market_cap": 34349491269.1,
-        "outstanding_shares": 3559532774.0,
-        "high_52": 10.4,
-        "low_52": 3.49,
-        "eps": -0.06,
+    "ATI": {
+        "symbol": "ATI",
+        "pe_ratio": 12.83,
+        "market_cap": null,
+        "outstanding_shares": null,
+        "high_52": null,
+        "low_52": null,
+        "eps": 2.26,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:01",
+        "last_updated": "2026-05-19 12:45:38",
+        "status": ""
+    },
+    "BCOR": {
+        "symbol": "BCOR",
+        "pe_ratio": null,
+        "market_cap": 29086580643.1,
+        "outstanding_shares": 4341280693.0,
+        "high_52": 9.6,
+        "low_52": 4.8,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:38",
+        "status": "Open"
+    },
+    "ATN": {
+        "symbol": "ATN",
+        "pe_ratio": null,
+        "market_cap": 1670398003.04,
+        "outstanding_shares": 4025055429.0,
+        "high_52": 0.54,
+        "low_52": 0.4,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:38",
         "status": "Open"
     },
     "BC": {
         "symbol": "BC",
         "pe_ratio": 6.24,
-        "market_cap": 2921100350.8,
+        "market_cap": 2839481370.41,
         "outstanding_shares": 429573581.0,
         "high_52": 7.25,
         "low_52": 3.9,
@@ -855,25 +848,38 @@
                 "pay_date": "May 13, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:02",
+        "last_updated": "2026-05-19 12:45:38",
         "status": "Open"
     },
-    "BCOR": {
-        "symbol": "BCOR",
-        "pe_ratio": null,
-        "market_cap": 29086580643.1,
-        "outstanding_shares": 4341280693.0,
-        "high_52": 9.6,
-        "low_52": 4.8,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:02",
+    "AXLM": {
+        "symbol": "AXLM",
+        "pe_ratio": 12.27,
+        "market_cap": 10445615125.0,
+        "outstanding_shares": 3798405500.0,
+        "high_52": 2.84,
+        "low_52": 1.65,
+        "eps": 0.22,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.063775,
+                "ex_date": "May 07, 2026",
+                "pay_date": "May 21, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.0515,
+                "ex_date": "May 07, 2025",
+                "pay_date": "May 21, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:38",
         "status": "Open"
     },
     "AUB": {
         "symbol": "AUB",
-        "pe_ratio": 5.05,
-        "market_cap": 63187431006.0,
+        "pe_ratio": 5.07,
+        "market_cap": 64206583119.0,
         "outstanding_shares": 1455931590.0,
         "high_52": 95.0,
         "low_52": 36.15,
@@ -892,13 +898,13 @@
                 "pay_date": "Aug 22, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:01",
+        "last_updated": "2026-05-19 12:45:38",
         "status": "Open"
     },
     "BDO": {
         "symbol": "BDO",
         "pe_ratio": 7.06,
-        "market_cap": 626854789180.0,
+        "market_cap": 613517453240.0,
         "outstanding_shares": 5334934376.0,
         "high_52": 165.2,
         "low_52": 110.2,
@@ -929,13 +935,13 @@
                 "pay_date": "Jun 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:02",
+        "last_updated": "2026-05-19 12:45:38",
         "status": "Open"
     },
     "BEL": {
         "symbol": "BEL",
-        "pe_ratio": 6.5,
-        "market_cap": 12964368229.07,
+        "pe_ratio": 6.4,
+        "market_cap": 12865403586.1,
         "outstanding_shares": 9896464297.0,
         "high_52": 1.97,
         "low_52": 1.2,
@@ -948,37 +954,37 @@
                 "pay_date": "Mar 27, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:03",
-        "status": "Open"
-    },
-    "BH": {
-        "symbol": "BH",
-        "pe_ratio": 1478.26,
-        "market_cap": 339991160.0,
-        "outstanding_shares": 499987.0,
-        "high_52": 680.0,
-        "low_52": 680.0,
-        "eps": 0.46,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:03",
+        "last_updated": "2026-05-19 12:45:38",
         "status": "Open"
     },
     "BHI": {
         "symbol": "BHI",
         "pe_ratio": null,
-        "market_cap": 475200000.0,
+        "market_cap": 489600000.0,
         "outstanding_shares": 14400000000.0,
         "high_52": 0.065,
         "low_52": 0.032,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:03",
+        "last_updated": "2026-05-19 12:45:40",
+        "status": "Open"
+    },
+    "BLOOM": {
+        "symbol": "BLOOM",
+        "pe_ratio": -6.96,
+        "market_cap": 21037958538.81,
+        "outstanding_shares": 11496152207.0,
+        "high_52": 6.53,
+        "low_52": 1.77,
+        "eps": -0.25,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:40",
         "status": "Open"
     },
     "BKR": {
         "symbol": "BKR",
-        "pe_ratio": 11.2,
-        "market_cap": 886514920.0,
+        "pe_ratio": 11.4,
+        "market_cap": 855945440.0,
         "outstanding_shares": 1528474000.0,
         "high_52": 1.18,
         "low_52": 0.53,
@@ -991,37 +997,13 @@
                 "pay_date": "TBA"
             }
         ],
-        "last_updated": "2026-05-18 13:52:04",
+        "last_updated": "2026-05-19 12:45:40",
         "status": "Open"
-    },
-    "BLOOM": {
-        "symbol": "BLOOM",
-        "pe_ratio": -7.32,
-        "market_cap": 21382843105.02,
-        "outstanding_shares": 11496152207.0,
-        "high_52": 6.53,
-        "low_52": 1.85,
-        "eps": -0.25,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:04",
-        "status": "Open"
-    },
-    "BMM": {
-        "symbol": "BMM",
-        "pe_ratio": null,
-        "market_cap": 312000000.0,
-        "outstanding_shares": 6000000.0,
-        "high_52": 52.0,
-        "low_52": 52.0,
-        "eps": -5.66,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:04",
-        "status": "Suspended"
     },
     "BNCOM": {
         "symbol": "BNCOM",
-        "pe_ratio": 4.77,
-        "market_cap": 15573454512.0,
+        "pe_ratio": 4.74,
+        "market_cap": 15517333955.2,
         "outstanding_shares": 1403013920.0,
         "high_52": 11.94,
         "low_52": 6.81,
@@ -1040,13 +1022,25 @@
                 "pay_date": "Jul 15, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:04",
+        "last_updated": "2026-05-19 12:45:40",
+        "status": "Open"
+    },
+    "BH": {
+        "symbol": "BH",
+        "pe_ratio": 1478.26,
+        "market_cap": 339991160.0,
+        "outstanding_shares": 499987.0,
+        "high_52": 680.0,
+        "low_52": 680.0,
+        "eps": 0.46,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:40",
         "status": "Open"
     },
     "BPI": {
         "symbol": "BPI",
-        "pe_ratio": 7.08,
-        "market_cap": 477420176315.55,
+        "pe_ratio": 7.02,
+        "market_cap": 471871851078.9,
         "outstanding_shares": 5284119273.0,
         "high_52": 142.0,
         "low_52": 87.0,
@@ -1065,12 +1059,24 @@
                 "pay_date": "Jun 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:05",
+        "last_updated": "2026-05-19 12:45:41",
+        "status": "Open"
+    },
+    "BSC": {
+        "symbol": "BSC",
+        "pe_ratio": null,
+        "market_cap": 1745568524.62,
+        "outstanding_shares": 14668643064.0,
+        "high_52": 0.17,
+        "low_52": 0.107,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:41",
         "status": "Open"
     },
     "BRN": {
         "symbol": "BRN",
-        "pe_ratio": 2.61,
+        "pe_ratio": 2.57,
         "market_cap": 1669851640.0,
         "outstanding_shares": 2287468000.0,
         "high_52": 1.07,
@@ -1222,20 +1228,20 @@
                 "pay_date": "May 23, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:05",
+        "last_updated": "2026-05-19 12:45:41",
         "status": "Open"
     },
-    "BSC": {
-        "symbol": "BSC",
+    "BMM": {
+        "symbol": "BMM",
         "pe_ratio": null,
-        "market_cap": 1730899881.55,
-        "outstanding_shares": 14668643064.0,
-        "high_52": 0.17,
-        "low_52": 0.107,
-        "eps": 0.0,
+        "market_cap": 312000000.0,
+        "outstanding_shares": 6000000.0,
+        "high_52": 52.0,
+        "low_52": 52.0,
+        "eps": -5.66,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:05",
-        "status": "Open"
+        "last_updated": "2026-05-19 12:45:40",
+        "status": "Suspended"
     },
     "C": {
         "symbol": "C",
@@ -1246,12 +1252,12 @@
         "low_52": 0.75,
         "eps": 0.02,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:05",
+        "last_updated": "2026-05-19 12:45:41",
         "status": "Open"
     },
     "CA": {
         "symbol": "CA",
-        "pe_ratio": 28.84,
+        "pe_ratio": 28.9,
         "market_cap": 1127070209.55,
         "outstanding_shares": 22077771.0,
         "high_52": 65.0,
@@ -1265,12 +1271,12 @@
                 "pay_date": "Apr 27, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:05",
+        "last_updated": "2026-05-19 12:45:43",
         "status": "Open"
     },
     "CAT": {
         "symbol": "CAT",
-        "pe_ratio": 4.76,
+        "pe_ratio": 4.74,
         "market_cap": 2394508273.6,
         "outstanding_shares": 238496840.0,
         "high_52": 16.02,
@@ -1284,32 +1290,13 @@
                 "pay_date": "Mar 31, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:06",
-        "status": "Open"
-    },
-    "CDC": {
-        "symbol": "CDC",
-        "pe_ratio": 4.31,
-        "market_cap": 2836604615.25,
-        "outstanding_shares": 4976499325.0,
-        "high_52": 0.68,
-        "low_52": 0.5,
-        "eps": 0.13,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.0375,
-                "ex_date": "May 23, 2025",
-                "pay_date": "Jun 11, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:06",
+        "last_updated": "2026-05-19 12:45:43",
         "status": "Open"
     },
     "CEB": {
         "symbol": "CEB",
-        "pe_ratio": 1.66,
-        "market_cap": 18198501344.1,
+        "pe_ratio": 1.56,
+        "market_cap": 19332078027.15,
         "outstanding_shares": 612744153.0,
         "high_52": 38.65,
         "low_52": 28.55,
@@ -1322,15 +1309,15 @@
                 "pay_date": "Oct 1, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:06",
+        "last_updated": "2026-05-19 12:45:43",
         "status": "Open"
     },
     "CBC": {
         "symbol": "CBC",
-        "pe_ratio": 5.31,
-        "market_cap": 147485597057.6,
+        "pe_ratio": 5.33,
+        "market_cap": 148562134262.4,
         "outstanding_shares": 2691343012.0,
-        "high_52": 84.0,
+        "high_52": 82.45,
         "low_52": 46.65,
         "eps": 10.4,
         "div_history": [
@@ -1359,25 +1346,32 @@
                 "pay_date": "May 22, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:06",
+        "last_updated": "2026-05-19 12:45:43",
         "status": "Open"
     },
-    "CEI": {
-        "symbol": "CEI",
-        "pe_ratio": null,
-        "market_cap": 1301519995.65,
-        "outstanding_shares": 14959999950.0,
-        "high_52": 0.089,
-        "low_52": 0.052,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:07",
+    "CDC": {
+        "symbol": "CDC",
+        "pe_ratio": 4.31,
+        "market_cap": 2786839622.0,
+        "outstanding_shares": 4976499325.0,
+        "high_52": 0.68,
+        "low_52": 0.5,
+        "eps": 0.13,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.0375,
+                "ex_date": "May 23, 2025",
+                "pay_date": "Jun 11, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:43",
         "status": "Open"
     },
     "CEU": {
         "symbol": "CEU",
         "pe_ratio": 11.11,
-        "market_cap": 7570440651.62,
+        "market_cap": 7597254491.0,
         "outstanding_shares": 446897323.0,
         "high_52": 19.4,
         "low_52": 13.86,
@@ -1390,25 +1384,13 @@
                 "pay_date": "Aug 4, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:07",
-        "status": "Open"
-    },
-    "CHP": {
-        "symbol": "CHP",
-        "pe_ratio": -2.83,
-        "market_cap": 11465842629.55,
-        "outstanding_shares": 13489226623.0,
-        "high_52": 1.4,
-        "low_52": 0.81,
-        "eps": -0.3,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:07",
+        "last_updated": "2026-05-19 12:45:43",
         "status": "Open"
     },
     "CIC": {
         "symbol": "CIC",
         "pe_ratio": 6.54,
-        "market_cap": 5101781228.64,
+        "market_cap": 5125400586.18,
         "outstanding_shares": 393655959.0,
         "high_52": 15.5,
         "low_52": 12.44,
@@ -1421,13 +1403,37 @@
                 "pay_date": "Apr 22, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:07",
+        "last_updated": "2026-05-19 12:45:43",
+        "status": "Open"
+    },
+    "CEI": {
+        "symbol": "CEI",
+        "pe_ratio": null,
+        "market_cap": 1271599995.75,
+        "outstanding_shares": 14959999950.0,
+        "high_52": 0.089,
+        "low_52": 0.052,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:43",
+        "status": "Open"
+    },
+    "CHP": {
+        "symbol": "CHP",
+        "pe_ratio": -2.77,
+        "market_cap": 11465842629.55,
+        "outstanding_shares": 13489226623.0,
+        "high_52": 1.4,
+        "low_52": 0.81,
+        "eps": -0.3,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:43",
         "status": "Open"
     },
     "CLI": {
         "symbol": "CLI",
-        "pe_ratio": 2.9,
-        "market_cap": 7900659344.76,
+        "pe_ratio": 2.88,
+        "market_cap": 7831355315.42,
         "outstanding_shares": 3465201467.0,
         "high_52": 2.6,
         "low_52": 2.15,
@@ -1512,13 +1518,13 @@
                 "pay_date": "Jul 12, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:07",
+        "last_updated": "2026-05-19 12:45:43",
         "status": "Open"
     },
     "CNPF": {
         "symbol": "CNPF",
-        "pe_ratio": 14.57,
-        "market_cap": 105382193201.25,
+        "pe_ratio": 14.9,
+        "market_cap": 102725499255.0,
         "outstanding_shares": 3542258595.0,
         "high_52": 41.85,
         "low_52": 27.3,
@@ -1537,43 +1543,49 @@
                 "pay_date": "Aug 15, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:08",
+        "last_updated": "2026-05-19 12:45:45",
         "status": "Open"
     },
-    "CNVRG": {
-        "symbol": "CNVRG",
-        "pe_ratio": 6.88,
-        "market_cap": 82986215499.06,
-        "outstanding_shares": 7241380061.0,
-        "high_52": 21.4,
-        "low_52": 10.7,
-        "eps": 1.63,
+    "COL": {
+        "symbol": "COL",
+        "pe_ratio": 14.78,
+        "market_cap": 7972999997.32,
+        "outstanding_shares": 5949999998.0,
+        "high_52": 1.6,
+        "low_52": 1.2,
+        "eps": 0.09,
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 0.49,
-                "ex_date": "Mar 19, 2026",
-                "pay_date": "Apr 1, 2026"
+                "amount": 0.0387,
+                "ex_date": "May 14, 2026",
+                "pay_date": "Jun 4, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.0194,
+                "ex_date": "May 14, 2026",
+                "pay_date": "Jun 4, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.0393,
+                "ex_date": "May 15, 2025",
+                "pay_date": "Jun 4, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.0157,
+                "ex_date": "May 15, 2025",
+                "pay_date": "Jun 4, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:08",
+        "last_updated": "2026-05-19 12:45:45",
         "status": "Open"
-    },
-    "COAL": {
-        "symbol": "COAL",
-        "pe_ratio": 0.7,
-        "market_cap": 1120000001.12,
-        "outstanding_shares": 40000000040.0,
-        "high_52": 0.143,
-        "low_52": 0.012,
-        "eps": 0.04,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:08",
-        "status": "Suspended"
     },
     "COSCO": {
         "symbol": "COSCO",
-        "pe_ratio": 5.2,
+        "pe_ratio": 5.3,
         "market_cap": 50120510854.32,
         "outstanding_shares": 7029524664.0,
         "high_52": 7.9,
@@ -1605,44 +1617,50 @@
                 "pay_date": "Jun 4, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:08",
+        "last_updated": "2026-05-19 12:45:45",
         "status": "Open"
     },
-    "COL": {
-        "symbol": "COL",
-        "pe_ratio": 14.89,
-        "market_cap": 7734999997.4,
-        "outstanding_shares": 5949999998.0,
-        "high_52": 1.6,
-        "low_52": 1.2,
-        "eps": 0.09,
+    "CNVRG": {
+        "symbol": "CNVRG",
+        "pe_ratio": 6.9,
+        "market_cap": 81248284284.42,
+        "outstanding_shares": 7241380061.0,
+        "high_52": 21.4,
+        "low_52": 10.7,
+        "eps": 1.63,
         "div_history": [
             {
                 "type": "Cash",
-                "amount": 0.0387,
-                "ex_date": "May 14, 2026",
-                "pay_date": "Jun 4, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.0194,
-                "ex_date": "May 14, 2026",
-                "pay_date": "Jun 4, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.0393,
-                "ex_date": "May 15, 2025",
-                "pay_date": "Jun 4, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.0157,
-                "ex_date": "May 15, 2025",
-                "pay_date": "Jun 4, 2025"
+                "amount": 0.49,
+                "ex_date": "Mar 19, 2026",
+                "pay_date": "Apr 1, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:08",
+        "last_updated": "2026-05-19 12:45:45",
+        "status": "Open"
+    },
+    "COAL": {
+        "symbol": "COAL",
+        "pe_ratio": 0.7,
+        "market_cap": 1120000001.12,
+        "outstanding_shares": 40000000040.0,
+        "high_52": 0.143,
+        "low_52": 0.012,
+        "eps": 0.04,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:45",
+        "status": "Suspended"
+    },
+    "CPM": {
+        "symbol": "CPM",
+        "pe_ratio": 79.67,
+        "market_cap": 6740589775.5,
+        "outstanding_shares": 2820330450.0,
+        "high_52": 2.5,
+        "low_52": 2.2,
+        "eps": 0.03,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:45",
         "status": "Open"
     },
     "CPG": {
@@ -1709,56 +1727,25 @@
                 "pay_date": "May 22, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:09",
-        "status": "Open"
-    },
-    "CPM": {
-        "symbol": "CPM",
-        "pe_ratio": 79.67,
-        "market_cap": 6740589775.5,
-        "outstanding_shares": 2820330450.0,
-        "high_52": 2.5,
-        "low_52": 2.2,
-        "eps": 0.03,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:09",
+        "last_updated": "2026-05-19 12:45:45",
         "status": "Open"
     },
     "CREC": {
         "symbol": "CREC",
-        "pe_ratio": 65.43,
-        "market_cap": 51339289823.4,
+        "pe_ratio": 65.71,
+        "market_cap": 51116075519.82,
         "outstanding_shares": 11160715179.0,
         "high_52": 5.0,
         "low_52": 3.7,
         "eps": 0.07,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:10",
-        "status": "Open"
-    },
-    "CROWN": {
-        "symbol": "CROWN",
-        "pe_ratio": 6.56,
-        "market_cap": 1007554350.0,
-        "outstanding_shares": 610639000.0,
-        "high_52": 1.83,
-        "low_52": 1.6,
-        "eps": 0.25,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1,
-                "ex_date": "Mar 24, 2026",
-                "pay_date": "Apr 15, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:10",
+        "last_updated": "2026-05-19 12:45:45",
         "status": "Open"
     },
     "CREIT": {
         "symbol": "CREIT",
-        "pe_ratio": 16.36,
-        "market_cap": 24087270734.72,
+        "pe_ratio": 16.23,
+        "market_cap": 23563634414.4,
         "outstanding_shares": 6545454004.0,
         "high_52": 3.93,
         "low_52": 3.07,
@@ -1801,7 +1788,26 @@
                 "pay_date": "May 21, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:10",
+        "last_updated": "2026-05-19 12:45:45",
+        "status": "Open"
+    },
+    "CROWN": {
+        "symbol": "CROWN",
+        "pe_ratio": 6.72,
+        "market_cap": 1001447960.0,
+        "outstanding_shares": 610639000.0,
+        "high_52": 1.83,
+        "low_52": 1.6,
+        "eps": 0.25,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1,
+                "ex_date": "Mar 24, 2026",
+                "pay_date": "Apr 15, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:45",
         "status": "Open"
     },
     "CSB": {
@@ -1813,15 +1819,27 @@
         "low_52": 9.37,
         "eps": 0.61,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:10",
+        "last_updated": "2026-05-19 12:45:47",
         "status": "Open"
+    },
+    "CYBR": {
+        "symbol": "CYBR",
+        "pe_ratio": null,
+        "market_cap": 2246270021.49,
+        "outstanding_shares": 6806878853.0,
+        "high_52": 0.33,
+        "low_52": 0.33,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:47",
+        "status": "Suspended"
     },
     "CTS": {
         "symbol": "CTS",
         "pe_ratio": null,
         "market_cap": 2475000000.0,
         "outstanding_shares": 6875000000.0,
-        "high_52": 0.5,
+        "high_52": 0.48,
         "low_52": 0.35,
         "eps": 0.0,
         "div_history": [
@@ -1850,25 +1868,13 @@
                 "pay_date": "Jun 18, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:10",
+        "last_updated": "2026-05-19 12:45:47",
         "status": "Open"
-    },
-    "CYBR": {
-        "symbol": "CYBR",
-        "pe_ratio": null,
-        "market_cap": 2246270021.49,
-        "outstanding_shares": 6806878853.0,
-        "high_52": 0.33,
-        "low_52": 0.33,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:11",
-        "status": "Suspended"
     },
     "DD": {
         "symbol": "DD",
         "pe_ratio": 7.24,
-        "market_cap": 22770227706.0,
+        "market_cap": 22934379708.0,
         "outstanding_shares": 2345028600.0,
         "high_52": 15.16,
         "low_52": 8.61,
@@ -1899,13 +1905,49 @@
                 "pay_date": "Jul 14, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:11",
+        "last_updated": "2026-05-19 12:45:47",
+        "status": "Open"
+    },
+    "DELM": {
+        "symbol": "DELM",
+        "pe_ratio": 2.02,
+        "market_cap": 9525404117.6,
+        "outstanding_shares": 1943960024.0,
+        "high_52": 6.0,
+        "low_52": 2.68,
+        "eps": 2.51,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:48",
+        "status": "Open"
+    },
+    "DFNN": {
+        "symbol": "DFNN",
+        "pe_ratio": -0.43,
+        "market_cap": 296000000.0,
+        "outstanding_shares": 400000000.0,
+        "high_52": 2.4,
+        "low_52": 0.65,
+        "eps": -1.74,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:48",
+        "status": "Open"
+    },
+    "DHI": {
+        "symbol": "DHI",
+        "pe_ratio": 146.67,
+        "market_cap": 19397403548.64,
+        "outstanding_shares": 2162475312.0,
+        "high_52": 9.07,
+        "low_52": 1.15,
+        "eps": 0.06,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:48",
         "status": "Open"
     },
     "DDMPR": {
         "symbol": "DDMPR",
-        "pe_ratio": 4.77,
-        "market_cap": 19075387984.42,
+        "pe_ratio": 4.73,
+        "market_cap": 18718838676.3,
         "outstanding_shares": 17827465406.0,
         "high_52": 1.11,
         "low_52": 1.01,
@@ -1942,43 +1984,7 @@
                 "pay_date": "May 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:11",
-        "status": "Open"
-    },
-    "DELM": {
-        "symbol": "DELM",
-        "pe_ratio": 1.95,
-        "market_cap": 10205790126.0,
-        "outstanding_shares": 1943960024.0,
-        "high_52": 6.0,
-        "low_52": 2.68,
-        "eps": 2.51,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:11",
-        "status": "Open"
-    },
-    "DFNN": {
-        "symbol": "DFNN",
-        "pe_ratio": -0.43,
-        "market_cap": 296000000.0,
-        "outstanding_shares": 400000000.0,
-        "high_52": 2.44,
-        "low_52": 0.65,
-        "eps": -1.74,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:12",
-        "status": "Open"
-    },
-    "DHI": {
-        "symbol": "DHI",
-        "pe_ratio": 149.5,
-        "market_cap": 18337790645.76,
-        "outstanding_shares": 2162475312.0,
-        "high_52": 9.07,
-        "low_52": 1.15,
-        "eps": 0.06,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:12",
+        "last_updated": "2026-05-19 12:45:48",
         "status": "Open"
     },
     "DITO": {
@@ -1986,29 +1992,29 @@
         "pe_ratio": -1.27,
         "market_cap": 17190800000.0,
         "outstanding_shares": 21488500000.0,
-        "high_52": 1.29,
+        "high_52": 1.27,
         "low_52": 0.57,
         "eps": -0.63,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:12",
+        "last_updated": "2026-05-19 12:45:48",
         "status": "Open"
     },
     "DIZ": {
         "symbol": "DIZ",
         "pe_ratio": -116.67,
-        "market_cap": 277597079.37,
+        "market_cap": 276806204.5,
         "outstanding_shares": 79087487.0,
         "high_52": 5.8,
         "low_52": 2.36,
         "eps": -0.03,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:12",
+        "last_updated": "2026-05-19 12:45:48",
         "status": "Open"
     },
     "DMC": {
         "symbol": "DMC",
-        "pe_ratio": 8.49,
-        "market_cap": 127065387900.0,
+        "pe_ratio": 8.47,
+        "market_cap": 128525909600.0,
         "outstanding_shares": 13277470000.0,
         "high_52": 11.62,
         "low_52": 8.07,
@@ -2027,26 +2033,7 @@
                 "pay_date": "Nov 21, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:12",
-        "status": "Open"
-    },
-    "DMW": {
-        "symbol": "DMW",
-        "pe_ratio": 8.82,
-        "market_cap": 16469940885.0,
-        "outstanding_shares": 3395864100.0,
-        "high_52": 6.3,
-        "low_52": 4.6,
-        "eps": 0.55,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1,
-                "ex_date": "Apr 08, 2026",
-                "pay_date": "Apr 28, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:13",
+        "last_updated": "2026-05-19 12:45:50",
         "status": "Open"
     },
     "DNA": {
@@ -2058,7 +2045,7 @@
         "low_52": null,
         "eps": -0.1,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:13",
+        "last_updated": "2026-05-19 12:45:50",
         "status": "Active"
     },
     "DNL": {
@@ -2083,52 +2070,59 @@
                 "pay_date": "Jul 2, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:13",
+        "last_updated": "2026-05-19 12:45:50",
+        "status": "Open"
+    },
+    "DMW": {
+        "symbol": "DMW",
+        "pe_ratio": 8.55,
+        "market_cap": 16469940885.0,
+        "outstanding_shares": 3395864100.0,
+        "high_52": 6.3,
+        "low_52": 4.6,
+        "eps": 0.55,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1,
+                "ex_date": "Apr 08, 2026",
+                "pay_date": "Apr 28, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:50",
         "status": "Open"
     },
     "DWC": {
         "symbol": "DWC",
-        "pe_ratio": -1.15,
-        "market_cap": 845460000.0,
+        "pe_ratio": -1.18,
+        "market_cap": 725900000.0,
         "outstanding_shares": 854000000.0,
         "high_52": 1.21,
         "low_52": 0.82,
         "eps": -0.74,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:13",
+        "last_updated": "2026-05-19 12:45:50",
         "status": "Open"
     },
     "ECP": {
         "symbol": "ECP",
-        "pe_ratio": -21.73,
+        "pe_ratio": -21.64,
         "market_cap": 358500000.0,
         "outstanding_shares": 150000000.0,
         "high_52": 4.7,
         "low_52": 2.19,
         "eps": -0.11,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:14",
-        "status": "Open"
-    },
-    "ECVC": {
-        "symbol": "ECVC",
-        "pe_ratio": -25.5,
-        "market_cap": 1723800000.0,
-        "outstanding_shares": 6630000000.0,
-        "high_52": 0.44,
-        "low_52": 0.245,
-        "eps": -0.01,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:14",
+        "last_updated": "2026-05-19 12:45:50",
         "status": "Open"
     },
     "EEI": {
         "symbol": "EEI",
-        "pe_ratio": 1.27,
-        "market_cap": 2072562970.0,
+        "pe_ratio": 1.25,
+        "market_cap": 2103651414.55,
         "outstanding_shares": 1036281485.0,
         "high_52": 3.4,
-        "low_52": 2.0,
+        "low_52": 1.99,
         "eps": 1.6,
         "div_history": [
             {
@@ -2198,19 +2192,7 @@
                 "pay_date": "N/A"
             }
         ],
-        "last_updated": "2026-05-18 13:52:14",
-        "status": "Open"
-    },
-    "EGRN": {
-        "symbol": "EGRN",
-        "pe_ratio": null,
-        "market_cap": 775000000.0,
-        "outstanding_shares": 25000000000.0,
-        "high_52": 0.3,
-        "low_52": 0.02,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:14",
+        "last_updated": "2026-05-19 12:45:50",
         "status": "Open"
     },
     "EG": {
@@ -2222,58 +2204,63 @@
         "low_52": 0.0092,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:14",
+        "last_updated": "2026-05-19 12:45:50",
         "status": "Suspended"
+    },
+    "ECVC": {
+        "symbol": "ECVC",
+        "pe_ratio": -25.5,
+        "market_cap": 1690650000.0,
+        "outstanding_shares": 6630000000.0,
+        "high_52": 0.44,
+        "low_52": 0.245,
+        "eps": -0.01,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:50",
+        "status": "Open"
+    },
+    "EGRN": {
+        "symbol": "EGRN",
+        "pe_ratio": null,
+        "market_cap": 775000000.0,
+        "outstanding_shares": 25000000000.0,
+        "high_52": 0.25,
+        "low_52": 0.02,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:50",
+        "status": "Open"
     },
     "ELI": {
         "symbol": "ELI",
-        "pe_ratio": 2.02,
+        "pe_ratio": 2.0,
         "market_cap": 1482296115.87,
         "outstanding_shares": 14676199167.0,
         "high_52": 0.126,
         "low_52": 0.095,
         "eps": 0.05,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:15",
-        "status": "Open"
-    },
-    "EMI": {
-        "symbol": "EMI",
-        "pe_ratio": 61.2,
-        "market_cap": 240928659941.4,
-        "outstanding_shares": 15746971238.0,
-        "high_52": 16.78,
-        "low_52": 13.3,
-        "eps": 0.25,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 51.0,
-                "ex_date": "Jan 19, 2026",
-                "pay_date": "Jan 29, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:15",
+        "last_updated": "2026-05-19 12:45:52",
         "status": "Open"
     },
     "ENEX": {
         "symbol": "ENEX",
         "pe_ratio": -7.4,
-        "market_cap": 900000003.6,
+        "market_cap": 962500003.85,
         "outstanding_shares": 250000001.0,
         "high_52": 5.18,
         "low_52": 3.2,
         "eps": -0.52,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:15",
+        "last_updated": "2026-05-19 12:45:52",
         "status": "Open"
     },
     "EURO": {
         "symbol": "EURO",
-        "pe_ratio": 11.8,
-        "market_cap": 4194383350.8,
+        "pe_ratio": 10.6,
+        "market_cap": 4852325837.2,
         "outstanding_shares": 4112140540.0,
-        "high_52": 1.1,
+        "high_52": 1.46,
         "low_52": 0.72,
         "eps": 0.1,
         "div_history": [
@@ -2284,13 +2271,13 @@
                 "pay_date": "Dec 1, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:15",
+        "last_updated": "2026-05-19 12:45:52",
         "status": "Open"
     },
     "EW": {
         "symbol": "EW",
-        "pe_ratio": 3.16,
-        "market_cap": 29249680343.0,
+        "pe_ratio": 3.12,
+        "market_cap": 29159681326.56,
         "outstanding_shares": 2249975411.0,
         "high_52": 14.3,
         "low_52": 10.2,
@@ -2309,7 +2296,26 @@
                 "pay_date": "May 31, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:15",
+        "last_updated": "2026-05-19 12:45:52",
+        "status": "Open"
+    },
+    "EMI": {
+        "symbol": "EMI",
+        "pe_ratio": 61.2,
+        "market_cap": 240928659941.4,
+        "outstanding_shares": 15746971238.0,
+        "high_52": 16.78,
+        "low_52": 13.3,
+        "eps": 0.25,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 51.0,
+                "ex_date": "Jan 19, 2026",
+                "pay_date": "Jan 29, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:52",
         "status": "Open"
     },
     "FAF": {
@@ -2321,12 +2327,12 @@
         "low_52": 0.56,
         "eps": -0.56,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:16",
+        "last_updated": "2026-05-19 12:45:52",
         "status": "Open"
     },
     "FB": {
         "symbol": "FB",
-        "pe_ratio": 10.2,
+        "pe_ratio": 10.23,
         "market_cap": 307279444680.0,
         "outstanding_shares": 5909220090.0,
         "high_52": 56.15,
@@ -2376,32 +2382,13 @@
                 "pay_date": "Jun 9, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:16",
-        "status": "Open"
-    },
-    "FCG": {
-        "symbol": "FCG",
-        "pe_ratio": 4.67,
-        "market_cap": 3062334966.88,
-        "outstanding_shares": 5468455298.0,
-        "high_52": 0.72,
-        "low_52": 0.52,
-        "eps": 0.12,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.0184,
-                "ex_date": "Nov 18, 2025",
-                "pay_date": "Dec 3, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:16",
+        "last_updated": "2026-05-19 12:45:52",
         "status": "Open"
     },
     "FDC": {
         "symbol": "FDC",
         "pe_ratio": 2.67,
-        "market_cap": 39955898999.94,
+        "market_cap": 39782929740.2,
         "outstanding_shares": 8648462987.0,
         "high_52": 5.15,
         "low_52": 4.2,
@@ -2456,19 +2443,38 @@
                 "pay_date": "Jun 10, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:17",
+        "last_updated": "2026-05-19 12:45:52",
+        "status": "Open"
+    },
+    "FCG": {
+        "symbol": "FCG",
+        "pe_ratio": 4.5,
+        "market_cap": 3062334966.88,
+        "outstanding_shares": 5468455298.0,
+        "high_52": 0.71,
+        "low_52": 0.52,
+        "eps": 0.12,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.0184,
+                "ex_date": "Nov 18, 2025",
+                "pay_date": "Dec 3, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:52",
         "status": "Open"
     },
     "FERRO": {
         "symbol": "FERRO",
         "pe_ratio": null,
-        "market_cap": 984453125.76,
+        "market_cap": 868232965.08,
         "outstanding_shares": 341824002.0,
         "high_52": 9.6,
-        "low_52": 2.75,
+        "low_52": 2.54,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:17",
+        "last_updated": "2026-05-19 12:45:52",
         "status": "Open"
     },
     "FEU": {
@@ -2493,7 +2499,7 @@
                 "pay_date": "Oct 16, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:17",
+        "last_updated": "2026-05-19 12:45:54",
         "status": "Open"
     },
     "FFI": {
@@ -2505,13 +2511,13 @@
         "low_52": 7.36,
         "eps": 0.02,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:17",
+        "last_updated": "2026-05-19 12:45:54",
         "status": "Open"
     },
     "FGEN": {
         "symbol": "FGEN",
-        "pe_ratio": 161.6,
-        "market_cap": 59055769792.1,
+        "pe_ratio": 160.0,
+        "market_cap": 58120660160.8,
         "outstanding_shares": 3596575505.0,
         "high_52": 22.0,
         "low_52": 15.02,
@@ -2530,13 +2536,37 @@
                 "pay_date": "Jun 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:18",
+        "last_updated": "2026-05-19 12:45:54",
+        "status": "Open"
+    },
+    "FMETF": {
+        "symbol": "FMETF",
+        "pe_ratio": -20.97,
+        "market_cap": 1227896874.0,
+        "outstanding_shares": 12291260.0,
+        "high_52": 109.5,
+        "low_52": 94.8,
+        "eps": -4.75,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:54",
+        "status": "Open"
+    },
+    "FNI": {
+        "symbol": "FNI",
+        "pe_ratio": 13.8,
+        "market_cap": 10323050815.92,
+        "outstanding_shares": 5110421196.0,
+        "high_52": 2.45,
+        "low_52": 0.9,
+        "eps": 0.15,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:55",
         "status": "Open"
     },
     "FILRT": {
         "symbol": "FILRT",
         "pe_ratio": 13.64,
-        "market_cap": 19491156116.9,
+        "market_cap": 19556343930.0,
         "outstanding_shares": 6518781310.0,
         "high_52": 3.7,
         "low_52": 2.78,
@@ -2573,12 +2603,12 @@
                 "pay_date": "Jun 27, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:18",
+        "last_updated": "2026-05-19 12:45:54",
         "status": "Open"
     },
     "FJP": {
         "symbol": "FJP",
-        "pe_ratio": 4.42,
+        "pe_ratio": 4.5,
         "market_cap": 775416812.7,
         "outstanding_shares": 292610118.0,
         "high_52": 2.98,
@@ -2598,12 +2628,24 @@
                 "pay_date": "Oct 8, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:18",
+        "last_updated": "2026-05-19 12:45:54",
+        "status": "Open"
+    },
+    "FOOD": {
+        "symbol": "FOOD",
+        "pe_ratio": null,
+        "market_cap": 862400799.74,
+        "outstanding_shares": 2499712463.0,
+        "high_52": 0.55,
+        "low_52": 0.31,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:55",
         "status": "Open"
     },
     "FLI": {
         "symbol": "FLI",
-        "pe_ratio": 3.79,
+        "pe_ratio": 3.74,
         "market_cap": 16116306844.32,
         "outstanding_shares": 22383759506.0,
         "high_52": 0.86,
@@ -2623,49 +2665,13 @@
                 "pay_date": "May 23, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:18",
-        "status": "Open"
-    },
-    "FMETF": {
-        "symbol": "FMETF",
-        "pe_ratio": -21.03,
-        "market_cap": 1228511437.0,
-        "outstanding_shares": 12291260.0,
-        "high_52": 109.5,
-        "low_52": 94.8,
-        "eps": -4.75,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:19",
-        "status": "Open"
-    },
-    "FNI": {
-        "symbol": "FNI",
-        "pe_ratio": 13.47,
-        "market_cap": 11242926631.2,
-        "outstanding_shares": 5110421196.0,
-        "high_52": 2.45,
-        "low_52": 0.9,
-        "eps": 0.15,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:19",
-        "status": "Open"
-    },
-    "FOOD": {
-        "symbol": "FOOD",
-        "pe_ratio": null,
-        "market_cap": 862400799.74,
-        "outstanding_shares": 2499712463.0,
-        "high_52": 0.55,
-        "low_52": 0.31,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:19",
+        "last_updated": "2026-05-19 12:45:54",
         "status": "Open"
     },
     "FPH": {
         "symbol": "FPH",
-        "pe_ratio": 1.81,
-        "market_cap": 35233550464.0,
+        "pe_ratio": 1.79,
+        "market_cap": 34214749004.8,
         "outstanding_shares": 424500608.0,
         "high_52": 88.0,
         "low_52": 59.0,
@@ -2684,7 +2690,7 @@
                 "pay_date": "Jun 18, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:19",
+        "last_updated": "2026-05-19 12:45:55",
         "status": "Open"
     },
     "FPI": {
@@ -2696,13 +2702,13 @@
         "low_52": 0.225,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:19",
+        "last_updated": "2026-05-19 12:45:56",
         "status": "Open"
     },
     "FRUIT": {
         "symbol": "FRUIT",
         "pe_ratio": 12.6,
-        "market_cap": 1342478720.0,
+        "market_cap": 1321502490.0,
         "outstanding_shares": 2097623000.0,
         "high_52": 0.71,
         "low_52": 0.59,
@@ -2715,38 +2721,19 @@
                 "pay_date": "Nov 28, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:20",
+        "last_updated": "2026-05-19 12:45:57",
         "status": "Open"
     },
     "GEO": {
         "symbol": "GEO",
         "pe_ratio": null,
-        "market_cap": 297500000.0,
+        "market_cap": 339500000.0,
         "outstanding_shares": 3500000000.0,
         "high_52": 0.185,
         "low_52": 0.056,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:20",
-        "status": "Open"
-    },
-    "GERI": {
-        "symbol": "GERI",
-        "pe_ratio": 3.61,
-        "market_cap": 7250760000.0,
-        "outstanding_shares": 10986000000.0,
-        "high_52": 0.8,
-        "low_52": 0.52,
-        "eps": 0.18,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.01092299,
-                "ex_date": "Jul 17, 2025",
-                "pay_date": "Aug 13, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:20",
+        "last_updated": "2026-05-19 12:45:57",
         "status": "Open"
     },
     "FYN": {
@@ -2758,15 +2745,15 @@
         "low_52": 2.9,
         "eps": 0.07,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:20",
+        "last_updated": "2026-05-19 12:45:57",
         "status": "Open"
     },
     "GLO": {
         "symbol": "GLO",
-        "pe_ratio": 11.92,
-        "market_cap": 260765685820.0,
+        "pe_ratio": 11.93,
+        "market_cap": 260476748772.0,
         "outstanding_shares": 144468524.0,
-        "high_52": 1874.0,
+        "high_52": 1860.0,
         "low_52": 1401.0,
         "eps": 151.21,
         "div_history": [
@@ -2807,7 +2794,19 @@
                 "pay_date": "Jun 5, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:21",
+        "last_updated": "2026-05-19 12:45:57",
+        "status": "Open"
+    },
+    "GMAP": {
+        "symbol": "GMAP",
+        "pe_ratio": 0.02,
+        "market_cap": 1926994960.11,
+        "outstanding_shares": 364271259.0,
+        "high_52": 6.25,
+        "low_52": 4.31,
+        "eps": 265.15,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:57",
         "status": "Open"
     },
     "GMA7": {
@@ -2832,31 +2831,7 @@
                 "pay_date": "May 20, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:21",
-        "status": "Open"
-    },
-    "GMAP": {
-        "symbol": "GMAP",
-        "pe_ratio": 0.02,
-        "market_cap": 1926994960.11,
-        "outstanding_shares": 364271259.0,
-        "high_52": 6.25,
-        "low_52": 4.31,
-        "eps": 265.15,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:21",
-        "status": "Open"
-    },
-    "GREEN": {
-        "symbol": "GREEN",
-        "pe_ratio": null,
-        "market_cap": 664124571.84,
-        "outstanding_shares": 4150778574.0,
-        "high_52": 0.194,
-        "low_52": 0.118,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:21",
+        "last_updated": "2026-05-19 12:45:57",
         "status": "Open"
     },
     "GPH": {
@@ -2868,13 +2843,44 @@
         "low_52": 5.03,
         "eps": 1.13,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:21",
+        "last_updated": "2026-05-19 12:45:57",
+        "status": "Open"
+    },
+    "GREEN": {
+        "symbol": "GREEN",
+        "pe_ratio": null,
+        "market_cap": 676576907.56,
+        "outstanding_shares": 4150778574.0,
+        "high_52": 0.194,
+        "low_52": 0.118,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:57",
+        "status": "Open"
+    },
+    "GERI": {
+        "symbol": "GERI",
+        "pe_ratio": 3.61,
+        "market_cap": 7140900000.0,
+        "outstanding_shares": 10986000000.0,
+        "high_52": 0.8,
+        "low_52": 0.52,
+        "eps": 0.18,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.01092299,
+                "ex_date": "Jul 17, 2025",
+                "pay_date": "Aug 13, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:45:57",
         "status": "Open"
     },
     "GSMI": {
         "symbol": "GSMI",
-        "pe_ratio": 9.04,
-        "market_cap": 78453828434.0,
+        "pe_ratio": 9.0,
+        "market_cap": 78396562865.8,
         "outstanding_shares": 286327841.0,
         "high_52": 305.0,
         "low_52": 267.0,
@@ -2941,13 +2947,13 @@
                 "pay_date": "Jun 6, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:21",
+        "last_updated": "2026-05-19 12:45:59",
         "status": "Open"
     },
     "GTCAP": {
         "symbol": "GTCAP",
-        "pe_ratio": 2.93,
-        "market_cap": 100322617542.0,
+        "pe_ratio": 2.96,
+        "market_cap": 97653088663.2,
         "outstanding_shares": 215284587.0,
         "high_52": 726.0,
         "low_52": 450.0,
@@ -2972,13 +2978,13 @@
                 "pay_date": "Sep 5, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:22",
+        "last_updated": "2026-05-19 12:45:59",
         "status": "Open"
     },
     "HI": {
         "symbol": "HI",
         "pe_ratio": 3.21,
-        "market_cap": 7493441373.0,
+        "market_cap": 6876334436.4,
         "outstanding_shares": 1469302230.0,
         "high_52": 5.42,
         "low_52": 3.26,
@@ -2991,19 +2997,7 @@
                 "pay_date": "Sep 4, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:22",
-        "status": "Open"
-    },
-    "HOME": {
-        "symbol": "HOME",
-        "pe_ratio": 2.18,
-        "market_cap": 922500000.49,
-        "outstanding_shares": 3750000002.0,
-        "high_52": 0.61,
-        "low_52": 0.231,
-        "eps": 0.11,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:22",
+        "last_updated": "2026-05-19 12:45:59",
         "status": "Open"
     },
     "HOUSE": {
@@ -3015,13 +3009,49 @@
         "low_52": null,
         "eps": 1.02,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:22",
+        "last_updated": "2026-05-19 12:45:59",
         "status": "Active"
+    },
+    "HVN": {
+        "symbol": "HVN",
+        "pe_ratio": null,
+        "market_cap": 260223530196.0,
+        "outstanding_shares": 644117649.0,
+        "high_52": 2300.0,
+        "low_52": 386.8,
+        "eps": 2.21,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:59",
+        "status": "Open"
+    },
+    "HOME": {
+        "symbol": "HOME",
+        "pe_ratio": 2.09,
+        "market_cap": 900000000.48,
+        "outstanding_shares": 3750000002.0,
+        "high_52": 0.59,
+        "low_52": 0.231,
+        "eps": 0.11,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:59",
+        "status": "Open"
+    },
+    "I": {
+        "symbol": "I",
+        "pe_ratio": -0.34,
+        "market_cap": 121716185.28,
+        "outstanding_shares": 611639122.0,
+        "high_52": 0.199,
+        "low_52": 0.199,
+        "eps": -0.59,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:45:59",
+        "status": "Suspended"
     },
     "HTI": {
         "symbol": "HTI",
         "pe_ratio": 9.0,
-        "market_cap": 3000000000.0,
+        "market_cap": 3150000000.0,
         "outstanding_shares": 2500000000.0,
         "high_52": 1.28,
         "low_52": 0.93,
@@ -3034,37 +3064,25 @@
                 "pay_date": "Dec 10, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:23",
+        "last_updated": "2026-05-19 12:45:59",
         "status": "Open"
     },
-    "I": {
-        "symbol": "I",
-        "pe_ratio": -0.34,
-        "market_cap": 121716185.28,
-        "outstanding_shares": 611639122.0,
-        "high_52": 0.199,
-        "low_52": 0.199,
-        "eps": -0.59,
+    "IDC": {
+        "symbol": "IDC",
+        "pe_ratio": 1.71,
+        "market_cap": 485082756.38,
+        "outstanding_shares": 724004114.0,
+        "high_52": 1.2,
+        "low_52": 0.63,
+        "eps": 0.35,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:23",
-        "status": "Suspended"
-    },
-    "HVN": {
-        "symbol": "HVN",
-        "pe_ratio": null,
-        "market_cap": 260223530196.0,
-        "outstanding_shares": 644117649.0,
-        "high_52": 2300.0,
-        "low_52": 386.8,
-        "eps": 2.21,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:23",
+        "last_updated": "2026-05-19 12:45:59",
         "status": "Open"
     },
     "ICT": {
         "symbol": "ICT",
-        "pe_ratio": 1568.63,
-        "market_cap": 1625820419475.0,
+        "pe_ratio": 1557.84,
+        "market_cap": 1615722156000.0,
         "outstanding_shares": 2019652695.0,
         "high_52": 819.5,
         "low_52": 392.0,
@@ -3077,31 +3095,19 @@
                 "pay_date": "Mar 27, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:24",
-        "status": "Open"
-    },
-    "IDC": {
-        "symbol": "IDC",
-        "pe_ratio": 1.91,
-        "market_cap": 492322797.52,
-        "outstanding_shares": 724004114.0,
-        "high_52": 1.2,
-        "low_52": 0.64,
-        "eps": 0.35,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:24",
+        "last_updated": "2026-05-19 12:45:59",
         "status": "Open"
     },
     "IMI": {
         "symbol": "IMI",
-        "pe_ratio": 440.0,
-        "market_cap": 10032511709.55,
+        "pe_ratio": 436.0,
+        "market_cap": 9787816302.0,
         "outstanding_shares": 2224503705.0,
         "high_52": 4.67,
         "low_52": 1.68,
         "eps": 0.01,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:24",
+        "last_updated": "2026-05-19 12:46:01",
         "status": "Open"
     },
     "IMP": {
@@ -3113,50 +3119,19 @@
         "low_52": 0.42,
         "eps": 0.05,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:24",
+        "last_updated": "2026-05-19 12:46:01",
         "status": "Open"
     },
     "INFRA": {
         "symbol": "INFRA",
-        "pe_ratio": -4.79,
+        "pe_ratio": -4.5,
         "market_cap": 2030622707.87,
         "outstanding_shares": 6061560322.0,
         "high_52": 0.45,
         "low_52": 0.26,
         "eps": -0.07,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:25",
-        "status": "Open"
-    },
-    "ION": {
-        "symbol": "ION",
-        "pe_ratio": null,
-        "market_cap": 912472781.28,
-        "outstanding_shares": 837130992.0,
-        "high_52": 1.18,
-        "low_52": 0.81,
-        "eps": 0.0,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1,
-                "ex_date": "May 28, 2026",
-                "pay_date": "Jun 25, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:25",
-        "status": "Open"
-    },
-    "IPM": {
-        "symbol": "IPM",
-        "pe_ratio": -13.18,
-        "market_cap": 1000500000.0,
-        "outstanding_shares": 690000000.0,
-        "high_52": 2.79,
-        "low_52": 1.24,
-        "eps": -0.11,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:25",
+        "last_updated": "2026-05-19 12:46:01",
         "status": "Open"
     },
     "IPO": {
@@ -3181,76 +3156,58 @@
                 "pay_date": "May 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:25",
+        "last_updated": "2026-05-19 12:46:01",
         "status": "Open"
     },
-    "JAS": {
-        "symbol": "JAS",
+    "ION": {
+        "symbol": "ION",
         "pe_ratio": null,
-        "market_cap": 495117012.06,
-        "outstanding_shares": 250059097.0,
-        "high_52": 2.18,
-        "low_52": 1.11,
+        "market_cap": 945958020.96,
+        "outstanding_shares": 837130992.0,
+        "high_52": 1.18,
+        "low_52": 0.81,
         "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:26",
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1,
+                "ex_date": "May 28, 2026",
+                "pay_date": "Jun 25, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:01",
         "status": "Open"
     },
     "IS": {
         "symbol": "IS",
         "pe_ratio": null,
-        "market_cap": 586289842.2,
+        "market_cap": 576518344.83,
         "outstanding_shares": 4885748685.0,
         "high_52": 0.198,
         "low_52": 0.05,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:26",
+        "last_updated": "2026-05-19 12:46:01",
         "status": "Open"
     },
-    "JGS": {
-        "symbol": "JGS",
-        "pe_ratio": -2.25,
-        "market_cap": 199306066937.0,
-        "outstanding_shares": 7520983658.0,
-        "high_52": 31.5,
-        "low_52": 17.5,
-        "eps": -11.75,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.45,
-                "ex_date": "May 28, 2026",
-                "pay_date": "Jun 10, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.42,
-                "ex_date": "May 29, 2025",
-                "pay_date": "Jun 11, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:26",
-        "status": "Open"
-    },
-    "JOH": {
-        "symbol": "JOH",
-        "pe_ratio": 9.28,
-        "market_cap": 1123185000.0,
-        "outstanding_shares": 281500000.0,
-        "high_52": 6.2,
-        "low_52": 3.08,
-        "eps": 0.43,
+    "IPM": {
+        "symbol": "IPM",
+        "pe_ratio": -13.18,
+        "market_cap": 1000500000.0,
+        "outstanding_shares": 690000000.0,
+        "high_52": 2.79,
+        "low_52": 1.24,
+        "eps": -0.11,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:26",
+        "last_updated": "2026-05-19 12:46:01",
         "status": "Open"
     },
     "JFC": {
         "symbol": "JFC",
-        "pe_ratio": 14.41,
-        "market_cap": 157570510546.4,
+        "pe_ratio": 14.16,
+        "market_cap": 151630797133.2,
         "outstanding_shares": 1120700644.0,
-        "high_52": 245.6,
+        "high_52": 244.2,
         "low_52": 129.1,
         "eps": 9.39,
         "div_history": [
@@ -3291,13 +3248,62 @@
                 "pay_date": "Jul 15, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:26",
+        "last_updated": "2026-05-19 12:46:02",
+        "status": "Open"
+    },
+    "JAS": {
+        "symbol": "JAS",
+        "pe_ratio": null,
+        "market_cap": 505119375.94,
+        "outstanding_shares": 250059097.0,
+        "high_52": 2.18,
+        "low_52": 1.11,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:01",
+        "status": "Open"
+    },
+    "JGS": {
+        "symbol": "JGS",
+        "pe_ratio": -2.27,
+        "market_cap": 198930017754.1,
+        "outstanding_shares": 7520983658.0,
+        "high_52": 31.5,
+        "low_52": 17.5,
+        "eps": -11.75,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.45,
+                "ex_date": "May 28, 2026",
+                "pay_date": "Jun 10, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.42,
+                "ex_date": "May 29, 2025",
+                "pay_date": "Jun 11, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:02",
+        "status": "Open"
+    },
+    "JOH": {
+        "symbol": "JOH",
+        "pe_ratio": 9.26,
+        "market_cap": 1123185000.0,
+        "outstanding_shares": 281500000.0,
+        "high_52": 6.2,
+        "low_52": 3.08,
+        "eps": 0.43,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:03",
         "status": "Open"
     },
     "KEEPR": {
         "symbol": "KEEPR",
-        "pe_ratio": 7.8,
-        "market_cap": 28001888104.09,
+        "pe_ratio": 7.76,
+        "market_cap": 28292063110.35,
         "outstanding_shares": 14508750313.0,
         "high_52": 2.92,
         "low_52": 1.8,
@@ -3316,7 +3322,7 @@
                 "pay_date": "May 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:27",
+        "last_updated": "2026-05-19 12:46:03",
         "status": "Open"
     },
     "KEP": {
@@ -3328,31 +3334,7 @@
         "low_52": 1.82,
         "eps": 0.03,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:27",
-        "status": "Open"
-    },
-    "KPH": {
-        "symbol": "KPH",
-        "pe_ratio": 2.51,
-        "market_cap": null,
-        "outstanding_shares": null,
-        "high_52": null,
-        "low_52": null,
-        "eps": 10.3,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:27",
-        "status": "Active"
-    },
-    "KPPI": {
-        "symbol": "KPPI",
-        "pe_ratio": 13.0,
-        "market_cap": 259364315.61,
-        "outstanding_shares": 201057609.0,
-        "high_52": 1.88,
-        "low_52": 1.04,
-        "eps": 0.11,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:27",
+        "last_updated": "2026-05-19 12:46:04",
         "status": "Open"
     },
     "LAND": {
@@ -3371,36 +3353,48 @@
                 "pay_date": "Jun 18, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:28",
+        "last_updated": "2026-05-19 12:46:04",
         "status": "Open"
     },
-    "LBC": {
-        "symbol": "LBC",
-        "pe_ratio": 38.47,
-        "market_cap": 9339418835.05,
-        "outstanding_shares": 1425865471.0,
-        "high_52": 9.22,
-        "low_52": 6.54,
-        "eps": 0.17,
+    "KPH": {
+        "symbol": "KPH",
+        "pe_ratio": 2.51,
+        "market_cap": null,
+        "outstanding_shares": null,
+        "high_52": null,
+        "low_52": null,
+        "eps": 10.3,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:28",
+        "last_updated": "2026-05-19 12:46:04",
+        "status": "Active"
+    },
+    "KPPI": {
+        "symbol": "KPPI",
+        "pe_ratio": 13.0,
+        "market_cap": 287512380.87,
+        "outstanding_shares": 201057609.0,
+        "high_52": 1.88,
+        "low_52": 1.04,
+        "eps": 0.11,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:04",
         "status": "Open"
     },
     "LC": {
         "symbol": "LC",
         "pe_ratio": 9.7,
-        "market_cap": 7765459493.22,
+        "market_cap": 7725636624.02,
         "outstanding_shares": 39822869196.0,
         "high_52": 0.27,
         "low_52": 0.075,
         "eps": 0.02,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:28",
+        "last_updated": "2026-05-19 12:46:04",
         "status": "Open"
     },
     "LFM": {
         "symbol": "LFM",
-        "pe_ratio": 3.47,
+        "pe_ratio": 3.51,
         "market_cap": 4545000000.0,
         "outstanding_shares": 150000000.0,
         "high_52": 39.5,
@@ -3426,7 +3420,19 @@
                 "pay_date": "Jul 2, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:28",
+        "last_updated": "2026-05-19 12:46:04",
+        "status": "Open"
+    },
+    "LBC": {
+        "symbol": "LBC",
+        "pe_ratio": 38.47,
+        "market_cap": 9325160180.34,
+        "outstanding_shares": 1425865471.0,
+        "high_52": 9.18,
+        "low_52": 6.02,
+        "eps": 0.17,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:04",
         "status": "Open"
     },
     "LMG": {
@@ -3438,19 +3444,19 @@
         "low_52": 0.155,
         "eps": 0.01,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:28",
+        "last_updated": "2026-05-19 12:46:04",
         "status": "Open"
     },
     "LODE": {
         "symbol": "LODE",
         "pe_ratio": null,
-        "market_cap": 1140000000.0,
+        "market_cap": 1170000000.0,
         "outstanding_shares": 3000000000.0,
         "high_52": 0.93,
         "low_52": 0.18,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:29",
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "LOTO": {
@@ -3462,7 +3468,7 @@
         "low_52": 1.6,
         "eps": 0.07,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:29",
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "LPC": {
@@ -3474,47 +3480,28 @@
         "low_52": 0.03,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:29",
-        "status": "Open"
-    },
-    "LPZ": {
-        "symbol": "LPZ",
-        "pe_ratio": 1.24,
-        "market_cap": 18077627644.0,
-        "outstanding_shares": 4519406911.0,
-        "high_52": 4.32,
-        "low_52": 2.9,
-        "eps": 3.17,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1,
-                "ex_date": "Jul 03, 2025",
-                "pay_date": "Jul 18, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:29",
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "LSC": {
         "symbol": "LSC",
         "pe_ratio": -1.16,
-        "market_cap": 594104399.4,
+        "market_cap": 703023539.29,
         "outstanding_shares": 990173999.0,
         "high_52": 0.75,
         "low_52": 0.465,
         "eps": -0.61,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:30",
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "LTG": {
         "symbol": "LTG",
-        "pe_ratio": 5.25,
-        "market_cap": 165134394446.14,
+        "pe_ratio": 5.2,
+        "market_cap": 162537261112.78,
         "outstanding_shares": 10821388889.0,
         "high_52": 16.2,
-        "low_52": 12.18,
+        "low_52": 12.24,
         "eps": 2.86,
         "div_history": [
             {
@@ -3548,7 +3535,7 @@
                 "pay_date": "Jul 15, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:30",
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "MA": {
@@ -3560,13 +3547,32 @@
         "low_52": 0.005,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:30",
+        "last_updated": "2026-05-19 12:46:06",
+        "status": "Open"
+    },
+    "LPZ": {
+        "symbol": "LPZ",
+        "pe_ratio": 1.25,
+        "market_cap": 17761269160.23,
+        "outstanding_shares": 4519406911.0,
+        "high_52": 4.32,
+        "low_52": 3.16,
+        "eps": 3.17,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1,
+                "ex_date": "Jul 03, 2025",
+                "pay_date": "Jul 18, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "MAC": {
         "symbol": "MAC",
-        "pe_ratio": 5.17,
-        "market_cap": 7809657873.99,
+        "pe_ratio": 5.24,
+        "market_cap": 7431466209.39,
         "outstanding_shares": 1890958323.0,
         "high_52": 5.15,
         "low_52": 3.55,
@@ -3585,7 +3591,7 @@
                 "pay_date": "N/A"
             }
         ],
-        "last_updated": "2026-05-18 13:52:31",
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "MACAY": {
@@ -3597,7 +3603,7 @@
         "low_52": 5.1,
         "eps": 0.47,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:31",
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "MAH": {
@@ -3609,13 +3615,13 @@
         "low_52": 0.35,
         "eps": -0.01,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:31",
+        "last_updated": "2026-05-19 12:46:06",
         "status": "Open"
     },
     "MARC": {
         "symbol": "MARC",
-        "pe_ratio": 4.25,
-        "market_cap": 2140522416.55,
+        "pe_ratio": 4.38,
+        "market_cap": 2050077807.4,
         "outstanding_shares": 3014820305.0,
         "high_52": 0.94,
         "low_52": 0.485,
@@ -3628,13 +3634,13 @@
                 "pay_date": "Mar 10, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:31",
+        "last_updated": "2026-05-19 12:46:08",
         "status": "Open"
     },
     "MAXS": {
         "symbol": "MAXS",
-        "pe_ratio": 4.81,
-        "market_cap": 2383753635.2,
+        "pe_ratio": 4.68,
+        "market_cap": 2342297050.24,
         "outstanding_shares": 1036414624.0,
         "high_52": 3.0,
         "low_52": 2.0,
@@ -3647,7 +3653,7 @@
                 "pay_date": "May 6, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:31",
+        "last_updated": "2026-05-19 12:46:08",
         "status": "Open"
     },
     "MB": {
@@ -3659,7 +3665,7 @@
         "low_52": 0.128,
         "eps": 0.02,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:32",
+        "last_updated": "2026-05-19 12:46:08",
         "status": "Open"
     },
     "MBC": {
@@ -3678,13 +3684,13 @@
                 "pay_date": "Feb 3, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:32",
+        "last_updated": "2026-05-19 12:46:08",
         "status": "Open"
     },
     "MBT": {
         "symbol": "MBT",
-        "pe_ratio": 5.92,
-        "market_cap": 295480201963.5,
+        "pe_ratio": 5.77,
+        "market_cap": 294580718852.5,
         "outstanding_shares": 4497415555.0,
         "high_52": 78.25,
         "low_52": 61.95,
@@ -3709,7 +3715,7 @@
                 "pay_date": "Sep 23, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:32",
+        "last_updated": "2026-05-19 12:46:08",
         "status": "Open"
     },
     "MED": {
@@ -3721,7 +3727,26 @@
         "low_52": 0.089,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:32",
+        "last_updated": "2026-05-19 12:46:08",
+        "status": "Open"
+    },
+    "MEG": {
+        "symbol": "MEG",
+        "pe_ratio": 3.18,
+        "market_cap": 67454156373.76,
+        "outstanding_shares": 32429882872.0,
+        "high_52": 2.38,
+        "low_52": 1.73,
+        "eps": 0.65,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.09395845,
+                "ex_date": "Aug 26, 2025",
+                "pay_date": "Sep 8, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:08",
         "status": "Open"
     },
     "MEDIC": {
@@ -3740,32 +3765,13 @@
                 "pay_date": "Jul 24, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:33",
-        "status": "Open"
-    },
-    "MEG": {
-        "symbol": "MEG",
-        "pe_ratio": 3.2,
-        "market_cap": 67778455202.48,
-        "outstanding_shares": 32429882872.0,
-        "high_52": 2.38,
-        "low_52": 1.73,
-        "eps": 0.65,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.09395845,
-                "ex_date": "Aug 26, 2025",
-                "pay_date": "Sep 8, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:33",
+        "last_updated": "2026-05-19 12:46:08",
         "status": "Open"
     },
     "MER": {
         "symbol": "MER",
-        "pe_ratio": 14.02,
-        "market_cap": 710068280670.0,
+        "pe_ratio": 13.58,
+        "market_cap": 716830835724.0,
         "outstanding_shares": 1127092509.0,
         "high_52": 679.5,
         "low_52": 515.5,
@@ -3784,13 +3790,13 @@
                 "pay_date": "Sep 22, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:33",
+        "last_updated": "2026-05-19 12:46:09",
         "status": "Open"
     },
     "MFC": {
         "symbol": "MFC",
-        "pe_ratio": 746.75,
-        "market_cap": 4005337233600.0,
+        "pe_ratio": 842.86,
+        "market_cap": 3838448182200.0,
         "outstanding_shares": 1668890514.0,
         "high_52": 2800.0,
         "low_52": 1550.0,
@@ -3827,7 +3833,7 @@
                 "pay_date": "Jun 19, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:33",
+        "last_updated": "2026-05-19 12:46:09",
         "status": "Open"
     },
     "MFIN": {
@@ -3846,67 +3852,19 @@
                 "pay_date": "Sep 17, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:33",
+        "last_updated": "2026-05-19 12:46:10",
         "status": "Open"
     },
     "MG": {
         "symbol": "MG",
         "pe_ratio": null,
-        "market_cap": 149290131.0,
+        "market_cap": 142181077.14,
         "outstanding_shares": 2369684619.0,
         "high_52": 0.084,
         "low_52": 0.056,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:34",
-        "status": "Open"
-    },
-    "MGH": {
-        "symbol": "MGH",
-        "pe_ratio": null,
-        "market_cap": 2750000000.0,
-        "outstanding_shares": 2750000000.0,
-        "high_52": null,
-        "low_52": null,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:34",
-        "status": "Suspended"
-    },
-    "MHC": {
-        "symbol": "MHC",
-        "pe_ratio": -12.0,
-        "market_cap": 144000000.0,
-        "outstanding_shares": 1200000000.0,
-        "high_52": 0.161,
-        "low_52": 0.106,
-        "eps": -0.01,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:34",
-        "status": "Open"
-    },
-    "MJIC": {
-        "symbol": "MJIC",
-        "pe_ratio": null,
-        "market_cap": 3174405821.0,
-        "outstanding_shares": 3174405821.0,
-        "high_52": 1.0,
-        "low_52": 1.0,
-        "eps": -0.29,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:35",
-        "status": "Suspended"
-    },
-    "MM": {
-        "symbol": "MM",
-        "pe_ratio": 45.5,
-        "market_cap": 3493670886.14,
-        "outstanding_shares": 7594936709.0,
-        "high_52": 0.67,
-        "low_52": 0.365,
-        "eps": 0.01,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:35",
+        "last_updated": "2026-05-19 12:46:10",
         "status": "Open"
     },
     "MJC": {
@@ -3918,13 +3876,104 @@
         "low_52": 1.27,
         "eps": 0.01,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:34",
+        "last_updated": "2026-05-19 12:46:11",
         "status": "Suspended"
+    },
+    "MHC": {
+        "symbol": "MHC",
+        "pe_ratio": -12.0,
+        "market_cap": 144000000.0,
+        "outstanding_shares": 1200000000.0,
+        "high_52": 0.161,
+        "low_52": 0.106,
+        "eps": -0.01,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:11",
+        "status": "Open"
+    },
+    "MJIC": {
+        "symbol": "MJIC",
+        "pe_ratio": null,
+        "market_cap": 3174405821.0,
+        "outstanding_shares": 3174405821.0,
+        "high_52": 1.0,
+        "low_52": 1.0,
+        "eps": -0.29,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:11",
+        "status": "Suspended"
+    },
+    "MGH": {
+        "symbol": "MGH",
+        "pe_ratio": null,
+        "market_cap": 2750000000.0,
+        "outstanding_shares": 2750000000.0,
+        "high_52": null,
+        "low_52": null,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:11",
+        "status": "Suspended"
+    },
+    "MM": {
+        "symbol": "MM",
+        "pe_ratio": 45.5,
+        "market_cap": 3455696202.6,
+        "outstanding_shares": 7594936709.0,
+        "high_52": 0.67,
+        "low_52": 0.365,
+        "eps": 0.01,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:11",
+        "status": "Open"
+    },
+    "MONDE": {
+        "symbol": "MONDE",
+        "pe_ratio": 15.04,
+        "market_cap": 130272433346.0,
+        "outstanding_shares": 17968611496.0,
+        "high_52": 8.14,
+        "low_52": 5.61,
+        "eps": 0.48,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.24,
+                "ex_date": "Apr 23, 2026",
+                "pay_date": "May 21, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.16,
+                "ex_date": "Dec 03, 2025",
+                "pay_date": "Jan 7, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.15,
+                "ex_date": "Apr 24, 2025",
+                "pay_date": "May 22, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:11",
+        "status": "Open"
+    },
+    "MRC": {
+        "symbol": "MRC",
+        "pe_ratio": -13.83,
+        "market_cap": 1229671368.6,
+        "outstanding_shares": 1499599230.0,
+        "high_52": 1.21,
+        "low_52": 0.73,
+        "eps": -0.06,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:11",
+        "status": "Open"
     },
     "MREIT": {
         "symbol": "MREIT",
         "pe_ratio": 11.86,
-        "market_cap": 66252640704.12,
+        "market_cap": 66063886742.0,
         "outstanding_shares": 4718849053.0,
         "high_52": 15.04,
         "low_52": 13.2,
@@ -3961,13 +4010,13 @@
                 "pay_date": "Jun 5, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:35",
+        "last_updated": "2026-05-19 12:46:11",
         "status": "Open"
     },
     "MVC": {
         "symbol": "MVC",
         "pe_ratio": 9.72,
-        "market_cap": 3425582681.64,
+        "market_cap": 3405743399.7,
         "outstanding_shares": 661309398.0,
         "high_52": 6.39,
         "low_52": 4.5,
@@ -3986,12 +4035,12 @@
                 "pay_date": "Jun 16, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:36",
+        "last_updated": "2026-05-19 12:46:13",
         "status": "Open"
     },
     "MRSGI": {
         "symbol": "MRSGI",
-        "pe_ratio": 5.33,
+        "pe_ratio": 5.29,
         "market_cap": 3621907520.0,
         "outstanding_shares": 3233846000.0,
         "high_52": 1.25,
@@ -4011,63 +4060,13 @@
                 "pay_date": "May 21, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:36",
-        "status": "Open"
-    },
-    "MYNLD": {
-        "symbol": "MYNLD",
-        "pe_ratio": 9.07,
-        "market_cap": 179883267480.0,
-        "outstanding_shares": 7402603600.0,
-        "high_52": 24.45,
-        "low_52": 14.02,
-        "eps": 2.57,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 1.14,
-                "ex_date": "Mar 06, 2026",
-                "pay_date": "Mar 18, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:37",
-        "status": "Open"
-    },
-    "MONDE": {
-        "symbol": "MONDE",
-        "pe_ratio": 15.1,
-        "market_cap": 130272433346.0,
-        "outstanding_shares": 17968611496.0,
-        "high_52": 8.14,
-        "low_52": 5.61,
-        "eps": 0.48,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.24,
-                "ex_date": "Apr 23, 2026",
-                "pay_date": "May 21, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.16,
-                "ex_date": "Dec 03, 2025",
-                "pay_date": "Jan 7, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.15,
-                "ex_date": "Apr 24, 2025",
-                "pay_date": "May 22, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:35",
+        "last_updated": "2026-05-19 12:46:12",
         "status": "Open"
     },
     "MWC": {
         "symbol": "MWC",
-        "pe_ratio": 8.03,
-        "market_cap": 114900247826.6,
+        "pe_ratio": 8.12,
+        "market_cap": 112031002137.4,
         "outstanding_shares": 2608405172.0,
         "high_52": 45.3,
         "low_52": 30.6,
@@ -4086,49 +4085,12 @@
                 "pay_date": "Mar 27, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:36",
-        "status": "Open"
-    },
-    "NI": {
-        "symbol": "NI",
-        "pe_ratio": null,
-        "market_cap": 494900000.0,
-        "outstanding_shares": 1010000000.0,
-        "high_52": 0.7,
-        "low_52": 0.275,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:37",
-        "status": "Open"
-    },
-    "NIKL": {
-        "symbol": "NIKL",
-        "pe_ratio": 10.22,
-        "market_cap": 68262512960.6,
-        "outstanding_shares": 13931125094.0,
-        "high_52": 5.73,
-        "low_52": 2.15,
-        "eps": 0.45,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.14,
-                "ex_date": "Mar 11, 2026",
-                "pay_date": "Mar 25, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.07,
-                "ex_date": "Nov 27, 2025",
-                "pay_date": "Dec 15, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:38",
+        "last_updated": "2026-05-19 12:46:13",
         "status": "Open"
     },
     "MWIDE": {
         "symbol": "MWIDE",
-        "pe_ratio": 163.0,
+        "pe_ratio": 163.5,
         "market_cap": 6577376974.74,
         "outstanding_shares": 2017600299.0,
         "high_52": 3.69,
@@ -4274,37 +4236,105 @@
                 "pay_date": "May 27, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:36",
+        "last_updated": "2026-05-19 12:46:13",
+        "status": "Open"
+    },
+    "MYNLD": {
+        "symbol": "MYNLD",
+        "pe_ratio": 9.16,
+        "market_cap": 176181965680.0,
+        "outstanding_shares": 7402603600.0,
+        "high_52": 24.45,
+        "low_52": 14.02,
+        "eps": 2.57,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 1.14,
+                "ex_date": "Mar 06, 2026",
+                "pay_date": "Mar 18, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:13",
+        "status": "Open"
+    },
+    "NIKL": {
+        "symbol": "NIKL",
+        "pe_ratio": 10.0,
+        "market_cap": 64083175432.4,
+        "outstanding_shares": 13931125094.0,
+        "high_52": 5.73,
+        "low_52": 2.15,
+        "eps": 0.45,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.14,
+                "ex_date": "Mar 11, 2026",
+                "pay_date": "Mar 25, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.07,
+                "ex_date": "Nov 27, 2025",
+                "pay_date": "Dec 15, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:13",
         "status": "Open"
     },
     "NOW": {
         "symbol": "NOW",
         "pe_ratio": null,
-        "market_cap": 858194999.15,
+        "market_cap": 867228630.72,
         "outstanding_shares": 1806726314.0,
         "high_52": 1.06,
         "low_52": 0.355,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:38",
+        "last_updated": "2026-05-19 12:46:13",
+        "status": "Open"
+    },
+    "NI": {
+        "symbol": "NI",
+        "pe_ratio": null,
+        "market_cap": 494900000.0,
+        "outstanding_shares": 1010000000.0,
+        "high_52": 0.7,
+        "low_52": 0.275,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:13",
         "status": "Open"
     },
     "NRCP": {
         "symbol": "NRCP",
-        "pe_ratio": 2.05,
-        "market_cap": 1762592648.0,
+        "pe_ratio": 2.1,
+        "market_cap": 1698884480.0,
         "outstanding_shares": 2123605600.0,
         "high_52": 0.84,
         "low_52": 0.59,
         "eps": 0.39,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:38",
+        "last_updated": "2026-05-19 12:46:13",
         "status": "Open"
+    },
+    "NXGEN": {
+        "symbol": "NXGEN",
+        "pe_ratio": null,
+        "market_cap": 728092575.0,
+        "outstanding_shares": 104013225.0,
+        "high_52": null,
+        "low_52": null,
+        "eps": -0.02,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:13",
+        "status": "Suspended"
     },
     "OGP": {
         "symbol": "OGP",
-        "pe_ratio": 1235.0,
-        "market_cap": 86640000000.0,
+        "pe_ratio": 1260.0,
+        "market_cap": 84474000000.0,
         "outstanding_shares": 2280000000.0,
         "high_52": 40.5,
         "low_52": 15.74,
@@ -4341,7 +4371,7 @@
                 "pay_date": "Jun 18, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:39",
+        "last_updated": "2026-05-19 12:46:15",
         "status": "Open"
     },
     "OM": {
@@ -4353,25 +4383,13 @@
         "low_52": 0.09,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:40",
+        "last_updated": "2026-05-19 12:46:15",
         "status": "Open"
-    },
-    "NXGEN": {
-        "symbol": "NXGEN",
-        "pe_ratio": null,
-        "market_cap": 728092575.0,
-        "outstanding_shares": 104013225.0,
-        "high_52": null,
-        "low_52": null,
-        "eps": -0.02,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:39",
-        "status": "Suspended"
     },
     "OPM": {
         "symbol": "OPM",
         "pe_ratio": null,
-        "market_cap": 1617569800.0,
+        "market_cap": 1502029100.0,
         "outstanding_shares": 115540700000.0,
         "high_52": 0.014,
         "low_52": 0.0074,
@@ -4384,55 +4402,55 @@
                 "pay_date": "Jul 29, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:40",
-        "status": "Open"
-    },
-    "MRC": {
-        "symbol": "MRC",
-        "pe_ratio": -13.67,
-        "market_cap": 1199679384.0,
-        "outstanding_shares": 1499599230.0,
-        "high_52": 1.21,
-        "low_52": 0.73,
-        "eps": -0.06,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:35",
-        "status": "Open"
-    },
-    "ORE": {
-        "symbol": "ORE",
-        "pe_ratio": null,
-        "market_cap": 1338502502.32,
-        "outstanding_shares": 2878500005.0,
-        "high_52": 0.55,
-        "low_52": 0.3,
-        "eps": -0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:41",
-        "status": "Open"
-    },
-    "PA": {
-        "symbol": "PA",
-        "pe_ratio": null,
-        "market_cap": 269750000.0,
-        "outstanding_shares": 325000000.0,
-        "high_52": 1.65,
-        "low_52": 0.63,
-        "eps": 0.0,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:41",
+        "last_updated": "2026-05-19 12:46:15",
         "status": "Open"
     },
     "OV": {
         "symbol": "OV",
         "pe_ratio": null,
-        "market_cap": 1650071726.08,
+        "market_cap": 1669258606.61,
         "outstanding_shares": 191868805358.0,
         "high_52": 0.011,
         "low_52": 0.0074,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:41",
+        "last_updated": "2026-05-19 12:46:15",
+        "status": "Open"
+    },
+    "ORE": {
+        "symbol": "ORE",
+        "pe_ratio": null,
+        "market_cap": 1295325002.25,
+        "outstanding_shares": 2878500005.0,
+        "high_52": 0.55,
+        "low_52": 0.3,
+        "eps": -0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:15",
+        "status": "Open"
+    },
+    "PA": {
+        "symbol": "PA",
+        "pe_ratio": null,
+        "market_cap": 253500000.0,
+        "outstanding_shares": 325000000.0,
+        "high_52": 1.65,
+        "low_52": 0.63,
+        "eps": 0.0,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:15",
+        "status": "Open"
+    },
+    "PAX": {
+        "symbol": "PAX",
+        "pe_ratio": 12.06,
+        "market_cap": 2423408567.26,
+        "outstanding_shares": 1148534866.0,
+        "high_52": 3.38,
+        "low_52": 2.0,
+        "eps": 0.17,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:15",
         "status": "Open"
     },
     "PAL": {
@@ -4444,44 +4462,13 @@
         "low_52": 2.95,
         "eps": 0.36,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:41",
-        "status": "Open"
-    },
-    "PBB": {
-        "symbol": "PBB",
-        "pe_ratio": 3.11,
-        "market_cap": 5845875671.16,
-        "outstanding_shares": 818750094.0,
-        "high_52": 9.1,
-        "low_52": 7.0,
-        "eps": 2.27,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 45.0,
-                "ex_date": "Jul 10, 2025",
-                "pay_date": "Jul 23, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:42",
-        "status": "Open"
-    },
-    "PAX": {
-        "symbol": "PAX",
-        "pe_ratio": 12.41,
-        "market_cap": 2423408567.26,
-        "outstanding_shares": 1148534866.0,
-        "high_52": 3.38,
-        "low_52": 2.0,
-        "eps": 0.17,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:42",
+        "last_updated": "2026-05-19 12:46:15",
         "status": "Open"
     },
     "PBC": {
         "symbol": "PBC",
-        "pe_ratio": 3.15,
-        "market_cap": 7574967768.88,
+        "pe_ratio": 2.97,
+        "market_cap": 8026774222.1,
         "outstanding_shares": 480645163.0,
         "high_52": 21.0,
         "low_52": 15.74,
@@ -4494,7 +4481,26 @@
                 "pay_date": "Jul 31, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:42",
+        "last_updated": "2026-05-19 12:46:15",
+        "status": "Open"
+    },
+    "PBB": {
+        "symbol": "PBB",
+        "pe_ratio": 3.13,
+        "market_cap": 5772188162.7,
+        "outstanding_shares": 818750094.0,
+        "high_52": 9.1,
+        "low_52": 7.0,
+        "eps": 2.27,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 45.0,
+                "ex_date": "Jul 10, 2025",
+                "pay_date": "Jul 23, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:15",
         "status": "Open"
     },
     "PCOR": {
@@ -4693,13 +4699,13 @@
                 "pay_date": "Jun 23, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:42",
+        "last_updated": "2026-05-19 12:46:17",
         "status": "Open"
     },
     "PERC": {
         "symbol": "PERC",
-        "pe_ratio": 7.24,
-        "market_cap": 2104233815.4,
+        "pe_ratio": 7.46,
+        "market_cap": 2058736868.04,
         "outstanding_shares": 568711842.0,
         "high_52": 4.1,
         "low_52": 2.6,
@@ -4712,13 +4718,51 @@
                 "pay_date": "Dec 23, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:43",
+        "last_updated": "2026-05-19 12:46:17",
+        "status": "Open"
+    },
+    "PHA": {
+        "symbol": "PHA",
+        "pe_ratio": null,
+        "market_cap": 913337520.64,
+        "outstanding_shares": 5708359504.0,
+        "high_52": 0.375,
+        "low_52": 0.155,
+        "eps": -0.0,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.001482,
+                "ex_date": "May 10, 2018",
+                "pay_date": "TBA"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:17",
+        "status": "Open"
+    },
+    "PHC": {
+        "symbol": "PHC",
+        "pe_ratio": 172.0,
+        "market_cap": 1713792956.88,
+        "outstanding_shares": 996391254.0,
+        "high_52": 4.49,
+        "low_52": 1.4,
+        "eps": 0.01,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.05,
+                "ex_date": "Mar 19, 2026",
+                "pay_date": "Apr 20, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:17",
         "status": "Open"
     },
     "PGOLD": {
         "symbol": "PGOLD",
-        "pe_ratio": 11.78,
-        "market_cap": 132054309647.75,
+        "pe_ratio": 12.17,
+        "market_cap": 134358419739.75,
         "outstanding_shares": 2880137615.0,
         "high_52": 47.15,
         "low_52": 29.9,
@@ -4749,66 +4793,16 @@
                 "pay_date": "May 27, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:43",
-        "status": "Open"
-    },
-    "PHA": {
-        "symbol": "PHA",
-        "pe_ratio": null,
-        "market_cap": 959004396.67,
-        "outstanding_shares": 5708359504.0,
-        "high_52": 0.375,
-        "low_52": 0.161,
-        "eps": -0.0,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.001482,
-                "ex_date": "May 10, 2018",
-                "pay_date": "TBA"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:43",
-        "status": "Open"
-    },
-    "PHC": {
-        "symbol": "PHC",
-        "pe_ratio": 172.0,
-        "market_cap": 1713792956.88,
-        "outstanding_shares": 996391254.0,
-        "high_52": 4.49,
-        "low_52": 1.4,
-        "eps": 0.01,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.05,
-                "ex_date": "Mar 19, 2026",
-                "pay_date": "Apr 20, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:43",
-        "status": "Open"
-    },
-    "PHES": {
-        "symbol": "PHES",
-        "pe_ratio": 5.17,
-        "market_cap": 896240894.6,
-        "outstanding_shares": 2891099660.0,
-        "high_52": 0.4,
-        "low_52": 0.22,
-        "eps": 0.06,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:43",
+        "last_updated": "2026-05-19 12:46:17",
         "status": "Open"
     },
     "PHN": {
         "symbol": "PHN",
         "pe_ratio": -14.09,
-        "market_cap": 4439493498.0,
+        "market_cap": 4358775434.4,
         "outstanding_shares": 336325265.0,
         "high_52": 18.46,
-        "low_52": 13.0,
+        "low_52": 12.96,
         "eps": -0.92,
         "div_history": [
             {
@@ -4824,13 +4818,13 @@
                 "pay_date": "May 26, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:43",
+        "last_updated": "2026-05-19 12:46:18",
         "status": "Open"
     },
     "PIZZA": {
         "symbol": "PIZZA",
-        "pe_ratio": 13.44,
-        "market_cap": 10489825908.94,
+        "pe_ratio": 13.02,
+        "market_cap": 10860253148.1,
         "outstanding_shares": 1683760178.0,
         "high_52": 8.19,
         "low_52": 6.11,
@@ -4843,26 +4837,38 @@
                 "pay_date": "Aug 19, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:44",
+        "last_updated": "2026-05-19 12:46:18",
+        "status": "Open"
+    },
+    "PHES": {
+        "symbol": "PHES",
+        "pe_ratio": 5.17,
+        "market_cap": 896240894.6,
+        "outstanding_shares": 2891099660.0,
+        "high_52": 0.4,
+        "low_52": 0.22,
+        "eps": 0.06,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:18",
         "status": "Open"
     },
     "PHR": {
         "symbol": "PHR",
-        "pe_ratio": -0.79,
-        "market_cap": 1332609115.94,
+        "pe_ratio": -0.74,
+        "market_cap": 1376301218.1,
         "outstanding_shares": 7282017027.0,
         "high_52": 0.237,
         "low_52": 0.126,
         "eps": -0.24,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:44",
+        "last_updated": "2026-05-19 12:46:18",
         "status": "Open"
     },
     "PLUS": {
         "symbol": "PLUS",
-        "pe_ratio": 4.63,
-        "market_cap": 58143058257.12,
-        "outstanding_shares": 4570995146.0,
+        "pe_ratio": 4.69,
+        "market_cap": 59410537498.0,
+        "outstanding_shares": 4570041346.0,
         "high_52": 65.3,
         "low_52": 10.5,
         "eps": 2.81,
@@ -4874,13 +4880,13 @@
                 "pay_date": "Apr 15, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:44",
+        "last_updated": "2026-05-19 12:46:18",
         "status": "Open"
     },
     "PMPC": {
         "symbol": "PMPC",
-        "pe_ratio": 7.68,
-        "market_cap": 796400260.8,
+        "pe_ratio": 7.72,
+        "market_cap": 800636432.4,
         "outstanding_shares": 84723432.0,
         "high_52": 11.5,
         "low_52": 5.75,
@@ -4893,13 +4899,13 @@
                 "pay_date": "Jun 25, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:45",
+        "last_updated": "2026-05-19 12:46:19",
         "status": "Open"
     },
     "PNB": {
         "symbol": "PNB",
-        "pe_ratio": 3.44,
-        "market_cap": 88341784815.0,
+        "pe_ratio": 3.45,
+        "market_cap": 86968596450.0,
         "outstanding_shares": 1525764850.0,
         "high_52": 71.0,
         "low_52": 47.6,
@@ -4924,7 +4930,7 @@
                 "pay_date": "Oct 1, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:45",
+        "last_updated": "2026-05-19 12:46:19",
         "status": "Open"
     },
     "PNC": {
@@ -4936,7 +4942,7 @@
         "low_52": null,
         "eps": null,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:45",
+        "last_updated": "2026-05-19 12:46:20",
         "status": "Suspended"
     },
     "PNX": {
@@ -4955,7 +4961,7 @@
                 "pay_date": "TBA"
             }
         ],
-        "last_updated": "2026-05-18 13:52:45",
+        "last_updated": "2026-05-19 12:46:20",
         "status": "Suspended"
     },
     "PORT": {
@@ -4967,39 +4973,8 @@
         "low_52": 7.3,
         "eps": -0.01,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:45",
+        "last_updated": "2026-05-19 12:46:20",
         "status": "Suspended"
-    },
-    "PPC": {
-        "symbol": "PPC",
-        "pe_ratio": 7.71,
-        "market_cap": 28208192535.0,
-        "outstanding_shares": 1880546169.0,
-        "high_52": 15.5,
-        "low_52": 10.68,
-        "eps": 1.97,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.33,
-                "ex_date": "May 29, 2026",
-                "pay_date": "Jun 25, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.26,
-                "ex_date": "Nov 27, 2025",
-                "pay_date": "Dec 29, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 0.26,
-                "ex_date": "May 29, 2025",
-                "pay_date": "Jun 26, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:45",
-        "status": "Open"
     },
     "PRC": {
         "symbol": "PRC",
@@ -5017,13 +4992,13 @@
                 "pay_date": "Nov 21, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:46",
+        "last_updated": "2026-05-19 12:46:20",
         "status": "Open"
     },
     "PREIT": {
         "symbol": "PREIT",
-        "pe_ratio": 6.15,
-        "market_cap": 3979289490.0,
+        "pe_ratio": 6.1,
+        "market_cap": 4045062870.0,
         "outstanding_shares": 3288669000.0,
         "high_52": 2.5,
         "low_52": 0.89,
@@ -5060,37 +5035,68 @@
                 "pay_date": "May 21, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:46",
+        "last_updated": "2026-05-19 12:46:20",
+        "status": "Open"
+    },
+    "PPC": {
+        "symbol": "PPC",
+        "pe_ratio": 7.66,
+        "market_cap": 28546690845.42,
+        "outstanding_shares": 1880546169.0,
+        "high_52": 15.5,
+        "low_52": 10.7,
+        "eps": 1.97,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.33,
+                "ex_date": "May 29, 2026",
+                "pay_date": "Jun 25, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.26,
+                "ex_date": "Nov 27, 2025",
+                "pay_date": "Dec 29, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 0.26,
+                "ex_date": "May 29, 2025",
+                "pay_date": "Jun 26, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:20",
         "status": "Open"
     },
     "PRIM": {
         "symbol": "PRIM",
-        "pe_ratio": -27.67,
+        "pe_ratio": -27.0,
         "market_cap": 780535198.82,
         "outstanding_shares": 940403854.0,
         "high_52": 1.93,
         "low_52": 0.72,
         "eps": -0.03,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:46",
+        "last_updated": "2026-05-19 12:46:20",
         "status": "Open"
     },
     "PRMX": {
         "symbol": "PRMX",
         "pe_ratio": null,
-        "market_cap": 2280298157.28,
+        "market_cap": 2211198213.12,
         "outstanding_shares": 2303331472.0,
         "high_52": 1.59,
         "low_52": 0.89,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:47",
+        "last_updated": "2026-05-19 12:46:20",
         "status": "Open"
     },
     "PSB": {
         "symbol": "PSB",
-        "pe_ratio": 6.88,
-        "market_cap": 23712040558.8,
+        "pe_ratio": 6.92,
+        "market_cap": 24096214033.2,
         "outstanding_shares": 426859416.0,
         "high_52": 59.7,
         "low_52": 52.55,
@@ -5127,12 +5133,12 @@
                 "pay_date": "May 26, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:47",
+        "last_updated": "2026-05-19 12:46:22",
         "status": "Open"
     },
     "PSE": {
         "symbol": "PSE",
-        "pe_ratio": 15.1,
+        "pe_ratio": 14.81,
         "market_cap": 17523057375.0,
         "outstanding_shares": 82267875.0,
         "high_52": 220.0,
@@ -5164,13 +5170,37 @@
                 "pay_date": "May 27, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:47",
+        "last_updated": "2026-05-19 12:46:22",
         "status": "Open"
+    },
+    "PTC": {
+        "symbol": "PTC",
+        "pe_ratio": 444.44,
+        "market_cap": 90000000000.0,
+        "outstanding_shares": 1000000000.0,
+        "high_52": 120.0,
+        "low_52": 85.45,
+        "eps": 0.27,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:22",
+        "status": "Open"
+    },
+    "PTT": {
+        "symbol": "PTT",
+        "pe_ratio": null,
+        "market_cap": 495000000.0,
+        "outstanding_shares": 1500000000.0,
+        "high_52": null,
+        "low_52": null,
+        "eps": 0.04,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:22",
+        "status": "Suspended"
     },
     "PX": {
         "symbol": "PX",
-        "pe_ratio": 58.06,
-        "market_cap": 54354551239.2,
+        "pe_ratio": 57.38,
+        "market_cap": 53718487341.72,
         "outstanding_shares": 5782399068.0,
         "high_52": 12.26,
         "low_52": 5.05,
@@ -5183,49 +5213,25 @@
                 "pay_date": "Mar 25, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:48",
+        "last_updated": "2026-05-19 12:46:22",
         "status": "Open"
-    },
-    "PTC": {
-        "symbol": "PTC",
-        "pe_ratio": 333.33,
-        "market_cap": 90000000000.0,
-        "outstanding_shares": 1000000000.0,
-        "high_52": 120.0,
-        "low_52": 85.45,
-        "eps": 0.27,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:48",
-        "status": "Open"
-    },
-    "PTT": {
-        "symbol": "PTT",
-        "pe_ratio": null,
-        "market_cap": 495000000.0,
-        "outstanding_shares": 1500000000.0,
-        "high_52": null,
-        "low_52": null,
-        "eps": 0.04,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:48",
-        "status": "Suspended"
     },
     "PXP": {
         "symbol": "PXP",
-        "pe_ratio": -92.0,
-        "market_cap": 6740487806.46,
+        "pe_ratio": -89.33,
+        "market_cap": 6597073172.28,
         "outstanding_shares": 2390243903.0,
         "high_52": 4.28,
         "low_52": 1.99,
         "eps": -0.03,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:48",
+        "last_updated": "2026-05-19 12:46:22",
         "status": "Open"
     },
     "RCB": {
         "symbol": "RCB",
-        "pe_ratio": 5.73,
-        "market_cap": 58068876720.0,
+        "pe_ratio": 5.8,
+        "market_cap": 56254224322.5,
         "outstanding_shares": 2419536530.0,
         "high_52": 26.85,
         "low_52": 23.0,
@@ -5238,13 +5244,13 @@
                 "pay_date": "Apr 28, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:48",
+        "last_updated": "2026-05-19 12:46:22",
         "status": "Open"
     },
     "RCR": {
         "symbol": "RCR",
-        "pe_ratio": 15.21,
-        "market_cap": 142706261958.4,
+        "pe_ratio": 14.89,
+        "market_cap": 139773941507.2,
         "outstanding_shares": 19548803008.0,
         "high_52": 8.3,
         "low_52": 6.44,
@@ -5281,25 +5287,13 @@
                 "pay_date": "May 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:49",
-        "status": "Open"
-    },
-    "RCI": {
-        "symbol": "RCI",
-        "pe_ratio": 6.08,
-        "market_cap": 7515356148.92,
-        "outstanding_shares": 2804237369.0,
-        "high_52": 4.1,
-        "low_52": 2.0,
-        "eps": 0.4,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:49",
+        "last_updated": "2026-05-19 12:46:22",
         "status": "Open"
     },
     "REDC": {
         "symbol": "REDC",
         "pe_ratio": 14.25,
-        "market_cap": 4420000013.6,
+        "market_cap": 4446000013.68,
         "outstanding_shares": 650000002.0,
         "high_52": 7.5,
         "low_52": 5.02,
@@ -5312,7 +5306,19 @@
                 "pay_date": "Jan 12, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:49",
+        "last_updated": "2026-05-19 12:46:22",
+        "status": "Open"
+    },
+    "RCI": {
+        "symbol": "RCI",
+        "pe_ratio": 6.12,
+        "market_cap": 6814296806.67,
+        "outstanding_shares": 2804237369.0,
+        "high_52": 4.1,
+        "low_52": 2.0,
+        "eps": 0.4,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:22",
         "status": "Open"
     },
     "REG": {
@@ -5331,13 +5337,13 @@
                 "pay_date": "Nov 28, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:49",
+        "last_updated": "2026-05-19 12:46:24",
         "status": "Open"
     },
     "RFM": {
         "symbol": "RFM",
-        "pe_ratio": 11.52,
-        "market_cap": 18700998936.9,
+        "pe_ratio": 11.48,
+        "market_cap": 18633607949.74,
         "outstanding_shares": 3369549358.0,
         "high_52": 5.68,
         "low_52": 4.07,
@@ -5380,44 +5386,13 @@
                 "pay_date": "May 26, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:50",
-        "status": "Open"
-    },
-    "ROCK": {
-        "symbol": "ROCK",
-        "pe_ratio": 2.53,
-        "market_cap": 11866518664.12,
-        "outstanding_shares": 6116762198.0,
-        "high_52": 2.25,
-        "low_52": 1.66,
-        "eps": 0.77,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.1212,
-                "ex_date": "Aug 06, 2025",
-                "pay_date": "Sep 2, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:50",
-        "status": "Open"
-    },
-    "RLT": {
-        "symbol": "RLT",
-        "pe_ratio": -9.8,
-        "market_cap": 891810063.13,
-        "outstanding_shares": 9100102685.0,
-        "high_52": 0.142,
-        "low_52": 0.095,
-        "eps": -0.01,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:50",
+        "last_updated": "2026-05-19 12:46:24",
         "status": "Open"
     },
     "RLC": {
         "symbol": "RLC",
-        "pe_ratio": 6.39,
-        "market_cap": 86395793078.24,
+        "pe_ratio": 6.36,
+        "market_cap": 85915282549.44,
         "outstanding_shares": 4805105288.0,
         "high_52": 19.2,
         "low_52": 12.5,
@@ -5436,7 +5411,19 @@
                 "pay_date": "Jun 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:50",
+        "last_updated": "2026-05-19 12:46:24",
+        "status": "Open"
+    },
+    "RLT": {
+        "symbol": "RLT",
+        "pe_ratio": -10.5,
+        "market_cap": 891810063.13,
+        "outstanding_shares": 9100102685.0,
+        "high_52": 0.142,
+        "low_52": 0.095,
+        "eps": -0.01,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:24",
         "status": "Open"
     },
     "ROX": {
@@ -5448,13 +5435,32 @@
         "low_52": 1.45,
         "eps": -1.46,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:50",
+        "last_updated": "2026-05-19 12:46:25",
         "status": "Suspended"
+    },
+    "ROCK": {
+        "symbol": "ROCK",
+        "pe_ratio": 2.49,
+        "market_cap": 11927686286.1,
+        "outstanding_shares": 6116762198.0,
+        "high_52": 2.25,
+        "low_52": 1.66,
+        "eps": 0.77,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.1212,
+                "ex_date": "Aug 06, 2025",
+                "pay_date": "Sep 2, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:25",
+        "status": "Open"
     },
     "RRHI": {
         "symbol": "RRHI",
-        "pe_ratio": 10.41,
-        "market_cap": 51362813387.0,
+        "pe_ratio": 10.39,
+        "market_cap": 51469375240.5,
         "outstanding_shares": 1065618535.0,
         "high_52": 48.35,
         "low_52": 31.5,
@@ -5473,44 +5479,13 @@
                 "pay_date": "Jun 9, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:50",
-        "status": "Open"
-    },
-    "SBS": {
-        "symbol": "SBS",
-        "pe_ratio": 339.0,
-        "market_cap": 6410489996.61,
-        "outstanding_shares": 1890999999.0,
-        "high_52": 4.1,
-        "low_52": 2.72,
-        "eps": 0.01,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:51",
-        "status": "Open"
-    },
-    "SCC": {
-        "symbol": "SCC",
-        "pe_ratio": 8.78,
-        "market_cap": 114552258359.0,
-        "outstanding_shares": 4250547620.0,
-        "high_52": 36.0,
-        "low_52": 21.2,
-        "eps": 3.07,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 1.25,
-                "ex_date": "Nov 03, 2025",
-                "pay_date": "Nov 20, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:51",
+        "last_updated": "2026-05-19 12:46:25",
         "status": "Open"
     },
     "SECB": {
         "symbol": "SECB",
-        "pe_ratio": 4.22,
-        "market_cap": 49206089321.1,
+        "pe_ratio": 4.27,
+        "market_cap": 48980027655.0,
         "outstanding_shares": 753538887.0,
         "high_52": 79.8,
         "low_52": 61.6,
@@ -5529,7 +5504,38 @@
                 "pay_date": "Nov 26, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:51",
+        "last_updated": "2026-05-19 12:46:25",
+        "status": "Open"
+    },
+    "SCC": {
+        "symbol": "SCC",
+        "pe_ratio": 8.55,
+        "market_cap": 114552258359.0,
+        "outstanding_shares": 4250547620.0,
+        "high_52": 36.0,
+        "low_52": 21.2,
+        "eps": 3.07,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 1.25,
+                "ex_date": "Nov 03, 2025",
+                "pay_date": "Nov 20, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:25",
+        "status": "Open"
+    },
+    "SBS": {
+        "symbol": "SBS",
+        "pe_ratio": 339.0,
+        "market_cap": 6410489996.61,
+        "outstanding_shares": 1890999999.0,
+        "high_52": 4.1,
+        "low_52": 2.72,
+        "eps": 0.01,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:25",
         "status": "Open"
     },
     "SEVN": {
@@ -5548,7 +5554,7 @@
                 "pay_date": "Aug 15, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:52",
+        "last_updated": "2026-05-19 12:46:26",
         "status": "Open"
     },
     "SFI": {
@@ -5560,7 +5566,7 @@
         "low_52": 0.044,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:52",
+        "last_updated": "2026-05-19 12:46:26",
         "status": "Open"
     },
     "SGI": {
@@ -5579,34 +5585,15 @@
                 "pay_date": "Aug 7, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:52",
-        "status": "Open"
-    },
-    "SHLPH": {
-        "symbol": "SHLPH",
-        "pe_ratio": 6.78,
-        "market_cap": 14553266702.04,
-        "outstanding_shares": 1613444202.0,
-        "high_52": 13.0,
-        "low_52": 4.7,
-        "eps": 1.31,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.3,
-                "ex_date": "Apr 10, 2026",
-                "pay_date": "May 5, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:52",
+        "last_updated": "2026-05-19 12:46:26",
         "status": "Open"
     },
     "SGP": {
         "symbol": "SGP",
-        "pe_ratio": 7.52,
-        "market_cap": 150603767600.0,
+        "pe_ratio": 7.44,
+        "market_cap": 151656940800.0,
         "outstanding_shares": 5265866000.0,
-        "high_52": 29.1,
+        "high_52": 29.2,
         "low_52": 10.74,
         "eps": 3.83,
         "div_history": [
@@ -5629,12 +5616,31 @@
                 "pay_date": "Sep 25, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:52",
+        "last_updated": "2026-05-19 12:46:27",
+        "status": "Open"
+    },
+    "SHLPH": {
+        "symbol": "SHLPH",
+        "pe_ratio": 6.75,
+        "market_cap": 14327384513.76,
+        "outstanding_shares": 1613444202.0,
+        "high_52": 13.0,
+        "low_52": 4.7,
+        "eps": 1.31,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.3,
+                "ex_date": "Apr 10, 2026",
+                "pay_date": "May 5, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:27",
         "status": "Open"
     },
     "SHNG": {
         "symbol": "SHNG",
-        "pe_ratio": 3.81,
+        "pe_ratio": 3.8,
         "market_cap": 15435542369.88,
         "outstanding_shares": 4764056287.0,
         "high_52": 4.5,
@@ -5654,7 +5660,57 @@
                 "pay_date": "Sep 11, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:52",
+        "last_updated": "2026-05-19 12:46:27",
+        "status": "Open"
+    },
+    "SLI": {
+        "symbol": "SLI",
+        "pe_ratio": 3.94,
+        "market_cap": 16675864500.0,
+        "outstanding_shares": 8296450000.0,
+        "high_52": 2.74,
+        "low_52": 1.91,
+        "eps": 0.51,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.04,
+                "ex_date": "Oct 16, 2025",
+                "pay_date": "Nov 13, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:27",
+        "status": "Open"
+    },
+    "SM": {
+        "symbol": "SM",
+        "pe_ratio": 8.06,
+        "market_cap": 730986060000.0,
+        "outstanding_shares": 1218310100.0,
+        "high_52": 918.5,
+        "low_52": 587.0,
+        "eps": 74.16,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 17.0,
+                "ex_date": "May 13, 2026",
+                "pay_date": "May 28, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 2.0,
+                "ex_date": "May 15, 2025",
+                "pay_date": "May 29, 2025"
+            },
+            {
+                "type": "Cash",
+                "amount": 11.0,
+                "ex_date": "May 15, 2025",
+                "pay_date": "May 29, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:27",
         "status": "Open"
     },
     "SLF": {
@@ -5697,63 +5753,13 @@
                 "pay_date": "Jun 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:53",
-        "status": "Open"
-    },
-    "SLI": {
-        "symbol": "SLI",
-        "pe_ratio": 3.94,
-        "market_cap": 16675864500.0,
-        "outstanding_shares": 8296450000.0,
-        "high_52": 2.74,
-        "low_52": 1.91,
-        "eps": 0.51,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.04,
-                "ex_date": "Oct 16, 2025",
-                "pay_date": "Nov 13, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:53",
-        "status": "Open"
-    },
-    "SM": {
-        "symbol": "SM",
-        "pe_ratio": 8.09,
-        "market_cap": 729815669900.0,
-        "outstanding_shares": 1218390100.0,
-        "high_52": 918.5,
-        "low_52": 587.0,
-        "eps": 74.16,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 17.0,
-                "ex_date": "May 13, 2026",
-                "pay_date": "May 28, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 2.0,
-                "ex_date": "May 15, 2025",
-                "pay_date": "May 29, 2025"
-            },
-            {
-                "type": "Cash",
-                "amount": 11.0,
-                "ex_date": "May 15, 2025",
-                "pay_date": "May 29, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:53",
+        "last_updated": "2026-05-19 12:46:27",
         "status": "Open"
     },
     "SMC": {
         "symbol": "SMC",
-        "pe_ratio": 5.13,
-        "market_cap": 166753566330.6,
+        "pe_ratio": 5.11,
+        "market_cap": 166872761160.0,
         "outstanding_shares": 2383896588.0,
         "high_52": 86.0,
         "low_52": 54.25,
@@ -6084,14 +6090,14 @@
                 "pay_date": "Jul 4, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:54",
+        "last_updated": "2026-05-19 12:46:27",
         "status": "Open"
     },
     "SMPH": {
         "symbol": "SMPH",
-        "pe_ratio": 11.36,
-        "market_cap": 545053600380.12,
-        "outstanding_shares": 28717260294.0,
+        "pe_ratio": 11.24,
+        "market_cap": 551323397644.8,
+        "outstanding_shares": 28714760294.0,
         "high_52": 25.3,
         "low_52": 18.84,
         "eps": 1.69,
@@ -6109,7 +6115,7 @@
                 "pay_date": "May 28, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:54",
+        "last_updated": "2026-05-19 12:46:28",
         "status": "Open"
     },
     "SOC": {
@@ -6121,13 +6127,13 @@
         "low_52": 0.175,
         "eps": 0.05,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:54",
+        "last_updated": "2026-05-19 12:46:28",
         "status": "Open"
     },
     "SPC": {
         "symbol": "SPC",
-        "pe_ratio": 7.33,
-        "market_cap": 15773656003.62,
+        "pe_ratio": 7.38,
+        "market_cap": 16342345688.76,
         "outstanding_shares": 1496551803.0,
         "high_52": 11.5,
         "low_52": 7.02,
@@ -6146,7 +6152,7 @@
                 "pay_date": "Jul 10, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:54",
+        "last_updated": "2026-05-19 12:46:29",
         "status": "Open"
     },
     "SPM": {
@@ -6158,19 +6164,19 @@
         "low_52": 1.7,
         "eps": 0.04,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:55",
+        "last_updated": "2026-05-19 12:46:29",
         "status": "Open"
     },
     "SPNEC": {
         "symbol": "SPNEC",
-        "pe_ratio": -20.38,
-        "market_cap": 83121263000.0,
+        "pe_ratio": -20.5,
+        "market_cap": 81619071500.0,
         "outstanding_shares": 50073050000.0,
         "high_52": 1.75,
         "low_52": 1.06,
         "eps": -0.08,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:55",
+        "last_updated": "2026-05-19 12:46:29",
         "status": "Open"
     },
     "SRDC": {
@@ -6182,13 +6188,13 @@
         "low_52": 1.2,
         "eps": 0.01,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:55",
+        "last_updated": "2026-05-19 12:46:29",
         "status": "Open"
     },
     "SSI": {
         "symbol": "SSI",
-        "pe_ratio": 5.67,
-        "market_cap": 7717619914.8,
+        "pe_ratio": 5.62,
+        "market_cap": 7423303901.1,
         "outstanding_shares": 3270177930.0,
         "high_52": 3.5,
         "low_52": 2.12,
@@ -6207,13 +6213,13 @@
                 "pay_date": "May 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:55",
+        "last_updated": "2026-05-19 12:46:29",
         "status": "Open"
     },
     "STI": {
         "symbol": "STI",
-        "pe_ratio": 5.91,
-        "market_cap": 13173393208.92,
+        "pe_ratio": 5.95,
+        "market_cap": 12876249001.2,
         "outstanding_shares": 9904806924.0,
         "high_52": 1.81,
         "low_52": 1.25,
@@ -6226,7 +6232,7 @@
                 "pay_date": "Jan 30, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:56",
+        "last_updated": "2026-05-19 12:46:29",
         "status": "Open"
     },
     "STN": {
@@ -6238,7 +6244,7 @@
         "low_52": 1.75,
         "eps": 0.04,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:56",
+        "last_updated": "2026-05-19 12:46:29",
         "status": "Open"
     },
     "STR": {
@@ -6257,19 +6263,7 @@
                 "pay_date": "Feb 5, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:56",
-        "status": "Open"
-    },
-    "SUN": {
-        "symbol": "SUN",
-        "pe_ratio": -0.13,
-        "market_cap": 4205000000.0,
-        "outstanding_shares": 7250000000.0,
-        "high_52": 0.83,
-        "low_52": 0.49,
-        "eps": -4.15,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:52:56",
+        "last_updated": "2026-05-19 12:46:29",
         "status": "Open"
     },
     "T": {
@@ -6281,50 +6275,37 @@
         "low_52": 0.27,
         "eps": -0.01,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:57",
+        "last_updated": "2026-05-19 12:46:31",
+        "status": "Open"
+    },
+    "SUN": {
+        "symbol": "SUN",
+        "pe_ratio": -0.11,
+        "market_cap": 4060000000.0,
+        "outstanding_shares": 7250000000.0,
+        "high_52": 0.83,
+        "low_52": 0.49,
+        "eps": -4.15,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:31",
         "status": "Open"
     },
     "TBGI": {
         "symbol": "TBGI",
         "pe_ratio": null,
-        "market_cap": 451679018.0,
+        "market_cap": 463065884.0,
         "outstanding_shares": 3795622000.0,
         "high_52": 0.28,
         "low_52": 0.11,
         "eps": 0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:57",
-        "status": "Open"
-    },
-    "TEL": {
-        "symbol": "TEL",
-        "pe_ratio": 8.87,
-        "market_cap": 268989439875.0,
-        "outstanding_shares": 216055775.0,
-        "high_52": 1445.0,
-        "low_52": 1067.0,
-        "eps": 138.63,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 46.0,
-                "ex_date": "Mar 25, 2026",
-                "pay_date": "Apr 16, 2026"
-            },
-            {
-                "type": "Cash",
-                "amount": 48.0,
-                "ex_date": "Aug 27, 2025",
-                "pay_date": "Sep 10, 2025"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:57",
+        "last_updated": "2026-05-19 12:46:31",
         "status": "Open"
     },
     "TECH": {
         "symbol": "TECH",
         "pe_ratio": null,
-        "market_cap": 407788553.25,
+        "market_cap": 401103495.0,
         "outstanding_shares": 668505825.0,
         "high_52": 0.86,
         "low_52": 0.51,
@@ -6427,13 +6408,13 @@
                 "pay_date": "TBA"
             }
         ],
-        "last_updated": "2026-05-18 13:52:57",
+        "last_updated": "2026-05-19 12:46:31",
         "status": "Open"
     },
     "TFC": {
         "symbol": "TFC",
         "pe_ratio": 15.62,
-        "market_cap": 1597750000.0,
+        "market_cap": 1925000000.0,
         "outstanding_shares": 35000000.0,
         "high_52": 65.0,
         "low_52": 35.05,
@@ -6446,25 +6427,50 @@
                 "pay_date": "Feb 4, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:57",
+        "last_updated": "2026-05-19 12:46:31",
+        "status": "Open"
+    },
+    "TEL": {
+        "symbol": "TEL",
+        "pe_ratio": 8.73,
+        "market_cap": 265532547475.0,
+        "outstanding_shares": 216055775.0,
+        "high_52": 1445.0,
+        "low_52": 1067.0,
+        "eps": 138.63,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 46.0,
+                "ex_date": "Mar 25, 2026",
+                "pay_date": "Apr 16, 2026"
+            },
+            {
+                "type": "Cash",
+                "amount": 48.0,
+                "ex_date": "Aug 27, 2025",
+                "pay_date": "Sep 10, 2025"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:31",
         "status": "Open"
     },
     "TFHI": {
         "symbol": "TFHI",
-        "pe_ratio": 1.2,
-        "market_cap": 19650080684.0,
+        "pe_ratio": 1.16,
+        "market_cap": 20708161951.6,
         "outstanding_shares": 377886167.0,
         "high_52": 79.8,
         "low_52": 50.0,
         "eps": 45.85,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:57",
+        "last_updated": "2026-05-19 12:46:32",
         "status": "Open"
     },
     "TOP": {
         "symbol": "TOP",
         "pe_ratio": 141.0,
-        "market_cap": 15253914060.0,
+        "market_cap": 15146492130.0,
         "outstanding_shares": 10742193000.0,
         "high_52": 2.01,
         "low_52": 0.32,
@@ -6489,27 +6495,27 @@
                 "pay_date": "Jun 18, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:58",
+        "last_updated": "2026-05-19 12:46:32",
         "status": "Open"
     },
     "TUGS": {
         "symbol": "TUGS",
-        "pe_ratio": 4.23,
-        "market_cap": 483076909.8,
+        "pe_ratio": 4.08,
+        "market_cap": 492022778.5,
         "outstanding_shares": 894586870.0,
         "high_52": 0.74,
         "low_52": 0.41,
         "eps": 0.13,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:58",
+        "last_updated": "2026-05-19 12:46:32",
         "status": "Open"
     },
     "UBP": {
         "symbol": "UBP",
-        "pe_ratio": 8.67,
-        "market_cap": 86558185742.4,
+        "pe_ratio": 9.17,
+        "market_cap": 86226545184.0,
         "outstanding_shares": 3316405584.0,
-        "high_52": 34.95,
+        "high_52": 34.55,
         "low_52": 23.55,
         "eps": 3.0,
         "div_history": [
@@ -6520,7 +6526,7 @@
                 "pay_date": "Mar 23, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:59",
+        "last_updated": "2026-05-19 12:46:32",
         "status": "Open"
     },
     "UNH": {
@@ -6532,7 +6538,7 @@
         "low_52": 65.0,
         "eps": -11.91,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:59",
+        "last_updated": "2026-05-19 12:46:33",
         "status": "Open"
     },
     "UPM": {
@@ -6544,13 +6550,13 @@
         "low_52": 0.0028,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:52:59",
+        "last_updated": "2026-05-19 12:46:33",
         "status": "Open"
     },
     "UPSON": {
         "symbol": "UPSON",
         "pe_ratio": 5.69,
-        "market_cap": 2281250949.0,
+        "market_cap": 2312500962.0,
         "outstanding_shares": 3125001300.0,
         "high_52": 0.86,
         "low_52": 0.61,
@@ -6563,13 +6569,13 @@
                 "pay_date": "Jun 25, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:59",
+        "last_updated": "2026-05-19 12:46:33",
         "status": "Open"
     },
     "URC": {
         "symbol": "URC",
         "pe_ratio": 12.83,
-        "market_cap": 131431101912.0,
+        "market_cap": 130789974585.6,
         "outstanding_shares": 2137091088.0,
         "high_52": 99.4,
         "low_52": 59.2,
@@ -6588,32 +6594,13 @@
                 "pay_date": "Oct 1, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:52:59",
-        "status": "Open"
-    },
-    "VITA": {
-        "symbol": "VITA",
-        "pe_ratio": 5.3,
-        "market_cap": 1557710347.14,
-        "outstanding_shares": 3054334014.0,
-        "high_52": 0.69,
-        "low_52": 0.48,
-        "eps": 0.1,
-        "div_history": [
-            {
-                "type": "Cash",
-                "amount": 0.04911054237,
-                "ex_date": "Apr 14, 2026",
-                "pay_date": "Apr 30, 2026"
-            }
-        ],
-        "last_updated": "2026-05-18 13:52:59",
+        "last_updated": "2026-05-19 12:46:34",
         "status": "Open"
     },
     "V": {
         "symbol": "V",
         "pe_ratio": 8.4,
-        "market_cap": 3569644926.1,
+        "market_cap": 3527649103.44,
         "outstanding_shares": 4199582266.0,
         "high_52": 1.1,
         "low_52": 0.84,
@@ -6626,13 +6613,32 @@
                 "pay_date": "Jan 21, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:52:59",
+        "last_updated": "2026-05-19 12:46:34",
+        "status": "Open"
+    },
+    "VITA": {
+        "symbol": "VITA",
+        "pe_ratio": 5.2,
+        "market_cap": 1618797027.42,
+        "outstanding_shares": 3054334014.0,
+        "high_52": 0.69,
+        "low_52": 0.48,
+        "eps": 0.1,
+        "div_history": [
+            {
+                "type": "Cash",
+                "amount": 0.04911054237,
+                "ex_date": "Apr 14, 2026",
+                "pay_date": "Apr 30, 2026"
+            }
+        ],
+        "last_updated": "2026-05-19 12:46:34",
         "status": "Open"
     },
     "VLL": {
         "symbol": "VLL",
         "pe_ratio": 1.52,
-        "market_cap": 12190087368.96,
+        "market_cap": 12317067445.72,
         "outstanding_shares": 12698007676.0,
         "high_52": 1.71,
         "low_52": 0.83,
@@ -6717,7 +6723,7 @@
                 "pay_date": "Jul 4, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:53:00",
+        "last_updated": "2026-05-19 12:46:34",
         "status": "Open"
     },
     "VMC": {
@@ -6736,13 +6742,13 @@
                 "pay_date": "Mar 5, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:53:00",
+        "last_updated": "2026-05-19 12:46:34",
         "status": "Open"
     },
     "VREIT": {
         "symbol": "VREIT",
-        "pe_ratio": 2.18,
-        "market_cap": 10875000000.0,
+        "pe_ratio": 2.2,
+        "market_cap": 10800000000.0,
         "outstanding_shares": 7500000000.0,
         "high_52": 1.95,
         "low_52": 1.02,
@@ -6773,7 +6779,7 @@
                 "pay_date": "May 30, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:53:00",
+        "last_updated": "2026-05-19 12:46:34",
         "status": "Open"
     },
     "VVT": {
@@ -6798,19 +6804,7 @@
                 "pay_date": "Jun 20, 2025"
             }
         ],
-        "last_updated": "2026-05-18 13:53:01",
-        "status": "Open"
-    },
-    "WEB": {
-        "symbol": "WEB",
-        "pe_ratio": -76.88,
-        "market_cap": 17918492966.4,
-        "outstanding_shares": 1435776680.0,
-        "high_52": 12.86,
-        "low_52": 1.78,
-        "eps": -0.16,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:53:01",
+        "last_updated": "2026-05-19 12:46:34",
         "status": "Open"
     },
     "WIN": {
@@ -6822,13 +6816,37 @@
         "low_52": 0.222,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:53:01",
+        "last_updated": "2026-05-19 12:46:35",
+        "status": "Open"
+    },
+    "WEB": {
+        "symbol": "WEB",
+        "pe_ratio": -75.62,
+        "market_cap": 17660053164.0,
+        "outstanding_shares": 1435776680.0,
+        "high_52": 12.86,
+        "low_52": 1.78,
+        "eps": -0.16,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:35",
+        "status": "Open"
+    },
+    "WPI": {
+        "symbol": "WPI",
+        "pe_ratio": 1.22,
+        "market_cap": 1049576536.26,
+        "outstanding_shares": 2498991753.0,
+        "high_52": 0.48,
+        "low_52": 0.34,
+        "eps": 0.34,
+        "div_history": [],
+        "last_updated": "2026-05-19 12:46:36",
         "status": "Open"
     },
     "WLCON": {
         "symbol": "WLCON",
-        "pe_ratio": 10.1,
-        "market_cap": 24311364007.88,
+        "pe_ratio": 10.0,
+        "market_cap": 24844328142.96,
         "outstanding_shares": 4099724116.0,
         "high_52": 10.8,
         "low_52": 5.78,
@@ -6847,19 +6865,7 @@
                 "pay_date": "May 12, 2026"
             }
         ],
-        "last_updated": "2026-05-18 13:53:01",
-        "status": "Open"
-    },
-    "WPI": {
-        "symbol": "WPI",
-        "pe_ratio": 1.24,
-        "market_cap": 1049576536.26,
-        "outstanding_shares": 2498991753.0,
-        "high_52": 0.48,
-        "low_52": 0.34,
-        "eps": 0.34,
-        "div_history": [],
-        "last_updated": "2026-05-18 13:53:02",
+        "last_updated": "2026-05-19 12:46:36",
         "status": "Open"
     },
     "X": {
@@ -6871,19 +6877,19 @@
         "low_52": 0.16,
         "eps": -0.05,
         "div_history": [],
-        "last_updated": "2026-05-18 13:53:02",
+        "last_updated": "2026-05-19 12:46:36",
         "status": "Open"
     },
     "XG": {
         "symbol": "XG",
-        "pe_ratio": 83.33,
+        "pe_ratio": 82.67,
         "market_cap": 3725000007.5,
         "outstanding_shares": 1490000003.0,
         "high_52": 3.91,
         "low_52": 2.12,
         "eps": 0.03,
         "div_history": [],
-        "last_updated": "2026-05-18 13:53:02",
+        "last_updated": "2026-05-19 12:46:36",
         "status": "Open"
     },
     "ZHI": {
@@ -6895,7 +6901,7 @@
         "low_52": 0.045,
         "eps": -0.0,
         "div_history": [],
-        "last_updated": "2026-05-18 13:53:02",
+        "last_updated": "2026-05-19 12:46:36",
         "status": "Open"
     }
 }
