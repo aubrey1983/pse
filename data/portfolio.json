@@ -22,9 +22,9 @@
         "last_updated": "2025-12-19 13:42:27"
     },
     "LTG": {
-        "shares": 393.0,
-        "avg_price": 15.229770992366413,
-        "last_updated": "2026-05-01 03:40:58"
+        "shares": 519.0,
+        "avg_price": 15.368208092485549,
+        "last_updated": "2026-06-01 04:22:32"
     },
     "PSE": {
         "shares": 9.0,
@@ -48,9 +48,9 @@
         "last_updated": "2026-04-01 02:53:09"
     },
     "AUB": {
-        "shares": 94.0,
-        "avg_price": 42.275000000000006,
-        "last_updated": "2026-05-01 03:40:58"
+        "shares": 139.0,
+        "avg_price": 42.671582733812954,
+        "last_updated": "2026-06-01 04:22:32"
     },
     "MWC": {
         "shares": 141.0,
@@ -70,10 +70,9 @@
         "last_updated": "2026-03-01 02:38:42"
     },
     "APX": {
-        "shares": 134.0,
-        "avg_price": 14.88,
-        "date_added": "2026-04-01 02:53:09",
-        "last_updated": "2026-04-01 02:53:09"
+        "shares": 255.0,
+        "avg_price": 15.64870588235294,
+        "last_updated": "2026-06-01 04:22:32"
     },
     "NRCP": {
         "shares": 2777.0,
@@ -98,5 +97,17 @@
         "avg_price": 33.0,
         "date_added": "2026-05-01 03:40:58",
         "last_updated": "2026-05-01 03:40:58"
+    },
+    "EURO": {
+        "shares": 1680.0,
+        "avg_price": 1.19,
+        "date_added": "2026-06-01 04:22:32",
+        "last_updated": "2026-06-01 04:22:32"
+    },
+    "FRUIT": {
+        "shares": 3076.0,
+        "avg_price": 0.65,
+        "date_added": "2026-06-01 04:22:32",
+        "last_updated": "2026-06-01 04:22:32"
     }
 }
