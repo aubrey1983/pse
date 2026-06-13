@@ -15,6 +15,9 @@ A professional-grade stock analysis and monitoring tool for the Philippine Stock
 - **Automated Workflow**:
   - Smart scraping logic with parallel processing.
   - "AI Slop" free codebase—clean, efficient, and professional.
+- **Month-on-Month Gain Objective**:
+  - Dedicated MoM score that rewards positive monthly return consistency, trend confirmation, manageable volatility, and clean risk/reward.
+  - Dashboard Top Picks and portfolio suggestions now prioritize the MoM score while still showing the original confidence score.
 
 ## Project Structure
 | File | Description |
@@ -45,6 +48,19 @@ A professional-grade stock analysis and monitoring tool for the Philippine Stock
    ```
 3. **View Report**:
    - Open `report.html` in your browser.
+
+## Strategy Tools
+```sh
+# Suggest a diversified portfolio using the month-on-month gain objective
+python suggest_portfolio.py --amount 10000 --stocks 5
+
+# Backtest the month-on-month objective over recent history
+python backtest.py --objective monthly_gain --months 12
+
+# Compare against the original scoring model
+python backtest.py --objective base --months 12
+```
+Backtests write objective-specific files such as `backtest_results_monthly_gain.md` and `backtest_results_base.md`.
 
 ## Tech Stack
 - **Python**: Core logic, Scikit-learn/Pandas (Analysis).

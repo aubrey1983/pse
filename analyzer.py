@@ -277,3 +277,140 @@ class Analyzer:
             score_reasons.append(f"Highly Consistent ({win_rate:.0f}% Win) (+3)")
             
         return score, score_reasons
+
+    def calculate_monthly_gain_score(self, tech_data: dict, fund_data: dict) -> tuple:
+        """
+        Score stocks for the specific objective of improving month-on-month gains.
+        This favors consistent positive monthly returns, controlled volatility,
+        trend confirmation, and a reasonable upside/risk setup.
+        Returns: (score, score_reasons_list)
+        """
+        if not tech_data:
+            return 0, []
+
+        status = fund_data.get('status') if fund_data else None
+        if status in ['Suspended', 'Halted']:
+            return -100, [f"{status} security (-100)"]
+
+        score = 0.0
+        reasons = []
+
+        trend = tech_data.get('trend', 'Neutral')
+        last_close = float(tech_data.get('last_close') or 0)
+        support = float(tech_data.get('support') or 0)
+        resistance = float(tech_data.get('resistance') or 0)
+        rsi = float(tech_data.get('rsi') or 50)
+        win_rate = float(tech_data.get('win_rate') or 0)
+        avg_monthly = float(tech_data.get('avg_monthly_return') or 0)
+        volatility = float(tech_data.get('monthly_volatility') or 0)
+
+        # 1. Month-on-month persistence.
+        if avg_monthly > 0:
+            pts = min(25.0, avg_monthly * 4.0)
+            score += pts
+            reasons.append(f"Positive avg monthly return {avg_monthly:+.1f}% (+{pts:.0f})")
+        elif avg_monthly < 0:
+            pts = min(25.0, abs(avg_monthly) * 5.0)
+            score -= pts
+            reasons.append(f"Negative avg monthly return {avg_monthly:+.1f}% (-{pts:.0f})")
+
+        if win_rate >= 65:
+            score += 14
+            reasons.append(f"High monthly win rate {win_rate:.0f}% (+14)")
+        elif win_rate >= 58:
+            score += 9
+            reasons.append(f"Solid monthly win rate {win_rate:.0f}% (+9)")
+        elif win_rate < 45 and win_rate > 0:
+            score -= 8
+            reasons.append(f"Weak monthly win rate {win_rate:.0f}% (-8)")
+
+        if volatility > 0:
+            penalty = min(20.0, volatility * 0.7)
+            score -= penalty
+            reasons.append(f"Monthly volatility {volatility:.1f}% (-{penalty:.0f})")
+
+        # 2. Trend and momentum confirmation.
+        if trend == "Strong Uptrend":
+            score += 12
+            reasons.append("Strong uptrend (+12)")
+        elif trend == "Uptrend":
+            score += 7
+            reasons.append("Uptrend (+7)")
+        elif trend == "Downtrend":
+            score -= 14
+            reasons.append("Downtrend (-14)")
+        elif trend == "Strong Downtrend":
+            score -= 22
+            reasons.append("Strong downtrend (-22)")
+
+        if 45 <= rsi <= 68:
+            score += 8
+            reasons.append("RSI in constructive range (+8)")
+        elif rsi > 75:
+            score -= 12
+            reasons.append("Overbought RSI > 75 (-12)")
+        elif rsi < 30:
+            score -= 6
+            reasons.append("Oversold RSI < 30 (-6)")
+
+        macd_val = float(tech_data.get('macd') or 0)
+        macd_sig = float(tech_data.get('macd_signal') or 0)
+        if macd_val > macd_sig:
+            score += 5
+            reasons.append("MACD bullish (+5)")
+
+        ema_50 = float(tech_data.get('ema_50') or 0)
+        ema_200 = float(tech_data.get('ema_200') or 0)
+        if last_close > 0 and ema_50 > 0 and last_close > ema_50:
+            score += 5
+            reasons.append("Above EMA 50 (+5)")
+        if last_close > 0 and ema_200 > 0 and last_close > ema_200:
+            score += 4
+            reasons.append("Above EMA 200 (+4)")
+
+        # 3. Upside and downside balance.
+        if last_close > 0 and resistance > last_close:
+            upside_pct = ((resistance - last_close) / last_close) * 100.0
+            if upside_pct >= 5:
+                pts = min(12.0, upside_pct * 0.5)
+                score += pts
+                reasons.append(f"Room to resistance {upside_pct:.1f}% (+{pts:.0f})")
+            else:
+                score -= 6
+                reasons.append("Limited upside to resistance (-6)")
+
+        risk_pct = float(tech_data.get('risk_pct') or 0)
+        if 0 < risk_pct <= 8:
+            score += 6
+            reasons.append(f"Tight stop risk {risk_pct:.1f}% (+6)")
+        elif 8 < risk_pct <= 14:
+            score += 3
+            reasons.append(f"Manageable stop risk {risk_pct:.1f}% (+3)")
+        elif risk_pct > 25:
+            score -= 8
+            reasons.append(f"Wide stop risk {risk_pct:.1f}% (-8)")
+
+        if support > 0 and last_close > 0 and 1.0 <= (last_close / support) <= 1.06:
+            score += 5
+            reasons.append("Near support with defined risk (+5)")
+
+        # 4. Basic fundamental sanity checks.
+        if fund_data:
+            pe = fund_data.get('pe_ratio')
+            try:
+                pe = float(pe)
+            except:
+                pe = None
+
+            if pe and 0 < pe < 20:
+                score += 5
+                reasons.append(f"Reasonable P/E {pe:.1f} (+5)")
+            elif pe and pe > 35:
+                score -= 4
+                reasons.append(f"Expensive P/E {pe:.1f} (-4)")
+
+            if fund_data.get('div_freq') == "Quarterly":
+                score += 3
+                reasons.append("Quarterly dividend support (+3)")
+
+        return int(round(score)), reasons

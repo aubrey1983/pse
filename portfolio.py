@@ -17,13 +17,13 @@ def main():
     
     if args.action == 'add':
         if not args.symbol or not args.price or not args.shares:
-            print("❌ Error: --symbol, --price, and --shares are required for 'add'.")
+            print("[ERROR] --symbol, --price, and --shares are required for 'add'.")
             return
         manager.add_position(args.symbol, args.shares, args.price)
         
     elif args.action == 'remove':
         if not args.symbol:
-            print("❌ Error: --symbol is required for 'remove'.")
+            print("[ERROR] --symbol is required for 'remove'.")
             return
         manager.remove_position(args.symbol)
         
@@ -42,16 +42,16 @@ def main():
         print(f"\n{'='*60}")
         print(f" PORTFOLIO SUMMARY")
         print(f"{'='*60}")
-        print(f" Total Equity:   ₱{summary['total_equity']:,.2f}")
-        print(f" Cost Basis:     ₱{summary['total_cost']:,.2f}")
-        print(f" Gain/Loss:      ₱{summary['total_gain_loss']:,.2f} ({summary['total_gain_loss_pct']:.2f}%)")
+        print(f" Total Equity:   PHP {summary['total_equity']:,.2f}")
+        print(f" Cost Basis:     PHP {summary['total_cost']:,.2f}")
+        print(f" Gain/Loss:      PHP {summary['total_gain_loss']:,.2f} ({summary['total_gain_loss_pct']:.2f}%)")
         print(f"{'-'*60}")
         print(f" {'SYMBOL':<10} {'SHARES':<10} {'AVG PRICE':<12} {'CURRENT':<10} {'G/L %':<10}")
         print(f"{'-'*60}")
         
         for p in summary['positions']:
-            color = "🟢" if p['gain_loss'] >= 0 else "🔴"
-            print(f" {color} {p['symbol']:<8} {p['shares']:<10,.0f} ₱{p['avg_price']:<11.2f} ₱{p['current_price']:<9.2f} {p['gain_loss_pct']:>6.2f}%")
+            marker = "+" if p['gain_loss'] >= 0 else "-"
+            print(f" {marker} {p['symbol']:<8} {p['shares']:<10,.0f} PHP {p['avg_price']:<8.2f} PHP {p['current_price']:<7.2f} {p['gain_loss_pct']:>6.2f}%")
         print(f"{'='*60}\n")
         
     elif args.action == 'update':

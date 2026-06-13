@@ -49,7 +49,7 @@ class PortfolioManager:
             }
         
         self.save_portfolio()
-        print(f"✅ Position for {symbol} updated. Total Shares: {self.portfolio[symbol]['shares']:.0f} @ ₱{self.portfolio[symbol]['avg_price']:.2f}")
+        print(f"[OK] Position for {symbol} updated. Total Shares: {self.portfolio[symbol]['shares']:.0f} @ PHP {self.portfolio[symbol]['avg_price']:.2f}")
 
     def remove_position(self, symbol):
         """Remove a stock position."""
@@ -57,9 +57,9 @@ class PortfolioManager:
         if symbol in self.portfolio:
             del self.portfolio[symbol]
             self.save_portfolio()
-            print(f"🗑️ Removed {symbol} from portfolio.")
+            print(f"[OK] Removed {symbol} from portfolio.")
         else:
-            print(f"⚠️ {symbol} not found in portfolio.")
+            print(f"[WARN] {symbol} not found in portfolio.")
 
     def get_portfolio_summary(self, current_prices):
         """

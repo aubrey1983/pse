@@ -339,6 +339,7 @@ class ReportGenerator:
                         "tech": t,
                         "fund": f,
                         "score": 0, # Top Pick Score
+                        "mom_score": 0, # Month-on-month gain objective score
                         "div_score": 0, # Dividend Score
                         "payout_ratio": 0
                     }
@@ -352,12 +353,16 @@ class ReportGenerator:
                     
                     item['score'] = score
                     item['score_reasons'] = score_reasons
+
+                    mom_score, mom_reasons = self.analyzer.calculate_monthly_gain_score(t, f)
+                    item['mom_score'] = mom_score
+                    item['mom_reasons'] = mom_reasons
                     
                     if sector in grouped_data:
                         grouped_data[sector].append(item)
                     
-                    # Threshold for "Top Pick" (Optimized via Backtest)
-                    if score >= 7:
+                    # Threshold for "Top Pick" now targets month-on-month gain quality.
+                    if mom_score >= 35:
                         top_picks.append(item)
 
                     # --- DIVIDEND GEM SCORING ---
@@ -392,8 +397,8 @@ class ReportGenerator:
                         except: pass
 
         # Sort Picks
-        # Top Picks: Sort by Score Descending, then Yield Descending (Tie-breaker)
-        top_picks.sort(key=lambda x: (x['score'], x['fund'].get('div_yield', 0)), reverse=True)
+        # Top Picks: Sort by month-on-month objective score, then classic score.
+        top_picks.sort(key=lambda x: (x['mom_score'], x['score'], x['fund'].get('div_yield', 0)), reverse=True)
         top_picks = top_picks[:20]
         
         # Assign Ranks
@@ -435,6 +440,13 @@ class ReportGenerator:
             
         # Sort All Overview Items by Symbol
         all_overview_items.sort(key=lambda x: x['symbol'])
+
+        active_items = [item for item in all_overview_items if item['tech'].get('last_close', 0) > 0]
+        uptrend_count = len([item for item in active_items if "Uptrend" in item['tech'].get('trend', '')])
+        dividend_count = len([item for item in active_items if item['fund'].get('div_yield', 0) > 0])
+        strong_mom_count = len([item for item in active_items if item.get('mom_score', 0) >= 45])
+        market_breadth = (uptrend_count / len(active_items) * 100.0) if active_items else 0.0
+        avg_mom_score = (sum(item.get('mom_score', 0) for item in active_items) / len(active_items)) if active_items else 0.0
         
         for item in all_overview_items:
              card_html = self._generate_card_html(item, stock_meta)
@@ -481,13 +493,13 @@ class ReportGenerator:
             elif rank <= 10: badge_html = f'<span class="rank-badge rank-other">#{rank}</span>'
             
             # Format Score Tooltip
-            reasons = item.get('score_reasons', [])
+            reasons = item.get('mom_reasons', [])
             score_tooltip_text = "&#10;".join(reasons)
-            score_val = item.get('score', 0)
+            score_val = item.get('mom_score', 0)
             
             score_cls = "text-muted"
-            if score_val >= 9: score_cls = "green" # High Confidence
-            elif score_val >= 7: score_cls = "accent" # Medium Confidence
+            if score_val >= 50: score_cls = "green" # High MoM quality
+            elif score_val >= 35: score_cls = "accent" # Medium MoM quality
             else: score_cls = "gray"
             
             # New Columns
@@ -517,7 +529,10 @@ class ReportGenerator:
                     <td class="mono {yield_cls}">{yield_display}</td>
                     <td class="mono">{pe}</td>
                     <td class="mono" title="{score_tooltip_text}">
-                        <span class="{score_cls}" style="font-weight:bold; padding:2px 8px; border-radius:4px;">{item['score']}</span>
+                        <span class="{score_cls}" style="font-weight:bold; padding:2px 8px; border-radius:4px;">{item['mom_score']}</span>
+                    </td>
+                    <td class="mono" title="Original confidence score">
+                        {item['score']}
                     </td>
                 </tr>
             """
@@ -788,113 +803,147 @@ class ReportGenerator:
             <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
             <style>
                 :root {{
-                    /* Fintech Pro Theme */
-                    --bg-app: #0f172a;
-                    --bg-panel: #1e293b;
-                    --bg-panel-hover: #334155;
-                    
-                    --border: #334155;
-                    
-                    --text-primary: #f1f5f9;
-                    --text-secondary: #94a3b8;
-                    --text-tertiary: #64748b;
-                    
-                    --accent: #3b82f6;
-                    --accent-glow: rgba(59, 130, 246, 0.5);
-                    
-                    --green: #10b981;
-                    --red: #ef4444;
-                    --gold: #eab308;
+                    --bg-app: #0b0f14;
+                    --bg-rail: #111820;
+                    --bg-panel: #151d26;
+                    --bg-panel-soft: #192431;
+                    --bg-panel-hover: #223041;
+                    --border: #273544;
+                    --border-strong: #3a4b5d;
+                    --text-primary: #eef4f8;
+                    --text-secondary: #9fb0bd;
+                    --text-tertiary: #6f8392;
+                    --accent: #24b8db;
+                    --accent-2: #f2b84b;
+                    --accent-glow: rgba(36, 184, 219, 0.24);
+                    --green: #35d07f;
+                    --red: #ff5f57;
+                    --gold: #f2b84b;
+                    --shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
                 }}
-                
+
                 * {{ box-sizing: border-box; }}
+                * {{ scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }}
+                ::-webkit-scrollbar {{ width: 10px; height: 10px; }}
+                ::-webkit-scrollbar-thumb {{ background: var(--border-strong); border-radius: 999px; border: 3px solid transparent; background-clip: padding-box; }}
+                ::-webkit-scrollbar-track {{ background: transparent; }}
                 body {{
                     margin: 0;
                     font-family: 'Inter', sans-serif;
-                    background-color: var(--bg-app);
+                    background:
+                        radial-gradient(circle at 20% 0%, rgba(36, 184, 219, 0.09), transparent 34%),
+                        linear-gradient(135deg, #0b0f14 0%, #101720 52%, #0b0f14 100%);
                     color: var(--text-primary);
                     display: flex;
                     height: 100vh;
                     overflow: hidden;
+                    overflow-x: hidden;
                 }}
-                
-                /* Sidebar */
+
                 nav {{
-                    width: 240px;
-                    background: var(--bg-panel);
+                    width: 268px;
+                    background: linear-gradient(180deg, rgba(17, 24, 32, 0.98), rgba(13, 18, 24, 0.98));
                     border-right: 1px solid var(--border);
                     display: flex;
                     flex-direction: column;
-                    padding: 1.5rem 0;
+                    padding: 1.25rem 0.85rem;
+                    box-shadow: 12px 0 35px rgba(0, 0, 0, 0.2);
+                    z-index: 4;
                 }}
-                
+
                 .brand {{
-                    padding: 0 1.5rem;
-                    margin-bottom: 2rem;
-                    font-size: 1.25rem;
+                    padding: 0.6rem 0.75rem 1.25rem;
+                    margin-bottom: 0.75rem;
+                    font-size: 1.2rem;
                     font-weight: 800;
-                    letter-spacing: -0.5px;
+                    letter-spacing: 0;
                     color: var(--text-primary);
                     display: flex;
                     align-items: center;
-                    gap: 10px;
+                    gap: 0.55rem;
+                    border-bottom: 1px solid rgba(255,255,255,0.06);
                 }}
-                
-                .brand span {{ color: var(--accent); }}
-                
+
+                .brand::before {{
+                    content: "";
+                    width: 12px;
+                    height: 28px;
+                    border-radius: 3px;
+                    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+                    box-shadow: 0 0 24px var(--accent-glow);
+                    flex: 0 0 auto;
+                }}
+
+                .brand span {{ color: var(--accent-2); }}
+
                 .nav-item {{
-                    padding: 0.75rem 1.5rem;
+                    padding: 0.78rem 0.9rem;
+                    margin: 0.14rem 0;
                     color: var(--text-secondary);
                     cursor: pointer;
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
+                    gap: 0.75rem;
                     font-size: 0.9rem;
-                    transition: all 0.2s;
+                    transition: background 0.2s, color 0.2s, border-color 0.2s;
+                    border: 1px solid transparent;
+                    border-radius: 8px;
                 }}
-                
+
                 .nav-item:hover, .nav-item.active {{
-                    background: var(--bg-app);
+                    background: rgba(255, 255, 255, 0.045);
                     color: var(--text-primary);
-                    border-left: 3px solid var(--accent);
+                    border-color: rgba(36, 184, 219, 0.22);
                 }}
-                
+
+                .nav-item.active {{
+                    box-shadow: inset 3px 0 0 var(--accent);
+                }}
+
                 .nav-badge {{
-                    background: var(--bg-panel-hover);
-                    padding: 2px 8px;
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.07);
+                    color: var(--text-secondary);
+                    padding: 0.15rem 0.5rem;
                     border-radius: 99px;
                     font-size: 0.75rem;
+                    line-height: 1.2;
                 }}
-                
-                /* Content Area */
+
                 .content {{
                     flex: 1;
                     display: flex;
                     flex-direction: column;
                     overflow: hidden;
+                    min-width: 0;
+                    width: 100%;
                 }}
-                
+
                 header {{
-                    height: 64px;
+                    min-height: 70px;
                     border-bottom: 1px solid var(--border);
                     display: flex;
                     align-items: center;
-                    padding: 0 2rem;
+                    padding: 0 1.75rem;
                     justify-content: space-between;
+                    background: rgba(11, 15, 20, 0.72);
+                    backdrop-filter: blur(16px);
                 }}
-                
-                .header-title {{ font-weight: 600; color: var(--text-secondary); }}
-                
+
+                .header-title {{ font-weight: 700; color: var(--text-primary); }}
+
                 .search-bar {{
-                    background: var(--bg-panel);
+                    background: var(--bg-panel-soft);
                     border: 1px solid var(--border);
                     border-radius: 8px;
-                    padding: 0.5rem 1rem;
+                    padding: 0.7rem 0.8rem;
                     color: var(--text-primary);
                     font-family: inherit;
                     width: 300px;
                     outline: none;
                 }}
-                
+
                 .search-bar:focus {{ border-color: var(--accent); }}
 
                 .filter-bar {{
@@ -911,71 +960,183 @@ class ReportGenerator:
                     border-radius: 4px;
                     font-size: 0.8rem;
                 }}
-                
+
                 main {{
                     flex: 1;
                     overflow-y: auto;
                     display: block;
                     position: relative;
-                    padding: 2rem;
+                    padding: 1.75rem;
                 }}
-                
-                /* Grid Layout */
+
+                .page-head {{
+                    display: grid;
+                    grid-template-columns: minmax(0, 1fr) auto;
+                    gap: 1.25rem;
+                    align-items: end;
+                    margin-bottom: 1.5rem;
+                }}
+
+                .eyebrow {{
+                    color: var(--accent-2);
+                    font-size: 0.72rem;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    margin-bottom: 0.45rem;
+                }}
+
+                .page-title {{
+                    margin: 0;
+                    font-size: 2rem;
+                    line-height: 1.1;
+                    letter-spacing: 0;
+                }}
+
+                .page-subtitle {{
+                    margin-top: 0.5rem;
+                    color: var(--text-secondary);
+                    max-width: 760px;
+                    line-height: 1.45;
+                    font-size: 0.95rem;
+                    overflow-wrap: anywhere;
+                }}
+
+                .kpi-strip {{
+                    display: grid;
+                    grid-template-columns: repeat(4, minmax(150px, 1fr));
+                    gap: 0.75rem;
+                    margin-bottom: 1.25rem;
+                }}
+
+                .kpi {{
+                    background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018));
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+                    padding: 0.9rem;
+                    min-height: 88px;
+                }}
+
+                .kpi-label {{
+                    color: var(--text-tertiary);
+                    font-size: 0.72rem;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    letter-spacing: 0.06em;
+                }}
+
+                .kpi-value {{
+                    margin-top: 0.35rem;
+                    font-size: 1.35rem;
+                    font-weight: 800;
+                    color: var(--text-primary);
+                }}
+
+                .kpi-note {{
+                    margin-top: 0.3rem;
+                    color: var(--text-secondary);
+                    font-size: 0.78rem;
+                }}
+
+                .control-panel {{
+                    margin-bottom: 1.35rem;
+                    display: grid;
+                    grid-template-columns: minmax(240px, 1fr) repeat(4, minmax(140px, 180px));
+                    gap: 0.7rem;
+                    align-items: center;
+                    background: rgba(21, 29, 38, 0.76);
+                    padding: 0.85rem;
+                    border-radius: 8px;
+                    border: 1px solid var(--border);
+                    box-shadow: var(--shadow);
+                }}
+
+                .control-field {{
+                    width: 100%;
+                    min-height: 42px;
+                    padding: 0.65rem 0.75rem;
+                    background: #101820;
+                    border: 1px solid var(--border);
+                    color: var(--text-primary);
+                    border-radius: 6px;
+                    outline: none;
+                    font-family: inherit;
+                }}
+
+                .control-field:focus {{
+                    border-color: var(--accent);
+                    box-shadow: 0 0 0 3px rgba(36,184,219,0.12);
+                }}
+
+                .search-input-wrapper {{ position: relative; }}
+                .search-input-wrapper svg {{
+                    position: absolute;
+                    left: 0.85rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: var(--text-tertiary);
+                }}
+                .search-input-wrapper input {{ padding-left: 2.35rem; }}
+
                 .dashboard-grid {{
                     display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                    gap: 1.5rem;
+                    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+                    gap: 1rem;
                 }}
-                
-                /* Cards */
+
                 .card {{
-                    background: var(--bg-panel);
+                    background: linear-gradient(180deg, rgba(25, 36, 49, 0.96), rgba(18, 26, 35, 0.96));
                     border: 1px solid var(--border);
-                    border-radius: 12px;
-                    padding: 1.25rem;
-                    transition: transform 0.2s;
+                    border-radius: 8px;
+                    padding: 1rem;
+                    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
                     position: relative;
                     overflow: hidden;
+                    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
                 }}
-                
+
                 .card:hover {{
-                    transform: translateY(-2px);
+                    transform: translateY(-3px);
                     border-color: var(--accent);
+                    box-shadow: 0 18px 34px rgba(0,0,0,0.28);
                 }}
-                
+
                 .card-header {{
                     display: flex;
                     justify-content: space-between;
                     align-items: flex-start;
-                    margin-bottom: 1rem;
+                    gap: 1rem;
+                    margin-bottom: 0.85rem;
                 }}
-                
+
                 .symbol {{ font-size: 1.1rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }}
-                .price {{ font-size: 1.25rem; font-weight: 600; color: var(--text-primary); }}
-                
+                .price {{ font-size: 1.22rem; font-weight: 800; color: var(--text-primary); }}
+
                 .trend-badge {{
                     font-size: 0.7rem;
-                    padding: 2px 8px;
-                    border-radius: 4px;
+                    padding: 0.22rem 0.52rem;
+                    border-radius: 999px;
                     text-transform: uppercase;
                     font-weight: 700;
+                    display: inline-block;
+                    margin-bottom: 0.25rem;
                 }}
-                
-                .green {{ background: rgba(16, 185, 129, 0.1); color: var(--green); }}
-                .red {{ background: rgba(239, 68, 68, 0.1); color: var(--red); }}
-                .gray {{ background: var(--bg-panel-hover); color: var(--text-tertiary); }}
-                .gold {{ background: rgba(234, 179, 8, 0.15); color: var(--gold); }}
-                
+
+                .green {{ background: rgba(53, 208, 127, 0.12); color: var(--green); }}
+                .red {{ background: rgba(255, 95, 87, 0.12); color: var(--red); }}
+                .gray {{ background: rgba(255,255,255,0.07); color: var(--text-tertiary); }}
+                .gold {{ background: rgba(242, 184, 75, 0.16); color: var(--gold); }}
+
                 .rank-badge {{
                     font-size: 0.7rem;
-                    padding: 2px 8px;
-                    border-radius: 12px;
+                    padding: 0.18rem 0.5rem;
+                    border-radius: 999px;
                     margin-left: 8px;
                     font-weight: 800;
                     display: inline-block;
                     vertical-align: middle;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    color: #0f172a; /* Dark text for contrast */
+                    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+                    color: #111820;
                     text-shadow: none;
                 }}
                 .rank-1 {{ background: linear-gradient(135deg, #FFD700 0%, #FDB931 100%); border: 1px solid #E6C200; }}
@@ -986,30 +1147,30 @@ class ReportGenerator:
                 .metrics {{
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    gap: 1rem;
-                    margin-top: 1rem;
-                    padding-top: 1rem;
+                    gap: 0.7rem;
+                    margin-top: 0.9rem;
+                    padding-top: 0.85rem;
                     border-top: 1px solid var(--border);
                 }}
-                
+
                 .metric {{ display: flex; flex-direction: column; }}
                 .metric-label {{ font-size: 0.7rem; color: var(--text-tertiary); margin-bottom: 2px; }}
                 .metric-val {{ font-size: 0.9rem; font-weight: 600; }}
-                
-                /* Tables */
+
                 .table-container {{
-                    background: var(--bg-panel);
-                    border-radius: 12px;
+                    background: rgba(21,29,38,0.88);
+                    border-radius: 8px;
                     border: 1px solid var(--border);
                     overflow-x: auto;
                     max-height: 80vh; /* Allow scrolling within the table */
                     overflow-y: auto;
+                    box-shadow: var(--shadow);
                 }}
-                
+
                 .data-table {{ width: 100%; border-collapse: collapse; text-align: left; }}
                 .data-table th {{
-                    padding: 1rem;
-                    background: var(--bg-panel); 
+                    padding: 0.85rem 0.95rem;
+                    background: #111820;
                     color: var(--text-secondary);
                     font-size: 0.75rem;
                     text-transform: uppercase;
@@ -1017,16 +1178,14 @@ class ReportGenerator:
                     position: sticky; /* Sticky Header */
                     top: 0;
                     z-index: 10;
-                    border-bottom: 2px solid var(--border); 
-                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+                    border-bottom: 1px solid var(--border-strong);
+                    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
                 }}
-                .data-table td {{ padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-primary); }}
-                
-                /* Zebra Striping & Hover */
-                .data-table tr:nth-child(even) {{ background: rgba(255, 255, 255, 0.02); }}
+                .data-table td {{ padding: 0.9rem 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.055); color: var(--text-primary); }}
+
+                .data-table tr:nth-child(even) {{ background: rgba(255, 255, 255, 0.018); }}
                 .data-table tr:hover {{ background: var(--bg-panel-hover); }}
-                
-                /* Utility */
+
                 .mono {{ font-family: 'JetBrains Mono', monospace; }}
                 .text-green {{ color: var(--green); }}
                 .text-red {{ color: var(--red); }}
@@ -1037,6 +1196,40 @@ class ReportGenerator:
                 .section.active {{ display: block; opacity: 1; }}
                 
                 .sparkline {{ margin-left: 10px; vertical-align: middle; }}
+
+                @media (max-width: 1100px) {{
+                    body {{ flex-direction: column; height: auto; min-height: 100vh; overflow: auto; }}
+                    nav {{
+                        width: 100%;
+                        height: 230px;
+                        max-height: 230px;
+                        overflow-y: auto;
+                        border-right: none;
+                        border-bottom: 1px solid var(--border);
+                        position: relative;
+                        padding: 0.85rem;
+                    }}
+                    .brand {{ padding-bottom: 0.85rem; margin-bottom: 0.5rem; }}
+                    .nav-item {{ padding: 0.65rem 0.8rem; }}
+                    .content {{ overflow: visible; }}
+                    header {{ padding: 1rem; align-items: flex-start; gap: 0.75rem; flex-direction: column; }}
+                    header > div {{ min-width: 0; max-width: 100%; }}
+                    header div {{ overflow-wrap: anywhere; }}
+                    main {{ padding: 1rem; overflow: visible; }}
+                    main, .section {{ width: 100%; max-width: 100%; overflow-x: hidden; }}
+                    .page-head {{ grid-template-columns: 1fr; }}
+                    .page-head > div:last-child {{ text-align: left !important; }}
+                    .page-head > div:last-child div {{ display: inline-block; margin-right: 0.7rem; }}
+                    .kpi-strip {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+                    .control-panel {{ grid-template-columns: 1fr; }}
+                    .dashboard-grid {{ grid-template-columns: 1fr; }}
+                }}
+
+                @media (max-width: 560px) {{
+                    .page-title {{ font-size: 1.55rem; }}
+                    .kpi-strip {{ grid-template-columns: 1fr; }}
+                    .card-header {{ flex-direction: column; }}
+                }}
                 
                 /* Modal */
                 .modal-overlay {{
@@ -1095,7 +1288,7 @@ class ReportGenerator:
         </head>
         <body>
             <nav>
-                <div class="brand">PSE<span>PRO</span> v2.0</div>
+                <div class="brand">PSE<span>PRO</span></div>
                 <div class="nav-item active" data-section="overview" onclick="showSection('overview')">
                     Market Overview <span class="nav-badge">All</span>
                 </div>
@@ -1112,7 +1305,7 @@ class ReportGenerator:
                     Dividend Gems <span class="nav-badge" style="background:#10b981; color:#fff;">{len(div_picks)}</span>
                 </div>
                 
-                <div style="margin: 1.5rem 1.5rem 0.5rem; font-size:0.7rem; color:var(--text-tertiary); text-transform:uppercase;">Industries</div>
+                <div style="margin: 1.5rem 0.9rem 0.5rem; font-size:0.7rem; color:var(--text-tertiary); text-transform:uppercase; font-weight:800; letter-spacing:0.08em;">Industries</div>
                 
                 {industry_nav}
                 
@@ -1121,7 +1314,10 @@ class ReportGenerator:
             <div class="content">
                 <header>
                     <div style="display:flex; align-items:center;">
-                         <div class="header-title">Market Dashboard</div>
+                         <div>
+                            <div class="header-title">Philippine Market Command Center</div>
+                            <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:4px;">MoM scoring, fundamentals, dividends, and portfolio risk in one view</div>
+                         </div>
                     </div>
                     <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: {timestamp}</div>
                 </header>
@@ -1131,47 +1327,66 @@ class ReportGenerator:
 
                     <!-- OVERVIEW (All Stocks Grid) -->
                     <div id="overview" class="section active">
-                        <h2 style="margin-bottom:1.5rem;">Market Overview</h2>
-                        
-                        <!-- Search Controls -->
-                        <div style="margin-bottom: 2rem; display: flex; gap: 15px; align-items: center; background: var(--bg-panel); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
-                    <div class="search-container" style="display:flex; gap:12px; align-items:center;">
-                         <!-- Search Input -->
-                        <div class="search-input-wrapper" style="position:relative; flex-grow:1;">
-                             <span style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:#64748b;">
-                                <svg width="16" height="16" fill="none" class="feather feather-search" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                            </span>
-                            <input type="text" id="search_input" onkeyup="filterStocks()" placeholder="Search symbol or company..." style="width:100%; padding:10px 10px 10px 36px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none;">
+                        <div class="page-head">
+                            <div>
+                                <div class="eyebrow">Market Overview</div>
+                                <h1 class="page-title">PSE Opportunity Board</h1>
+                                <div class="page-subtitle">Scan active listings by trend, value, yield, and the new month-on-month quality score. Cards stay compact so you can compare faster.</div>
+                            </div>
+                            <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
+                                <div style="color:var(--text-secondary); font-weight:700;">{len(active_items)} active symbols</div>
+                                <div>{len(STOCK_CATEGORIES)} sectors tracked</div>
+                            </div>
                         </div>
 
-                        <!-- Filter: Sector -->
-                        <select id="filter_sector" onchange="filterStocks()" style="padding:10px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none; cursor:pointer;">
-                            <option value="All">All Sectors</option>
-                            {sector_options}
-                        </select>
-                        
-                         <!-- Filter: Trend -->
-                        <select id="filter_trend" onchange="filterStocks()" style="padding:10px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none; cursor:pointer;">
-                            <option value="all">Trend: All</option>
-                            <option value="uptrend">Uptrend</option>
-                            <option value="strong">Strong Uptrend</option>
-                            <option value="golden">Golden Cross</option>
-                        </select>
-                        
-                        <!-- Filter: Value -->
-                        <select id="filter_val" onchange="filterStocks()" style="padding:10px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none; cursor:pointer;">
-                            <option value="all">Value: All</option>
-                            <option value="cheap">Cheap (P/E < 15)</option>
-                            <option value="fair">Fair (P/E < 25)</option>
-                        </select>
-                        
-                        <!-- Filter: Yield -->
-                        <select id="filter_yield" onchange="filterStocks()" style="padding:10px; background:#1e293b; border:1px solid #334155; color:#fff; border-radius:6px; outline:none; cursor:pointer;">
-                            <option value="all">Yield: All</option>
-                            <option value="3">Yield > 3%</option>
-                            <option value="6">Yield > 6%</option>
-                        </select>
-                    </div>
+                        <div class="kpi-strip">
+                            <div class="kpi">
+                                <div class="kpi-label">Market Breadth</div>
+                                <div class="kpi-value">{market_breadth:.0f}%</div>
+                                <div class="kpi-note">{uptrend_count} active names in uptrend</div>
+                            </div>
+                            <div class="kpi">
+                                <div class="kpi-label">MoM Watchlist</div>
+                                <div class="kpi-value">{strong_mom_count}</div>
+                                <div class="kpi-note">Score 45+ candidates</div>
+                            </div>
+                            <div class="kpi">
+                                <div class="kpi-label">Dividend Coverage</div>
+                                <div class="kpi-value">{dividend_count}</div>
+                                <div class="kpi-note">Active names with yield data</div>
+                            </div>
+                            <div class="kpi">
+                                <div class="kpi-label">Avg MoM Score</div>
+                                <div class="kpi-value">{avg_mom_score:.1f}</div>
+                                <div class="kpi-note">Across active symbols</div>
+                            </div>
+                        </div>
+
+                        <div class="control-panel">
+                            <div class="search-input-wrapper">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                <input class="control-field" type="text" id="search_input" onkeyup="filterStocks()" placeholder="Search symbol or company...">
+                            </div>
+                            <select class="control-field" id="filter_sector" onchange="filterStocks()">
+                                <option value="All">All Sectors</option>
+                                {sector_options}
+                            </select>
+                            <select class="control-field" id="filter_trend" onchange="filterStocks()">
+                                <option value="all">Trend: All</option>
+                                <option value="uptrend">Uptrend</option>
+                                <option value="strong">Strong Uptrend</option>
+                                <option value="golden">Golden Cross</option>
+                            </select>
+                            <select class="control-field" id="filter_val" onchange="filterStocks()">
+                                <option value="all">Value: All</option>
+                                <option value="cheap">Cheap (P/E < 15)</option>
+                                <option value="fair">Fair (P/E < 25)</option>
+                            </select>
+                            <select class="control-field" id="filter_yield" onchange="filterStocks()">
+                                <option value="all">Yield: All</option>
+                                <option value="3">Yield > 3%</option>
+                                <option value="6">Yield > 6%</option>
+                            </select>
                         </div>
 
                         <div id="all_stocks_grid" class="dashboard-grid">
@@ -1200,7 +1415,8 @@ class ReportGenerator:
                                         <th onclick="sortTable('table_top_picks', 4)" title="Dividend Frequency">Freq ⬍</th>
                                         <th onclick="sortTable('table_top_picks', 5, 'num')" title="Dividend Yield">Yield ⬍</th>
                                         <th onclick="sortTable('table_top_picks', 6, 'num')" title="Price-to-Earnings Ratio">P/E ⬍</th>
-                                        <th onclick="sortTable('table_top_picks', 7, 'num')" title="Confidence Score">Score ⬍</th>
+                                        <th onclick="sortTable('table_top_picks', 7, 'num')" title="Month-on-month gain objective score">MoM ⬍</th>
+                                        <th onclick="sortTable('table_top_picks', 8, 'num')" title="Original confidence score">Base ⬍</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -1767,4 +1983,7 @@ class ReportGenerator:
         return os.path.abspath(output_file)
 
     def open_in_browser(self, file_path: str):
+        if os.environ.get("CI") or os.environ.get("NO_BROWSER"):
+            print(f"[CI] Skipping browser open for {file_path}")
+            return
         webbrowser.open('file://' + file_path)

@@ -32,6 +32,11 @@ jobs:
     - name: Run Fundamental Data Scraper
       run: python fetch_pse_fundamentals.py
 
+    - name: Run Strategy Backtests
+      run: |
+        python backtest.py --objective monthly_gain --months 3
+        python backtest.py --objective base --months 3
+
     - name: Generate Dashboard Report
       run: |
         python regenerate_report.py
@@ -41,4 +46,4 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "chore: daily data refresh [skip ci]"
-        file_pattern: 'data/*.json report.html index.html'
+        file_pattern: 'data/*.json report.html index.html backtest_results_*.md'
