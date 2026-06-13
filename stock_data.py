@@ -8,6 +8,32 @@ import os
 METADATA_FILE = "data/stock_metadata.json"
 STOCK_IDS_FILE = "data/stock_ids.json"
 
+SECTOR_ALIASES = {
+    "Mining & Oil": "Mining and Oil",
+    "Small, Medium & Emerging Board": "SME Board",
+    "Small, Medium and Emerging Board": "SME Board",
+}
+
+VALID_SECTORS = {
+    "Financials",
+    "Industrial",
+    "Holding Firms",
+    "Property",
+    "Services",
+    "Mining and Oil",
+    "SME Board",
+    "ETF",
+}
+
+def normalize_sector(sector):
+    """Normalize PSE Edge sector labels to the dashboard taxonomy."""
+    if not sector:
+        return "Uncategorized"
+    sector = sector.strip()
+    sector = SECTOR_ALIASES.get(sector, sector)
+    sector = sector.replace(' & ', ' and ')
+    return SECTOR_ALIASES.get(sector, sector)
+
 def load_json(filename):
     try:
         base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -29,10 +55,7 @@ def _build_categories():
 
     categories = {}
     for symbol, data in meta.items():
-        sec = data.get('sector', 'Uncategorized')
-        # Normalize
-        sec = sec.replace(' & ', ' and ')
-        sec = sec.replace('Small, Medium and Emerging Board', 'SME Board')
+        sec = normalize_sector(data.get('sector', 'Uncategorized'))
         
         if sec not in categories:
             categories[sec] = []

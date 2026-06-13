@@ -59,6 +59,9 @@ python backtest.py --objective monthly_gain --months 12
 
 # Compare against the original scoring model
 python backtest.py --objective base --months 12
+
+# Validate sector grouping metadata and write data/metadata_health.json
+python validate_industries.py
 ```
 Backtests write objective-specific files such as `backtest_results_monthly_gain.md` and `backtest_results_base.md`.
 

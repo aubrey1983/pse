@@ -8,6 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from stock_data import normalize_sector
 
 METADATA_FILE = "data/stock_metadata.json"
 PSE_DIRECTORY_URL = "https://edge.pse.com.ph/companyDirectory/form.do"
@@ -59,11 +60,12 @@ def scrape_metadata():
                         # But .text usually handles it well.
                         
                         stock_metadata[symbol] = {
-                            "company_name": company_name,
                             "symbol": symbol,
-                            "sector": sector,
+                            "name": company_name,
+                            "sector": normalize_sector(sector),
+                            "raw_sector": sector,
                             "subsector": subsector,
-                            "listing_date": listing_date
+                            "listingDate": listing_date
                         }
                         
         except Exception as e:

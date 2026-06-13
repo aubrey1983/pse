@@ -7,7 +7,6 @@ import json
 import base64
 from typing import Dict
 from stock_data import STOCK_CATEGORIES
-from stock_data import STOCK_CATEGORIES
 from analyzer import Analyzer
 from portfolio_manager import PortfolioManager
 
@@ -204,6 +203,20 @@ class ReportGenerator:
         
         # Load News Data
         self.news_data = self.load_json("data/news_data.json")
+
+        # Load Industry Metadata Health
+        metadata_health = self.load_json("data/metadata_health.json")
+        if not metadata_health:
+            metadata_health = {
+                "status": "unknown",
+                "generated_at": "-",
+                "symbol_count": len(stock_meta),
+                "sector_counts": {},
+                "missing_sector": [],
+                "invalid_sector": [],
+                "normalized_changes": [],
+                "schema_warnings": [],
+            }
         
         # Merge Data per Industry
         # Dynamic Sector Generation
@@ -607,6 +620,92 @@ class ReportGenerator:
 
         # Generate sector options for the filter dropdown
         sector_options = "".join([f'<option value="{c}">{c}</option>' for c in sorted_sectors])
+
+        # --- DATA HEALTH HTML ---
+        health_status = metadata_health.get("status", "unknown")
+        health_cls = "action-good" if health_status == "ok" else "action-watch" if health_status == "warning" else "action-risk"
+        sector_rows = ""
+        for sector, count in metadata_health.get("sector_counts", {}).items():
+            sector_rows += f"""
+                <tr>
+                    <td>{sector}</td>
+                    <td class="mono">{count}</td>
+                </tr>
+            """
+
+        normalized_changes = metadata_health.get("normalized_changes", [])
+        schema_warnings = metadata_health.get("schema_warnings", [])
+        invalid_sector = metadata_health.get("invalid_sector", [])
+        missing_sector = metadata_health.get("missing_sector", [])
+
+        normalized_preview = ", ".join([f"{x.get('symbol')} ({x.get('from')} -> {x.get('to')})" for x in normalized_changes[:6]]) or "None"
+        schema_preview = ", ".join([f"{x.get('symbol')}: {x.get('issue')}" for x in schema_warnings[:6]]) or "None"
+        invalid_preview = ", ".join([f"{x.get('symbol')} ({x.get('sector')})" for x in invalid_sector[:6]]) or "None"
+        missing_preview = ", ".join(missing_sector[:12]) or "None"
+
+        data_health_html = f"""
+        <div id="data_health" class="section">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Data Health</div>
+                    <h1 class="page-title">Industry Metadata Audit</h1>
+                    <div class="page-subtitle">Validates PSE sector groupings, schema consistency, and normalized sector labels used by the dashboard.</div>
+                </div>
+                <span class="action-pill {health_cls}">{health_status.upper()}</span>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">Symbols Checked</div>
+                    <div class="kpi-value">{metadata_health.get('symbol_count', 0)}</div>
+                    <div class="kpi-note">Source: {metadata_health.get('source_file', 'data/stock_metadata.json')}</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Missing Sectors</div>
+                    <div class="kpi-value">{len(missing_sector)}</div>
+                    <div class="kpi-note">Must be zero</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Invalid Sectors</div>
+                    <div class="kpi-value">{len(invalid_sector)}</div>
+                    <div class="kpi-note">Outside approved taxonomy</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Validated At</div>
+                    <div class="kpi-value" style="font-size:1rem;">{metadata_health.get('generated_at', '-')}</div>
+                    <div class="kpi-note">UTC timestamp</div>
+                </div>
+            </div>
+
+            <div class="portfolio-command-grid">
+                <div class="action-panel">
+                    <div class="kpi-label" style="margin-bottom:0.75rem;">Audit Notes</div>
+                    <div class="metric-row"><span class="label">Normalized labels</span><span class="val">{len(normalized_changes)}</span></div>
+                    <div style="color:var(--text-secondary); font-size:0.82rem; margin:0.5rem 0 1rem;">{normalized_preview}</div>
+                    <div class="metric-row"><span class="label">Schema warnings</span><span class="val">{len(schema_warnings)}</span></div>
+                    <div style="color:var(--text-secondary); font-size:0.82rem; margin:0.5rem 0 1rem;">{schema_preview}</div>
+                    <div class="metric-row"><span class="label">Missing sector symbols</span><span class="val">{len(missing_sector)}</span></div>
+                    <div style="color:var(--text-secondary); font-size:0.82rem; margin-top:0.5rem;">{missing_preview}</div>
+                    <div class="metric-row" style="margin-top:1rem;"><span class="label">Invalid sector symbols</span><span class="val">{len(invalid_sector)}</span></div>
+                    <div style="color:var(--text-secondary); font-size:0.82rem; margin-top:0.5rem;">{invalid_preview}</div>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Sector</th>
+                                <th>Symbols</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {sector_rows}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        """
 
         # --- PORTFOLIO HTML ---
         portfolio_html = ""
@@ -1441,6 +1540,10 @@ class ReportGenerator:
                 <div class="nav-item" data-section="dividends" onclick="showSection('dividends')">
                     Dividend Gems <span class="nav-badge" style="background:#10b981; color:#fff;">{len(div_picks)}</span>
                 </div>
+
+                <div class="nav-item" data-section="data_health" onclick="showSection('data_health')">
+                    Data Health <span class="nav-badge">{health_status.upper()}</span>
+                </div>
                 
                 <div style="margin: 1.5rem 0.9rem 0.5rem; font-size:0.7rem; color:var(--text-tertiary); text-transform:uppercase; font-weight:800; letter-spacing:0.08em;">Industries</div>
                 
@@ -1461,6 +1564,7 @@ class ReportGenerator:
                 
                 <main>
                     {portfolio_html}
+                    {data_health_html}
 
                     <!-- OVERVIEW (All Stocks Grid) -->
                     <div id="overview" class="section">

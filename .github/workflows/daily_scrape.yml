@@ -26,6 +26,17 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    - name: Refresh Metadata Weekly
+      run: |
+        if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          python scrape_pse_metadata.py
+        else
+          echo "Skipping metadata refresh; weekly run is Monday UTC."
+        fi
+
+    - name: Validate Industry Metadata
+      run: python validate_industries.py
+
     - name: Run Technical Analysis Scraper
       run: python main.py
 
