@@ -611,6 +611,7 @@ class ReportGenerator:
         # --- PORTFOLIO HTML ---
         portfolio_html = ""
         portfolio_rows = ""
+        portfolio_actions = []
         
         # Summary Cards
         total_eq = portfolio_summary['total_equity']
@@ -633,6 +634,36 @@ class ReportGenerator:
             
             # Context for onclick
             official = stock_meta.get(sym, {})
+            tech = tech_data.get(sym, {})
+            fund = official_fund.get(sym, {})
+            sector = official.get('sector', 'Unknown')
+            mom_score, _ = self.analyzer.calculate_monthly_gain_score(tech, fund)
+            allocation_pct = (p['market_value'] / total_eq * 100.0) if total_eq > 0 else 0.0
+            risk_pct = tech.get('risk_pct', 0)
+            stop_loss = tech.get('stop_loss', 0)
+            trend = tech.get('trend', 'Unknown')
+
+            if mom_score >= 45 and gl_pct >= -3:
+                action_label = "Add / Hold"
+                action_cls = "action-good"
+            elif gl_pct <= -8 or mom_score < 20:
+                action_label = "Review Risk"
+                action_cls = "action-risk"
+            elif allocation_pct > 18:
+                action_label = "Trim Watch"
+                action_cls = "action-watch"
+            else:
+                action_label = "Hold"
+                action_cls = "action-neutral"
+
+            if action_label != "Hold":
+                portfolio_actions.append({
+                    "symbol": sym,
+                    "action": action_label,
+                    "class": action_cls,
+                    "detail": f"{gl_pct:+.1f}% G/L | MoM {mom_score} | {trend}"
+                })
+
             # We need to construct a basic 'item' if it's not in our main list, but usually it is.
             # Use data from tech_data/stock_meta
             
@@ -640,20 +671,25 @@ class ReportGenerator:
             p_item = {
                 'symbol': sym,
                 'company_name': official.get('name', sym),
-                'tech': tech_data.get(sym, {'last_close': curr}),
-                'fund': official_fund.get(sym, {})
+                'tech': tech if tech else {'last_close': curr},
+                'fund': fund
             }
             onclick = self._generate_onclick(p_item, official)
             
             portfolio_rows += f"""
                 <tr {onclick}>
                     <td class="mono" style="font-weight:700; color:var(--accent);">{sym}</td>
+                    <td>{sector}</td>
                     <td class="mono">{shares:,.0f}</td>
                     <td class="mono">₱{avg:,.2f}</td>
                     <td class="mono">₱{curr:,.2f}</td>
                     <td class="mono">₱{p['market_value']:,.2f}</td>
+                    <td class="mono">{allocation_pct:.1f}%</td>
                     <td class="mono {p_gl_cls}">₱{gl:,.2f}</td>
                     <td class="mono {p_gl_cls}">{gl_pct:+.2f}%</td>
+                    <td class="mono">{mom_score}</td>
+                    <td class="mono">{risk_pct:.1f}%</td>
+                    <td><span class="action-pill {action_cls}">{action_label}</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('{sym}')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -661,39 +697,61 @@ class ReportGenerator:
                     </td>
                 </tr>
             """
+
+        portfolio_actions = sorted(
+            portfolio_actions,
+            key=lambda x: (0 if x["action"] == "Review Risk" else 1 if x["action"] == "Add / Hold" else 2, x["symbol"])
+        )[:4]
+        action_cards_html = "".join([
+            f"""
+            <div class="action-card">
+                <div>
+                    <div class="mono" style="font-weight:800; color:var(--text-primary);">{a['symbol']}</div>
+                    <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">{a['detail']}</div>
+                </div>
+                <span class="action-pill {a['class']}">{a['action']}</span>
+            </div>
+            """
+            for a in portfolio_actions
+        ]) or '<div style="color:var(--text-tertiary); font-size:0.9rem;">No urgent portfolio actions from current rules.</div>'
             
         portfolio_html = f"""
-        <div id="portfolio_section" class="section">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <h2 style="margin-bottom:1.5rem;">My Portfolio</h2>
-                <button onclick="openAddModal()" style="background:var(--bg-panel-hover); border:1px solid var(--border); color:var(--text-primary); padding:8px 16px; border-radius:6px; cursor:pointer; font-size:0.9rem;">
+        <div id="portfolio_section" class="section active">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Portfolio Command</div>
+                    <h1 class="page-title">Daily Decision Board</h1>
+                    <div class="page-subtitle">Start here: inspect exposure, sort holdings by risk or performance, and act on the highest-signal positions first.</div>
+                </div>
+                <button class="command-btn" onclick="openAddModal()">
                     + Add Position
                 </button>
             </div>
             
-
-
-            <h3 style="margin-bottom:1.5rem; color:var(--text-secondary);">PERMANENT SIMULATION PROJECT (₱10k/mo)</h3>
-            
-            <div style="display:grid; grid-template-columns: 300px 1fr; gap:20px; margin-bottom:30px;">
+            <div class="portfolio-command-grid">
                 <!-- Left: Metrics -->
-                <div style="display:flex; flex-direction:column; gap:15px;">
-                     <div class="card" style="padding:20px;">
-                        <div style="color:var(--text-secondary); font-size:0.9rem;">Total Equity</div>
-                        <div class="mono" style="font-size:1.5rem; font-weight:700; color:#fff;">₱{total_eq:,.2f}</div>
+                <div class="portfolio-health">
+                    <div class="health-card">
+                        <div class="kpi-label">Total Equity</div>
+                        <div class="kpi-value">₱{total_eq:,.2f}</div>
                     </div>
-                    <div class="card" style="padding:20px;">
-                        <div style="color:var(--text-secondary); font-size:0.9rem;">Total Cost</div>
-                        <div class="mono" style="font-size:1.5rem; font-weight:700; color:#fff;">₱{total_cost:,.2f}</div>
+                    <div class="health-card">
+                        <div class="kpi-label">Cost Basis</div>
+                        <div class="kpi-value">₱{total_cost:,.2f}</div>
                     </div>
-                    <div class="card" style="padding:20px;">
-                        <div style="color:var(--text-secondary); font-size:0.9rem;">Total Gain/Loss</div>
-                        <div class="mono {gl_cls}" style="font-size:1.5rem; font-weight:700;">₱{total_gl:,.2f} <span style="font-size:1rem;">({total_gl_pct:+.2f}%)</span></div>
+                    <div class="health-card">
+                        <div class="kpi-label">Unrealized P/L</div>
+                        <div class="kpi-value {gl_cls}">₱{total_gl:,.2f}</div>
+                        <div class="kpi-note">{total_gl_pct:+.2f}% total return</div>
+                    </div>
+                    <div class="action-panel">
+                        <div class="kpi-label" style="margin-bottom:0.75rem;">Action Queue</div>
+                        {action_cards_html}
                     </div>
                 </div>
                 
                 <!-- Right: Charts -->
-                <div class="card" style="padding:20px; display:grid; grid-template-columns: 1fr 1fr; gap:20px; align-items:center;">
+                <div class="chart-panel">
                     <div style="height:250px; position:relative;">
                         <canvas id="chartAllocation"></canvas>
                     </div>
@@ -774,12 +832,17 @@ class ReportGenerator:
                     <thead>
                         <tr>
                             <th onclick="sortTable('table_portfolio', 0)" title="Sort by stock symbol">Symbol ↕</th>
-                            <th onclick="sortTable('table_portfolio', 1, 'num')" title="Sort by number of shares">Shares ↕</th>
-                            <th onclick="sortTable('table_portfolio', 2, 'num')" title="Sort by average buy price">Avg Price ↕</th>
-                            <th onclick="sortTable('table_portfolio', 3, 'num')" title="Sort by current price">Current ↕</th>
-                            <th onclick="sortTable('table_portfolio', 4, 'num')" title="Sort by market value">Market Value ↕</th>
-                            <th onclick="sortTable('table_portfolio', 5, 'num')" title="Sort by peso gain or loss">Gain/Loss ↕</th>
-                            <th onclick="sortTable('table_portfolio', 6, 'num')" title="Sort by percentage gain or loss">% ↕</th>
+                            <th onclick="sortTable('table_portfolio', 1)" title="Sort by sector">Sector ↕</th>
+                            <th onclick="sortTable('table_portfolio', 2, 'num')" title="Sort by number of shares">Shares ↕</th>
+                            <th onclick="sortTable('table_portfolio', 3, 'num')" title="Sort by average buy price">Avg Price ↕</th>
+                            <th onclick="sortTable('table_portfolio', 4, 'num')" title="Sort by current price">Current ↕</th>
+                            <th onclick="sortTable('table_portfolio', 5, 'num')" title="Sort by market value">Market Value ↕</th>
+                            <th onclick="sortTable('table_portfolio', 6, 'num')" title="Sort by allocation percentage">Alloc ↕</th>
+                            <th onclick="sortTable('table_portfolio', 7, 'num')" title="Sort by peso gain or loss">Gain/Loss ↕</th>
+                            <th onclick="sortTable('table_portfolio', 8, 'num')" title="Sort by percentage gain or loss">% ↕</th>
+                            <th onclick="sortTable('table_portfolio', 9, 'num')" title="Sort by month-on-month score">MoM ↕</th>
+                            <th onclick="sortTable('table_portfolio', 10, 'num')" title="Sort by stop-risk distance">Risk ↕</th>
+                            <th onclick="sortTable('table_portfolio', 11)" title="Sort by suggested action">Plan ↕</th>
                             <th title="Remove position">Action</th>
                         </tr>
                     </thead>
@@ -1068,6 +1131,78 @@ class ReportGenerator:
                     box-shadow: 0 0 0 3px rgba(36,184,219,0.12);
                 }}
 
+                .command-btn {{
+                    background: linear-gradient(135deg, var(--accent), #1f9fc0);
+                    border: 1px solid rgba(255,255,255,0.14);
+                    color: #061016;
+                    padding: 0.72rem 1rem;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    font-weight: 800;
+                    box-shadow: 0 14px 28px rgba(36,184,219,0.18);
+                    white-space: nowrap;
+                }}
+
+                .portfolio-command-grid {{
+                    display: grid;
+                    grid-template-columns: minmax(300px, 390px) minmax(0, 1fr);
+                    gap: 1rem;
+                    margin-bottom: 1.25rem;
+                    align-items: start;
+                }}
+
+                .portfolio-health {{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 0.75rem;
+                }}
+
+                .health-card, .action-panel, .chart-panel {{
+                    background: linear-gradient(180deg, rgba(25, 36, 49, 0.96), rgba(18, 26, 35, 0.96));
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+                    padding: 1rem;
+                    box-shadow: var(--shadow);
+                }}
+
+                .chart-panel {{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                    align-items: center;
+                    align-self: start;
+                }}
+
+                .action-card {{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.75rem;
+                    padding: 0.72rem 0;
+                    border-top: 1px solid rgba(255,255,255,0.06);
+                }}
+
+                .action-card:first-of-type {{ border-top: none; padding-top: 0; }}
+
+                .action-pill {{
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 84px;
+                    padding: 0.22rem 0.52rem;
+                    border-radius: 999px;
+                    font-size: 0.72rem;
+                    font-weight: 800;
+                    white-space: nowrap;
+                    border: 1px solid transparent;
+                }}
+
+                .action-good {{ background: rgba(53,208,127,0.13); color: var(--green); border-color: rgba(53,208,127,0.2); }}
+                .action-risk {{ background: rgba(255,95,87,0.13); color: var(--red); border-color: rgba(255,95,87,0.22); }}
+                .action-watch {{ background: rgba(242,184,75,0.13); color: var(--gold); border-color: rgba(242,184,75,0.22); }}
+                .action-neutral {{ background: rgba(255,255,255,0.07); color: var(--text-secondary); border-color: rgba(255,255,255,0.08); }}
+
                 .search-input-wrapper {{ position: relative; }}
                 .search-input-wrapper svg {{
                     position: absolute;
@@ -1222,6 +1357,8 @@ class ReportGenerator:
                     .page-head > div:last-child div {{ display: inline-block; margin-right: 0.7rem; }}
                     .kpi-strip {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
                     .control-panel {{ grid-template-columns: 1fr; }}
+                    .portfolio-command-grid {{ grid-template-columns: 1fr; }}
+                    .chart-panel {{ grid-template-columns: 1fr; }}
                     .dashboard-grid {{ grid-template-columns: 1fr; }}
                 }}
 
@@ -1289,11 +1426,11 @@ class ReportGenerator:
         <body>
             <nav>
                 <div class="brand">PSE<span>PRO</span></div>
-                <div class="nav-item active" data-section="overview" onclick="showSection('overview')">
+                <div class="nav-item" data-section="overview" onclick="showSection('overview')">
                     Market Overview <span class="nav-badge">All</span>
                 </div>
                 
-                <div class="nav-item" data-section="portfolio_section" onclick="showSection('portfolio_section')">
+                <div class="nav-item active" data-section="portfolio_section" onclick="showSection('portfolio_section')">
                     My Portfolio
                 </div>
 
@@ -1326,7 +1463,7 @@ class ReportGenerator:
                     {portfolio_html}
 
                     <!-- OVERVIEW (All Stocks Grid) -->
-                    <div id="overview" class="section active">
+                    <div id="overview" class="section">
                         <div class="page-head">
                             <div>
                                 <div class="eyebrow">Market Overview</div>
@@ -1458,7 +1595,7 @@ class ReportGenerator:
             </div>
             
             <script>
-                let previousSectionId = 'overview';
+                let previousSectionId = 'portfolio_section';
                 
                 function showSection(id) {{
                     // Update Active State
