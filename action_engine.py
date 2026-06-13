@@ -110,6 +110,14 @@ class ActionEngine:
             return "Watchlist"
         return None
 
+    def _latest_market_date(self, tech_data):
+        dates = []
+        for tech in tech_data.values():
+            for row in tech.get("history", []):
+                if row.get("time"):
+                    dates.append(row["time"])
+        return max(dates) if dates else datetime.now(timezone.utc).date().isoformat()
+
     def generate(self):
         tech_data = load_json(TECHNICAL_DATA_FILE)
         fund_data = load_json(FUNDAMENTAL_DATA_FILE)
@@ -214,8 +222,10 @@ class ActionEngine:
         actions.sort(key=lambda x: (x["priority"], x["mom_score"]), reverse=True)
 
         generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        market_date = self._latest_market_date(tech_data)
         result = {
             "generated_at": generated_at,
+            "market_date": market_date,
             "settings": {
                 "monthly_budget": self.monthly_budget,
                 "max_position_pct": self.max_position_pct,
@@ -243,10 +253,16 @@ class ActionEngine:
         history = load_json(HISTORY_FILE)
         if not isinstance(history, list):
             history = []
-        today = result["generated_at"][:10]
-        history = [item for item in history if item.get("date") != today]
+        action_date = result.get("market_date") or result["generated_at"][:10]
+        run_date = result["generated_at"][:10]
+        history = [
+            item for item in history
+            if item.get("date") != action_date
+            and not (item.get("generated_at", "")[:10] == run_date and not item.get("market_date"))
+        ]
         history.append({
-            "date": today,
+            "date": action_date,
+            "market_date": action_date,
             "generated_at": result["generated_at"],
             "summary": result["summary"],
             "top_actions": [
@@ -257,6 +273,22 @@ class ActionEngine:
                     "mom_score": action["mom_score"],
                 }
                 for action in result["actions"][:12]
+            ],
+            "tracked_actions": [
+                {
+                    "symbol": action["symbol"],
+                    "action": action["action"],
+                    "source": action["source"],
+                    "priority": action["priority"],
+                    "mom_score": action["mom_score"],
+                    "trend": action["trend"],
+                    "sector": action["sector"],
+                    "entry_price": action["trade_plan"]["entry_price"],
+                    "stop_loss": action["trade_plan"]["stop_loss"],
+                    "target_price": action["trade_plan"]["target_price"],
+                    "reward_risk": action["trade_plan"]["reward_risk"],
+                }
+                for action in result["actions"]
             ],
         })
         history = history[-120:]

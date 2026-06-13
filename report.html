@@ -580,6 +580,10 @@
                     Daily Actions <span class="nav-badge">35</span>
                 </div>
 
+                <div class="nav-item" data-section="action_performance" onclick="showSection('action_performance')">
+                    Performance <span class="nav-badge">30</span>
+                </div>
+
                 <div class="nav-item" data-section="top_picks" onclick="showSection('top_picks')">
                     Top Picks <span class="nav-badge" style="background:var(--accent); color:#fff;">20</span>
                 </div>
@@ -606,7 +610,7 @@
                             <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:4px;">MoM scoring, fundamentals, dividends, and portfolio risk in one view</div>
                          </div>
                     </div>
-                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-13 10:25:02</div>
+                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-13 10:50:01</div>
                 </header>
                 
                 <main>
@@ -1190,7 +1194,7 @@
                     <div class="page-subtitle">Ranked actions combine portfolio exposure, MoM score, trend, stop risk, reward/risk, and position sizing rules.</div>
                 </div>
                 <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
-                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-13T02:24:02+00:00</div>
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-13T02:50:00+00:00</div>
                     <div>Risk per trade: 1.0%</div>
                 </div>
             </div>
@@ -1801,6 +1805,568 @@
             
                     </tbody>
                 </table>
+            </div>
+        </div>
+        
+                    
+        <div id="action_performance" class="section">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Action Performance</div>
+                    <h1 class="page-title">Recommendation Outcomes</h1>
+                    <div class="page-subtitle">Tracks whether past action calls produced positive forward returns, hit targets, or violated stops across 5/10/20/30 trading-day windows.</div>
+                </div>
+                <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-13T02:50:00+00:00</div>
+                    <div>Rows mature as more market days pass</div>
+                </div>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">30D Complete</div>
+                    <div class="kpi-value" id="outcome_complete_count">0</div>
+                    <div class="kpi-note">Measured recommendations</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">30D Pending</div>
+                    <div class="kpi-value" id="outcome_pending_count">30</div>
+                    <div class="kpi-note">Waiting for enough days</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Visible Rows</div>
+                    <div class="kpi-value" id="outcome_visible_count">30</div>
+                    <div class="kpi-note">After filters</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Horizons</div>
+                    <div class="kpi-value">5/10/20/30</div>
+                    <div class="kpi-note">Trading-day windows</div>
+                </div>
+            </div>
+
+            <div class="control-panel" style="grid-template-columns: repeat(3, minmax(160px, 1fr));">
+                <select class="control-field" id="outcome_action_filter" onchange="filterOutcomes()">
+                    <option value="all">All Actions</option>
+                    <option value="Hold">Hold</option><option value="Review Risk">Review Risk</option><option value="Watchlist">Watchlist</option>
+                </select>
+                <select class="control-field" id="outcome_horizon_filter" onchange="filterOutcomes()">
+                    <option value="5">5 Trading Days</option>
+                    <option value="10">10 Trading Days</option>
+                    <option value="20">20 Trading Days</option>
+                    <option value="30" selected>30 Trading Days</option>
+                </select>
+                <select class="control-field" id="outcome_status_filter" onchange="filterOutcomes()">
+                    <option value="all">All Status</option>
+                    <option value="complete">Complete</option>
+                    <option value="pending">Pending</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table" id="table_action_performance">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('table_action_performance', 0)">Symbol ↕</th>
+                            <th onclick="sortTable('table_action_performance', 1)">Date ↕</th>
+                            <th onclick="sortTable('table_action_performance', 2)">Action ↕</th>
+                            <th onclick="sortTable('table_action_performance', 3, 'num')">Priority ↕</th>
+                            <th onclick="sortTable('table_action_performance', 4, 'num')">MoM ↕</th>
+                            <th onclick="sortTable('table_action_performance', 5)">Trend ↕</th>
+                            <th onclick="sortTable('table_action_performance', 6, 'num')">Entry ↕</th>
+                            <th onclick="sortTable('table_action_performance', 7, 'num')">Return ↕</th>
+                            <th onclick="sortTable('table_action_performance', 8, 'num')">Drawdown ↕</th>
+                            <th onclick="sortTable('table_action_performance', 9, 'num')">Runup ↕</th>
+                            <th>Target</th>
+                            <th>Stop</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PNB</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">118.0</td>
+                    <td class="mono">26</td>
+                    <td>Downtrend</td>
+                    <td class="mono">₱56.00</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">GTCAP</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">117.6</td>
+                    <td class="mono">8</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱477.00</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">APX</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">116.5</td>
+                    <td class="mono">35</td>
+                    <td>Downtrend</td>
+                    <td class="mono">₱14.16</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">LFM</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">113.4</td>
+                    <td class="mono">17</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱29.70</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">AGI</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">110.9</td>
+                    <td class="mono">-9</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱8.00</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MEG</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">108.1</td>
+                    <td class="mono">0</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱1.97</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MWC</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">102.6</td>
+                    <td class="mono">13</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱39.60</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">BC</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">102.6</td>
+                    <td class="mono">13</td>
+                    <td>Downtrend</td>
+                    <td class="mono">₱6.20</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Review Risk" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">LTG</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">102.0</td>
+                    <td class="mono">10</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱14.48</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PPC</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">74.4</td>
+                    <td class="mono">62</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱15.00</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">SGP</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">74.4</td>
+                    <td class="mono">62</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱29.50</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MYNLD</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">74.0</td>
+                    <td class="mono">60</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱22.85</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">BNCOM</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.6</td>
+                    <td class="mono">53</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱10.52</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PGOLD</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.4</td>
+                    <td class="mono">52</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱45.90</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">CROWN</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.2</td>
+                    <td class="mono">51</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱1.75</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">APVI</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.2</td>
+                    <td class="mono">51</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱10.20</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">ICT</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.0</td>
+                    <td class="mono">50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱898.00</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">REDC</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.6</td>
+                    <td class="mono">48</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱7.45</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">COSCO</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.6</td>
+                    <td class="mono">48</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱7.94</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">EMI</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.4</td>
+                    <td class="mono">47</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱15.42</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">RFM</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.0</td>
+                    <td class="mono">45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱5.50</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">OPM</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.0</td>
+                    <td class="mono">45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.01</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">NRCP</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.8</td>
+                    <td class="mono">44</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.94</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">AUB</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.6</td>
+                    <td class="mono">43</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱43.95</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">FRUIT</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.6</td>
+                    <td class="mono">43</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.65</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">CREC</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.6</td>
+                    <td class="mono">43</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱4.59</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">UPM</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.4</td>
+                    <td class="mono">42</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.01</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">FNI</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.0</td>
+                    <td class="mono">40</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱2.24</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Watchlist" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MFC</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.0</td>
+                    <td class="mono">40</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱2300.00</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                <tr data-action="Hold" data-horizons='{"5": {"status": "pending", "days_available": 0}, "10": {"status": "pending", "days_available": 0}, "20": {"status": "pending", "days_available": 0}, "30": {"status": "pending", "days_available": 0}}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PSE</td>
+                    <td>2026-06-11</td>
+                    <td><span class="action-pill action-neutral">Hold</span></td>
+                    <td class="mono">39.8</td>
+                    <td class="mono">29</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱211.00</td>
+                    <td class="mono outcome-return text-muted">-</td>
+                    <td class="mono outcome-drawdown">-</td>
+                    <td class="mono outcome-runup">-</td>
+                    <td class="outcome-target">-</td>
+                    <td class="outcome-stop">-</td>
+                    <td class="outcome-status">pending</td>
+                </tr>
+            
+                    </tbody>
+                </table>
+                
             </div>
         </div>
         
@@ -27443,6 +28009,62 @@
                     // Update Count
                     let countEl = document.getElementById('overview_count');
                     if(countEl) countEl.innerText = visibleCount;
+                }
+
+                function filterOutcomes() {
+                    const actionFilter = document.getElementById('outcome_action_filter');
+                    const horizonFilter = document.getElementById('outcome_horizon_filter');
+                    const statusFilter = document.getElementById('outcome_status_filter');
+                    const table = document.getElementById('table_action_performance');
+                    if (!actionFilter || !horizonFilter || !statusFilter || !table) return;
+
+                    const actionVal = actionFilter.value;
+                    const horizonVal = horizonFilter.value;
+                    const statusVal = statusFilter.value;
+                    let visible = 0;
+                    let complete = 0;
+                    let pending = 0;
+
+                    Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+                        const horizons = JSON.parse(row.getAttribute('data-horizons') || '{}');
+                        const h = horizons[horizonVal] || { status: 'pending' };
+                        const rowAction = row.getAttribute('data-action') || '';
+                        const rowStatus = h.status || 'pending';
+
+                        const retCell = row.querySelector('.outcome-return');
+                        const ddCell = row.querySelector('.outcome-drawdown');
+                        const runupCell = row.querySelector('.outcome-runup');
+                        const targetCell = row.querySelector('.outcome-target');
+                        const stopCell = row.querySelector('.outcome-stop');
+                        const statusCell = row.querySelector('.outcome-status');
+
+                        const ret = h.return_pct;
+                        retCell.textContent = ret === undefined ? '-' : `${ret >= 0 ? '+' : ''}${ret.toFixed(2)}%`;
+                        retCell.classList.remove('text-green', 'text-red', 'text-muted');
+                        retCell.classList.add(ret === undefined ? 'text-muted' : ret > 0 ? 'text-green' : ret < 0 ? 'text-red' : 'text-muted');
+                        ddCell.textContent = h.max_drawdown_pct === undefined ? '-' : `${h.max_drawdown_pct >= 0 ? '+' : ''}${h.max_drawdown_pct.toFixed(2)}%`;
+                        runupCell.textContent = h.max_runup_pct === undefined ? '-' : `${h.max_runup_pct >= 0 ? '+' : ''}${h.max_runup_pct.toFixed(2)}%`;
+                        targetCell.textContent = h.target_hit ? 'Yes' : '-';
+                        stopCell.textContent = h.stop_hit ? 'Yes' : '-';
+                        statusCell.textContent = rowStatus;
+
+                        let show = true;
+                        if (actionVal !== 'all' && rowAction !== actionVal) show = false;
+                        if (statusVal !== 'all' && rowStatus !== statusVal) show = false;
+                        row.style.display = show ? '' : 'none';
+                        if (show) {
+                            visible++;
+                            if (rowStatus === 'complete') complete++;
+                            if (rowStatus === 'pending') pending++;
+                        }
+                    });
+
+                    const visibleEl = document.getElementById('outcome_visible_count');
+                    const completeEl = document.getElementById('outcome_complete_count');
+                    const pendingEl = document.getElementById('outcome_pending_count');
+                    if (visibleEl) visibleEl.textContent = visible;
+                    if (completeEl) completeEl.textContent = complete;
+                    if (pendingEl) pendingEl.textContent = pending;
                 }
                 
                 function sortTable(tableId, n, type) {

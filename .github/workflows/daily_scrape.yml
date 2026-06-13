@@ -51,6 +51,9 @@ jobs:
     - name: Generate Daily Action Plan
       run: python action_engine.py
 
+    - name: Track Action Outcomes
+      run: python action_outcomes.py
+
     - name: Send Daily Action Digest
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

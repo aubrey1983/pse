@@ -226,6 +226,15 @@ class ReportGenerator:
                 "actions": [],
             }
         action_lookup = {item.get("symbol"): item for item in daily_actions.get("actions", [])}
+
+        action_outcomes = self.load_json("data/action_outcomes.json")
+        if not action_outcomes:
+            action_outcomes = {
+                "generated_at": "-",
+                "horizons": [5, 10, 20, 30],
+                "summary": {},
+                "outcomes": [],
+            }
         
         # Merge Data per Industry
         # Dynamic Sector Generation
@@ -808,6 +817,128 @@ class ReportGenerator:
                         {action_rows}
                     </tbody>
                 </table>
+            </div>
+        </div>
+        """
+
+        # --- ACTION PERFORMANCE HTML ---
+        outcome_rows = ""
+        outcome_action_options = sorted(set([o.get("action", "-") for o in action_outcomes.get("outcomes", []) if o.get("action")]))
+        outcome_action_options_html = "".join([f'<option value="{a}">{a}</option>' for a in outcome_action_options])
+        default_horizon = "30"
+        outcome_summary_30 = action_outcomes.get("summary", {}).get(default_horizon, {})
+        pending_30 = outcome_summary_30.get("pending", 0)
+        complete_30 = outcome_summary_30.get("complete", 0)
+
+        for outcome in action_outcomes.get("outcomes", []):
+            h30 = outcome.get("horizons", {}).get(default_horizon, {})
+            status = h30.get("status", "pending")
+            ret = h30.get("return_pct")
+            dd = h30.get("max_drawdown_pct")
+            runup = h30.get("max_runup_pct")
+            target_hit = h30.get("target_hit", False)
+            stop_hit = h30.get("stop_hit", False)
+            ret_display = f"{ret:+.2f}%" if ret is not None else "-"
+            dd_display = f"{dd:+.2f}%" if dd is not None else "-"
+            runup_display = f"{runup:+.2f}%" if runup is not None else "-"
+            ret_cls = "text-green" if (ret or 0) > 0 else "text-red" if ret is not None and ret < 0 else "text-muted"
+            outcome_rows += f"""
+                <tr data-action="{outcome.get('action')}" data-horizons='{json.dumps(outcome.get("horizons", {}))}'>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">{outcome.get('symbol')}</td>
+                    <td>{outcome.get('date')}</td>
+                    <td><span class="action-pill {action_class_map.get(outcome.get('action'), 'action-neutral')}">{outcome.get('action')}</span></td>
+                    <td class="mono">{outcome.get('priority', 0):.1f}</td>
+                    <td class="mono">{outcome.get('mom_score', 0)}</td>
+                    <td>{outcome.get('trend', '-')}</td>
+                    <td class="mono">₱{outcome.get('entry_price', 0):.2f}</td>
+                    <td class="mono outcome-return {ret_cls}">{ret_display}</td>
+                    <td class="mono outcome-drawdown">{dd_display}</td>
+                    <td class="mono outcome-runup">{runup_display}</td>
+                    <td class="outcome-target">{'Yes' if target_hit else '-'}</td>
+                    <td class="outcome-stop">{'Yes' if stop_hit else '-'}</td>
+                    <td class="outcome-status">{status}</td>
+                </tr>
+            """
+
+        action_performance_html = f"""
+        <div id="action_performance" class="section">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Action Performance</div>
+                    <h1 class="page-title">Recommendation Outcomes</h1>
+                    <div class="page-subtitle">Tracks whether past action calls produced positive forward returns, hit targets, or violated stops across 5/10/20/30 trading-day windows.</div>
+                </div>
+                <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated {action_outcomes.get('generated_at', '-')}</div>
+                    <div>Rows mature as more market days pass</div>
+                </div>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">30D Complete</div>
+                    <div class="kpi-value" id="outcome_complete_count">{complete_30}</div>
+                    <div class="kpi-note">Measured recommendations</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">30D Pending</div>
+                    <div class="kpi-value" id="outcome_pending_count">{pending_30}</div>
+                    <div class="kpi-note">Waiting for enough days</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Visible Rows</div>
+                    <div class="kpi-value" id="outcome_visible_count">{len(action_outcomes.get('outcomes', []))}</div>
+                    <div class="kpi-note">After filters</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Horizons</div>
+                    <div class="kpi-value">5/10/20/30</div>
+                    <div class="kpi-note">Trading-day windows</div>
+                </div>
+            </div>
+
+            <div class="control-panel" style="grid-template-columns: repeat(3, minmax(160px, 1fr));">
+                <select class="control-field" id="outcome_action_filter" onchange="filterOutcomes()">
+                    <option value="all">All Actions</option>
+                    {outcome_action_options_html}
+                </select>
+                <select class="control-field" id="outcome_horizon_filter" onchange="filterOutcomes()">
+                    <option value="5">5 Trading Days</option>
+                    <option value="10">10 Trading Days</option>
+                    <option value="20">20 Trading Days</option>
+                    <option value="30" selected>30 Trading Days</option>
+                </select>
+                <select class="control-field" id="outcome_status_filter" onchange="filterOutcomes()">
+                    <option value="all">All Status</option>
+                    <option value="complete">Complete</option>
+                    <option value="pending">Pending</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table" id="table_action_performance">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('table_action_performance', 0)">Symbol ↕</th>
+                            <th onclick="sortTable('table_action_performance', 1)">Date ↕</th>
+                            <th onclick="sortTable('table_action_performance', 2)">Action ↕</th>
+                            <th onclick="sortTable('table_action_performance', 3, 'num')">Priority ↕</th>
+                            <th onclick="sortTable('table_action_performance', 4, 'num')">MoM ↕</th>
+                            <th onclick="sortTable('table_action_performance', 5)">Trend ↕</th>
+                            <th onclick="sortTable('table_action_performance', 6, 'num')">Entry ↕</th>
+                            <th onclick="sortTable('table_action_performance', 7, 'num')">Return ↕</th>
+                            <th onclick="sortTable('table_action_performance', 8, 'num')">Drawdown ↕</th>
+                            <th onclick="sortTable('table_action_performance', 9, 'num')">Runup ↕</th>
+                            <th>Target</th>
+                            <th>Stop</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {outcome_rows}
+                    </tbody>
+                </table>
+                { '<div style="padding:20px; text-align:center; color:var(--text-tertiary);">No mature outcomes yet. The tracker will populate after future daily action runs have enough forward price data.</div>' if not outcome_rows else '' }
             </div>
         </div>
         """
@@ -1648,6 +1779,10 @@ class ReportGenerator:
                     Daily Actions <span class="nav-badge">{action_summary.get('total_actions', len(daily_actions.get('actions', [])))}</span>
                 </div>
 
+                <div class="nav-item" data-section="action_performance" onclick="showSection('action_performance')">
+                    Performance <span class="nav-badge">{len(action_outcomes.get('outcomes', []))}</span>
+                </div>
+
                 <div class="nav-item" data-section="top_picks" onclick="showSection('top_picks')">
                     Top Picks <span class="nav-badge" style="background:var(--accent); color:#fff;">{len(top_picks)}</span>
                 </div>
@@ -1680,6 +1815,7 @@ class ReportGenerator:
                 <main>
                     {portfolio_html}
                     {daily_actions_html}
+                    {action_performance_html}
                     {data_health_html}
 
                     <!-- OVERVIEW (All Stocks Grid) -->
@@ -1937,6 +2073,62 @@ class ReportGenerator:
                     // Update Count
                     let countEl = document.getElementById('overview_count');
                     if(countEl) countEl.innerText = visibleCount;
+                }}
+
+                function filterOutcomes() {{
+                    const actionFilter = document.getElementById('outcome_action_filter');
+                    const horizonFilter = document.getElementById('outcome_horizon_filter');
+                    const statusFilter = document.getElementById('outcome_status_filter');
+                    const table = document.getElementById('table_action_performance');
+                    if (!actionFilter || !horizonFilter || !statusFilter || !table) return;
+
+                    const actionVal = actionFilter.value;
+                    const horizonVal = horizonFilter.value;
+                    const statusVal = statusFilter.value;
+                    let visible = 0;
+                    let complete = 0;
+                    let pending = 0;
+
+                    Array.from(table.querySelectorAll('tbody tr')).forEach(row => {{
+                        const horizons = JSON.parse(row.getAttribute('data-horizons') || '{{}}');
+                        const h = horizons[horizonVal] || {{ status: 'pending' }};
+                        const rowAction = row.getAttribute('data-action') || '';
+                        const rowStatus = h.status || 'pending';
+
+                        const retCell = row.querySelector('.outcome-return');
+                        const ddCell = row.querySelector('.outcome-drawdown');
+                        const runupCell = row.querySelector('.outcome-runup');
+                        const targetCell = row.querySelector('.outcome-target');
+                        const stopCell = row.querySelector('.outcome-stop');
+                        const statusCell = row.querySelector('.outcome-status');
+
+                        const ret = h.return_pct;
+                        retCell.textContent = ret === undefined ? '-' : `${{ret >= 0 ? '+' : ''}}${{ret.toFixed(2)}}%`;
+                        retCell.classList.remove('text-green', 'text-red', 'text-muted');
+                        retCell.classList.add(ret === undefined ? 'text-muted' : ret > 0 ? 'text-green' : ret < 0 ? 'text-red' : 'text-muted');
+                        ddCell.textContent = h.max_drawdown_pct === undefined ? '-' : `${{h.max_drawdown_pct >= 0 ? '+' : ''}}${{h.max_drawdown_pct.toFixed(2)}}%`;
+                        runupCell.textContent = h.max_runup_pct === undefined ? '-' : `${{h.max_runup_pct >= 0 ? '+' : ''}}${{h.max_runup_pct.toFixed(2)}}%`;
+                        targetCell.textContent = h.target_hit ? 'Yes' : '-';
+                        stopCell.textContent = h.stop_hit ? 'Yes' : '-';
+                        statusCell.textContent = rowStatus;
+
+                        let show = true;
+                        if (actionVal !== 'all' && rowAction !== actionVal) show = false;
+                        if (statusVal !== 'all' && rowStatus !== statusVal) show = false;
+                        row.style.display = show ? '' : 'none';
+                        if (show) {{
+                            visible++;
+                            if (rowStatus === 'complete') complete++;
+                            if (rowStatus === 'pending') pending++;
+                        }}
+                    }});
+
+                    const visibleEl = document.getElementById('outcome_visible_count');
+                    const completeEl = document.getElementById('outcome_complete_count');
+                    const pendingEl = document.getElementById('outcome_pending_count');
+                    if (visibleEl) visibleEl.textContent = visible;
+                    if (completeEl) completeEl.textContent = complete;
+                    if (pendingEl) pendingEl.textContent = pending;
                 }}
                 
                 function sortTable(tableId, n, type) {{

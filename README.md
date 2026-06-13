@@ -66,6 +66,9 @@ python validate_industries.py
 # Generate daily action plan, sizing, stops, targets, and action history
 python action_engine.py
 
+# Track forward returns for historical daily action snapshots
+python action_outcomes.py
+
 # Optionally send daily_actions.md to Telegram when TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are set
 python notify_actions.py
 ```
