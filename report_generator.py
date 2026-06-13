@@ -217,6 +217,15 @@ class ReportGenerator:
                 "normalized_changes": [],
                 "schema_warnings": [],
             }
+
+        daily_actions = self.load_json("data/daily_actions.json")
+        if not daily_actions:
+            daily_actions = {
+                "generated_at": "-",
+                "summary": {"review_risk": 0, "add": 0, "watchlist": 0, "trim_watch": 0, "hold": 0},
+                "actions": [],
+            }
+        action_lookup = {item.get("symbol"): item for item in daily_actions.get("actions", [])}
         
         # Merge Data per Industry
         # Dynamic Sector Generation
@@ -707,6 +716,102 @@ class ReportGenerator:
         </div>
         """
 
+        # --- DAILY ACTIONS HTML ---
+        action_rows = ""
+        action_class_map = {
+            "Add": "action-good",
+            "Review Risk": "action-risk",
+            "Trim Watch": "action-watch",
+            "Watchlist": "action-watch",
+            "Hold": "action-neutral",
+        }
+        for action in daily_actions.get("actions", [])[:40]:
+            plan = action.get("trade_plan", {})
+            action_cls = action_class_map.get(action.get("action"), "action-neutral")
+            reasons = "; ".join(action.get("reasons", [])[:3])
+            action_rows += f"""
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">{action.get('symbol')}</td>
+                    <td><span class="action-pill {action_cls}">{action.get('action')}</span></td>
+                    <td class="mono">{action.get('priority', 0):.1f}</td>
+                    <td>{action.get('source', '-')}</td>
+                    <td>{action.get('sector', '-')}</td>
+                    <td class="mono">{action.get('mom_score', 0)}</td>
+                    <td>{action.get('trend', '-')}</td>
+                    <td class="mono">₱{plan.get('entry_price', 0):.2f}</td>
+                    <td class="mono">₱{plan.get('stop_loss', 0):.2f}</td>
+                    <td class="mono">₱{plan.get('target_price', 0):.2f}</td>
+                    <td class="mono">{plan.get('reward_risk', 0):.2f}</td>
+                    <td class="mono">{plan.get('suggested_shares', 0):,.0f}</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">{reasons}</td>
+                </tr>
+            """
+
+        action_summary = daily_actions.get("summary", {})
+        daily_actions_html = f"""
+        <div id="daily_actions" class="section">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Action Engine</div>
+                    <h1 class="page-title">Today&apos;s Trade Plan</h1>
+                    <div class="page-subtitle">Ranked actions combine portfolio exposure, MoM score, trend, stop risk, reward/risk, and position sizing rules.</div>
+                </div>
+                <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated {daily_actions.get('generated_at', '-')}</div>
+                    <div>Risk per trade: {daily_actions.get('settings', {}).get('risk_per_trade_pct', 1.0)}%</div>
+                </div>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">Review Risk</div>
+                    <div class="kpi-value">{action_summary.get('review_risk', 0)}</div>
+                    <div class="kpi-note">Positions needing attention</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Add</div>
+                    <div class="kpi-value">{action_summary.get('add', 0)}</div>
+                    <div class="kpi-note">Meets buy and reward/risk rules</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Watchlist</div>
+                    <div class="kpi-value">{action_summary.get('watchlist', 0)}</div>
+                    <div class="kpi-note">Strong setup, waiting for better entry</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Trim Watch</div>
+                    <div class="kpi-value">{action_summary.get('trim_watch', 0)}</div>
+                    <div class="kpi-note">Allocation concentration checks</div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table" id="table_daily_actions">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('table_daily_actions', 0)">Symbol ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 1)">Action ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 2, 'num')">Priority ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 3)">Source ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 4)">Sector ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 5, 'num')">MoM ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 6)">Trend ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 7, 'num')">Entry ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 8, 'num')">Stop ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 9, 'num')">Target ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 10, 'num')">R/R ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 11, 'num')">Shares ↕</th>
+                            <th>Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {action_rows}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        """
+
         # --- PORTFOLIO HTML ---
         portfolio_html = ""
         portfolio_rows = ""
@@ -742,9 +847,13 @@ class ReportGenerator:
             stop_loss = tech.get('stop_loss', 0)
             trend = tech.get('trend', 'Unknown')
 
-            if mom_score >= 45 and gl_pct >= -3:
-                action_label = "Add / Hold"
-                action_cls = "action-good"
+            engine_action = action_lookup.get(sym)
+            if engine_action:
+                action_label = engine_action.get("action", "Hold")
+                action_cls = action_class_map.get(action_label, "action-neutral")
+            elif mom_score >= 45 and gl_pct >= -3:
+                action_label = "Watchlist"
+                action_cls = "action-watch"
             elif gl_pct <= -8 or mom_score < 20:
                 action_label = "Review Risk"
                 action_cls = "action-risk"
@@ -760,7 +869,8 @@ class ReportGenerator:
                     "symbol": sym,
                     "action": action_label,
                     "class": action_cls,
-                    "detail": f"{gl_pct:+.1f}% G/L | MoM {mom_score} | {trend}"
+                    "detail": f"{gl_pct:+.1f}% G/L | MoM {mom_score} | {trend}",
+                    "priority": engine_action.get("priority", 0) if engine_action else 0,
                 })
 
             # We need to construct a basic 'item' if it's not in our main list, but usually it is.
@@ -799,7 +909,8 @@ class ReportGenerator:
 
         portfolio_actions = sorted(
             portfolio_actions,
-            key=lambda x: (0 if x["action"] == "Review Risk" else 1 if x["action"] == "Add / Hold" else 2, x["symbol"])
+            key=lambda x: (x.get("priority", 0), 0 if x["action"] == "Review Risk" else 1),
+            reverse=True,
         )[:4]
         action_cards_html = "".join([
             f"""
@@ -1533,6 +1644,10 @@ class ReportGenerator:
                     My Portfolio
                 </div>
 
+                <div class="nav-item" data-section="daily_actions" onclick="showSection('daily_actions')">
+                    Daily Actions <span class="nav-badge">{action_summary.get('total_actions', len(daily_actions.get('actions', [])))}</span>
+                </div>
+
                 <div class="nav-item" data-section="top_picks" onclick="showSection('top_picks')">
                     Top Picks <span class="nav-badge" style="background:var(--accent); color:#fff;">{len(top_picks)}</span>
                 </div>
@@ -1564,6 +1679,7 @@ class ReportGenerator:
                 
                 <main>
                     {portfolio_html}
+                    {daily_actions_html}
                     {data_health_html}
 
                     <!-- OVERVIEW (All Stocks Grid) -->

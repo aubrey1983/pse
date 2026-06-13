@@ -1,0 +1,88 @@
+[
+    {
+        "date": "2026-06-13",
+        "generated_at": "2026-06-13T02:24:02+00:00",
+        "summary": {
+            "total_actions": 35,
+            "review_risk": 11,
+            "add": 0,
+            "watchlist": 23,
+            "trim_watch": 0,
+            "hold": 1
+        },
+        "top_actions": [
+            {
+                "symbol": "EURO",
+                "action": "Review Risk",
+                "priority": 120.08,
+                "mom_score": 50
+            },
+            {
+                "symbol": "PNB",
+                "action": "Review Risk",
+                "priority": 117.97,
+                "mom_score": 26
+            },
+            {
+                "symbol": "GTCAP",
+                "action": "Review Risk",
+                "priority": 117.6,
+                "mom_score": 8
+            },
+            {
+                "symbol": "APX",
+                "action": "Review Risk",
+                "priority": 116.51,
+                "mom_score": 35
+            },
+            {
+                "symbol": "LFM",
+                "action": "Review Risk",
+                "priority": 113.4,
+                "mom_score": 17
+            },
+            {
+                "symbol": "AGI",
+                "action": "Review Risk",
+                "priority": 110.91,
+                "mom_score": -9
+            },
+            {
+                "symbol": "MEG",
+                "action": "Review Risk",
+                "priority": 108.13,
+                "mom_score": 0
+            },
+            {
+                "symbol": "ALCO",
+                "action": "Review Risk",
+                "priority": 102.8,
+                "mom_score": 14
+            },
+            {
+                "symbol": "MWC",
+                "action": "Review Risk",
+                "priority": 102.6,
+                "mom_score": 13
+            },
+            {
+                "symbol": "BC",
+                "action": "Review Risk",
+                "priority": 102.6,
+                "mom_score": 13
+            },
+            {
+                "symbol": "LTG",
+                "action": "Review Risk",
+                "priority": 102.0,
+                "mom_score": 10
+            },
+            {
+                "symbol": "PPC",
+                "action": "Watchlist",
+                "priority": 74.4,
+                "mom_score": 62
+            }
+        ]
+    }
+]

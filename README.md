@@ -62,6 +62,12 @@ python backtest.py --objective base --months 12
 
 # Validate sector grouping metadata and write data/metadata_health.json
 python validate_industries.py
+
+# Generate daily action plan, sizing, stops, targets, and action history
+python action_engine.py
+
+# Optionally send daily_actions.md to Telegram when TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are set
+python notify_actions.py
 ```
 Backtests write objective-specific files such as `backtest_results_monthly_gain.md` and `backtest_results_base.md`.
 

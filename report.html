@@ -576,6 +576,10 @@
                     My Portfolio
                 </div>
 
+                <div class="nav-item" data-section="daily_actions" onclick="showSection('daily_actions')">
+                    Daily Actions <span class="nav-badge">35</span>
+                </div>
+
                 <div class="nav-item" data-section="top_picks" onclick="showSection('top_picks')">
                     Top Picks <span class="nav-badge" style="background:var(--accent); color:#fff;">20</span>
                 </div>
@@ -602,7 +606,7 @@
                             <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:4px;">MoM scoring, fundamentals, dividends, and portfolio risk in one view</div>
                          </div>
                     </div>
-                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-13 10:16:32</div>
+                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-13 10:25:02</div>
                 </header>
                 
                 <main>
@@ -640,16 +644,24 @@
                         
             <div class="action-card">
                 <div>
-                    <div class="mono" style="font-weight:800; color:var(--text-primary);">AGI</div>
-                    <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">-10.9% G/L | MoM -9 | Strong Downtrend</div>
+                    <div class="mono" style="font-weight:800; color:var(--text-primary);">EURO</div>
+                    <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">-10.1% G/L | MoM 50 | Strong Uptrend</div>
                 </div>
                 <span class="action-pill action-risk">Review Risk</span>
             </div>
             
             <div class="action-card">
                 <div>
-                    <div class="mono" style="font-weight:800; color:var(--text-primary);">ALCO</div>
-                    <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">+1.2% G/L | MoM 14 | Downtrend</div>
+                    <div class="mono" style="font-weight:800; color:var(--text-primary);">PNB</div>
+                    <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">-12.8% G/L | MoM 26 | Downtrend</div>
+                </div>
+                <span class="action-pill action-risk">Review Risk</span>
+            </div>
+            
+            <div class="action-card">
+                <div>
+                    <div class="mono" style="font-weight:800; color:var(--text-primary);">GTCAP</div>
+                    <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">-28.8% G/L | MoM 8 | Strong Downtrend</div>
                 </div>
                 <span class="action-pill action-risk">Review Risk</span>
             </div>
@@ -658,14 +670,6 @@
                 <div>
                     <div class="mono" style="font-weight:800; color:var(--text-primary);">APX</div>
                     <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">-9.5% G/L | MoM 35 | Downtrend</div>
-                </div>
-                <span class="action-pill action-risk">Review Risk</span>
-            </div>
-            
-            <div class="action-card">
-                <div>
-                    <div class="mono" style="font-weight:800; color:var(--text-primary);">BC</div>
-                    <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">-6.1% G/L | MoM 13 | Downtrend</div>
                 </div>
                 <span class="action-pill action-risk">Review Risk</span>
             </div>
@@ -803,7 +807,7 @@
                     <td class="mono text-green">+15.38%</td>
                     <td class="mono">62</td>
                     <td class="mono">6.5%</td>
-                    <td><span class="action-pill action-good">Add / Hold</span></td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('PPC')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -823,7 +827,7 @@
                     <td class="mono text-green">+17.68%</td>
                     <td class="mono">45</td>
                     <td class="mono">9.2%</td>
-                    <td><span class="action-pill action-good">Add / Hold</span></td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('RFM')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -843,7 +847,7 @@
                     <td class="mono text-green">+12.64%</td>
                     <td class="mono">46</td>
                     <td class="mono">18.8%</td>
-                    <td><span class="action-pill action-good">Add / Hold</span></td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('WPI')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -923,7 +927,7 @@
                     <td class="mono text-green">+14.69%</td>
                     <td class="mono">53</td>
                     <td class="mono">24.4%</td>
-                    <td><span class="action-pill action-good">Add / Hold</span></td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('BNCOM')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -943,7 +947,7 @@
                     <td class="mono text-green">+43.58%</td>
                     <td class="mono">62</td>
                     <td class="mono">39.5%</td>
-                    <td><span class="action-pill action-good">Add / Hold</span></td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('SGP')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -963,7 +967,7 @@
                     <td class="mono text-green">+3.00%</td>
                     <td class="mono">43</td>
                     <td class="mono">9.5%</td>
-                    <td><span class="action-pill action-neutral">Hold</span></td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('AUB')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -1063,7 +1067,7 @@
                     <td class="mono text-green">+30.56%</td>
                     <td class="mono">44</td>
                     <td class="mono">30.9%</td>
-                    <td><span class="action-pill action-neutral">Hold</span></td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('NRCP')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -1163,7 +1167,7 @@
                     <td class="mono text-green">+0.00%</td>
                     <td class="mono">43</td>
                     <td class="mono">9.0%</td>
-                    <td><span class="action-pill action-neutral">Hold</span></td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
                     <td>
                         <button onclick="event.stopPropagation(); removePosition('FRUIT')" style="background:none; border:none; color:var(--text-tertiary); cursor:pointer;" title="Remove Position">
                             🗑️
@@ -1174,6 +1178,629 @@
                     </tbody>
                 </table>
                 
+            </div>
+        </div>
+        
+                    
+        <div id="daily_actions" class="section">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Action Engine</div>
+                    <h1 class="page-title">Today&apos;s Trade Plan</h1>
+                    <div class="page-subtitle">Ranked actions combine portfolio exposure, MoM score, trend, stop risk, reward/risk, and position sizing rules.</div>
+                </div>
+                <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-13T02:24:02+00:00</div>
+                    <div>Risk per trade: 1.0%</div>
+                </div>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">Review Risk</div>
+                    <div class="kpi-value">11</div>
+                    <div class="kpi-note">Positions needing attention</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Add</div>
+                    <div class="kpi-value">0</div>
+                    <div class="kpi-note">Meets buy and reward/risk rules</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Watchlist</div>
+                    <div class="kpi-value">23</div>
+                    <div class="kpi-note">Strong setup, waiting for better entry</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Trim Watch</div>
+                    <div class="kpi-value">0</div>
+                    <div class="kpi-note">Allocation concentration checks</div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table" id="table_daily_actions">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('table_daily_actions', 0)">Symbol ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 1)">Action ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 2, 'num')">Priority ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 3)">Source ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 4)">Sector ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 5, 'num')">MoM ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 6)">Trend ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 7, 'num')">Entry ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 8, 'num')">Stop ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 9, 'num')">Target ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 10, 'num')">R/R ↕</th>
+                            <th onclick="sortTable('table_daily_actions', 11, 'num')">Shares ↕</th>
+                            <th>Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">EURO</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">120.1</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱1.07</td>
+                    <td class="mono">₱0.94</td>
+                    <td class="mono">₱1.46</td>
+                    <td class="mono">3.02</td>
+                    <td class="mono">5,330</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.4% (+5); Monthly volatility 6.6% (-5); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PNB</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">118.0</td>
+                    <td>portfolio</td>
+                    <td>Financials</td>
+                    <td class="mono">26</td>
+                    <td>Downtrend</td>
+                    <td class="mono">₱56.00</td>
+                    <td class="mono">₱52.38</td>
+                    <td class="mono">₱61.20</td>
+                    <td class="mono">1.44</td>
+                    <td class="mono">178</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +4.4% (+18); Monthly volatility 15.2% (-11); Downtrend (-14)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">GTCAP</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">117.6</td>
+                    <td>portfolio</td>
+                    <td>Holding Firms</td>
+                    <td class="mono">8</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱477.00</td>
+                    <td class="mono">₱436.50</td>
+                    <td class="mono">₱579.00</td>
+                    <td class="mono">2.52</td>
+                    <td class="mono">16</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +0.1% (+0); Monthly volatility 10.0% (-7); Strong downtrend (-22)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">APX</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">116.5</td>
+                    <td>portfolio</td>
+                    <td>Mining and Oil</td>
+                    <td class="mono">35</td>
+                    <td>Downtrend</td>
+                    <td class="mono">₱14.16</td>
+                    <td class="mono">₱12.18</td>
+                    <td class="mono">₱18.46</td>
+                    <td class="mono">2.18</td>
+                    <td class="mono">348</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +9.8% (+25); High monthly win rate 69% (+14); Monthly volatility 19.5% (-14)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">LFM</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">113.4</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">17</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱29.70</td>
+                    <td class="mono">₱24.25</td>
+                    <td class="mono">₱35.30</td>
+                    <td class="mono">1.03</td>
+                    <td class="mono">126</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +4.5% (+18); High monthly win rate 69% (+14); Monthly volatility 10.4% (-7)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">AGI</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">110.9</td>
+                    <td>portfolio</td>
+                    <td>Holding Firms</td>
+                    <td class="mono">-9</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱8.00</td>
+                    <td class="mono">₱7.67</td>
+                    <td class="mono">₱10.32</td>
+                    <td class="mono">7.09</td>
+                    <td class="mono">1,250</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +2.0% (+8); Weak monthly win rate 44% (-8); Monthly volatility 12.4% (-9)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MEG</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">108.1</td>
+                    <td>portfolio</td>
+                    <td>Property</td>
+                    <td class="mono">0</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱1.97</td>
+                    <td class="mono">₱1.90</td>
+                    <td class="mono">₱2.17</td>
+                    <td class="mono">2.91</td>
+                    <td class="mono">5,076</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +0.9% (+3); Monthly volatility 4.1% (-3); Strong downtrend (-22)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">ALCO</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">102.8</td>
+                    <td>portfolio</td>
+                    <td>Property</td>
+                    <td class="mono">14</td>
+                    <td>Downtrend</td>
+                    <td class="mono">₱0.42</td>
+                    <td class="mono">₱0.41</td>
+                    <td class="mono">₱0.49</td>
+                    <td class="mono">3.69</td>
+                    <td class="mono">23,529</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.6% (+7); Weak monthly win rate 38% (-8); Monthly volatility 8.9% (-6)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MWC</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">102.6</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">13</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱39.60</td>
+                    <td class="mono">₱37.05</td>
+                    <td class="mono">₱45.30</td>
+                    <td class="mono">2.24</td>
+                    <td class="mono">252</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +2.1% (+8); Solid monthly win rate 62% (+9); Monthly volatility 8.5% (-6)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">BC</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">102.6</td>
+                    <td>portfolio</td>
+                    <td>Mining and Oil</td>
+                    <td class="mono">13</td>
+                    <td>Downtrend</td>
+                    <td class="mono">₱6.20</td>
+                    <td class="mono">₱5.46</td>
+                    <td class="mono">₱6.91</td>
+                    <td class="mono">0.96</td>
+                    <td class="mono">931</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +3.5% (+14); Solid monthly win rate 62% (+9); Monthly volatility 10.5% (-7)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">LTG</td>
+                    <td><span class="action-pill action-risk">Review Risk</span></td>
+                    <td class="mono">102.0</td>
+                    <td>portfolio</td>
+                    <td>Holding Firms</td>
+                    <td class="mono">10</td>
+                    <td>Strong Downtrend</td>
+                    <td class="mono">₱14.48</td>
+                    <td class="mono">₱13.39</td>
+                    <td class="mono">₱15.80</td>
+                    <td class="mono">1.21</td>
+                    <td class="mono">629</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.5% (+6); Solid monthly win rate 62% (+9); Monthly volatility 5.1% (-4)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PPC</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">74.4</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">62</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱15.00</td>
+                    <td class="mono">₱14.03</td>
+                    <td class="mono">₱15.42</td>
+                    <td class="mono">0.43</td>
+                    <td class="mono">666</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +3.0% (+12); High monthly win rate 75% (+14); Monthly volatility 4.7% (-3)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">SGP</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">74.4</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">62</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱29.50</td>
+                    <td class="mono">₱17.85</td>
+                    <td class="mono">₱32.40</td>
+                    <td class="mono">0.25</td>
+                    <td class="mono">59</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +7.0% (+25); High monthly win rate 69% (+14); Monthly volatility 10.7% (-7)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MYNLD</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">74.0</td>
+                    <td>candidate</td>
+                    <td>Industrial</td>
+                    <td class="mono">60</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱22.85</td>
+                    <td class="mono">₱18.80</td>
+                    <td class="mono">₱24.45</td>
+                    <td class="mono">0.39</td>
+                    <td class="mono">169</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +5.7% (+23); High monthly win rate 86% (+14); Monthly volatility 9.3% (-7)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">BNCOM</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.6</td>
+                    <td>portfolio</td>
+                    <td>Financials</td>
+                    <td class="mono">53</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱10.52</td>
+                    <td class="mono">₱7.95</td>
+                    <td class="mono">₱11.94</td>
+                    <td class="mono">0.55</td>
+                    <td class="mono">268</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +2.9% (+12); High monthly win rate 69% (+14); Monthly volatility 7.7% (-5)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PGOLD</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.4</td>
+                    <td>candidate</td>
+                    <td>Services</td>
+                    <td class="mono">52</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱45.90</td>
+                    <td class="mono">₱36.47</td>
+                    <td class="mono">₱49.10</td>
+                    <td class="mono">0.34</td>
+                    <td class="mono">72</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +3.5% (+14); High monthly win rate 69% (+14); Monthly volatility 8.4% (-6)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">CROWN</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.2</td>
+                    <td>candidate</td>
+                    <td>Industrial</td>
+                    <td class="mono">51</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱1.75</td>
+                    <td class="mono">₱1.56</td>
+                    <td class="mono">₱1.89</td>
+                    <td class="mono">0.74</td>
+                    <td class="mono">3,654</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +0.6% (+2); Solid monthly win rate 62% (+9); Monthly volatility 3.3% (-2)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">APVI</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.2</td>
+                    <td>candidate</td>
+                    <td>Property</td>
+                    <td class="mono">51</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱10.20</td>
+                    <td class="mono">₱8.15</td>
+                    <td class="mono">₱12.00</td>
+                    <td class="mono">0.88</td>
+                    <td class="mono">335</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.6% (+6); High monthly win rate 69% (+14); Monthly volatility 5.3% (-4)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">ICT</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">72.0</td>
+                    <td>candidate</td>
+                    <td>Services</td>
+                    <td class="mono">50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱898.00</td>
+                    <td class="mono">₱654.26</td>
+                    <td class="mono">₱935.00</td>
+                    <td class="mono">0.15</td>
+                    <td class="mono">2</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +6.3% (+25); High monthly win rate 81% (+14); Monthly volatility 7.7% (-5)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">REDC</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.6</td>
+                    <td>candidate</td>
+                    <td>Industrial</td>
+                    <td class="mono">48</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱7.45</td>
+                    <td class="mono">₱6.09</td>
+                    <td class="mono">₱7.51</td>
+                    <td class="mono">0.04</td>
+                    <td class="mono">506</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +2.5% (+10); Solid monthly win rate 62% (+9); Monthly volatility 5.5% (-4)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">COSCO</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.6</td>
+                    <td>candidate</td>
+                    <td>Holding Firms</td>
+                    <td class="mono">48</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱7.94</td>
+                    <td class="mono">₱6.41</td>
+                    <td class="mono">₱8.40</td>
+                    <td class="mono">0.30</td>
+                    <td class="mono">450</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +2.7% (+11); Monthly volatility 6.3% (-4); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">EMI</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.4</td>
+                    <td>candidate</td>
+                    <td>Industrial</td>
+                    <td class="mono">47</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱15.42</td>
+                    <td class="mono">₱14.34</td>
+                    <td class="mono">₱16.02</td>
+                    <td class="mono">0.55</td>
+                    <td class="mono">635</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.5% (+6); Solid monthly win rate 62% (+9); Monthly volatility 4.2% (-3)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">WPI</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.2</td>
+                    <td>portfolio</td>
+                    <td>Services</td>
+                    <td class="mono">46</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.49</td>
+                    <td class="mono">₱0.40</td>
+                    <td class="mono">₱0.52</td>
+                    <td class="mono">0.33</td>
+                    <td class="mono">7,455</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.7% (+7); Monthly volatility 4.3% (-3); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">RFM</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.0</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱5.50</td>
+                    <td class="mono">₱5.00</td>
+                    <td class="mono">₱5.65</td>
+                    <td class="mono">0.30</td>
+                    <td class="mono">1,363</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.8% (+7); Solid monthly win rate 62% (+9); Monthly volatility 3.8% (-3)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">OPM</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.0</td>
+                    <td>candidate</td>
+                    <td>Mining and Oil</td>
+                    <td class="mono">45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.01</td>
+                    <td class="mono">₱0.01</td>
+                    <td class="mono">₱0.02</td>
+                    <td class="mono">0.47</td>
+                    <td class="mono">291,580</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +4.1% (+16); Monthly volatility 8.1% (-6); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">IMP</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">71.0</td>
+                    <td>candidate</td>
+                    <td>Services</td>
+                    <td class="mono">45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.94</td>
+                    <td class="mono">₱0.80</td>
+                    <td class="mono">₱1.10</td>
+                    <td class="mono">1.11</td>
+                    <td class="mono">4,758</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +4.7% (+19); Weak monthly win rate 38% (-8); Monthly volatility 19.4% (-14)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">NRCP</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.8</td>
+                    <td>portfolio</td>
+                    <td>Financials</td>
+                    <td class="mono">44</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.94</td>
+                    <td class="mono">₱0.65</td>
+                    <td class="mono">₱1.18</td>
+                    <td class="mono">0.83</td>
+                    <td class="mono">2,372</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +2.7% (+11); Monthly volatility 14.2% (-10); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">AUB</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.6</td>
+                    <td>portfolio</td>
+                    <td>Financials</td>
+                    <td class="mono">43</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱43.95</td>
+                    <td class="mono">₱39.77</td>
+                    <td class="mono">₱44.50</td>
+                    <td class="mono">0.13</td>
+                    <td class="mono">164</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.9% (+8); High monthly win rate 69% (+14); Monthly volatility 13.3% (-9)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">FRUIT</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.6</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">43</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.65</td>
+                    <td class="mono">₱0.59</td>
+                    <td class="mono">₱0.70</td>
+                    <td class="mono">0.86</td>
+                    <td class="mono">11,803</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Negative avg monthly return -0.1% (-1); Monthly volatility 4.0% (-3); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">CREC</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.6</td>
+                    <td>candidate</td>
+                    <td>Industrial</td>
+                    <td class="mono">43</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱4.59</td>
+                    <td class="mono">₱3.92</td>
+                    <td class="mono">₱5.00</td>
+                    <td class="mono">0.61</td>
+                    <td class="mono">1,025</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.6% (+6); Solid monthly win rate 62% (+9); Monthly volatility 3.3% (-2)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">UPM</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.4</td>
+                    <td>candidate</td>
+                    <td>Mining and Oil</td>
+                    <td class="mono">42</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.01</td>
+                    <td class="mono">₱0.00</td>
+                    <td class="mono">₱0.01</td>
+                    <td class="mono">0.78</td>
+                    <td class="mono">243,758</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +5.6% (+22); Monthly volatility 18.9% (-13); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">NI</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.4</td>
+                    <td>candidate</td>
+                    <td>Mining and Oil</td>
+                    <td class="mono">42</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱0.49</td>
+                    <td class="mono">₱0.37</td>
+                    <td class="mono">₱0.58</td>
+                    <td class="mono">0.77</td>
+                    <td class="mono">5,904</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +3.7% (+15); Monthly volatility 15.9% (-11); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">FNI</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.0</td>
+                    <td>candidate</td>
+                    <td>Mining and Oil</td>
+                    <td class="mono">40</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱2.24</td>
+                    <td class="mono">₱1.46</td>
+                    <td class="mono">₱2.39</td>
+                    <td class="mono">0.19</td>
+                    <td class="mono">887</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +5.6% (+23); Monthly volatility 16.7% (-12); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MFC</td>
+                    <td><span class="action-pill action-watch">Watchlist</span></td>
+                    <td class="mono">70.0</td>
+                    <td>candidate</td>
+                    <td>Financials</td>
+                    <td class="mono">40</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱2300.00</td>
+                    <td class="mono">₱1794.50</td>
+                    <td class="mono">₱3600.00</td>
+                    <td class="mono">2.57</td>
+                    <td class="mono">1</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +2.1% (+9); Monthly volatility 7.3% (-5); Strong uptrend (+12)</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PSE</td>
+                    <td><span class="action-pill action-neutral">Hold</span></td>
+                    <td class="mono">39.8</td>
+                    <td>portfolio</td>
+                    <td>Financials</td>
+                    <td class="mono">29</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">₱211.00</td>
+                    <td class="mono">₱194.00</td>
+                    <td class="mono">₱220.00</td>
+                    <td class="mono">0.53</td>
+                    <td class="mono">40</td>
+                    <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">Positive avg monthly return +1.0% (+4); Weak monthly win rate 44% (-8); Monthly volatility 3.8% (-3)</td>
+                </tr>
+            
+                    </tbody>
+                </table>
             </div>
         </div>
         
