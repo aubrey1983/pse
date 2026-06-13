@@ -769,18 +769,18 @@ class ReportGenerator:
                 }});
             </script>
             
-            <div class="card" style="overflow-x:auto;">
-                <table style="width:100%; border-collapse:collapse;">
+            <div class="table-container">
+                <table class="data-table" id="table_portfolio">
                     <thead>
-                        <tr style="text-align:left; border-bottom:1px solid var(--border);">
-                            <th style="padding:12px; color:var(--text-secondary);">Symbol</th>
-                            <th style="padding:12px; color:var(--text-secondary);">Shares</th>
-                            <th style="padding:12px; color:var(--text-secondary);">Avg Price</th>
-                            <th style="padding:12px; color:var(--text-secondary);">Current</th>
-                            <th style="padding:12px; color:var(--text-secondary);">Market Value</th>
-                            <th style="padding:12px; color:var(--text-secondary);">Gain/Loss</th>
-                            <th style="padding:12px; color:var(--text-secondary);">%</th>
-                            <th style="padding:12px; color:var(--text-secondary);">Action</th>
+                        <tr>
+                            <th onclick="sortTable('table_portfolio', 0)" title="Sort by stock symbol">Symbol ↕</th>
+                            <th onclick="sortTable('table_portfolio', 1, 'num')" title="Sort by number of shares">Shares ↕</th>
+                            <th onclick="sortTable('table_portfolio', 2, 'num')" title="Sort by average buy price">Avg Price ↕</th>
+                            <th onclick="sortTable('table_portfolio', 3, 'num')" title="Sort by current price">Current ↕</th>
+                            <th onclick="sortTable('table_portfolio', 4, 'num')" title="Sort by market value">Market Value ↕</th>
+                            <th onclick="sortTable('table_portfolio', 5, 'num')" title="Sort by peso gain or loss">Gain/Loss ↕</th>
+                            <th onclick="sortTable('table_portfolio', 6, 'num')" title="Sort by percentage gain or loss">% ↕</th>
+                            <th title="Remove position">Action</th>
                         </tr>
                     </thead>
                     <tbody>
