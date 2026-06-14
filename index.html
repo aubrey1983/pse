@@ -665,7 +665,7 @@
                 </div>
 
                 <div class="nav-item" data-section="data_health" onclick="showSection('data_health')">
-                    Data Health <span class="nav-badge">OK</span>
+                    Data Health <span class="nav-badge">Fresh</span>
                 </div>
                 
                 <div style="margin: 1.5rem 0.9rem 0.5rem; font-size:0.7rem; color:var(--text-tertiary); text-transform:uppercase; font-weight:800; letter-spacing:0.08em;">Industries</div>
@@ -682,7 +682,7 @@
                             <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:4px;">MoM scoring, fundamentals, dividends, and portfolio risk in one view</div>
                          </div>
                     </div>
-                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-14 16:58:28</div>
+                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-14 19:19:55</div>
                 </header>
                 
                 <main>
@@ -2778,8 +2778,54 @@
         <div id="data_health" class="section">
             <div class="page-head">
                 <div>
+                    <div class="eyebrow">System Health</div>
+                    <h1 class="page-title">Data Freshness Monitor</h1>
+                    <div class="page-subtitle">Checks whether the dashboard, action engine, outcome tracker, and industry metadata are working from recent source data.</div>
+                </div>
+                <span class="action-pill action-good">FRESH</span>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">Market Data Date</div>
+                    <div class="kpi-value" style="font-size:1.1rem;">2026-06-11</div>
+                    <div class="kpi-note">3 calendar days old</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Action Plan</div>
+                    <div class="kpi-value" style="font-size:1.1rem;">2026-06-14T08:53:14+00:00</div>
+                    <div class="kpi-note">0 calendar days old</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Outcome Tracker</div>
+                    <div class="kpi-value" style="font-size:1.1rem;">2026-06-14T08:53:14+00:00</div>
+                    <div class="kpi-note">0 calendar days old</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Workflow</div>
+                    <div class="kpi-value" style="font-size:1.1rem;">Weekdays</div>
+                    <div class="kpi-note">10:00 UTC / 6:00 PM PH</div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Pipeline Status</h3>
+                    <span class="status-pill">Fresh</span>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card"><span>Core Files Missing</span><strong>0</strong><small>None</small></div>
+                    <div class="metric-card"><span>Industry Metadata</span><strong>OK</strong><small>1 calendar days old</small></div>
+                    <div class="metric-card"><span>Tracked Outcomes</span><strong>30</strong><small>Rows in performance tracker</small></div>
+                    <div class="metric-card"><span>Daily Actions</span><strong>35</strong><small>Rows in action engine output</small></div>
+                </div>
+                <div style="margin-top:1rem; color:var(--text-secondary); font-size:0.9rem;">All core dashboard inputs are present and recent.</div>
+            </div>
+
+            <div class="page-head" style="margin-top:1.5rem;">
+                <div>
                     <div class="eyebrow">Data Health</div>
-                    <h1 class="page-title">Industry Metadata Audit</h1>
+                    <h1 class="page-title" style="font-size:1.35rem;">Industry Metadata Audit</h1>
                     <div class="page-subtitle">Validates PSE sector groupings, schema consistency, and normalized sector labels used by the dashboard.</div>
                 </div>
                 <span class="action-pill action-good">OK</span>

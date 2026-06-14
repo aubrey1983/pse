@@ -236,6 +236,63 @@ class ReportGenerator:
                 "learning_profile": {},
                 "outcomes": [],
             }
+
+        def parse_date(value):
+            if not value or value == "-":
+                return None
+            try:
+                if "T" in value:
+                    return datetime.datetime.fromisoformat(value.replace("Z", "+00:00")).date()
+                return datetime.date.fromisoformat(value[:10])
+            except Exception:
+                return None
+
+        def days_old(value):
+            parsed = parse_date(value)
+            if not parsed:
+                return None
+            return (datetime.datetime.now(datetime.timezone.utc).date() - parsed).days
+
+        latest_market_date = "-"
+        market_dates = []
+        for tech in tech_data.values():
+            for row in tech.get("history", []):
+                if row.get("time"):
+                    market_dates.append(row["time"])
+        if market_dates:
+            latest_market_date = max(market_dates)
+
+        market_age = days_old(latest_market_date)
+        actions_age = days_old(daily_actions.get("generated_at"))
+        outcomes_age = days_old(action_outcomes.get("generated_at"))
+        metadata_age = days_old(metadata_health.get("generated_at"))
+        market_fresh = market_age is not None and market_age <= 5
+        actions_fresh = actions_age is not None and actions_age <= 2
+        outcomes_fresh = outcomes_age is not None and outcomes_age <= 2
+        metadata_ok = metadata_health.get("status") == "ok"
+        core_files = [
+            "data/technical_data.json",
+            "data/pse_fundamentals.json",
+            "data/daily_actions.json",
+            "data/action_outcomes.json",
+            "data/metadata_health.json",
+        ]
+        missing_core_files = [path for path in core_files if not os.path.exists(path)]
+        health_issues = []
+        if not market_fresh:
+            health_issues.append("Market data may be stale")
+        if not actions_fresh:
+            health_issues.append("Daily action plan may be stale")
+        if not outcomes_fresh:
+            health_issues.append("Action outcomes may be stale")
+        if not metadata_ok:
+            health_issues.append("Industry metadata needs attention")
+        if missing_core_files:
+            health_issues.append(f"Missing files: {', '.join(missing_core_files)}")
+
+        system_status = "Fresh" if not health_issues else "Needs Attention" if len(health_issues) >= 2 else "Stale"
+        system_cls = "action-good" if system_status == "Fresh" else "action-risk" if system_status == "Needs Attention" else "action-watch"
+        health_issue_text = "; ".join(health_issues) if health_issues else "All core dashboard inputs are present and recent."
         
         # Merge Data per Industry
         # Dynamic Sector Generation
@@ -666,8 +723,54 @@ class ReportGenerator:
         <div id="data_health" class="section">
             <div class="page-head">
                 <div>
+                    <div class="eyebrow">System Health</div>
+                    <h1 class="page-title">Data Freshness Monitor</h1>
+                    <div class="page-subtitle">Checks whether the dashboard, action engine, outcome tracker, and industry metadata are working from recent source data.</div>
+                </div>
+                <span class="action-pill {system_cls}">{system_status.upper()}</span>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">Market Data Date</div>
+                    <div class="kpi-value" style="font-size:1.1rem;">{latest_market_date}</div>
+                    <div class="kpi-note">{market_age if market_age is not None else '-'} calendar days old</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Action Plan</div>
+                    <div class="kpi-value" style="font-size:1.1rem;">{daily_actions.get('generated_at', '-')}</div>
+                    <div class="kpi-note">{actions_age if actions_age is not None else '-'} calendar days old</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Outcome Tracker</div>
+                    <div class="kpi-value" style="font-size:1.1rem;">{action_outcomes.get('generated_at', '-')}</div>
+                    <div class="kpi-note">{outcomes_age if outcomes_age is not None else '-'} calendar days old</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Workflow</div>
+                    <div class="kpi-value" style="font-size:1.1rem;">Weekdays</div>
+                    <div class="kpi-note">10:00 UTC / 6:00 PM PH</div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Pipeline Status</h3>
+                    <span class="status-pill">{system_status}</span>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card"><span>Core Files Missing</span><strong>{len(missing_core_files)}</strong><small>{', '.join(missing_core_files) if missing_core_files else 'None'}</small></div>
+                    <div class="metric-card"><span>Industry Metadata</span><strong>{health_status.upper()}</strong><small>{metadata_age if metadata_age is not None else '-'} calendar days old</small></div>
+                    <div class="metric-card"><span>Tracked Outcomes</span><strong>{len(action_outcomes.get('outcomes', []))}</strong><small>Rows in performance tracker</small></div>
+                    <div class="metric-card"><span>Daily Actions</span><strong>{daily_actions.get('summary', {}).get('total_actions', len(daily_actions.get('actions', [])))}</strong><small>Rows in action engine output</small></div>
+                </div>
+                <div style="margin-top:1rem; color:var(--text-secondary); font-size:0.9rem;">{health_issue_text}</div>
+            </div>
+
+            <div class="page-head" style="margin-top:1.5rem;">
+                <div>
                     <div class="eyebrow">Data Health</div>
-                    <h1 class="page-title">Industry Metadata Audit</h1>
+                    <h1 class="page-title" style="font-size:1.35rem;">Industry Metadata Audit</h1>
                     <div class="page-subtitle">Validates PSE sector groupings, schema consistency, and normalized sector labels used by the dashboard.</div>
                 </div>
                 <span class="action-pill {health_cls}">{health_status.upper()}</span>
@@ -2095,7 +2198,7 @@ class ReportGenerator:
                 </div>
 
                 <div class="nav-item" data-section="data_health" onclick="showSection('data_health')">
-                    Data Health <span class="nav-badge">{health_status.upper()}</span>
+                    Data Health <span class="nav-badge">{system_status}</span>
                 </div>
                 
                 <div style="margin: 1.5rem 0.9rem 0.5rem; font-size:0.7rem; color:var(--text-tertiary); text-transform:uppercase; font-weight:800; letter-spacing:0.08em;">Industries</div>
