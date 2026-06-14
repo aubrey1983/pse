@@ -10,6 +10,7 @@ from stock_data import normalize_sector
 TECHNICAL_DATA_FILE = "data/technical_data.json"
 FUNDAMENTAL_DATA_FILE = "data/pse_fundamentals.json"
 METADATA_FILE = "data/stock_metadata.json"
+OUTCOMES_FILE = "data/action_outcomes.json"
 OUTPUT_FILE = "data/daily_actions.json"
 HISTORY_FILE = "data/daily_action_history.json"
 DIGEST_FILE = "daily_actions.md"
@@ -35,6 +36,28 @@ class ActionEngine:
         self.max_sector_pct = float(max_sector_pct)
         self.risk_per_trade_pct = float(risk_per_trade_pct)
         self.analyzer = Analyzer()
+        self.learning_profile = self._load_learning_profile()
+
+    def _load_learning_profile(self):
+        outcomes = load_json(OUTCOMES_FILE)
+        profile = outcomes.get("learning_profile", {}) if isinstance(outcomes, dict) else {}
+        adjustments = profile.get("adjustments", {})
+        return {
+            "status": profile.get("status", "collecting"),
+            "preferred_horizon": profile.get("preferred_horizon", "30"),
+            "sample_size": profile.get("sample_size", 0),
+            "add_mom_threshold_delta": int(adjustments.get("add_mom_threshold_delta", 0) or 0),
+            "add_reward_risk_delta": float(adjustments.get("add_reward_risk_delta", 0.0) or 0.0),
+            "watchlist_mom_threshold_delta": int(adjustments.get("watchlist_mom_threshold_delta", 0) or 0),
+        }
+
+    def _thresholds(self):
+        return {
+            "holding_add_mom": max(40, 45 + self.learning_profile["add_mom_threshold_delta"]),
+            "candidate_add_mom": max(45, 50 + self.learning_profile["add_mom_threshold_delta"]),
+            "watchlist_mom": max(35, 40 + self.learning_profile["watchlist_mom_threshold_delta"]),
+            "add_reward_risk": max(1.0, 1.2 + self.learning_profile["add_reward_risk_delta"]),
+        }
 
     def _score_action(self, action, mom_score, gain_loss_pct, allocation_pct, sector_allocation_pct):
         priority = {
@@ -91,22 +114,24 @@ class ActionEngine:
         }
 
     def _classify_holding(self, mom_score, trend, gain_loss_pct, allocation_pct, sector_allocation_pct, reward_risk):
+        thresholds = self._thresholds()
         if gain_loss_pct <= -8 or mom_score < 20 or "Strong Downtrend" in trend:
             return "Review Risk"
         if allocation_pct > self.max_position_pct or sector_allocation_pct > self.max_sector_pct:
             return "Trim Watch"
-        if mom_score >= 45 and gain_loss_pct >= -3 and "Uptrend" in trend and reward_risk >= 1.2:
+        if mom_score >= thresholds["holding_add_mom"] and gain_loss_pct >= -3 and "Uptrend" in trend and reward_risk >= thresholds["add_reward_risk"]:
             return "Add"
-        if mom_score >= 40 and "Downtrend" not in trend:
+        if mom_score >= thresholds["watchlist_mom"] and "Downtrend" not in trend:
             return "Watchlist"
         return "Hold"
 
     def _classify_candidate(self, mom_score, trend, rsi, reward_risk, allocation_exists):
+        thresholds = self._thresholds()
         if allocation_exists:
             return None
-        if mom_score >= 50 and "Uptrend" in trend and 40 <= rsi <= 72 and reward_risk >= 1.2:
+        if mom_score >= thresholds["candidate_add_mom"] and "Uptrend" in trend and 40 <= rsi <= 72 and reward_risk >= thresholds["add_reward_risk"]:
             return "Add"
-        if mom_score >= 40 and "Downtrend" not in trend:
+        if mom_score >= thresholds["watchlist_mom"] and "Downtrend" not in trend:
             return "Watchlist"
         return None
 
@@ -231,6 +256,8 @@ class ActionEngine:
                 "max_position_pct": self.max_position_pct,
                 "max_sector_pct": self.max_sector_pct,
                 "risk_per_trade_pct": self.risk_per_trade_pct,
+                "learned_thresholds": self._thresholds(),
+                "learning_profile": self.learning_profile,
             },
             "summary": {
                 "total_actions": len(actions),

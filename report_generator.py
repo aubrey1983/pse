@@ -233,6 +233,7 @@ class ReportGenerator:
                 "generated_at": "-",
                 "horizons": [5, 10, 20, 30],
                 "summary": {},
+                "learning_profile": {},
                 "outcomes": [],
             }
         
@@ -827,8 +828,37 @@ class ReportGenerator:
         outcome_action_options_html = "".join([f'<option value="{a}">{a}</option>' for a in outcome_action_options])
         default_horizon = "30"
         outcome_summary_30 = action_outcomes.get("summary", {}).get(default_horizon, {})
+        outcome_overall_30 = outcome_summary_30.get("overall", {})
+        learning_profile = action_outcomes.get("learning_profile", {})
+        learning_adjustments = learning_profile.get("adjustments", {})
+        learning_hints = learning_profile.get("hints", [])
         pending_30 = outcome_summary_30.get("pending", 0)
         complete_30 = outcome_summary_30.get("complete", 0)
+        win_rate_30 = outcome_overall_30.get("win_rate_pct", 0.0)
+        avg_return_30 = outcome_overall_30.get("avg_return_pct", 0.0)
+
+        learning_hint_html = "".join([f"<li>{hint}</li>" for hint in learning_hints[:4]]) or "<li>Learning profile will appear after outcome data is generated.</li>"
+        learning_status = learning_profile.get("status", "collecting").title()
+        learning_sample = learning_profile.get("sample_size", 0)
+        learning_horizon = learning_profile.get("preferred_horizon", default_horizon)
+        add_threshold_delta = learning_adjustments.get("add_mom_threshold_delta", 0)
+        rr_delta = learning_adjustments.get("add_reward_risk_delta", 0.0)
+        watch_threshold_delta = learning_adjustments.get("watchlist_mom_threshold_delta", 0)
+
+        action_summary_rows = ""
+        for action, stats in sorted(outcome_summary_30.get("by_action", {}).items()):
+            action_summary_rows += f"""
+                <tr>
+                    <td><span class="action-pill {action_class_map.get(action, 'action-neutral')}">{action}</span></td>
+                    <td class="mono">{stats.get('count', 0)}</td>
+                    <td class="mono">{stats.get('win_rate_pct', 0):.1f}%</td>
+                    <td class="mono {'text-green' if stats.get('avg_return_pct', 0) > 0 else 'text-red' if stats.get('avg_return_pct', 0) < 0 else 'text-muted'}">{stats.get('avg_return_pct', 0):+.2f}%</td>
+                    <td class="mono">{stats.get('avg_drawdown_pct', 0):+.2f}%</td>
+                    <td class="mono">{stats.get('avg_runup_pct', 0):+.2f}%</td>
+                    <td class="mono">{stats.get('target_hit_rate_pct', 0):.1f}%</td>
+                    <td class="mono">{stats.get('stop_hit_rate_pct', 0):.1f}%</td>
+                </tr>
+            """
 
         for outcome in action_outcomes.get("outcomes", []):
             h30 = outcome.get("horizons", {}).get(default_horizon, {})
@@ -891,9 +921,53 @@ class ReportGenerator:
                     <div class="kpi-note">After filters</div>
                 </div>
                 <div class="kpi">
-                    <div class="kpi-label">Horizons</div>
-                    <div class="kpi-value">5/10/20/30</div>
-                    <div class="kpi-note">Trading-day windows</div>
+                    <div class="kpi-label">30D Win Rate</div>
+                    <div class="kpi-value">{win_rate_30:.1f}%</div>
+                    <div class="kpi-note">Avg return {avg_return_30:+.2f}%</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid learning-grid">
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h3>Learning Loop</h3>
+                        <span class="status-pill">{learning_status}</span>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-card"><span>Sample</span><strong>{learning_sample}</strong><small>{learning_horizon}D completed outcomes</small></div>
+                        <div class="metric-card"><span>Add MoM</span><strong>{add_threshold_delta:+}</strong><small>Threshold adjustment</small></div>
+                        <div class="metric-card"><span>Add R/R</span><strong>{rr_delta:+.1f}</strong><small>Reward/risk adjustment</small></div>
+                        <div class="metric-card"><span>Watchlist MoM</span><strong>{watch_threshold_delta:+}</strong><small>Threshold adjustment</small></div>
+                    </div>
+                    <ul style="margin:16px 0 0 18px; color:var(--text-secondary); line-height:1.7;">
+                        {learning_hint_html}
+                    </ul>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h3>30D Action Quality</h3>
+                        <span class="status-pill">{complete_30} measured</span>
+                    </div>
+                    <div class="table-container" style="max-height:260px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Count</th>
+                                    <th>Win</th>
+                                    <th>Avg Return</th>
+                                    <th>Drawdown</th>
+                                    <th>Runup</th>
+                                    <th>Target</th>
+                                    <th>Stop</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {action_summary_rows or '<tr><td colspan="8" style="text-align:center; color:var(--text-tertiary);">No completed 30D outcomes yet.</td></tr>'}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -1507,6 +1581,72 @@ class ReportGenerator:
                     box-shadow: var(--shadow);
                 }}
 
+                .glass-panel {{
+                    background: linear-gradient(180deg, rgba(25, 36, 49, 0.9), rgba(18, 26, 35, 0.92));
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+                    padding: 1rem;
+                    box-shadow: var(--shadow);
+                    margin-bottom: 1.25rem;
+                    min-width: 0;
+                }}
+
+                .panel-header {{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.75rem;
+                    margin-bottom: 0.9rem;
+                }}
+
+                .panel-header h3 {{
+                    margin: 0;
+                    font-size: 1rem;
+                    line-height: 1.2;
+                }}
+
+                .status-pill {{
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0.24rem 0.58rem;
+                    border-radius: 999px;
+                    border: 1px solid rgba(36,184,219,0.22);
+                    color: var(--accent-2);
+                    background: rgba(36,184,219,0.1);
+                    font-size: 0.72rem;
+                    font-weight: 800;
+                    white-space: nowrap;
+                }}
+
+                .metrics-grid {{
+                    display: grid;
+                    grid-template-columns: repeat(4, minmax(0, 1fr));
+                    gap: 0.65rem;
+                }}
+
+                .metric-card {{
+                    border: 1px solid rgba(255,255,255,0.08);
+                    border-radius: 8px;
+                    padding: 0.75rem;
+                    background: rgba(10, 16, 22, 0.34);
+                    min-width: 0;
+                }}
+
+                .metric-card span, .metric-card small {{
+                    display: block;
+                    color: var(--text-tertiary);
+                    font-size: 0.72rem;
+                    overflow-wrap: anywhere;
+                }}
+
+                .metric-card strong {{
+                    display: block;
+                    color: var(--text-primary);
+                    font-size: 1.15rem;
+                    margin: 0.24rem 0;
+                }}
+
                 .chart-panel {{
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -1558,6 +1698,10 @@ class ReportGenerator:
                     display: grid;
                     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
                     gap: 1rem;
+                }}
+
+                .learning-grid {{
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
                 }}
 
                 .card {{
@@ -1697,6 +1841,7 @@ class ReportGenerator:
                     .page-head > div:last-child {{ text-align: left !important; }}
                     .page-head > div:last-child div {{ display: inline-block; margin-right: 0.7rem; }}
                     .kpi-strip {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+                    .metrics-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
                     .control-panel {{ grid-template-columns: 1fr; }}
                     .portfolio-command-grid {{ grid-template-columns: 1fr; }}
                     .chart-panel {{ grid-template-columns: 1fr; }}
@@ -1706,6 +1851,7 @@ class ReportGenerator:
                 @media (max-width: 560px) {{
                     .page-title {{ font-size: 1.55rem; }}
                     .kpi-strip {{ grid-template-columns: 1fr; }}
+                    .metrics-grid {{ grid-template-columns: 1fr; }}
                     .card-header {{ flex-direction: column; }}
                 }}
                 

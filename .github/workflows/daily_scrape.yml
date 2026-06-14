@@ -48,6 +48,9 @@ jobs:
         python backtest.py --objective monthly_gain --months 3
         python backtest.py --objective base --months 3
 
+    - name: Refresh Action Outcomes
+      run: python action_outcomes.py
+
     - name: Generate Daily Action Plan
       run: python action_engine.py
 

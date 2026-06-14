@@ -1,11 +1,25 @@
 {
-    "generated_at": "2026-06-13T02:50:00+00:00",
+    "generated_at": "2026-06-14T05:35:41+00:00",
     "market_date": "2026-06-11",
     "settings": {
         "monthly_budget": 10000.0,
         "max_position_pct": 15.0,
         "max_sector_pct": 35.0,
-        "risk_per_trade_pct": 1.0
+        "risk_per_trade_pct": 1.0,
+        "learned_thresholds": {
+            "holding_add_mom": 45,
+            "candidate_add_mom": 50,
+            "watchlist_mom": 40,
+            "add_reward_risk": 1.2
+        },
+        "learning_profile": {
+            "status": "collecting",
+            "preferred_horizon": "30",
+            "sample_size": 0,
+            "add_mom_threshold_delta": 0,
+            "add_reward_risk_delta": 0.0,
+            "watchlist_mom_threshold_delta": 0
+        }
     },
     "summary": {
         "total_actions": 35,

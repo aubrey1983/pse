@@ -308,6 +308,72 @@
                     box-shadow: var(--shadow);
                 }
 
+                .glass-panel {
+                    background: linear-gradient(180deg, rgba(25, 36, 49, 0.9), rgba(18, 26, 35, 0.92));
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+                    padding: 1rem;
+                    box-shadow: var(--shadow);
+                    margin-bottom: 1.25rem;
+                    min-width: 0;
+                }
+
+                .panel-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.75rem;
+                    margin-bottom: 0.9rem;
+                }
+
+                .panel-header h3 {
+                    margin: 0;
+                    font-size: 1rem;
+                    line-height: 1.2;
+                }
+
+                .status-pill {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0.24rem 0.58rem;
+                    border-radius: 999px;
+                    border: 1px solid rgba(36,184,219,0.22);
+                    color: var(--accent-2);
+                    background: rgba(36,184,219,0.1);
+                    font-size: 0.72rem;
+                    font-weight: 800;
+                    white-space: nowrap;
+                }
+
+                .metrics-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, minmax(0, 1fr));
+                    gap: 0.65rem;
+                }
+
+                .metric-card {
+                    border: 1px solid rgba(255,255,255,0.08);
+                    border-radius: 8px;
+                    padding: 0.75rem;
+                    background: rgba(10, 16, 22, 0.34);
+                    min-width: 0;
+                }
+
+                .metric-card span, .metric-card small {
+                    display: block;
+                    color: var(--text-tertiary);
+                    font-size: 0.72rem;
+                    overflow-wrap: anywhere;
+                }
+
+                .metric-card strong {
+                    display: block;
+                    color: var(--text-primary);
+                    font-size: 1.15rem;
+                    margin: 0.24rem 0;
+                }
+
                 .chart-panel {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -359,6 +425,10 @@
                     display: grid;
                     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
                     gap: 1rem;
+                }
+
+                .learning-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
                 }
 
                 .card {
@@ -498,6 +568,7 @@
                     .page-head > div:last-child { text-align: left !important; }
                     .page-head > div:last-child div { display: inline-block; margin-right: 0.7rem; }
                     .kpi-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+                    .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
                     .control-panel { grid-template-columns: 1fr; }
                     .portfolio-command-grid { grid-template-columns: 1fr; }
                     .chart-panel { grid-template-columns: 1fr; }
@@ -507,6 +578,7 @@
                 @media (max-width: 560px) {
                     .page-title { font-size: 1.55rem; }
                     .kpi-strip { grid-template-columns: 1fr; }
+                    .metrics-grid { grid-template-columns: 1fr; }
                     .card-header { flex-direction: column; }
                 }
                 
@@ -610,7 +682,7 @@
                             <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:4px;">MoM scoring, fundamentals, dividends, and portfolio risk in one view</div>
                          </div>
                     </div>
-                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-13 10:50:01</div>
+                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-14 13:35:42</div>
                 </header>
                 
                 <main>
@@ -1194,7 +1266,7 @@
                     <div class="page-subtitle">Ranked actions combine portfolio exposure, MoM score, trend, stop risk, reward/risk, and position sizing rules.</div>
                 </div>
                 <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
-                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-13T02:50:00+00:00</div>
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T05:35:41+00:00</div>
                     <div>Risk per trade: 1.0%</div>
                 </div>
             </div>
@@ -1817,7 +1889,7 @@
                     <div class="page-subtitle">Tracks whether past action calls produced positive forward returns, hit targets, or violated stops across 5/10/20/30 trading-day windows.</div>
                 </div>
                 <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
-                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-13T02:50:00+00:00</div>
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T05:35:41+00:00</div>
                     <div>Rows mature as more market days pass</div>
                 </div>
             </div>
@@ -1839,9 +1911,53 @@
                     <div class="kpi-note">After filters</div>
                 </div>
                 <div class="kpi">
-                    <div class="kpi-label">Horizons</div>
-                    <div class="kpi-value">5/10/20/30</div>
-                    <div class="kpi-note">Trading-day windows</div>
+                    <div class="kpi-label">30D Win Rate</div>
+                    <div class="kpi-value">0.0%</div>
+                    <div class="kpi-note">Avg return +0.00%</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid learning-grid">
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h3>Learning Loop</h3>
+                        <span class="status-pill">Collecting</span>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-card"><span>Sample</span><strong>0</strong><small>30D completed outcomes</small></div>
+                        <div class="metric-card"><span>Add MoM</span><strong>+0</strong><small>Threshold adjustment</small></div>
+                        <div class="metric-card"><span>Add R/R</span><strong>+0.0</strong><small>Reward/risk adjustment</small></div>
+                        <div class="metric-card"><span>Watchlist MoM</span><strong>+0</strong><small>Threshold adjustment</small></div>
+                    </div>
+                    <ul style="margin:16px 0 0 18px; color:var(--text-secondary); line-height:1.7;">
+                        <li>Learning is collecting evidence. Need at least 12 completed 30-day outcomes before changing thresholds.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h3>30D Action Quality</h3>
+                        <span class="status-pill">0 measured</span>
+                    </div>
+                    <div class="table-container" style="max-height:260px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Count</th>
+                                    <th>Win</th>
+                                    <th>Avg Return</th>
+                                    <th>Drawdown</th>
+                                    <th>Runup</th>
+                                    <th>Target</th>
+                                    <th>Stop</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td colspan="8" style="text-align:center; color:var(--text-tertiary);">No completed 30D outcomes yet.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

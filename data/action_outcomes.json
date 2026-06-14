@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-06-13T02:50:00+00:00",
+    "generated_at": "2026-06-14T05:35:41+00:00",
     "horizons": [
         5,
         10,
@@ -10,23 +10,85 @@
         "5": {
             "complete": 0,
             "pending": 30,
+            "overall": {
+                "count": 0,
+                "win_count": 0,
+                "avg_return_pct": 0.0,
+                "avg_drawdown_pct": 0.0,
+                "avg_runup_pct": 0.0,
+                "target_hits": 0,
+                "stop_hits": 0,
+                "win_rate_pct": 0.0,
+                "target_hit_rate_pct": 0.0,
+                "stop_hit_rate_pct": 0.0
+            },
             "by_action": {}
         },
         "10": {
             "complete": 0,
             "pending": 30,
+            "overall": {
+                "count": 0,
+                "win_count": 0,
+                "avg_return_pct": 0.0,
+                "avg_drawdown_pct": 0.0,
+                "avg_runup_pct": 0.0,
+                "target_hits": 0,
+                "stop_hits": 0,
+                "win_rate_pct": 0.0,
+                "target_hit_rate_pct": 0.0,
+                "stop_hit_rate_pct": 0.0
+            },
             "by_action": {}
         },
         "20": {
             "complete": 0,
             "pending": 30,
+            "overall": {
+                "count": 0,
+                "win_count": 0,
+                "avg_return_pct": 0.0,
+                "avg_drawdown_pct": 0.0,
+                "avg_runup_pct": 0.0,
+                "target_hits": 0,
+                "stop_hits": 0,
+                "win_rate_pct": 0.0,
+                "target_hit_rate_pct": 0.0,
+                "stop_hit_rate_pct": 0.0
+            },
             "by_action": {}
         },
         "30": {
             "complete": 0,
             "pending": 30,
+            "overall": {
+                "count": 0,
+                "win_count": 0,
+                "avg_return_pct": 0.0,
+                "avg_drawdown_pct": 0.0,
+                "avg_runup_pct": 0.0,
+                "target_hits": 0,
+                "stop_hits": 0,
+                "win_rate_pct": 0.0,
+                "target_hit_rate_pct": 0.0,
+                "stop_hit_rate_pct": 0.0
+            },
             "by_action": {}
         }
+    },
+    "learning_profile": {
+        "status": "collecting",
+        "preferred_horizon": "30",
+        "min_sample": 12,
+        "sample_size": 0,
+        "adjustments": {
+            "add_mom_threshold_delta": 0,
+            "add_reward_risk_delta": 0.0,
+            "watchlist_mom_threshold_delta": 0
+        },
+        "hints": [
+            "Learning is collecting evidence. Need at least 12 completed 30-day outcomes before changing thresholds."
+        ]
     },
     "outcomes": [
         {

@@ -7,6 +7,7 @@ TECHNICAL_DATA_FILE = "data/technical_data.json"
 HISTORY_FILE = "data/daily_action_history.json"
 OUTPUT_FILE = "data/action_outcomes.json"
 HORIZONS = [5, 10, 20, 30]
+MIN_LEARNING_SAMPLE = 12
 
 
 def load_json(path):
@@ -111,6 +112,15 @@ def summarize(outcomes):
         complete = [o for o in outcomes if o["horizons"].get(h_key, {}).get("status") == "complete"]
         pending = [o for o in outcomes if o["horizons"].get(h_key, {}).get("status") == "pending"]
         by_action = {}
+        overall = {
+            "count": len(complete),
+            "win_count": 0,
+            "avg_return_pct": 0.0,
+            "avg_drawdown_pct": 0.0,
+            "avg_runup_pct": 0.0,
+            "target_hits": 0,
+            "stop_hits": 0,
+        }
 
         for outcome in complete:
             action = outcome["action"]
@@ -120,28 +130,121 @@ def summarize(outcomes):
                 "win_count": 0,
                 "avg_return_pct": 0.0,
                 "avg_drawdown_pct": 0.0,
+                "avg_runup_pct": 0.0,
                 "target_hits": 0,
                 "stop_hits": 0,
             })
             bucket["count"] += 1
-            bucket["win_count"] += 1 if h["return_pct"] > 0 else 0
+            win = 1 if h["return_pct"] > 0 else 0
+            target_hit = 1 if h["target_hit"] else 0
+            stop_hit = 1 if h["stop_hit"] else 0
+            bucket["win_count"] += win
             bucket["avg_return_pct"] += h["return_pct"]
             bucket["avg_drawdown_pct"] += h["max_drawdown_pct"]
-            bucket["target_hits"] += 1 if h["target_hit"] else 0
-            bucket["stop_hits"] += 1 if h["stop_hit"] else 0
+            bucket["avg_runup_pct"] += h["max_runup_pct"]
+            bucket["target_hits"] += target_hit
+            bucket["stop_hits"] += stop_hit
+
+            overall["win_count"] += win
+            overall["avg_return_pct"] += h["return_pct"]
+            overall["avg_drawdown_pct"] += h["max_drawdown_pct"]
+            overall["avg_runup_pct"] += h["max_runup_pct"]
+            overall["target_hits"] += target_hit
+            overall["stop_hits"] += stop_hit
 
         for bucket in by_action.values():
             count = bucket["count"] or 1
             bucket["win_rate_pct"] = (bucket["win_count"] / count) * 100.0
             bucket["avg_return_pct"] = bucket["avg_return_pct"] / count
             bucket["avg_drawdown_pct"] = bucket["avg_drawdown_pct"] / count
+            bucket["avg_runup_pct"] = bucket["avg_runup_pct"] / count
+            bucket["target_hit_rate_pct"] = (bucket["target_hits"] / count) * 100.0
+            bucket["stop_hit_rate_pct"] = (bucket["stop_hits"] / count) * 100.0
+
+        if complete:
+            count = len(complete)
+            overall["win_rate_pct"] = (overall["win_count"] / count) * 100.0
+            overall["avg_return_pct"] = overall["avg_return_pct"] / count
+            overall["avg_drawdown_pct"] = overall["avg_drawdown_pct"] / count
+            overall["avg_runup_pct"] = overall["avg_runup_pct"] / count
+            overall["target_hit_rate_pct"] = (overall["target_hits"] / count) * 100.0
+            overall["stop_hit_rate_pct"] = (overall["stop_hits"] / count) * 100.0
+        else:
+            overall.update({
+                "win_rate_pct": 0.0,
+                "target_hit_rate_pct": 0.0,
+                "stop_hit_rate_pct": 0.0,
+            })
 
         summary[h_key] = {
             "complete": len(complete),
             "pending": len(pending),
+            "overall": overall,
             "by_action": by_action,
         }
     return summary
+
+
+def build_learning_profile(summary):
+    preferred_horizon = "30"
+    if summary.get("20", {}).get("complete", 0) > summary.get("30", {}).get("complete", 0):
+        preferred_horizon = "20"
+
+    horizon_summary = summary.get(preferred_horizon, {})
+    by_action = horizon_summary.get("by_action", {})
+    complete = horizon_summary.get("complete", 0)
+    hints = []
+    adjustments = {
+        "add_mom_threshold_delta": 0,
+        "add_reward_risk_delta": 0.0,
+        "watchlist_mom_threshold_delta": 0,
+    }
+
+    if complete < MIN_LEARNING_SAMPLE:
+        hints.append(
+            f"Learning is collecting evidence. Need at least {MIN_LEARNING_SAMPLE} completed {preferred_horizon}-day outcomes before changing thresholds."
+        )
+        return {
+            "status": "collecting",
+            "preferred_horizon": preferred_horizon,
+            "min_sample": MIN_LEARNING_SAMPLE,
+            "sample_size": complete,
+            "adjustments": adjustments,
+            "hints": hints,
+        }
+
+    add_stats = by_action.get("Add", {})
+    watch_stats = by_action.get("Watchlist", {})
+
+    if add_stats.get("count", 0) >= MIN_LEARNING_SAMPLE:
+        if add_stats.get("avg_return_pct", 0) < 0 or add_stats.get("win_rate_pct", 0) < 45:
+            adjustments["add_mom_threshold_delta"] = 5
+            adjustments["add_reward_risk_delta"] = 0.2
+            hints.append("Add calls are underperforming; require stronger MoM score and reward/risk before adding.")
+        elif add_stats.get("avg_return_pct", 0) >= 2 and add_stats.get("win_rate_pct", 0) >= 55 and add_stats.get("stop_hit_rate_pct", 0) <= 25:
+            adjustments["add_mom_threshold_delta"] = -2
+            adjustments["add_reward_risk_delta"] = -0.1
+            hints.append("Add calls are working; allow slightly more qualified Add candidates.")
+
+    if watch_stats.get("count", 0) >= MIN_LEARNING_SAMPLE:
+        if watch_stats.get("avg_return_pct", 0) < -1 or watch_stats.get("win_rate_pct", 0) < 40:
+            adjustments["watchlist_mom_threshold_delta"] = 5
+            hints.append("Watchlist calls are weak; raise the MoM threshold for new watchlist names.")
+        elif watch_stats.get("avg_return_pct", 0) >= 1.5 and watch_stats.get("win_rate_pct", 0) >= 55:
+            adjustments["watchlist_mom_threshold_delta"] = -2
+            hints.append("Watchlist calls are productive; keep monitoring for promotion into Add candidates.")
+
+    if not hints:
+        hints.append("Evidence is mature enough, but no threshold change is justified yet.")
+
+    return {
+        "status": "active",
+        "preferred_horizon": preferred_horizon,
+        "min_sample": MIN_LEARNING_SAMPLE,
+        "sample_size": complete,
+        "adjustments": adjustments,
+        "hints": hints,
+    }
 
 
 def generate_outcomes():
@@ -165,10 +268,12 @@ def generate_outcomes():
             if outcome:
                 outcomes.append(outcome)
 
+    summary = summarize(outcomes)
     result = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "horizons": HORIZONS,
-        "summary": summarize(outcomes),
+        "summary": summary,
+        "learning_profile": build_learning_profile(summary),
         "outcomes": outcomes,
     }
     save_json(OUTPUT_FILE, result)
