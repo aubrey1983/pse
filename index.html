@@ -682,7 +682,7 @@
                             <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:4px;">MoM scoring, fundamentals, dividends, and portfolio risk in one view</div>
                          </div>
                     </div>
-                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-14 13:56:17</div>
+                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-14 16:53:15</div>
                 </header>
                 
                 <main>
@@ -1266,7 +1266,7 @@
                     <div class="page-subtitle">Ranked actions combine portfolio exposure, MoM score, trend, stop risk, reward/risk, and position sizing rules.</div>
                 </div>
                 <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
-                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T05:56:16+00:00</div>
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T08:53:14+00:00</div>
                     <div>Risk per trade: 1.0%</div>
                 </div>
             </div>
@@ -1291,6 +1291,104 @@
                     <div class="kpi-label">Trim Watch</div>
                     <div class="kpi-value">0</div>
                     <div class="kpi-note">Allocation concentration checks</div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Rebalance Planner</h3>
+                    <span class="status-pill">Wait for cleaner entry</span>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card"><span>Monthly Budget</span><strong>₱10,000</strong><small>Capital available for new buys</small></div>
+                    <div class="metric-card"><span>Suggested Spend</span><strong>₱0</strong><small>From qualified Add setups</small></div>
+                    <div class="metric-card"><span>Remaining</span><strong>₱10,000</strong><small>Held back by rules</small></div>
+                    <div class="metric-card"><span>Qualified Adds</span><strong>0</strong><small>Ready for allocation</small></div>
+                </div>
+                <div style="margin-top:0.9rem; color:var(--text-secondary); font-size:0.86rem;">
+                    No capital is allocated unless a name clears Add rules. Sector exposure guard is 35% and position guard is 15%.
+                </div>
+                <div class="table-container" style="margin-top:1rem;">
+                    <table class="data-table" id="table_allocation_plan">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('table_allocation_plan', 0)">Symbol ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 1)">Action ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 2)">Sector ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 3, 'num')">Amount ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 4, 'num')">Shares ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 5, 'num')">Entry ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 6, 'num')">MoM ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 7, 'num')">R/R ↕</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="9" style="text-align:center; color:var(--text-tertiary);">No capital allocation today. The planner is waiting for a cleaner Add setup.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-container" style="margin-top:1rem;">
+                    <table class="data-table" id="table_allocation_waitlist">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('table_allocation_waitlist', 0)">Near Add ↕</th>
+                                <th onclick="sortTable('table_allocation_waitlist', 1)">Sector ↕</th>
+                                <th onclick="sortTable('table_allocation_waitlist', 2, 'num')">Ready ↕</th>
+                                <th onclick="sortTable('table_allocation_waitlist', 3, 'num')">MoM / Need ↕</th>
+                                <th onclick="sortTable('table_allocation_waitlist', 4, 'num')">R/R / Need ↕</th>
+                                <th>Wait For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">EURO</td>
+                    <td>Industrial</td>
+                    <td class="mono">95.0</td>
+                    <td class="mono">50 / 45</td>
+                    <td class="mono">3.02 / 1.20</td>
+                    <td style="min-width:280px; color:var(--text-secondary); font-size:0.82rem;">Position G/L -10.1% below -3% Add guard</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">IMP</td>
+                    <td>Services</td>
+                    <td class="mono">94.6</td>
+                    <td class="mono">45 / 50</td>
+                    <td class="mono">1.11 / 1.20</td>
+                    <td style="min-width:280px; color:var(--text-secondary); font-size:0.82rem;">MoM 45 below Add threshold 50; R/R 1.11 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MFC</td>
+                    <td>Financials</td>
+                    <td class="mono">93.0</td>
+                    <td class="mono">40 / 50</td>
+                    <td class="mono">2.57 / 1.20</td>
+                    <td style="min-width:280px; color:var(--text-secondary); font-size:0.82rem;">MoM 40 below Add threshold 50</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">NRCP</td>
+                    <td>Financials</td>
+                    <td class="mono">91.5</td>
+                    <td class="mono">44 / 45</td>
+                    <td class="mono">0.83 / 1.20</td>
+                    <td style="min-width:280px; color:var(--text-secondary); font-size:0.82rem;">MoM 44 below Add threshold 45; R/R 0.83 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">FRUIT</td>
+                    <td>Industrial</td>
+                    <td class="mono">91.3</td>
+                    <td class="mono">43 / 45</td>
+                    <td class="mono">0.86 / 1.20</td>
+                    <td style="min-width:280px; color:var(--text-secondary); font-size:0.82rem;">MoM 43 below Add threshold 45; R/R 0.86 below 1.20</td>
+                </tr>
+            
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -2079,7 +2177,7 @@
                     <div class="page-subtitle">Tracks whether past action calls produced positive forward returns, hit targets, or violated stops across 5/10/20/30 trading-day windows.</div>
                 </div>
                 <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
-                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T05:56:16+00:00</div>
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T08:53:14+00:00</div>
                     <div>Rows mature as more market days pass</div>
                 </div>
             </div>

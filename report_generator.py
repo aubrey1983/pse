@@ -760,6 +760,7 @@ class ReportGenerator:
         action_summary = daily_actions.get("summary", {})
         add_readiness = daily_actions.get("add_readiness", {})
         add_thresholds = add_readiness.get("thresholds", {})
+        allocation_plan = daily_actions.get("allocation_plan", {})
         closest_add_rows = ""
         for item in add_readiness.get("closest", [])[:12]:
             blockers = "; ".join(item.get("blockers", [])[:3]) or "Qualified"
@@ -775,6 +776,36 @@ class ReportGenerator:
                     <td class="mono">{item.get('reward_risk', 0):.2f} / {item.get('required_reward_risk', 0):.2f}</td>
                     <td class="mono">₱{item.get('entry_price', 0):.2f}</td>
                     <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">{blockers}</td>
+                </tr>
+            """
+
+        allocation_rows = ""
+        for item in allocation_plan.get("suggestions", []):
+            allocation_rows += f"""
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">{item.get('symbol')}</td>
+                    <td><span class="action-pill action-good">{item.get('action', 'Allocate')}</span></td>
+                    <td>{item.get('sector', '-')}</td>
+                    <td class="mono">₱{item.get('amount', 0):,.2f}</td>
+                    <td class="mono">{item.get('shares', 0):,.0f}</td>
+                    <td class="mono">₱{item.get('entry_price', 0):.2f}</td>
+                    <td class="mono">{item.get('mom_score', 0)}</td>
+                    <td class="mono">{item.get('reward_risk', 0):.2f}</td>
+                    <td style="min-width:280px; color:var(--text-secondary); font-size:0.82rem;">{item.get('reason', '-')}</td>
+                </tr>
+            """
+
+        waitlist_rows = ""
+        for item in allocation_plan.get("waitlist", [])[:6]:
+            blockers = "; ".join(item.get("blockers", [])[:2]) or "Waiting for confirmation"
+            waitlist_rows += f"""
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">{item.get('symbol')}</td>
+                    <td>{item.get('sector', '-')}</td>
+                    <td class="mono">{item.get('readiness_score', 0):.1f}</td>
+                    <td class="mono">{item.get('mom_score', 0)} / {item.get('required_mom', 0)}</td>
+                    <td class="mono">{item.get('reward_risk', 0):.2f} / {item.get('required_reward_risk', 0):.2f}</td>
+                    <td style="min-width:280px; color:var(--text-secondary); font-size:0.82rem;">{blockers}</td>
                 </tr>
             """
 
@@ -812,6 +843,59 @@ class ReportGenerator:
                     <div class="kpi-label">Trim Watch</div>
                     <div class="kpi-value">{action_summary.get('trim_watch', 0)}</div>
                     <div class="kpi-note">Allocation concentration checks</div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Rebalance Planner</h3>
+                    <span class="status-pill">{allocation_plan.get('stance', 'Wait')}</span>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card"><span>Monthly Budget</span><strong>₱{allocation_plan.get('budget', 0):,.0f}</strong><small>Capital available for new buys</small></div>
+                    <div class="metric-card"><span>Suggested Spend</span><strong>₱{allocation_plan.get('budget', 0) - allocation_plan.get('remaining_budget', 0):,.0f}</strong><small>From qualified Add setups</small></div>
+                    <div class="metric-card"><span>Remaining</span><strong>₱{allocation_plan.get('remaining_budget', 0):,.0f}</strong><small>Held back by rules</small></div>
+                    <div class="metric-card"><span>Qualified Adds</span><strong>{len(allocation_plan.get('suggestions', []))}</strong><small>Ready for allocation</small></div>
+                </div>
+                <div style="margin-top:0.9rem; color:var(--text-secondary); font-size:0.86rem;">
+                    {' '.join(allocation_plan.get('notes', []))}
+                </div>
+                <div class="table-container" style="margin-top:1rem;">
+                    <table class="data-table" id="table_allocation_plan">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('table_allocation_plan', 0)">Symbol ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 1)">Action ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 2)">Sector ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 3, 'num')">Amount ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 4, 'num')">Shares ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 5, 'num')">Entry ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 6, 'num')">MoM ↕</th>
+                                <th onclick="sortTable('table_allocation_plan', 7, 'num')">R/R ↕</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {allocation_rows or '<tr><td colspan="9" style="text-align:center; color:var(--text-tertiary);">No capital allocation today. The planner is waiting for a cleaner Add setup.</td></tr>'}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-container" style="margin-top:1rem;">
+                    <table class="data-table" id="table_allocation_waitlist">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('table_allocation_waitlist', 0)">Near Add ↕</th>
+                                <th onclick="sortTable('table_allocation_waitlist', 1)">Sector ↕</th>
+                                <th onclick="sortTable('table_allocation_waitlist', 2, 'num')">Ready ↕</th>
+                                <th onclick="sortTable('table_allocation_waitlist', 3, 'num')">MoM / Need ↕</th>
+                                <th onclick="sortTable('table_allocation_waitlist', 4, 'num')">R/R / Need ↕</th>
+                                <th>Wait For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {waitlist_rows or '<tr><td colspan="6" style="text-align:center; color:var(--text-tertiary);">No near-Add allocation candidates.</td></tr>'}
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

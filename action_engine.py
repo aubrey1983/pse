@@ -185,6 +185,65 @@ class ActionEngine:
                     dates.append(row["time"])
         return max(dates) if dates else datetime.now(timezone.utc).date().isoformat()
 
+    def _build_allocation_plan(self, actions, add_readiness, sector_values, total_equity):
+        budget = self.monthly_budget
+        thresholds = self._thresholds()
+        eligible_actions = [
+            action for action in actions
+            if action["action"] == "Add"
+            and action["trade_plan"]["suggested_shares"] > 0
+            and action.get("sector_allocation_pct", 0) < self.max_sector_pct
+        ]
+        near_misses = [
+            item for item in add_readiness
+            if not item["qualified"] and item["readiness_score"] >= 85
+        ][:5]
+
+        suggestions = []
+        remaining_budget = budget
+        for action in eligible_actions[:4]:
+            plan = action["trade_plan"]
+            entry = plan["entry_price"]
+            if entry <= 0 or remaining_budget < entry:
+                continue
+            max_amount = min(remaining_budget, plan["suggested_amount"], budget * 0.45)
+            shares = int(max_amount / entry)
+            amount = shares * entry
+            if shares <= 0:
+                continue
+            remaining_budget -= amount
+            suggestions.append({
+                "symbol": action["symbol"],
+                "action": "Allocate",
+                "source": action["source"],
+                "sector": action["sector"],
+                "amount": amount,
+                "shares": shares,
+                "entry_price": entry,
+                "mom_score": action["mom_score"],
+                "reward_risk": plan["reward_risk"],
+                "reason": "Clears Add rules and position sizing guardrails.",
+            })
+
+        stance = "Deploy selectively" if suggestions else "Wait"
+        if not suggestions and near_misses:
+            stance = "Wait for cleaner entry"
+
+        return {
+            "budget": budget,
+            "remaining_budget": remaining_budget,
+            "stance": stance,
+            "max_position_pct": self.max_position_pct,
+            "max_sector_pct": self.max_sector_pct,
+            "thresholds": thresholds,
+            "suggestions": suggestions,
+            "waitlist": near_misses,
+            "notes": [
+                "No capital is allocated unless a name clears Add rules." if not suggestions else "Allocation is capped by monthly budget and risk-sized shares.",
+                f"Sector exposure guard is {self.max_sector_pct:.0f}% and position guard is {self.max_position_pct:.0f}%.",
+            ],
+        }
+
     def generate(self):
         tech_data = load_json(TECHNICAL_DATA_FILE)
         fund_data = load_json(FUNDAMENTAL_DATA_FILE)
@@ -319,6 +378,7 @@ class ActionEngine:
             item for item in sorted(add_readiness, key=lambda x: (x["qualified"], x["readiness_score"], x["mom_score"]), reverse=True)
             if not item["qualified"]
         ][:15]
+        allocation_plan = self._build_allocation_plan(actions, closest_adds, sector_values, total_equity)
 
         generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
         market_date = self._latest_market_date(tech_data)
@@ -347,6 +407,7 @@ class ActionEngine:
                 "near_miss_count": len(closest_adds),
                 "closest": closest_adds,
             },
+            "allocation_plan": allocation_plan,
             "actions": actions,
         }
 

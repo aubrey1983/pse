@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-06-14T05:56:16+00:00",
+    "generated_at": "2026-06-14T08:53:14+00:00",
     "market_date": "2026-06-11",
     "settings": {
         "monthly_budget": 10000.0,
@@ -347,6 +347,129 @@
                 "stop_loss": 3.9188,
                 "target_price": 5.0
             }
+        ]
+    },
+    "allocation_plan": {
+        "budget": 10000.0,
+        "remaining_budget": 10000.0,
+        "stance": "Wait for cleaner entry",
+        "max_position_pct": 15.0,
+        "max_sector_pct": 35.0,
+        "thresholds": {
+            "holding_add_mom": 45,
+            "candidate_add_mom": 50,
+            "watchlist_mom": 40,
+            "add_reward_risk": 1.2
+        },
+        "suggestions": [],
+        "waitlist": [
+            {
+                "symbol": "EURO",
+                "source": "portfolio",
+                "sector": "Industrial",
+                "readiness_score": 95.0,
+                "qualified": false,
+                "blockers": [
+                    "Position G/L -10.1% below -3% Add guard"
+                ],
+                "mom_score": 50,
+                "required_mom": 45,
+                "trend": "Strong Uptrend",
+                "rsi": 53.846153846153854,
+                "reward_risk": 3.020914020139424,
+                "required_reward_risk": 1.2,
+                "gain_loss_pct": -10.084033613445369,
+                "entry_price": 1.07,
+                "stop_loss": 0.9409,
+                "target_price": 1.46
+            },
+            {
+                "symbol": "IMP",
+                "source": "candidate",
+                "sector": "Services",
+                "readiness_score": 94.6,
+                "qualified": false,
+                "blockers": [
+                    "MoM 45 below Add threshold 50",
+                    "R/R 1.11 below 1.20"
+                ],
+                "mom_score": 45,
+                "required_mom": 50,
+                "trend": "Strong Uptrend",
+                "rsi": 52.63157894736839,
+                "reward_risk": 1.1065006915629327,
+                "required_reward_risk": 1.2,
+                "gain_loss_pct": 0,
+                "entry_price": 0.94,
+                "stop_loss": 0.7953999999999999,
+                "target_price": 1.1
+            },
+            {
+                "symbol": "MFC",
+                "source": "candidate",
+                "sector": "Financials",
+                "readiness_score": 93.0,
+                "qualified": false,
+                "blockers": [
+                    "MoM 40 below Add threshold 50"
+                ],
+                "mom_score": 40,
+                "required_mom": 50,
+                "trend": "Strong Uptrend",
+                "rsi": 55.04032258064517,
+                "reward_risk": 2.5717111770524235,
+                "required_reward_risk": 1.2,
+                "gain_loss_pct": 0,
+                "entry_price": 2300.0,
+                "stop_loss": 1794.5,
+                "target_price": 3600.0
+            },
+            {
+                "symbol": "NRCP",
+                "source": "portfolio",
+                "sector": "Financials",
+                "readiness_score": 91.5,
+                "qualified": false,
+                "blockers": [
+                    "MoM 44 below Add threshold 45",
+                    "R/R 0.83 below 1.20"
+                ],
+                "mom_score": 44,
+                "required_mom": 45,
+                "trend": "Strong Uptrend",
+                "rsi": 61.29032258064516,
+                "reward_risk": 0.8273009307135473,
+                "required_reward_risk": 1.2,
+                "gain_loss_pct": 30.555555555555554,
+                "entry_price": 0.94,
+                "stop_loss": 0.6499,
+                "target_price": 1.18
+            },
+            {
+                "symbol": "FRUIT",
+                "source": "portfolio",
+                "sector": "Industrial",
+                "readiness_score": 91.3,
+                "qualified": false,
+                "blockers": [
+                    "MoM 43 below Add threshold 45",
+                    "R/R 0.86 below 1.20"
+                ],
+                "mom_score": 43,
+                "required_mom": 45,
+                "trend": "Strong Uptrend",
+                "rsi": 58.33333333333333,
+                "reward_risk": 0.8576329331046298,
+                "required_reward_risk": 1.2,
+                "gain_loss_pct": 0.0,
+                "entry_price": 0.65,
+                "stop_loss": 0.5917,
+                "target_price": 0.7
+            }
+        ],
+        "notes": [
+            "No capital is allocated unless a name clears Add rules.",
+            "Sector exposure guard is 35% and position guard is 15%."
         ]
     },
     "actions": [
