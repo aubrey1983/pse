@@ -735,12 +735,27 @@ class ReportGenerator:
             "Watchlist": "action-watch",
             "Hold": "action-neutral",
         }
+
+        def stock_onclick(symbol):
+            tech = tech_data.get(symbol, {})
+            if not symbol or not tech:
+                return ""
+            official = stock_meta.get(symbol, {})
+            item = {
+                "symbol": symbol,
+                "company_name": official.get("name", symbol),
+                "tech": tech,
+                "fund": official_fund.get(symbol, {}),
+            }
+            return self._generate_onclick(item, official)
+
         for action in daily_actions.get("actions", [])[:40]:
             plan = action.get("trade_plan", {})
             action_cls = action_class_map.get(action.get("action"), "action-neutral")
             reasons = "; ".join(action.get("reasons", [])[:3])
+            row_click = stock_onclick(action.get("symbol"))
             action_rows += f"""
-                <tr>
+                <tr {row_click}>
                     <td class="mono" style="font-weight:800; color:var(--accent);">{action.get('symbol')}</td>
                     <td><span class="action-pill {action_cls}">{action.get('action')}</span></td>
                     <td class="mono">{action.get('priority', 0):.1f}</td>
@@ -764,8 +779,9 @@ class ReportGenerator:
         closest_add_rows = ""
         for item in add_readiness.get("closest", [])[:12]:
             blockers = "; ".join(item.get("blockers", [])[:3]) or "Qualified"
+            row_click = stock_onclick(item.get("symbol"))
             closest_add_rows += f"""
-                <tr>
+                <tr {row_click}>
                     <td class="mono" style="font-weight:800; color:var(--accent);">{item.get('symbol')}</td>
                     <td>{item.get('source', '-')}</td>
                     <td>{item.get('sector', '-')}</td>
@@ -781,8 +797,9 @@ class ReportGenerator:
 
         allocation_rows = ""
         for item in allocation_plan.get("suggestions", []):
+            row_click = stock_onclick(item.get("symbol"))
             allocation_rows += f"""
-                <tr>
+                <tr {row_click}>
                     <td class="mono" style="font-weight:800; color:var(--accent);">{item.get('symbol')}</td>
                     <td><span class="action-pill action-good">{item.get('action', 'Allocate')}</span></td>
                     <td>{item.get('sector', '-')}</td>
@@ -798,8 +815,9 @@ class ReportGenerator:
         waitlist_rows = ""
         for item in allocation_plan.get("waitlist", [])[:6]:
             blockers = "; ".join(item.get("blockers", [])[:2]) or "Waiting for confirmation"
+            row_click = stock_onclick(item.get("symbol"))
             waitlist_rows += f"""
-                <tr>
+                <tr {row_click}>
                     <td class="mono" style="font-weight:800; color:var(--accent);">{item.get('symbol')}</td>
                     <td>{item.get('sector', '-')}</td>
                     <td class="mono">{item.get('readiness_score', 0):.1f}</td>
@@ -1010,8 +1028,9 @@ class ReportGenerator:
             dd_display = f"{dd:+.2f}%" if dd is not None else "-"
             runup_display = f"{runup:+.2f}%" if runup is not None else "-"
             ret_cls = "text-green" if (ret or 0) > 0 else "text-red" if ret is not None and ret < 0 else "text-muted"
+            row_click = stock_onclick(outcome.get("symbol"))
             outcome_rows += f"""
-                <tr data-action="{outcome.get('action')}" data-horizons='{json.dumps(outcome.get("horizons", {}))}'>
+                <tr {row_click} data-action="{outcome.get('action')}" data-horizons='{json.dumps(outcome.get("horizons", {}))}'>
                     <td class="mono" style="font-weight:800; color:var(--accent);">{outcome.get('symbol')}</td>
                     <td>{outcome.get('date')}</td>
                     <td><span class="action-pill {action_class_map.get(outcome.get('action'), 'action-neutral')}">{outcome.get('action')}</span></td>
@@ -1257,7 +1276,7 @@ class ReportGenerator:
         )[:4]
         action_cards_html = "".join([
             f"""
-            <div class="action-card">
+            <div class="action-card" {stock_onclick(a['symbol'])}>
                 <div>
                     <div class="mono" style="font-weight:800; color:var(--text-primary);">{a['symbol']}</div>
                     <div style="color:var(--text-tertiary); font-size:0.78rem; margin-top:4px;">{a['detail']}</div>
