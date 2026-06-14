@@ -682,7 +682,7 @@
                             <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:4px;">MoM scoring, fundamentals, dividends, and portfolio risk in one view</div>
                          </div>
                     </div>
-                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-14 13:35:42</div>
+                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-14 13:56:17</div>
                 </header>
                 
                 <main>
@@ -1266,7 +1266,7 @@
                     <div class="page-subtitle">Ranked actions combine portfolio exposure, MoM score, trend, stop risk, reward/risk, and position sizing rules.</div>
                 </div>
                 <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
-                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T05:35:41+00:00</div>
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T05:56:16+00:00</div>
                     <div>Risk per trade: 1.0%</div>
                 </div>
             </div>
@@ -1291,6 +1291,196 @@
                     <div class="kpi-label">Trim Watch</div>
                     <div class="kpi-value">0</div>
                     <div class="kpi-note">Allocation concentration checks</div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Add Readiness</h3>
+                    <span class="status-pill">0 qualified</span>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card"><span>Portfolio Add MoM</span><strong>45</strong><small>Held position threshold</small></div>
+                    <div class="metric-card"><span>Candidate Add MoM</span><strong>50</strong><small>New position threshold</small></div>
+                    <div class="metric-card"><span>Required R/R</span><strong>1.20</strong><small>Reward/risk hurdle</small></div>
+                    <div class="metric-card"><span>Near Misses</span><strong>15</strong><small>Closest non-Add setups</small></div>
+                </div>
+                <div class="table-container" style="margin-top:1rem;">
+                    <table class="data-table" id="table_add_readiness">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('table_add_readiness', 0)">Symbol ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 1)">Source ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 2)">Sector ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 3, 'num')">Ready ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 4, 'num')">MoM / Need ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 5)">Trend ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 6, 'num')">RSI ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 7, 'num')">R/R / Need ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 8, 'num')">Entry ↕</th>
+                                <th>What&apos;s Missing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">EURO</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">95.0</td>
+                    <td class="mono">50 / 45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">53.8</td>
+                    <td class="mono">3.02 / 1.20</td>
+                    <td class="mono">₱1.07</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">Position G/L -10.1% below -3% Add guard</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">IMP</td>
+                    <td>candidate</td>
+                    <td>Services</td>
+                    <td class="mono">94.6</td>
+                    <td class="mono">45 / 50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">52.6</td>
+                    <td class="mono">1.11 / 1.20</td>
+                    <td class="mono">₱0.94</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">MoM 45 below Add threshold 50; R/R 1.11 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MFC</td>
+                    <td>candidate</td>
+                    <td>Financials</td>
+                    <td class="mono">93.0</td>
+                    <td class="mono">40 / 50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">55.0</td>
+                    <td class="mono">2.57 / 1.20</td>
+                    <td class="mono">₱2300.00</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">MoM 40 below Add threshold 50</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">NRCP</td>
+                    <td>portfolio</td>
+                    <td>Financials</td>
+                    <td class="mono">91.5</td>
+                    <td class="mono">44 / 45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">61.3</td>
+                    <td class="mono">0.83 / 1.20</td>
+                    <td class="mono">₱0.94</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">MoM 44 below Add threshold 45; R/R 0.83 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">FRUIT</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">91.3</td>
+                    <td class="mono">43 / 45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">58.3</td>
+                    <td class="mono">0.86 / 1.20</td>
+                    <td class="mono">₱0.65</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">MoM 43 below Add threshold 45; R/R 0.86 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">CROWN</td>
+                    <td>candidate</td>
+                    <td>Industrial</td>
+                    <td class="mono">90.5</td>
+                    <td class="mono">51 / 50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">63.2</td>
+                    <td class="mono">0.74 / 1.20</td>
+                    <td class="mono">₱1.75</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">R/R 0.74 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">BNCOM</td>
+                    <td>portfolio</td>
+                    <td>Financials</td>
+                    <td class="mono">86.5</td>
+                    <td class="mono">53 / 45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">39.3</td>
+                    <td class="mono">0.55 / 1.20</td>
+                    <td class="mono">₱10.52</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">R/R 0.55 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">UPM</td>
+                    <td>candidate</td>
+                    <td>Mining and Oil</td>
+                    <td class="mono">85.6</td>
+                    <td class="mono">42 / 50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">61.0</td>
+                    <td class="mono">0.78 / 1.20</td>
+                    <td class="mono">₱0.01</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">MoM 42 below Add threshold 50; R/R 0.78 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">NI</td>
+                    <td>candidate</td>
+                    <td>Mining and Oil</td>
+                    <td class="mono">85.5</td>
+                    <td class="mono">42 / 50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">66.7</td>
+                    <td class="mono">0.77 / 1.20</td>
+                    <td class="mono">₱0.49</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">MoM 42 below Add threshold 50; R/R 0.77 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">EMI</td>
+                    <td>candidate</td>
+                    <td>Industrial</td>
+                    <td class="mono">84.4</td>
+                    <td class="mono">47 / 50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">55.7</td>
+                    <td class="mono">0.55 / 1.20</td>
+                    <td class="mono">₱15.42</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">MoM 47 below Add threshold 50; R/R 0.55 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">PPC</td>
+                    <td>portfolio</td>
+                    <td>Industrial</td>
+                    <td class="mono">84.0</td>
+                    <td class="mono">62 / 45</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">50.0</td>
+                    <td class="mono">0.43 / 1.20</td>
+                    <td class="mono">₱15.00</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">R/R 0.43 below 1.20</td>
+                </tr>
+            
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">MYNLD</td>
+                    <td>candidate</td>
+                    <td>Industrial</td>
+                    <td class="mono">83.2</td>
+                    <td class="mono">60 / 50</td>
+                    <td>Strong Uptrend</td>
+                    <td class="mono">41.0</td>
+                    <td class="mono">0.39 / 1.20</td>
+                    <td class="mono">₱22.85</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">R/R 0.39 below 1.20</td>
+                </tr>
+            
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -1889,7 +2079,7 @@
                     <div class="page-subtitle">Tracks whether past action calls produced positive forward returns, hit targets, or violated stops across 5/10/20/30 trading-day windows.</div>
                 </div>
                 <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
-                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T05:35:41+00:00</div>
+                    <div style="color:var(--text-secondary); font-weight:700;">Generated 2026-06-14T05:56:16+00:00</div>
                     <div>Rows mature as more market days pass</div>
                 </div>
             </div>

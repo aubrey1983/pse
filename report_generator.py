@@ -758,6 +758,26 @@ class ReportGenerator:
             """
 
         action_summary = daily_actions.get("summary", {})
+        add_readiness = daily_actions.get("add_readiness", {})
+        add_thresholds = add_readiness.get("thresholds", {})
+        closest_add_rows = ""
+        for item in add_readiness.get("closest", [])[:12]:
+            blockers = "; ".join(item.get("blockers", [])[:3]) or "Qualified"
+            closest_add_rows += f"""
+                <tr>
+                    <td class="mono" style="font-weight:800; color:var(--accent);">{item.get('symbol')}</td>
+                    <td>{item.get('source', '-')}</td>
+                    <td>{item.get('sector', '-')}</td>
+                    <td class="mono">{item.get('readiness_score', 0):.1f}</td>
+                    <td class="mono">{item.get('mom_score', 0)} / {item.get('required_mom', 0)}</td>
+                    <td>{item.get('trend', '-')}</td>
+                    <td class="mono">{item.get('rsi', 0):.1f}</td>
+                    <td class="mono">{item.get('reward_risk', 0):.2f} / {item.get('required_reward_risk', 0):.2f}</td>
+                    <td class="mono">₱{item.get('entry_price', 0):.2f}</td>
+                    <td style="min-width:300px; color:var(--text-secondary); font-size:0.82rem;">{blockers}</td>
+                </tr>
+            """
+
         daily_actions_html = f"""
         <div id="daily_actions" class="section">
             <div class="page-head">
@@ -792,6 +812,40 @@ class ReportGenerator:
                     <div class="kpi-label">Trim Watch</div>
                     <div class="kpi-value">{action_summary.get('trim_watch', 0)}</div>
                     <div class="kpi-note">Allocation concentration checks</div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Add Readiness</h3>
+                    <span class="status-pill">{add_readiness.get('qualified_count', 0)} qualified</span>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card"><span>Portfolio Add MoM</span><strong>{add_thresholds.get('holding_add_mom', 45)}</strong><small>Held position threshold</small></div>
+                    <div class="metric-card"><span>Candidate Add MoM</span><strong>{add_thresholds.get('candidate_add_mom', 50)}</strong><small>New position threshold</small></div>
+                    <div class="metric-card"><span>Required R/R</span><strong>{add_thresholds.get('add_reward_risk', 1.2):.2f}</strong><small>Reward/risk hurdle</small></div>
+                    <div class="metric-card"><span>Near Misses</span><strong>{add_readiness.get('near_miss_count', 0)}</strong><small>Closest non-Add setups</small></div>
+                </div>
+                <div class="table-container" style="margin-top:1rem;">
+                    <table class="data-table" id="table_add_readiness">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('table_add_readiness', 0)">Symbol ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 1)">Source ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 2)">Sector ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 3, 'num')">Ready ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 4, 'num')">MoM / Need ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 5)">Trend ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 6, 'num')">RSI ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 7, 'num')">R/R / Need ↕</th>
+                                <th onclick="sortTable('table_add_readiness', 8, 'num')">Entry ↕</th>
+                                <th>What&apos;s Missing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {closest_add_rows or '<tr><td colspan="10" style="text-align:center; color:var(--text-tertiary);">No near-miss Add candidates yet.</td></tr>'}
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

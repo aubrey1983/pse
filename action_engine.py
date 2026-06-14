@@ -135,6 +135,48 @@ class ActionEngine:
             return "Watchlist"
         return None
 
+    def _add_readiness(self, symbol, source, mom_score, trend, rsi, reward_risk, gain_loss_pct, trade_plan, sector):
+        thresholds = self._thresholds()
+        mom_threshold = thresholds["holding_add_mom"] if source == "portfolio" else thresholds["candidate_add_mom"]
+        blockers = []
+
+        if mom_score < mom_threshold:
+            blockers.append(f"MoM {mom_score} below Add threshold {mom_threshold}")
+        if "Uptrend" not in trend:
+            blockers.append(f"Trend is {trend}")
+        if source == "candidate" and not (40 <= rsi <= 72):
+            blockers.append(f"RSI {rsi:.1f} outside 40-72 range")
+        if reward_risk < thresholds["add_reward_risk"]:
+            blockers.append(f"R/R {reward_risk:.2f} below {thresholds['add_reward_risk']:.2f}")
+        if source == "portfolio" and gain_loss_pct < -3:
+            blockers.append(f"Position G/L {gain_loss_pct:+.1f}% below -3% Add guard")
+
+        mom_component = min(35.0, max(0.0, mom_score / max(mom_threshold, 1) * 35.0))
+        trend_component = 20.0 if "Strong Uptrend" in trend else 15.0 if "Uptrend" in trend else 0.0
+        rr_component = min(25.0, max(0.0, reward_risk / max(thresholds["add_reward_risk"], 0.01) * 25.0))
+        rsi_component = 15.0 if source == "portfolio" or 40 <= rsi <= 72 else max(0.0, 15.0 - min(abs(rsi - 56), 30) / 30 * 15.0)
+        gain_component = 5.0 if source == "candidate" or gain_loss_pct >= -3 else 0.0
+        readiness_score = round(min(100.0, mom_component + trend_component + rr_component + rsi_component + gain_component), 1)
+
+        return {
+            "symbol": symbol,
+            "source": source,
+            "sector": sector,
+            "readiness_score": readiness_score,
+            "qualified": len(blockers) == 0,
+            "blockers": blockers[:4],
+            "mom_score": mom_score,
+            "required_mom": mom_threshold,
+            "trend": trend,
+            "rsi": rsi,
+            "reward_risk": reward_risk,
+            "required_reward_risk": thresholds["add_reward_risk"],
+            "gain_loss_pct": gain_loss_pct,
+            "entry_price": trade_plan["entry_price"],
+            "stop_loss": trade_plan["stop_loss"],
+            "target_price": trade_plan["target_price"],
+        }
+
     def _latest_market_date(self, tech_data):
         dates = []
         for tech in tech_data.values():
@@ -161,6 +203,7 @@ class ActionEngine:
             sector_values[sector] = sector_values.get(sector, 0.0) + p["market_value"]
 
         actions = []
+        add_readiness = []
 
         for p in portfolio_summary["positions"]:
             symbol = p["symbol"]
@@ -182,6 +225,18 @@ class ActionEngine:
                 trade_plan["reward_risk"],
             )
             priority = self._score_action(action, mom_score, p["gain_loss_pct"], allocation_pct, sector_allocation_pct)
+            readiness = self._add_readiness(
+                symbol,
+                "portfolio",
+                mom_score,
+                trend,
+                float(tech.get("rsi") or 50),
+                trade_plan["reward_risk"],
+                p["gain_loss_pct"],
+                trade_plan,
+                sector,
+            )
+            add_readiness.append(readiness)
 
             actions.append({
                 "symbol": symbol,
@@ -198,6 +253,7 @@ class ActionEngine:
                 "sector_allocation_pct": sector_allocation_pct,
                 "gain_loss_pct": p["gain_loss_pct"],
                 "risk_pct": tech.get("risk_pct", 0),
+                "add_readiness": readiness,
                 "reasons": reasons[:5],
                 "trade_plan": trade_plan,
             })
@@ -213,10 +269,23 @@ class ActionEngine:
             sector = normalize_sector(meta.get("sector", "Unknown"))
             mom_score, reasons = self.analyzer.calculate_monthly_gain_score(tech, fund)
             trade_plan = self._plan_trade(symbol, tech, total_equity)
+            rsi = float(tech.get("rsi") or 50)
+            readiness = self._add_readiness(
+                symbol,
+                "candidate",
+                mom_score,
+                tech.get("trend", "Unknown"),
+                rsi,
+                trade_plan["reward_risk"],
+                0,
+                trade_plan,
+                sector,
+            )
+            add_readiness.append(readiness)
             action = self._classify_candidate(
                 mom_score,
                 tech.get("trend", "Unknown"),
-                float(tech.get("rsi") or 50),
+                rsi,
                 trade_plan["reward_risk"],
                 False,
             )
@@ -238,6 +307,7 @@ class ActionEngine:
                 "sector_allocation_pct": (sector_values.get(sector, 0.0) / total_equity * 100.0) if total_equity else 0.0,
                 "gain_loss_pct": 0,
                 "risk_pct": tech.get("risk_pct", 0),
+                "add_readiness": readiness,
                 "reasons": reasons[:5],
                 "trade_plan": trade_plan,
             })
@@ -245,6 +315,10 @@ class ActionEngine:
         candidates.sort(key=lambda x: (x["priority"], x["mom_score"], x["base_score"]), reverse=True)
         actions.extend(candidates[:20])
         actions.sort(key=lambda x: (x["priority"], x["mom_score"]), reverse=True)
+        closest_adds = [
+            item for item in sorted(add_readiness, key=lambda x: (x["qualified"], x["readiness_score"], x["mom_score"]), reverse=True)
+            if not item["qualified"]
+        ][:15]
 
         generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
         market_date = self._latest_market_date(tech_data)
@@ -266,6 +340,12 @@ class ActionEngine:
                 "watchlist": len([a for a in actions if a["action"] == "Watchlist"]),
                 "trim_watch": len([a for a in actions if a["action"] == "Trim Watch"]),
                 "hold": len([a for a in actions if a["action"] == "Hold"]),
+            },
+            "add_readiness": {
+                "thresholds": self._thresholds(),
+                "qualified_count": len([item for item in add_readiness if item["qualified"]]),
+                "near_miss_count": len(closest_adds),
+                "closest": closest_adds,
             },
             "actions": actions,
         }
