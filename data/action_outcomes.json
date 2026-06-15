@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-06-14T08:53:14+00:00",
+    "generated_at": "2026-06-15T15:56:00+00:00",
     "horizons": [
         5,
         10,
@@ -9,7 +9,7 @@
     "summary": {
         "5": {
             "complete": 0,
-            "pending": 30,
+            "pending": 69,
             "overall": {
                 "count": 0,
                 "win_count": 0,
@@ -26,7 +26,7 @@
         },
         "10": {
             "complete": 0,
-            "pending": 30,
+            "pending": 69,
             "overall": {
                 "count": 0,
                 "win_count": 0,
@@ -43,7 +43,7 @@
         },
         "20": {
             "complete": 0,
-            "pending": 30,
+            "pending": 69,
             "overall": {
                 "count": 0,
                 "win_count": 0,
@@ -60,7 +60,7 @@
         },
         "30": {
             "complete": 0,
-            "pending": 30,
+            "pending": 69,
             "overall": {
                 "count": 0,
                 "win_count": 0,
@@ -93,17 +93,17 @@
     "outcomes": [
         {
             "date": "2026-06-11",
-            "symbol": "PNB",
+            "symbol": "EURO",
             "action": "Review Risk",
             "source": "portfolio",
-            "sector": "Financials",
-            "priority": 117.97,
-            "mom_score": 26,
-            "trend": "Downtrend",
-            "entry_price": 56.0,
-            "stop_loss": 52.379999999999995,
-            "target_price": 61.2,
-            "reward_risk": 1.436464088397789,
+            "sector": "Industrial",
+            "priority": 120.08,
+            "mom_score": 50,
+            "trend": "Strong Uptrend",
+            "entry_price": 1.07,
+            "stop_loss": 0.9409,
+            "target_price": 1.46,
+            "reward_risk": 3.020914020139424,
             "horizons": {
                 "5": {
                     "status": "pending",
@@ -120,6 +120,38 @@
                 "30": {
                     "status": "pending",
                     "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-11",
+            "symbol": "PNB",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Financials",
+            "priority": 117.97,
+            "mom_score": 26,
+            "trend": "Downtrend",
+            "entry_price": 56.0,
+            "stop_loss": 52.379999999999995,
+            "target_price": 61.2,
+            "reward_risk": 1.436464088397789,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 1
                 }
             }
         },
@@ -139,19 +171,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -171,19 +203,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -203,19 +235,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -235,19 +267,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -264,6 +296,38 @@
             "stop_loss": 1.9012,
             "target_price": 2.17,
             "reward_risk": 2.9069767441860472,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 1
+                }
+            }
+        },
+        {
+            "date": "2026-06-11",
+            "symbol": "ALCO",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Property",
+            "priority": 102.8,
+            "mom_score": 14,
+            "trend": "Downtrend",
+            "entry_price": 0.425,
+            "stop_loss": 0.4074,
+            "target_price": 0.49,
+            "reward_risk": 3.6931818181818175,
             "horizons": {
                 "5": {
                     "status": "pending",
@@ -299,19 +363,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -331,19 +395,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -363,19 +427,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -395,19 +459,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -427,19 +491,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -459,19 +523,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -491,19 +555,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -523,19 +587,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -555,19 +619,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -587,19 +651,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -619,19 +683,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -651,19 +715,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -683,19 +747,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -712,6 +776,38 @@
             "stop_loss": 14.336599999999999,
             "target_price": 16.02,
             "reward_risk": 0.5538120731031928,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 1
+                }
+            }
+        },
+        {
+            "date": "2026-06-11",
+            "symbol": "WPI",
+            "action": "Watchlist",
+            "source": "portfolio",
+            "sector": "Services",
+            "priority": 71.2,
+            "mom_score": 46,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.49,
+            "stop_loss": 0.39769999999999994,
+            "target_price": 0.52,
+            "reward_risk": 0.325027085590466,
             "horizons": {
                 "5": {
                     "status": "pending",
@@ -747,19 +843,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -779,19 +875,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -811,19 +907,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -843,19 +939,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -875,19 +971,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -907,19 +1003,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -936,6 +1032,38 @@
             "stop_loss": 0.0039770000000000005,
             "target_price": 0.009,
             "reward_risk": 0.779312787814382,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 1
+                }
+            }
+        },
+        {
+            "date": "2026-06-11",
+            "symbol": "NI",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Mining and Oil",
+            "priority": 70.4,
+            "mom_score": 42,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.49,
+            "stop_loss": 0.37345,
+            "target_price": 0.58,
+            "reward_risk": 0.772200772200772,
             "horizons": {
                 "5": {
                     "status": "pending",
@@ -971,19 +1099,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -1000,6 +1128,70 @@
             "stop_loss": 1794.5,
             "target_price": 3600.0,
             "reward_risk": 2.5717111770524235,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 1
+                }
+            }
+        },
+        {
+            "date": "2026-06-11",
+            "symbol": "PSE",
+            "action": "Hold",
+            "source": "portfolio",
+            "sector": "Financials",
+            "priority": 39.8,
+            "mom_score": 29,
+            "trend": "Strong Uptrend",
+            "entry_price": 211.0,
+            "stop_loss": 194.0,
+            "target_price": 220.0,
+            "reward_risk": 0.5294117647058824,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 1
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "GTCAP",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 132.8,
+            "mom_score": 44,
+            "trend": "Uptrend",
+            "entry_price": 496.8,
+            "stop_loss": 436.5,
+            "target_price": 577.0,
+            "reward_risk": 1.3300165837479265,
             "horizons": {
                 "5": {
                     "status": "pending",
@@ -1020,18 +1212,1074 @@
             }
         },
         {
-            "date": "2026-06-11",
-            "symbol": "PSE",
-            "action": "Hold",
+            "date": "2026-06-15",
+            "symbol": "EURO",
+            "action": "Review Risk",
             "source": "portfolio",
-            "sector": "Financials",
-            "priority": 39.8,
-            "mom_score": 29,
+            "sector": "Unknown",
+            "priority": 129.56,
+            "mom_score": 49,
             "trend": "Strong Uptrend",
-            "entry_price": 211.0,
+            "entry_price": 1.05,
+            "stop_loss": 0.9409,
+            "target_price": 1.46,
+            "reward_risk": 3.7580201649862475,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "PNB",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 121.21,
+            "mom_score": 17,
+            "trend": "Downtrend",
+            "entry_price": 57.9,
+            "stop_loss": 52.379999999999995,
+            "target_price": 61.2,
+            "reward_risk": 0.5978260869565222,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "LFM",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 120.81,
+            "mom_score": 11,
+            "trend": "Strong Downtrend",
+            "entry_price": 29.5,
+            "stop_loss": 24.25,
+            "target_price": 35.3,
+            "reward_risk": 1.1047619047619042,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "AGI",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 117.49,
+            "mom_score": 4,
+            "trend": "Downtrend",
+            "entry_price": 8.2,
+            "stop_loss": 7.6727,
+            "target_price": 10.32,
+            "reward_risk": 4.020481699222461,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "BC",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 111.0,
+            "mom_score": 15,
+            "trend": "Downtrend",
+            "entry_price": 6.45,
+            "stop_loss": 5.4611,
+            "target_price": 6.88,
+            "reward_risk": 0.43482657498230326,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "FRUIT",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 109.6,
+            "mom_score": 8,
+            "trend": "Strong Downtrend",
+            "entry_price": 0.64,
+            "stop_loss": 0.5917,
+            "target_price": 0.7,
+            "reward_risk": 1.242236024844719,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "MEG",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 109.4,
+            "mom_score": 7,
+            "trend": "Strong Downtrend",
+            "entry_price": 2.05,
+            "stop_loss": 1.9012,
+            "target_price": 2.17,
+            "reward_risk": 0.8064516129032275,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "MWC",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 109.4,
+            "mom_score": 7,
+            "trend": "Strong Downtrend",
+            "entry_price": 39.25,
+            "stop_loss": 37.4905,
+            "target_price": 45.3,
+            "reward_risk": 3.43847684001136,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "PSE",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 108.4,
+            "mom_score": 2,
+            "trend": "Downtrend",
+            "entry_price": 208.0,
             "stop_loss": 194.0,
             "target_price": 220.0,
-            "reward_risk": 0.5294117647058824,
+            "reward_risk": 0.8571428571428571,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "PPC",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 102.4,
+            "mom_score": 62,
+            "trend": "Strong Uptrend",
+            "entry_price": 15.0,
+            "stop_loss": 14.026200000000001,
+            "target_price": 15.42,
+            "reward_risk": 0.43130006161429496,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "SGP",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 102.2,
+            "mom_score": 61,
+            "trend": "Strong Uptrend",
+            "entry_price": 30.5,
+            "stop_loss": 17.848,
+            "target_price": 32.4,
+            "reward_risk": 0.1501738855516913,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "BNCOM",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 102.0,
+            "mom_score": 60,
+            "trend": "Strong Uptrend",
+            "entry_price": 11.0,
+            "stop_loss": 8.3517,
+            "target_price": 11.94,
+            "reward_risk": 0.35494468149378816,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "RFM",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 101.0,
+            "mom_score": 55,
+            "trend": "Strong Uptrend",
+            "entry_price": 5.55,
+            "stop_loss": 4.9955,
+            "target_price": 5.65,
+            "reward_risk": 0.1803426510369712,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "WPI",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 99.2,
+            "mom_score": 46,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.49,
+            "stop_loss": 0.39769999999999994,
+            "target_price": 0.52,
+            "reward_risk": 0.325027085590466,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "AUB",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 98.6,
+            "mom_score": 43,
+            "trend": "Strong Uptrend",
+            "entry_price": 44.0,
+            "stop_loss": 39.769999999999996,
+            "target_price": 44.5,
+            "reward_risk": 0.11820330969267129,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "NRCP",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 97.6,
+            "mom_score": 38,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.97,
+            "stop_loss": 0.6499,
+            "target_price": 1.18,
+            "reward_risk": 0.6560449859418932,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "ALCO",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 97.0,
+            "mom_score": 35,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.455,
+            "stop_loss": 0.4074,
+            "target_price": 0.49,
+            "reward_risk": 0.7352941176470579,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "APX",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 96.2,
+            "mom_score": 31,
+            "trend": "Downtrend",
+            "entry_price": 15.26,
+            "stop_loss": 12.1832,
+            "target_price": 18.46,
+            "reward_risk": 1.0400416016640668,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "LTG",
+            "action": "Trim Watch",
+            "source": "portfolio",
+            "sector": "Unknown",
+            "priority": 94.4,
+            "mom_score": 22,
+            "trend": "Downtrend",
+            "entry_price": 14.7,
+            "stop_loss": 13.386000000000001,
+            "target_price": 15.8,
+            "reward_risk": 0.8371385083713873,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "MYNLD",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 74.0,
+            "mom_score": 60,
+            "trend": "Strong Uptrend",
+            "entry_price": 22.8,
+            "stop_loss": 18.798599999999997,
+            "target_price": 24.45,
+            "reward_risk": 0.4123556755135695,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "LC",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 72.8,
+            "mom_score": 54,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.195,
+            "stop_loss": 0.16781,
+            "target_price": 0.204,
+            "reward_risk": 0.33100404560500085,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "PGOLD",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 72.4,
+            "mom_score": 52,
+            "trend": "Strong Uptrend",
+            "entry_price": 45.85,
+            "stop_loss": 36.472,
+            "target_price": 49.1,
+            "reward_risk": 0.34655576882064404,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "CROWN",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 72.2,
+            "mom_score": 51,
+            "trend": "Strong Uptrend",
+            "entry_price": 1.76,
+            "stop_loss": 1.5811,
+            "target_price": 1.9008,
+            "reward_risk": 0.7870318613750699,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "APVI",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 72.2,
+            "mom_score": 51,
+            "trend": "Strong Uptrend",
+            "entry_price": 10.18,
+            "stop_loss": 8.148,
+            "target_price": 12.0,
+            "reward_risk": 0.8956692913385828,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "LPZ",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 72.0,
+            "mom_score": 50,
+            "trend": "Strong Uptrend",
+            "entry_price": 3.87,
+            "stop_loss": 3.5114,
+            "target_price": 4.15,
+            "reward_risk": 0.7808142777467937,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "COSCO",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 71.6,
+            "mom_score": 48,
+            "trend": "Strong Uptrend",
+            "entry_price": 7.88,
+            "stop_loss": 6.4117,
+            "target_price": 8.4,
+            "reward_risk": 0.3541510590478788,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "PERC",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 71.0,
+            "mom_score": 45,
+            "trend": "Strong Uptrend",
+            "entry_price": 3.73,
+            "stop_loss": 3.2009999999999996,
+            "target_price": 4.1,
+            "reward_risk": 0.6994328922495263,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "EMI",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 71.0,
+            "mom_score": 45,
+            "trend": "Strong Uptrend",
+            "entry_price": 16.0,
+            "stop_loss": 14.356,
+            "target_price": 16.02,
+            "reward_risk": 0.012165450121654242,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "OPM",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 71.0,
+            "mom_score": 45,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.014,
+            "stop_loss": 0.01164,
+            "target_price": 0.015120000000000001,
+            "reward_risk": 0.47457627118644097,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "FPH",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.8,
+            "mom_score": 44,
+            "trend": "Strong Uptrend",
+            "entry_price": 80.0,
+            "stop_loss": 70.81,
+            "target_price": 84.25,
+            "reward_risk": 0.46245919477693154,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "CREC",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.6,
+            "mom_score": 43,
+            "trend": "Strong Uptrend",
+            "entry_price": 4.58,
+            "stop_loss": 3.9188,
+            "target_price": 5.0,
+            "reward_risk": 0.6352087114337567,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "UPM",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.6,
+            "mom_score": 43,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.0069,
+            "stop_loss": 0.0039770000000000005,
+            "target_price": 0.009,
+            "reward_risk": 0.718439958946288,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "ICT",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.2,
+            "mom_score": 41,
+            "trend": "Strong Uptrend",
+            "entry_price": 950.0,
+            "stop_loss": 654.265,
+            "target_price": 980.0,
+            "reward_risk": 0.10144216950986525,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-15",
+            "symbol": "MFC",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.0,
+            "mom_score": 40,
+            "trend": "Strong Uptrend",
+            "entry_price": 2300.0,
+            "stop_loss": 1794.5,
+            "target_price": 3600.0,
+            "reward_risk": 2.5717111770524235,
             "horizons": {
                 "5": {
                     "status": "pending",

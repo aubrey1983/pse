@@ -1,77 +1,12 @@
 {
-    "generated_at": "2026-06-13T02:16:21+00:00",
+    "generated_at": "2026-06-15T15:52:10+00:00",
     "source_file": "data/stock_metadata.json",
     "status": "ok",
-    "symbol_count": 287,
-    "sector_counts": {
-        "ETF": 1,
-        "Financials": 30,
-        "Holding Firms": 34,
-        "Industrial": 75,
-        "Mining and Oil": 23,
-        "Property": 47,
-        "SME Board": 11,
-        "Services": 66
-    },
+    "symbol_count": 0,
+    "sector_counts": {},
     "missing_sector": [],
     "invalid_sector": [],
-    "normalized_changes": [
-        {
-            "symbol": "BALAI",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "CTS",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "DNA",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "HTI",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "IDC",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "KPPI",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "LPC",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "MFIN",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "MM",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "X",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        },
-        {
-            "symbol": "XG",
-            "from": "Small, Medium & Emerging Board",
-            "to": "SME Board"
-        }
-    ],
+    "normalized_changes": [],
     "schema_warnings": [],
     "valid_sectors": [
         "ETF",
