@@ -1695,5 +1695,523 @@
                 "reward_risk": 2.5717111770524235
             }
         ]
+    },
+    {
+        "date": "2026-06-17",
+        "market_date": "2026-06-17",
+        "generated_at": "2026-06-17T13:49:58+00:00",
+        "summary": {
+            "total_actions": 33,
+            "review_risk": 10,
+            "add": 1,
+            "watchlist": 12,
+            "trim_watch": 10,
+            "hold": 0
+        },
+        "top_actions": [
+            {
+                "symbol": "GTCAP",
+                "action": "Review Risk",
+                "priority": 124.4,
+                "mom_score": 2
+            },
+            {
+                "symbol": "EURO",
+                "action": "Review Risk",
+                "priority": 124.21,
+                "mom_score": 18
+            },
+            {
+                "symbol": "LFM",
+                "action": "Review Risk",
+                "priority": 122.4,
+                "mom_score": 22
+            },
+            {
+                "symbol": "PNB",
+                "action": "Review Risk",
+                "priority": 119.46,
+                "mom_score": 9
+            },
+            {
+                "symbol": "AGI",
+                "action": "Review Risk",
+                "priority": 118.8,
+                "mom_score": -4
+            },
+            {
+                "symbol": "MWC",
+                "action": "Review Risk",
+                "priority": 116.69,
+                "mom_score": -2
+            },
+            {
+                "symbol": "MEG",
+                "action": "Review Risk",
+                "priority": 110.4,
+                "mom_score": 12
+            },
+            {
+                "symbol": "LTG",
+                "action": "Review Risk",
+                "priority": 110.0,
+                "mom_score": 10
+            },
+            {
+                "symbol": "PSE",
+                "action": "Review Risk",
+                "priority": 108.0,
+                "mom_score": -15
+            },
+            {
+                "symbol": "WPI",
+                "action": "Review Risk",
+                "priority": 108.0,
+                "mom_score": -100
+            },
+            {
+                "symbol": "BNCOM",
+                "action": "Trim Watch",
+                "priority": 103.0,
+                "mom_score": 65
+            },
+            {
+                "symbol": "PPC",
+                "action": "Trim Watch",
+                "priority": 102.4,
+                "mom_score": 62
+            }
+        ],
+        "tracked_actions": [
+            {
+                "symbol": "GTCAP",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 124.4,
+                "mom_score": 2,
+                "trend": "Strong Downtrend",
+                "sector": "Unknown",
+                "entry_price": 479.8,
+                "stop_loss": 436.5,
+                "target_price": 570.0,
+                "reward_risk": 2.0831408775981517
+            },
+            {
+                "symbol": "EURO",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 124.21,
+                "mom_score": 18,
+                "trend": "Downtrend",
+                "sector": "Unknown",
+                "entry_price": 1.04,
+                "stop_loss": 0.9409,
+                "target_price": 1.46,
+                "reward_risk": 4.238143289606454
+            },
+            {
+                "symbol": "LFM",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 122.4,
+                "mom_score": 22,
+                "trend": "Strong Downtrend",
+                "sector": "Unknown",
+                "entry_price": 29.7,
+                "stop_loss": 24.25,
+                "target_price": 35.3,
+                "reward_risk": 1.0275229357798163
+            },
+            {
+                "symbol": "PNB",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 119.46,
+                "mom_score": 9,
+                "trend": "Downtrend",
+                "sector": "Unknown",
+                "entry_price": 58.0,
+                "stop_loss": 52.379999999999995,
+                "target_price": 61.2,
+                "reward_risk": 0.5693950177935944
+            },
+            {
+                "symbol": "AGI",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 118.8,
+                "mom_score": -4,
+                "trend": "Strong Downtrend",
+                "sector": "Unknown",
+                "entry_price": 8.01,
+                "stop_loss": 7.6823999999999995,
+                "target_price": 10.32,
+                "reward_risk": 7.051282051282046
+            },
+            {
+                "symbol": "MWC",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 116.69,
+                "mom_score": -2,
+                "trend": "Strong Downtrend",
+                "sector": "Unknown",
+                "entry_price": 38.5,
+                "stop_loss": 37.0055,
+                "target_price": 45.3,
+                "reward_risk": 4.550016728002668
+            },
+            {
+                "symbol": "MEG",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 110.4,
+                "mom_score": 12,
+                "trend": "Strong Downtrend",
+                "sector": "Unknown",
+                "entry_price": 2.04,
+                "stop_loss": 1.9012,
+                "target_price": 2.17,
+                "reward_risk": 0.9365994236311229
+            },
+            {
+                "symbol": "LTG",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 110.0,
+                "mom_score": 10,
+                "trend": "Strong Downtrend",
+                "sector": "Unknown",
+                "entry_price": 14.52,
+                "stop_loss": 13.386000000000001,
+                "target_price": 15.8,
+                "reward_risk": 1.1287477954144645
+            },
+            {
+                "symbol": "PSE",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 108.0,
+                "mom_score": -15,
+                "trend": "Strong Downtrend",
+                "sector": "Unknown",
+                "entry_price": 198.7,
+                "stop_loss": 189.15,
+                "target_price": 220.0,
+                "reward_risk": 2.230366492146602
+            },
+            {
+                "symbol": "WPI",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 108.0,
+                "mom_score": -100,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 0.49,
+                "stop_loss": 0.39769999999999994,
+                "target_price": 0.52,
+                "reward_risk": 0.325027085590466
+            },
+            {
+                "symbol": "BNCOM",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 103.0,
+                "mom_score": 65,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 11.1,
+                "stop_loss": 8.3517,
+                "target_price": 11.94,
+                "reward_risk": 0.30564348870210667
+            },
+            {
+                "symbol": "PPC",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 102.4,
+                "mom_score": 62,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 15.0,
+                "stop_loss": 14.026200000000001,
+                "target_price": 15.42,
+                "reward_risk": 0.43130006161429496
+            },
+            {
+                "symbol": "RFM",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 101.0,
+                "mom_score": 55,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 5.56,
+                "stop_loss": 4.9955,
+                "target_price": 5.65,
+                "reward_risk": 0.15943312666076312
+            },
+            {
+                "symbol": "SGP",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 98.8,
+                "mom_score": 44,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 31.3,
+                "stop_loss": 18.2942,
+                "target_price": 32.4,
+                "reward_risk": 0.08457764997155098
+            },
+            {
+                "symbol": "AUB",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 98.6,
+                "mom_score": 43,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 44.05,
+                "stop_loss": 39.769999999999996,
+                "target_price": 44.5,
+                "reward_risk": 0.10514018691588849
+            },
+            {
+                "symbol": "ALCO",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 98.2,
+                "mom_score": 41,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 0.445,
+                "stop_loss": 0.4074,
+                "target_price": 0.49,
+                "reward_risk": 1.1968085106382969
+            },
+            {
+                "symbol": "NRCP",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 97.8,
+                "mom_score": 39,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 0.94,
+                "stop_loss": 0.6499,
+                "target_price": 1.18,
+                "reward_risk": 0.8273009307135473
+            },
+            {
+                "symbol": "FRUIT",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 97.6,
+                "mom_score": 38,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 0.65,
+                "stop_loss": 0.5917,
+                "target_price": 0.7,
+                "reward_risk": 0.8576329331046298
+            },
+            {
+                "symbol": "APX",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 97.4,
+                "mom_score": 37,
+                "trend": "Downtrend",
+                "sector": "Unknown",
+                "entry_price": 15.92,
+                "stop_loss": 12.1832,
+                "target_price": 18.46,
+                "reward_risk": 0.6797259687433099
+            },
+            {
+                "symbol": "BC",
+                "action": "Trim Watch",
+                "source": "portfolio",
+                "priority": 97.4,
+                "mom_score": 37,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 6.6,
+                "stop_loss": 5.4611,
+                "target_price": 6.88,
+                "reward_risk": 0.24585125998770774
+            },
+            {
+                "symbol": "KPPI",
+                "action": "Add",
+                "source": "candidate",
+                "priority": 84.0,
+                "mom_score": 50,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 1.38,
+                "stop_loss": 1.0088,
+                "target_price": 1.88,
+                "reward_risk": 1.3469827586206897
+            },
+            {
+                "symbol": "ICT",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 74.2,
+                "mom_score": 61,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 900.0,
+                "stop_loss": 654.265,
+                "target_price": 995.0,
+                "reward_risk": 0.38659531609253867
+            },
+            {
+                "symbol": "MYNLD",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 74.0,
+                "mom_score": 60,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 22.7,
+                "stop_loss": 18.837400000000002,
+                "target_price": 24.45,
+                "reward_risk": 0.4530627038782171
+            },
+            {
+                "symbol": "APVI",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 73.8,
+                "mom_score": 59,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 10.16,
+                "stop_loss": 8.148,
+                "target_price": 12.0,
+                "reward_risk": 0.9145129224652084
+            },
+            {
+                "symbol": "ION",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 71.8,
+                "mom_score": 49,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 1.1,
+                "stop_loss": 0.9506,
+                "target_price": 1.2,
+                "reward_risk": 0.6693440428380174
+            },
+            {
+                "symbol": "EMI",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 71.4,
+                "mom_score": 47,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 15.5,
+                "stop_loss": 14.646999999999998,
+                "target_price": 16.02,
+                "reward_risk": 0.609613130128955
+            },
+            {
+                "symbol": "CROWN",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 71.0,
+                "mom_score": 45,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 1.74,
+                "stop_loss": 1.5811,
+                "target_price": 1.76,
+                "reward_risk": 0.12586532410320964
+            },
+            {
+                "symbol": "IMP",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 71.0,
+                "mom_score": 45,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 0.94,
+                "stop_loss": 0.7953999999999999,
+                "target_price": 1.1,
+                "reward_risk": 1.1065006915629327
+            },
+            {
+                "symbol": "COSCO",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 70.8,
+                "mom_score": 44,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 7.75,
+                "stop_loss": 6.4117,
+                "target_price": 8.4,
+                "reward_risk": 0.4856908017634314
+            },
+            {
+                "symbol": "CREC",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 70.6,
+                "mom_score": 43,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 4.57,
+                "stop_loss": 3.9188,
+                "target_price": 5.0,
+                "reward_risk": 0.6603194103194097
+            },
+            {
+                "symbol": "FPH",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 70.2,
+                "mom_score": 41,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 82.0,
+                "stop_loss": 70.81,
+                "target_price": 84.25,
+                "reward_risk": 0.20107238605898128
+            },
+            {
+                "symbol": "UPM",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 70.2,
+                "mom_score": 41,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 0.0066,
+                "stop_loss": 0.0039770000000000005,
+                "target_price": 0.009,
+                "reward_risk": 0.9149828440716736
+            },
+            {
+                "symbol": "MFC",
+                "action": "Watchlist",
+                "source": "candidate",
+                "priority": 70.0,
+                "mom_score": 40,
+                "trend": "Strong Uptrend",
+                "sector": "Unknown",
+                "entry_price": 2300.0,
+                "stop_loss": 1794.5,
+                "target_price": 3600.0,
+                "reward_risk": 2.5717111770524235
+            }
+        ]
     }
 ]
