@@ -286,12 +286,28 @@
                     white-space: nowrap;
                 }
 
+                .paper-secondary-btn {
+                    background: rgba(255,255,255,0.06);
+                    color: var(--text-primary);
+                    box-shadow: none;
+                }
+
+                .paper-danger-btn {
+                    background: rgba(239,68,68,0.18);
+                    color: #fecaca;
+                    box-shadow: none;
+                }
+
                 .portfolio-command-grid {
                     display: grid;
                     grid-template-columns: minmax(300px, 390px) minmax(0, 1fr);
                     gap: 1rem;
                     margin-bottom: 1.25rem;
                     align-items: start;
+                }
+
+                .paper-grid {
+                    grid-template-columns: minmax(420px, 0.9fr) minmax(0, 1.1fr);
                 }
 
                 .portfolio-health {
@@ -652,6 +668,10 @@
                     Daily Actions <span class="nav-badge">33</span>
                 </div>
 
+                <div class="nav-item" data-section="paper_trading" onclick="showSection('paper_trading')">
+                    Paper Trading <span class="nav-badge">Auto</span>
+                </div>
+
                 <div class="nav-item" data-section="action_performance" onclick="showSection('action_performance')">
                     Performance <span class="nav-badge">134</span>
                 </div>
@@ -682,7 +702,7 @@
                             <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:4px;">MoM scoring, fundamentals, dividends, and portfolio risk in one view</div>
                          </div>
                     </div>
-                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-18 04:24:07</div>
+                    <div style="font-size:0.8rem; color:var(--text-tertiary);">Last Updated: 2026-06-18 05:47:13</div>
                 </header>
                 
                 <main>
@@ -2137,6 +2157,123 @@
             </div>
         </div>
         
+                    <div id="paper_trading" class="section">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Paper Execution</div>
+                    <h1 class="page-title">Automated Paper Trading</h1>
+                    <div class="page-subtitle">The action engine applies today&apos;s qualified allocation plan to a browser-local paper portfolio, with manual controls for review and overrides.</div>
+                </div>
+                <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
+                    <div style="color:var(--text-secondary); font-weight:700;">Market date 2026-06-17</div>
+                    <div id="paper_auto_status">Waiting for sync</div>
+                </div>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">Paper Equity</div>
+                    <div class="kpi-value mono" id="paper_equity">-</div>
+                    <div class="kpi-note">Cash plus open positions</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Cash</div>
+                    <div class="kpi-value mono" id="paper_cash">-</div>
+                    <div class="kpi-note">Available buying power</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Invested</div>
+                    <div class="kpi-value mono" id="paper_invested">-</div>
+                    <div class="kpi-note">Current market value</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Paper P/L</div>
+                    <div class="kpi-value mono" id="paper_pl">-</div>
+                    <div class="kpi-note">Unrealized plus cash drift</div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Execution Control</h3>
+                    <span class="status-pill" id="paper_processed_badge">Local only</span>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+                    <button class="command-btn" onclick="runPaperAutomation()">Auto Sync</button>
+                    <button class="command-btn paper-secondary-btn" onclick="exportPaperTrading()">Export JSON</button>
+                    <button class="command-btn paper-danger-btn" onclick="resetPaperTrading()">Reset Paper</button>
+                </div>
+            </div>
+
+            <div class="portfolio-command-grid paper-grid">
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h3>Open Paper Positions</h3>
+                        <span class="status-pill" id="paper_position_count">0 positions</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="table_paper_positions">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable('table_paper_positions', 0)">Symbol ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 1, 'num')">Shares ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 2, 'num')">Avg ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 3, 'num')">Current ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 4, 'num')">Value ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 5, 'num')">P/L ↕</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paper_positions_body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h3>Today&apos;s Paper Actions</h3>
+                        <span class="status-pill">1 auto candidates</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="table_paper_actions">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable('table_paper_actions', 0)">Symbol ↕</th>
+                                    <th onclick="sortTable('table_paper_actions', 1)">Action ↕</th>
+                                    <th onclick="sortTable('table_paper_actions', 2, 'num')">Amount ↕</th>
+                                    <th onclick="sortTable('table_paper_actions', 3, 'num')">Shares ↕</th>
+                                    <th onclick="sortTable('table_paper_actions', 4, 'num')">Entry ↕</th>
+                                    <th>Manual</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paper_actions_body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Paper Ledger</h3>
+                    <span class="status-pill" id="paper_ledger_count">0 entries</span>
+                </div>
+                <div class="table-container" style="max-height:420px;">
+                    <table class="data-table" id="table_paper_ledger">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('table_paper_ledger', 0)">Date ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 1)">Action ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 2)">Symbol ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 3, 'num')">Shares ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 4, 'num')">Price ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 5, 'num')">Amount ↕</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paper_ledger_body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
                     
         <div id="action_performance" class="section">
             <div class="page-head">
@@ -18129,10 +18266,298 @@
                     if (completeEl) completeEl.textContent = complete;
                     if (pendingEl) pendingEl.textContent = pending;
                 }
+
+                const PAPER_DATA = {"market_date": "2026-06-17", "generated_at": "2026-06-17T20:24:06+00:00", "allocation_plan": {"budget": 10000.0, "remaining_budget": 7387.66, "stance": "Deploy selectively", "max_position_pct": 15.0, "max_sector_pct": 35.0, "thresholds": {"holding_add_mom": 45, "candidate_add_mom": 50, "watchlist_mom": 40, "add_reward_risk": 1.2}, "suggestions": [{"symbol": "KPPI", "action": "Allocate", "source": "candidate", "sector": "Unknown", "amount": 2612.3399999999997, "shares": 1893, "entry_price": 1.38, "mom_score": 50, "reward_risk": 1.3469827586206897, "reason": "Clears Add rules and position sizing guardrails."}], "waitlist": [{"symbol": "ALCO", "source": "portfolio", "sector": "Property", "readiness_score": 96.8, "qualified": false, "blockers": ["MoM 41 below Add threshold 45", "R/R 1.20 below 1.20"], "mom_score": 41, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 60.0, "reward_risk": 1.1968085106382969, "required_reward_risk": 1.2, "gain_loss_pct": 5.952380952380958, "entry_price": 0.445, "stop_loss": 0.4074, "target_price": 0.49}, {"symbol": "IMP", "source": "candidate", "sector": "Services", "readiness_score": 94.6, "qualified": false, "blockers": ["MoM 45 below Add threshold 50", "R/R 1.11 below 1.20"], "mom_score": 45, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 52.63157894736839, "reward_risk": 1.1065006915629327, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 0.94, "stop_loss": 0.7953999999999999, "target_price": 1.1}, {"symbol": "APVI", "source": "candidate", "sector": "Property", "readiness_score": 94.1, "qualified": false, "blockers": ["R/R 0.91 below 1.20"], "mom_score": 59, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 48.571428571428555, "reward_risk": 0.9145129224652084, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 10.16, "stop_loss": 8.148, "target_price": 12.0}, {"symbol": "MFC", "source": "candidate", "sector": "Financials", "readiness_score": 93.0, "qualified": false, "blockers": ["MoM 40 below Add threshold 50"], "mom_score": 40, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 50.0, "reward_risk": 2.5717111770524235, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 2300.0, "stop_loss": 1794.5, "target_price": 3600.0}, {"symbol": "ORE", "source": "candidate", "sector": "Unknown", "readiness_score": 88.5, "qualified": false, "blockers": ["MoM 36 below Add threshold 50", "R/R 1.12 below 1.20"], "mom_score": 36, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 52.38095238095238, "reward_risk": 1.119402985074627, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 0.455, "stop_loss": 0.388, "target_price": 0.53}], "notes": ["Allocation is capped by monthly budget and risk-sized shares.", "Sector exposure guard is 35% and position guard is 15%."]}, "actions": [{"symbol": "GTCAP", "name": "GTCAP", "source": "portfolio", "action": "Review Risk", "priority": 116.4, "sector": "Holding Firms", "mom_score": 2, "base_score": -2, "trend": "Strong Downtrend", "last_close": 479.8, "allocation_pct": 1.3655605237456832, "sector_allocation_pct": 14.62000745394542, "gain_loss_pct": -28.388059701492534, "risk_pct": 9.02459358065861, "add_readiness": {"symbol": "GTCAP", "source": "portfolio", "sector": "Holding Firms", "readiness_score": 41.6, "qualified": false, "blockers": ["MoM 2 below Add threshold 45", "Trend is Strong Downtrend", "Position G/L -28.4% below -3% Add guard"], "mom_score": 2, "required_mom": 45, "trend": "Strong Downtrend", "rsi": 52.380952380952394, "reward_risk": 2.0831408775981517, "required_reward_risk": 1.2, "gain_loss_pct": -28.388059701492534, "entry_price": 479.8, "stop_loss": 436.5, "target_price": 570.0}, "reasons": ["Positive avg monthly return +0.1% (+1)", "Monthly volatility 10.0% (-7)", "Strong downtrend (-22)", "RSI in constructive range (+8)", "MACD bullish (+5)"], "trade_plan": {"entry_price": 479.8, "stop_loss": 436.5, "target_price": 570.0, "risk_per_share": 43.30000000000001, "reward_risk": 2.0831408775981517, "risk_budget": 702.7151, "suggested_shares": 16, "suggested_amount": 7676.8}}, {"symbol": "EURO", "name": "EURO", "source": "portfolio", "action": "Review Risk", "priority": 116.21, "sector": "Industrial", "mom_score": 18, "base_score": 0, "trend": "Downtrend", "last_close": 1.04, "allocation_pct": 2.486356134940035, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": -12.605042016806717, "risk_pct": 9.528846153846162, "add_readiness": {"symbol": "EURO", "source": "portfolio", "sector": "Industrial", "readiness_score": 54.0, "qualified": false, "blockers": ["MoM 18 below Add threshold 45", "Trend is Downtrend", "Position G/L -12.6% below -3% Add guard"], "mom_score": 18, "required_mom": 45, "trend": "Downtrend", "rsi": 48.07692307692307, "reward_risk": 4.238143289606454, "required_reward_risk": 1.2, "gain_loss_pct": -12.605042016806717, "entry_price": 1.04, "stop_loss": 0.9409, "target_price": 1.46}, "reasons": ["Positive avg monthly return +1.2% (+5)", "Monthly volatility 6.9% (-5)", "Downtrend (-14)", "RSI in constructive range (+8)", "Above EMA 200 (+4)"], "trade_plan": {"entry_price": 1.04, "stop_loss": 0.9409, "target_price": 1.46, "risk_per_share": 0.09910000000000008, "reward_risk": 4.238143289606454, "risk_budget": 702.7151, "suggested_shares": 7090, "suggested_amount": 7373.6}}, {"symbol": "LFM", "name": "LFM", "source": "portfolio", "action": "Review Risk", "priority": 114.4, "sector": "Industrial", "mom_score": 22, "base_score": 4, "trend": "Strong Downtrend", "last_close": 29.7, "allocation_pct": 2.535878338177165, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": -10.000000000000002, "risk_pct": 18.350168350168346, "add_readiness": {"symbol": "LFM", "source": "portfolio", "sector": "Industrial", "readiness_score": 53.5, "qualified": false, "blockers": ["MoM 22 below Add threshold 45", "Trend is Strong Downtrend", "R/R 1.03 below 1.20", "Position G/L -10.0% below -3% Add guard"], "mom_score": 22, "required_mom": 45, "trend": "Strong Downtrend", "rsi": 34.523809523809504, "reward_risk": 1.0275229357798163, "required_reward_risk": 1.2, "gain_loss_pct": -10.000000000000002, "entry_price": 29.7, "stop_loss": 24.25, "target_price": 35.3}, "reasons": ["Positive avg monthly return +4.5% (+18)", "High monthly win rate 69% (+14)", "Monthly volatility 10.4% (-7)", "Strong downtrend (-22)", "MACD bullish (+5)"], "trade_plan": {"entry_price": 29.7, "stop_loss": 24.25, "target_price": 35.3, "risk_per_share": 5.449999999999999, "reward_risk": 1.0275229357798163, "risk_budget": 702.7151, "suggested_shares": 128, "suggested_amount": 3801.6}}, {"symbol": "PNB", "name": "PNB", "source": "portfolio", "action": "Review Risk", "priority": 111.46, "sector": "Financials", "mom_score": 9, "base_score": 0, "trend": "Downtrend", "last_close": 58.0, "allocation_pct": 2.5586471672517073, "sector_allocation_pct": 27.84617834453821, "gain_loss_pct": -9.657320872274147, "risk_pct": 9.6896551724138, "add_readiness": {"symbol": "PNB", "source": "portfolio", "sector": "Financials", "readiness_score": 33.9, "qualified": false, "blockers": ["MoM 9 below Add threshold 45", "Trend is Downtrend", "R/R 0.57 below 1.20", "Position G/L -9.7% below -3% Add guard"], "mom_score": 9, "required_mom": 45, "trend": "Downtrend", "rsi": 44.22310756972111, "reward_risk": 0.5693950177935944, "required_reward_risk": 1.2, "gain_loss_pct": -9.657320872274147, "entry_price": 58.0, "stop_loss": 52.379999999999995, "target_price": 61.2}, "reasons": ["Positive avg monthly return +4.6% (+18)", "Monthly volatility 15.1% (-11)", "Downtrend (-14)", "Above EMA 200 (+4)", "Room to resistance 5.5% (+3)"], "trade_plan": {"entry_price": 58.0, "stop_loss": 52.379999999999995, "target_price": 61.2, "risk_per_share": 5.6200000000000045, "reward_risk": 0.5693950177935944, "risk_budget": 702.7151, "suggested_shares": 125, "suggested_amount": 7250.0}}, {"symbol": "AGI", "name": "AGI", "source": "portfolio", "action": "Review Risk", "priority": 110.8, "sector": "Holding Firms", "mom_score": -4, "base_score": 8, "trend": "Strong Downtrend", "last_close": 8.01, "allocation_pct": 2.530499202308304, "sector_allocation_pct": 14.62000745394542, "gain_loss_pct": -10.801781737193771, "risk_pct": 4.089887640449443, "add_readiness": {"symbol": "AGI", "source": "portfolio", "sector": "Holding Firms", "readiness_score": 40.0, "qualified": false, "blockers": ["MoM -4 below Add threshold 45", "Trend is Strong Downtrend", "Position G/L -10.8% below -3% Add guard"], "mom_score": -4, "required_mom": 45, "trend": "Strong Downtrend", "rsi": 22.699386503067515, "reward_risk": 7.051282051282046, "required_reward_risk": 1.2, "gain_loss_pct": -10.801781737193771, "entry_price": 8.01, "stop_loss": 7.6823999999999995, "target_price": 10.32}, "reasons": ["Positive avg monthly return +2.0% (+8)", "Weak monthly win rate 44% (-8)", "Monthly volatility 12.4% (-9)", "Strong downtrend (-22)", "Oversold RSI < 30 (-6)"], "trade_plan": {"entry_price": 8.01, "stop_loss": 7.6823999999999995, "target_price": 10.32, "risk_per_share": 0.32760000000000034, "reward_risk": 7.051282051282046, "risk_budget": 702.7151, "suggested_shares": 1248, "suggested_amount": 9996.48}}, {"symbol": "MWC", "name": "MWC", "source": "portfolio", "action": "Review Risk", "priority": 108.69, "sector": "Industrial", "mom_score": -2, "base_score": 7, "trend": "Strong Downtrend", "last_close": 38.5, "allocation_pct": 7.725036789447104, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": -8.690276948436958, "risk_pct": 3.8818181818181876, "add_readiness": {"symbol": "MWC", "source": "portfolio", "sector": "Industrial", "readiness_score": 40.0, "qualified": false, "blockers": ["MoM -2 below Add threshold 45", "Trend is Strong Downtrend", "Position G/L -8.7% below -3% Add guard"], "mom_score": -2, "required_mom": 45, "trend": "Strong Downtrend", "rsi": 28.82352941176471, "reward_risk": 4.550016728002668, "required_reward_risk": 1.2, "gain_loss_pct": -8.690276948436958, "entry_price": 38.5, "stop_loss": 37.0055, "target_price": 45.3}, "reasons": ["Positive avg monthly return +1.9% (+8)", "Monthly volatility 8.6% (-6)", "Strong downtrend (-22)", "Oversold RSI < 30 (-6)", "Room to resistance 17.7% (+9)"], "trade_plan": {"entry_price": 38.5, "stop_loss": 37.0055, "target_price": 45.3, "risk_per_share": 1.4945000000000022, "reward_risk": 4.550016728002668, "risk_budget": 702.7151, "suggested_shares": 259, "suggested_amount": 9971.5}}, {"symbol": "MEG", "name": "MEG", "source": "portfolio", "action": "Review Risk", "priority": 102.4, "sector": "Property", "mom_score": 12, "base_score": 5, "trend": "Strong Downtrend", "last_close": 2.04, "allocation_pct": 5.411239917855757, "sector_allocation_pct": 11.441123152185005, "gain_loss_pct": -4.865600544402862, "risk_pct": 6.803921568627453, "add_readiness": {"symbol": "MEG", "source": "portfolio", "sector": "Property", "readiness_score": 43.8, "qualified": false, "blockers": ["MoM 12 below Add threshold 45", "Trend is Strong Downtrend", "R/R 0.94 below 1.20", "Position G/L -4.9% below -3% Add guard"], "mom_score": 12, "required_mom": 45, "trend": "Strong Downtrend", "rsi": 51.515151515151544, "reward_risk": 0.9365994236311229, "required_reward_risk": 1.2, "gain_loss_pct": -4.865600544402862, "entry_price": 2.04, "stop_loss": 1.9012, "target_price": 2.17}, "reasons": ["Positive avg monthly return +1.1% (+4)", "Monthly volatility 3.8% (-3)", "Strong downtrend (-22)", "RSI in constructive range (+8)", "MACD bullish (+5)"], "trade_plan": {"entry_price": 2.04, "stop_loss": 1.9012, "target_price": 2.17, "risk_per_share": 0.13880000000000003, "reward_risk": 0.9365994236311229, "risk_budget": 702.7151, "suggested_shares": 4901, "suggested_amount": 9998.04}}, {"symbol": "LTG", "name": "LTG", "source": "portfolio", "action": "Review Risk", "priority": 102.0, "sector": "Holding Firms", "mom_score": 10, "base_score": 3, "trend": "Strong Downtrend", "last_close": 14.52, "allocation_pct": 10.723947727891431, "sector_allocation_pct": 14.62000745394542, "gain_loss_pct": -5.51923872569301, "risk_pct": 7.8099173553718915, "add_readiness": {"symbol": "LTG", "source": "portfolio", "sector": "Holding Firms", "readiness_score": 46.3, "qualified": false, "blockers": ["MoM 10 below Add threshold 45", "Trend is Strong Downtrend", "R/R 1.13 below 1.20", "Position G/L -5.5% below -3% Add guard"], "mom_score": 10, "required_mom": 45, "trend": "Strong Downtrend", "rsi": 39.375, "reward_risk": 1.1287477954144645, "required_reward_risk": 1.2, "gain_loss_pct": -5.51923872569301, "entry_price": 14.52, "stop_loss": 13.386000000000001, "target_price": 15.8}, "reasons": ["Positive avg monthly return +1.5% (+6)", "Solid monthly win rate 62% (+9)", "Monthly volatility 5.1% (-4)", "Strong downtrend (-22)", "Room to resistance 8.8% (+4)"], "trade_plan": {"entry_price": 14.52, "stop_loss": 13.386000000000001, "target_price": 15.8, "risk_per_share": 1.1339999999999986, "reward_risk": 1.1287477954144645, "risk_budget": 702.7151, "suggested_shares": 619, "suggested_amount": 8987.88}}, {"symbol": "PSE", "name": "PSE", "source": "portfolio", "action": "Review Risk", "priority": 100.0, "sector": "Financials", "mom_score": -15, "base_score": 7, "trend": "Strong Downtrend", "last_close": 198.7, "allocation_pct": 2.544843564625266, "sector_allocation_pct": 27.84617834453821, "gain_loss_pct": -3.2619279454722574, "risk_pct": 4.806240563663806, "add_readiness": {"symbol": "PSE", "source": "portfolio", "sector": "Financials", "readiness_score": 40.0, "qualified": false, "blockers": ["MoM -15 below Add threshold 45", "Trend is Strong Downtrend", "Position G/L -3.3% below -3% Add guard"], "mom_score": -15, "required_mom": 45, "trend": "Strong Downtrend", "rsi": 20.576131687242793, "reward_risk": 2.230366492146602, "required_reward_risk": 1.2, "gain_loss_pct": -3.2619279454722574, "entry_price": 198.7, "stop_loss": 189.15, "target_price": 220.0}, "reasons": ["Positive avg monthly return +0.6% (+3)", "Weak monthly win rate 38% (-8)", "Monthly volatility 4.1% (-3)", "Strong downtrend (-22)", "Oversold RSI < 30 (-6)"], "trade_plan": {"entry_price": 198.7, "stop_loss": 189.15, "target_price": 220.0, "risk_per_share": 9.549999999999983, "reward_risk": 2.230366492146602, "risk_budget": 702.7151, "suggested_shares": 50, "suggested_amount": 9935.0}}, {"symbol": "WPI", "name": "WPI", "source": "portfolio", "action": "Review Risk", "priority": 100.0, "sector": "Services", "mom_score": -100, "base_score": 9, "trend": "Strong Uptrend", "last_close": 0.49, "allocation_pct": 3.2054669097049433, "sector_allocation_pct": 3.2054669097049433, "gain_loss_pct": 12.643678160919539, "risk_pct": 18.83673469387756, "add_readiness": {"symbol": "WPI", "source": "portfolio", "sector": "Services", "readiness_score": 46.8, "qualified": false, "blockers": ["MoM -100 below Add threshold 45", "R/R 0.33 below 1.20"], "mom_score": -100, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 63.414634146341456, "reward_risk": 0.325027085590466, "required_reward_risk": 1.2, "gain_loss_pct": 12.643678160919539, "entry_price": 0.49, "stop_loss": 0.39769999999999994, "target_price": 0.52}, "reasons": ["Suspended security (-100)"], "trade_plan": {"entry_price": 0.49, "stop_loss": 0.39769999999999994, "target_price": 0.52, "risk_per_share": 0.09230000000000005, "reward_risk": 0.325027085590466, "risk_budget": 702.7151, "suggested_shares": 7613, "suggested_amount": 3730.37}}, {"symbol": "KPPI", "name": "KPPI", "source": "candidate", "action": "Add", "priority": 84.0, "sector": "Unknown", "mom_score": 50, "base_score": 9, "trend": "Strong Uptrend", "last_close": 1.38, "allocation_pct": 0, "sector_allocation_pct": 0.0, "gain_loss_pct": 0, "risk_pct": 26.898550724637683, "add_readiness": {"symbol": "KPPI", "source": "candidate", "sector": "Unknown", "readiness_score": 100.0, "qualified": true, "blockers": [], "mom_score": 50, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 56.33802816901407, "reward_risk": 1.3469827586206897, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 1.38, "stop_loss": 1.0088, "target_price": 1.88}, "reasons": ["Positive avg monthly return +1.1% (+4)", "Solid monthly win rate 62% (+9)", "Monthly volatility 9.7% (-7)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 1.38, "stop_loss": 1.0088, "target_price": 1.88, "risk_per_share": 0.3712, "reward_risk": 1.3469827586206897, "risk_budget": 702.7151, "suggested_shares": 1893, "suggested_amount": 2612.3399999999997}}, {"symbol": "BNCOM", "name": "BNCOM", "source": "portfolio", "action": "Watchlist", "priority": 75.0, "sector": "Financials", "mom_score": 65, "base_score": 12, "trend": "Strong Uptrend", "last_close": 11.1, "allocation_pct": 10.314706486312875, "sector_allocation_pct": 27.84617834453821, "gain_loss_pct": 21.00991011446049, "risk_pct": 24.759459459459464, "add_readiness": {"symbol": "BNCOM", "source": "portfolio", "sector": "Financials", "readiness_score": 81.4, "qualified": false, "blockers": ["R/R 0.31 below 1.20"], "mom_score": 65, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 47.10526315789473, "reward_risk": 0.30564348870210667, "required_reward_risk": 1.2, "gain_loss_pct": 21.00991011446049, "entry_price": 11.1, "stop_loss": 8.3517, "target_price": 11.94}, "reasons": ["Positive avg monthly return +3.3% (+13)", "High monthly win rate 75% (+14)", "Monthly volatility 7.6% (-5)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 11.1, "stop_loss": 8.3517, "target_price": 11.94, "risk_per_share": 2.7483000000000004, "reward_risk": 0.30564348870210667, "risk_budget": 702.7151, "suggested_shares": 255, "suggested_amount": 2830.5}}, {"symbol": "PPC", "name": "PPC", "source": "portfolio", "action": "Watchlist", "priority": 74.4, "sector": "Industrial", "mom_score": 62, "base_score": 13, "trend": "Strong Uptrend", "last_close": 15.0, "allocation_pct": 3.265903920379682, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": 15.384615384615385, "risk_pct": 6.491999999999992, "add_readiness": {"symbol": "PPC", "source": "portfolio", "sector": "Industrial", "readiness_score": 84.0, "qualified": false, "blockers": ["R/R 0.43 below 1.20"], "mom_score": 62, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 50.0, "reward_risk": 0.43130006161429496, "required_reward_risk": 1.2, "gain_loss_pct": 15.384615384615385, "entry_price": 15.0, "stop_loss": 14.026200000000001, "target_price": 15.42}, "reasons": ["Positive avg monthly return +3.0% (+12)", "High monthly win rate 75% (+14)", "Monthly volatility 4.7% (-3)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 15.0, "stop_loss": 14.026200000000001, "target_price": 15.42, "risk_per_share": 0.9737999999999989, "reward_risk": 0.43130006161429496, "risk_budget": 702.7151, "suggested_shares": 666, "suggested_amount": 9990.0}}, {"symbol": "ICT", "name": "ICT", "source": "candidate", "action": "Watchlist", "priority": 74.2, "sector": "Services", "mom_score": 61, "base_score": 10, "trend": "Strong Uptrend", "last_close": 900.0, "allocation_pct": 0, "sector_allocation_pct": 3.2054669097049433, "gain_loss_pct": 0, "risk_pct": 27.30388888888889, "add_readiness": {"symbol": "ICT", "source": "candidate", "sector": "Services", "readiness_score": 83.1, "qualified": false, "blockers": ["R/R 0.39 below 1.20"], "mom_score": 61, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 63.83561643835616, "reward_risk": 0.38659531609253867, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 900.0, "stop_loss": 654.265, "target_price": 995.0}, "reasons": ["Positive avg monthly return +6.3% (+25)", "High monthly win rate 81% (+14)", "Monthly volatility 7.7% (-5)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 900.0, "stop_loss": 654.265, "target_price": 995.0, "risk_per_share": 245.735, "reward_risk": 0.38659531609253867, "risk_budget": 702.7151, "suggested_shares": 2, "suggested_amount": 1800.0}}, {"symbol": "MYNLD", "name": "MYNLD", "source": "candidate", "action": "Watchlist", "priority": 74.0, "sector": "Industrial", "mom_score": 60, "base_score": 8, "trend": "Strong Uptrend", "last_close": 22.7, "allocation_pct": 0, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": 0, "risk_pct": 17.015859030836992, "add_readiness": {"symbol": "MYNLD", "source": "candidate", "sector": "Industrial", "readiness_score": 84.4, "qualified": false, "blockers": ["R/R 0.45 below 1.20"], "mom_score": 60, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 44.70588235294118, "reward_risk": 0.4530627038782171, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 22.7, "stop_loss": 18.837400000000002, "target_price": 24.45}, "reasons": ["Positive avg monthly return +5.6% (+22)", "High monthly win rate 86% (+14)", "Monthly volatility 9.4% (-7)", "Strong uptrend (+12)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 22.7, "stop_loss": 18.837400000000002, "target_price": 24.45, "risk_per_share": 3.862599999999997, "reward_risk": 0.4530627038782171, "risk_budget": 702.7151, "suggested_shares": 181, "suggested_amount": 4108.7}}, {"symbol": "APVI", "name": "APVI", "source": "candidate", "action": "Watchlist", "priority": 73.8, "sector": "Property", "mom_score": 59, "base_score": 11, "trend": "Strong Uptrend", "last_close": 10.16, "allocation_pct": 0, "sector_allocation_pct": 11.441123152185005, "gain_loss_pct": 0, "risk_pct": 19.80314960629922, "add_readiness": {"symbol": "APVI", "source": "candidate", "sector": "Property", "readiness_score": 94.1, "qualified": false, "blockers": ["R/R 0.91 below 1.20"], "mom_score": 59, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 48.571428571428555, "reward_risk": 0.9145129224652084, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 10.16, "stop_loss": 8.148, "target_price": 12.0}, "reasons": ["Positive avg monthly return +1.5% (+6)", "High monthly win rate 69% (+14)", "Monthly volatility 5.3% (-4)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 10.16, "stop_loss": 8.148, "target_price": 12.0, "risk_per_share": 2.0120000000000005, "reward_risk": 0.9145129224652084, "risk_budget": 702.7151, "suggested_shares": 349, "suggested_amount": 3545.84}}, {"symbol": "RFM", "name": "RFM", "source": "portfolio", "action": "Watchlist", "priority": 73.0, "sector": "Industrial", "mom_score": 55, "base_score": 12, "trend": "Strong Uptrend", "last_close": 5.56, "allocation_pct": 6.76490372840999, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": 18.95949851732293, "risk_pct": 10.152877697841724, "add_readiness": {"symbol": "RFM", "source": "portfolio", "sector": "Industrial", "readiness_score": 78.3, "qualified": false, "blockers": ["R/R 0.16 below 1.20"], "mom_score": 55, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 60.0, "reward_risk": 0.15943312666076312, "required_reward_risk": 1.2, "gain_loss_pct": 18.95949851732293, "entry_price": 5.56, "stop_loss": 4.9955, "target_price": 5.65}, "reasons": ["Positive avg monthly return +1.9% (+8)", "High monthly win rate 69% (+14)", "Monthly volatility 3.7% (-3)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 5.56, "stop_loss": 4.9955, "target_price": 5.65, "risk_per_share": 0.5644999999999998, "reward_risk": 0.15943312666076312, "risk_budget": 702.7151, "suggested_shares": 1244, "suggested_amount": 6916.639999999999}}, {"symbol": "ION", "name": "ION", "source": "candidate", "action": "Watchlist", "priority": 71.8, "sector": "Unknown", "mom_score": 49, "base_score": 8, "trend": "Strong Uptrend", "last_close": 1.1, "allocation_pct": 0, "sector_allocation_pct": 0.0, "gain_loss_pct": 0, "risk_pct": 13.58181818181819, "add_readiness": {"symbol": "ION", "source": "candidate", "sector": "Unknown", "readiness_score": 79.2, "qualified": false, "blockers": ["MoM 49 below Add threshold 50", "RSI 37.8 outside 40-72 range", "R/R 0.67 below 1.20"], "mom_score": 49, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 37.83783783783786, "reward_risk": 0.6693440428380174, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 1.1, "stop_loss": 0.9506, "target_price": 1.2}, "reasons": ["Positive avg monthly return +2.5% (+10)", "High monthly win rate 69% (+14)", "Monthly volatility 5.1% (-4)", "Strong uptrend (+12)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 1.1, "stop_loss": 0.9506, "target_price": 1.2, "risk_per_share": 0.1494000000000001, "reward_risk": 0.6693440428380174, "risk_budget": 702.7151, "suggested_shares": 4703, "suggested_amount": 5173.3}}, {"symbol": "EMI", "name": "EMI", "source": "candidate", "action": "Watchlist", "priority": 71.4, "sector": "Industrial", "mom_score": 47, "base_score": 9, "trend": "Strong Uptrend", "last_close": 15.5, "allocation_pct": 0, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": 0, "risk_pct": 5.503225806451622, "add_readiness": {"symbol": "EMI", "source": "candidate", "sector": "Industrial", "readiness_score": 85.6, "qualified": false, "blockers": ["MoM 47 below Add threshold 50", "R/R 0.61 below 1.20"], "mom_score": 47, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 50.72463768115941, "reward_risk": 0.609613130128955, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 15.5, "stop_loss": 14.646999999999998, "target_price": 16.02}, "reasons": ["Positive avg monthly return +1.5% (+6)", "Solid monthly win rate 62% (+9)", "Monthly volatility 4.2% (-3)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 15.5, "stop_loss": 14.646999999999998, "target_price": 16.02, "risk_per_share": 0.8530000000000015, "reward_risk": 0.609613130128955, "risk_budget": 702.7151, "suggested_shares": 645, "suggested_amount": 9997.5}}, {"symbol": "CROWN", "name": "CROWN", "source": "candidate", "action": "Watchlist", "priority": 71.0, "sector": "Industrial", "mom_score": 45, "base_score": 12, "trend": "Strong Uptrend", "last_close": 1.74, "allocation_pct": 0, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": 0, "risk_pct": 9.13218390804598, "add_readiness": {"symbol": "CROWN", "source": "candidate", "sector": "Industrial", "readiness_score": 74.1, "qualified": false, "blockers": ["MoM 45 below Add threshold 50", "R/R 0.13 below 1.20"], "mom_score": 45, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 61.111111111111114, "reward_risk": 0.12586532410320964, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 1.74, "stop_loss": 1.5811, "target_price": 1.76}, "reasons": ["Positive avg monthly return +0.5% (+2)", "Solid monthly win rate 62% (+9)", "Monthly volatility 3.2% (-2)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 1.74, "stop_loss": 1.5811, "target_price": 1.76, "risk_per_share": 0.15890000000000004, "reward_risk": 0.12586532410320964, "risk_budget": 702.7151, "suggested_shares": 4422, "suggested_amount": 7694.28}}, {"symbol": "IMP", "name": "IMP", "source": "candidate", "action": "Watchlist", "priority": 71.0, "sector": "Services", "mom_score": 45, "base_score": 4, "trend": "Strong Uptrend", "last_close": 0.94, "allocation_pct": 0, "sector_allocation_pct": 3.2054669097049433, "gain_loss_pct": 0, "risk_pct": 15.38297872340426, "add_readiness": {"symbol": "IMP", "source": "candidate", "sector": "Services", "readiness_score": 94.6, "qualified": false, "blockers": ["MoM 45 below Add threshold 50", "R/R 1.11 below 1.20"], "mom_score": 45, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 52.63157894736839, "reward_risk": 1.1065006915629327, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 0.94, "stop_loss": 0.7953999999999999, "target_price": 1.1}, "reasons": ["Positive avg monthly return +4.7% (+19)", "Weak monthly win rate 38% (-8)", "Monthly volatility 19.4% (-14)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 0.94, "stop_loss": 0.7953999999999999, "target_price": 1.1, "risk_per_share": 0.14460000000000006, "reward_risk": 1.1065006915629327, "risk_budget": 702.7151, "suggested_shares": 4859, "suggested_amount": 4567.46}}, {"symbol": "SGP", "name": "SGP", "source": "portfolio", "action": "Watchlist", "priority": 70.8, "sector": "Industrial", "mom_score": 44, "base_score": 11, "trend": "Strong Uptrend", "last_close": 31.3, "allocation_pct": 8.64105524415229, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": 52.34582768829345, "risk_pct": 41.55207667731629, "add_readiness": {"symbol": "SGP", "source": "portfolio", "sector": "Industrial", "readiness_score": 76.0, "qualified": false, "blockers": ["MoM 44 below Add threshold 45", "R/R 0.08 below 1.20"], "mom_score": 44, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 69.78021978021978, "reward_risk": 0.08457764997155098, "required_reward_risk": 1.2, "gain_loss_pct": 52.34582768829345, "entry_price": 31.3, "stop_loss": 18.2942, "target_price": 32.4}, "reasons": ["Positive avg monthly return +7.4% (+25)", "High monthly win rate 75% (+14)", "Monthly volatility 10.5% (-7)", "Strong uptrend (+12)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 31.3, "stop_loss": 18.2942, "target_price": 32.4, "risk_per_share": 13.0058, "reward_risk": 0.08457764997155098, "risk_budget": 702.7151, "suggested_shares": 54, "suggested_amount": 1690.2}}, {"symbol": "COSCO", "name": "COSCO", "source": "candidate", "action": "Watchlist", "priority": 70.8, "sector": "Holding Firms", "mom_score": 44, "base_score": 8, "trend": "Strong Uptrend", "last_close": 7.75, "allocation_pct": 0, "sector_allocation_pct": 14.62000745394542, "gain_loss_pct": 0, "risk_pct": 17.268387096774195, "add_readiness": {"symbol": "COSCO", "source": "candidate", "sector": "Holding Firms", "readiness_score": 80.9, "qualified": false, "blockers": ["MoM 44 below Add threshold 50", "R/R 0.49 below 1.20"], "mom_score": 44, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 60.869565217391305, "reward_risk": 0.4856908017634314, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 7.75, "stop_loss": 6.4117, "target_price": 8.4}, "reasons": ["Positive avg monthly return +2.5% (+10)", "Monthly volatility 6.2% (-4)", "Strong uptrend (+12)", "RSI in constructive range (+8)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 7.75, "stop_loss": 6.4117, "target_price": 8.4, "risk_per_share": 1.3383000000000003, "reward_risk": 0.4856908017634314, "risk_budget": 702.7151, "suggested_shares": 525, "suggested_amount": 4068.75}}, {"symbol": "AUB", "name": "AUB", "source": "portfolio", "action": "Watchlist", "priority": 70.6, "sector": "Financials", "mom_score": 43, "base_score": 11, "trend": "Strong Uptrend", "last_close": 44.05, "allocation_pct": 8.713275123873103, "sector_allocation_pct": 27.84617834453821, "gain_loss_pct": 3.2302932721892814, "risk_pct": 9.716231555051081, "add_readiness": {"symbol": "AUB", "source": "portfolio", "sector": "Financials", "readiness_score": 75.6, "qualified": false, "blockers": ["MoM 43 below Add threshold 45", "R/R 0.11 below 1.20"], "mom_score": 43, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 59.574468085106346, "reward_risk": 0.10514018691588849, "required_reward_risk": 1.2, "gain_loss_pct": 3.2302932721892814, "entry_price": 44.05, "stop_loss": 39.769999999999996, "target_price": 44.5}, "reasons": ["Positive avg monthly return +1.9% (+8)", "High monthly win rate 69% (+14)", "Monthly volatility 13.3% (-9)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 44.05, "stop_loss": 39.769999999999996, "target_price": 44.5, "risk_per_share": 4.280000000000001, "reward_risk": 0.10514018691588849, "risk_budget": 702.7151, "suggested_shares": 164, "suggested_amount": 7224.2}}, {"symbol": "CREC", "name": "CREC", "source": "candidate", "action": "Watchlist", "priority": 70.6, "sector": "Industrial", "mom_score": 43, "base_score": 9, "trend": "Strong Uptrend", "last_close": 4.57, "allocation_pct": 0, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": 0, "risk_pct": 14.249452954048145, "add_readiness": {"symbol": "CREC", "source": "candidate", "sector": "Industrial", "readiness_score": 83.9, "qualified": false, "blockers": ["MoM 43 below Add threshold 50", "R/R 0.66 below 1.20"], "mom_score": 43, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 54.09836065573775, "reward_risk": 0.6603194103194097, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 4.57, "stop_loss": 3.9188, "target_price": 5.0}, "reasons": ["Positive avg monthly return +1.6% (+6)", "Solid monthly win rate 62% (+9)", "Monthly volatility 3.3% (-2)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 4.57, "stop_loss": 3.9188, "target_price": 5.0, "risk_per_share": 0.6512000000000002, "reward_risk": 0.6603194103194097, "risk_budget": 702.7151, "suggested_shares": 1079, "suggested_amount": 4931.030000000001}}, {"symbol": "ALCO", "name": "ALCO", "source": "portfolio", "action": "Watchlist", "priority": 70.2, "sector": "Property", "mom_score": 41, "base_score": 7, "trend": "Strong Uptrend", "last_close": 0.445, "allocation_pct": 6.0298832343292466, "sector_allocation_pct": 11.441123152185005, "gain_loss_pct": 5.952380952380958, "risk_pct": 8.449438202247196, "add_readiness": {"symbol": "ALCO", "source": "portfolio", "sector": "Property", "readiness_score": 96.8, "qualified": false, "blockers": ["MoM 41 below Add threshold 45", "R/R 1.20 below 1.20"], "mom_score": 41, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 60.0, "reward_risk": 1.1968085106382969, "required_reward_risk": 1.2, "gain_loss_pct": 5.952380952380958, "entry_price": 0.445, "stop_loss": 0.4074, "target_price": 0.49}, "reasons": ["Positive avg monthly return +1.9% (+8)", "Weak monthly win rate 44% (-8)", "Monthly volatility 8.8% (-6)", "Strong uptrend (+12)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 0.445, "stop_loss": 0.4074, "target_price": 0.49, "risk_per_share": 0.03760000000000002, "reward_risk": 1.1968085106382969, "risk_budget": 702.7151, "suggested_shares": 18689, "suggested_amount": 8316.605}}, {"symbol": "FPH", "name": "FPH", "source": "candidate", "action": "Watchlist", "priority": 70.2, "sector": "Unknown", "mom_score": 41, "base_score": 10, "trend": "Strong Uptrend", "last_close": 82.0, "allocation_pct": 0, "sector_allocation_pct": 0.0, "gain_loss_pct": 0, "risk_pct": 13.646341463414632, "add_readiness": {"symbol": "FPH", "source": "candidate", "sector": "Unknown", "readiness_score": 72.9, "qualified": false, "blockers": ["MoM 41 below Add threshold 50", "R/R 0.20 below 1.20"], "mom_score": 41, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 60.08064516129033, "reward_risk": 0.20107238605898128, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 82.0, "stop_loss": 70.81, "target_price": 84.25}, "reasons": ["Positive avg monthly return +2.3% (+9)", "Monthly volatility 6.5% (-5)", "Strong uptrend (+12)", "RSI in constructive range (+8)", "MACD bullish (+5)"], "trade_plan": {"entry_price": 82.0, "stop_loss": 70.81, "target_price": 84.25, "risk_per_share": 11.189999999999998, "reward_risk": 0.20107238605898128, "risk_budget": 702.7151, "suggested_shares": 62, "suggested_amount": 5084.0}}, {"symbol": "UPM", "name": "UPM", "source": "candidate", "action": "Watchlist", "priority": 70.2, "sector": "Mining and Oil", "mom_score": 41, "base_score": 6, "trend": "Strong Uptrend", "last_close": 0.0066, "allocation_pct": 0, "sector_allocation_pct": 8.622840180892656, "gain_loss_pct": 0, "risk_pct": 39.742424242424235, "add_readiness": {"symbol": "UPM", "source": "candidate", "sector": "Mining and Oil", "readiness_score": 87.8, "qualified": false, "blockers": ["MoM 41 below Add threshold 50", "R/R 0.91 below 1.20"], "mom_score": 41, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 48.38709677419355, "reward_risk": 0.9149828440716736, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 0.0066, "stop_loss": 0.0039770000000000005, "target_price": 0.009}, "reasons": ["Positive avg monthly return +5.4% (+22)", "Monthly volatility 19.1% (-13)", "Strong uptrend (+12)", "RSI in constructive range (+8)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 0.0066, "stop_loss": 0.0039770000000000005, "target_price": 0.009, "risk_per_share": 0.0026229999999999995, "reward_risk": 0.9149828440716736, "risk_budget": 702.7151, "suggested_shares": 267905, "suggested_amount": 1768.173}}, {"symbol": "MFC", "name": "MFC", "source": "candidate", "action": "Watchlist", "priority": 70.0, "sector": "Financials", "mom_score": 40, "base_score": 7, "trend": "Strong Uptrend", "last_close": 2300.0, "allocation_pct": 0, "sector_allocation_pct": 27.84617834453821, "gain_loss_pct": 0, "risk_pct": 21.978260869565215, "add_readiness": {"symbol": "MFC", "source": "candidate", "sector": "Financials", "readiness_score": 93.0, "qualified": false, "blockers": ["MoM 40 below Add threshold 50"], "mom_score": 40, "required_mom": 50, "trend": "Strong Uptrend", "rsi": 50.0, "reward_risk": 2.5717111770524235, "required_reward_risk": 1.2, "gain_loss_pct": 0, "entry_price": 2300.0, "stop_loss": 1794.5, "target_price": 3600.0}, "reasons": ["Positive avg monthly return +2.1% (+9)", "Monthly volatility 7.3% (-5)", "Strong uptrend (+12)", "RSI in constructive range (+8)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 2300.0, "stop_loss": 1794.5, "target_price": 3600.0, "risk_per_share": 505.5, "reward_risk": 2.5717111770524235, "risk_budget": 702.7151, "suggested_shares": 1, "suggested_amount": 2300.0}}, {"symbol": "NRCP", "name": "NRCP", "source": "portfolio", "action": "Hold", "priority": 41.8, "sector": "Financials", "mom_score": 39, "base_score": 8, "trend": "Strong Uptrend", "last_close": 0.94, "allocation_pct": 3.7147060024752565, "sector_allocation_pct": 27.84617834453821, "gain_loss_pct": 30.555555555555554, "risk_pct": 30.86170212765957, "add_readiness": {"symbol": "NRCP", "source": "portfolio", "sector": "Financials", "readiness_score": 87.6, "qualified": false, "blockers": ["MoM 39 below Add threshold 45", "R/R 0.83 below 1.20"], "mom_score": 39, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 62.12121212121212, "reward_risk": 0.8273009307135473, "required_reward_risk": 1.2, "gain_loss_pct": 30.555555555555554, "entry_price": 0.94, "stop_loss": 0.6499, "target_price": 1.18}, "reasons": ["Positive avg monthly return +2.7% (+11)", "Monthly volatility 14.2% (-10)", "Strong uptrend (+12)", "RSI in constructive range (+8)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 0.94, "stop_loss": 0.6499, "target_price": 1.18, "risk_per_share": 0.2900999999999999, "reward_risk": 0.8273009307135473, "risk_budget": 702.7151, "suggested_shares": 2422, "suggested_amount": 2276.68}}, {"symbol": "FRUIT", "name": "FRUIT", "source": "portfolio", "action": "Hold", "priority": 41.6, "sector": "Industrial", "mom_score": 38, "base_score": 8, "trend": "Strong Uptrend", "last_close": 0.65, "allocation_pct": 2.84524980322751, "sector_allocation_pct": 34.26438395873378, "gain_loss_pct": 0.0, "risk_pct": 8.969230769230773, "add_readiness": {"symbol": "FRUIT", "source": "portfolio", "sector": "Industrial", "readiness_score": 87.4, "qualified": false, "blockers": ["MoM 38 below Add threshold 45", "R/R 0.86 below 1.20"], "mom_score": 38, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 50.0, "reward_risk": 0.8576329331046298, "required_reward_risk": 1.2, "gain_loss_pct": 0.0, "entry_price": 0.65, "stop_loss": 0.5917, "target_price": 0.7}, "reasons": ["Negative avg monthly return -0.1% (-1)", "Monthly volatility 4.0% (-3)", "Strong uptrend (+12)", "RSI in constructive range (+8)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 0.65, "stop_loss": 0.5917, "target_price": 0.7, "risk_per_share": 0.05830000000000002, "reward_risk": 0.8576329331046298, "risk_budget": 702.7151, "suggested_shares": 12053, "suggested_amount": 7834.45}}, {"symbol": "APX", "name": "APX", "source": "portfolio", "action": "Hold", "priority": 41.4, "sector": "Mining and Oil", "mom_score": 37, "base_score": 3, "trend": "Downtrend", "last_close": 15.92, "allocation_pct": 5.777021156938281, "sector_allocation_pct": 8.622840180892656, "gain_loss_pct": 1.733652096771772, "risk_pct": 23.472361809045232, "add_readiness": {"symbol": "APX", "source": "portfolio", "sector": "Mining and Oil", "readiness_score": 62.9, "qualified": false, "blockers": ["MoM 37 below Add threshold 45", "Trend is Downtrend", "R/R 0.68 below 1.20"], "mom_score": 37, "required_mom": 45, "trend": "Downtrend", "rsi": 46.923076923076934, "reward_risk": 0.6797259687433099, "required_reward_risk": 1.2, "gain_loss_pct": 1.733652096771772, "entry_price": 15.92, "stop_loss": 12.1832, "target_price": 18.46}, "reasons": ["Positive avg monthly return +10.4% (+25)", "High monthly win rate 69% (+14)", "Monthly volatility 18.8% (-13)", "Downtrend (-14)", "RSI in constructive range (+8)"], "trade_plan": {"entry_price": 15.92, "stop_loss": 12.1832, "target_price": 18.46, "risk_per_share": 3.7368000000000006, "reward_risk": 0.6797259687433099, "risk_budget": 702.7151, "suggested_shares": 188, "suggested_amount": 2992.96}}, {"symbol": "BC", "name": "BC", "source": "portfolio", "action": "Hold", "priority": 41.4, "sector": "Mining and Oil", "mom_score": 37, "base_score": 11, "trend": "Strong Uptrend", "last_close": 6.6, "allocation_pct": 2.8458190239543737, "sector_allocation_pct": 8.622840180892656, "gain_loss_pct": 0.0, "risk_pct": 17.2560606060606, "add_readiness": {"symbol": "BC", "source": "portfolio", "sector": "Mining and Oil", "readiness_score": 73.9, "qualified": false, "blockers": ["MoM 37 below Add threshold 45", "R/R 0.25 below 1.20"], "mom_score": 37, "required_mom": 45, "trend": "Strong Uptrend", "rsi": 43.85964912280699, "reward_risk": 0.24585125998770774, "required_reward_risk": 1.2, "gain_loss_pct": 0.0, "entry_price": 6.6, "stop_loss": 5.4611, "target_price": 6.88}, "reasons": ["Positive avg monthly return +3.9% (+16)", "Solid monthly win rate 62% (+9)", "Monthly volatility 10.2% (-7)", "Strong uptrend (+12)", "Above EMA 50 (+5)"], "trade_plan": {"entry_price": 6.6, "stop_loss": 5.4611, "target_price": 6.88, "risk_per_share": 1.1388999999999996, "reward_risk": 0.24585125998770774, "risk_budget": 702.7151, "suggested_shares": 617, "suggested_amount": 4072.2}}], "prices": {"LFM": 29.7, "PNB": 58.0, "AGI": 8.01, "UPM": 0.0066, "APVI": 10.16, "BNCOM": 11.1, "ICT": 900.0, "MWC": 38.5, "PPC": 15.0, "WPI": 0.49, "IMP": 0.94, "ALCO": 0.445, "MEG": 2.04, "ION": 1.1, "APX": 15.92, "MYNLD": 22.7, "SGP": 31.3, "COSCO": 7.75, "CREC": 4.57, "KPPI": 1.38, "PSE": 198.7, "LTG": 14.52, "EMI": 15.5, "FRUIT": 0.65, "AUB": 44.05, "EURO": 1.04, "BC": 6.6, "NRCP": 0.94, "RFM": 5.56, "GTCAP": 479.8, "MFC": 2300.0, "CROWN": 1.74, "FPH": 82.0}, "sectors": {"LFM": "Industrial", "PNB": "Financials", "AGI": "Holding Firms", "UPM": "Mining and Oil", "APVI": "Property", "BNCOM": "Financials", "ICT": "Services", "MWC": "Industrial", "PPC": "Industrial", "WPI": "Services", "IMP": "Services", "ALCO": "Property", "MEG": "Property", "ION": "Unknown", "APX": "Mining and Oil", "MYNLD": "Industrial", "SGP": "Industrial", "COSCO": "Holding Firms", "CREC": "Industrial", "KPPI": "Unknown", "PSE": "Financials", "LTG": "Holding Firms", "EMI": "Industrial", "FRUIT": "Industrial", "AUB": "Financials", "EURO": "Industrial", "BC": "Mining and Oil", "NRCP": "Financials", "RFM": "Industrial", "GTCAP": "Holding Firms", "MFC": "Financials", "CROWN": "Industrial", "FPH": "Unknown"}, "starting_cash": 100000.0};
+                const PAPER_STORAGE_KEY = 'pse_paper_state_v1';
+
+                function defaultPaperState() {
+                    const startingCash = Number(PAPER_DATA.starting_cash || 100000);
+                    return {
+                        cash: startingCash,
+                        initialCash: startingCash,
+                        positions: {},
+                        ledger: [],
+                        processedKeys: []
+                    };
+                }
+
+                function loadPaperState() {
+                    try {
+                        const raw = localStorage.getItem(PAPER_STORAGE_KEY);
+                        if (!raw) return defaultPaperState();
+                        const state = JSON.parse(raw);
+                        return {
+                            ...defaultPaperState(),
+                            ...state,
+                            positions: state.positions || {},
+                            ledger: Array.isArray(state.ledger) ? state.ledger : [],
+                            processedKeys: Array.isArray(state.processedKeys) ? state.processedKeys : []
+                        };
+                    } catch (err) {
+                        return defaultPaperState();
+                    }
+                }
+
+                function savePaperState(state) {
+                    localStorage.setItem(PAPER_STORAGE_KEY, JSON.stringify(state));
+                }
+
+                function formatPaperCurrency(value) {
+                    const num = Number(value || 0);
+                    return `₱${num.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                }
+
+                function paperPrice(symbol) {
+                    const data = (typeof STOCK_DATA !== 'undefined' && STOCK_DATA[symbol]) ? STOCK_DATA[symbol] : null;
+                    return Number(PAPER_DATA.prices[symbol] || (data ? data.price : 0) || 0);
+                }
+
+                function paperSector(symbol) {
+                    const data = (typeof STOCK_DATA !== 'undefined' && STOCK_DATA[symbol]) ? STOCK_DATA[symbol] : null;
+                    return PAPER_DATA.sectors[symbol] || (data ? data.sector : 'Unknown') || 'Unknown';
+                }
+
+                function addPaperLedger(state, entry) {
+                    state.ledger.unshift({
+                        date: PAPER_DATA.market_date || new Date().toISOString().slice(0, 10),
+                        created_at: new Date().toISOString(),
+                        ...entry
+                    });
+                }
+
+                function applyPaperBuy(state, item, source, key) {
+                    const symbol = item.symbol;
+                    const price = Number(item.entry_price || item.price || paperPrice(symbol));
+                    const desiredShares = Number(item.shares || item.suggested_shares || 0);
+                    let shares = Math.floor(desiredShares);
+                    if (!shares && item.amount && price > 0) shares = Math.floor(Number(item.amount) / price);
+                    if (!shares || shares <= 0 || price <= 0) {
+                        addPaperLedger(state, {
+                            action: 'Skipped',
+                            symbol,
+                            shares: 0,
+                            price,
+                            amount: 0,
+                            source,
+                            note: 'No executable share quantity or price'
+                        });
+                        if (key) state.processedKeys.push(key);
+                        return false;
+                    }
+
+                    let amount = shares * price;
+                    if (amount > state.cash) {
+                        shares = Math.floor(state.cash / price);
+                        amount = shares * price;
+                    }
+
+                    if (!shares || amount <= 0 || amount > state.cash) {
+                        addPaperLedger(state, {
+                            action: 'Skipped',
+                            symbol,
+                            shares: 0,
+                            price,
+                            amount: 0,
+                            source,
+                            note: 'Insufficient paper cash'
+                        });
+                        if (key) state.processedKeys.push(key);
+                        return false;
+                    }
+
+                    const existing = state.positions[symbol] || {shares: 0, avg_price: 0, sector: paperSector(symbol)};
+                    const oldCost = Number(existing.shares || 0) * Number(existing.avg_price || 0);
+                    const newShares = Number(existing.shares || 0) + shares;
+                    state.positions[symbol] = {
+                        shares: newShares,
+                        avg_price: (oldCost + amount) / newShares,
+                        sector: item.sector || existing.sector || paperSector(symbol)
+                    };
+                    state.cash = Number(state.cash || 0) - amount;
+                    addPaperLedger(state, {
+                        action: 'Buy',
+                        symbol,
+                        shares,
+                        price,
+                        amount,
+                        source,
+                        note: item.reason || 'Executed from allocation plan'
+                    });
+                    if (key) state.processedKeys.push(key);
+                    return true;
+                }
+
+                function runPaperAutomation() {
+                    const state = loadPaperState();
+                    const marketDate = PAPER_DATA.market_date || PAPER_DATA.generated_at || 'unknown';
+                    let executed = 0;
+                    let skipped = 0;
+
+                    (PAPER_DATA.allocation_plan.suggestions || []).forEach(item => {
+                        const key = `${marketDate}:AUTO:BUY:${item.symbol}`;
+                        if (state.processedKeys.includes(key)) return;
+                        const ok = applyPaperBuy(state, item, 'auto', key);
+                        if (ok) executed++; else skipped++;
+                    });
+
+                    state.lastAutoRun = new Date().toISOString();
+                    state.lastMarketDate = marketDate;
+                    savePaperState(state);
+                    renderPaperTrading();
+
+                    const status = document.getElementById('paper_auto_status');
+                    if (status) {
+                        status.textContent = executed || skipped
+                            ? `Auto synced: ${executed} executed, ${skipped} skipped`
+                            : `Already synced for ${marketDate}`;
+                    }
+                }
+
+                function manualPaperBuy(symbol) {
+                    const suggestion = (PAPER_DATA.allocation_plan.suggestions || []).find(item => item.symbol === symbol);
+                    const action = (PAPER_DATA.actions || []).find(item => item.symbol === symbol);
+                    const plan = action ? (action.trade_plan || {}) : {};
+                    const price = Number((suggestion || {}).entry_price || plan.entry_price || paperPrice(symbol));
+                    const state = loadPaperState();
+                    const budget = Math.min(Number((suggestion || {}).amount || 10000), Number(state.cash || 0));
+                    const shares = Math.floor(budget / price);
+                    applyPaperBuy(state, {
+                        symbol,
+                        shares,
+                        entry_price: price,
+                        sector: (suggestion || action || {}).sector || paperSector(symbol),
+                        reason: 'Manual paper buy'
+                    }, 'manual');
+                    savePaperState(state);
+                    renderPaperTrading();
+                }
+
+                function manualPaperNote(symbol, action) {
+                    const state = loadPaperState();
+                    addPaperLedger(state, {
+                        action,
+                        symbol,
+                        shares: 0,
+                        price: paperPrice(symbol),
+                        amount: 0,
+                        source: 'manual',
+                        note: action === 'Watch' ? 'Marked for paper watch' : 'Skipped by manual review'
+                    });
+                    savePaperState(state);
+                    renderPaperTrading();
+                }
+
+                function renderPaperTrading() {
+                    if (!document.getElementById('paper_positions_body')) return;
+
+                    const state = loadPaperState();
+                    const positions = Object.entries(state.positions || {})
+                        .filter(([, pos]) => Number(pos.shares || 0) > 0)
+                        .sort(([a], [b]) => a.localeCompare(b));
+
+                    let invested = 0;
+                    let cost = 0;
+                    const positionRows = positions.map(([symbol, pos]) => {
+                        const shares = Number(pos.shares || 0);
+                        const avg = Number(pos.avg_price || 0);
+                        const current = paperPrice(symbol) || avg;
+                        const value = shares * current;
+                        const pl = value - (shares * avg);
+                        invested += value;
+                        cost += shares * avg;
+                        const plClass = pl >= 0 ? 'text-green' : 'text-red';
+                        const click = (typeof STOCK_DATA !== 'undefined' && STOCK_DATA[symbol]) ? `onclick="showStockDetails('${symbol}')" style="cursor:pointer;"` : '';
+                        return `
+                            <tr ${click}>
+                                <td class="mono" style="font-weight:800; color:var(--accent);">${symbol}</td>
+                                <td class="mono">${shares.toLocaleString()}</td>
+                                <td class="mono">${formatPaperCurrency(avg)}</td>
+                                <td class="mono">${formatPaperCurrency(current)}</td>
+                                <td class="mono">${formatPaperCurrency(value)}</td>
+                                <td class="mono ${plClass}">${formatPaperCurrency(pl)}</td>
+                            </tr>
+                        `;
+                    }).join('');
+
+                    const equity = Number(state.cash || 0) + invested;
+                    const totalPl = equity - Number(state.initialCash || 0);
+                    document.getElementById('paper_positions_body').innerHTML = positionRows || '<tr><td colspan="6" style="text-align:center; color:var(--text-tertiary);">No paper positions yet.</td></tr>';
+                    document.getElementById('paper_equity').textContent = formatPaperCurrency(equity);
+                    document.getElementById('paper_cash').textContent = formatPaperCurrency(state.cash);
+                    document.getElementById('paper_invested').textContent = formatPaperCurrency(invested);
+                    document.getElementById('paper_pl').textContent = formatPaperCurrency(totalPl);
+                    document.getElementById('paper_pl').classList.remove('text-green', 'text-red');
+                    document.getElementById('paper_pl').classList.add(totalPl >= 0 ? 'text-green' : 'text-red');
+                    document.getElementById('paper_position_count').textContent = `${positions.length} positions`;
+                    document.getElementById('paper_processed_badge').textContent = `${state.processedKeys.length} processed`;
+
+                    const actionRows = (PAPER_DATA.allocation_plan.suggestions || []).map(item => `
+                        <tr>
+                            <td class="mono" style="font-weight:800; color:var(--accent);">${item.symbol}</td>
+                            <td><span class="action-pill action-good">${item.action || 'Allocate'}</span></td>
+                            <td class="mono">${formatPaperCurrency(item.amount)}</td>
+                            <td class="mono">${Number(item.shares || 0).toLocaleString()}</td>
+                            <td class="mono">${formatPaperCurrency(item.entry_price)}</td>
+                            <td>
+                                <button class="command-btn paper-secondary-btn" onclick="manualPaperBuy('${item.symbol}')">Buy</button>
+                                <button class="command-btn paper-secondary-btn" onclick="manualPaperNote('${item.symbol}', 'Watch')">Watch</button>
+                                <button class="command-btn paper-danger-btn" onclick="manualPaperNote('${item.symbol}', 'Skipped')">Skip</button>
+                            </td>
+                        </tr>
+                    `).join('');
+                    document.getElementById('paper_actions_body').innerHTML = actionRows || '<tr><td colspan="6" style="text-align:center; color:var(--text-tertiary);">No allocation candidates today.</td></tr>';
+
+                    const ledgerRows = (state.ledger || []).map(entry => {
+                        const symbolClick = (typeof STOCK_DATA !== 'undefined' && STOCK_DATA[entry.symbol]) ? `onclick="showStockDetails('${entry.symbol}')"` : '';
+                        const actionClass = entry.action === 'Buy' ? 'action-good' : entry.action === 'Skipped' ? 'action-risk' : 'action-watch';
+                        return `
+                            <tr>
+                                <td class="mono">${entry.date || '-'}</td>
+                                <td><span class="action-pill ${actionClass}">${entry.action}</span></td>
+                                <td class="mono" ${symbolClick} style="font-weight:800; color:var(--accent);">${entry.symbol || '-'}</td>
+                                <td class="mono">${Number(entry.shares || 0).toLocaleString()}</td>
+                                <td class="mono">${formatPaperCurrency(entry.price)}</td>
+                                <td class="mono">${formatPaperCurrency(entry.amount)}</td>
+                                <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">${entry.note || '-'}</td>
+                            </tr>
+                        `;
+                    }).join('');
+                    document.getElementById('paper_ledger_body').innerHTML = ledgerRows || '<tr><td colspan="7" style="text-align:center; color:var(--text-tertiary);">Paper ledger is empty.</td></tr>';
+                    document.getElementById('paper_ledger_count').textContent = `${(state.ledger || []).length} entries`;
+
+                    const status = document.getElementById('paper_auto_status');
+                    if (status && state.lastMarketDate) {
+                        status.textContent = `Last synced ${state.lastMarketDate}`;
+                    }
+                }
+
+                function resetPaperTrading() {
+                    if (!confirm('Reset the local paper portfolio and ledger?')) return;
+                    localStorage.removeItem(PAPER_STORAGE_KEY);
+                    runPaperAutomation();
+                }
+
+                function exportPaperTrading() {
+                    const state = loadPaperState();
+                    const blob = new Blob([JSON.stringify(state, null, 2)], {type: 'application/json'});
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = `pse-paper-trading-${PAPER_DATA.market_date || 'export'}.json`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                }
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    runPaperAutomation();
+                });
                 
                 function sortTable(tableId, n, type) {
                     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
                     table = document.getElementById(tableId);
+                    if (!table) return;
                     switching = true;
                     dir = "asc";
                     
@@ -18143,6 +18568,7 @@
                             shouldSwitch = false;
                             x = rows[i].getElementsByTagName("TD")[n];
                             y = rows[i + 1].getElementsByTagName("TD")[n];
+                            if (!x || !y) continue;
                             
                             let xVal = x.textContent.trim();
                             let yVal = y.textContent.trim();

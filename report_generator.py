@@ -899,6 +899,42 @@ class ReportGenerator:
         add_readiness = daily_actions.get("add_readiness", {})
         add_thresholds = add_readiness.get("thresholds", {})
         allocation_plan = daily_actions.get("allocation_plan", {})
+        paper_symbols = set()
+        for item in allocation_plan.get("suggestions", []):
+            if item.get("symbol"):
+                paper_symbols.add(item.get("symbol"))
+        for action in daily_actions.get("actions", []):
+            if action.get("symbol"):
+                paper_symbols.add(action.get("symbol"))
+
+        paper_price_map = {}
+        paper_sector_map = {}
+        for symbol in paper_symbols:
+            action_item = action_lookup.get(symbol, {})
+            meta = stock_meta.get(symbol, {})
+            tech = tech_data.get(symbol, {})
+            plan = action_item.get("trade_plan", {})
+            paper_price_map[symbol] = (
+                plan.get("entry_price")
+                or tech.get("last_close")
+                or 0
+            )
+            paper_sector_map[symbol] = normalize_sector(
+                meta.get("sector")
+                or action_item.get("sector")
+                or sector_fallback.get(symbol)
+                or "Unknown"
+            )
+
+        paper_payload = {
+            "market_date": daily_actions.get("market_date") or daily_actions.get("generated_at", "-"),
+            "generated_at": daily_actions.get("generated_at", "-"),
+            "allocation_plan": allocation_plan,
+            "actions": daily_actions.get("actions", [])[:40],
+            "prices": paper_price_map,
+            "sectors": paper_sector_map,
+            "starting_cash": max(float(allocation_plan.get("budget", 0) or 0) * 10, 100000.0),
+        }
         closest_add_rows = ""
         for item in add_readiness.get("closest", [])[:12]:
             blockers = "; ".join(item.get("blockers", [])[:3]) or "Qualified"
@@ -1100,6 +1136,126 @@ class ReportGenerator:
             </div>
         </div>
         """
+
+        paper_trading_html = f"""
+        <div id="paper_trading" class="section">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Paper Execution</div>
+                    <h1 class="page-title">Automated Paper Trading</h1>
+                    <div class="page-subtitle">The action engine applies today&apos;s qualified allocation plan to a browser-local paper portfolio, with manual controls for review and overrides.</div>
+                </div>
+                <div style="text-align:right; color:var(--text-tertiary); font-size:0.82rem;">
+                    <div style="color:var(--text-secondary); font-weight:700;">Market date {paper_payload.get('market_date', '-')}</div>
+                    <div id="paper_auto_status">Waiting for sync</div>
+                </div>
+            </div>
+
+            <div class="kpi-strip">
+                <div class="kpi">
+                    <div class="kpi-label">Paper Equity</div>
+                    <div class="kpi-value mono" id="paper_equity">-</div>
+                    <div class="kpi-note">Cash plus open positions</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Cash</div>
+                    <div class="kpi-value mono" id="paper_cash">-</div>
+                    <div class="kpi-note">Available buying power</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Invested</div>
+                    <div class="kpi-value mono" id="paper_invested">-</div>
+                    <div class="kpi-note">Current market value</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-label">Paper P/L</div>
+                    <div class="kpi-value mono" id="paper_pl">-</div>
+                    <div class="kpi-note">Unrealized plus cash drift</div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Execution Control</h3>
+                    <span class="status-pill" id="paper_processed_badge">Local only</span>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+                    <button class="command-btn" onclick="runPaperAutomation()">Auto Sync</button>
+                    <button class="command-btn paper-secondary-btn" onclick="exportPaperTrading()">Export JSON</button>
+                    <button class="command-btn paper-danger-btn" onclick="resetPaperTrading()">Reset Paper</button>
+                </div>
+            </div>
+
+            <div class="portfolio-command-grid paper-grid">
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h3>Open Paper Positions</h3>
+                        <span class="status-pill" id="paper_position_count">0 positions</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="table_paper_positions">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable('table_paper_positions', 0)">Symbol ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 1, 'num')">Shares ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 2, 'num')">Avg ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 3, 'num')">Current ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 4, 'num')">Value ↕</th>
+                                    <th onclick="sortTable('table_paper_positions', 5, 'num')">P/L ↕</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paper_positions_body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="panel-header">
+                        <h3>Today&apos;s Paper Actions</h3>
+                        <span class="status-pill">{len(allocation_plan.get('suggestions', []))} auto candidates</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="table_paper_actions">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable('table_paper_actions', 0)">Symbol ↕</th>
+                                    <th onclick="sortTable('table_paper_actions', 1)">Action ↕</th>
+                                    <th onclick="sortTable('table_paper_actions', 2, 'num')">Amount ↕</th>
+                                    <th onclick="sortTable('table_paper_actions', 3, 'num')">Shares ↕</th>
+                                    <th onclick="sortTable('table_paper_actions', 4, 'num')">Entry ↕</th>
+                                    <th>Manual</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paper_actions_body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h3>Paper Ledger</h3>
+                    <span class="status-pill" id="paper_ledger_count">0 entries</span>
+                </div>
+                <div class="table-container" style="max-height:420px;">
+                    <table class="data-table" id="table_paper_ledger">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('table_paper_ledger', 0)">Date ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 1)">Action ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 2)">Symbol ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 3, 'num')">Shares ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 4, 'num')">Price ↕</th>
+                                <th onclick="sortTable('table_paper_ledger', 5, 'num')">Amount ↕</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paper_ledger_body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        """.strip()
 
         # --- ACTION PERFORMANCE HTML ---
         outcome_rows = ""
@@ -1836,12 +1992,28 @@ class ReportGenerator:
                     white-space: nowrap;
                 }}
 
+                .paper-secondary-btn {{
+                    background: rgba(255,255,255,0.06);
+                    color: var(--text-primary);
+                    box-shadow: none;
+                }}
+
+                .paper-danger-btn {{
+                    background: rgba(239,68,68,0.18);
+                    color: #fecaca;
+                    box-shadow: none;
+                }}
+
                 .portfolio-command-grid {{
                     display: grid;
                     grid-template-columns: minmax(300px, 390px) minmax(0, 1fr);
                     gap: 1rem;
                     margin-bottom: 1.25rem;
                     align-items: start;
+                }}
+
+                .paper-grid {{
+                    grid-template-columns: minmax(420px, 0.9fr) minmax(0, 1.1fr);
                 }}
 
                 .portfolio-health {{
@@ -2202,6 +2374,10 @@ class ReportGenerator:
                     Daily Actions <span class="nav-badge">{action_summary.get('total_actions', len(daily_actions.get('actions', [])))}</span>
                 </div>
 
+                <div class="nav-item" data-section="paper_trading" onclick="showSection('paper_trading')">
+                    Paper Trading <span class="nav-badge">Auto</span>
+                </div>
+
                 <div class="nav-item" data-section="action_performance" onclick="showSection('action_performance')">
                     Performance <span class="nav-badge">{len(action_outcomes.get('outcomes', []))}</span>
                 </div>
@@ -2238,6 +2414,7 @@ class ReportGenerator:
                 <main>
                     {portfolio_html}
                     {daily_actions_html}
+                    {paper_trading_html}
                     {action_performance_html}
                     {data_health_html}
 
@@ -2553,10 +2730,298 @@ class ReportGenerator:
                     if (completeEl) completeEl.textContent = complete;
                     if (pendingEl) pendingEl.textContent = pending;
                 }}
+
+                const PAPER_DATA = {json.dumps(paper_payload)};
+                const PAPER_STORAGE_KEY = 'pse_paper_state_v1';
+
+                function defaultPaperState() {{
+                    const startingCash = Number(PAPER_DATA.starting_cash || 100000);
+                    return {{
+                        cash: startingCash,
+                        initialCash: startingCash,
+                        positions: {{}},
+                        ledger: [],
+                        processedKeys: []
+                    }};
+                }}
+
+                function loadPaperState() {{
+                    try {{
+                        const raw = localStorage.getItem(PAPER_STORAGE_KEY);
+                        if (!raw) return defaultPaperState();
+                        const state = JSON.parse(raw);
+                        return {{
+                            ...defaultPaperState(),
+                            ...state,
+                            positions: state.positions || {{}},
+                            ledger: Array.isArray(state.ledger) ? state.ledger : [],
+                            processedKeys: Array.isArray(state.processedKeys) ? state.processedKeys : []
+                        }};
+                    }} catch (err) {{
+                        return defaultPaperState();
+                    }}
+                }}
+
+                function savePaperState(state) {{
+                    localStorage.setItem(PAPER_STORAGE_KEY, JSON.stringify(state));
+                }}
+
+                function formatPaperCurrency(value) {{
+                    const num = Number(value || 0);
+                    return `₱${{num.toLocaleString(undefined, {{minimumFractionDigits: 2, maximumFractionDigits: 2}})}}`;
+                }}
+
+                function paperPrice(symbol) {{
+                    const data = (typeof STOCK_DATA !== 'undefined' && STOCK_DATA[symbol]) ? STOCK_DATA[symbol] : null;
+                    return Number(PAPER_DATA.prices[symbol] || (data ? data.price : 0) || 0);
+                }}
+
+                function paperSector(symbol) {{
+                    const data = (typeof STOCK_DATA !== 'undefined' && STOCK_DATA[symbol]) ? STOCK_DATA[symbol] : null;
+                    return PAPER_DATA.sectors[symbol] || (data ? data.sector : 'Unknown') || 'Unknown';
+                }}
+
+                function addPaperLedger(state, entry) {{
+                    state.ledger.unshift({{
+                        date: PAPER_DATA.market_date || new Date().toISOString().slice(0, 10),
+                        created_at: new Date().toISOString(),
+                        ...entry
+                    }});
+                }}
+
+                function applyPaperBuy(state, item, source, key) {{
+                    const symbol = item.symbol;
+                    const price = Number(item.entry_price || item.price || paperPrice(symbol));
+                    const desiredShares = Number(item.shares || item.suggested_shares || 0);
+                    let shares = Math.floor(desiredShares);
+                    if (!shares && item.amount && price > 0) shares = Math.floor(Number(item.amount) / price);
+                    if (!shares || shares <= 0 || price <= 0) {{
+                        addPaperLedger(state, {{
+                            action: 'Skipped',
+                            symbol,
+                            shares: 0,
+                            price,
+                            amount: 0,
+                            source,
+                            note: 'No executable share quantity or price'
+                        }});
+                        if (key) state.processedKeys.push(key);
+                        return false;
+                    }}
+
+                    let amount = shares * price;
+                    if (amount > state.cash) {{
+                        shares = Math.floor(state.cash / price);
+                        amount = shares * price;
+                    }}
+
+                    if (!shares || amount <= 0 || amount > state.cash) {{
+                        addPaperLedger(state, {{
+                            action: 'Skipped',
+                            symbol,
+                            shares: 0,
+                            price,
+                            amount: 0,
+                            source,
+                            note: 'Insufficient paper cash'
+                        }});
+                        if (key) state.processedKeys.push(key);
+                        return false;
+                    }}
+
+                    const existing = state.positions[symbol] || {{shares: 0, avg_price: 0, sector: paperSector(symbol)}};
+                    const oldCost = Number(existing.shares || 0) * Number(existing.avg_price || 0);
+                    const newShares = Number(existing.shares || 0) + shares;
+                    state.positions[symbol] = {{
+                        shares: newShares,
+                        avg_price: (oldCost + amount) / newShares,
+                        sector: item.sector || existing.sector || paperSector(symbol)
+                    }};
+                    state.cash = Number(state.cash || 0) - amount;
+                    addPaperLedger(state, {{
+                        action: 'Buy',
+                        symbol,
+                        shares,
+                        price,
+                        amount,
+                        source,
+                        note: item.reason || 'Executed from allocation plan'
+                    }});
+                    if (key) state.processedKeys.push(key);
+                    return true;
+                }}
+
+                function runPaperAutomation() {{
+                    const state = loadPaperState();
+                    const marketDate = PAPER_DATA.market_date || PAPER_DATA.generated_at || 'unknown';
+                    let executed = 0;
+                    let skipped = 0;
+
+                    (PAPER_DATA.allocation_plan.suggestions || []).forEach(item => {{
+                        const key = `${{marketDate}}:AUTO:BUY:${{item.symbol}}`;
+                        if (state.processedKeys.includes(key)) return;
+                        const ok = applyPaperBuy(state, item, 'auto', key);
+                        if (ok) executed++; else skipped++;
+                    }});
+
+                    state.lastAutoRun = new Date().toISOString();
+                    state.lastMarketDate = marketDate;
+                    savePaperState(state);
+                    renderPaperTrading();
+
+                    const status = document.getElementById('paper_auto_status');
+                    if (status) {{
+                        status.textContent = executed || skipped
+                            ? `Auto synced: ${{executed}} executed, ${{skipped}} skipped`
+                            : `Already synced for ${{marketDate}}`;
+                    }}
+                }}
+
+                function manualPaperBuy(symbol) {{
+                    const suggestion = (PAPER_DATA.allocation_plan.suggestions || []).find(item => item.symbol === symbol);
+                    const action = (PAPER_DATA.actions || []).find(item => item.symbol === symbol);
+                    const plan = action ? (action.trade_plan || {{}}) : {{}};
+                    const price = Number((suggestion || {{}}).entry_price || plan.entry_price || paperPrice(symbol));
+                    const state = loadPaperState();
+                    const budget = Math.min(Number((suggestion || {{}}).amount || 10000), Number(state.cash || 0));
+                    const shares = Math.floor(budget / price);
+                    applyPaperBuy(state, {{
+                        symbol,
+                        shares,
+                        entry_price: price,
+                        sector: (suggestion || action || {{}}).sector || paperSector(symbol),
+                        reason: 'Manual paper buy'
+                    }}, 'manual');
+                    savePaperState(state);
+                    renderPaperTrading();
+                }}
+
+                function manualPaperNote(symbol, action) {{
+                    const state = loadPaperState();
+                    addPaperLedger(state, {{
+                        action,
+                        symbol,
+                        shares: 0,
+                        price: paperPrice(symbol),
+                        amount: 0,
+                        source: 'manual',
+                        note: action === 'Watch' ? 'Marked for paper watch' : 'Skipped by manual review'
+                    }});
+                    savePaperState(state);
+                    renderPaperTrading();
+                }}
+
+                function renderPaperTrading() {{
+                    if (!document.getElementById('paper_positions_body')) return;
+
+                    const state = loadPaperState();
+                    const positions = Object.entries(state.positions || {{}})
+                        .filter(([, pos]) => Number(pos.shares || 0) > 0)
+                        .sort(([a], [b]) => a.localeCompare(b));
+
+                    let invested = 0;
+                    let cost = 0;
+                    const positionRows = positions.map(([symbol, pos]) => {{
+                        const shares = Number(pos.shares || 0);
+                        const avg = Number(pos.avg_price || 0);
+                        const current = paperPrice(symbol) || avg;
+                        const value = shares * current;
+                        const pl = value - (shares * avg);
+                        invested += value;
+                        cost += shares * avg;
+                        const plClass = pl >= 0 ? 'text-green' : 'text-red';
+                        const click = (typeof STOCK_DATA !== 'undefined' && STOCK_DATA[symbol]) ? `onclick="showStockDetails('${{symbol}}')" style="cursor:pointer;"` : '';
+                        return `
+                            <tr ${{click}}>
+                                <td class="mono" style="font-weight:800; color:var(--accent);">${{symbol}}</td>
+                                <td class="mono">${{shares.toLocaleString()}}</td>
+                                <td class="mono">${{formatPaperCurrency(avg)}}</td>
+                                <td class="mono">${{formatPaperCurrency(current)}}</td>
+                                <td class="mono">${{formatPaperCurrency(value)}}</td>
+                                <td class="mono ${{plClass}}">${{formatPaperCurrency(pl)}}</td>
+                            </tr>
+                        `;
+                    }}).join('');
+
+                    const equity = Number(state.cash || 0) + invested;
+                    const totalPl = equity - Number(state.initialCash || 0);
+                    document.getElementById('paper_positions_body').innerHTML = positionRows || '<tr><td colspan="6" style="text-align:center; color:var(--text-tertiary);">No paper positions yet.</td></tr>';
+                    document.getElementById('paper_equity').textContent = formatPaperCurrency(equity);
+                    document.getElementById('paper_cash').textContent = formatPaperCurrency(state.cash);
+                    document.getElementById('paper_invested').textContent = formatPaperCurrency(invested);
+                    document.getElementById('paper_pl').textContent = formatPaperCurrency(totalPl);
+                    document.getElementById('paper_pl').classList.remove('text-green', 'text-red');
+                    document.getElementById('paper_pl').classList.add(totalPl >= 0 ? 'text-green' : 'text-red');
+                    document.getElementById('paper_position_count').textContent = `${{positions.length}} positions`;
+                    document.getElementById('paper_processed_badge').textContent = `${{state.processedKeys.length}} processed`;
+
+                    const actionRows = (PAPER_DATA.allocation_plan.suggestions || []).map(item => `
+                        <tr>
+                            <td class="mono" style="font-weight:800; color:var(--accent);">${{item.symbol}}</td>
+                            <td><span class="action-pill action-good">${{item.action || 'Allocate'}}</span></td>
+                            <td class="mono">${{formatPaperCurrency(item.amount)}}</td>
+                            <td class="mono">${{Number(item.shares || 0).toLocaleString()}}</td>
+                            <td class="mono">${{formatPaperCurrency(item.entry_price)}}</td>
+                            <td>
+                                <button class="command-btn paper-secondary-btn" onclick="manualPaperBuy('${{item.symbol}}')">Buy</button>
+                                <button class="command-btn paper-secondary-btn" onclick="manualPaperNote('${{item.symbol}}', 'Watch')">Watch</button>
+                                <button class="command-btn paper-danger-btn" onclick="manualPaperNote('${{item.symbol}}', 'Skipped')">Skip</button>
+                            </td>
+                        </tr>
+                    `).join('');
+                    document.getElementById('paper_actions_body').innerHTML = actionRows || '<tr><td colspan="6" style="text-align:center; color:var(--text-tertiary);">No allocation candidates today.</td></tr>';
+
+                    const ledgerRows = (state.ledger || []).map(entry => {{
+                        const symbolClick = (typeof STOCK_DATA !== 'undefined' && STOCK_DATA[entry.symbol]) ? `onclick="showStockDetails('${{entry.symbol}}')"` : '';
+                        const actionClass = entry.action === 'Buy' ? 'action-good' : entry.action === 'Skipped' ? 'action-risk' : 'action-watch';
+                        return `
+                            <tr>
+                                <td class="mono">${{entry.date || '-'}}</td>
+                                <td><span class="action-pill ${{actionClass}}">${{entry.action}}</span></td>
+                                <td class="mono" ${{symbolClick}} style="font-weight:800; color:var(--accent);">${{entry.symbol || '-'}}</td>
+                                <td class="mono">${{Number(entry.shares || 0).toLocaleString()}}</td>
+                                <td class="mono">${{formatPaperCurrency(entry.price)}}</td>
+                                <td class="mono">${{formatPaperCurrency(entry.amount)}}</td>
+                                <td style="min-width:260px; color:var(--text-secondary); font-size:0.82rem;">${{entry.note || '-'}}</td>
+                            </tr>
+                        `;
+                    }}).join('');
+                    document.getElementById('paper_ledger_body').innerHTML = ledgerRows || '<tr><td colspan="7" style="text-align:center; color:var(--text-tertiary);">Paper ledger is empty.</td></tr>';
+                    document.getElementById('paper_ledger_count').textContent = `${{(state.ledger || []).length}} entries`;
+
+                    const status = document.getElementById('paper_auto_status');
+                    if (status && state.lastMarketDate) {{
+                        status.textContent = `Last synced ${{state.lastMarketDate}}`;
+                    }}
+                }}
+
+                function resetPaperTrading() {{
+                    if (!confirm('Reset the local paper portfolio and ledger?')) return;
+                    localStorage.removeItem(PAPER_STORAGE_KEY);
+                    runPaperAutomation();
+                }}
+
+                function exportPaperTrading() {{
+                    const state = loadPaperState();
+                    const blob = new Blob([JSON.stringify(state, null, 2)], {{type: 'application/json'}});
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = `pse-paper-trading-${{PAPER_DATA.market_date || 'export'}}.json`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                }}
+
+                document.addEventListener('DOMContentLoaded', () => {{
+                    runPaperAutomation();
+                }});
                 
                 function sortTable(tableId, n, type) {{
                     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
                     table = document.getElementById(tableId);
+                    if (!table) return;
                     switching = true;
                     dir = "asc";
                     
@@ -2567,6 +3032,7 @@ class ReportGenerator:
                             shouldSwitch = false;
                             x = rows[i].getElementsByTagName("TD")[n];
                             y = rows[i + 1].getElementsByTagName("TD")[n];
+                            if (!x || !y) continue;
                             
                             let xVal = x.textContent.trim();
                             let yVal = y.textContent.trim();
