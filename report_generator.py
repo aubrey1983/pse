@@ -6,7 +6,7 @@ import os
 import json
 import base64
 from typing import Dict
-from stock_data import STOCK_CATEGORIES
+from stock_data import STOCK_CATEGORIES, normalize_sector
 from analyzer import Analyzer
 from portfolio_manager import PortfolioManager
 
@@ -236,6 +236,21 @@ class ReportGenerator:
                 "learning_profile": {},
                 "outcomes": [],
             }
+
+        action_history = self.load_json("data/daily_action_history.json")
+        if not isinstance(action_history, list):
+            action_history = []
+
+        sector_fallback = {}
+        for outcome in action_outcomes.get("outcomes", []):
+            sector = outcome.get("sector")
+            if sector and sector != "Unknown":
+                sector_fallback.setdefault(outcome.get("symbol"), sector)
+        for day in action_history:
+            for action in day.get("tracked_actions", []):
+                sector = action.get("sector")
+                if sector and sector != "Unknown":
+                    sector_fallback.setdefault(action.get("symbol"), sector)
 
         def parse_date(value):
             if not value or value == "-":
@@ -844,6 +859,11 @@ class ReportGenerator:
             if not symbol or not tech:
                 return ""
             official = stock_meta.get(symbol, {})
+            action_meta = action_lookup.get(symbol, {})
+            if not official.get("sector") and action_meta.get("sector"):
+                official = {**official, "sector": action_meta.get("sector")}
+            if (not official.get("sector") or official.get("sector") == "Unknown") and sector_fallback.get(symbol):
+                official = {**official, "sector": sector_fallback.get(symbol)}
             item = {
                 "symbol": symbol,
                 "company_name": official.get("name", symbol),
@@ -1281,6 +1301,7 @@ class ReportGenerator:
         portfolio_html = ""
         portfolio_rows = ""
         portfolio_actions = []
+        sector_exposure = {}
         
         # Summary Cards
         total_eq = portfolio_summary['total_equity']
@@ -1305,7 +1326,6 @@ class ReportGenerator:
             official = stock_meta.get(sym, {})
             tech = tech_data.get(sym, {})
             fund = official_fund.get(sym, {})
-            sector = official.get('sector', 'Unknown')
             mom_score, _ = self.analyzer.calculate_monthly_gain_score(tech, fund)
             allocation_pct = (p['market_value'] / total_eq * 100.0) if total_eq > 0 else 0.0
             risk_pct = tech.get('risk_pct', 0)
@@ -1313,6 +1333,13 @@ class ReportGenerator:
             trend = tech.get('trend', 'Unknown')
 
             engine_action = action_lookup.get(sym)
+            sector = normalize_sector(
+                official.get('sector')
+                or (engine_action or {}).get('sector')
+                or sector_fallback.get(sym)
+                or 'Unknown'
+            )
+            sector_exposure[sector] = sector_exposure.get(sector, 0.0) + p['market_value']
             if engine_action:
                 action_label = engine_action.get("action", "Hold")
                 action_cls = action_class_map.get(action_label, "action-neutral")
@@ -1348,7 +1375,8 @@ class ReportGenerator:
                 'tech': tech if tech else {'last_close': curr},
                 'fund': fund
             }
-            onclick = self._generate_onclick(p_item, official)
+            official_for_modal = {**official, 'sector': sector}
+            onclick = self._generate_onclick(p_item, official_for_modal)
             
             portfolio_rows += f"""
                 <tr {onclick}>
@@ -1440,6 +1468,7 @@ class ReportGenerator:
                 document.addEventListener('DOMContentLoaded', function() {{
                     // Portfolio Data from Python
                     const positions = {json.dumps(portfolio_summary['positions'])};
+                    const sectorMap = {json.dumps(sector_exposure)};
                     
                     // 1. Asset Allocation Data
                     const labels = positions.map(p => p.symbol);
@@ -1467,25 +1496,13 @@ class ReportGenerator:
                         }}
                     }});
                     
-                    // 2. Sector Allocation Data
-                    const sectorMap = {{}};
-                    // Need to fetch sector from the big STOCK_DATA object if available, 
-                    // or pass it in. Since STOCK_DATA is global, we can use it!
-                    
-                    positions.forEach(p => {{
-                        let data = STOCK_DATA[p.symbol];
-                        let sec = data ? data.sector : 'Unknown';
-                        if(!sectorMap[sec]) sectorMap[sec] = 0;
-                        sectorMap[sec] += p.market_value;
-                    }});
-                    
                     new Chart(document.getElementById('chartSector'), {{
                         type: 'pie',
                         data: {{
                             labels: Object.keys(sectorMap),
                             datasets: [{{
                                 data: Object.values(sectorMap),
-                                backgroundColor: ['#8b5cf6', '#ec4899', '#f59e0b', '#3b82f6', '#10b981'],
+                                backgroundColor: ['#8b5cf6', '#ec4899', '#f59e0b', '#3b82f6', '#10b981', '#14b8a6', '#ef4444', '#64748b'],
                                 borderColor: '#1e293b',
                                 borderWidth: 2
                             }}]

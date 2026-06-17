@@ -185,6 +185,19 @@ class ActionEngine:
                     dates.append(row["time"])
         return max(dates) if dates else datetime.now(timezone.utc).date().isoformat()
 
+    def _sector_fallbacks(self):
+        history = load_json(HISTORY_FILE)
+        if not isinstance(history, list):
+            return {}
+        sectors = {}
+        for day in history:
+            for action in day.get("tracked_actions", []):
+                sector = action.get("sector")
+                symbol = action.get("symbol")
+                if symbol and sector and sector != "Unknown":
+                    sectors.setdefault(symbol, sector)
+        return sectors
+
     def _build_allocation_plan(self, actions, add_readiness, sector_values, total_equity):
         budget = self.monthly_budget
         thresholds = self._thresholds()
@@ -253,12 +266,13 @@ class ActionEngine:
         current_prices = {s: t.get("last_close", 0) for s, t in tech_data.items()}
         portfolio_summary = portfolio_mgr.get_portfolio_summary(current_prices)
         total_equity = portfolio_summary["total_equity"]
+        sector_fallback = self._sector_fallbacks()
 
         sector_values = {}
         held_symbols = {p["symbol"] for p in portfolio_summary["positions"]}
         for p in portfolio_summary["positions"]:
             symbol = p["symbol"]
-            sector = normalize_sector(meta_data.get(symbol, {}).get("sector", "Unknown"))
+            sector = normalize_sector(meta_data.get(symbol, {}).get("sector") or sector_fallback.get(symbol) or "Unknown")
             sector_values[sector] = sector_values.get(sector, 0.0) + p["market_value"]
 
         actions = []
@@ -269,7 +283,7 @@ class ActionEngine:
             tech = tech_data.get(symbol, {})
             fund = fund_data.get(symbol, {})
             meta = meta_data.get(symbol, {})
-            sector = normalize_sector(meta.get("sector", "Unknown"))
+            sector = normalize_sector(meta.get("sector") or sector_fallback.get(symbol) or "Unknown")
             mom_score, reasons = self.analyzer.calculate_monthly_gain_score(tech, fund)
             trend = tech.get("trend", "Unknown")
             allocation_pct = (p["market_value"] / total_equity * 100.0) if total_equity else 0.0
@@ -325,7 +339,7 @@ class ActionEngine:
             if fund.get("status") in ["Suspended", "Halted"]:
                 continue
             meta = meta_data.get(symbol, {})
-            sector = normalize_sector(meta.get("sector", "Unknown"))
+            sector = normalize_sector(meta.get("sector") or sector_fallback.get(symbol) or "Unknown")
             mom_score, reasons = self.analyzer.calculate_monthly_gain_score(tech, fund)
             trade_plan = self._plan_trade(symbol, tech, total_equity)
             rsi = float(tech.get("rsi") or 50)
