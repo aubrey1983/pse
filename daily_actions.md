@@ -1,30 +1,30 @@
 # Daily Action Digest
 
-Generated: 2026-06-17T20:24:06+00:00
+Generated: 2026-06-18T13:35:18+00:00
 
 ## Summary
 
-- Review Risk: 10
-- Add: 1
-- Watchlist: 18
+- Review Risk: 11
+- Add: 0
+- Watchlist: 16
 - Trim Watch: 0
 
 ## Top Actions
 
 | Symbol | Action | Priority | MoM | Trend | Entry | Stop | Target | R/R |
 |---|---|---:|---:|---|---:|---:|---:|---:|
-| GTCAP | Review Risk | 116.4 | 2 | Strong Downtrend | 479.80 | 436.50 | 570.00 | 2.08 |
-| EURO | Review Risk | 116.2 | 18 | Downtrend | 1.04 | 0.94 | 1.46 | 4.24 |
-| LFM | Review Risk | 114.4 | 22 | Strong Downtrend | 29.70 | 24.25 | 35.30 | 1.03 |
-| PNB | Review Risk | 111.5 | 9 | Downtrend | 58.00 | 52.38 | 61.20 | 0.57 |
-| AGI | Review Risk | 110.8 | -4 | Strong Downtrend | 8.01 | 7.68 | 10.32 | 7.05 |
-| MWC | Review Risk | 108.7 | -2 | Strong Downtrend | 38.50 | 37.01 | 45.30 | 4.55 |
-| MEG | Review Risk | 102.4 | 12 | Strong Downtrend | 2.04 | 1.90 | 2.17 | 0.94 |
-| LTG | Review Risk | 102.0 | 10 | Strong Downtrend | 14.52 | 13.39 | 15.80 | 1.13 |
-| PSE | Review Risk | 100.0 | -15 | Strong Downtrend | 198.70 | 189.15 | 220.00 | 2.23 |
+| EURO | Review Risk | 121.6 | 49 | Strong Uptrend | 1.05 | 0.94 | 1.46 | 3.76 |
+| GTCAP | Review Risk | 116.6 | 3 | Strong Downtrend | 465.40 | 436.50 | 570.00 | 3.62 |
+| LFM | Review Risk | 114.7 | 22 | Strong Downtrend | 29.60 | 24.25 | 35.30 | 1.07 |
+| PNB | Review Risk | 112.5 | 9 | Downtrend | 57.35 | 52.38 | 61.20 | 0.77 |
+| AGI | Review Risk | 110.1 | 2 | Strong Downtrend | 8.11 | 7.68 | 10.32 | 5.17 |
+| MWC | Review Risk | 109.5 | 4 | Strong Downtrend | 38.50 | 37.01 | 45.30 | 4.55 |
+| BC | Review Risk | 103.8 | 19 | Downtrend | 6.30 | 5.46 | 6.88 | 0.69 |
+| MEG | Review Risk | 102.4 | 12 | Strong Downtrend | 2.02 | 1.90 | 2.17 | 1.26 |
+| LTG | Review Risk | 102.0 | 10 | Strong Downtrend | 14.34 | 13.39 | 15.80 | 1.53 |
+| PSE | Review Risk | 100.0 | -15 | Strong Downtrend | 200.00 | 189.15 | 220.00 | 1.84 |
 | WPI | Review Risk | 100.0 | -100 | Strong Uptrend | 0.49 | 0.40 | 0.52 | 0.33 |
-| KPPI | Add | 84.0 | 50 | Strong Uptrend | 1.38 | 1.01 | 1.88 | 1.35 |
-| BNCOM | Watchlist | 75.0 | 65 | Strong Uptrend | 11.10 | 8.35 | 11.94 | 0.31 |
+| MYNLD | Watchlist | 75.6 | 68 | Strong Uptrend | 22.45 | 18.86 | 24.45 | 0.56 |
+| BNCOM | Watchlist | 74.8 | 64 | Strong Uptrend | 11.12 | 8.35 | 11.94 | 0.30 |
 | PPC | Watchlist | 74.4 | 62 | Strong Uptrend | 15.00 | 14.03 | 15.42 | 0.43 |
-| ICT | Watchlist | 74.2 | 61 | Strong Uptrend | 900.00 | 654.26 | 995.00 | 0.39 |
-| MYNLD | Watchlist | 74.0 | 60 | Strong Uptrend | 22.70 | 18.84 | 24.45 | 0.45 |
+| APVI | Watchlist | 74.0 | 60 | Strong Uptrend | 10.06 | 8.15 | 12.00 | 1.01 |
