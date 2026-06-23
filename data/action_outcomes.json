@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-06-22T15:31:39+00:00",
+    "generated_at": "2026-06-23T12:42:23+00:00",
     "horizons": [
         5,
         10,
@@ -8,43 +8,43 @@
     ],
     "summary": {
         "5": {
-            "complete": 60,
-            "pending": 175,
+            "complete": 93,
+            "pending": 172,
             "overall": {
-                "count": 60,
-                "win_count": 30,
-                "avg_return_pct": -0.7703414054262286,
-                "avg_drawdown_pct": -4.311316321382271,
-                "avg_runup_pct": 3.397993526273796,
-                "target_hits": 9,
-                "stop_hits": 2,
-                "win_rate_pct": 50.0,
-                "target_hit_rate_pct": 15.0,
-                "stop_hit_rate_pct": 3.3333333333333335
+                "count": 93,
+                "win_count": 42,
+                "avg_return_pct": -1.3340887462101092,
+                "avg_drawdown_pct": -4.91068309247222,
+                "avg_runup_pct": 2.845013318645951,
+                "target_hits": 14,
+                "stop_hits": 3,
+                "win_rate_pct": 45.16129032258064,
+                "target_hit_rate_pct": 15.053763440860216,
+                "stop_hit_rate_pct": 3.225806451612903
             },
             "by_action": {
                 "Review Risk": {
-                    "count": 20,
-                    "win_count": 10,
-                    "avg_return_pct": -0.6191058200922317,
-                    "avg_drawdown_pct": -3.3079018959371935,
-                    "avg_runup_pct": 3.5062715076321616,
+                    "count": 29,
+                    "win_count": 13,
+                    "avg_return_pct": -0.9178352735810414,
+                    "avg_drawdown_pct": -3.824427919189732,
+                    "avg_runup_pct": 2.8282411567655656,
                     "target_hits": 0,
-                    "stop_hits": 2,
-                    "win_rate_pct": 50.0,
+                    "stop_hits": 3,
+                    "win_rate_pct": 44.827586206896555,
                     "target_hit_rate_pct": 0.0,
-                    "stop_hit_rate_pct": 10.0
+                    "stop_hit_rate_pct": 10.344827586206897
                 },
                 "Watchlist": {
-                    "count": 32,
-                    "win_count": 16,
-                    "avg_return_pct": -0.5663783140950613,
-                    "avg_drawdown_pct": -4.750938747044012,
-                    "avg_runup_pct": 3.2797520142493624,
-                    "target_hits": 6,
+                    "count": 48,
+                    "win_count": 22,
+                    "avg_return_pct": -1.2046988563272938,
+                    "avg_drawdown_pct": -5.404030771373136,
+                    "avg_runup_pct": 2.7007357734060977,
+                    "target_hits": 8,
                     "stop_hits": 0,
-                    "win_rate_pct": 50.0,
-                    "target_hit_rate_pct": 18.75,
+                    "win_rate_pct": 45.83333333333333,
+                    "target_hit_rate_pct": 16.666666666666664,
                     "stop_hit_rate_pct": 0.0
                 },
                 "Hold": {
@@ -60,22 +60,22 @@
                     "stop_hit_rate_pct": 0.0
                 },
                 "Trim Watch": {
-                    "count": 7,
-                    "win_count": 4,
-                    "avg_return_pct": -1.5678464828280183,
-                    "avg_drawdown_pct": -4.7011375814512055,
-                    "avg_runup_pct": 4.101047176849584,
-                    "target_hits": 3,
+                    "count": 15,
+                    "win_count": 7,
+                    "avg_return_pct": -2.325876591139261,
+                    "avg_drawdown_pct": -5.2539135019252114,
+                    "avg_runup_pct": 3.5224760823014383,
+                    "target_hits": 6,
                     "stop_hits": 0,
-                    "win_rate_pct": 57.14285714285714,
-                    "target_hit_rate_pct": 42.857142857142854,
+                    "win_rate_pct": 46.666666666666664,
+                    "target_hit_rate_pct": 40.0,
                     "stop_hit_rate_pct": 0.0
                 }
             }
         },
         "10": {
             "complete": 0,
-            "pending": 235,
+            "pending": 265,
             "overall": {
                 "count": 0,
                 "win_count": 0,
@@ -92,7 +92,7 @@
         },
         "20": {
             "complete": 0,
-            "pending": 235,
+            "pending": 265,
             "overall": {
                 "count": 0,
                 "win_count": 0,
@@ -109,7 +109,7 @@
         },
         "30": {
             "complete": 0,
-            "pending": 235,
+            "pending": 265,
             "overall": {
                 "count": 0,
                 "win_count": 0,
@@ -202,15 +202,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -239,15 +239,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -276,15 +276,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -313,15 +313,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -350,15 +350,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -387,15 +387,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -456,15 +456,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -493,15 +493,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -530,15 +530,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -567,15 +567,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -604,15 +604,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -641,15 +641,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -678,15 +678,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -715,15 +715,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -752,15 +752,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -789,15 +789,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -826,15 +826,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -863,15 +863,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -900,15 +900,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -937,15 +937,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1006,15 +1006,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1043,15 +1043,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1112,15 +1112,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1149,15 +1149,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1186,15 +1186,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1223,15 +1223,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1260,15 +1260,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1329,15 +1329,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1403,15 +1403,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 6
+                    "days_available": 7
                 }
             }
         },
@@ -1440,15 +1440,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1514,15 +1514,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1551,15 +1551,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1588,15 +1588,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1625,15 +1625,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1662,15 +1662,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1699,15 +1699,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1736,15 +1736,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1773,15 +1773,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1800,20 +1800,25 @@
             "reward_risk": 0.43130006161429496,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 0.0,
+                    "max_drawdown_pct": -1.3333333333333286,
+                    "max_runup_pct": 0.6666666666666643,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -1842,15 +1847,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1879,15 +1884,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1916,15 +1921,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -1985,15 +1990,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2022,15 +2027,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2091,15 +2096,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2128,15 +2133,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2165,15 +2170,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2202,15 +2207,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2239,15 +2244,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2276,15 +2281,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2303,20 +2308,25 @@
             "reward_risk": 0.8956692913385828,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 0.9823182711198394,
+                    "max_drawdown_pct": -3.3398821218074644,
+                    "max_runup_pct": 0.9823182711198394,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2345,15 +2355,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2382,15 +2392,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2451,15 +2461,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2478,20 +2488,25 @@
             "reward_risk": 0.47457627118644097,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -7.1428571428571495,
+                    "max_drawdown_pct": -7.1428571428571495,
+                    "max_runup_pct": 0.0,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2552,15 +2567,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2589,15 +2604,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2626,15 +2641,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2663,15 +2678,15 @@
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 5
+                    "days_available": 6
                 }
             }
         },
@@ -2759,20 +2774,25 @@
             "reward_risk": 1.3217391304347825,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -4.8582995951417,
+                    "max_drawdown_pct": -8.906882591093117,
+                    "max_runup_pct": 0.4048582995951417,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2791,20 +2811,25 @@
             "reward_risk": 1.0275229357798163,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -1.0101010101010124,
+                    "max_drawdown_pct": -6.902356902356904,
+                    "max_runup_pct": 0.0,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2823,20 +2848,25 @@
             "reward_risk": 0.5693950177935944,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 0.25862068965517,
+                    "max_drawdown_pct": -1.551724137931032,
+                    "max_runup_pct": 1.7241379310344827,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2855,20 +2885,25 @@
             "reward_risk": 3.507577047505535,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -3.026634382566586,
+                    "max_drawdown_pct": -4.1162227602905554,
+                    "max_runup_pct": 0.0,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2887,20 +2922,25 @@
             "reward_risk": 5.456800330715142,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -2.8423772609819156,
+                    "max_drawdown_pct": -6.847545219638257,
+                    "max_runup_pct": 1.033591731266146,
+                    "stop_hit": true,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2919,20 +2959,25 @@
             "reward_risk": 0.8948194662480388,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 0.2728512960436504,
+                    "max_drawdown_pct": -3.137789904502052,
+                    "max_runup_pct": 1.5006821282401135,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2951,20 +2996,25 @@
             "reward_risk": 0.8064516129032275,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -2.439024390243894,
+                    "max_drawdown_pct": -2.439024390243894,
+                    "max_runup_pct": 1.4634146341463536,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -2983,20 +3033,25 @@
             "reward_risk": 1.242236024844719,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 1.5625000000000013,
+                    "max_drawdown_pct": -6.250000000000005,
+                    "max_runup_pct": 3.1250000000000027,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3015,20 +3070,25 @@
             "reward_risk": 1.4999999999999987,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -2.1526418786692787,
+                    "max_drawdown_pct": -4.5988258317025466,
+                    "max_runup_pct": 2.641878669275932,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3047,20 +3107,25 @@
             "reward_risk": 0.6025326797385616,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -9.937888198757772,
+                    "max_drawdown_pct": -13.167701863354042,
+                    "max_runup_pct": 2.9813664596273095,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3079,20 +3144,25 @@
             "reward_risk": 0.35494468149378816,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 0.909090909090906,
+                    "max_drawdown_pct": -4.545454545454546,
+                    "max_runup_pct": 1.4545454545454557,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3112,19 +3182,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -3143,20 +3213,25 @@
             "reward_risk": 0.1803426510369712,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 1.0810810810810902,
+                    "max_drawdown_pct": -0.3603603603603527,
+                    "max_runup_pct": 2.882882882882886,
+                    "stop_hit": false,
+                    "target_hit": true,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3175,20 +3250,25 @@
             "reward_risk": 0.06203473945409413,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -4.120443740095089,
+                    "max_drawdown_pct": -14.421553090332806,
+                    "max_runup_pct": 9.191759112519817,
+                    "stop_hit": false,
+                    "target_hit": true,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3239,20 +3319,25 @@
             "reward_risk": 0.892538379150303,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -7.526881720430113,
+                    "max_drawdown_pct": -7.526881720430113,
+                    "max_runup_pct": 4.301075268817196,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3271,20 +3356,25 @@
             "reward_risk": 0.24585125998770774,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -4.545454545454543,
+                    "max_drawdown_pct": -4.545454545454543,
+                    "max_runup_pct": 1.5151515151515234,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3303,20 +3393,25 @@
             "reward_risk": 0.11820330969267129,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 0.2272727272727305,
+                    "max_drawdown_pct": 0.0,
+                    "max_runup_pct": 1.1363636363636365,
+                    "stop_hit": false,
+                    "target_hit": true,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3335,20 +3430,25 @@
             "reward_risk": 0.486662808438995,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -5.530973451327434,
+                    "max_drawdown_pct": -5.530973451327434,
+                    "max_runup_pct": 1.7699115044247724,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3367,20 +3467,25 @@
             "reward_risk": 0.6309148264984216,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -6.842105263157901,
+                    "max_drawdown_pct": -7.368421052631585,
+                    "max_runup_pct": 0.0,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3400,19 +3505,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -3431,20 +3536,25 @@
             "reward_risk": 0.398759415152858,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -8.681318681318688,
+                    "max_drawdown_pct": -9.89010989010989,
+                    "max_runup_pct": 0.5494505494505495,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3527,20 +3637,25 @@
             "reward_risk": 0.6489454636216145,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -4.258675078864347,
+                    "max_drawdown_pct": -6.940063091482648,
+                    "max_runup_pct": 0.0,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3559,20 +3674,25 @@
             "reward_risk": 0.12586532410320964,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 0.5747126436781614,
+                    "max_drawdown_pct": -0.5747126436781614,
+                    "max_runup_pct": 1.1494252873563229,
+                    "stop_hit": false,
+                    "target_hit": true,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3591,20 +3711,25 @@
             "reward_risk": 0.47225501770956196,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -0.8928571428571435,
+                    "max_drawdown_pct": -3.571428571428574,
+                    "max_runup_pct": -0.8928571428571435,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3655,20 +3780,25 @@
             "reward_risk": 0.34913294797687916,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -2.869757174392936,
+                    "max_drawdown_pct": -2.869757174392936,
+                    "max_runup_pct": 1.545253863134658,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3687,20 +3817,25 @@
             "reward_risk": 0.42194092827004276,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 2.4327784891165223,
+                    "max_drawdown_pct": -2.048655569782321,
+                    "max_runup_pct": 2.944942381562094,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3719,20 +3854,25 @@
             "reward_risk": 0.6352087114337567,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -0.4366812227074336,
+                    "max_drawdown_pct": -1.9650655021834031,
+                    "max_runup_pct": 4.148471615720513,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3751,20 +3891,25 @@
             "reward_risk": 0.8446566287183251,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 2.9850746268656665,
+                    "max_drawdown_pct": -10.447761194029852,
+                    "max_runup_pct": 4.477611940298506,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3783,20 +3928,25 @@
             "reward_risk": 0.3627827571489552,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 0.5025125628140708,
+                    "max_drawdown_pct": -1.2562814070351713,
+                    "max_runup_pct": 1.5075376884422125,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3815,20 +3965,25 @@
             "reward_risk": 0.11447822460627667,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -5.729166666666666,
+                    "max_drawdown_pct": -10.260416666666666,
+                    "max_runup_pct": -1.09375,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3847,20 +4002,25 @@
             "reward_risk": 0.05529750055297479,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": 7.594936708860754,
+                    "max_drawdown_pct": -18.227848101265824,
+                    "max_runup_pct": 7.594936708860754,
+                    "stop_hit": false,
+                    "target_hit": true,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3879,20 +4039,25 @@
             "reward_risk": 0.16346032943543362,
             "horizons": {
                 "5": {
-                    "status": "pending",
-                    "days_available": 4
+                    "status": "complete",
+                    "return_pct": -12.389380530973444,
+                    "max_drawdown_pct": -15.929203539823005,
+                    "max_runup_pct": 0.0,
+                    "stop_hit": false,
+                    "target_hit": false,
+                    "end_date": "2026-06-23"
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 4
+                    "days_available": 5
                 }
             }
         },
@@ -3944,19 +4109,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4008,19 +4173,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4040,19 +4205,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4072,19 +4237,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4104,19 +4269,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4136,19 +4301,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4168,19 +4333,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4200,19 +4365,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4264,19 +4429,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4296,19 +4461,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -4328,19 +4493,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4360,19 +4525,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4392,19 +4557,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -4424,19 +4589,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4456,19 +4621,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4488,19 +4653,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4520,19 +4685,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4584,19 +4749,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4616,19 +4781,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4648,19 +4813,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4680,19 +4845,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4744,19 +4909,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4776,19 +4941,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4840,19 +5005,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4872,19 +5037,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4904,19 +5069,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -4936,19 +5101,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 3
+                    "days_available": 4
                 }
             }
         },
@@ -5000,19 +5165,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5032,19 +5197,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5064,19 +5229,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5096,19 +5261,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5128,19 +5293,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5160,19 +5325,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5192,19 +5357,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5224,19 +5389,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5256,19 +5421,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5288,19 +5453,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5320,19 +5485,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5352,19 +5517,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5384,19 +5549,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5416,19 +5581,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5448,19 +5613,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5480,19 +5645,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5512,19 +5677,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5544,19 +5709,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5608,19 +5773,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5640,19 +5805,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5672,19 +5837,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5736,19 +5901,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5768,19 +5933,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -5800,19 +5965,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5832,19 +5997,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5864,19 +6029,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5896,19 +6061,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5928,19 +6093,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 2
+                    "days_available": 3
                 }
             }
         },
@@ -5992,19 +6157,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6024,19 +6189,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6056,19 +6221,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6088,19 +6253,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6120,19 +6285,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6152,19 +6317,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6184,19 +6349,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6216,19 +6381,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6248,19 +6413,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6280,19 +6445,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6312,19 +6477,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6344,19 +6509,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6376,19 +6541,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6408,19 +6573,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6440,19 +6605,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6472,19 +6637,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6504,19 +6669,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6536,19 +6701,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6568,19 +6733,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6632,19 +6797,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6664,19 +6829,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6728,19 +6893,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6760,19 +6925,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6792,19 +6957,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6824,19 +6989,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -6856,19 +7021,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6888,19 +7053,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6920,19 +7085,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 1
+                    "days_available": 2
                 }
             }
         },
@@ -6984,19 +7149,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7016,19 +7181,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7048,19 +7213,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7080,19 +7245,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7112,19 +7277,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7144,19 +7309,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7176,19 +7341,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7208,19 +7373,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7240,19 +7405,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7272,19 +7437,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7304,19 +7469,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7336,19 +7501,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7368,19 +7533,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7400,19 +7565,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7432,19 +7597,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7464,19 +7629,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7496,19 +7661,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7592,19 +7757,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7624,19 +7789,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7656,19 +7821,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7688,19 +7853,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7720,19 +7885,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7784,19 +7949,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7816,19 +7981,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7848,19 +8013,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7880,19 +8045,19 @@
             "horizons": {
                 "5": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "10": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "20": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 },
                 "30": {
                     "status": "pending",
-                    "days_available": 0
+                    "days_available": 1
                 }
             }
         },
@@ -7909,6 +8074,70 @@
             "stop_loss": 12.1832,
             "target_price": 18.46,
             "reward_risk": 1.6188251001335112,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 1
+                }
+            }
+        },
+        {
+            "date": "2026-06-22",
+            "symbol": "NRCP",
+            "action": "Hold",
+            "source": "portfolio",
+            "sector": "Financials",
+            "priority": 38.8,
+            "mom_score": 24,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.92,
+            "stop_loss": 0.6499,
+            "target_price": 1.18,
+            "reward_risk": 0.9626064420584964,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 1
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 1
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "GTCAP",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Holding Firms",
+            "priority": 116.4,
+            "mom_score": 2,
+            "trend": "Strong Downtrend",
+            "entry_price": 470.0,
+            "stop_loss": 436.5,
+            "target_price": 538.0,
+            "reward_risk": 2.029850746268657,
             "horizons": {
                 "5": {
                     "status": "pending",
@@ -7929,18 +8158,914 @@
             }
         },
         {
-            "date": "2026-06-22",
-            "symbol": "NRCP",
-            "action": "Hold",
+            "date": "2026-06-23",
+            "symbol": "LFM",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Industrial",
+            "priority": 115.31,
+            "mom_score": 22,
+            "trend": "Strong Downtrend",
+            "entry_price": 29.4,
+            "stop_loss": 24.25,
+            "target_price": 35.3,
+            "reward_risk": 1.145631067961165,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "AGI",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Holding Firms",
+            "priority": 112.8,
+            "mom_score": 10,
+            "trend": "Strong Downtrend",
+            "entry_price": 8.01,
+            "stop_loss": 7.6823999999999995,
+            "target_price": 10.32,
+            "reward_risk": 7.051282051282046,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "PNB",
+            "action": "Review Risk",
             "source": "portfolio",
             "sector": "Financials",
-            "priority": 38.8,
-            "mom_score": 24,
-            "trend": "Strong Uptrend",
-            "entry_price": 0.92,
+            "priority": 112.22,
+            "mom_score": 14,
+            "trend": "Downtrend",
+            "entry_price": 58.15,
+            "stop_loss": 53.2045,
+            "target_price": 61.2,
+            "reward_risk": 0.6167222727732296,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "MWC",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Industrial",
+            "priority": 110.82,
+            "mom_score": -1,
+            "trend": "Strong Downtrend",
+            "entry_price": 37.6,
+            "stop_loss": 34.9685,
+            "target_price": 45.3,
+            "reward_risk": 2.9260877826334744,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "BC",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Mining and Oil",
+            "priority": 103.6,
+            "mom_score": 18,
+            "trend": "Downtrend",
+            "entry_price": 6.3,
+            "stop_loss": 5.4611,
+            "target_price": 6.8,
+            "reward_risk": 0.5960185957801886,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "MEG",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Property",
+            "priority": 100.8,
+            "mom_score": 4,
+            "trend": "Strong Downtrend",
+            "entry_price": 2.0,
+            "stop_loss": 1.9012,
+            "target_price": 2.17,
+            "reward_risk": 1.7206477732793515,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "NRCP",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Financials",
+            "priority": 100.0,
+            "mom_score": -1,
+            "trend": "Downtrend",
+            "entry_price": 0.86,
             "stop_loss": 0.6499,
             "target_price": 1.18,
-            "reward_risk": 0.9626064420584964,
+            "reward_risk": 1.5230842455973348,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "PSE",
+            "action": "Review Risk",
+            "source": "portfolio",
+            "sector": "Financials",
+            "priority": 100.0,
+            "mom_score": -15,
+            "trend": "Strong Downtrend",
+            "entry_price": 200.0,
+            "stop_loss": 189.15,
+            "target_price": 220.0,
+            "reward_risk": 1.8433179723502313,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "BNCOM",
+            "action": "Watchlist",
+            "source": "portfolio",
+            "sector": "Financials",
+            "priority": 75.0,
+            "mom_score": 65,
+            "trend": "Strong Uptrend",
+            "entry_price": 11.1,
+            "stop_loss": 8.3517,
+            "target_price": 11.94,
+            "reward_risk": 0.30564348870210667,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "SGP",
+            "action": "Watchlist",
+            "source": "portfolio",
+            "sector": "Industrial",
+            "priority": 75.0,
+            "mom_score": 65,
+            "trend": "Strong Uptrend",
+            "entry_price": 30.25,
+            "stop_loss": 19.7395,
+            "target_price": 34.45,
+            "reward_risk": 0.39960039960039984,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "PPC",
+            "action": "Watchlist",
+            "source": "portfolio",
+            "sector": "Industrial",
+            "priority": 74.4,
+            "mom_score": 62,
+            "trend": "Strong Uptrend",
+            "entry_price": 15.0,
+            "stop_loss": 14.026200000000001,
+            "target_price": 15.42,
+            "reward_risk": 0.43130006161429496,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "APVI",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Property",
+            "priority": 73.8,
+            "mom_score": 59,
+            "trend": "Strong Uptrend",
+            "entry_price": 10.28,
+            "stop_loss": 8.148,
+            "target_price": 12.0,
+            "reward_risk": 0.8067542213883682,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "ICT",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Services",
+            "priority": 73.2,
+            "mom_score": 56,
+            "trend": "Strong Uptrend",
+            "entry_price": 905.0,
+            "stop_loss": 660.5699999999999,
+            "target_price": 995.0,
+            "reward_risk": 0.3682035756658347,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "ION",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 72.8,
+            "mom_score": 54,
+            "trend": "Strong Uptrend",
+            "entry_price": 1.11,
+            "stop_loss": 0.9506,
+            "target_price": 1.2,
+            "reward_risk": 0.56461731493099,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "FPH",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 71.8,
+            "mom_score": 49,
+            "trend": "Strong Uptrend",
+            "entry_price": 80.0,
+            "stop_loss": 70.81,
+            "target_price": 84.25,
+            "reward_risk": 0.46245919477693154,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "RFM",
+            "action": "Watchlist",
+            "source": "portfolio",
+            "sector": "Industrial",
+            "priority": 71.4,
+            "mom_score": 47,
+            "trend": "Strong Uptrend",
+            "entry_price": 5.61,
+            "stop_loss": 5.0634,
+            "target_price": 5.71,
+            "reward_risk": 0.18294914013904048,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "CROWN",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Industrial",
+            "priority": 71.0,
+            "mom_score": 45,
+            "trend": "Strong Uptrend",
+            "entry_price": 1.75,
+            "stop_loss": 1.5811,
+            "target_price": 1.76,
+            "reward_risk": 0.05920663114268802,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "CEU",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.8,
+            "mom_score": 44,
+            "trend": "Strong Uptrend",
+            "entry_price": 16.7,
+            "stop_loss": 15.539399999999999,
+            "target_price": 17.0,
+            "reward_risk": 0.25848698948819626,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "AUB",
+            "action": "Watchlist",
+            "source": "portfolio",
+            "sector": "Financials",
+            "priority": 70.6,
+            "mom_score": 43,
+            "trend": "Strong Uptrend",
+            "entry_price": 44.1,
+            "stop_loss": 39.81849999999999,
+            "target_price": 44.5,
+            "reward_risk": 0.0934252014480901,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "COSCO",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Holding Firms",
+            "priority": 70.6,
+            "mom_score": 43,
+            "trend": "Strong Uptrend",
+            "entry_price": 8.0,
+            "stop_loss": 6.4117,
+            "target_price": 8.4,
+            "reward_risk": 0.25184159163885933,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "UPM",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Mining and Oil",
+            "priority": 70.6,
+            "mom_score": 43,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.0069,
+            "stop_loss": 0.0039770000000000005,
+            "target_price": 0.009,
+            "reward_risk": 0.718439958946288,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "MREIT",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.4,
+            "mom_score": 42,
+            "trend": "Strong Uptrend",
+            "entry_price": 13.96,
+            "stop_loss": 12.9592,
+            "target_price": 14.48,
+            "reward_risk": 0.5195843325339715,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "RCR",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.2,
+            "mom_score": 41,
+            "trend": "Uptrend",
+            "entry_price": 7.09,
+            "stop_loss": 6.2468,
+            "target_price": 7.3,
+            "reward_risk": 0.24905123339658455,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "WIN",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.2,
+            "mom_score": 41,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.31,
+            "stop_loss": 0.2522,
+            "target_price": 0.38,
+            "reward_risk": 1.2110726643598613,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "ORE",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.0,
+            "mom_score": 40,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.45,
+            "stop_loss": 0.388,
+            "target_price": 0.53,
+            "reward_risk": 1.2903225806451615,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "VMC",
+            "action": "Watchlist",
+            "source": "candidate",
+            "sector": "Unknown",
+            "priority": 70.0,
+            "mom_score": 40,
+            "trend": "Strong Uptrend",
+            "entry_price": 2.0,
+            "stop_loss": 1.5907999999999998,
+            "target_price": 2.17,
+            "reward_risk": 0.41544477028347954,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "APX",
+            "action": "Hold",
+            "source": "portfolio",
+            "sector": "Mining and Oil",
+            "priority": 41.0,
+            "mom_score": 35,
+            "trend": "Downtrend",
+            "entry_price": 14.5,
+            "stop_loss": 12.706999999999999,
+            "target_price": 18.46,
+            "reward_risk": 2.208588957055214,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "FRUIT",
+            "action": "Hold",
+            "source": "portfolio",
+            "sector": "Industrial",
+            "priority": 40.8,
+            "mom_score": 34,
+            "trend": "Strong Uptrend",
+            "entry_price": 0.65,
+            "stop_loss": 0.582,
+            "target_price": 0.69,
+            "reward_risk": 0.5882352941176454,
+            "horizons": {
+                "5": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "10": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "20": {
+                    "status": "pending",
+                    "days_available": 0
+                },
+                "30": {
+                    "status": "pending",
+                    "days_available": 0
+                }
+            }
+        },
+        {
+            "date": "2026-06-23",
+            "symbol": "LTG",
+            "action": "Hold",
+            "source": "portfolio",
+            "sector": "Holding Firms",
+            "priority": 38.4,
+            "mom_score": 22,
+            "trend": "Downtrend",
+            "entry_price": 14.7,
+            "stop_loss": 13.58,
+            "target_price": 15.8,
+            "reward_risk": 0.9821428571428591,
             "horizons": {
                 "5": {
                     "status": "pending",
