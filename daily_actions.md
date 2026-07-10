@@ -1,10 +1,10 @@
 # Daily Action Digest
 
-Generated: 2026-07-08T11:53:21+00:00
+Generated: 2026-07-10T12:32:05+00:00
 
 ## Summary
 
-- Review Risk: 12
+- Review Risk: 11
 - Add: 1
 - Watchlist: 21
 - Trim Watch: 1
@@ -13,18 +13,18 @@ Generated: 2026-07-08T11:53:21+00:00
 
 | Symbol | Action | Priority | MoM | Trend | Entry | Stop | Target | R/R |
 |---|---|---:|---:|---|---:|---:|---:|---:|
-| APX | Review Risk | 119.4 | 17 | Strong Downtrend | 12.66 | 11.15 | 18.30 | 3.75 |
-| MWC | Review Risk | 117.8 | 9 | Strong Downtrend | 35.00 | 32.25 | 45.30 | 3.75 |
-| LFM | Review Risk | 117.0 | 9 | Strong Downtrend | 28.00 | 24.25 | 35.30 | 1.95 |
-| EURO | Review Risk | 116.4 | 19 | Downtrend | 1.04 | 0.94 | 1.46 | 4.24 |
-| GTCAP | Review Risk | 116.0 | -4 | Strong Downtrend | 480.00 | 436.50 | 513.00 | 0.76 |
-| AGI | Review Risk | 115.6 | 32 | Downtrend | 8.15 | 7.52 | 9.97 | 2.88 |
-| PNB | Review Risk | 113.2 | 18 | Downtrend | 58.05 | 53.20 | 61.20 | 0.65 |
-| LTG | Review Risk | 111.6 | 8 | Strong Downtrend | 14.62 | 13.77 | 15.80 | 1.39 |
-| BNCOM | Trim Watch | 103.8 | 59 | Strong Uptrend | 10.98 | 8.74 | 11.94 | 0.43 |
-| RFM | Review Risk | 103.8 | 19 | Downtrend | 5.50 | 5.14 | 5.73 | 0.64 |
-| BC | Review Risk | 101.8 | 9 | Downtrend | 6.15 | 5.46 | 6.80 | 0.94 |
-| PSE | Review Risk | 100.8 | 4 | Strong Downtrend | 200.20 | 189.15 | 220.00 | 1.79 |
-| FRUIT | Review Risk | 100.0 | -8 | Strong Downtrend | 0.64 | 0.58 | 0.68 | 0.69 |
-| RLC | Add | 89.0 | 75 | Strong Uptrend | 16.82 | 15.52 | 18.62 | 1.38 |
-| PPC | Watchlist | 74.0 | 60 | Strong Uptrend | 15.04 | 14.03 | 15.42 | 0.37 |
+| APX | Review Risk | 121.0 | 25 | Strong Downtrend | 13.00 | 11.15 | 18.24 | 2.84 |
+| EURO | Review Risk | 118.8 | 52 | Strong Uptrend | 1.09 | 0.94 | 1.46 | 2.48 |
+| MWC | Review Risk | 117.8 | 9 | Strong Downtrend | 34.75 | 32.25 | 45.30 | 4.22 |
+| LFM | Review Risk | 117.6 | 8 | Strong Downtrend | 26.60 | 24.25 | 35.30 | 3.70 |
+| PNB | Review Risk | 116.6 | 36 | Strong Uptrend | 58.15 | 53.20 | 61.20 | 0.62 |
+| GTCAP | Review Risk | 116.0 | -1 | Strong Downtrend | 471.00 | 436.50 | 512.50 | 1.20 |
+| AGI | Review Risk | 114.3 | 28 | Downtrend | 8.20 | 7.52 | 9.87 | 2.45 |
+| LTG | Review Risk | 110.0 | 0 | Strong Downtrend | 14.30 | 13.77 | 15.80 | 2.85 |
+| BNCOM | Trim Watch | 103.8 | 59 | Strong Uptrend | 11.10 | 9.23 | 11.94 | 0.45 |
+| PSE | Review Risk | 103.0 | 15 | Downtrend | 205.00 | 189.15 | 220.00 | 0.95 |
+| BC | Review Risk | 102.8 | 14 | Downtrend | 6.14 | 5.46 | 6.80 | 0.97 |
+| WPI | Review Risk | 100.0 | -5 | Strong Downtrend | 0.42 | 0.34 | 0.52 | 1.18 |
+| MFC | Add | 84.0 | 50 | Strong Uptrend | 2450.00 | 1794.50 | 3600.00 | 1.75 |
+| PPC | Watchlist | 75.2 | 66 | Strong Uptrend | 15.10 | 14.03 | 15.42 | 0.30 |
+| RCR | Watchlist | 72.8 | 54 | Uptrend | 7.10 | 6.50 | 7.48 | 0.63 |
