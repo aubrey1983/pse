@@ -1,6 +1,6 @@
 # Backtest Results
 
-**Date**: 2026-07-14
+**Date**: 2026-07-15
 **Period**: Last 3 Months
 
 **Objective**: Monthly Gain
@@ -10,9 +10,9 @@ Comparison of different Score Thresholds over 30-day holding periods.
 
 | Threshold | Win Rate | Avg Return (30d) | Market Return | Alpha | Trades |
 |---|---|---|---|---|---|
-| 35 | 35.9% | -1.01% | -0.67% | **-0.34%** | 184 |
-| 40 | 37.9% | -1.30% | -0.67% | **-0.63%** | 103 |
-| 45 | 35.7% | -2.55% | -0.67% | **-1.88%** | 42 |
-| 50 | 75.0% | +1.44% | -0.67% | **+2.10%** | 4 |
+| 35 | 37.7% | -0.21% | -0.36% | **+0.15%** | 183 |
+| 40 | 39.6% | -0.12% | -0.36% | **+0.24%** | 101 |
+| 45 | 44.1% | -0.66% | -0.36% | **-0.30%** | 34 |
+| 50 | 50.0% | +0.65% | -0.36% | **+1.01%** | 6 |
 
 > **Note**: Returns are average monthly holding period returns, not compounded portfolio growth.

@@ -1,30 +1,30 @@
 # Daily Action Digest
 
-Generated: 2026-07-14T11:39:03+00:00
+Generated: 2026-07-15T11:42:37+00:00
 
 ## Summary
 
-- Review Risk: 9
+- Review Risk: 11
 - Add: 2
-- Watchlist: 18
-- Trim Watch: 1
+- Watchlist: 16
+- Trim Watch: 0
 
 ## Top Actions
 
 | Symbol | Action | Priority | MoM | Trend | Entry | Stop | Target | R/R |
 |---|---|---:|---:|---|---:|---:|---:|---:|
-| APX | Review Risk | 121.6 | 28 | Strong Downtrend | 12.66 | 11.15 | 18.00 | 3.55 |
-| LFM | Review Risk | 119.0 | 15 | Strong Downtrend | 25.90 | 24.25 | 35.30 | 5.70 |
-| MWC | Review Risk | 117.8 | 9 | Strong Downtrend | 34.85 | 32.25 | 45.30 | 4.02 |
-| GTCAP | Review Risk | 116.0 | -1 | Strong Downtrend | 464.00 | 436.50 | 507.50 | 1.58 |
-| AGI | Review Risk | 114.2 | 27 | Downtrend | 8.19 | 7.52 | 9.67 | 2.20 |
-| BC | Review Risk | 111.9 | 14 | Downtrend | 6.00 | 5.46 | 6.80 | 1.48 |
-| PNB | Review Risk | 111.5 | 10 | Downtrend | 58.10 | 53.20 | 60.90 | 0.57 |
-| LTG | Review Risk | 110.0 | 0 | Strong Downtrend | 14.36 | 13.77 | 15.80 | 2.46 |
-| BNCOM | Trim Watch | 104.8 | 64 | Strong Uptrend | 11.10 | 9.52 | 11.94 | 0.53 |
-| MEG | Review Risk | 103.6 | 18 | Strong Uptrend | 2.12 | 1.90 | 2.15 | 0.14 |
-| RLC | Add | 89.0 | 75 | Strong Uptrend | 16.84 | 15.52 | 18.62 | 1.35 |
+| APX | Review Risk | 121.6 | 28 | Strong Downtrend | 12.22 | 11.15 | 18.00 | 5.43 |
+| MWC | Review Risk | 119.4 | 17 | Strong Downtrend | 34.65 | 32.25 | 45.30 | 4.44 |
+| LFM | Review Risk | 118.8 | 14 | Strong Downtrend | 25.40 | 24.25 | 35.30 | 8.61 |
+| PNB | Review Risk | 116.5 | 36 | Strong Uptrend | 58.20 | 53.20 | 60.90 | 0.54 |
+| GTCAP | Review Risk | 116.0 | -9 | Strong Downtrend | 466.00 | 436.50 | 507.50 | 1.41 |
+| AGI | Review Risk | 115.0 | 29 | Downtrend | 8.15 | 7.52 | 9.50 | 2.13 |
+| BC | Review Risk | 111.6 | 14 | Downtrend | 6.02 | 5.46 | 6.80 | 1.40 |
+| LTG | Review Risk | 110.0 | 0 | Strong Downtrend | 14.50 | 13.77 | 15.80 | 1.79 |
+| ALCO | Review Risk | 100.8 | 4 | Downtrend | 0.43 | 0.41 | 0.50 | 3.10 |
+| PSE | Review Risk | 100.6 | 3 | Strong Downtrend | 204.00 | 189.15 | 220.00 | 1.08 |
+| WPI | Review Risk | 100.0 | -3 | Downtrend | 0.45 | 0.34 | 0.52 | 0.66 |
+| IMP | Add | 84.4 | 52 | Strong Uptrend | 0.93 | 0.80 | 1.10 | 1.26 |
 | MFC | Add | 84.0 | 50 | Strong Uptrend | 2450.00 | 1794.50 | 3600.00 | 1.75 |
-| PPC | Watchlist | 74.0 | 60 | Strong Uptrend | 15.00 | 14.03 | 15.42 | 0.43 |
+| PPC | Watchlist | 75.2 | 66 | Strong Uptrend | 15.10 | 14.03 | 15.42 | 0.30 |
 | EURO | Watchlist | 73.4 | 57 | Strong Uptrend | 1.10 | 0.95 | 1.46 | 2.41 |
-| AUB | Watchlist | 72.4 | 52 | Strong Uptrend | 50.60 | 40.74 | 54.00 | 0.34 |
