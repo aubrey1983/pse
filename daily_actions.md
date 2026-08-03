@@ -1,30 +1,30 @@
 # Daily Action Digest
 
-Generated: 2026-07-31T12:07:52+00:00
+Generated: 2026-08-03T13:01:36+00:00
 
 ## Summary
 
-- Review Risk: 6
+- Review Risk: 5
 - Add: 2
-- Watchlist: 23
-- Trim Watch: 1
+- Watchlist: 27
+- Trim Watch: 0
 
 ## Top Actions
 
 | Symbol | Action | Priority | MoM | Trend | Entry | Stop | Target | R/R |
 |---|---|---:|---:|---|---:|---:|---:|---:|
-| APX | Review Risk | 122.6 | 68 | Strong Uptrend | 14.24 | 11.15 | 17.60 | 1.09 |
-| GTCAP | Review Risk | 122.0 | 30 | Uptrend | 485.00 | 436.50 | 517.00 | 0.66 |
-| EURO | Review Risk | 121.3 | 56 | Strong Uptrend | 1.07 | 0.98 | 1.46 | 4.32 |
-| LFM | Review Risk | 119.6 | 18 | Strong Downtrend | 23.50 | 22.16 | 34.50 | 8.24 |
-| MWC | Review Risk | 117.6 | 9 | Strong Downtrend | 35.50 | 32.25 | 45.30 | 3.02 |
-| WPI | Review Risk | 108.0 | -11 | Strong Downtrend | 0.40 | 0.34 | 0.52 | 2.16 |
-| LTG | Trim Watch | 97.0 | 25 | Downtrend | 14.64 | 13.77 | 15.80 | 1.34 |
-| SGP | Add | 89.2 | 76 | Strong Uptrend | 28.50 | 23.96 | 34.45 | 1.31 |
+| GTCAP | Review Risk | 122.2 | 31 | Uptrend | 495.00 | 436.50 | 517.00 | 0.38 |
+| EURO | Review Risk | 121.5 | 57 | Strong Uptrend | 1.07 | 0.98 | 1.46 | 4.32 |
+| LFM | Review Risk | 120.0 | 20 | Strong Downtrend | 23.95 | 22.16 | 34.30 | 5.80 |
+| MWC | Review Risk | 119.0 | 15 | Strong Downtrend | 34.85 | 32.25 | 45.05 | 3.93 |
+| WPI | Review Risk | 114.9 | -5 | Strong Downtrend | 0.37 | 0.34 | 0.52 | 5.85 |
+| SGP | Add | 89.2 | 76 | Strong Uptrend | 28.45 | 23.96 | 34.45 | 1.34 |
 | MFC | Add | 86.8 | 64 | Strong Uptrend | 2478.00 | 2037.00 | 3600.00 | 2.54 |
+| APX | Watchlist | 75.4 | 67 | Strong Uptrend | 14.50 | 11.15 | 17.60 | 0.93 |
 | RLC | Watchlist | 75.4 | 67 | Strong Uptrend | 17.08 | 15.52 | 18.62 | 0.99 |
-| BC | Watchlist | 74.2 | 61 | Strong Uptrend | 6.30 | 5.46 | 6.80 | 0.60 |
-| OGP | Watchlist | 74.0 | 60 | Strong Uptrend | 33.45 | 28.86 | 38.20 | 1.03 |
-| ICT | Watchlist | 73.0 | 55 | Strong Uptrend | 963.00 | 729.92 | 1049.00 | 0.37 |
-| ACR | Watchlist | 72.0 | 50 | Strong Uptrend | 0.73 | 0.58 | 0.84 | 0.74 |
-| ANS | Watchlist | 71.6 | 48 | Strong Uptrend | 17.00 | 14.74 | 17.20 | 0.09 |
+| LTG | Watchlist | 75.0 | 65 | Strong Uptrend | 14.70 | 13.77 | 15.80 | 1.19 |
+| PPC | Watchlist | 74.0 | 60 | Strong Uptrend | 15.06 | 14.06 | 15.42 | 0.36 |
+| BC | Watchlist | 72.2 | 51 | Strong Uptrend | 6.30 | 5.72 | 6.80 | 0.87 |
+| FRUIT | Watchlist | 71.8 | 49 | Strong Uptrend | 0.67 | 0.58 | 0.68 | 0.11 |
+| ROCK | Watchlist | 71.8 | 49 | Strong Uptrend | 3.00 | 1.82 | 3.42 | 0.36 |
+| APVI | Watchlist | 71.8 | 49 | Strong Uptrend | 10.06 | 8.24 | 12.00 | 1.07 |
