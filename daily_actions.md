@@ -1,30 +1,30 @@
 # Daily Action Digest
 
-Generated: 2026-08-13T11:07:11+00:00
+Generated: 2026-08-14T11:04:20+00:00
 
 ## Summary
 
 - Review Risk: 7
-- Add: 1
-- Watchlist: 27
+- Add: 0
+- Watchlist: 26
 - Trim Watch: 0
 
 ## Top Actions
 
 | Symbol | Action | Priority | MoM | Trend | Entry | Stop | Target | R/R |
 |---|---|---:|---:|---|---:|---:|---:|---:|
-| GTCAP | Review Risk | 122.4 | 32 | Uptrend | 506.00 | 436.50 | 517.00 | 0.16 |
-| LFM | Review Risk | 117.8 | 9 | Strong Downtrend | 22.25 | 21.53 | 31.85 | 13.41 |
-| EURO | Review Risk | 116.6 | 20 | Downtrend | 1.04 | 0.98 | 1.46 | 6.97 |
-| MWC | Review Risk | 116.2 | 1 | Strong Downtrend | 33.40 | 32.25 | 43.50 | 8.80 |
-| WPI | Review Risk | 110.3 | -1 | Strong Downtrend | 0.39 | 0.34 | 0.52 | 2.85 |
-| AGI | Review Risk | 103.4 | 17 | Strong Uptrend | 9.14 | 7.52 | 9.20 | 0.04 |
-| BNCOM | Review Risk | 103.0 | 15 | Downtrend | 10.46 | 9.54 | 11.36 | 0.98 |
-| SGP | Add | 89.4 | 77 | Strong Uptrend | 28.10 | 23.96 | 34.45 | 1.53 |
-| APX | Watchlist | 76.6 | 73 | Strong Uptrend | 14.70 | 11.15 | 17.10 | 0.68 |
-| LTG | Watchlist | 75.0 | 65 | Strong Uptrend | 14.90 | 13.77 | 15.80 | 0.80 |
-| ICT | Watchlist | 74.6 | 63 | Strong Uptrend | 965.00 | 729.92 | 1049.00 | 0.36 |
-| PPC | Watchlist | 74.0 | 60 | Strong Uptrend | 15.00 | 14.06 | 15.42 | 0.45 |
-| RLC | Watchlist | 73.4 | 57 | Strong Uptrend | 17.50 | 15.52 | 18.08 | 0.29 |
+| GTCAP | Review Risk | 121.8 | 29 | Uptrend | 514.00 | 436.50 | 517.00 | 0.04 |
+| MWC | Review Risk | 119.0 | 15 | Strong Downtrend | 34.80 | 32.25 | 43.25 | 3.32 |
+| LFM | Review Risk | 117.8 | 9 | Strong Downtrend | 22.30 | 21.53 | 31.85 | 12.47 |
+| EURO | Review Risk | 117.6 | 29 | Downtrend | 1.05 | 0.98 | 1.46 | 5.83 |
+| WPI | Review Risk | 110.8 | 8 | Strong Downtrend | 0.40 | 0.34 | 0.52 | 2.47 |
+| AGI | Review Risk | 103.6 | 18 | Strong Uptrend | 9.45 | 7.52 | 9.70 | 0.13 |
+| PPC | Review Risk | 103.0 | 15 | Downtrend | 14.70 | 14.06 | 15.42 | 1.13 |
+| FNI | Watchlist | 75.0 | 65 | Strong Uptrend | 2.07 | 1.66 | 2.39 | 0.78 |
+| LTG | Watchlist | 73.4 | 57 | Strong Uptrend | 14.88 | 13.77 | 15.80 | 0.83 |
+| RLC | Watchlist | 73.4 | 57 | Strong Uptrend | 17.60 | 15.52 | 18.08 | 0.23 |
 | MFC | Watchlist | 73.4 | 57 | Strong Uptrend | 2600.00 | 2085.50 | 3600.00 | 1.94 |
+| NRCP | Watchlist | 73.2 | 56 | Strong Uptrend | 0.99 | 0.75 | 1.18 | 0.78 |
+| ROCK | Watchlist | 73.2 | 56 | Strong Uptrend | 3.03 | 1.82 | 3.42 | 0.32 |
 | REDC | Watchlist | 73.2 | 56 | Strong Uptrend | 9.50 | 6.24 | 10.26 | 0.23 |
+| ICT | Watchlist | 73.0 | 55 | Strong Uptrend | 982.00 | 729.92 | 1049.00 | 0.27 |
