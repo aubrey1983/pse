@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-08-28T21:12:10+00:00",
+    "generated_at": "2026-08-31T17:34:22+00:00",
     "market_date": "2026-08-28",
     "settings": {
         "monthly_budget": 10000.0,
@@ -242,6 +242,27 @@
                 "target_price": 0.35
             },
             {
+                "symbol": "MG",
+                "source": "candidate",
+                "sector": "Unknown",
+                "readiness_score": 83.7,
+                "qualified": false,
+                "blockers": [
+                    "MoM 30 below Add threshold 50",
+                    "R/R 1.09 below 1.20"
+                ],
+                "mom_score": 30,
+                "required_mom": 50,
+                "trend": "Strong Uptrend",
+                "rsi": 42.857142857142826,
+                "reward_risk": 1.0899182561307899,
+                "required_reward_risk": 1.2,
+                "gain_loss_pct": 0,
+                "entry_price": 0.069,
+                "stop_loss": 0.05432,
+                "target_price": 0.085
+            },
+            {
                 "symbol": "AUB",
                 "source": "portfolio",
                 "sector": "Financials",
@@ -322,27 +343,6 @@
                 "entry_price": 0.73,
                 "stop_loss": 0.5917,
                 "target_price": 0.87
-            },
-            {
-                "symbol": "MG",
-                "source": "candidate",
-                "sector": "Unknown",
-                "readiness_score": 82.3,
-                "qualified": false,
-                "blockers": [
-                    "MoM 28 below Add threshold 50",
-                    "R/R 1.09 below 1.20"
-                ],
-                "mom_score": 28,
-                "required_mom": 50,
-                "trend": "Strong Uptrend",
-                "rsi": 42.857142857142826,
-                "reward_risk": 1.0899182561307899,
-                "required_reward_risk": 1.2,
-                "gain_loss_pct": 0,
-                "entry_price": 0.069,
-                "stop_loss": 0.05432,
-                "target_price": 0.085
             }
         ]
     },
@@ -984,9 +984,9 @@
             "name": "MFC",
             "source": "candidate",
             "action": "Add",
-            "priority": 85.8,
+            "priority": 85.6,
             "sector": "Financials",
-            "mom_score": 59,
+            "mom_score": 58,
             "base_score": 9,
             "trend": "Strong Uptrend",
             "last_close": 2510.0,
@@ -1001,7 +1001,7 @@
                 "readiness_score": 100.0,
                 "qualified": true,
                 "blockers": [],
-                "mom_score": 59,
+                "mom_score": 58,
                 "required_mom": 50,
                 "trend": "Strong Uptrend",
                 "rsi": 51.339285714285715,
@@ -1013,9 +1013,9 @@
                 "target_price": 3600.0
             },
             "reasons": [
-                "Positive avg monthly return +3.1% (+13)",
-                "High monthly win rate 69% (+14)",
-                "Monthly volatility 6.9% (-5)",
+                "Positive avg monthly return +3.1% (+12)",
+                "High monthly win rate 67% (+14)",
+                "Monthly volatility 7.1% (-5)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)"
             ],
