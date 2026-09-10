@@ -1,6 +1,6 @@
 {
-    "generated_at": "2026-09-09T14:21:59+00:00",
-    "market_date": "2026-09-09",
+    "generated_at": "2026-09-10T14:16:10+00:00",
+    "market_date": "2026-09-10",
     "settings": {
         "monthly_budget": 10000.0,
         "max_position_pct": 15.0,
@@ -15,7 +15,7 @@
         "learning_profile": {
             "status": "active",
             "preferred_horizon": "20",
-            "sample_size": 1439,
+            "sample_size": 1477,
             "add_mom_threshold_delta": -2,
             "add_reward_risk_delta": -0.1,
             "watchlist_mom_threshold_delta": -2
@@ -24,10 +24,10 @@
     "summary": {
         "total_actions": 41,
         "review_risk": 6,
-        "add": 2,
-        "watchlist": 26,
+        "add": 3,
+        "watchlist": 24,
         "trim_watch": 0,
-        "hold": 7
+        "hold": 8
     },
     "add_readiness": {
         "thresholds": {
@@ -36,7 +36,7 @@
             "watchlist_mom": 38,
             "add_reward_risk": 1.0999999999999999
         },
-        "qualified_count": 2,
+        "qualified_count": 3,
         "near_miss_count": 15,
         "closest": [
             {
@@ -52,53 +52,13 @@
                 "mom_score": 46,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 51.4285714285714,
+                "rsi": 50.0,
                 "reward_risk": 1.0953277425979786,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
                 "entry_price": 5.25,
                 "stop_loss": 4.665699999999999,
                 "target_price": 5.89
-            },
-            {
-                "symbol": "UPSON",
-                "source": "candidate",
-                "sector": "Unknown",
-                "readiness_score": 97.7,
-                "qualified": false,
-                "blockers": [
-                    "R/R 1.00 below 1.10"
-                ],
-                "mom_score": 48,
-                "required_mom": 48,
-                "trend": "Strong Uptrend",
-                "rsi": 58.620689655172406,
-                "reward_risk": 1.0008703220191475,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0,
-                "entry_price": 0.87,
-                "stop_loss": 0.6402,
-                "target_price": 1.1
-            },
-            {
-                "symbol": "FPH",
-                "source": "portfolio",
-                "sector": "Unknown",
-                "readiness_score": 97.4,
-                "qualified": false,
-                "blockers": [
-                    "R/R 0.99 below 1.10"
-                ],
-                "mom_score": 48,
-                "required_mom": 43,
-                "trend": "Strong Uptrend",
-                "rsi": 24.378881987577657,
-                "reward_risk": 0.9852668240038494,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0.6128702757916182,
-                "entry_price": 98.5,
-                "stop_loss": 76.6785,
-                "target_price": 120.0
             },
             {
                 "symbol": "HI",
@@ -112,13 +72,33 @@
                 "mom_score": 42,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 44.00000000000002,
+                "rsi": 41.1764705882353,
                 "reward_risk": 1.3988919667590016,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
                 "entry_price": 4.99,
                 "stop_loss": 4.268,
                 "target_price": 6.0
+            },
+            {
+                "symbol": "FPH",
+                "source": "portfolio",
+                "sector": "Unknown",
+                "readiness_score": 94.7,
+                "qualified": false,
+                "blockers": [
+                    "R/R 0.87 below 1.10"
+                ],
+                "mom_score": 53,
+                "required_mom": 43,
+                "trend": "Strong Uptrend",
+                "rsi": 37.148594377510065,
+                "reward_risk": 0.865577159098249,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 2.0429009193054135,
+                "entry_price": 99.9,
+                "stop_loss": 76.6785,
+                "target_price": 120.0
             },
             {
                 "symbol": "PHES",
@@ -142,24 +122,44 @@
                 "target_price": 0.49
             },
             {
-                "symbol": "BNCOM",
-                "source": "portfolio",
-                "sector": "Financials",
-                "readiness_score": 90.2,
+                "symbol": "UPM",
+                "source": "candidate",
+                "sector": "Mining and Oil",
+                "readiness_score": 89.3,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.67 below 1.10"
+                    "R/R 0.63 below 1.10"
                 ],
-                "mom_score": 70,
-                "required_mom": 43,
+                "mom_score": 58,
+                "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 53.0864197530864,
-                "reward_risk": 0.666666666666666,
+                "rsi": 67.27272727272727,
+                "reward_risk": 0.628930817610063,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 6.197540929904126,
-                "entry_price": 10.6,
-                "stop_loss": 9.7,
-                "target_price": 11.2
+                "gain_loss_pct": 0,
+                "entry_price": 0.009,
+                "stop_loss": 0.00582,
+                "target_price": 0.011
+            },
+            {
+                "symbol": "PHR",
+                "source": "candidate",
+                "sector": "Unknown",
+                "readiness_score": 89.1,
+                "qualified": false,
+                "blockers": [
+                    "MoM 33 below Add threshold 48"
+                ],
+                "mom_score": 33,
+                "required_mom": 48,
+                "trend": "Strong Uptrend",
+                "rsi": 49.112426035502956,
+                "reward_risk": 1.8032786885245906,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 0,
+                "entry_price": 0.181,
+                "stop_loss": 0.1261,
+                "target_price": 0.28
             },
             {
                 "symbol": "MG",
@@ -183,85 +183,64 @@
                 "target_price": 0.085
             },
             {
-                "symbol": "OPM",
+                "symbol": "MED",
                 "source": "candidate",
-                "sector": "Mining and Oil",
-                "readiness_score": 87.7,
+                "sector": "Unknown",
+                "readiness_score": 86.9,
                 "qualified": false,
                 "blockers": [
-                    "MoM 43 below Add threshold 48",
-                    "R/R 0.72 below 1.10"
+                    "MoM 30 below Add threshold 48"
                 ],
-                "mom_score": 43,
+                "mom_score": 30,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 60.00000000000001,
-                "reward_risk": 0.7194244604316538,
+                "rsi": 51.260504201680675,
+                "reward_risk": 2.158859470468433,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 0.014,
-                "stop_loss": 0.01261,
-                "target_price": 0.015
-            },
-            {
-                "symbol": "UPM",
-                "source": "candidate",
-                "sector": "Mining and Oil",
-                "readiness_score": 87.1,
-                "qualified": false,
-                "blockers": [
-                    "R/R 0.53 below 1.10"
-                ],
-                "mom_score": 57,
-                "required_mom": 48,
-                "trend": "Strong Uptrend",
-                "rsi": 66.07142857142858,
-                "reward_risk": 0.5325443786982247,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0,
-                "entry_price": 0.0092,
-                "stop_loss": 0.00582,
-                "target_price": 0.011
-            },
-            {
-                "symbol": "ICT",
-                "source": "candidate",
-                "sector": "Services",
-                "readiness_score": 86.2,
-                "qualified": false,
-                "blockers": [
-                    "R/R 0.49 below 1.10"
-                ],
-                "mom_score": 66,
-                "required_mom": 48,
-                "trend": "Strong Uptrend",
-                "rsi": 52.10792580101182,
-                "reward_risk": 0.4948839697719522,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0,
-                "entry_price": 975.0,
-                "stop_loss": 825.47,
-                "target_price": 1049.0
+                "entry_price": 0.107,
+                "stop_loss": 0.08245000000000001,
+                "target_price": 0.16
             },
             {
                 "symbol": "AUB",
                 "source": "portfolio",
                 "sector": "Financials",
-                "readiness_score": 85.3,
+                "readiness_score": 86.1,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.45 below 1.10"
+                    "R/R 0.49 below 1.10"
                 ],
                 "mom_score": 62,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 63.0,
-                "reward_risk": 0.45443786982248496,
+                "rsi": 62.12624584717609,
+                "reward_risk": 0.48672566371681364,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 24.20443912431401,
-                "entry_price": 53.0,
-                "stop_loss": 42.4375,
+                "gain_loss_pct": 23.852917126792374,
+                "entry_price": 52.85,
+                "stop_loss": 42.68,
                 "target_price": 57.8
+            },
+            {
+                "symbol": "RLC",
+                "source": "candidate",
+                "sector": "Unknown",
+                "readiness_score": 86.0,
+                "qualified": false,
+                "blockers": [
+                    "R/R 0.48 below 1.10"
+                ],
+                "mom_score": 49,
+                "required_mom": 48,
+                "trend": "Strong Uptrend",
+                "rsi": 46.857142857142826,
+                "reward_risk": 0.4845222072678345,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 0,
+                "entry_price": 17.2,
+                "stop_loss": 15.713999999999999,
+                "target_price": 17.92
             },
             {
                 "symbol": "ALCO",
@@ -276,7 +255,7 @@
                 "mom_score": 37,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 55.26315789473684,
+                "rsi": 61.76470588235296,
                 "reward_risk": 0.6076388888888881,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 10.714285714285724,
@@ -285,72 +264,92 @@
                 "target_price": 0.5
             },
             {
-                "symbol": "ROCK",
+                "symbol": "ICT",
                 "source": "candidate",
-                "sector": "Unknown",
-                "readiness_score": 83.4,
+                "sector": "Services",
+                "readiness_score": 83.7,
                 "qualified": false,
                 "blockers": [
-                    "MoM 41 below Add threshold 48",
-                    "R/R 0.59 below 1.10"
+                    "R/R 0.38 below 1.10"
                 ],
-                "mom_score": 41,
+                "mom_score": 66,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 47.252747252747255,
-                "reward_risk": 0.5938674100109073,
+                "rsi": 60.32608695652174,
+                "reward_risk": 0.3838296291710519,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 2.93,
-                "stop_loss": 2.1048999999999998,
-                "target_price": 3.42
+                "entry_price": 987.0,
+                "stop_loss": 825.47,
+                "target_price": 1049.0
             },
             {
-                "symbol": "OGP",
-                "source": "candidate",
-                "sector": "Unknown",
-                "readiness_score": 82.7,
+                "symbol": "BNCOM",
+                "source": "portfolio",
+                "sector": "Financials",
+                "readiness_score": 83.3,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.34 below 1.10"
+                    "R/R 0.36 below 1.10"
                 ],
-                "mom_score": 55,
-                "required_mom": 48,
+                "mom_score": 57,
+                "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 60.12658227848104,
-                "reward_risk": 0.3378904079137496,
+                "rsi": 65.43209876543209,
+                "reward_risk": 0.36363636363636187,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0,
-                "entry_price": 38.0,
-                "stop_loss": 29.002999999999997,
-                "target_price": 41.040000000000006
+                "gain_loss_pct": 8.201268117260819,
+                "entry_price": 10.8,
+                "stop_loss": 9.7,
+                "target_price": 11.2
             },
             {
-                "symbol": "FJP",
+                "symbol": "AXLM",
                 "source": "candidate",
                 "sector": "Unknown",
-                "readiness_score": 82.3,
+                "readiness_score": 82.5,
                 "qualified": false,
                 "blockers": [
-                    "MoM 40 below Add threshold 48",
-                    "R/R 0.58 below 1.10"
+                    "MoM 36 below Add threshold 48",
+                    "R/R 0.72 below 1.10"
                 ],
-                "mom_score": 40,
+                "mom_score": 36,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 49.48805460750852,
-                "reward_risk": 0.5783582089552239,
+                "rsi": 48.19277108433734,
+                "reward_risk": 0.715789473684211,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 2.67,
-                "stop_loss": 2.134,
-                "target_price": 2.98
+                "entry_price": 2.9,
+                "stop_loss": 2.425,
+                "target_price": 3.24
+            },
+            {
+                "symbol": "AGI",
+                "source": "portfolio",
+                "sector": "Holding Firms",
+                "readiness_score": 82.5,
+                "qualified": false,
+                "blockers": [
+                    "MoM 30 below Add threshold 43",
+                    "R/R 0.79 below 1.10"
+                ],
+                "mom_score": 30,
+                "required_mom": 43,
+                "trend": "Strong Uptrend",
+                "rsi": 41.17647058823527,
+                "reward_risk": 0.7936000000000001,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 1.1135857461024459,
+                "entry_price": 9.08,
+                "stop_loss": 7.5175,
+                "target_price": 10.32
             }
         ]
     },
     "allocation_plan": {
         "budget": 10000.0,
-        "remaining_budget": 2846.05,
+        "remaining_budget": 0.11999999999989086,
         "stance": "Deploy selectively",
         "max_position_pct": 15.0,
         "max_sector_pct": 35.0,
@@ -374,12 +373,24 @@
                 "reason": "Clears Add rules and position sizing guardrails."
             },
             {
+                "symbol": "UPSON",
+                "action": "Allocate",
+                "source": "candidate",
+                "sector": "Unknown",
+                "amount": 4204.95,
+                "shares": 4947,
+                "entry_price": 0.85,
+                "mom_score": 55,
+                "reward_risk": 1.1916110581506203,
+                "reason": "Clears Add rules and position sizing guardrails."
+            },
+            {
                 "symbol": "IS",
                 "action": "Allocate",
                 "source": "candidate",
                 "sector": "Unknown",
-                "amount": 4499.95,
-                "shares": 34615,
+                "amount": 3140.9300000000003,
+                "shares": 24161,
                 "entry_price": 0.13,
                 "mom_score": 48,
                 "reward_risk": 2.8836251287332635,
@@ -400,53 +411,13 @@
                 "mom_score": 46,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 51.4285714285714,
+                "rsi": 50.0,
                 "reward_risk": 1.0953277425979786,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
                 "entry_price": 5.25,
                 "stop_loss": 4.665699999999999,
                 "target_price": 5.89
-            },
-            {
-                "symbol": "UPSON",
-                "source": "candidate",
-                "sector": "Unknown",
-                "readiness_score": 97.7,
-                "qualified": false,
-                "blockers": [
-                    "R/R 1.00 below 1.10"
-                ],
-                "mom_score": 48,
-                "required_mom": 48,
-                "trend": "Strong Uptrend",
-                "rsi": 58.620689655172406,
-                "reward_risk": 1.0008703220191475,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0,
-                "entry_price": 0.87,
-                "stop_loss": 0.6402,
-                "target_price": 1.1
-            },
-            {
-                "symbol": "FPH",
-                "source": "portfolio",
-                "sector": "Unknown",
-                "readiness_score": 97.4,
-                "qualified": false,
-                "blockers": [
-                    "R/R 0.99 below 1.10"
-                ],
-                "mom_score": 48,
-                "required_mom": 43,
-                "trend": "Strong Uptrend",
-                "rsi": 24.378881987577657,
-                "reward_risk": 0.9852668240038494,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0.6128702757916182,
-                "entry_price": 98.5,
-                "stop_loss": 76.6785,
-                "target_price": 120.0
             },
             {
                 "symbol": "HI",
@@ -460,13 +431,33 @@
                 "mom_score": 42,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 44.00000000000002,
+                "rsi": 41.1764705882353,
                 "reward_risk": 1.3988919667590016,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
                 "entry_price": 4.99,
                 "stop_loss": 4.268,
                 "target_price": 6.0
+            },
+            {
+                "symbol": "FPH",
+                "source": "portfolio",
+                "sector": "Unknown",
+                "readiness_score": 94.7,
+                "qualified": false,
+                "blockers": [
+                    "R/R 0.87 below 1.10"
+                ],
+                "mom_score": 53,
+                "required_mom": 43,
+                "trend": "Strong Uptrend",
+                "rsi": 37.148594377510065,
+                "reward_risk": 0.865577159098249,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 2.0429009193054135,
+                "entry_price": 99.9,
+                "stop_loss": 76.6785,
+                "target_price": 120.0
             },
             {
                 "symbol": "PHES",
@@ -488,6 +479,26 @@
                 "entry_price": 0.405,
                 "stop_loss": 0.29585,
                 "target_price": 0.49
+            },
+            {
+                "symbol": "UPM",
+                "source": "candidate",
+                "sector": "Mining and Oil",
+                "readiness_score": 89.3,
+                "qualified": false,
+                "blockers": [
+                    "R/R 0.63 below 1.10"
+                ],
+                "mom_score": 58,
+                "required_mom": 48,
+                "trend": "Strong Uptrend",
+                "rsi": 67.27272727272727,
+                "reward_risk": 0.628930817610063,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 0,
+                "entry_price": 0.009,
+                "stop_loss": 0.00582,
+                "target_price": 0.011
             }
         ],
         "notes": [
@@ -501,54 +512,54 @@
             "name": "MWC",
             "source": "portfolio",
             "action": "Review Risk",
-            "priority": 121.38,
+            "priority": 121.98,
             "sector": "Industrial",
             "mom_score": 35,
             "base_score": 6,
             "trend": "Uptrend",
-            "last_close": 36.1,
-            "allocation_pct": 4.953669020051163,
-            "sector_allocation_pct": 30.363487057553108,
-            "gain_loss_pct": -14.382311632170754,
-            "risk_pct": 10.657894736842115,
+            "last_close": 35.85,
+            "allocation_pct": 4.8703335183890175,
+            "sector_allocation_pct": 30.11028766363313,
+            "gain_loss_pct": -14.975231911726357,
+            "risk_pct": 10.03486750348676,
             "add_readiness": {
                 "symbol": "MWC",
                 "source": "portfolio",
                 "sector": "Industrial",
-                "readiness_score": 78.6,
+                "readiness_score": 79.0,
                 "qualified": false,
                 "blockers": [
                     "MoM 35 below Add threshold 43",
-                    "R/R 0.88 below 1.10",
-                    "Position G/L -14.4% below -3% Add guard"
+                    "R/R 0.90 below 1.10",
+                    "Position G/L -15.0% below -3% Add guard"
                 ],
                 "mom_score": 35,
                 "required_mom": 43,
                 "trend": "Uptrend",
-                "rsi": 46.22641509433965,
-                "reward_risk": 0.8836907082521105,
+                "rsi": 56.32183908045979,
+                "reward_risk": 0.9034051424600408,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": -14.382311632170754,
-                "entry_price": 36.1,
+                "gain_loss_pct": -14.975231911726357,
+                "entry_price": 35.85,
                 "stop_loss": 32.2525,
-                "target_price": 39.5
+                "target_price": 39.1
             },
             "reasons": [
-                "Positive avg monthly return +0.9% (+3)",
+                "Positive avg monthly return +0.8% (+3)",
                 "Monthly volatility 8.9% (-6)",
                 "Uptrend (+7)",
                 "RSI in constructive range (+8)",
                 "MACD bullish (+5)"
             ],
             "trade_plan": {
-                "entry_price": 36.1,
+                "entry_price": 35.85,
                 "stop_loss": 32.2525,
-                "target_price": 39.5,
-                "risk_per_share": 3.8475000000000037,
-                "reward_risk": 0.8836907082521105,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 267,
-                "suggested_amount": 9638.7
+                "target_price": 39.1,
+                "risk_per_share": 3.5975000000000037,
+                "reward_risk": 0.9034051424600408,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 278,
+                "suggested_amount": 9966.300000000001
             }
         },
         {
@@ -561,11 +572,11 @@
             "mom_score": 9,
             "base_score": 5,
             "trend": "Strong Downtrend",
-            "last_close": 21.05,
-            "allocation_pct": 1.2291475555145517,
-            "sector_allocation_pct": 30.363487057553108,
-            "gain_loss_pct": -36.21212121212121,
-            "risk_pct": 5.534441805225666,
+            "last_close": 21.0,
+            "allocation_pct": 1.2140063964648133,
+            "sector_allocation_pct": 30.11028766363313,
+            "gain_loss_pct": -36.36363636363637,
+            "risk_pct": 5.309523809523819,
             "add_readiness": {
                 "symbol": "LFM",
                 "source": "portfolio",
@@ -575,16 +586,16 @@
                 "blockers": [
                     "MoM 9 below Add threshold 43",
                     "Trend is Strong Downtrend",
-                    "Position G/L -36.2% below -3% Add guard"
+                    "Position G/L -36.4% below -3% Add guard"
                 ],
                 "mom_score": 9,
                 "required_mom": 43,
                 "trend": "Strong Downtrend",
-                "rsi": 53.14685314685314,
-                "reward_risk": 7.510729613733888,
+                "rsi": 52.77777777777777,
+                "reward_risk": 7.892376681614336,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": -36.21212121212121,
-                "entry_price": 21.05,
+                "gain_loss_pct": -36.36363636363637,
+                "entry_price": 21.0,
                 "stop_loss": 19.884999999999998,
                 "target_price": 29.8
             },
@@ -596,14 +607,14 @@
                 "MACD bullish (+5)"
             ],
             "trade_plan": {
-                "entry_price": 21.05,
+                "entry_price": 21.0,
                 "stop_loss": 19.884999999999998,
                 "target_price": 29.8,
-                "risk_per_share": 1.1650000000000027,
-                "reward_risk": 7.510729613733888,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 475,
-                "suggested_amount": 9998.75
+                "risk_per_share": 1.115000000000002,
+                "reward_risk": 7.892376681614336,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 476,
+                "suggested_amount": 9996.0
             }
         },
         {
@@ -613,53 +624,52 @@
             "action": "Review Risk",
             "priority": 116.0,
             "sector": "Holding Firms",
-            "mom_score": -18,
-            "base_score": -3,
+            "mom_score": -10,
+            "base_score": 5,
             "trend": "Strong Downtrend",
-            "last_close": 479.0,
-            "allocation_pct": 0.9323225322113542,
-            "sector_allocation_pct": 15.322477517694178,
-            "gain_loss_pct": -28.507462686567166,
-            "risk_pct": 8.872651356993737,
+            "last_close": 464.8,
+            "allocation_pct": 0.8956669413918178,
+            "sector_allocation_pct": 15.344809612001628,
+            "gain_loss_pct": -30.626865671641788,
+            "risk_pct": 6.088640275387266,
             "add_readiness": {
                 "symbol": "GTCAP",
                 "source": "portfolio",
                 "sector": "Holding Firms",
-                "readiness_score": 36.1,
+                "readiness_score": 40.0,
                 "qualified": false,
                 "blockers": [
-                    "MoM -18 below Add threshold 43",
+                    "MoM -10 below Add threshold 43",
                     "Trend is Strong Downtrend",
-                    "R/R 0.93 below 1.10",
-                    "Position G/L -28.5% below -3% Add guard"
+                    "Position G/L -30.6% below -3% Add guard"
                 ],
-                "mom_score": -18,
+                "mom_score": -10,
                 "required_mom": 43,
                 "trend": "Strong Downtrend",
-                "rsi": 36.34453781512605,
-                "reward_risk": 0.9294117647058824,
+                "rsi": 32.518796992481214,
+                "reward_risk": 1.8975265017667833,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": -28.507462686567166,
-                "entry_price": 479.0,
+                "gain_loss_pct": -30.626865671641788,
+                "entry_price": 464.8,
                 "stop_loss": 436.5,
                 "target_price": 518.5
             },
             "reasons": [
-                "Negative avg monthly return -0.3% (-2)",
+                "Negative avg monthly return -0.5% (-3)",
                 "Monthly volatility 9.6% (-7)",
                 "Strong downtrend (-22)",
-                "Room to resistance 8.2% (+4)",
-                "Manageable stop risk 8.9% (+3)"
+                "Room to resistance 11.6% (+6)",
+                "Tight stop risk 6.1% (+6)"
             ],
             "trade_plan": {
-                "entry_price": 479.0,
+                "entry_price": 464.8,
                 "stop_loss": 436.5,
                 "target_price": 518.5,
-                "risk_per_share": 42.5,
-                "reward_risk": 0.9294117647058824,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 20,
-                "suggested_amount": 9580.0
+                "risk_per_share": 28.30000000000001,
+                "reward_risk": 1.8975265017667833,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 21,
+                "suggested_amount": 9760.800000000001
             }
         },
         {
@@ -673,8 +683,8 @@
             "base_score": -4,
             "trend": "Strong Downtrend",
             "last_close": 0.4,
-            "allocation_pct": 1.7895142716390797,
-            "sector_allocation_pct": 1.7895142716390797,
+            "allocation_pct": 1.7716785411265863,
+            "sector_allocation_pct": 1.7716785411265863,
             "gain_loss_pct": -8.045977011494248,
             "risk_pct": 13.912500000000009,
             "add_readiness": {
@@ -712,9 +722,9 @@
                 "target_price": 0.52,
                 "risk_per_share": 0.05565000000000003,
                 "reward_risk": 2.1563342318059284,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 18464,
-                "suggested_amount": 7385.6
+                "risk_budget": 1037.8858,
+                "suggested_shares": 18650,
+                "suggested_amount": 7460.0
             }
         },
         {
@@ -728,30 +738,30 @@
             "base_score": 5,
             "trend": "Strong Uptrend",
             "last_close": 1.5,
-            "allocation_pct": 4.053851260883503,
-            "sector_allocation_pct": 26.755758940710322,
+            "allocation_pct": 4.01344733688427,
+            "sector_allocation_pct": 26.72495374731979,
             "gain_loss_pct": 108.33333333333334,
             "risk_pct": 44.38666666666667,
             "add_readiness": {
                 "symbol": "NRCP",
                 "source": "portfolio",
                 "sector": "Financials",
-                "readiness_score": 56.5,
+                "readiness_score": 57.9,
                 "qualified": false,
                 "blockers": [
                     "MoM 19 below Add threshold 43",
-                    "R/R 0.05 below 1.10"
+                    "R/R 0.11 below 1.10"
                 ],
                 "mom_score": 19,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 86.30136986301369,
-                "reward_risk": 0.04505857614899373,
+                "rsi": 83.87096774193547,
+                "reward_risk": 0.10513667768098536,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 108.33333333333334,
                 "entry_price": 1.5,
                 "stop_loss": 0.8341999999999999,
-                "target_price": 1.53
+                "target_price": 1.57
             },
             "reasons": [
                 "Positive avg monthly return +6.5% (+25)",
@@ -763,12 +773,12 @@
             "trade_plan": {
                 "entry_price": 1.5,
                 "stop_loss": 0.8341999999999999,
-                "target_price": 1.53,
+                "target_price": 1.57,
                 "risk_per_share": 0.6658000000000001,
-                "reward_risk": 0.04505857614899373,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 1543,
-                "suggested_amount": 2314.5
+                "reward_risk": 0.10513667768098536,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 1558,
+                "suggested_amount": 2337.0
             }
         },
         {
@@ -778,12 +788,12 @@
             "action": "Review Risk",
             "priority": 100.0,
             "sector": "Industrial",
-            "mom_score": -12,
-            "base_score": 1,
+            "mom_score": -4,
+            "base_score": 0,
             "trend": "Strong Downtrend",
             "last_close": 0.64,
-            "allocation_pct": 1.915874143854447,
-            "sector_allocation_pct": 30.363487057553108,
+            "allocation_pct": 1.8967790097908652,
+            "sector_allocation_pct": 30.11028766363313,
             "gain_loss_pct": -1.5384615384615397,
             "risk_pct": 9.062500000000009,
             "add_readiness": {
@@ -793,14 +803,14 @@
                 "readiness_score": 43.5,
                 "qualified": false,
                 "blockers": [
-                    "MoM -12 below Add threshold 43",
+                    "MoM -4 below Add threshold 43",
                     "Trend is Strong Downtrend",
                     "R/R 1.03 below 1.10"
                 ],
-                "mom_score": -12,
+                "mom_score": -4,
                 "required_mom": 43,
                 "trend": "Strong Downtrend",
-                "rsi": 40.0,
+                "rsi": 50.0,
                 "reward_risk": 1.0344827586206877,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": -1.5384615384615397,
@@ -812,8 +822,8 @@
                 "Negative avg monthly return -0.0% (-0)",
                 "Monthly volatility 3.9% (-3)",
                 "Strong downtrend (-22)",
-                "Room to resistance 9.4% (+5)",
-                "Manageable stop risk 9.1% (+3)"
+                "RSI in constructive range (+8)",
+                "Room to resistance 9.4% (+5)"
             ],
             "trade_plan": {
                 "entry_price": 0.64,
@@ -821,7 +831,7 @@
                 "target_price": 0.7,
                 "risk_per_share": 0.05800000000000005,
                 "reward_risk": 1.0344827586206877,
-                "risk_budget": 1027.5414,
+                "risk_budget": 1037.8858,
                 "suggested_shares": 15625,
                 "suggested_amount": 10000.0
             }
@@ -838,7 +848,7 @@
             "trend": "Strong Uptrend",
             "last_close": 2654.0,
             "allocation_pct": 0,
-            "sector_allocation_pct": 26.755758940710322,
+            "sector_allocation_pct": 26.72495374731979,
             "gain_loss_pct": 0,
             "risk_pct": 19.593067068575735,
             "add_readiness": {
@@ -872,9 +882,60 @@
                 "target_price": 3600.0,
                 "risk_per_share": 520.0,
                 "reward_risk": 1.8192307692307692,
-                "risk_budget": 1027.5414,
+                "risk_budget": 1037.8858,
                 "suggested_shares": 1,
                 "suggested_amount": 2654.0
+            }
+        },
+        {
+            "symbol": "UPSON",
+            "name": "UPSON",
+            "source": "candidate",
+            "action": "Add",
+            "priority": 85.0,
+            "sector": "Unknown",
+            "mom_score": 55,
+            "base_score": 11,
+            "trend": "Strong Uptrend",
+            "last_close": 0.85,
+            "allocation_pct": 0,
+            "sector_allocation_pct": 4.908921578848078,
+            "gain_loss_pct": 0,
+            "risk_pct": 24.682352941176468,
+            "add_readiness": {
+                "symbol": "UPSON",
+                "source": "candidate",
+                "sector": "Unknown",
+                "readiness_score": 100.0,
+                "qualified": true,
+                "blockers": [],
+                "mom_score": 55,
+                "required_mom": 48,
+                "trend": "Strong Uptrend",
+                "rsi": 55.932203389830505,
+                "reward_risk": 1.1916110581506203,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 0,
+                "entry_price": 0.85,
+                "stop_loss": 0.6402,
+                "target_price": 1.1
+            },
+            "reasons": [
+                "Positive avg monthly return +1.1% (+4)",
+                "Solid monthly win rate 62% (+9)",
+                "Monthly volatility 5.8% (-4)",
+                "Strong uptrend (+12)",
+                "RSI in constructive range (+8)"
+            ],
+            "trade_plan": {
+                "entry_price": 0.85,
+                "stop_loss": 0.6402,
+                "target_price": 1.1,
+                "risk_per_share": 0.2098,
+                "reward_risk": 1.1916110581506203,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 4947,
+                "suggested_amount": 4204.95
             }
         },
         {
@@ -889,7 +950,7 @@
             "trend": "Strong Uptrend",
             "last_close": 0.13,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
             "risk_pct": 14.938461538461542,
             "add_readiness": {
@@ -902,7 +963,7 @@
                 "mom_score": 48,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 60.0,
+                "rsi": 61.53846153846153,
                 "reward_risk": 2.8836251287332635,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
@@ -923,62 +984,9 @@
                 "target_price": 0.186,
                 "risk_per_share": 0.019420000000000007,
                 "reward_risk": 2.8836251287332635,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 52911,
-                "suggested_amount": 6878.43
-            }
-        },
-        {
-            "symbol": "BNCOM",
-            "name": "BNCOM",
-            "source": "portfolio",
-            "action": "Watchlist",
-            "priority": 76.0,
-            "sector": "Financials",
-            "mom_score": 70,
-            "base_score": 12,
-            "trend": "Strong Uptrend",
-            "last_close": 10.6,
-            "allocation_pct": 11.357790547417359,
-            "sector_allocation_pct": 26.755758940710322,
-            "gain_loss_pct": 6.197540929904126,
-            "risk_pct": 8.490566037735853,
-            "add_readiness": {
-                "symbol": "BNCOM",
-                "source": "portfolio",
-                "sector": "Financials",
-                "readiness_score": 90.2,
-                "qualified": false,
-                "blockers": [
-                    "R/R 0.67 below 1.10"
-                ],
-                "mom_score": 70,
-                "required_mom": 43,
-                "trend": "Strong Uptrend",
-                "rsi": 53.0864197530864,
-                "reward_risk": 0.666666666666666,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 6.197540929904126,
-                "entry_price": 10.6,
-                "stop_loss": 9.7,
-                "target_price": 11.2
-            },
-            "reasons": [
-                "Positive avg monthly return +2.9% (+12)",
-                "High monthly win rate 69% (+14)",
-                "Monthly volatility 8.0% (-6)",
-                "Strong uptrend (+12)",
-                "RSI in constructive range (+8)"
-            ],
-            "trade_plan": {
-                "entry_price": 10.6,
-                "stop_loss": 9.7,
-                "target_price": 11.2,
-                "risk_per_share": 0.9000000000000004,
-                "reward_risk": 0.666666666666666,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 943,
-                "suggested_amount": 9995.8
+                "risk_budget": 1037.8858,
+                "suggested_shares": 53444,
+                "suggested_amount": 6947.72
             }
         },
         {
@@ -991,47 +999,47 @@
             "mom_score": 66,
             "base_score": 10,
             "trend": "Strong Uptrend",
-            "last_close": 975.0,
+            "last_close": 987.0,
             "allocation_pct": 0,
-            "sector_allocation_pct": 1.7895142716390797,
+            "sector_allocation_pct": 1.7716785411265863,
             "gain_loss_pct": 0,
-            "risk_pct": 15.336410256410254,
+            "risk_pct": 16.36575481256332,
             "add_readiness": {
                 "symbol": "ICT",
                 "source": "candidate",
                 "sector": "Services",
-                "readiness_score": 86.2,
+                "readiness_score": 83.7,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.49 below 1.10"
+                    "R/R 0.38 below 1.10"
                 ],
                 "mom_score": 66,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 52.10792580101182,
-                "reward_risk": 0.4948839697719522,
+                "rsi": 60.32608695652174,
+                "reward_risk": 0.3838296291710519,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 975.0,
+                "entry_price": 987.0,
                 "stop_loss": 825.47,
                 "target_price": 1049.0
             },
             "reasons": [
-                "Positive avg monthly return +5.8% (+23)",
+                "Positive avg monthly return +5.9% (+23)",
                 "High monthly win rate 81% (+14)",
-                "Monthly volatility 7.0% (-5)",
+                "Monthly volatility 7.1% (-5)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)"
             ],
             "trade_plan": {
-                "entry_price": 975.0,
+                "entry_price": 987.0,
                 "stop_loss": 825.47,
                 "target_price": 1049.0,
-                "risk_per_share": 149.52999999999997,
-                "reward_risk": 0.4948839697719522,
-                "risk_budget": 1027.5414,
+                "risk_per_share": 161.52999999999997,
+                "reward_risk": 0.3838296291710519,
+                "risk_budget": 1037.8858,
                 "suggested_shares": 6,
-                "suggested_amount": 5850.0
+                "suggested_amount": 5922.0
             }
         },
         {
@@ -1044,29 +1052,29 @@
             "mom_score": 62,
             "base_score": 12,
             "trend": "Strong Uptrend",
-            "last_close": 53.0,
-            "allocation_pct": 7.169540808769359,
-            "sector_allocation_pct": 26.755758940710322,
-            "gain_loss_pct": 24.20443912431401,
-            "risk_pct": 19.92924528301887,
+            "last_close": 52.85,
+            "allocation_pct": 7.07799451538888,
+            "sector_allocation_pct": 26.72495374731979,
+            "gain_loss_pct": 23.852917126792374,
+            "risk_pct": 19.243140964995273,
             "add_readiness": {
                 "symbol": "AUB",
                 "source": "portfolio",
                 "sector": "Financials",
-                "readiness_score": 85.3,
+                "readiness_score": 86.1,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.45 below 1.10"
+                    "R/R 0.49 below 1.10"
                 ],
                 "mom_score": 62,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 63.0,
-                "reward_risk": 0.45443786982248496,
+                "rsi": 62.12624584717609,
+                "reward_risk": 0.48672566371681364,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 24.20443912431401,
-                "entry_price": 53.0,
-                "stop_loss": 42.4375,
+                "gain_loss_pct": 23.852917126792374,
+                "entry_price": 52.85,
+                "stop_loss": 42.68,
                 "target_price": 57.8
             },
             "reasons": [
@@ -1077,14 +1085,14 @@
                 "RSI in constructive range (+8)"
             ],
             "trade_plan": {
-                "entry_price": 53.0,
-                "stop_loss": 42.4375,
+                "entry_price": 52.85,
+                "stop_loss": 42.68,
                 "target_price": 57.8,
-                "risk_per_share": 10.5625,
-                "reward_risk": 0.45443786982248496,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 97,
-                "suggested_amount": 5141.0
+                "risk_per_share": 10.170000000000002,
+                "reward_risk": 0.48672566371681364,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 102,
+                "suggested_amount": 5390.7
             }
         },
         {
@@ -1098,8 +1106,8 @@
             "base_score": 14,
             "trend": "Strong Uptrend",
             "last_close": 15.28,
-            "allocation_pct": 7.137814593163837,
-            "sector_allocation_pct": 30.363487057553108,
+            "allocation_pct": 7.066673423993275,
+            "sector_allocation_pct": 30.11028766363313,
             "gain_loss_pct": 4.993729922869469,
             "risk_pct": 6.681937172774875,
             "add_readiness": {
@@ -1135,7 +1143,7 @@
                 "target_price": 15.3,
                 "risk_per_share": 1.0210000000000008,
                 "reward_risk": 0.019588638589619328,
-                "risk_budget": 1027.5414,
+                "risk_budget": 1037.8858,
                 "suggested_shares": 654,
                 "suggested_amount": 9993.119999999999
             }
@@ -1145,105 +1153,211 @@
             "name": "UPM",
             "source": "candidate",
             "action": "Watchlist",
-            "priority": 73.4,
+            "priority": 73.6,
             "sector": "Mining and Oil",
-            "mom_score": 57,
+            "mom_score": 58,
             "base_score": 10,
             "trend": "Strong Uptrend",
-            "last_close": 0.0092,
+            "last_close": 0.009,
             "allocation_pct": 0,
-            "sector_allocation_pct": 12.561829625550851,
+            "sector_allocation_pct": 12.886215419846767,
             "gain_loss_pct": 0,
-            "risk_pct": 36.739130434782616,
+            "risk_pct": 35.333333333333336,
             "add_readiness": {
                 "symbol": "UPM",
                 "source": "candidate",
                 "sector": "Mining and Oil",
-                "readiness_score": 87.1,
+                "readiness_score": 89.3,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.53 below 1.10"
+                    "R/R 0.63 below 1.10"
                 ],
-                "mom_score": 57,
+                "mom_score": 58,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 66.07142857142858,
-                "reward_risk": 0.5325443786982247,
+                "rsi": 67.27272727272727,
+                "reward_risk": 0.628930817610063,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 0.0092,
+                "entry_price": 0.009,
                 "stop_loss": 0.00582,
                 "target_price": 0.011
             },
             "reasons": [
-                "Positive avg monthly return +8.7% (+25)",
+                "Positive avg monthly return +8.5% (+25)",
                 "Solid monthly win rate 62% (+9)",
-                "Monthly volatility 18.2% (-13)",
+                "Monthly volatility 18.1% (-13)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)"
             ],
             "trade_plan": {
-                "entry_price": 0.0092,
+                "entry_price": 0.009,
                 "stop_loss": 0.00582,
                 "target_price": 0.011,
-                "risk_per_share": 0.00338,
-                "reward_risk": 0.5325443786982247,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 304006,
-                "suggested_amount": 2796.8552
+                "risk_per_share": 0.0031799999999999997,
+                "reward_risk": 0.628930817610063,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 326379,
+                "suggested_amount": 2937.4109999999996
             }
         },
         {
-            "symbol": "OGP",
-            "name": "OGP",
+            "symbol": "BNCOM",
+            "name": "BNCOM",
+            "source": "portfolio",
+            "action": "Watchlist",
+            "priority": 73.4,
+            "sector": "Financials",
+            "mom_score": 57,
+            "base_score": 13,
+            "trend": "Strong Uptrend",
+            "last_close": 10.8,
+            "allocation_pct": 11.456751792923654,
+            "sector_allocation_pct": 26.72495374731979,
+            "gain_loss_pct": 8.201268117260819,
+            "risk_pct": 10.185185185185198,
+            "add_readiness": {
+                "symbol": "BNCOM",
+                "source": "portfolio",
+                "sector": "Financials",
+                "readiness_score": 83.3,
+                "qualified": false,
+                "blockers": [
+                    "R/R 0.36 below 1.10"
+                ],
+                "mom_score": 57,
+                "required_mom": 43,
+                "trend": "Strong Uptrend",
+                "rsi": 65.43209876543209,
+                "reward_risk": 0.36363636363636187,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 8.201268117260819,
+                "entry_price": 10.8,
+                "stop_loss": 9.7,
+                "target_price": 11.2
+            },
+            "reasons": [
+                "Positive avg monthly return +3.1% (+12)",
+                "High monthly win rate 69% (+14)",
+                "Monthly volatility 8.0% (-6)",
+                "Strong uptrend (+12)",
+                "RSI in constructive range (+8)"
+            ],
+            "trade_plan": {
+                "entry_price": 10.8,
+                "stop_loss": 9.7,
+                "target_price": 11.2,
+                "risk_per_share": 1.1000000000000014,
+                "reward_risk": 0.36363636363636187,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 925,
+                "suggested_amount": 9990.0
+            }
+        },
+        {
+            "symbol": "FNI",
+            "name": "FNI",
             "source": "candidate",
             "action": "Watchlist",
             "priority": 73.0,
-            "sector": "Unknown",
+            "sector": "Mining and Oil",
             "mom_score": 55,
-            "base_score": 10,
+            "base_score": 12,
             "trend": "Strong Uptrend",
-            "last_close": 38.0,
+            "last_close": 2.48,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 12.886215419846767,
             "gain_loss_pct": 0,
-            "risk_pct": 23.676315789473694,
+            "risk_pct": 33.116935483870975,
             "add_readiness": {
-                "symbol": "OGP",
+                "symbol": "FNI",
                 "source": "candidate",
-                "sector": "Unknown",
-                "readiness_score": 82.7,
+                "sector": "Mining and Oil",
+                "readiness_score": 79.2,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.34 below 1.10"
+                    "R/R 0.18 below 1.10"
                 ],
                 "mom_score": 55,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 60.12658227848104,
-                "reward_risk": 0.3378904079137496,
+                "rsi": 67.59259259259261,
+                "reward_risk": 0.1826372823572384,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 38.0,
-                "stop_loss": 29.002999999999997,
-                "target_price": 41.040000000000006
+                "entry_price": 2.48,
+                "stop_loss": 1.6586999999999998,
+                "target_price": 2.63
             },
             "reasons": [
-                "Positive avg monthly return +6.2% (+25)",
-                "High monthly win rate 75% (+14)",
-                "Monthly volatility 12.1% (-8)",
+                "Positive avg monthly return +6.6% (+25)",
+                "Solid monthly win rate 62% (+9)",
+                "Monthly volatility 18.6% (-13)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)"
             ],
             "trade_plan": {
-                "entry_price": 38.0,
-                "stop_loss": 29.002999999999997,
-                "target_price": 41.040000000000006,
-                "risk_per_share": 8.997000000000003,
-                "reward_risk": 0.3378904079137496,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 114,
-                "suggested_amount": 4332.0
+                "entry_price": 2.48,
+                "stop_loss": 1.6586999999999998,
+                "target_price": 2.63,
+                "risk_per_share": 0.8213000000000001,
+                "reward_risk": 0.1826372823572384,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 1263,
+                "suggested_amount": 3132.24
+            }
+        },
+        {
+            "symbol": "FPH",
+            "name": "FPH",
+            "source": "portfolio",
+            "action": "Watchlist",
+            "priority": 72.6,
+            "sector": "Unknown",
+            "mom_score": 53,
+            "base_score": 10,
+            "trend": "Strong Uptrend",
+            "last_close": 99.9,
+            "allocation_pct": 4.908921578848078,
+            "sector_allocation_pct": 4.908921578848078,
+            "gain_loss_pct": 2.0429009193054135,
+            "risk_pct": 23.24474474474475,
+            "add_readiness": {
+                "symbol": "FPH",
+                "source": "portfolio",
+                "sector": "Unknown",
+                "readiness_score": 94.7,
+                "qualified": false,
+                "blockers": [
+                    "R/R 0.87 below 1.10"
+                ],
+                "mom_score": 53,
+                "required_mom": 43,
+                "trend": "Strong Uptrend",
+                "rsi": 37.148594377510065,
+                "reward_risk": 0.865577159098249,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 2.0429009193054135,
+                "entry_price": 99.9,
+                "stop_loss": 76.6785,
+                "target_price": 120.0
+            },
+            "reasons": [
+                "Positive avg monthly return +3.3% (+13)",
+                "Solid monthly win rate 62% (+9)",
+                "Monthly volatility 6.8% (-5)",
+                "Strong uptrend (+12)",
+                "Above EMA 50 (+5)"
+            ],
+            "trade_plan": {
+                "entry_price": 99.9,
+                "stop_loss": 76.6785,
+                "target_price": 120.0,
+                "risk_per_share": 23.221500000000006,
+                "reward_risk": 0.865577159098249,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 44,
+                "suggested_amount": 4395.6
             }
         },
         {
@@ -1256,47 +1370,47 @@
             "mom_score": 53,
             "base_score": 12,
             "trend": "Strong Uptrend",
-            "last_close": 12.5,
+            "last_close": 12.2,
             "allocation_pct": 0,
-            "sector_allocation_pct": 8.318078473529145,
+            "sector_allocation_pct": 8.253133437224019,
             "gain_loss_pct": 0,
-            "risk_pct": 24.107200000000006,
+            "risk_pct": 22.24098360655738,
             "add_readiness": {
                 "symbol": "APVI",
                 "source": "candidate",
                 "sector": "Property",
-                "readiness_score": 75.6,
+                "readiness_score": 78.2,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.03 below 1.10"
+                    "R/R 0.14 below 1.10"
                 ],
                 "mom_score": 53,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 63.00578034682079,
-                "reward_risk": 0.026548085219353573,
+                "rsi": 54.33526011560692,
+                "reward_risk": 0.14004569912287196,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 12.5,
+                "entry_price": 12.2,
                 "stop_loss": 9.4866,
                 "target_price": 12.58
             },
             "reasons": [
-                "Positive avg monthly return +2.6% (+10)",
+                "Positive avg monthly return +2.4% (+10)",
                 "High monthly win rate 69% (+14)",
                 "Monthly volatility 5.9% (-4)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)"
             ],
             "trade_plan": {
-                "entry_price": 12.5,
+                "entry_price": 12.2,
                 "stop_loss": 9.4866,
                 "target_price": 12.58,
-                "risk_per_share": 3.0134000000000007,
-                "reward_risk": 0.026548085219353573,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 340,
-                "suggested_amount": 4250.0
+                "risk_per_share": 2.7134,
+                "reward_risk": 0.14004569912287196,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 382,
+                "suggested_amount": 4660.4
             }
         },
         {
@@ -1309,153 +1423,47 @@
             "mom_score": 52,
             "base_score": 12,
             "trend": "Strong Uptrend",
-            "last_close": 1.9,
+            "last_close": 1.91,
             "allocation_pct": 0,
-            "sector_allocation_pct": 30.363487057553108,
+            "sector_allocation_pct": 30.11028766363313,
             "gain_loss_pct": 0,
-            "risk_pct": 13.210526315789469,
+            "risk_pct": 13.664921465968582,
             "add_readiness": {
                 "symbol": "CROWN",
                 "source": "candidate",
                 "sector": "Industrial",
-                "readiness_score": 82.2,
+                "readiness_score": 81.1,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.32 below 1.10"
+                    "R/R 0.27 below 1.10"
                 ],
                 "mom_score": 52,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 46.153846153846146,
-                "reward_risk": 0.31872509960159406,
+                "rsi": 59.52380952380951,
+                "reward_risk": 0.2681992337164754,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 1.9,
+                "entry_price": 1.91,
                 "stop_loss": 1.649,
                 "target_price": 1.98
             },
             "reasons": [
-                "Positive avg monthly return +0.9% (+4)",
+                "Positive avg monthly return +1.0% (+4)",
                 "High monthly win rate 69% (+14)",
-                "Monthly volatility 2.9% (-2)",
+                "Monthly volatility 3.0% (-2)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)"
             ],
             "trade_plan": {
-                "entry_price": 1.9,
+                "entry_price": 1.91,
                 "stop_loss": 1.649,
                 "target_price": 1.98,
-                "risk_per_share": 0.2509999999999999,
-                "reward_risk": 0.31872509960159406,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 4093,
-                "suggested_amount": 7776.7
-            }
-        },
-        {
-            "symbol": "APX",
-            "name": "APX",
-            "source": "portfolio",
-            "action": "Watchlist",
-            "priority": 72.2,
-            "sector": "Mining and Oil",
-            "mom_score": 51,
-            "base_score": 9,
-            "trend": "Strong Uptrend",
-            "last_close": 17.5,
-            "allocation_pct": 10.320752039771829,
-            "sector_allocation_pct": 12.561829625550851,
-            "gain_loss_pct": 17.98199064154168,
-            "risk_pct": 36.25714285714286,
-            "add_readiness": {
-                "symbol": "APX",
-                "source": "portfolio",
-                "sector": "Mining and Oil",
-                "readiness_score": 76.6,
-                "qualified": false,
-                "blockers": [
-                    "R/R 0.07 below 1.10"
-                ],
-                "mom_score": 51,
-                "required_mom": 43,
-                "trend": "Strong Uptrend",
-                "rsi": 67.94117647058823,
-                "reward_risk": 0.06934594168636742,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 17.98199064154168,
-                "entry_price": 17.5,
-                "stop_loss": 11.155,
-                "target_price": 17.94
-            },
-            "reasons": [
-                "Positive avg monthly return +7.6% (+25)",
-                "High monthly win rate 69% (+14)",
-                "Monthly volatility 19.3% (-13)",
-                "Strong uptrend (+12)",
-                "RSI in constructive range (+8)"
-            ],
-            "trade_plan": {
-                "entry_price": 17.5,
-                "stop_loss": 11.155,
-                "target_price": 17.94,
-                "risk_per_share": 6.345000000000001,
-                "reward_risk": 0.06934594168636742,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 161,
-                "suggested_amount": 2817.5
-            }
-        },
-        {
-            "symbol": "BC",
-            "name": "BC",
-            "source": "portfolio",
-            "action": "Watchlist",
-            "priority": 72.0,
-            "sector": "Mining and Oil",
-            "mom_score": 50,
-            "base_score": 12,
-            "trend": "Strong Uptrend",
-            "last_close": 7.6,
-            "allocation_pct": 2.2410775857790255,
-            "sector_allocation_pct": 12.561829625550851,
-            "gain_loss_pct": 15.151515151515152,
-            "risk_pct": 24.69736842105263,
-            "add_readiness": {
-                "symbol": "BC",
-                "source": "portfolio",
-                "sector": "Mining and Oil",
-                "readiness_score": 77.3,
-                "qualified": false,
-                "blockers": [
-                    "R/R 0.10 below 1.10"
-                ],
-                "mom_score": 50,
-                "required_mom": 43,
-                "trend": "Strong Uptrend",
-                "rsi": 68.70748299319727,
-                "reward_risk": 0.10122535961640938,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 15.151515151515152,
-                "entry_price": 7.6,
-                "stop_loss": 5.723,
-                "target_price": 7.79
-            },
-            "reasons": [
-                "Positive avg monthly return +4.6% (+18)",
-                "High monthly win rate 69% (+14)",
-                "Monthly volatility 11.0% (-8)",
-                "Strong uptrend (+12)",
-                "MACD bullish (+5)"
-            ],
-            "trade_plan": {
-                "entry_price": 7.6,
-                "stop_loss": 5.723,
-                "target_price": 7.79,
-                "risk_per_share": 1.8769999999999998,
-                "reward_risk": 0.10122535961640938,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 547,
-                "suggested_amount": 4157.2
+                "risk_per_share": 0.2609999999999999,
+                "reward_risk": 0.2681992337164754,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 3976,
+                "suggested_amount": 7594.16
             }
         },
         {
@@ -1470,7 +1478,7 @@
             "trend": "Strong Uptrend",
             "last_close": 0.091,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
             "risk_pct": 14.725274725274721,
             "add_readiness": {
@@ -1485,7 +1493,7 @@
                 "mom_score": 50,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 64.99999999999997,
+                "rsi": 56.25,
                 "reward_risk": 0.22388059701492566,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
@@ -1506,9 +1514,62 @@
                 "target_price": 0.094,
                 "risk_per_share": 0.013399999999999995,
                 "reward_risk": 0.22388059701492566,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 76682,
-                "suggested_amount": 6978.062
+                "risk_budget": 1037.8858,
+                "suggested_shares": 77454,
+                "suggested_amount": 7048.313999999999
+            }
+        },
+        {
+            "symbol": "RLC",
+            "name": "RLC",
+            "source": "candidate",
+            "action": "Watchlist",
+            "priority": 71.8,
+            "sector": "Unknown",
+            "mom_score": 49,
+            "base_score": 9,
+            "trend": "Strong Uptrend",
+            "last_close": 17.2,
+            "allocation_pct": 0,
+            "sector_allocation_pct": 4.908921578848078,
+            "gain_loss_pct": 0,
+            "risk_pct": 8.639534883720934,
+            "add_readiness": {
+                "symbol": "RLC",
+                "source": "candidate",
+                "sector": "Unknown",
+                "readiness_score": 86.0,
+                "qualified": false,
+                "blockers": [
+                    "R/R 0.48 below 1.10"
+                ],
+                "mom_score": 49,
+                "required_mom": 48,
+                "trend": "Strong Uptrend",
+                "rsi": 46.857142857142826,
+                "reward_risk": 0.4845222072678345,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 0,
+                "entry_price": 17.2,
+                "stop_loss": 15.713999999999999,
+                "target_price": 17.92
+            },
+            "reasons": [
+                "Positive avg monthly return +1.8% (+7)",
+                "High monthly win rate 69% (+14)",
+                "Monthly volatility 4.5% (-3)",
+                "Strong uptrend (+12)",
+                "RSI in constructive range (+8)"
+            ],
+            "trade_plan": {
+                "entry_price": 17.2,
+                "stop_loss": 15.713999999999999,
+                "target_price": 17.92,
+                "risk_per_share": 1.4860000000000007,
+                "reward_risk": 0.4845222072678345,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 581,
+                "suggested_amount": 9993.199999999999
             }
         },
         {
@@ -1522,8 +1583,8 @@
             "base_score": 12,
             "trend": "Strong Uptrend",
             "last_close": 1.15,
-            "allocation_pct": 1.8802162131861546,
-            "sector_allocation_pct": 30.363487057553108,
+            "allocation_pct": 1.8614764745793804,
+            "sector_allocation_pct": 30.11028766363313,
             "gain_loss_pct": -3.361344537815129,
             "risk_pct": 13.121739130434776,
             "add_readiness": {
@@ -1560,62 +1621,9 @@
                 "target_price": 1.2,
                 "risk_per_share": 0.15089999999999992,
                 "reward_risk": 0.33134526176275725,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 6809,
-                "suggested_amount": 7830.349999999999
-            }
-        },
-        {
-            "symbol": "FPH",
-            "name": "FPH",
-            "source": "portfolio",
-            "action": "Watchlist",
-            "priority": 71.6,
-            "sector": "Unknown",
-            "mom_score": 48,
-            "base_score": 10,
-            "trend": "Strong Uptrend",
-            "last_close": 98.5,
-            "allocation_pct": 4.888854113323317,
-            "sector_allocation_pct": 4.888854113323317,
-            "gain_loss_pct": 0.6128702757916182,
-            "risk_pct": 22.153807106598986,
-            "add_readiness": {
-                "symbol": "FPH",
-                "source": "portfolio",
-                "sector": "Unknown",
-                "readiness_score": 97.4,
-                "qualified": false,
-                "blockers": [
-                    "R/R 0.99 below 1.10"
-                ],
-                "mom_score": 48,
-                "required_mom": 43,
-                "trend": "Strong Uptrend",
-                "rsi": 24.378881987577657,
-                "reward_risk": 0.9852668240038494,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0.6128702757916182,
-                "entry_price": 98.5,
-                "stop_loss": 76.6785,
-                "target_price": 120.0
-            },
-            "reasons": [
-                "Positive avg monthly return +3.2% (+13)",
-                "Solid monthly win rate 62% (+9)",
-                "Monthly volatility 6.8% (-5)",
-                "Strong uptrend (+12)",
-                "Oversold RSI < 30 (-6)"
-            ],
-            "trade_plan": {
-                "entry_price": 98.5,
-                "stop_loss": 76.6785,
-                "target_price": 120.0,
-                "risk_per_share": 21.8215,
-                "reward_risk": 0.9852668240038494,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 47,
-                "suggested_amount": 4629.5
+                "risk_budget": 1037.8858,
+                "suggested_shares": 6877,
+                "suggested_amount": 7908.549999999999
             }
         },
         {
@@ -1628,100 +1636,100 @@
             "mom_score": 48,
             "base_score": 12,
             "trend": "Strong Uptrend",
-            "last_close": 17.4,
+            "last_close": 17.3,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
-            "risk_pct": 9.020689655172411,
+            "risk_pct": 8.494797687861281,
             "add_readiness": {
                 "symbol": "ANS",
                 "source": "candidate",
                 "sector": "Unknown",
-                "readiness_score": 76.4,
+                "readiness_score": 78.1,
                 "qualified": false,
                 "blockers": [
-                    "R/R 0.06 below 1.10"
+                    "R/R 0.14 below 1.10"
                 ],
                 "mom_score": 48,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 53.846153846153854,
-                "reward_risk": 0.06371049949031693,
+                "rsi": 54.9019607843137,
+                "reward_risk": 0.1360914534567223,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 17.4,
+                "entry_price": 17.3,
                 "stop_loss": 15.8304,
                 "target_price": 17.5
             },
             "reasons": [
-                "Positive avg monthly return +1.5% (+6)",
+                "Positive avg monthly return +1.4% (+6)",
                 "Solid monthly win rate 62% (+9)",
                 "Monthly volatility 4.2% (-3)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)"
             ],
             "trade_plan": {
-                "entry_price": 17.4,
+                "entry_price": 17.3,
                 "stop_loss": 15.8304,
                 "target_price": 17.5,
-                "risk_per_share": 1.5695999999999994,
-                "reward_risk": 0.06371049949031693,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 574,
-                "suggested_amount": 9987.599999999999
+                "risk_per_share": 1.4696000000000016,
+                "reward_risk": 0.1360914534567223,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 578,
+                "suggested_amount": 9999.4
             }
         },
         {
-            "symbol": "UPSON",
-            "name": "UPSON",
+            "symbol": "SLF",
+            "name": "SLF",
             "source": "candidate",
             "action": "Watchlist",
             "priority": 71.6,
             "sector": "Unknown",
             "mom_score": 48,
-            "base_score": 11,
+            "base_score": 10,
             "trend": "Strong Uptrend",
-            "last_close": 0.87,
+            "last_close": 4860.0,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
-            "risk_pct": 26.413793103448274,
+            "risk_pct": 12.181069958847738,
             "add_readiness": {
-                "symbol": "UPSON",
+                "symbol": "SLF",
                 "source": "candidate",
                 "sector": "Unknown",
-                "readiness_score": 97.7,
+                "readiness_score": 76.5,
                 "qualified": false,
                 "blockers": [
-                    "R/R 1.00 below 1.10"
+                    "R/R 0.07 below 1.10"
                 ],
                 "mom_score": 48,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 58.620689655172406,
-                "reward_risk": 1.0008703220191475,
+                "rsi": 50.95785440613027,
+                "reward_risk": 0.06756756756756757,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 0.87,
-                "stop_loss": 0.6402,
-                "target_price": 1.1
+                "entry_price": 4860.0,
+                "stop_loss": 4268.0,
+                "target_price": 4900.0
             },
             "reasons": [
-                "Positive avg monthly return +1.3% (+5)",
-                "Solid monthly win rate 62% (+9)",
-                "Monthly volatility 5.9% (-4)",
+                "Positive avg monthly return +2.5% (+10)",
+                "High monthly win rate 69% (+14)",
+                "Monthly volatility 4.7% (-3)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)"
             ],
             "trade_plan": {
-                "entry_price": 0.87,
-                "stop_loss": 0.6402,
-                "target_price": 1.1,
-                "risk_per_share": 0.2298,
-                "reward_risk": 1.0008703220191475,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 4471,
-                "suggested_amount": 3889.77
+                "entry_price": 4860.0,
+                "stop_loss": 4268.0,
+                "target_price": 4900.0,
+                "risk_per_share": 592.0,
+                "reward_risk": 0.06756756756756757,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 1,
+                "suggested_amount": 4860.0
             }
         },
         {
@@ -1736,7 +1744,7 @@
             "trend": "Strong Uptrend",
             "last_close": 5.25,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
             "risk_pct": 11.129523809523823,
             "add_readiness": {
@@ -1752,7 +1760,7 @@
                 "mom_score": 46,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 51.4285714285714,
+                "rsi": 50.0,
                 "reward_risk": 1.0953277425979786,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
@@ -1773,9 +1781,9 @@
                 "target_price": 5.89,
                 "risk_per_share": 0.5843000000000007,
                 "reward_risk": 1.0953277425979786,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 1758,
-                "suggested_amount": 9229.5
+                "risk_budget": 1037.8858,
+                "suggested_shares": 1776,
+                "suggested_amount": 9324.0
             }
         },
         {
@@ -1790,7 +1798,7 @@
             "trend": "Strong Uptrend",
             "last_close": 0.405,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
             "risk_pct": 26.950617283950624,
             "add_readiness": {
@@ -1827,171 +1835,63 @@
                 "target_price": 0.49,
                 "risk_per_share": 0.10915000000000002,
                 "reward_risk": 0.7787448465414563,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 9414,
-                "suggested_amount": 3812.67
+                "risk_budget": 1037.8858,
+                "suggested_shares": 9508,
+                "suggested_amount": 3850.7400000000002
             }
         },
         {
-            "symbol": "MA",
-            "name": "MA",
-            "source": "candidate",
+            "symbol": "BC",
+            "name": "BC",
+            "source": "portfolio",
             "action": "Watchlist",
-            "priority": 70.8,
-            "sector": "Unknown",
-            "mom_score": 44,
-            "base_score": 7,
+            "priority": 70.4,
+            "sector": "Mining and Oil",
+            "mom_score": 42,
+            "base_score": 10,
             "trend": "Strong Uptrend",
-            "last_close": 0.0088,
-            "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
-            "gain_loss_pct": 0,
-            "risk_pct": 23.94318181818183,
+            "last_close": 7.74,
+            "allocation_pct": 2.2596127627914364,
+            "sector_allocation_pct": 12.886215419846767,
+            "gain_loss_pct": 17.27272727272728,
+            "risk_pct": 26.059431524547804,
             "add_readiness": {
-                "symbol": "MA",
-                "source": "candidate",
-                "sector": "Unknown",
-                "readiness_score": 79.6,
+                "symbol": "BC",
+                "source": "portfolio",
+                "sector": "Mining and Oil",
+                "readiness_score": 74.7,
                 "qualified": false,
                 "blockers": [
-                    "MoM 44 below Add threshold 48",
-                    "R/R 0.33 below 1.10"
+                    "MoM 42 below Add threshold 43",
+                    "R/R 0.02 below 1.10"
                 ],
-                "mom_score": 44,
-                "required_mom": 48,
+                "mom_score": 42,
+                "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 67.50000000000003,
-                "reward_risk": 0.3322259136212619,
+                "rsi": 71.42857142857143,
+                "reward_risk": 0.024789291026276555,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0,
-                "entry_price": 0.0088,
-                "stop_loss": 0.006692999999999999,
-                "target_price": 0.0095
+                "gain_loss_pct": 17.27272727272728,
+                "entry_price": 7.74,
+                "stop_loss": 5.723,
+                "target_price": 7.79
             },
             "reasons": [
-                "Positive avg monthly return +3.6% (+14)",
-                "Monthly volatility 11.8% (-8)",
+                "Positive avg monthly return +4.7% (+19)",
+                "High monthly win rate 69% (+14)",
+                "Monthly volatility 11.0% (-8)",
                 "Strong uptrend (+12)",
-                "RSI in constructive range (+8)",
                 "MACD bullish (+5)"
             ],
             "trade_plan": {
-                "entry_price": 0.0088,
-                "stop_loss": 0.006692999999999999,
-                "target_price": 0.0095,
-                "risk_per_share": 0.0021070000000000012,
-                "reward_risk": 0.3322259136212619,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 487679,
-                "suggested_amount": 4291.5752
-            }
-        },
-        {
-            "symbol": "LC",
-            "name": "LC",
-            "source": "candidate",
-            "action": "Watchlist",
-            "priority": 70.6,
-            "sector": "Unknown",
-            "mom_score": 43,
-            "base_score": 11,
-            "trend": "Strong Uptrend",
-            "last_close": 0.25,
-            "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
-            "gain_loss_pct": 0,
-            "risk_pct": 34.03999999999999,
-            "add_readiness": {
-                "symbol": "LC",
-                "source": "candidate",
-                "sector": "Unknown",
-                "readiness_score": 74.0,
-                "qualified": false,
-                "blockers": [
-                    "MoM 43 below Add threshold 48",
-                    "R/R 0.12 below 1.10"
-                ],
-                "mom_score": 43,
-                "required_mom": 48,
-                "trend": "Strong Uptrend",
-                "rsi": 64.0625,
-                "reward_risk": 0.1175088131609872,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0,
-                "entry_price": 0.25,
-                "stop_loss": 0.16490000000000002,
-                "target_price": 0.26
-            },
-            "reasons": [
-                "Positive avg monthly return +9.6% (+25)",
-                "High monthly win rate 81% (+14)",
-                "Monthly volatility 23.1% (-16)",
-                "Strong uptrend (+12)",
-                "RSI in constructive range (+8)"
-            ],
-            "trade_plan": {
-                "entry_price": 0.25,
-                "stop_loss": 0.16490000000000002,
-                "target_price": 0.26,
-                "risk_per_share": 0.08509999999999998,
-                "reward_risk": 0.1175088131609872,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 12074,
-                "suggested_amount": 3018.5
-            }
-        },
-        {
-            "symbol": "OPM",
-            "name": "OPM",
-            "source": "candidate",
-            "action": "Watchlist",
-            "priority": 70.6,
-            "sector": "Mining and Oil",
-            "mom_score": 43,
-            "base_score": 7,
-            "trend": "Strong Uptrend",
-            "last_close": 0.014,
-            "allocation_pct": 0,
-            "sector_allocation_pct": 12.561829625550851,
-            "gain_loss_pct": 0,
-            "risk_pct": 9.928571428571432,
-            "add_readiness": {
-                "symbol": "OPM",
-                "source": "candidate",
-                "sector": "Mining and Oil",
-                "readiness_score": 87.7,
-                "qualified": false,
-                "blockers": [
-                    "MoM 43 below Add threshold 48",
-                    "R/R 0.72 below 1.10"
-                ],
-                "mom_score": 43,
-                "required_mom": 48,
-                "trend": "Strong Uptrend",
-                "rsi": 60.00000000000001,
-                "reward_risk": 0.7194244604316538,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0,
-                "entry_price": 0.014,
-                "stop_loss": 0.01261,
-                "target_price": 0.015
-            },
-            "reasons": [
-                "Positive avg monthly return +4.1% (+16)",
-                "Weak monthly win rate 44% (-8)",
-                "Monthly volatility 8.4% (-6)",
-                "Strong uptrend (+12)",
-                "RSI in constructive range (+8)"
-            ],
-            "trade_plan": {
-                "entry_price": 0.014,
-                "stop_loss": 0.01261,
-                "target_price": 0.015,
-                "risk_per_share": 0.0013900000000000006,
-                "reward_risk": 0.7194244604316538,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 714285,
-                "suggested_amount": 9999.99
+                "entry_price": 7.74,
+                "stop_loss": 5.723,
+                "target_price": 7.79,
+                "risk_per_share": 2.0170000000000003,
+                "reward_risk": 0.024789291026276555,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 514,
+                "suggested_amount": 3978.36
             }
         },
         {
@@ -2006,7 +1906,7 @@
             "trend": "Uptrend",
             "last_close": 13.9,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
             "risk_pct": 6.210071942446049,
             "add_readiness": {
@@ -2022,7 +1922,7 @@
                 "mom_score": 42,
                 "required_mom": 48,
                 "trend": "Uptrend",
-                "rsi": 67.7966101694915,
+                "rsi": 58.69565217391303,
                 "reward_risk": 0.48656163113994383,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
@@ -2043,7 +1943,7 @@
                 "target_price": 14.32,
                 "risk_per_share": 0.8632000000000009,
                 "reward_risk": 0.48656163113994383,
-                "risk_budget": 1027.5414,
+                "risk_budget": 1037.8858,
                 "suggested_shares": 719,
                 "suggested_amount": 9994.1
             }
@@ -2060,7 +1960,7 @@
             "trend": "Strong Uptrend",
             "last_close": 4.99,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
             "risk_pct": 14.46893787575151,
             "add_readiness": {
@@ -2075,7 +1975,7 @@
                 "mom_score": 42,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 44.00000000000002,
+                "rsi": 41.1764705882353,
                 "reward_risk": 1.3988919667590016,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
@@ -2096,9 +1996,9 @@
                 "target_price": 6.0,
                 "risk_per_share": 0.7220000000000004,
                 "reward_risk": 1.3988919667590016,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 1423,
-                "suggested_amount": 7100.77
+                "risk_budget": 1037.8858,
+                "suggested_shares": 1437,
+                "suggested_amount": 7170.63
             }
         },
         {
@@ -2113,7 +2013,7 @@
             "trend": "Strong Uptrend",
             "last_close": 9.74,
             "allocation_pct": 0,
-            "sector_allocation_pct": 30.363487057553108,
+            "sector_allocation_pct": 30.11028766363313,
             "gain_loss_pct": 0,
             "risk_pct": 35.66529774127311,
             "add_readiness": {
@@ -2129,7 +2029,7 @@
                 "mom_score": 41,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 56.86274509803922,
+                "rsi": 46.34146341463413,
                 "reward_risk": 0.017272151534342934,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
@@ -2150,9 +2050,9 @@
                 "target_price": 9.8,
                 "risk_per_share": 3.4738000000000007,
                 "reward_risk": 0.017272151534342934,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 295,
-                "suggested_amount": 2873.3
+                "risk_budget": 1037.8858,
+                "suggested_shares": 298,
+                "suggested_amount": 2902.52
             }
         },
         {
@@ -2160,161 +2060,216 @@
             "name": "ROCK",
             "source": "candidate",
             "action": "Watchlist",
-            "priority": 70.2,
+            "priority": 70.0,
             "sector": "Unknown",
-            "mom_score": 41,
-            "base_score": 8,
+            "mom_score": 40,
+            "base_score": 9,
             "trend": "Strong Uptrend",
-            "last_close": 2.93,
+            "last_close": 3.0,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
-            "risk_pct": 28.160409556314004,
+            "risk_pct": 29.836666666666673,
             "add_readiness": {
                 "symbol": "ROCK",
                 "source": "candidate",
                 "sector": "Unknown",
-                "readiness_score": 83.4,
+                "readiness_score": 79.8,
                 "qualified": false,
                 "blockers": [
-                    "MoM 41 below Add threshold 48",
-                    "R/R 0.59 below 1.10"
+                    "MoM 40 below Add threshold 48",
+                    "R/R 0.47 below 1.10"
                 ],
-                "mom_score": 41,
+                "mom_score": 40,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 47.252747252747255,
-                "reward_risk": 0.5938674100109073,
+                "rsi": 50.0,
+                "reward_risk": 0.46922131605407197,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 2.93,
+                "entry_price": 3.0,
                 "stop_loss": 2.1048999999999998,
                 "target_price": 3.42
             },
             "reasons": [
-                "Positive avg monthly return +3.1% (+12)",
-                "Monthly volatility 8.8% (-6)",
+                "Positive avg monthly return +3.2% (+13)",
+                "Monthly volatility 8.7% (-6)",
                 "Strong uptrend (+12)",
                 "RSI in constructive range (+8)",
                 "Above EMA 50 (+5)"
             ],
             "trade_plan": {
-                "entry_price": 2.93,
+                "entry_price": 3.0,
                 "stop_loss": 2.1048999999999998,
                 "target_price": 3.42,
-                "risk_per_share": 0.8251000000000004,
-                "reward_risk": 0.5938674100109073,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 1245,
-                "suggested_amount": 3647.8500000000004
+                "risk_per_share": 0.8951000000000002,
+                "reward_risk": 0.46922131605407197,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 1159,
+                "suggested_amount": 3477.0
             }
         },
         {
-            "symbol": "RLC",
-            "name": "RLC",
+            "symbol": "FJP",
+            "name": "FJP",
             "source": "candidate",
             "action": "Watchlist",
-            "priority": 70.2,
+            "priority": 70.0,
             "sector": "Unknown",
-            "mom_score": 41,
-            "base_score": 8,
+            "mom_score": 40,
+            "base_score": 6,
             "trend": "Strong Uptrend",
-            "last_close": 17.2,
+            "last_close": 2.67,
             "allocation_pct": 0,
-            "sector_allocation_pct": 4.888854113323317,
+            "sector_allocation_pct": 4.908921578848078,
             "gain_loss_pct": 0,
-            "risk_pct": 8.639534883720934,
+            "risk_pct": 20.0749063670412,
             "add_readiness": {
-                "symbol": "RLC",
+                "symbol": "FJP",
                 "source": "candidate",
                 "sector": "Unknown",
-                "readiness_score": 80.9,
+                "readiness_score": 82.3,
                 "qualified": false,
                 "blockers": [
-                    "MoM 41 below Add threshold 48",
-                    "R/R 0.48 below 1.10"
+                    "MoM 40 below Add threshold 48",
+                    "R/R 0.58 below 1.10"
                 ],
-                "mom_score": 41,
+                "mom_score": 40,
                 "required_mom": 48,
                 "trend": "Strong Uptrend",
-                "rsi": 41.20603015075376,
-                "reward_risk": 0.4845222072678345,
+                "rsi": 49.48805460750852,
+                "reward_risk": 0.5783582089552239,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 0,
-                "entry_price": 17.2,
-                "stop_loss": 15.713999999999999,
-                "target_price": 17.92
+                "entry_price": 2.67,
+                "stop_loss": 2.134,
+                "target_price": 2.98
             },
             "reasons": [
-                "Positive avg monthly return +1.8% (+7)",
-                "High monthly win rate 69% (+14)",
-                "Monthly volatility 4.5% (-3)",
+                "Positive avg monthly return +0.8% (+3)",
+                "Monthly volatility 11.1% (-8)",
                 "Strong uptrend (+12)",
-                "Above EMA 50 (+5)"
+                "RSI in constructive range (+8)",
+                "MACD bullish (+5)"
             ],
             "trade_plan": {
-                "entry_price": 17.2,
-                "stop_loss": 15.713999999999999,
-                "target_price": 17.92,
-                "risk_per_share": 1.4860000000000007,
-                "reward_risk": 0.4845222072678345,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 581,
-                "suggested_amount": 9993.199999999999
+                "entry_price": 2.67,
+                "stop_loss": 2.134,
+                "target_price": 2.98,
+                "risk_per_share": 0.536,
+                "reward_risk": 0.5783582089552239,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 1936,
+                "suggested_amount": 5169.12
             }
         },
         {
-            "symbol": "LTG",
-            "name": "LTG",
+            "symbol": "APX",
+            "name": "APX",
             "source": "portfolio",
             "action": "Watchlist",
-            "priority": 69.6,
-            "sector": "Holding Firms",
-            "mom_score": 38,
-            "base_score": 5,
+            "priority": 69.8,
+            "sector": "Mining and Oil",
+            "mom_score": 39,
+            "base_score": 6,
             "trend": "Strong Uptrend",
-            "last_close": 14.98,
-            "allocation_pct": 12.450028777429308,
-            "sector_allocation_pct": 15.322477517694178,
-            "gain_loss_pct": -1.3979944968129239,
-            "risk_pct": 8.050734312416562,
+            "last_close": 18.2,
+            "allocation_pct": 10.626602657055331,
+            "sector_allocation_pct": 12.886215419846767,
+            "gain_loss_pct": 22.701270267203345,
+            "risk_pct": 38.70879120879121,
             "add_readiness": {
-                "symbol": "LTG",
+                "symbol": "APX",
                 "source": "portfolio",
-                "sector": "Holding Firms",
-                "readiness_score": 77.3,
+                "sector": "Mining and Oil",
+                "readiness_score": 75.0,
                 "qualified": false,
                 "blockers": [
-                    "MoM 38 below Add threshold 43",
-                    "R/R 0.28 below 1.10"
+                    "MoM 39 below Add threshold 43",
+                    "R/R 0.14 below 1.10"
                 ],
-                "mom_score": 38,
+                "mom_score": 39,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 46.66666666666666,
-                "reward_risk": 0.28192371475953526,
+                "rsi": 79.40298507462686,
+                "reward_risk": 0.14194464158977999,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": -1.3979944968129239,
-                "entry_price": 14.98,
-                "stop_loss": 13.774,
-                "target_price": 15.32
+                "gain_loss_pct": 22.701270267203345,
+                "entry_price": 18.2,
+                "stop_loss": 11.155,
+                "target_price": 19.2
             },
             "reasons": [
-                "Positive avg monthly return +1.3% (+5)",
-                "Monthly volatility 4.8% (-3)",
+                "Positive avg monthly return +7.9% (+25)",
+                "High monthly win rate 69% (+14)",
+                "Monthly volatility 19.3% (-14)",
                 "Strong uptrend (+12)",
-                "RSI in constructive range (+8)",
-                "Above EMA 50 (+5)"
+                "Overbought RSI > 75 (-12)"
             ],
             "trade_plan": {
-                "entry_price": 14.98,
-                "stop_loss": 13.774,
-                "target_price": 15.32,
-                "risk_per_share": 1.2060000000000013,
-                "reward_risk": 0.28192371475953526,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 667,
-                "suggested_amount": 9991.66
+                "entry_price": 18.2,
+                "stop_loss": 11.155,
+                "target_price": 19.2,
+                "risk_per_share": 7.045,
+                "reward_risk": 0.14194464158977999,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 147,
+                "suggested_amount": 2675.4
+            }
+        },
+        {
+            "symbol": "OGP",
+            "name": "OGP",
+            "source": "candidate",
+            "action": "Watchlist",
+            "priority": 69.8,
+            "sector": "Unknown",
+            "mom_score": 39,
+            "base_score": 8,
+            "trend": "Strong Uptrend",
+            "last_close": 39.0,
+            "allocation_pct": 0,
+            "sector_allocation_pct": 4.908921578848078,
+            "gain_loss_pct": 0,
+            "risk_pct": 25.63333333333334,
+            "add_readiness": {
+                "symbol": "OGP",
+                "source": "candidate",
+                "sector": "Unknown",
+                "readiness_score": 60.7,
+                "qualified": false,
+                "blockers": [
+                    "MoM 39 below Add threshold 48",
+                    "RSI 73.7 outside 40-72 range",
+                    "R/R 0.05 below 1.10"
+                ],
+                "mom_score": 39,
+                "required_mom": 48,
+                "trend": "Strong Uptrend",
+                "rsi": 73.71794871794879,
+                "reward_risk": 0.05001500450135039,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 0,
+                "entry_price": 39.0,
+                "stop_loss": 29.002999999999997,
+                "target_price": 39.5
+            },
+            "reasons": [
+                "Positive avg monthly return +6.4% (+25)",
+                "High monthly win rate 75% (+14)",
+                "Monthly volatility 12.1% (-8)",
+                "Strong uptrend (+12)",
+                "MACD bullish (+5)"
+            ],
+            "trade_plan": {
+                "entry_price": 39.0,
+                "stop_loss": 29.002999999999997,
+                "target_price": 39.5,
+                "risk_per_share": 9.997000000000003,
+                "reward_risk": 0.05001500450135039,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 103,
+                "suggested_amount": 4017.0
             }
         },
         {
@@ -2325,13 +2280,13 @@
             "priority": 41.4,
             "sector": "Financials",
             "mom_score": 37,
-            "base_score": 4,
+            "base_score": 5,
             "trend": "Strong Uptrend",
-            "last_close": 212.6,
-            "allocation_pct": 1.8621147527486483,
-            "sector_allocation_pct": 26.755758940710322,
-            "gain_loss_pct": 3.505355404089576,
-            "risk_pct": 11.030103480714953,
+            "last_close": 213.0,
+            "allocation_pct": 1.8470240174786088,
+            "sector_allocation_pct": 26.72495374731979,
+            "gain_loss_pct": 3.700097370983444,
+            "risk_pct": 11.197183098591546,
             "add_readiness": {
                 "symbol": "PSE",
                 "source": "portfolio",
@@ -2345,13 +2300,13 @@
                 "mom_score": 37,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 57.14285714285713,
-                "reward_risk": 0.017057569296375516,
+                "rsi": 56.47668393782383,
+                "reward_risk": 0.01677148846960192,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 3.505355404089576,
-                "entry_price": 212.6,
+                "gain_loss_pct": 3.700097370983444,
+                "entry_price": 213.0,
                 "stop_loss": 189.15,
-                "target_price": 213.0
+                "target_price": 213.4
             },
             "reasons": [
                 "Positive avg monthly return +1.0% (+4)",
@@ -2361,14 +2316,14 @@
                 "MACD bullish (+5)"
             ],
             "trade_plan": {
-                "entry_price": 212.6,
+                "entry_price": 213.0,
                 "stop_loss": 189.15,
-                "target_price": 213.0,
-                "risk_per_share": 23.44999999999999,
-                "reward_risk": 0.017057569296375516,
-                "risk_budget": 1027.5414,
+                "target_price": 213.4,
+                "risk_per_share": 23.849999999999994,
+                "reward_risk": 0.01677148846960192,
+                "risk_budget": 1037.8858,
                 "suggested_shares": 43,
-                "suggested_amount": 9141.8
+                "suggested_amount": 9159.0
             }
         },
         {
@@ -2382,8 +2337,8 @@
             "base_score": 7,
             "trend": "Strong Uptrend",
             "last_close": 0.465,
-            "allocation_pct": 4.309052657148413,
-            "sector_allocation_pct": 8.318078473529145,
+            "allocation_pct": 4.266105191919959,
+            "sector_allocation_pct": 8.253133437224019,
             "gain_loss_pct": 10.714285714285724,
             "risk_pct": 12.387096774193557,
             "add_readiness": {
@@ -2399,7 +2354,7 @@
                 "mom_score": 37,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 55.26315789473684,
+                "rsi": 61.76470588235296,
                 "reward_risk": 0.6076388888888881,
                 "required_reward_risk": 1.0999999999999999,
                 "gain_loss_pct": 10.714285714285724,
@@ -2420,9 +2375,63 @@
                 "target_price": 0.5,
                 "risk_per_share": 0.05760000000000004,
                 "reward_risk": 0.6076388888888881,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 17839,
-                "suggested_amount": 8295.135
+                "risk_budget": 1037.8858,
+                "suggested_shares": 18018,
+                "suggested_amount": 8378.37
+            }
+        },
+        {
+            "symbol": "RFM",
+            "name": "RFM",
+            "source": "portfolio",
+            "action": "Hold",
+            "priority": 41.2,
+            "sector": "Industrial",
+            "mom_score": 36,
+            "base_score": 11,
+            "trend": "Downtrend",
+            "last_close": 5.3,
+            "allocation_pct": 4.3660872901430965,
+            "sector_allocation_pct": 30.11028766363313,
+            "gain_loss_pct": 13.396644270109991,
+            "risk_pct": 4.64716981132075,
+            "add_readiness": {
+                "symbol": "RFM",
+                "source": "portfolio",
+                "sector": "Industrial",
+                "readiness_score": 74.3,
+                "qualified": false,
+                "blockers": [
+                    "MoM 36 below Add threshold 43",
+                    "Trend is Downtrend"
+                ],
+                "mom_score": 36,
+                "required_mom": 43,
+                "trend": "Downtrend",
+                "rsi": 48.38709677419359,
+                "reward_risk": 1.74583840844499,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 13.396644270109991,
+                "entry_price": 5.3,
+                "stop_loss": 5.0537,
+                "target_price": 5.73
+            },
+            "reasons": [
+                "Positive avg monthly return +1.7% (+7)",
+                "Solid monthly win rate 62% (+9)",
+                "Monthly volatility 4.1% (-3)",
+                "Downtrend (-14)",
+                "RSI in constructive range (+8)"
+            ],
+            "trade_plan": {
+                "entry_price": 5.3,
+                "stop_loss": 5.0537,
+                "target_price": 5.73,
+                "risk_per_share": 0.24629999999999974,
+                "reward_risk": 1.74583840844499,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 1886,
+                "suggested_amount": 9995.8
             }
         },
         {
@@ -2433,31 +2442,31 @@
             "priority": 41.0,
             "sector": "Property",
             "mom_score": 35,
-            "base_score": 8,
+            "base_score": 7,
             "trend": "Strong Uptrend",
-            "last_close": 2.21,
-            "allocation_pct": 4.009025816380731,
-            "sector_allocation_pct": 8.318078473529145,
-            "gain_loss_pct": 3.062266076896896,
-            "risk_pct": 12.217194570135748,
+            "last_close": 2.22,
+            "allocation_pct": 3.9870282453040593,
+            "sector_allocation_pct": 8.253133437224019,
+            "gain_loss_pct": 3.528611172267481,
+            "risk_pct": 12.612612612612622,
             "add_readiness": {
                 "symbol": "MEG",
                 "source": "portfolio",
                 "sector": "Property",
-                "readiness_score": 82.0,
+                "readiness_score": 80.7,
                 "qualified": false,
                 "blockers": [
                     "MoM 35 below Add threshold 43",
-                    "R/R 0.59 below 1.10"
+                    "R/R 0.54 below 1.10"
                 ],
                 "mom_score": 35,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 43.63636363636364,
-                "reward_risk": 0.5925925925925931,
+                "rsi": 38.00000000000003,
+                "reward_risk": 0.5357142857142849,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 3.062266076896896,
-                "entry_price": 2.21,
+                "gain_loss_pct": 3.528611172267481,
+                "entry_price": 2.22,
                 "stop_loss": 1.94,
                 "target_price": 2.37
             },
@@ -2469,14 +2478,14 @@
                 "Above EMA 200 (+4)"
             ],
             "trade_plan": {
-                "entry_price": 2.21,
+                "entry_price": 2.22,
                 "stop_loss": 1.94,
                 "target_price": 2.37,
-                "risk_per_share": 0.27,
-                "reward_risk": 0.5925925925925931,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 3805,
-                "suggested_amount": 8409.05
+                "risk_per_share": 0.28000000000000025,
+                "reward_risk": 0.5357142857142849,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 3706,
+                "suggested_amount": 8227.320000000002
             }
         },
         {
@@ -2489,11 +2498,11 @@
             "mom_score": 35,
             "base_score": 10,
             "trend": "Downtrend",
-            "last_close": 24.7,
-            "allocation_pct": 8.87000757341748,
-            "sector_allocation_pct": 30.363487057553108,
-            "gain_loss_pct": 1.5713282738791776,
-            "risk_pct": 3.589068825910924,
+            "last_close": 24.85,
+            "allocation_pct": 8.834931550272678,
+            "sector_allocation_pct": 30.11028766363313,
+            "gain_loss_pct": 2.1881582026679265,
+            "risk_pct": 4.17102615694165,
             "add_readiness": {
                 "symbol": "SGP",
                 "source": "portfolio",
@@ -2507,11 +2516,11 @@
                 "mom_score": 35,
                 "required_mom": 43,
                 "trend": "Downtrend",
-                "rsi": 23.463687150838012,
-                "reward_risk": 10.998307952622701,
+                "rsi": 26.315789473684262,
+                "reward_risk": 9.261939218523878,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 1.5713282738791776,
-                "entry_price": 24.7,
+                "gain_loss_pct": 2.1881582026679265,
+                "entry_price": 24.85,
                 "stop_loss": 23.8135,
                 "target_price": 34.45
             },
@@ -2523,14 +2532,68 @@
                 "Oversold RSI < 30 (-6)"
             ],
             "trade_plan": {
-                "entry_price": 24.7,
+                "entry_price": 24.85,
                 "stop_loss": 23.8135,
                 "target_price": 34.45,
-                "risk_per_share": 0.8864999999999981,
-                "reward_risk": 10.998307952622701,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 404,
-                "suggested_amount": 9978.8
+                "risk_per_share": 1.0365000000000002,
+                "reward_risk": 9.261939218523878,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 402,
+                "suggested_amount": 9989.7
+            }
+        },
+        {
+            "symbol": "LTG",
+            "name": "LTG",
+            "source": "portfolio",
+            "action": "Hold",
+            "priority": 40.6,
+            "sector": "Holding Firms",
+            "mom_score": 33,
+            "base_score": 5,
+            "trend": "Strong Uptrend",
+            "last_close": 15.2,
+            "allocation_pct": 12.50696367557972,
+            "sector_allocation_pct": 15.344809612001628,
+            "gain_loss_pct": 0.05009904195216594,
+            "risk_pct": 9.381578947368423,
+            "add_readiness": {
+                "symbol": "LTG",
+                "source": "portfolio",
+                "sector": "Holding Firms",
+                "readiness_score": 68.8,
+                "qualified": false,
+                "blockers": [
+                    "MoM 33 below Add threshold 43",
+                    "R/R 0.08 below 1.10"
+                ],
+                "mom_score": 33,
+                "required_mom": 43,
+                "trend": "Strong Uptrend",
+                "rsi": 60.93750000000001,
+                "reward_risk": 0.08415147265077208,
+                "required_reward_risk": 1.0999999999999999,
+                "gain_loss_pct": 0.05009904195216594,
+                "entry_price": 15.2,
+                "stop_loss": 13.774,
+                "target_price": 15.32
+            },
+            "reasons": [
+                "Positive avg monthly return +1.4% (+6)",
+                "Monthly volatility 4.7% (-3)",
+                "Strong uptrend (+12)",
+                "RSI in constructive range (+8)",
+                "Above EMA 50 (+5)"
+            ],
+            "trade_plan": {
+                "entry_price": 15.2,
+                "stop_loss": 13.774,
+                "target_price": 15.32,
+                "risk_per_share": 1.4260000000000002,
+                "reward_risk": 0.08415147265077208,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 657,
+                "suggested_amount": 9986.4
             }
         },
         {
@@ -2543,102 +2606,48 @@
             "mom_score": 31,
             "base_score": 10,
             "trend": "Strong Uptrend",
-            "last_close": 76.65,
-            "allocation_pct": 2.3124615708914504,
-            "sector_allocation_pct": 26.755758940710322,
-            "gain_loss_pct": 19.392523364485985,
-            "risk_pct": 27.866927592954998,
+            "last_close": 78.0,
+            "allocation_pct": 2.32973608464438,
+            "sector_allocation_pct": 26.72495374731979,
+            "gain_loss_pct": 21.49532710280373,
+            "risk_pct": 29.115384615384617,
             "add_readiness": {
                 "symbol": "PNB",
                 "source": "portfolio",
                 "sector": "Financials",
-                "readiness_score": 67.2,
+                "readiness_score": 66.0,
                 "qualified": false,
                 "blockers": [
                     "MoM 31 below Add threshold 43",
-                    "R/R 0.09 below 1.10"
+                    "R/R 0.03 below 1.10"
                 ],
                 "mom_score": 31,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 71.42857142857146,
-                "reward_risk": 0.08661048689138548,
+                "rsi": 74.02862985685073,
+                "reward_risk": 0.03302509907529722,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 19.392523364485985,
-                "entry_price": 76.65,
+                "gain_loss_pct": 21.49532710280373,
+                "entry_price": 78.0,
                 "stop_loss": 55.29,
-                "target_price": 78.5
+                "target_price": 78.75
             },
             "reasons": [
-                "Positive avg monthly return +2.8% (+11)",
+                "Positive avg monthly return +2.9% (+12)",
                 "Solid monthly win rate 62% (+9)",
-                "Monthly volatility 9.0% (-6)",
+                "Monthly volatility 9.2% (-6)",
                 "Strong uptrend (+12)",
                 "MACD bullish (+5)"
             ],
             "trade_plan": {
-                "entry_price": 76.65,
+                "entry_price": 78.0,
                 "stop_loss": 55.29,
-                "target_price": 78.5,
-                "risk_per_share": 21.360000000000007,
-                "reward_risk": 0.08661048689138548,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 48,
-                "suggested_amount": 3679.2000000000003
-            }
-        },
-        {
-            "symbol": "RFM",
-            "name": "RFM",
-            "source": "portfolio",
-            "action": "Hold",
-            "priority": 39.6,
-            "sector": "Industrial",
-            "mom_score": 28,
-            "base_score": 11,
-            "trend": "Downtrend",
-            "last_close": 5.26,
-            "allocation_pct": 4.376757958365474,
-            "sector_allocation_pct": 30.363487057553108,
-            "gain_loss_pct": 12.54082053976954,
-            "risk_pct": 3.9220532319391577,
-            "add_readiness": {
-                "symbol": "RFM",
-                "source": "portfolio",
-                "sector": "Industrial",
-                "readiness_score": 67.8,
-                "qualified": false,
-                "blockers": [
-                    "MoM 28 below Add threshold 43",
-                    "Trend is Downtrend"
-                ],
-                "mom_score": 28,
-                "required_mom": 43,
-                "trend": "Downtrend",
-                "rsi": 44.82758620689651,
-                "reward_risk": 2.2782355792535207,
-                "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 12.54082053976954,
-                "entry_price": 5.26,
-                "stop_loss": 5.0537,
-                "target_price": 5.73
-            },
-            "reasons": [
-                "Positive avg monthly return +1.6% (+7)",
-                "Solid monthly win rate 62% (+9)",
-                "Monthly volatility 4.1% (-3)",
-                "Downtrend (-14)",
-                "MACD bullish (+5)"
-            ],
-            "trade_plan": {
-                "entry_price": 5.26,
-                "stop_loss": 5.0537,
-                "target_price": 5.73,
-                "risk_per_share": 0.2062999999999997,
-                "reward_risk": 2.2782355792535207,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 1901,
-                "suggested_amount": 9999.26
+                "target_price": 78.75,
+                "risk_per_share": 22.71,
+                "reward_risk": 0.03302509907529722,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 45,
+                "suggested_amount": 3510.0
             }
         },
         {
@@ -2646,53 +2655,53 @@
             "name": "AGI",
             "source": "portfolio",
             "action": "Hold",
-            "priority": 38.6,
+            "priority": 40.0,
             "sector": "Holding Firms",
-            "mom_score": 23,
-            "base_score": 7,
+            "mom_score": 30,
+            "base_score": 8,
             "trend": "Strong Uptrend",
-            "last_close": 8.98,
-            "allocation_pct": 1.940126208053515,
-            "sector_allocation_pct": 15.322477517694178,
-            "gain_loss_pct": 0.0,
-            "risk_pct": 16.286191536748333,
+            "last_close": 9.08,
+            "allocation_pct": 1.9421789950300887,
+            "sector_allocation_pct": 15.344809612001628,
+            "gain_loss_pct": 1.1135857461024459,
+            "risk_pct": 17.20814977973568,
             "add_readiness": {
                 "symbol": "AGI",
                 "source": "portfolio",
                 "sector": "Holding Firms",
-                "readiness_score": 79.5,
+                "readiness_score": 82.5,
                 "qualified": false,
                 "blockers": [
-                    "MoM 23 below Add threshold 43",
-                    "R/R 0.92 below 1.10"
+                    "MoM 30 below Add threshold 43",
+                    "R/R 0.79 below 1.10"
                 ],
-                "mom_score": 23,
+                "mom_score": 30,
                 "required_mom": 43,
                 "trend": "Strong Uptrend",
-                "rsi": 32.394366197183075,
-                "reward_risk": 0.9162393162393159,
+                "rsi": 41.17647058823527,
+                "reward_risk": 0.7936000000000001,
                 "required_reward_risk": 1.0999999999999999,
-                "gain_loss_pct": 0.0,
-                "entry_price": 8.98,
+                "gain_loss_pct": 1.1135857461024459,
+                "entry_price": 9.08,
                 "stop_loss": 7.5175,
                 "target_price": 10.32
             },
             "reasons": [
-                "Positive avg monthly return +0.8% (+3)",
-                "Weak monthly win rate 44% (-8)",
+                "Positive avg monthly return +0.9% (+3)",
                 "Monthly volatility 8.5% (-6)",
                 "Strong uptrend (+12)",
-                "Above EMA 50 (+5)"
+                "Above EMA 50 (+5)",
+                "Above EMA 200 (+4)"
             ],
             "trade_plan": {
-                "entry_price": 8.98,
+                "entry_price": 9.08,
                 "stop_loss": 7.5175,
                 "target_price": 10.32,
-                "risk_per_share": 1.4625000000000004,
-                "reward_risk": 0.9162393162393159,
-                "risk_budget": 1027.5414,
-                "suggested_shares": 702,
-                "suggested_amount": 6303.96
+                "risk_per_share": 1.5625,
+                "reward_risk": 0.7936000000000001,
+                "risk_budget": 1037.8858,
+                "suggested_shares": 664,
+                "suggested_amount": 6029.12
             }
         }
     ]
