@@ -1,30 +1,30 @@
 # Daily Action Digest
 
-Generated: 2026-09-30T16:23:41+00:00
+Generated: 2026-10-01T16:59:53+00:00
 
 ## Summary
 
-- Review Risk: 10
+- Review Risk: 13
 - Add: 0
-- Watchlist: 21
+- Watchlist: 19
 - Trim Watch: 0
 
 ## Top Actions
 
 | Symbol | Action | Priority | MoM | Trend | Entry | Stop | Target | R/R |
 |---|---|---:|---:|---|---:|---:|---:|---:|
-| LFM | Review Risk | 116.8 | 4 | Strong Downtrend | 22.75 | 19.88 | 28.20 | 1.90 |
-| MWC | Review Risk | 116.0 | -5 | Strong Downtrend | 34.00 | 31.91 | 37.35 | 1.61 |
-| GTCAP | Review Risk | 116.0 | -10 | Strong Downtrend | 429.00 | 391.88 | 518.50 | 2.41 |
-| SGP | Review Risk | 115.2 | 24 | Strong Downtrend | 21.80 | 20.37 | 30.65 | 6.19 |
-| FPH | Review Risk | 113.2 | 8 | Downtrend | 86.55 | 77.26 | 120.00 | 3.60 |
-| MEG | Review Risk | 102.6 | 13 | Downtrend | 2.16 | 2.01 | 2.37 | 1.38 |
-| BC | Review Risk | 102.6 | 13 | Downtrend | 6.81 | 5.72 | 7.79 | 0.90 |
-| FRUIT | Review Risk | 101.8 | 9 | Strong Downtrend | 0.64 | 0.61 | 0.70 | 2.08 |
-| RFM | Review Risk | 101.2 | 6 | Strong Downtrend | 5.00 | 4.82 | 5.65 | 3.63 |
-| NRCP | Review Risk | 100.4 | 2 | Downtrend | 1.20 | 0.88 | 1.57 | 1.17 |
-| CEI | Watchlist | 73.2 | 56 | Strong Uptrend | 0.09 | 0.08 | 0.09 | 0.53 |
+| SGP | Review Risk | 117.6 | 25 | Strong Downtrend | 21.25 | 20.37 | 30.65 | 10.68 |
+| LFM | Review Risk | 117.0 | 5 | Strong Downtrend | 22.65 | 19.88 | 28.20 | 2.01 |
+| GTCAP | Review Risk | 116.0 | -16 | Strong Downtrend | 417.00 | 391.88 | 518.50 | 4.04 |
+| MWC | Review Risk | 116.0 | -17 | Strong Downtrend | 33.00 | 31.72 | 37.35 | 3.40 |
+| FPH | Review Risk | 112.1 | 5 | Downtrend | 87.00 | 78.57 | 120.00 | 3.91 |
+| FRUIT | Review Risk | 104.0 | 20 | Strong Downtrend | 0.64 | 0.61 | 0.70 | 2.08 |
+| AUB | Review Risk | 102.0 | 10 | Downtrend | 47.50 | 45.78 | 57.80 | 6.00 |
+| RFM | Review Risk | 100.8 | 4 | Strong Downtrend | 5.03 | 4.82 | 5.62 | 2.82 |
+| BC | Review Risk | 100.6 | 3 | Downtrend | 6.79 | 5.72 | 7.79 | 0.94 |
+| NRCP | Review Risk | 100.2 | 1 | Downtrend | 1.21 | 0.88 | 1.57 | 1.10 |
+| AGI | Review Risk | 100.2 | 1 | Downtrend | 8.84 | 7.82 | 10.32 | 1.45 |
+| MEG | Review Risk | 100.0 | -8 | Strong Downtrend | 2.12 | 2.01 | 2.37 | 2.23 |
+| PSE | Review Risk | 100.0 | -21 | Strong Downtrend | 204.00 | 194.00 | 213.40 | 0.94 |
+| BNCOM | Watchlist | 73.2 | 56 | Strong Uptrend | 10.56 | 9.70 | 11.16 | 0.70 |
 | PHES | Watchlist | 73.0 | 55 | Strong Uptrend | 0.39 | 0.30 | 0.49 | 1.06 |
-| EURO | Watchlist | 72.4 | 52 | Strong Uptrend | 1.20 | 1.00 | 1.30 | 0.50 |
-| ION | Watchlist | 72.4 | 52 | Strong Uptrend | 3.78 | 1.24 | 4.35 | 0.22 |
-| APX | Watchlist | 71.8 | 49 | Strong Uptrend | 17.26 | 11.64 | 19.20 | 0.35 |
