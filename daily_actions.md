@@ -1,30 +1,30 @@
 # Daily Action Digest
 
-Generated: 2026-10-01T16:59:53+00:00
+Generated: 2026-10-02T16:13:47+00:00
 
 ## Summary
 
-- Review Risk: 13
-- Add: 0
-- Watchlist: 19
+- Review Risk: 10
+- Add: 2
+- Watchlist: 21
 - Trim Watch: 0
 
 ## Top Actions
 
 | Symbol | Action | Priority | MoM | Trend | Entry | Stop | Target | R/R |
 |---|---|---:|---:|---|---:|---:|---:|---:|
-| SGP | Review Risk | 117.6 | 25 | Strong Downtrend | 21.25 | 20.37 | 30.65 | 10.68 |
-| LFM | Review Risk | 117.0 | 5 | Strong Downtrend | 22.65 | 19.88 | 28.20 | 2.01 |
-| GTCAP | Review Risk | 116.0 | -16 | Strong Downtrend | 417.00 | 391.88 | 518.50 | 4.04 |
-| MWC | Review Risk | 116.0 | -17 | Strong Downtrend | 33.00 | 31.72 | 37.35 | 3.40 |
+| SGP | Review Risk | 117.6 | 20 | Strong Downtrend | 21.00 | 19.50 | 30.65 | 6.42 |
+| LFM | Review Risk | 117.0 | 5 | Strong Downtrend | 22.65 | 19.88 | 28.10 | 1.97 |
+| GTCAP | Review Risk | 116.0 | -16 | Strong Downtrend | 419.80 | 391.88 | 518.50 | 3.54 |
+| MWC | Review Risk | 116.0 | -17 | Strong Downtrend | 32.55 | 31.57 | 37.35 | 4.92 |
 | FPH | Review Risk | 112.1 | 5 | Downtrend | 87.00 | 78.57 | 120.00 | 3.91 |
-| FRUIT | Review Risk | 104.0 | 20 | Strong Downtrend | 0.64 | 0.61 | 0.70 | 2.08 |
-| AUB | Review Risk | 102.0 | 10 | Downtrend | 47.50 | 45.78 | 57.80 | 6.00 |
-| RFM | Review Risk | 100.8 | 4 | Strong Downtrend | 5.03 | 4.82 | 5.62 | 2.82 |
-| BC | Review Risk | 100.6 | 3 | Downtrend | 6.79 | 5.72 | 7.79 | 0.94 |
-| NRCP | Review Risk | 100.2 | 1 | Downtrend | 1.21 | 0.88 | 1.57 | 1.10 |
-| AGI | Review Risk | 100.2 | 1 | Downtrend | 8.84 | 7.82 | 10.32 | 1.45 |
-| MEG | Review Risk | 100.0 | -8 | Strong Downtrend | 2.12 | 2.01 | 2.37 | 2.23 |
-| PSE | Review Risk | 100.0 | -21 | Strong Downtrend | 204.00 | 194.00 | 213.40 | 0.94 |
-| BNCOM | Watchlist | 73.2 | 56 | Strong Uptrend | 10.56 | 9.70 | 11.16 | 0.70 |
-| PHES | Watchlist | 73.0 | 55 | Strong Uptrend | 0.39 | 0.30 | 0.49 | 1.06 |
+| AUB | Review Risk | 102.2 | 11 | Downtrend | 47.00 | 45.59 | 57.80 | 7.66 |
+| BC | Review Risk | 101.4 | 7 | Downtrend | 6.51 | 5.82 | 7.79 | 1.86 |
+| RFM | Review Risk | 100.0 | -6 | Strong Downtrend | 5.00 | 4.82 | 5.50 | 2.79 |
+| MEG | Review Risk | 100.0 | -8 | Strong Downtrend | 2.10 | 2.01 | 2.37 | 2.93 |
+| NRCP | Review Risk | 100.0 | -8 | Downtrend | 1.18 | 0.88 | 1.57 | 1.31 |
+| FRUIT | Add | 84.8 | 54 | Uptrend | 0.65 | 0.61 | 0.70 | 1.29 |
+| MVC | Add | 84.6 | 53 | Strong Uptrend | 5.24 | 4.85 | 5.89 | 1.67 |
+| PPC | Watchlist | 73.2 | 56 | Strong Uptrend | 17.80 | 14.26 | 19.00 | 0.34 |
+| BNCOM | Watchlist | 73.0 | 55 | Strong Uptrend | 10.64 | 9.70 | 11.10 | 0.49 |
+| EURO | Watchlist | 72.2 | 51 | Strong Uptrend | 1.21 | 1.00 | 1.30 | 0.43 |
