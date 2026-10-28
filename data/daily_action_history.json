@@ -55643,5 +55643,393 @@
                 "reward_risk": 0
             }
         ]
+    },
+    {
+        "date": "2026-10-28",
+        "market_date": "2026-10-28",
+        "generated_at": "2026-10-28T16:32:34+00:00",
+        "summary": {
+            "total_actions": 23,
+            "review_risk": 23,
+            "add": 0,
+            "watchlist": 0,
+            "trim_watch": 0,
+            "hold": 0
+        },
+        "top_actions": [
+            {
+                "symbol": "MEG",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "PPC",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "RFM",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "WPI",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "LTG",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "PSE",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "ALCO",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "BNCOM",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "SGP",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "AUB",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "MWC",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            },
+            {
+                "symbol": "PNB",
+                "action": "Review Risk",
+                "priority": 100.0,
+                "mom_score": 0
+            }
+        ],
+        "tracked_actions": [
+            {
+                "symbol": "MEG",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Property",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "PPC",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Industrial",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "RFM",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Industrial",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "WPI",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Services",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "LTG",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Holding Firms",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "PSE",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Financials",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "ALCO",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Property",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "BNCOM",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Financials",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "SGP",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Industrial",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "AUB",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Financials",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "MWC",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Industrial",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "PNB",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Financials",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "GTCAP",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Holding Firms",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "APX",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Mining and Oil",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "NRCP",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Financials",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "AGI",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Holding Firms",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "BC",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Mining and Oil",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "LFM",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Industrial",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "EURO",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Industrial",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "FRUIT",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Industrial",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "FPH",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Unknown",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "CEI",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Unknown",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            },
+            {
+                "symbol": "PHES",
+                "action": "Review Risk",
+                "source": "portfolio",
+                "priority": 100.0,
+                "mom_score": 0,
+                "trend": "Unknown",
+                "sector": "Unknown",
+                "entry_price": 0.0,
+                "stop_loss": 0.0,
+                "target_price": 0,
+                "reward_risk": 0
+            }
+        ]
     }
 ]
